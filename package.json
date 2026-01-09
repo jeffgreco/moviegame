@@ -1,0 +1,11 @@
+{
+  "name": "movie-timeline-game",
+  "version": "1.0.0",
+  "description": "A game where you arrange movie posters in chronological order",
+  "scripts": {
+    "fetch-movies": "node scripts/fetch-movies.js",
+    "serve": "npx serve ."
+  },
+  "keywords": ["game", "movies", "timeline", "tmdb"],
+  "license": "MIT"
+}
