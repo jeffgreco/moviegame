@@ -4,7 +4,6 @@
 const DAILY_PUZZLES = [
   {
     id: 4,
-    startDate: "2026-01-08", // First daily puzzle (Oscar Best Picture)
     theme: "Oscar Best Picture Winners",
     description: "Academy Award winners for Best Picture",
     movieIds: [
@@ -41,6 +40,7 @@ const DAILY_PUZZLES = [
   },
   {
     id: 3,
+    startDate: "2026-01-08", // First daily puzzle (Oscar Best Picture)
     theme: "Michael Mann",
     description: "Stylish crime dramas from the master of mood",
     movieIds: [

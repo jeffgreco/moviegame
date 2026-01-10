@@ -4422,7 +4422,7 @@ const MOVIES_DATA = [
     "id": 11,
     "title": "Star Wars",
     "poster_url": "https://image.tmdb.org/t/p/w500/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg",
-    "release_date": "1997-01-31",
+    "release_date": "1977-05-25",
     "directors": [
       "George Lucas"
     ]
