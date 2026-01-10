@@ -3,8 +3,44 @@
 
 const DAILY_PUZZLES = [
   {
+    id: 4,
+    startDate: "2026-01-08", // First daily puzzle (Oscar Best Picture)
+    theme: "Oscar Best Picture Winners",
+    description: "Academy Award winners for Best Picture",
+    movieIds: [
+      // EASIEST - Most iconic
+      597, // Titanic (1997)
+      238, // The Godfather (1972)
+      13, // Forrest Gump (1994)
+      98, // Gladiator (2000)
+
+      // EASY - Very well-known
+      274, // The Silence of the Lambs (1991)
+      424, // Schindler's List (1993)
+      1366, // Rocky (1976)
+      510, // One Flew Over the Cuckoo's Nest (1975)
+
+      // MEDIUM - Well-known but harder to date
+      1422, // The Departed (2006)
+      6977, // No Country for Old Men (2007)
+      194662, // Birdman (2014)
+      76203, // 12 Years a Slave (2013)
+
+      // MEDIUM-HARD - Less mainstream
+      376867, // Moonlight (2016)
+      74643, // The Artist (2011)
+      399055, // The Shape of Water (2017)
+      776503, // CODA (2021)
+
+      // HARDEST - Older classics
+      792, // Platoon (1986)
+      380, // Rain Man (1988)
+      581, // Dances with Wolves (1990)
+      12162, // The Hurt Locker (2009)
+    ],
+  },
+  {
     id: 3,
-    startDate: "2026-01-08", // First daily puzzle (Michael Mann)
     theme: "Michael Mann",
     description: "Stylish crime dramas from the master of mood",
     movieIds: [

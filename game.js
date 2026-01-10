@@ -25,6 +25,7 @@ class MovieTimelineGame {
     this.challengeScore = null; // Original player's score to beat
     this.challengeBeaten = false; // Whether challenger has beaten the original score
     this.isChallenge = false; // Whether we're playing a challenge
+    this.playOrder = []; // Track order movies were drawn (for challenge URLs)
 
     this.init();
   }
@@ -137,6 +138,9 @@ class MovieTimelineGame {
     this.failedCardIndex = null;
     this.currentMovieCount = 0;
 
+    // Track play order: starting card, then first drawn card
+    this.playOrder = [this.movies[0].id, this.currentCard.id];
+
     this.render();
     this.updateStats();
   }
@@ -195,13 +199,8 @@ class MovieTimelineGame {
 
   // Generate a challenge URL from current game state
   generateChallengeUrl() {
-    // Get all movie IDs that were played (timeline + current failed card)
-    const playedIds = this.timeline.map(m => m.id);
-    if (this.failedCard) {
-      playedIds.push(this.failedCard.id);
-    }
-
-    const encoded = this.encodeChallengeData(playedIds, this.bestStreak);
+    // Use playOrder which tracks the order movies were drawn (not timeline order)
+    const encoded = this.encodeChallengeData(this.playOrder, this.bestStreak);
     const url = new URL(window.location.href);
     url.search = ''; // Clear existing params
     url.searchParams.set('c', encoded);
@@ -708,6 +707,7 @@ class MovieTimelineGame {
       // Draw next card
       if (this.drawPile.length > 0) {
         this.currentCard = this.drawPile.shift();
+        this.playOrder.push(this.currentCard.id);
         this.renderDrawPile();
       } else if (this.isChallenge && this.challengeBeaten) {
         // Challenge beaten and out of challenge movies - transition to random mode
@@ -756,7 +756,10 @@ class MovieTimelineGame {
     const challengeBtn = document.getElementById("copy-challenge");
     const challengeResult = document.getElementById("challenge-result");
 
-    if (won) {
+    // In challenge mode, only show "Congratulations" if they beat the challenge
+    const showCongrats = won && (!this.isChallenge || this.challengeBeaten);
+
+    if (showCongrats) {
       document.querySelector(".game-over-content h2").textContent =
         "Congratulations!";
       if (correctDateStatItem) correctDateStatItem.style.display = "none";
@@ -764,12 +767,18 @@ class MovieTimelineGame {
     } else {
       document.querySelector(".game-over-content h2").textContent =
         "Game Over!";
-      const dateInfo = this.formatDate(this.currentCard.release_date);
-      document.getElementById(
-        "correct-year"
-      ).textContent = `${dateInfo.monthDay}, ${dateInfo.year}`;
-      if (correctDateStatItem) correctDateStatItem.style.display = "";
-      if (statDivider) statDivider.style.display = "";
+      if (this.currentCard) {
+        const dateInfo = this.formatDate(this.currentCard.release_date);
+        document.getElementById(
+          "correct-year"
+        ).textContent = `${dateInfo.monthDay}, ${dateInfo.year}`;
+        if (correctDateStatItem) correctDateStatItem.style.display = "";
+        if (statDivider) statDivider.style.display = "";
+      } else {
+        // No failed card (e.g., ran out of challenge movies without beating score)
+        if (correctDateStatItem) correctDateStatItem.style.display = "none";
+        if (statDivider) statDivider.style.display = "none";
+      }
     }
 
     // Show challenge button for random mode (not for daily or when already in a challenge)
