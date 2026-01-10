@@ -110,9 +110,10 @@ class MovieTimelineGame {
 
         const fallbackUrl = 'https://via.placeholder.com/300x450?text=No+Poster';
 
+        const dateInfo = this.formatDate(movie.release_date);
         card.innerHTML = `
             <img class="poster" src="${posterUrl}" alt="${movie.title}" loading="lazy" onerror="this.onerror=null; this.src='${fallbackUrl}';">
-            ${showYear ? `<span class="year">${this.getYear(movie.release_date)}</span>` : ''}
+            ${showYear ? `<span class="year"><span class="month-day">${dateInfo.monthDay}</span><span class="year-num">${dateInfo.year}</span></span>` : ''}
             <div class="title">${movie.title}</div>
         `;
 
@@ -339,13 +340,23 @@ class MovieTimelineGame {
             document.getElementById('correct-year').parentElement.style.display = 'none';
         } else {
             document.querySelector('.game-over-content h2').textContent = 'Game Over!';
-            document.getElementById('correct-year').textContent = this.getYear(this.currentCard.release_date);
+            const dateInfo = this.formatDate(this.currentCard.release_date);
+            document.getElementById('correct-year').textContent = `${dateInfo.monthDay}, ${dateInfo.year}`;
             document.getElementById('correct-year').parentElement.style.display = '';
         }
     }
 
     getYear(dateString) {
         return new Date(dateString).getFullYear();
+    }
+
+    formatDate(dateString) {
+        const date = new Date(dateString);
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const month = months[date.getMonth()];
+        const day = date.getDate();
+        const year = date.getFullYear();
+        return { monthDay: `${month} ${day}`, year: year.toString() };
     }
 
     render() {
