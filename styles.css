@@ -8,8 +8,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, sans-serif;
   background: #2b292b;
-  min-height: 100vh;
-  min-height: 100dvh; /* Dynamic viewport height for mobile Safari */
   color: #e8e3d8;
   padding: env(safe-area-inset-top) env(safe-area-inset-right)
     env(safe-area-inset-bottom) env(safe-area-inset-left);
@@ -17,10 +15,11 @@ body {
 
 .game-container {
   max-width: 100%;
-  min-height: 100vh;
-  min-height: 100dvh; /* Dynamic viewport height for mobile Safari */
+  height: 100vh;
+  height: 100dvh; /* Dynamic viewport height for mobile Safari */
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 header {
@@ -133,13 +132,14 @@ main {
   max-height: min(70vh, 600px);
   max-height: min(70dvh, 600px); /* Dynamic viewport height for mobile Safari */
   max-width: 90vw;
-  aspect-ratio: 2/3; /* Maintain poster aspect ratio */
 }
 
 .draw-pile .movie-card .poster {
-  width: 100%;
-  height: auto;
-  max-height: 100%;
+  width: auto;
+  height: 100%;
+  max-height: min(70vh, 600px);
+  max-height: min(70dvh, 600px);
+  max-width: 90vw;
   aspect-ratio: 2/3; /* Maintain proper poster aspect ratio */
   object-fit: contain;
 }
@@ -203,11 +203,8 @@ main {
   position: relative;
   border-top: 6px solid black;
   border-bottom: 6px solid black;
-
   padding: 2rem 0;
 }
-
-/* Sprocket holes are now on .timeline to scroll with content */
 
 .timeline {
   display: flex;
@@ -223,18 +220,19 @@ main {
   justify-content: center;
 }
 
-/* Top sprocket holes - scroll with timeline content */
+/* Top sprocket holes - on timeline to scroll with content and fill width */
 .timeline::before {
   content: "";
   position: absolute;
   top: -2rem;
   left: 0;
   right: 0;
+  width: 100%;
   height: 1.4rem;
   background: repeating-linear-gradient(
     to right,
     #e8e3d8 0px,
-    #dcded9 20px,
+    #e8e3d8 20px,
     #000 20px,
     #000 30px
   );
@@ -242,13 +240,14 @@ main {
   pointer-events: none;
 }
 
-/* Bottom sprocket holes - scroll with timeline content */
+/* Bottom sprocket holes - on timeline to scroll with content and fill width */
 .timeline::after {
   content: "";
   position: absolute;
   bottom: -2rem;
   left: 0;
   right: 0;
+  width: 100%;
   height: 1.4rem;
   background: repeating-linear-gradient(
     to right,
@@ -425,6 +424,44 @@ main {
 }
 
 /* Animations */
+@keyframes entrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  60% {
+    transform: scale(1.05) translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes entrance-draw-pile {
+  0% {
+    opacity: 0;
+    transform: scale(0.7) rotateY(-15deg);
+    filter: blur(4px);
+  }
+  60% {
+    transform: scale(1.03) rotateY(3deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotateY(0deg);
+    filter: blur(0);
+  }
+}
+
+.movie-card.entrance {
+  animation: entrance 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.movie-card.in-pile.entrance {
+  animation: entrance-draw-pile 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
 @keyframes correct {
   0% {
     transform: scale(1);
@@ -899,5 +936,22 @@ main {
     opacity: 0.7;
     display: block;
     margin-top: 0.25rem;
+  }
+
+  /* Slightly gentler entrance animation on mobile */
+  @keyframes entrance-draw-pile {
+    0% {
+      opacity: 0;
+      transform: scale(0.85) translateY(15px);
+      filter: blur(2px);
+    }
+    60% {
+      transform: scale(1.02) translateY(-3px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      filter: blur(0);
+    }
   }
 }

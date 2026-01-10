@@ -531,8 +531,13 @@ class MovieTimelineGame {
       // Animate the newly placed card
       setTimeout(() => {
         const cards = document.querySelectorAll(".timeline .movie-card");
-        cards[index].classList.add("correct");
-        setTimeout(() => cards[index].classList.remove("correct"), 500);
+        const newCard = cards[index];
+        newCard.classList.add("entrance");
+        newCard.classList.add("correct");
+        setTimeout(() => {
+          newCard.classList.remove("correct");
+          newCard.classList.remove("entrance");
+        }, 500);
       }, 50);
 
       // Draw next card
@@ -752,6 +757,13 @@ class MovieTimelineGame {
     if (this.currentCard) {
       const card = this.createMovieCard(this.currentCard, false, true);
       drawPileEl.appendChild(card);
+
+      // Trigger entrance animation
+      requestAnimationFrame(() => {
+        card.classList.add("entrance");
+        // Remove entrance class after animation completes
+        setTimeout(() => card.classList.remove("entrance"), 600);
+      });
     }
   }
 
