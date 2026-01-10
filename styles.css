@@ -956,3 +956,141 @@ main {
     }
   }
 }
+
+/* Challenge Mode Styles */
+.challenge-indicator {
+  background: linear-gradient(135deg, #c9a961, #8b7355);
+  color: #1a1a1a;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-align: center;
+  animation: pulse-challenge 2s infinite;
+}
+
+.challenge-indicator.hidden {
+  display: none;
+}
+
+.challenge-indicator.beaten {
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  color: white;
+  animation: none;
+}
+
+@keyframes pulse-challenge {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(201, 169, 97, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(201, 169, 97, 0.8);
+  }
+}
+
+.challenge-btn {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  background: linear-gradient(135deg, #5c6bc0, #3949ab);
+}
+
+.challenge-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(92, 107, 192, 0.4);
+}
+
+.challenge-btn.hidden {
+  display: none;
+}
+
+.challenge-result {
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.challenge-result.hidden {
+  display: none;
+}
+
+.challenge-won {
+  color: #4caf50;
+}
+
+.challenge-lost {
+  color: #f44336;
+}
+
+@media (max-width: 768px) {
+  .challenge-indicator {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .challenge-btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+}
+
+/* Challenge Victory Notification */
+.challenge-victory-notification {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3000;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-out;
+}
+
+.challenge-victory-notification.show {
+  transform: translateY(0);
+}
+
+.victory-content {
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(76, 175, 80, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.victory-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.victory-subtext {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .victory-content {
+    padding: 0.75rem 1.5rem;
+  }
+
+  .victory-text {
+    font-size: 1rem;
+  }
+
+  .victory-subtext {
+    font-size: 0.8rem;
+  }
+}

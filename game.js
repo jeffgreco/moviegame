@@ -15,10 +15,16 @@ class MovieTimelineGame {
     this.failedCardIndex = null;
     this.currentMovieCount = 0;
     this.resizeTimeout = null;
-    this.gameMode = 'daily'; // 'random' or 'daily'
+    this.gameMode = 'daily'; // 'random', 'daily', or 'challenge'
     this.dailyPuzzle = null; // Current daily puzzle data
     this.puzzleNumber = null; // Daily puzzle number
     this.justTouched = false; // Track touch interactions to prevent click events
+
+    // Challenge mode state
+    this.challengeMovieIds = null; // Array of movie IDs for the challenge
+    this.challengeScore = null; // Original player's score to beat
+    this.challengeBeaten = false; // Whether challenger has beaten the original score
+    this.isChallenge = false; // Whether we're playing a challenge
 
     this.init();
   }
@@ -28,6 +34,17 @@ class MovieTimelineGame {
     if (typeof MOVIES_DATA === "undefined") {
       console.error("Movie data not loaded!");
       return;
+    }
+
+    // Check for challenge URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('c')) {
+      const loaded = this.loadFromChallenge(urlParams.get('c'));
+      if (!loaded) {
+        // Invalid challenge, clear URL and play random
+        window.history.replaceState({}, '', window.location.pathname);
+        this.gameMode = 'random';
+      }
     }
 
     this.loadMoviesForMode();
@@ -40,7 +57,28 @@ class MovieTimelineGame {
     const now = new Date();
     const seenIds = new Set();
 
-    if (this.gameMode === 'daily') {
+    if (this.gameMode === 'challenge' && this.challengeMovieIds) {
+      // Challenge mode: load specific movies in the challenge order
+      this.dailyPuzzle = null;
+      this.puzzleNumber = null;
+      const movieIdToData = new Map(MOVIES_DATA.map(m => [m.id, m]));
+      this.movies = this.challengeMovieIds
+        .map(id => movieIdToData.get(id))
+        .filter(movie => {
+          if (!movie) return false;
+          if (seenIds.has(movie.id)) return false;
+          seenIds.add(movie.id);
+          return true;
+        });
+
+      // If challenge movies couldn't be loaded, fall back to random
+      if (this.movies.length < 2) {
+        this.isChallenge = false;
+        this.gameMode = 'random';
+        this.loadMoviesForMode();
+        return;
+      }
+    } else if (this.gameMode === 'daily') {
       // Load daily puzzle
       this.dailyPuzzle = getTodaysPuzzle();
       this.puzzleNumber = getPuzzleNumber(new Date());
@@ -128,7 +166,73 @@ class MovieTimelineGame {
     }
   }
 
+  // Encode challenge data to URL-safe string
+  encodeChallengeData(movieIds, score) {
+    // Format: score,id1,id2,id3,...
+    const data = [score, ...movieIds].join(',');
+    // Use base64 encoding for URL safety
+    return btoa(data).replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
+  }
+
+  // Decode challenge data from URL string
+  decodeChallengeData(encoded) {
+    try {
+      // Restore base64 padding and characters
+      let base64 = encoded.replace(/-/g, '+').replace(/_/g, '/');
+      while (base64.length % 4) base64 += '=';
+      const data = atob(base64);
+      const parts = data.split(',').map(Number);
+      if (parts.length < 2 || parts.some(isNaN)) return null;
+      return {
+        score: parts[0],
+        movieIds: parts.slice(1)
+      };
+    } catch (e) {
+      console.error('Failed to decode challenge:', e);
+      return null;
+    }
+  }
+
+  // Generate a challenge URL from current game state
+  generateChallengeUrl() {
+    // Get all movie IDs that were played (timeline + current failed card)
+    const playedIds = this.timeline.map(m => m.id);
+    if (this.failedCard) {
+      playedIds.push(this.failedCard.id);
+    }
+
+    const encoded = this.encodeChallengeData(playedIds, this.bestStreak);
+    const url = new URL(window.location.href);
+    url.search = ''; // Clear existing params
+    url.searchParams.set('c', encoded);
+    return url.toString();
+  }
+
+  // Load game from challenge URL parameter
+  loadFromChallenge(encoded) {
+    const data = this.decodeChallengeData(encoded);
+    if (!data || data.movieIds.length < 2) return false;
+
+    this.isChallenge = true;
+    this.challengeMovieIds = data.movieIds;
+    this.challengeScore = data.score;
+    this.challengeBeaten = false;
+    this.gameMode = 'challenge';
+
+    return true;
+  }
+
   switchMode(newMode) {
+    // Clear challenge state when switching modes
+    if (this.isChallenge) {
+      this.isChallenge = false;
+      this.challengeMovieIds = null;
+      this.challengeScore = null;
+      this.challengeBeaten = false;
+      // Clear the URL parameter
+      window.history.replaceState({}, '', window.location.pathname);
+    }
+
     this.gameMode = newMode;
     this.updateModeButtons();
 
@@ -141,13 +245,24 @@ class MovieTimelineGame {
   updateModeButtons() {
     const randomBtn = document.getElementById("random-mode-btn");
     const dailyBtn = document.getElementById("daily-mode-btn");
+    const challengeIndicator = document.getElementById("challenge-indicator");
 
-    if (this.gameMode === 'random') {
+    if (this.gameMode === 'challenge') {
+      // For challenge mode, show random as active and display challenge indicator
       randomBtn.classList.add('active');
       dailyBtn.classList.remove('active');
+      if (challengeIndicator) {
+        challengeIndicator.classList.remove('hidden');
+        challengeIndicator.textContent = `Beat ${this.challengeScore} to win!`;
+      }
+    } else if (this.gameMode === 'random') {
+      randomBtn.classList.add('active');
+      dailyBtn.classList.remove('active');
+      if (challengeIndicator) challengeIndicator.classList.add('hidden');
     } else {
       dailyBtn.classList.add('active');
       randomBtn.classList.remove('active');
+      if (challengeIndicator) challengeIndicator.classList.add('hidden');
     }
   }
 
@@ -208,6 +323,11 @@ class MovieTimelineGame {
     // Share score button handler
     document.getElementById("share-score").addEventListener("click", () => {
       this.shareScore();
+    });
+
+    // Challenge button handler
+    document.getElementById("copy-challenge").addEventListener("click", () => {
+      this.copyChallenge();
     });
 
     // Deselect button handler
@@ -274,6 +394,24 @@ class MovieTimelineGame {
       } catch (err) {
         console.error("Error copying to clipboard:", err);
       }
+    }
+  }
+
+  async copyChallenge() {
+    const challengeUrl = this.generateChallengeUrl();
+    const text = `I scored ${this.bestStreak} on Filmstrip! Think you can beat me?`;
+
+    try {
+      await navigator.clipboard.writeText(`${text}\n${challengeUrl}`);
+      // Show temporary feedback
+      const btn = document.getElementById("copy-challenge");
+      const originalText = btn.textContent;
+      btn.textContent = "Copied!";
+      setTimeout(() => {
+        btn.textContent = originalText;
+      }, 2000);
+    } catch (err) {
+      console.error("Error copying to clipboard:", err);
     }
   }
 
@@ -524,6 +662,12 @@ class MovieTimelineGame {
         this.bestStreak = this.streak;
       }
 
+      // Check if challenger just beat the original score
+      if (this.isChallenge && !this.challengeBeaten && this.bestStreak > this.challengeScore) {
+        this.challengeBeaten = true;
+        this.showChallengeBeatNotification();
+      }
+
       this.render();
       this.updateStats();
 
@@ -543,6 +687,9 @@ class MovieTimelineGame {
       if (this.drawPile.length > 0) {
         this.currentCard = this.drawPile.shift();
         this.renderDrawPile();
+      } else if (this.isChallenge && this.challengeBeaten) {
+        // Challenge beaten and out of challenge movies - transition to random mode
+        this.transitionToRandomMode();
       } else {
         // Game won!
         this.endGame(true);
@@ -583,6 +730,10 @@ class MovieTimelineGame {
     );
     const statDivider = document.querySelector(".stat-divider:first-child");
 
+    // Get challenge UI elements
+    const challengeBtn = document.getElementById("copy-challenge");
+    const challengeResult = document.getElementById("challenge-result");
+
     if (won) {
       document.querySelector(".game-over-content h2").textContent =
         "Congratulations!";
@@ -599,8 +750,97 @@ class MovieTimelineGame {
       if (statDivider) statDivider.style.display = "";
     }
 
+    // Show challenge button for random mode (not for daily or when already in a challenge)
+    if (this.gameMode === 'random' && !this.isChallenge) {
+      challengeBtn.classList.remove('hidden');
+    } else {
+      challengeBtn.classList.add('hidden');
+    }
+
+    // Show challenge results if playing a challenge
+    if (this.isChallenge) {
+      challengeResult.classList.remove('hidden');
+      if (this.challengeBeaten) {
+        challengeResult.innerHTML = `<span class="challenge-won">You beat the challenge! (${this.challengeScore} → ${this.bestStreak})</span>`;
+      } else {
+        challengeResult.innerHTML = `<span class="challenge-lost">Challenge failed. Needed ${this.challengeScore + 1}, got ${this.bestStreak}.</span>`;
+      }
+    } else {
+      challengeResult.classList.add('hidden');
+    }
+
     // Populate poster grid with timeline movies
     this.renderPosterGrid();
+  }
+
+  showChallengeBeatNotification() {
+    // Show a brief notification that they beat the challenge
+    const indicator = document.getElementById("challenge-indicator");
+    if (indicator) {
+      indicator.textContent = "Challenge beaten! Keep going!";
+      indicator.classList.add("beaten");
+    }
+  }
+
+  transitionToRandomMode() {
+    // Show victory notification
+    this.showChallengeVictoryNotification();
+
+    // Get IDs of movies already in timeline to exclude them
+    const usedIds = new Set(this.timeline.map(m => m.id));
+
+    // Load random movies excluding ones already used
+    const now = new Date();
+    const availableMovies = MOVIES_DATA.filter(movie => {
+      if (usedIds.has(movie.id)) return false;
+      const releaseDate = new Date(movie.release_date);
+      if (releaseDate > now) return false;
+      return true;
+    });
+
+    // Shuffle and set as new draw pile
+    this.shuffleArray(availableMovies);
+    this.drawPile = availableMovies;
+
+    // Clear challenge state but keep playing
+    this.isChallenge = false;
+    this.gameMode = 'random';
+
+    // Clear the URL parameter
+    window.history.replaceState({}, '', window.location.pathname);
+
+    // Update mode buttons (will hide challenge indicator)
+    this.updateModeButtons();
+
+    // Draw next card and continue
+    if (this.drawPile.length > 0) {
+      this.currentCard = this.drawPile.shift();
+      this.renderDrawPile();
+    }
+  }
+
+  showChallengeVictoryNotification() {
+    // Create and show a temporary victory notification
+    const notification = document.createElement('div');
+    notification.className = 'challenge-victory-notification';
+    notification.innerHTML = `
+      <div class="victory-content">
+        <span class="victory-text">Challenge Complete! You beat ${this.challengeScore}!</span>
+        <span class="victory-subtext">Now playing random mode...</span>
+      </div>
+    `;
+    document.body.appendChild(notification);
+
+    // Animate in
+    requestAnimationFrame(() => {
+      notification.classList.add('show');
+    });
+
+    // Remove after delay
+    setTimeout(() => {
+      notification.classList.remove('show');
+      setTimeout(() => notification.remove(), 300);
+    }, 3000);
   }
 
   renderPosterGrid() {
