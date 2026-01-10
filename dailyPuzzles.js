@@ -3,8 +3,36 @@
 
 const DAILY_PUZZLES = [
   {
+    id: 3,
+    startDate: "2026-01-08", // First daily puzzle (Michael Mann)
+    theme: "Michael Mann",
+    description: "Stylish crime dramas from the master of mood",
+    movieIds: [
+      // EASIEST - Most iconic
+      949, // Heat (1995)
+      1538, // Collateral (2004)
+
+      // EASY - Very well-known
+      9361, // The Last of the Mohicans (1992)
+      11322, // Public Enemies (2009)
+      82, // Miami Vice (2006)
+
+      // MEDIUM - Well-known but less mainstream
+      8489, // Ali (2001)
+      9008, // The Insider (1999)
+
+      // MEDIUM-HARD - Cult classics
+      11454, // Manhunter (1986)
+      11524, // Thief (1981)
+      365620, // Ferrari (2023)
+
+      // HARDEST - Lesser known
+      201088, // Blackhat (2015)
+      26198, // The Keep (1983)
+    ],
+  },
+  {
     id: 1,
-    startDate: "2026-01-08", // First daily puzzle
     theme: "Spielberg, Scorsese & Coppola",
     description: "Movies from three legendary directors",
     movieIds: [
@@ -58,7 +86,6 @@ const DAILY_PUZZLES = [
   },
   {
     id: 2,
-    startDate: "2026-01-09", // Second daily puzzle
     theme: "Disney Animation Classics",
     description: "Beloved animated films from Disney and Pixar",
     movieIds: [
