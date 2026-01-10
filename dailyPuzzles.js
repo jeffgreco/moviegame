@@ -9,28 +9,28 @@ const DAILY_PUZZLES = [
     description: "Movies from three legendary directors",
     movieIds: [
       // EASIEST - Most iconic, culturally significant films
-      238,    // The Godfather (1972) - Coppola
       578,    // Jaws (1975) - Spielberg
+      238,    // The Godfather (1972) - Coppola
+      329,    // Jurassic Park (1993) - Spielberg
       85,     // Raiders of the Lost Ark (1981) - Spielberg
       601,    // E.T. the Extra-Terrestrial (1982) - Spielberg
-      329,    // Jurassic Park (1993) - Spielberg
       424,    // Schindler's List (1994) - Spielberg
 
       // EASY - Very well-known films
-      240,    // The Godfather Part II (1974) - Coppola
       103,    // Taxi Driver (1976) - Scorsese
       28,     // Apocalypse Now (1979) - Coppola
-      87,     // Indiana Jones and the Temple of Doom (1984) - Spielberg
       769,    // GoodFellas (1990) - Scorsese
+      240,    // The Godfather Part II (1974) - Coppola
       857,    // Saving Private Ryan (1998) - Spielberg
+      87,     // Indiana Jones and the Temple of Doom (1984) - Spielberg
 
       // MEDIUM-EASY - Famous but less culturally dominant
-      840,    // Close Encounters of the Third Kind (1977) - Spielberg
       89,     // Indiana Jones and the Last Crusade (1989) - Spielberg
-      879,    // Hook (1991) - Spielberg
       524,    // Casino (1995) - Scorsese
-      640,    // Catch Me If You Can (2002) - Spielberg
+      840,    // Close Encounters of the Third Kind (1977) - Spielberg
       1422,   // The Departed (2006) - Scorsese
+      879,    // Hook (1991) - Spielberg
+      640,    // Catch Me If You Can (2002) - Spielberg
 
       // MEDIUM - Well-known but harder to date
       873,    // The Color Purple (1985) - Spielberg
