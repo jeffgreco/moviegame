@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>Filmstrip</title>
+
+    <!-- Social sharing meta tags -->
+    <meta property="og:title" content="Filmstrip - The Movie Timeline Game" />
+    <meta property="og:description" content="Think you know your movies? Put them in chronological order and see how long your streak lasts. It's harder than it looks!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/share.png" />
+    <meta name="description" content="Think you know your movies? Put them in chronological order and see how long your streak lasts. It's harder than it looks!" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="/share.png" />
+    <meta name="twitter:title" content="Filmstrip - The Movie Timeline Game" />
+    <meta name="twitter:description" content="Think you know your movies? Put them in chronological order and see how long your streak lasts. It's harder than it looks!" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="game-container">
+      <header>
+        <h1>Filmstrip</h1>
+        <div class="mode-selector">
+          <button id="random-mode-btn" class="mode-btn">Random</button>
+          <button id="daily-mode-btn" class="mode-btn active">Daily</button>
+        </div>
+        <div id="challenge-indicator" class="challenge-indicator hidden"></div>
+        <div class="stats">
+          <span class="score">Score: <span id="score">0</span></span>
+        </div>
+      </header>
+
+      <main>
+        <div class="draw-pile-area">
+          <div id="draw-pile" class="draw-pile">
+            <!-- Current card to place will appear here -->
+          </div>
+          <p class="hint">
+            Drag to the timeline or click a
+            <span class="hint-plus">+</span> below
+          </p>
+          <button id="deselect-btn" class="deselect-btn hidden">
+            Cancel Selection
+          </button>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-scroll">
+            <div id="timeline" class="timeline">
+              <!-- Timeline cards will appear here -->
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <div id="game-over" class="game-over hidden">
+        <div class="game-over-content">
+          <h2>Game Over!</h2>
+          <div class="game-stats">
+            <span class="stat-item"
+              >The correct date was <span id="correct-year"></span
+            ></span>
+            <span class="stat-divider">•</span>
+            <span class="stat-item">Score: <span id="best-streak"></span></span>
+          </div>
+          <div class="poster-grid-container">
+            <div id="poster-grid" class="poster-grid">
+              <!-- Poster grid will be populated here -->
+            </div>
+          </div>
+          <div id="challenge-result" class="challenge-result hidden"></div>
+          <div class="game-over-actions">
+            <button id="share-score" class="share-btn">Share Score</button>
+            <button id="copy-challenge" class="challenge-btn hidden">Copy Challenge Link</button>
+            <button id="play-again">Play Again</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="movies.js"></script>
+    <script src="dailyPuzzles.js"></script>
+    <script src="game.js"></script>
+  </body>
+</html>
