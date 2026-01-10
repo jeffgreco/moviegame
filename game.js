@@ -104,8 +104,8 @@ class MovieTimelineGame {
         card.dataset.releaseDate = movie.release_date;
         card.draggable = inPile; // Only draw pile cards are draggable
 
-        const posterUrl = movie.poster_path
-            ? `https://image.tmdb.org/t/p/w300${movie.poster_path}`
+        const posterUrl = movie.poster_url || movie.poster_path
+            ? movie.poster_url || `https://image.tmdb.org/t/p/w300${movie.poster_path}`
             : 'https://via.placeholder.com/300x450?text=No+Poster';
 
         const fallbackUrl = 'https://via.placeholder.com/300x450?text=No+Poster';
