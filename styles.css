@@ -211,6 +211,8 @@ main {
   position: relative;
   z-index: 5;
   height: fit-content;
+  min-width: 100%;
+  justify-content: center;
 }
 
 /* Top sprocket holes - scroll with timeline content */
