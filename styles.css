@@ -213,12 +213,12 @@ main {
   align-items: center;
   gap: 0.75rem;
   padding: 0 2rem;
-  min-width: fit-content;
   margin: 0 auto;
   position: relative;
   z-index: 5;
   height: fit-content;
-  min-width: 100%;
+  width: 100%;
+  min-width: fit-content;
   justify-content: center;
 }
 
