@@ -147,13 +147,9 @@ main {
 .movie-card {
     width: 130px;
     flex-shrink: 0;
-    cursor: grab;
+    cursor: default;
     transition: transform 0.2s, box-shadow 0.2s;
     position: relative;
-}
-
-.movie-card:active {
-    cursor: grabbing;
 }
 
 .movie-card:hover {

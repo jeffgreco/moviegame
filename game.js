@@ -102,7 +102,7 @@ class MovieTimelineGame {
         card.className = 'movie-card' + (inPile ? ' in-pile' : '');
         card.dataset.id = movie.id;
         card.dataset.releaseDate = movie.release_date;
-        card.draggable = true;
+        card.draggable = inPile; // Only draw pile cards are draggable
 
         const posterUrl = movie.poster_path
             ? `https://image.tmdb.org/t/p/w300${movie.poster_path}`
@@ -117,17 +117,18 @@ class MovieTimelineGame {
             <div class="title">${movie.title}</div>
         `;
 
-        // Drag events
-        card.addEventListener('dragstart', (e) => this.handleDragStart(e, card));
-        card.addEventListener('dragend', (e) => this.handleDragEnd(e, card));
-
-        // Touch events for mobile
-        card.addEventListener('touchstart', (e) => this.handleTouchStart(e, card));
-        card.addEventListener('touchmove', (e) => this.handleTouchMove(e, card));
-        card.addEventListener('touchend', (e) => this.handleTouchEnd(e, card));
-
-        // Click to select/deselect for pile cards
+        // Only add drag/touch events for cards in the draw pile
         if (inPile) {
+            // Drag events
+            card.addEventListener('dragstart', (e) => this.handleDragStart(e, card));
+            card.addEventListener('dragend', (e) => this.handleDragEnd(e, card));
+
+            // Touch events for mobile
+            card.addEventListener('touchstart', (e) => this.handleTouchStart(e, card));
+            card.addEventListener('touchmove', (e) => this.handleTouchMove(e, card));
+            card.addEventListener('touchend', (e) => this.handleTouchEnd(e, card));
+
+            // Click to select/deselect for pile cards
             card.addEventListener('click', (e) => {
                 // Prevent toggle if we just finished a drag
                 if (!this.draggedElement) {
@@ -374,7 +375,6 @@ class MovieTimelineGame {
         // Add movie cards with drop zones between them
         this.timeline.forEach((movie, index) => {
             const card = this.createMovieCard(movie, true, false);
-            card.draggable = false; // Timeline cards aren't draggable
             timelineEl.appendChild(card);
             timelineEl.appendChild(this.createDropZone(index + 1));
         });
