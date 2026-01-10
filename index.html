@@ -1,58 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movie Timeline Game</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="game-container">
-        <header>
-            <h1>Movie Timeline</h1>
-            <div class="stats">
-                <span class="score">Score: <span id="score">0</span></span>
-                <span class="streak">Streak: <span id="streak">0</span></span>
-            </div>
-        </header>
-
-        <main>
-            <div class="draw-pile-area">
-                <h2>Place this movie</h2>
-                <div id="draw-pile" class="draw-pile">
-                    <!-- Current card to place will appear here -->
-                </div>
-                <p class="hint">Drag to the timeline or click a <span class="hint-plus">+</span> below</p>
-                <button id="deselect-btn" class="deselect-btn hidden">Cancel Selection</button>
-            </div>
-
-            <div class="timeline-container">
-                <div class="timeline-scroll">
-                    <div id="timeline" class="timeline">
-                        <!-- Timeline cards will appear here -->
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <div id="game-over" class="game-over hidden">
-            <div class="game-over-content">
-                <h2>Game Over!</h2>
-                <p>The correct year was <span id="correct-year"></span></p>
-                <p>Final Score: <span id="final-score"></span></p>
-                <p>Best Streak: <span id="best-streak"></span></p>
-                <div class="poster-grid-container">
-                    <h3>Your Timeline</h3>
-                    <div id="poster-grid" class="poster-grid">
-                        <!-- Poster grid will be populated here -->
-                    </div>
-                </div>
-                <button id="play-again">Play Again</button>
-            </div>
+      <header>
+        <h1>Movie Timeline</h1>
+        <div class="stats">
+          <span class="score">Score: <span id="score">0</span></span>
         </div>
+      </header>
+
+      <main>
+        <div class="draw-pile-area">
+          <h2>Place this movie</h2>
+          <div id="draw-pile" class="draw-pile">
+            <!-- Current card to place will appear here -->
+          </div>
+          <p class="hint">
+            Drag to the timeline or click a
+            <span class="hint-plus">+</span> below
+          </p>
+          <button id="deselect-btn" class="deselect-btn hidden">
+            Cancel Selection
+          </button>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-scroll">
+            <div id="timeline" class="timeline">
+              <!-- Timeline cards will appear here -->
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <div id="game-over" class="game-over hidden">
+        <div class="game-over-content">
+          <h2>Game Over!</h2>
+          <div class="game-stats">
+            <span class="stat-item"
+              >The correct date was <span id="correct-year"></span
+            ></span>
+            <span class="stat-divider">•</span>
+            <span class="stat-item">Score: <span id="best-streak"></span></span>
+          </div>
+          <div class="poster-grid-container">
+            <div id="poster-grid" class="poster-grid">
+              <!-- Poster grid will be populated here -->
+            </div>
+          </div>
+          <button id="play-again">Play Again</button>
+        </div>
+      </div>
     </div>
 
     <script src="movies.js"></script>
     <script src="game.js"></script>
-</body>
+  </body>
 </html>

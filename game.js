@@ -352,17 +352,22 @@ class MovieTimelineGame {
 
     endGame(won) {
         document.getElementById('game-over').classList.remove('hidden');
-        document.getElementById('final-score').textContent = this.score;
         document.getElementById('best-streak').textContent = this.bestStreak;
+
+        // Get the stat items
+        const correctDateStatItem = document.querySelector('.stat-item:first-child');
+        const statDivider = document.querySelector('.stat-divider:first-child');
 
         if (won) {
             document.querySelector('.game-over-content h2').textContent = 'Congratulations!';
-            document.getElementById('correct-year').parentElement.style.display = 'none';
+            if (correctDateStatItem) correctDateStatItem.style.display = 'none';
+            if (statDivider) statDivider.style.display = 'none';
         } else {
             document.querySelector('.game-over-content h2').textContent = 'Game Over!';
             const dateInfo = this.formatDate(this.currentCard.release_date);
             document.getElementById('correct-year').textContent = `${dateInfo.monthDay}, ${dateInfo.year}`;
-            document.getElementById('correct-year').parentElement.style.display = '';
+            if (correctDateStatItem) correctDateStatItem.style.display = '';
+            if (statDivider) statDivider.style.display = '';
         }
 
         // Populate poster grid with timeline movies
@@ -456,8 +461,7 @@ class MovieTimelineGame {
     }
 
     updateStats() {
-        document.getElementById('score').textContent = this.score;
-        document.getElementById('streak').textContent = this.streak;
+        document.getElementById('score').textContent = this.streak;
     }
 }
 
