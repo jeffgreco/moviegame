@@ -140,8 +140,8 @@ main {
     align-items: center;
     gap: 0.5rem;
     padding: 1rem;
-    min-width: 100%;
-    justify-content: center;
+    min-width: fit-content;
+    margin: 0 auto;
 }
 
 .movie-card {
