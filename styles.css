@@ -400,22 +400,49 @@ main {
   font-weight: bold;
 }
 
-#play-again {
+.game-over-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
   margin-top: 1rem;
+  flex-shrink: 0;
+}
+
+#play-again,
+.share-btn {
   padding: 0.75rem 2rem;
   font-size: 1rem;
-  background: linear-gradient(90deg, #e94560, #ff6b6b);
   border: none;
   border-radius: 25px;
   color: white;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
-  flex-shrink: 0;
+}
+
+#play-again {
+  background: linear-gradient(90deg, #e94560, #ff6b6b);
 }
 
 #play-again:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 20px rgba(233, 69, 96, 0.4);
+}
+
+.share-btn {
+  background: linear-gradient(90deg, #4ecca3, #45b393);
+  display: none;
+}
+
+.share-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(78, 204, 163, 0.4);
+}
+
+/* Show share button on mobile/touch devices */
+@media (max-width: 768px), (hover: none) {
+  .share-btn {
+    display: block;
+  }
 }
 
 .poster-grid-container {
@@ -430,12 +457,13 @@ main {
 
 .poster-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  grid-template-columns: repeat(auto-fit, 60px);
   gap: 8px;
-  padding: 4px;
+  padding: 8px;
   flex: 1;
-  align-content: start;
-  overflow-y: auto;
+  align-content: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .poster-grid-item {
@@ -491,7 +519,7 @@ main {
 }
 
 .poster-grid-item .x-mark {
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
   color: white;
   font-weight: bold;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.8),
@@ -610,9 +638,16 @@ main {
     font-size: 2rem;
   }
 
-  #play-again {
+  .game-over-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  #play-again,
+  .share-btn {
     padding: 0.6rem 1.5rem;
     font-size: 0.9rem;
+    width: 100%;
   }
 }
 

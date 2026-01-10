@@ -13,6 +13,8 @@ class MovieTimelineGame {
         this.isCardSelected = false;
         this.failedCard = null;
         this.failedCardIndex = null;
+        this.currentMovieCount = 0;
+        this.resizeTimeout = null;
 
         this.init();
     }
@@ -54,6 +56,7 @@ class MovieTimelineGame {
         this.streak = 0;
         this.failedCard = null;
         this.failedCardIndex = null;
+        this.currentMovieCount = 0;
 
         this.render();
         this.updateStats();
@@ -82,10 +85,65 @@ class MovieTimelineGame {
             this.setupGame();
         });
 
+        // Share score button handler
+        document.getElementById('share-score').addEventListener('click', () => {
+            this.shareScore();
+        });
+
         // Deselect button handler
         document.getElementById('deselect-btn').addEventListener('click', () => {
             this.deselectCard();
         });
+
+        // Window resize handler for poster grid
+        window.addEventListener('resize', () => {
+            // Debounce resize events
+            if (this.resizeTimeout) {
+                clearTimeout(this.resizeTimeout);
+            }
+            this.resizeTimeout = setTimeout(() => {
+                // Only recalculate if game over modal is visible
+                const gameOverModal = document.getElementById('game-over');
+                if (!gameOverModal.classList.contains('hidden') && this.currentMovieCount > 0) {
+                    this.setOptimalPosterSize(this.currentMovieCount);
+                }
+            }, 250);
+        });
+    }
+
+    async shareScore() {
+        const score = this.bestStreak;
+        const text = `I scored ${score} on Movie Timeline! Can you beat my score?`;
+        const url = window.location.href;
+
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: 'Movie Timeline Game',
+                    text: text,
+                    url: url
+                });
+            } catch (err) {
+                // User cancelled or error occurred
+                if (err.name !== 'AbortError') {
+                    console.error('Error sharing:', err);
+                }
+            }
+        } else {
+            // Fallback: copy to clipboard
+            try {
+                await navigator.clipboard.writeText(`${text}\n${url}`);
+                // Show temporary feedback
+                const btn = document.getElementById('share-score');
+                const originalText = btn.textContent;
+                btn.textContent = 'Copied!';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                }, 2000);
+            } catch (err) {
+                console.error('Error copying to clipboard:', err);
+            }
+        }
     }
 
     selectCard() {
@@ -423,6 +481,54 @@ class MovieTimelineGame {
 
             posterGrid.appendChild(item);
         });
+
+        // Store movie count for resize handler
+        this.currentMovieCount = displayTimeline.length;
+
+        // Calculate and set optimal poster size after DOM is ready and layout complete
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                this.setOptimalPosterSize(displayTimeline.length);
+            });
+        });
+    }
+
+    setOptimalPosterSize(movieCount) {
+        const posterGrid = document.getElementById('poster-grid');
+        const container = posterGrid.parentElement;
+
+        // Get available dimensions
+        const containerWidth = container.clientWidth - 32; // padding
+        const containerHeight = container.clientHeight - 32;
+        const gap = 8;
+
+        // Safety check - if dimensions aren't available yet, try again later
+        if (containerWidth <= 0 || containerHeight <= 0) {
+            setTimeout(() => this.setOptimalPosterSize(movieCount), 100);
+            return;
+        }
+
+        // Start with a desired poster width and calculate how many columns fit
+        let posterWidth = 60; // default
+        let cols;
+
+        // Try different poster sizes to find one that fits well
+        for (let testWidth = 120; testWidth >= 40; testWidth -= 5) {
+            cols = Math.floor((containerWidth + gap) / (testWidth + gap));
+            if (cols < 1) cols = 1; // minimum 1 column
+            const rows = Math.ceil(movieCount / cols);
+            const posterHeight = testWidth * 1.5; // 2:3 aspect ratio
+            const totalHeight = rows * posterHeight + (rows - 1) * gap;
+
+            if (totalHeight <= containerHeight || testWidth === 40) {
+                posterWidth = testWidth;
+                break;
+            }
+        }
+
+        // Set dynamic grid template
+        posterGrid.style.gridTemplateColumns = `repeat(auto-fit, ${posterWidth}px)`;
+        posterGrid.style.gap = `${gap}px`;
     }
 
     getYear(dateString) {
