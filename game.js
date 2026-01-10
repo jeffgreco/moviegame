@@ -18,6 +18,7 @@ class MovieTimelineGame {
     this.gameMode = 'daily'; // 'random' or 'daily'
     this.dailyPuzzle = null; // Current daily puzzle data
     this.puzzleNumber = null; // Daily puzzle number
+    this.justTouched = false; // Track touch interactions to prevent click events
 
     this.init();
   }
@@ -348,14 +349,6 @@ class MovieTimelineGame {
       );
       card.addEventListener("touchmove", (e) => this.handleTouchMove(e, card));
       card.addEventListener("touchend", (e) => this.handleTouchEnd(e, card));
-
-      // Click to select/deselect for pile cards
-      card.addEventListener("click", (e) => {
-        // Prevent toggle if we just finished a drag
-        if (!this.draggedElement) {
-          this.toggleCardSelection();
-        }
-      });
     }
 
     return card;
@@ -418,6 +411,7 @@ class MovieTimelineGame {
 
   // Touch event handlers for mobile
   handleTouchStart(e, card) {
+    this.justTouched = true; // Mark that we're using touch
     this.draggedElement = card;
     card.classList.add("dragging");
 
@@ -486,6 +480,11 @@ class MovieTimelineGame {
     });
 
     this.draggedElement = null;
+
+    // Reset justTouched after a delay to prevent click events from firing
+    setTimeout(() => {
+      this.justTouched = false;
+    }, 300);
   }
 
   placeCard(index) {

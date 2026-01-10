@@ -939,14 +939,6 @@ main {
     font-size: 0.85rem;
   }
 
-  .draw-pile-area h2::after {
-    content: " (tap to select, then tap a +)";
-    font-size: 0.85rem;
-    opacity: 0.7;
-    display: block;
-    margin-top: 0.25rem;
-  }
-
   /* Slightly gentler entrance animation on mobile */
   @keyframes entrance-draw-pile {
     0% {
