@@ -907,14 +907,15 @@ class MovieTimelineGame {
             `https://image.tmdb.org/t/p/w500${movie.poster_path}`
           : "https://via.placeholder.com/300x450?text=No+Poster";
 
-      const year = this.getYear(movie.release_date);
+      const dateInfo = this.formatDate(movie.release_date);
+      const fullDate = `${dateInfo.monthDay}, ${dateInfo.year}`;
 
       const item = document.createElement("div");
       item.className = "poster-grid-item" + (movie.isFailed ? " failed" : "");
-      item.title = `${movie.title} (${year})`;
+      item.title = `${movie.title} (${dateInfo.year})`;
       item.innerHTML = `
                 <img src="${posterUrl}" alt="${movie.title}" loading="lazy">
-                <div class="year-label">${year}</div>
+                <div class="year-label">${fullDate}</div>
                 ${
                   movie.isFailed
                     ? '<div class="failed-overlay"><div class="x-mark">✕</div></div>'
