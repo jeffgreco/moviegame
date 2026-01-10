@@ -1,9 +1,26 @@
 // Daily Puzzle Data
 // Each puzzle is a curated set of movies for a specific day
 
+// Helper function to get current date in Eastern Time
+function getEasternDate(date = new Date()) {
+  // Convert to Eastern Time using Intl API
+  const eastern = new Date(date.toLocaleString('en-US', { timeZone: 'America/New_York' }));
+  return eastern;
+}
+
+// Get date string in Eastern Time (YYYY-MM-DD format)
+function getEasternDateString(date = new Date()) {
+  const eastern = getEasternDate(date);
+  const year = eastern.getFullYear();
+  const month = String(eastern.getMonth() + 1).padStart(2, '0');
+  const day = String(eastern.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
 const DAILY_PUZZLES = [
   {
     id: 4,
+    startDate: "2026-01-09", // First daily puzzle starts Jan 9 (Michael Mann on Jan 10)
     theme: "Oscar Best Picture Winners",
     description: "Academy Award winners for Best Picture",
     movieIds: [
@@ -40,7 +57,6 @@ const DAILY_PUZZLES = [
   },
   {
     id: 3,
-    startDate: "2026-01-08", // First daily puzzle (Oscar Best Picture)
     theme: "Michael Mann",
     description: "Stylish crime dramas from the master of mood",
     movieIds: [
@@ -167,15 +183,15 @@ const DAILY_PUZZLES = [
   // Future puzzles will be added here
 ];
 
-// Get the puzzle for a specific date
+// Get the puzzle for a specific date (uses Eastern Time)
 function getPuzzleForDate(date) {
-  const targetDate = new Date(date);
-  targetDate.setHours(0, 0, 0, 0); // Normalize to start of day
+  // Convert to Eastern Time date string for consistent comparison
+  const targetDateStr = getEasternDateString(date);
+  const targetDate = new Date(targetDateStr + 'T00:00:00');
 
-  // Calculate days since first puzzle
+  // Get first puzzle start date
   const firstPuzzle = DAILY_PUZZLES[0];
-  const firstDate = new Date(firstPuzzle.startDate);
-  firstDate.setHours(0, 0, 0, 0);
+  const firstDate = new Date(firstPuzzle.startDate + 'T00:00:00');
 
   // If before first puzzle, return null
   if (targetDate < firstDate) {
@@ -191,18 +207,18 @@ function getPuzzleForDate(date) {
   return DAILY_PUZZLES[puzzleIndex];
 }
 
-// Get today's puzzle
+// Get today's puzzle (based on Eastern Time)
 function getTodaysPuzzle() {
   return getPuzzleForDate(new Date());
 }
 
-// Get puzzle number for a date (1-indexed)
+// Get puzzle number for a date (1-indexed, uses Eastern Time)
 function getPuzzleNumber(date) {
-  const targetDate = new Date(date);
-  targetDate.setHours(0, 0, 0, 0);
+  // Convert to Eastern Time date string for consistent comparison
+  const targetDateStr = getEasternDateString(date);
+  const targetDate = new Date(targetDateStr + 'T00:00:00');
 
-  const firstDate = new Date(DAILY_PUZZLES[0].startDate);
-  firstDate.setHours(0, 0, 0, 0);
+  const firstDate = new Date(DAILY_PUZZLES[0].startDate + 'T00:00:00');
 
   if (targetDate < firstDate) {
     return null;
