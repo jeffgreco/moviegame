@@ -826,8 +826,13 @@ main {
   }
 
   .draw-pile .movie-card {
-    max-height: min(60vh, 500px);
-    max-height: min(60dvh, 500px); /* Dynamic viewport height for mobile Safari */
+    max-height: min(50vh, 400px);
+    max-height: min(50dvh, 400px); /* Dynamic viewport height for mobile Safari */
+  }
+
+  .draw-pile .movie-card .poster {
+    max-height: min(50vh, 400px);
+    max-height: min(50dvh, 400px);
   }
 
   .timeline-container {
