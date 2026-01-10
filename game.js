@@ -10,6 +10,7 @@ class MovieTimelineGame {
         this.streak = 0;
         this.bestStreak = 0;
         this.draggedElement = null;
+        this.isCardSelected = false;
 
         this.init();
     }
@@ -57,6 +58,43 @@ class MovieTimelineGame {
             this.movies = [...MOVIES_DATA];
             this.setupGame();
         });
+
+        // Deselect button handler
+        document.getElementById('deselect-btn').addEventListener('click', () => {
+            this.deselectCard();
+        });
+    }
+
+    selectCard() {
+        this.isCardSelected = true;
+        const drawPileCard = document.querySelector('.draw-pile .movie-card');
+        if (drawPileCard) {
+            drawPileCard.classList.add('selected');
+        }
+        document.getElementById('deselect-btn').classList.remove('hidden');
+        document.querySelectorAll('.drop-zone').forEach(zone => {
+            zone.classList.add('awaiting-placement');
+        });
+    }
+
+    deselectCard() {
+        this.isCardSelected = false;
+        const drawPileCard = document.querySelector('.draw-pile .movie-card');
+        if (drawPileCard) {
+            drawPileCard.classList.remove('selected');
+        }
+        document.getElementById('deselect-btn').classList.add('hidden');
+        document.querySelectorAll('.drop-zone').forEach(zone => {
+            zone.classList.remove('awaiting-placement');
+        });
+    }
+
+    toggleCardSelection() {
+        if (this.isCardSelected) {
+            this.deselectCard();
+        } else {
+            this.selectCard();
+        }
     }
 
     createMovieCard(movie, showYear = true, inPile = false) {
@@ -70,8 +108,10 @@ class MovieTimelineGame {
             ? `https://image.tmdb.org/t/p/w300${movie.poster_path}`
             : 'https://via.placeholder.com/300x450?text=No+Poster';
 
+        const fallbackUrl = 'https://via.placeholder.com/300x450?text=No+Poster';
+
         card.innerHTML = `
-            <img class="poster" src="${posterUrl}" alt="${movie.title}" loading="lazy">
+            <img class="poster" src="${posterUrl}" alt="${movie.title}" loading="lazy" onerror="this.onerror=null; this.src='${fallbackUrl}';">
             ${showYear ? `<span class="year">${this.getYear(movie.release_date)}</span>` : ''}
             <div class="title">${movie.title}</div>
         `;
@@ -85,6 +125,16 @@ class MovieTimelineGame {
         card.addEventListener('touchmove', (e) => this.handleTouchMove(e, card));
         card.addEventListener('touchend', (e) => this.handleTouchEnd(e, card));
 
+        // Click to select/deselect for pile cards
+        if (inPile) {
+            card.addEventListener('click', (e) => {
+                // Prevent toggle if we just finished a drag
+                if (!this.draggedElement) {
+                    this.toggleCardSelection();
+                }
+            });
+        }
+
         return card;
     }
 
@@ -97,7 +147,17 @@ class MovieTimelineGame {
         zone.addEventListener('dragleave', (e) => this.handleDragLeave(e, zone));
         zone.addEventListener('drop', (e) => this.handleDrop(e, zone));
 
+        // Click to place - alternative to drag and drop
+        zone.addEventListener('click', () => this.handleDropZoneClick(index));
+
         return zone;
+    }
+
+    handleDropZoneClick(index) {
+        // Only allow click placement if card is selected (or always allow as alternative to drag)
+        if (this.currentCard) {
+            this.placeCard(index);
+        }
     }
 
     handleDragStart(e, card) {
@@ -199,6 +259,10 @@ class MovieTimelineGame {
 
     placeCard(index) {
         if (!this.currentCard) return;
+
+        // Reset selection state before placing
+        this.isCardSelected = false;
+        document.getElementById('deselect-btn').classList.add('hidden');
 
         const newDate = new Date(this.currentCard.release_date);
 
