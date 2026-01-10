@@ -19,11 +19,15 @@ body {
 }
 
 header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
     background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -382,6 +386,19 @@ main {
 
     .stats {
         gap: 1rem;
+    }
+
+    main {
+        padding: 1rem 0;
+    }
+
+    .timeline-container {
+        padding: 1rem 0;
+        border-radius: 0;
+    }
+
+    .timeline-scroll {
+        padding: 0 0.5rem;
     }
 
     .movie-card {
