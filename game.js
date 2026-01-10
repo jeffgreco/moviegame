@@ -687,6 +687,9 @@ class MovieTimelineGame {
       if (this.drawPile.length > 0) {
         this.currentCard = this.drawPile.shift();
         this.renderDrawPile();
+      } else if (this.isChallenge && this.challengeBeaten) {
+        // Challenge beaten and out of challenge movies - transition to random mode
+        this.transitionToRandomMode();
       } else {
         // Game won!
         this.endGame(true);
@@ -777,6 +780,67 @@ class MovieTimelineGame {
       indicator.textContent = "Challenge beaten! Keep going!";
       indicator.classList.add("beaten");
     }
+  }
+
+  transitionToRandomMode() {
+    // Show victory notification
+    this.showChallengeVictoryNotification();
+
+    // Get IDs of movies already in timeline to exclude them
+    const usedIds = new Set(this.timeline.map(m => m.id));
+
+    // Load random movies excluding ones already used
+    const now = new Date();
+    const availableMovies = MOVIES_DATA.filter(movie => {
+      if (usedIds.has(movie.id)) return false;
+      const releaseDate = new Date(movie.release_date);
+      if (releaseDate > now) return false;
+      return true;
+    });
+
+    // Shuffle and set as new draw pile
+    this.shuffleArray(availableMovies);
+    this.drawPile = availableMovies;
+
+    // Clear challenge state but keep playing
+    this.isChallenge = false;
+    this.gameMode = 'random';
+
+    // Clear the URL parameter
+    window.history.replaceState({}, '', window.location.pathname);
+
+    // Update mode buttons (will hide challenge indicator)
+    this.updateModeButtons();
+
+    // Draw next card and continue
+    if (this.drawPile.length > 0) {
+      this.currentCard = this.drawPile.shift();
+      this.renderDrawPile();
+    }
+  }
+
+  showChallengeVictoryNotification() {
+    // Create and show a temporary victory notification
+    const notification = document.createElement('div');
+    notification.className = 'challenge-victory-notification';
+    notification.innerHTML = `
+      <div class="victory-content">
+        <span class="victory-text">Challenge Complete! You beat ${this.challengeScore}!</span>
+        <span class="victory-subtext">Now playing random mode...</span>
+      </div>
+    `;
+    document.body.appendChild(notification);
+
+    // Animate in
+    requestAnimationFrame(() => {
+      notification.classList.add('show');
+    });
+
+    // Remove after delay
+    setTimeout(() => {
+      notification.classList.remove('show');
+      setTimeout(() => notification.remove(), 300);
+    }, 3000);
   }
 
   renderPosterGrid() {
