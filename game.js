@@ -24,11 +24,15 @@ class MovieTimelineGame {
             return;
         }
 
-        // Filter out future releases
+        // Filter out future releases and deduplicate by ID
         const now = new Date();
+        const seenIds = new Set();
         this.movies = MOVIES_DATA.filter(movie => {
             const releaseDate = new Date(movie.release_date);
-            return releaseDate <= now;
+            if (releaseDate > now) return false;
+            if (seenIds.has(movie.id)) return false;
+            seenIds.add(movie.id);
+            return true;
         });
 
         this.setupGame();
@@ -65,11 +69,15 @@ class MovieTimelineGame {
     setupEventListeners() {
         document.getElementById('play-again').addEventListener('click', () => {
             document.getElementById('game-over').classList.add('hidden');
-            // Filter out future releases
+            // Filter out future releases and deduplicate by ID
             const now = new Date();
+            const seenIds = new Set();
             this.movies = MOVIES_DATA.filter(movie => {
                 const releaseDate = new Date(movie.release_date);
-                return releaseDate <= now;
+                if (releaseDate > now) return false;
+                if (seenIds.has(movie.id)) return false;
+                seenIds.add(movie.id);
+                return true;
             });
             this.setupGame();
         });
