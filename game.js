@@ -11,6 +11,8 @@ class MovieTimelineGame {
         this.bestStreak = 0;
         this.draggedElement = null;
         this.isCardSelected = false;
+        this.failedCard = null;
+        this.failedCardIndex = null;
 
         this.init();
     }
@@ -22,7 +24,13 @@ class MovieTimelineGame {
             return;
         }
 
-        this.movies = [...MOVIES_DATA];
+        // Filter out future releases
+        const now = new Date();
+        this.movies = MOVIES_DATA.filter(movie => {
+            const releaseDate = new Date(movie.release_date);
+            return releaseDate <= now;
+        });
+
         this.setupGame();
         this.setupEventListeners();
     }
@@ -40,6 +48,8 @@ class MovieTimelineGame {
 
         this.score = 0;
         this.streak = 0;
+        this.failedCard = null;
+        this.failedCardIndex = null;
 
         this.render();
         this.updateStats();
@@ -55,7 +65,12 @@ class MovieTimelineGame {
     setupEventListeners() {
         document.getElementById('play-again').addEventListener('click', () => {
             document.getElementById('game-over').classList.add('hidden');
-            this.movies = [...MOVIES_DATA];
+            // Filter out future releases
+            const now = new Date();
+            this.movies = MOVIES_DATA.filter(movie => {
+                const releaseDate = new Date(movie.release_date);
+                return releaseDate <= now;
+            });
             this.setupGame();
         });
 
@@ -319,6 +334,10 @@ class MovieTimelineGame {
             this.streak = 0;
             this.updateStats();
 
+            // Store the failed card and where it should go
+            this.failedCard = this.currentCard;
+            this.failedCardIndex = index;
+
             // Show the card shaking in the draw pile
             const drawPileCard = document.querySelector('.draw-pile .movie-card');
             if (drawPileCard) {
@@ -345,6 +364,52 @@ class MovieTimelineGame {
             document.getElementById('correct-year').textContent = `${dateInfo.monthDay}, ${dateInfo.year}`;
             document.getElementById('correct-year').parentElement.style.display = '';
         }
+
+        // Populate poster grid with timeline movies
+        this.renderPosterGrid();
+    }
+
+    renderPosterGrid() {
+        const posterGrid = document.getElementById('poster-grid');
+        posterGrid.innerHTML = '';
+
+        // Create a combined timeline that includes the failed card if present
+        let displayTimeline = [...this.timeline];
+
+        // Find the correct chronological position for the failed card
+        if (this.failedCard) {
+            const failedDate = new Date(this.failedCard.release_date);
+            let correctIndex = displayTimeline.findIndex(movie =>
+                new Date(movie.release_date) > failedDate
+            );
+
+            // If no movie is later, add to end
+            if (correctIndex === -1) {
+                correctIndex = displayTimeline.length;
+            }
+
+            // Insert failed card at correct position
+            displayTimeline.splice(correctIndex, 0, { ...this.failedCard, isFailed: true });
+        }
+
+        displayTimeline.forEach(movie => {
+            const posterUrl = movie.poster_url || movie.poster_path
+                ? movie.poster_url || `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                : 'https://via.placeholder.com/300x450?text=No+Poster';
+
+            const year = this.getYear(movie.release_date);
+
+            const item = document.createElement('div');
+            item.className = 'poster-grid-item' + (movie.isFailed ? ' failed' : '');
+            item.title = `${movie.title} (${year})`;
+            item.innerHTML = `
+                <img src="${posterUrl}" alt="${movie.title}" loading="lazy">
+                <div class="year-label">${year}</div>
+                ${movie.isFailed ? '<div class="failed-overlay"><div class="x-mark">✕</div></div>' : ''}
+            `;
+
+            posterGrid.appendChild(item);
+        });
     }
 
     getYear(dateString) {
