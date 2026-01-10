@@ -382,17 +382,14 @@ class MovieTimelineGame {
       }
     } else {
       // Fallback: copy to clipboard
-      try {
-        await navigator.clipboard.writeText(`${text}\n${url}`);
-        // Show temporary feedback
+      const copied = await this.copyToClipboard(`${text}\n${url}`);
+      if (copied) {
         const btn = document.getElementById("share-score");
         const originalText = btn.textContent;
         btn.textContent = "Copied!";
         setTimeout(() => {
           btn.textContent = originalText;
         }, 2000);
-      } catch (err) {
-        console.error("Error copying to clipboard:", err);
       }
     }
   }
@@ -401,17 +398,42 @@ class MovieTimelineGame {
     const challengeUrl = this.generateChallengeUrl();
     const text = `I scored ${this.bestStreak} on Filmstrip! Think you can beat me?`;
 
-    try {
-      await navigator.clipboard.writeText(`${text}\n${challengeUrl}`);
-      // Show temporary feedback
+    const copied = await this.copyToClipboard(`${text}\n${challengeUrl}`);
+    if (copied) {
       const btn = document.getElementById("copy-challenge");
       const originalText = btn.textContent;
       btn.textContent = "Copied!";
       setTimeout(() => {
         btn.textContent = originalText;
       }, 2000);
+    }
+  }
+
+  async copyToClipboard(text) {
+    // Try modern clipboard API first
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      try {
+        await navigator.clipboard.writeText(text);
+        return true;
+      } catch (err) {
+        console.warn("Clipboard API failed, trying fallback:", err);
+      }
+    }
+
+    // Fallback using execCommand
+    try {
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+      return true;
     } catch (err) {
-      console.error("Error copying to clipboard:", err);
+      console.error("Failed to copy to clipboard:", err);
+      return false;
     }
   }
 
