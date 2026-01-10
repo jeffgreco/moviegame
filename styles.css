@@ -86,6 +86,37 @@ main {
     font-size: 0.9rem;
 }
 
+.hint-plus {
+    display: inline-block;
+    background: rgba(78, 204, 163, 0.3);
+    color: #4ecca3;
+    padding: 0 0.4rem;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.deselect-btn {
+    margin-top: 0.75rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.deselect-btn:hover {
+    background: rgba(233, 69, 96, 0.2);
+    border-color: #e94560;
+    color: #e94560;
+}
+
+.deselect-btn.hidden {
+    display: none;
+}
+
 .timeline-container {
     flex: 1;
     background: rgba(0, 0, 0, 0.2);
@@ -135,6 +166,19 @@ main {
     z-index: 1000;
 }
 
+.movie-card.selected {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(78, 204, 163, 0.6);
+}
+
+.movie-card.selected .poster {
+    border-color: #4ecca3;
+}
+
+.movie-card.in-pile {
+    cursor: pointer;
+}
+
 .movie-card .poster {
     width: 100%;
     aspect-ratio: 2/3;
@@ -182,23 +226,50 @@ main {
     justify-content: center;
     transition: all 0.2s;
     flex-shrink: 0;
+    cursor: pointer;
 }
 
 .drop-zone:hover,
 .drop-zone.drag-over {
     border-color: #4ecca3;
-    background: rgba(78, 204, 163, 0.1);
+    background: rgba(78, 204, 163, 0.15);
     width: 140px;
+    box-shadow: 0 0 15px rgba(78, 204, 163, 0.3);
 }
 
 .drop-zone::after {
     content: '+';
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: rgba(255, 255, 255, 0.3);
+    font-weight: 300;
+    transition: all 0.2s;
 }
 
+.drop-zone:hover::after,
 .drop-zone.drag-over::after {
     color: #4ecca3;
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px rgba(78, 204, 163, 0.5);
+}
+
+.drop-zone.awaiting-placement {
+    border-color: rgba(78, 204, 163, 0.5);
+    animation: pulse-zone 1.5s ease-in-out infinite;
+}
+
+.drop-zone.awaiting-placement::after {
+    color: rgba(78, 204, 163, 0.7);
+}
+
+@keyframes pulse-zone {
+    0%, 100% {
+        background: rgba(78, 204, 163, 0.05);
+        box-shadow: none;
+    }
+    50% {
+        background: rgba(78, 204, 163, 0.15);
+        box-shadow: 0 0 10px rgba(78, 204, 163, 0.2);
+    }
 }
 
 /* Animations */
@@ -316,6 +387,11 @@ main {
     .drop-zone.drag-over {
         width: 110px;
     }
+
+    .deselect-btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.85rem;
+    }
 }
 
 /* Touch improvements */
@@ -325,12 +401,14 @@ main {
     }
 
     .hint {
-        display: none;
+        font-size: 0.85rem;
     }
 
     .draw-pile-area h2::after {
-        content: ' (tap and drag)';
-        font-size: 0.9rem;
+        content: ' (tap to select, then tap a +)';
+        font-size: 0.85rem;
         opacity: 0.7;
+        display: block;
+        margin-top: 0.25rem;
     }
 }
