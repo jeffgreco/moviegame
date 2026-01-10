@@ -3,13 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movie Timeline Game</title>
+    <title>Filmstrip</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="game-container">
       <header>
-        <h1>Movie Timeline</h1>
+        <h1>Filmstrip</h1>
+        <div class="mode-selector">
+          <button id="random-mode-btn" class="mode-btn">Random</button>
+          <button id="daily-mode-btn" class="mode-btn active">Daily</button>
+        </div>
         <div class="stats">
           <span class="score">Score: <span id="score">0</span></span>
         </div>
@@ -63,6 +67,7 @@
     </div>
 
     <script src="movies.js"></script>
+    <script src="dailyPuzzles.js"></script>
     <script src="game.js"></script>
   </body>
 </html>

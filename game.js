@@ -1,585 +1,766 @@
 // Movie Timeline Game Logic
 
 class MovieTimelineGame {
-    constructor() {
-        this.movies = [];
-        this.timeline = [];
-        this.drawPile = [];
-        this.currentCard = null;
-        this.score = 0;
-        this.streak = 0;
-        this.bestStreak = 0;
-        this.draggedElement = null;
-        this.isCardSelected = false;
-        this.failedCard = null;
-        this.failedCardIndex = null;
-        this.currentMovieCount = 0;
-        this.resizeTimeout = null;
+  constructor() {
+    this.movies = [];
+    this.timeline = [];
+    this.drawPile = [];
+    this.currentCard = null;
+    this.score = 0;
+    this.streak = 0;
+    this.bestStreak = 0;
+    this.draggedElement = null;
+    this.isCardSelected = false;
+    this.failedCard = null;
+    this.failedCardIndex = null;
+    this.currentMovieCount = 0;
+    this.resizeTimeout = null;
+    this.gameMode = 'daily'; // 'random' or 'daily'
+    this.dailyPuzzle = null; // Current daily puzzle data
+    this.puzzleNumber = null; // Daily puzzle number
 
-        this.init();
+    this.init();
+  }
+
+  init() {
+    // Load movies from the global MOVIES_DATA
+    if (typeof MOVIES_DATA === "undefined") {
+      console.error("Movie data not loaded!");
+      return;
     }
 
-    init() {
-        // Load movies from the global MOVIES_DATA
-        if (typeof MOVIES_DATA === 'undefined') {
-            console.error('Movie data not loaded!');
-            return;
+    this.loadMoviesForMode();
+    this.setupGame();
+    this.setupEventListeners();
+    this.updateModeButtons();
+  }
+
+  loadMoviesForMode() {
+    const now = new Date();
+    const seenIds = new Set();
+
+    if (this.gameMode === 'daily') {
+      // Load daily puzzle
+      this.dailyPuzzle = getTodaysPuzzle();
+      this.puzzleNumber = getPuzzleNumber(new Date());
+
+      if (!this.dailyPuzzle) {
+        // No daily puzzle available yet, switch to random mode
+        this.gameMode = 'random';
+        this.loadMoviesForMode();
+        return;
+      }
+
+      // Load movies in the exact order specified in dailyPuzzles.js
+      // This preserves the curated easy-to-hard difficulty progression
+      const movieIdToData = new Map(MOVIES_DATA.map(m => [m.id, m]));
+      this.movies = this.dailyPuzzle.movieIds
+        .map(id => movieIdToData.get(id))
+        .filter(movie => {
+          if (!movie) return false;
+          const releaseDate = new Date(movie.release_date);
+          if (releaseDate > now) return false;
+          if (seenIds.has(movie.id)) return false;
+          seenIds.add(movie.id);
+          return true;
+        });
+    } else {
+      // Random mode: use all movies
+      this.dailyPuzzle = null;
+      this.puzzleNumber = null;
+      this.movies = MOVIES_DATA.filter((movie) => {
+        const releaseDate = new Date(movie.release_date);
+        if (releaseDate > now) return false;
+        if (seenIds.has(movie.id)) return false;
+        seenIds.add(movie.id);
+        return true;
+      });
+    }
+  }
+
+  setupGame() {
+    // Only shuffle for random mode - daily puzzles use pre-defined order
+    if (this.gameMode === 'random') {
+      this.shuffleArray(this.movies);
+    }
+    // For daily mode, movies are already in the curated order from dailyPuzzles.js
+
+    // Take first movie for timeline, rest for draw pile
+    this.timeline = [this.movies[0]];
+    this.drawPile = this.movies.slice(1);
+
+    // Draw first card
+    this.currentCard = this.drawPile.shift();
+
+    this.score = 0;
+    this.streak = 0;
+    this.failedCard = null;
+    this.failedCardIndex = null;
+    this.currentMovieCount = 0;
+
+    this.render();
+    this.updateStats();
+  }
+
+  shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+  // Seeded shuffle for daily puzzles - ensures same order for everyone on the same day
+  seededShuffleArray(array, seed) {
+    // Simple seeded random number generator (mulberry32)
+    let state = seed;
+    const random = () => {
+      state = (state + 0x6D2B79F5) | 0;
+      let t = Math.imul(state ^ (state >>> 15), 1 | state);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+
+    // Fisher-Yates shuffle with seeded random
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+  switchMode(newMode) {
+    this.gameMode = newMode;
+    this.updateModeButtons();
+
+    // Reset game with new mode
+    document.getElementById("game-over").classList.add("hidden");
+    this.loadMoviesForMode();
+    this.setupGame();
+  }
+
+  updateModeButtons() {
+    const randomBtn = document.getElementById("random-mode-btn");
+    const dailyBtn = document.getElementById("daily-mode-btn");
+
+    if (this.gameMode === 'random') {
+      randomBtn.classList.add('active');
+      dailyBtn.classList.remove('active');
+    } else {
+      dailyBtn.classList.add('active');
+      randomBtn.classList.remove('active');
+    }
+  }
+
+  getDailyCompletionKey() {
+    if (!this.puzzleNumber) return null;
+    return `filmstrip_daily_${this.puzzleNumber}`;
+  }
+
+  isDailyPuzzleCompleted() {
+    const key = this.getDailyCompletionKey();
+    if (!key) return false;
+
+    try {
+      const completion = localStorage.getItem(key);
+      return completion !== null;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  saveDailyCompletion(score, won) {
+    const key = this.getDailyCompletionKey();
+    if (!key) return;
+
+    try {
+      const completionData = {
+        score: score,
+        won: won,
+        completedAt: new Date().toISOString(),
+        theme: this.dailyPuzzle.theme
+      };
+      localStorage.setItem(key, JSON.stringify(completionData));
+    } catch (e) {
+      console.error('Failed to save daily completion:', e);
+    }
+  }
+
+  setupEventListeners() {
+    // Mode selector buttons
+    document.getElementById("random-mode-btn").addEventListener("click", () => {
+      if (this.gameMode !== 'random') {
+        this.switchMode('random');
+      }
+    });
+
+    document.getElementById("daily-mode-btn").addEventListener("click", () => {
+      if (this.gameMode !== 'daily') {
+        this.switchMode('daily');
+      }
+    });
+
+    document.getElementById("play-again").addEventListener("click", () => {
+      document.getElementById("game-over").classList.add("hidden");
+      this.loadMoviesForMode();
+      this.setupGame();
+    });
+
+    // Share score button handler
+    document.getElementById("share-score").addEventListener("click", () => {
+      this.shareScore();
+    });
+
+    // Deselect button handler
+    document.getElementById("deselect-btn").addEventListener("click", () => {
+      this.deselectCard();
+    });
+
+    // Window resize handler for poster grid
+    window.addEventListener("resize", () => {
+      // Debounce resize events
+      if (this.resizeTimeout) {
+        clearTimeout(this.resizeTimeout);
+      }
+      this.resizeTimeout = setTimeout(() => {
+        // Only recalculate if game over modal is visible
+        const gameOverModal = document.getElementById("game-over");
+        if (
+          !gameOverModal.classList.contains("hidden") &&
+          this.currentMovieCount > 0
+        ) {
+          this.setOptimalPosterSize(this.currentMovieCount);
         }
+      }, 250);
+    });
+  }
 
-        // Filter out future releases and deduplicate by ID
-        const now = new Date();
-        const seenIds = new Set();
-        this.movies = MOVIES_DATA.filter(movie => {
-            const releaseDate = new Date(movie.release_date);
-            if (releaseDate > now) return false;
-            if (seenIds.has(movie.id)) return false;
-            seenIds.add(movie.id);
-            return true;
+  async shareScore() {
+    const score = this.bestStreak;
+    let text;
+
+    if (this.gameMode === 'daily' && this.puzzleNumber) {
+      const totalMovies = this.dailyPuzzle.movieIds.length;
+      text = `Filmstrip #${this.puzzleNumber} - ${this.dailyPuzzle.theme}\n${score}/${totalMovies} 🎬`;
+    } else {
+      text = `I scored ${score} on Filmstrip! Can you beat my score?`;
+    }
+
+    const url = window.location.href;
+
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: "Movie Timeline Game",
+          text: text,
+          url: url,
         });
-
-        this.setupGame();
-        this.setupEventListeners();
-    }
-
-    setupGame() {
-        // Shuffle movies
-        this.shuffleArray(this.movies);
-
-        // Take first movie for timeline, rest for draw pile
-        this.timeline = [this.movies[0]];
-        this.drawPile = this.movies.slice(1);
-
-        // Draw first card
-        this.currentCard = this.drawPile.shift();
-
-        this.score = 0;
-        this.streak = 0;
-        this.failedCard = null;
-        this.failedCardIndex = null;
-        this.currentMovieCount = 0;
-
-        this.render();
-        this.updateStats();
-    }
-
-    shuffleArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
+      } catch (err) {
+        // User cancelled or error occurred
+        if (err.name !== "AbortError") {
+          console.error("Error sharing:", err);
         }
+      }
+    } else {
+      // Fallback: copy to clipboard
+      try {
+        await navigator.clipboard.writeText(`${text}\n${url}`);
+        // Show temporary feedback
+        const btn = document.getElementById("share-score");
+        const originalText = btn.textContent;
+        btn.textContent = "Copied!";
+        setTimeout(() => {
+          btn.textContent = originalText;
+        }, 2000);
+      } catch (err) {
+        console.error("Error copying to clipboard:", err);
+      }
     }
+  }
 
-    setupEventListeners() {
-        document.getElementById('play-again').addEventListener('click', () => {
-            document.getElementById('game-over').classList.add('hidden');
-            // Filter out future releases and deduplicate by ID
-            const now = new Date();
-            const seenIds = new Set();
-            this.movies = MOVIES_DATA.filter(movie => {
-                const releaseDate = new Date(movie.release_date);
-                if (releaseDate > now) return false;
-                if (seenIds.has(movie.id)) return false;
-                seenIds.add(movie.id);
-                return true;
-            });
-            this.setupGame();
-        });
+  selectCard() {
+    this.isCardSelected = true;
+    const drawPileCard = document.querySelector(".draw-pile .movie-card");
+    if (drawPileCard) {
+      drawPileCard.classList.add("selected");
+    }
+    document.getElementById("deselect-btn").classList.remove("hidden");
+    document.querySelectorAll(".drop-zone").forEach((zone) => {
+      zone.classList.add("awaiting-placement");
+    });
+  }
 
-        // Share score button handler
-        document.getElementById('share-score').addEventListener('click', () => {
-            this.shareScore();
-        });
+  deselectCard() {
+    this.isCardSelected = false;
+    const drawPileCard = document.querySelector(".draw-pile .movie-card");
+    if (drawPileCard) {
+      drawPileCard.classList.remove("selected");
+    }
+    document.getElementById("deselect-btn").classList.add("hidden");
+    document.querySelectorAll(".drop-zone").forEach((zone) => {
+      zone.classList.remove("awaiting-placement");
+    });
+  }
 
-        // Deselect button handler
-        document.getElementById('deselect-btn').addEventListener('click', () => {
-            this.deselectCard();
-        });
+  toggleCardSelection() {
+    if (this.isCardSelected) {
+      this.deselectCard();
+    } else {
+      this.selectCard();
+    }
+  }
 
-        // Window resize handler for poster grid
-        window.addEventListener('resize', () => {
-            // Debounce resize events
-            if (this.resizeTimeout) {
-                clearTimeout(this.resizeTimeout);
+  createMovieCard(movie, showYear = true, inPile = false) {
+    const card = document.createElement("div");
+    card.className = "movie-card" + (inPile ? " in-pile" : "");
+    card.dataset.id = movie.id;
+    card.dataset.releaseDate = movie.release_date;
+    card.draggable = inPile; // Only draw pile cards are draggable
+
+    const posterUrl =
+      movie.poster_url || movie.poster_path
+        ? movie.poster_url ||
+          `https://image.tmdb.org/t/p/w300${movie.poster_path}`
+        : "https://via.placeholder.com/300x450?text=No+Poster";
+
+    const fallbackUrl = "https://via.placeholder.com/300x450?text=No+Poster";
+
+    const dateInfo = this.formatDate(movie.release_date);
+    card.innerHTML = `
+            <img class="poster" src="${posterUrl}" alt="${
+      movie.title
+    }" loading="lazy" onerror="this.onerror=null; this.src='${fallbackUrl}';">
+            ${
+              showYear
+                ? `<span class="year"><span class="month-day">${dateInfo.monthDay}</span>,&nbsp;<span class="year-num">${dateInfo.year}</span></span>`
+                : ""
             }
-            this.resizeTimeout = setTimeout(() => {
-                // Only recalculate if game over modal is visible
-                const gameOverModal = document.getElementById('game-over');
-                if (!gameOverModal.classList.contains('hidden') && this.currentMovieCount > 0) {
-                    this.setOptimalPosterSize(this.currentMovieCount);
-                }
-            }, 250);
-        });
-    }
-
-    async shareScore() {
-        const score = this.bestStreak;
-        const text = `I scored ${score} on Movie Timeline! Can you beat my score?`;
-        const url = window.location.href;
-
-        if (navigator.share) {
-            try {
-                await navigator.share({
-                    title: 'Movie Timeline Game',
-                    text: text,
-                    url: url
-                });
-            } catch (err) {
-                // User cancelled or error occurred
-                if (err.name !== 'AbortError') {
-                    console.error('Error sharing:', err);
-                }
-            }
-        } else {
-            // Fallback: copy to clipboard
-            try {
-                await navigator.clipboard.writeText(`${text}\n${url}`);
-                // Show temporary feedback
-                const btn = document.getElementById('share-score');
-                const originalText = btn.textContent;
-                btn.textContent = 'Copied!';
-                setTimeout(() => {
-                    btn.textContent = originalText;
-                }, 2000);
-            } catch (err) {
-                console.error('Error copying to clipboard:', err);
-            }
-        }
-    }
-
-    selectCard() {
-        this.isCardSelected = true;
-        const drawPileCard = document.querySelector('.draw-pile .movie-card');
-        if (drawPileCard) {
-            drawPileCard.classList.add('selected');
-        }
-        document.getElementById('deselect-btn').classList.remove('hidden');
-        document.querySelectorAll('.drop-zone').forEach(zone => {
-            zone.classList.add('awaiting-placement');
-        });
-    }
-
-    deselectCard() {
-        this.isCardSelected = false;
-        const drawPileCard = document.querySelector('.draw-pile .movie-card');
-        if (drawPileCard) {
-            drawPileCard.classList.remove('selected');
-        }
-        document.getElementById('deselect-btn').classList.add('hidden');
-        document.querySelectorAll('.drop-zone').forEach(zone => {
-            zone.classList.remove('awaiting-placement');
-        });
-    }
-
-    toggleCardSelection() {
-        if (this.isCardSelected) {
-            this.deselectCard();
-        } else {
-            this.selectCard();
-        }
-    }
-
-    createMovieCard(movie, showYear = true, inPile = false) {
-        const card = document.createElement('div');
-        card.className = 'movie-card' + (inPile ? ' in-pile' : '');
-        card.dataset.id = movie.id;
-        card.dataset.releaseDate = movie.release_date;
-        card.draggable = inPile; // Only draw pile cards are draggable
-
-        const posterUrl = movie.poster_url || movie.poster_path
-            ? movie.poster_url || `https://image.tmdb.org/t/p/w300${movie.poster_path}`
-            : 'https://via.placeholder.com/300x450?text=No+Poster';
-
-        const fallbackUrl = 'https://via.placeholder.com/300x450?text=No+Poster';
-
-        const dateInfo = this.formatDate(movie.release_date);
-        card.innerHTML = `
-            <img class="poster" src="${posterUrl}" alt="${movie.title}" loading="lazy" onerror="this.onerror=null; this.src='${fallbackUrl}';">
-            ${showYear ? `<span class="year"><span class="month-day">${dateInfo.monthDay}</span><span class="year-num">${dateInfo.year}</span></span>` : ''}
             <div class="title">${movie.title}</div>
         `;
 
-        // Only add drag/touch events for cards in the draw pile
-        if (inPile) {
-            // Drag events
-            card.addEventListener('dragstart', (e) => this.handleDragStart(e, card));
-            card.addEventListener('dragend', (e) => this.handleDragEnd(e, card));
+    // Only add drag/touch events for cards in the draw pile
+    if (inPile) {
+      // Drag events
+      card.addEventListener("dragstart", (e) => this.handleDragStart(e, card));
+      card.addEventListener("dragend", (e) => this.handleDragEnd(e, card));
 
-            // Touch events for mobile
-            card.addEventListener('touchstart', (e) => this.handleTouchStart(e, card));
-            card.addEventListener('touchmove', (e) => this.handleTouchMove(e, card));
-            card.addEventListener('touchend', (e) => this.handleTouchEnd(e, card));
+      // Touch events for mobile
+      card.addEventListener("touchstart", (e) =>
+        this.handleTouchStart(e, card)
+      );
+      card.addEventListener("touchmove", (e) => this.handleTouchMove(e, card));
+      card.addEventListener("touchend", (e) => this.handleTouchEnd(e, card));
 
-            // Click to select/deselect for pile cards
-            card.addEventListener('click', (e) => {
-                // Prevent toggle if we just finished a drag
-                if (!this.draggedElement) {
-                    this.toggleCardSelection();
-                }
-            });
+      // Click to select/deselect for pile cards
+      card.addEventListener("click", (e) => {
+        // Prevent toggle if we just finished a drag
+        if (!this.draggedElement) {
+          this.toggleCardSelection();
         }
-
-        return card;
+      });
     }
 
-    createDropZone(index) {
-        const zone = document.createElement('div');
-        zone.className = 'drop-zone';
-        zone.dataset.index = index;
+    return card;
+  }
 
-        zone.addEventListener('dragover', (e) => this.handleDragOver(e, zone));
-        zone.addEventListener('dragleave', (e) => this.handleDragLeave(e, zone));
-        zone.addEventListener('drop', (e) => this.handleDrop(e, zone));
+  createDropZone(index) {
+    const zone = document.createElement("div");
+    zone.className = "drop-zone";
+    zone.dataset.index = index;
 
-        // Click to place - alternative to drag and drop
-        zone.addEventListener('click', () => this.handleDropZoneClick(index));
+    zone.addEventListener("dragover", (e) => this.handleDragOver(e, zone));
+    zone.addEventListener("dragleave", (e) => this.handleDragLeave(e, zone));
+    zone.addEventListener("drop", (e) => this.handleDrop(e, zone));
 
-        return zone;
+    // Click to place - alternative to drag and drop
+    zone.addEventListener("click", () => this.handleDropZoneClick(index));
+
+    return zone;
+  }
+
+  handleDropZoneClick(index) {
+    // Only allow click placement if card is selected (or always allow as alternative to drag)
+    if (this.currentCard) {
+      this.placeCard(index);
     }
+  }
 
-    handleDropZoneClick(index) {
-        // Only allow click placement if card is selected (or always allow as alternative to drag)
-        if (this.currentCard) {
-            this.placeCard(index);
-        }
-    }
+  handleDragStart(e, card) {
+    this.draggedElement = card;
+    card.classList.add("dragging");
+    e.dataTransfer.effectAllowed = "move";
+    e.dataTransfer.setData("text/plain", card.dataset.id);
+  }
 
-    handleDragStart(e, card) {
-        this.draggedElement = card;
-        card.classList.add('dragging');
-        e.dataTransfer.effectAllowed = 'move';
-        e.dataTransfer.setData('text/plain', card.dataset.id);
-    }
+  handleDragEnd(e, card) {
+    card.classList.remove("dragging");
+    this.draggedElement = null;
+    document.querySelectorAll(".drop-zone").forEach((zone) => {
+      zone.classList.remove("drag-over");
+    });
+  }
 
-    handleDragEnd(e, card) {
-        card.classList.remove('dragging');
-        this.draggedElement = null;
-        document.querySelectorAll('.drop-zone').forEach(zone => {
-            zone.classList.remove('drag-over');
-        });
-    }
+  handleDragOver(e, zone) {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = "move";
+    zone.classList.add("drag-over");
+  }
 
-    handleDragOver(e, zone) {
-        e.preventDefault();
-        e.dataTransfer.dropEffect = 'move';
-        zone.classList.add('drag-over');
-    }
+  handleDragLeave(e, zone) {
+    zone.classList.remove("drag-over");
+  }
 
-    handleDragLeave(e, zone) {
-        zone.classList.remove('drag-over');
-    }
+  handleDrop(e, zone) {
+    e.preventDefault();
+    zone.classList.remove("drag-over");
 
-    handleDrop(e, zone) {
-        e.preventDefault();
-        zone.classList.remove('drag-over');
+    const index = parseInt(zone.dataset.index);
+    this.placeCard(index);
+  }
 
+  // Touch event handlers for mobile
+  handleTouchStart(e, card) {
+    this.draggedElement = card;
+    card.classList.add("dragging");
+
+    const touch = e.touches[0];
+    this.touchStartX = touch.clientX;
+    this.touchStartY = touch.clientY;
+    this.originalPosition = card.getBoundingClientRect();
+  }
+
+  handleTouchMove(e, card) {
+    if (!this.draggedElement) return;
+    e.preventDefault();
+
+    const touch = e.touches[0];
+    const deltaX = touch.clientX - this.touchStartX;
+    const deltaY = touch.clientY - this.touchStartY;
+
+    card.style.position = "fixed";
+    card.style.left = `${this.originalPosition.left + deltaX}px`;
+    card.style.top = `${this.originalPosition.top + deltaY}px`;
+    card.style.zIndex = "1000";
+
+    // Highlight drop zones
+    const dropZones = document.querySelectorAll(".drop-zone");
+    dropZones.forEach((zone) => {
+      const rect = zone.getBoundingClientRect();
+      if (
+        touch.clientX >= rect.left &&
+        touch.clientX <= rect.right &&
+        touch.clientY >= rect.top &&
+        touch.clientY <= rect.bottom
+      ) {
+        zone.classList.add("drag-over");
+      } else {
+        zone.classList.remove("drag-over");
+      }
+    });
+  }
+
+  handleTouchEnd(e, card) {
+    if (!this.draggedElement) return;
+
+    card.style.position = "";
+    card.style.left = "";
+    card.style.top = "";
+    card.style.zIndex = "";
+    card.classList.remove("dragging");
+
+    const touch = e.changedTouches[0];
+    const dropZones = document.querySelectorAll(".drop-zone");
+
+    let dropped = false;
+    dropZones.forEach((zone) => {
+      const rect = zone.getBoundingClientRect();
+      if (
+        touch.clientX >= rect.left &&
+        touch.clientX <= rect.right &&
+        touch.clientY >= rect.top &&
+        touch.clientY <= rect.bottom
+      ) {
+        zone.classList.remove("drag-over");
         const index = parseInt(zone.dataset.index);
         this.placeCard(index);
+        dropped = true;
+      }
+    });
+
+    this.draggedElement = null;
+  }
+
+  placeCard(index) {
+    if (!this.currentCard) return;
+
+    // Reset selection state before placing
+    this.isCardSelected = false;
+    document.getElementById("deselect-btn").classList.add("hidden");
+
+    const newDate = new Date(this.currentCard.release_date);
+
+    // Check if placement is correct
+    let isCorrect = true;
+
+    // Check movie before this position (should be earlier or same)
+    if (index > 0) {
+      const beforeDate = new Date(this.timeline[index - 1].release_date);
+      if (newDate < beforeDate) {
+        isCorrect = false;
+      }
     }
 
-    // Touch event handlers for mobile
-    handleTouchStart(e, card) {
-        this.draggedElement = card;
-        card.classList.add('dragging');
-
-        const touch = e.touches[0];
-        this.touchStartX = touch.clientX;
-        this.touchStartY = touch.clientY;
-        this.originalPosition = card.getBoundingClientRect();
+    // Check movie after this position (should be later or same)
+    if (index < this.timeline.length) {
+      const afterDate = new Date(this.timeline[index].release_date);
+      if (newDate > afterDate) {
+        isCorrect = false;
+      }
     }
 
-    handleTouchMove(e, card) {
-        if (!this.draggedElement) return;
-        e.preventDefault();
+    if (isCorrect) {
+      // Insert at correct position
+      this.timeline.splice(index, 0, this.currentCard);
+      this.score += 10 + this.streak * 5;
+      this.streak++;
+      if (this.streak > this.bestStreak) {
+        this.bestStreak = this.streak;
+      }
 
-        const touch = e.touches[0];
-        const deltaX = touch.clientX - this.touchStartX;
-        const deltaY = touch.clientY - this.touchStartY;
+      this.render();
+      this.updateStats();
 
-        card.style.position = 'fixed';
-        card.style.left = `${this.originalPosition.left + deltaX}px`;
-        card.style.top = `${this.originalPosition.top + deltaY}px`;
-        card.style.zIndex = '1000';
+      // Animate the newly placed card
+      setTimeout(() => {
+        const cards = document.querySelectorAll(".timeline .movie-card");
+        cards[index].classList.add("correct");
+        setTimeout(() => cards[index].classList.remove("correct"), 500);
+      }, 50);
 
-        // Highlight drop zones
-        const dropZones = document.querySelectorAll('.drop-zone');
-        dropZones.forEach(zone => {
-            const rect = zone.getBoundingClientRect();
-            if (touch.clientX >= rect.left && touch.clientX <= rect.right &&
-                touch.clientY >= rect.top && touch.clientY <= rect.bottom) {
-                zone.classList.add('drag-over');
-            } else {
-                zone.classList.remove('drag-over');
-            }
-        });
+      // Draw next card
+      if (this.drawPile.length > 0) {
+        this.currentCard = this.drawPile.shift();
+        this.renderDrawPile();
+      } else {
+        // Game won!
+        this.endGame(true);
+      }
+    } else {
+      // Wrong placement
+      this.streak = 0;
+      this.updateStats();
+
+      // Store the failed card and where it should go
+      this.failedCard = this.currentCard;
+      this.failedCardIndex = index;
+
+      // Show the card shaking in the draw pile
+      const drawPileCard = document.querySelector(".draw-pile .movie-card");
+      if (drawPileCard) {
+        drawPileCard.classList.add("wrong");
+        setTimeout(() => drawPileCard.classList.remove("wrong"), 500);
+      }
+
+      // End game on wrong placement
+      this.endGame(false);
+    }
+  }
+
+  endGame(won) {
+    // Save daily puzzle completion if in daily mode
+    if (this.gameMode === 'daily') {
+      this.saveDailyCompletion(this.bestStreak, won);
     }
 
-    handleTouchEnd(e, card) {
-        if (!this.draggedElement) return;
+    document.getElementById("game-over").classList.remove("hidden");
+    document.getElementById("best-streak").textContent = this.bestStreak;
 
-        card.style.position = '';
-        card.style.left = '';
-        card.style.top = '';
-        card.style.zIndex = '';
-        card.classList.remove('dragging');
+    // Get the stat items
+    const correctDateStatItem = document.querySelector(
+      ".stat-item:first-child"
+    );
+    const statDivider = document.querySelector(".stat-divider:first-child");
 
-        const touch = e.changedTouches[0];
-        const dropZones = document.querySelectorAll('.drop-zone');
-
-        let dropped = false;
-        dropZones.forEach(zone => {
-            const rect = zone.getBoundingClientRect();
-            if (touch.clientX >= rect.left && touch.clientX <= rect.right &&
-                touch.clientY >= rect.top && touch.clientY <= rect.bottom) {
-                zone.classList.remove('drag-over');
-                const index = parseInt(zone.dataset.index);
-                this.placeCard(index);
-                dropped = true;
-            }
-        });
-
-        this.draggedElement = null;
+    if (won) {
+      document.querySelector(".game-over-content h2").textContent =
+        "Congratulations!";
+      if (correctDateStatItem) correctDateStatItem.style.display = "none";
+      if (statDivider) statDivider.style.display = "none";
+    } else {
+      document.querySelector(".game-over-content h2").textContent =
+        "Game Over!";
+      const dateInfo = this.formatDate(this.currentCard.release_date);
+      document.getElementById(
+        "correct-year"
+      ).textContent = `${dateInfo.monthDay}, ${dateInfo.year}`;
+      if (correctDateStatItem) correctDateStatItem.style.display = "";
+      if (statDivider) statDivider.style.display = "";
     }
 
-    placeCard(index) {
-        if (!this.currentCard) return;
+    // Populate poster grid with timeline movies
+    this.renderPosterGrid();
+  }
 
-        // Reset selection state before placing
-        this.isCardSelected = false;
-        document.getElementById('deselect-btn').classList.add('hidden');
+  renderPosterGrid() {
+    const posterGrid = document.getElementById("poster-grid");
+    posterGrid.innerHTML = "";
 
-        const newDate = new Date(this.currentCard.release_date);
+    // Create a combined timeline that includes the failed card if present
+    let displayTimeline = [...this.timeline];
 
-        // Check if placement is correct
-        let isCorrect = true;
+    // Find the correct chronological position for the failed card
+    if (this.failedCard) {
+      const failedDate = new Date(this.failedCard.release_date);
+      let correctIndex = displayTimeline.findIndex(
+        (movie) => new Date(movie.release_date) > failedDate
+      );
 
-        // Check movie before this position (should be earlier or same)
-        if (index > 0) {
-            const beforeDate = new Date(this.timeline[index - 1].release_date);
-            if (newDate < beforeDate) {
-                isCorrect = false;
-            }
-        }
+      // If no movie is later, add to end
+      if (correctIndex === -1) {
+        correctIndex = displayTimeline.length;
+      }
 
-        // Check movie after this position (should be later or same)
-        if (index < this.timeline.length) {
-            const afterDate = new Date(this.timeline[index].release_date);
-            if (newDate > afterDate) {
-                isCorrect = false;
-            }
-        }
-
-        if (isCorrect) {
-            // Insert at correct position
-            this.timeline.splice(index, 0, this.currentCard);
-            this.score += 10 + this.streak * 5;
-            this.streak++;
-            if (this.streak > this.bestStreak) {
-                this.bestStreak = this.streak;
-            }
-
-            this.render();
-            this.updateStats();
-
-            // Animate the newly placed card
-            setTimeout(() => {
-                const cards = document.querySelectorAll('.timeline .movie-card');
-                cards[index].classList.add('correct');
-                setTimeout(() => cards[index].classList.remove('correct'), 500);
-            }, 50);
-
-            // Draw next card
-            if (this.drawPile.length > 0) {
-                this.currentCard = this.drawPile.shift();
-                this.renderDrawPile();
-            } else {
-                // Game won!
-                this.endGame(true);
-            }
-        } else {
-            // Wrong placement
-            this.streak = 0;
-            this.updateStats();
-
-            // Store the failed card and where it should go
-            this.failedCard = this.currentCard;
-            this.failedCardIndex = index;
-
-            // Show the card shaking in the draw pile
-            const drawPileCard = document.querySelector('.draw-pile .movie-card');
-            if (drawPileCard) {
-                drawPileCard.classList.add('wrong');
-                setTimeout(() => drawPileCard.classList.remove('wrong'), 500);
-            }
-
-            // End game on wrong placement
-            this.endGame(false);
-        }
+      // Insert failed card at correct position
+      displayTimeline.splice(correctIndex, 0, {
+        ...this.failedCard,
+        isFailed: true,
+      });
     }
 
-    endGame(won) {
-        document.getElementById('game-over').classList.remove('hidden');
-        document.getElementById('best-streak').textContent = this.bestStreak;
+    displayTimeline.forEach((movie) => {
+      const posterUrl =
+        movie.poster_url || movie.poster_path
+          ? movie.poster_url ||
+            `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+          : "https://via.placeholder.com/300x450?text=No+Poster";
 
-        // Get the stat items
-        const correctDateStatItem = document.querySelector('.stat-item:first-child');
-        const statDivider = document.querySelector('.stat-divider:first-child');
+      const year = this.getYear(movie.release_date);
 
-        if (won) {
-            document.querySelector('.game-over-content h2').textContent = 'Congratulations!';
-            if (correctDateStatItem) correctDateStatItem.style.display = 'none';
-            if (statDivider) statDivider.style.display = 'none';
-        } else {
-            document.querySelector('.game-over-content h2').textContent = 'Game Over!';
-            const dateInfo = this.formatDate(this.currentCard.release_date);
-            document.getElementById('correct-year').textContent = `${dateInfo.monthDay}, ${dateInfo.year}`;
-            if (correctDateStatItem) correctDateStatItem.style.display = '';
-            if (statDivider) statDivider.style.display = '';
-        }
-
-        // Populate poster grid with timeline movies
-        this.renderPosterGrid();
-    }
-
-    renderPosterGrid() {
-        const posterGrid = document.getElementById('poster-grid');
-        posterGrid.innerHTML = '';
-
-        // Create a combined timeline that includes the failed card if present
-        let displayTimeline = [...this.timeline];
-
-        // Find the correct chronological position for the failed card
-        if (this.failedCard) {
-            const failedDate = new Date(this.failedCard.release_date);
-            let correctIndex = displayTimeline.findIndex(movie =>
-                new Date(movie.release_date) > failedDate
-            );
-
-            // If no movie is later, add to end
-            if (correctIndex === -1) {
-                correctIndex = displayTimeline.length;
-            }
-
-            // Insert failed card at correct position
-            displayTimeline.splice(correctIndex, 0, { ...this.failedCard, isFailed: true });
-        }
-
-        displayTimeline.forEach(movie => {
-            const posterUrl = movie.poster_url || movie.poster_path
-                ? movie.poster_url || `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-                : 'https://via.placeholder.com/300x450?text=No+Poster';
-
-            const year = this.getYear(movie.release_date);
-
-            const item = document.createElement('div');
-            item.className = 'poster-grid-item' + (movie.isFailed ? ' failed' : '');
-            item.title = `${movie.title} (${year})`;
-            item.innerHTML = `
+      const item = document.createElement("div");
+      item.className = "poster-grid-item" + (movie.isFailed ? " failed" : "");
+      item.title = `${movie.title} (${year})`;
+      item.innerHTML = `
                 <img src="${posterUrl}" alt="${movie.title}" loading="lazy">
                 <div class="year-label">${year}</div>
-                ${movie.isFailed ? '<div class="failed-overlay"><div class="x-mark">✕</div></div>' : ''}
+                ${
+                  movie.isFailed
+                    ? '<div class="failed-overlay"><div class="x-mark">✕</div></div>'
+                    : ""
+                }
             `;
 
-            posterGrid.appendChild(item);
-        });
+      posterGrid.appendChild(item);
+    });
 
-        // Store movie count for resize handler
-        this.currentMovieCount = displayTimeline.length;
+    // Store movie count for resize handler
+    this.currentMovieCount = displayTimeline.length;
 
-        // Calculate and set optimal poster size after DOM is ready and layout complete
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                this.setOptimalPosterSize(displayTimeline.length);
-            });
-        });
+    // Calculate and set optimal poster size after DOM is ready and layout complete
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        this.setOptimalPosterSize(displayTimeline.length);
+      });
+    });
+  }
+
+  setOptimalPosterSize(movieCount) {
+    const posterGrid = document.getElementById("poster-grid");
+    const container = posterGrid.parentElement;
+
+    // Get available dimensions
+    const containerWidth = container.clientWidth - 32; // padding
+    const containerHeight = container.clientHeight - 32;
+    const gap = 8;
+
+    // Safety check - if dimensions aren't available yet, try again later
+    if (containerWidth <= 0 || containerHeight <= 0) {
+      setTimeout(() => this.setOptimalPosterSize(movieCount), 100);
+      return;
     }
 
-    setOptimalPosterSize(movieCount) {
-        const posterGrid = document.getElementById('poster-grid');
-        const container = posterGrid.parentElement;
+    // Start with a desired poster width and calculate how many columns fit
+    let posterWidth = 60; // default
+    let cols;
 
-        // Get available dimensions
-        const containerWidth = container.clientWidth - 32; // padding
-        const containerHeight = container.clientHeight - 32;
-        const gap = 8;
+    // Try different poster sizes to find one that fits well
+    for (let testWidth = 120; testWidth >= 40; testWidth -= 5) {
+      cols = Math.floor((containerWidth + gap) / (testWidth + gap));
+      if (cols < 1) cols = 1; // minimum 1 column
+      const rows = Math.ceil(movieCount / cols);
+      const posterHeight = testWidth * 1.5; // 2:3 aspect ratio
+      const totalHeight = rows * posterHeight + (rows - 1) * gap;
 
-        // Safety check - if dimensions aren't available yet, try again later
-        if (containerWidth <= 0 || containerHeight <= 0) {
-            setTimeout(() => this.setOptimalPosterSize(movieCount), 100);
-            return;
-        }
-
-        // Start with a desired poster width and calculate how many columns fit
-        let posterWidth = 60; // default
-        let cols;
-
-        // Try different poster sizes to find one that fits well
-        for (let testWidth = 120; testWidth >= 40; testWidth -= 5) {
-            cols = Math.floor((containerWidth + gap) / (testWidth + gap));
-            if (cols < 1) cols = 1; // minimum 1 column
-            const rows = Math.ceil(movieCount / cols);
-            const posterHeight = testWidth * 1.5; // 2:3 aspect ratio
-            const totalHeight = rows * posterHeight + (rows - 1) * gap;
-
-            if (totalHeight <= containerHeight || testWidth === 40) {
-                posterWidth = testWidth;
-                break;
-            }
-        }
-
-        // Set dynamic grid template
-        posterGrid.style.gridTemplateColumns = `repeat(auto-fit, ${posterWidth}px)`;
-        posterGrid.style.gap = `${gap}px`;
+      if (totalHeight <= containerHeight || testWidth === 40) {
+        posterWidth = testWidth;
+        break;
+      }
     }
 
-    getYear(dateString) {
-        return new Date(dateString).getFullYear();
+    // Set dynamic grid template
+    posterGrid.style.gridTemplateColumns = `repeat(auto-fit, ${posterWidth}px)`;
+    posterGrid.style.gap = `${gap}px`;
+  }
+
+  getYear(dateString) {
+    return new Date(dateString).getFullYear();
+  }
+
+  formatDate(dateString) {
+    const date = new Date(dateString);
+    const months = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+    const month = months[date.getMonth()];
+    const day = date.getDate();
+    const year = date.getFullYear();
+    return { monthDay: `${month} ${day}`, year: year.toString() };
+  }
+
+  render() {
+    this.renderTimeline();
+    this.renderDrawPile();
+  }
+
+  renderTimeline() {
+    const timelineEl = document.getElementById("timeline");
+    timelineEl.innerHTML = "";
+
+    // Add drop zone at the beginning
+    timelineEl.appendChild(this.createDropZone(0));
+
+    // Add movie cards with drop zones between them
+    this.timeline.forEach((movie, index) => {
+      const card = this.createMovieCard(movie, true, false);
+      timelineEl.appendChild(card);
+      timelineEl.appendChild(this.createDropZone(index + 1));
+    });
+  }
+
+  renderDrawPile() {
+    const drawPileEl = document.getElementById("draw-pile");
+    drawPileEl.innerHTML = "";
+
+    if (this.currentCard) {
+      const card = this.createMovieCard(this.currentCard, false, true);
+      drawPileEl.appendChild(card);
     }
+  }
 
-    formatDate(dateString) {
-        const date = new Date(dateString);
-        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-        const month = months[date.getMonth()];
-        const day = date.getDate();
-        const year = date.getFullYear();
-        return { monthDay: `${month} ${day}`, year: year.toString() };
-    }
-
-    render() {
-        this.renderTimeline();
-        this.renderDrawPile();
-    }
-
-    renderTimeline() {
-        const timelineEl = document.getElementById('timeline');
-        timelineEl.innerHTML = '';
-
-        // Add drop zone at the beginning
-        timelineEl.appendChild(this.createDropZone(0));
-
-        // Add movie cards with drop zones between them
-        this.timeline.forEach((movie, index) => {
-            const card = this.createMovieCard(movie, true, false);
-            timelineEl.appendChild(card);
-            timelineEl.appendChild(this.createDropZone(index + 1));
-        });
-    }
-
-    renderDrawPile() {
-        const drawPileEl = document.getElementById('draw-pile');
-        drawPileEl.innerHTML = '';
-
-        if (this.currentCard) {
-            const card = this.createMovieCard(this.currentCard, false, true);
-            drawPileEl.appendChild(card);
-        }
-    }
-
-    updateStats() {
-        document.getElementById('score').textContent = this.streak;
-    }
+  updateStats() {
+    document.getElementById("score").textContent = this.streak;
+  }
 }
 
 // Start the game when the page loads
-document.addEventListener('DOMContentLoaded', () => {
-    new MovieTimelineGame();
+document.addEventListener("DOMContentLoaded", () => {
+  new MovieTimelineGame();
 });
