@@ -9,12 +9,16 @@ body {
     Ubuntu, sans-serif;
   background: #2b292b;
   min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height for mobile Safari */
   color: #e8e3d8;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
 .game-container {
   max-width: 100%;
   min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height for mobile Safari */
   display: flex;
   flex-direction: column;
 }
@@ -125,15 +129,19 @@ main {
 
 .draw-pile .movie-card {
   width: auto;
-  height: 100%;
+  height: auto;
   max-height: min(70vh, 600px);
+  max-height: min(70dvh, 600px); /* Dynamic viewport height for mobile Safari */
   max-width: 90vw;
+  aspect-ratio: 2/3; /* Maintain poster aspect ratio */
 }
 
 .draw-pile .movie-card .poster {
-  height: 100%;
-  width: auto;
-  max-width: 100%;
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  aspect-ratio: 2/3; /* Maintain proper poster aspect ratio */
+  object-fit: contain;
 }
 
 .hint {
@@ -489,6 +497,7 @@ main {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   width: 95vw;
   height: calc(100vh - 2rem);
+  height: calc(100dvh - 2rem); /* Dynamic viewport height for mobile Safari */
   max-width: 1200px;
   max-height: 900px;
   display: flex;
@@ -781,6 +790,7 @@ main {
 
   .draw-pile .movie-card {
     max-height: min(60vh, 500px);
+    max-height: min(60dvh, 500px); /* Dynamic viewport height for mobile Safari */
   }
 
   .timeline-container {
