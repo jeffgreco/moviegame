@@ -4,58 +4,103 @@
 const DAILY_PUZZLES = [
   {
     id: 1,
-    startDate: "2026-01-09", // First daily puzzle
+    startDate: "2026-01-08", // First daily puzzle
     theme: "Spielberg, Scorsese & Coppola",
     description: "Movies from three legendary directors",
     movieIds: [
       // EASIEST - Most iconic, culturally significant films
-      578,    // Jaws (1975) - Spielberg
-      238,    // The Godfather (1972) - Coppola
-      329,    // Jurassic Park (1993) - Spielberg
-      85,     // Raiders of the Lost Ark (1981) - Spielberg
-      601,    // E.T. the Extra-Terrestrial (1982) - Spielberg
-      424,    // Schindler's List (1994) - Spielberg
+      578, // Jaws (1975) - Spielberg
+      238, // The Godfather (1972) - Coppola
+      329, // Jurassic Park (1993) - Spielberg
+      85, // Raiders of the Lost Ark (1981) - Spielberg
+      601, // E.T. the Extra-Terrestrial (1982) - Spielberg
+      424, // Schindler's List (1994) - Spielberg
 
       // EASY - Very well-known films
-      103,    // Taxi Driver (1976) - Scorsese
-      28,     // Apocalypse Now (1979) - Coppola
-      769,    // GoodFellas (1990) - Scorsese
-      240,    // The Godfather Part II (1974) - Coppola
-      857,    // Saving Private Ryan (1998) - Spielberg
-      87,     // Indiana Jones and the Temple of Doom (1984) - Spielberg
+      103, // Taxi Driver (1976) - Scorsese
+      28, // Apocalypse Now (1979) - Coppola
+      769, // GoodFellas (1990) - Scorsese
+      240, // The Godfather Part II (1974) - Coppola
+      857, // Saving Private Ryan (1998) - Spielberg
+      87, // Indiana Jones and the Temple of Doom (1984) - Spielberg
 
       // MEDIUM-EASY - Famous but less culturally dominant
-      89,     // Indiana Jones and the Last Crusade (1989) - Spielberg
-      524,    // Casino (1995) - Scorsese
-      840,    // Close Encounters of the Third Kind (1977) - Spielberg
-      1422,   // The Departed (2006) - Scorsese
-      879,    // Hook (1991) - Spielberg
-      640,    // Catch Me If You Can (2002) - Spielberg
+      89, // Indiana Jones and the Last Crusade (1989) - Spielberg
+      524, // Casino (1995) - Scorsese
+      840, // Close Encounters of the Third Kind (1977) - Spielberg
+      1422, // The Departed (2006) - Scorsese
+      879, // Hook (1991) - Spielberg
+      640, // Catch Me If You Can (2002) - Spielberg
 
       // MEDIUM - Well-known but harder to date
-      873,    // The Color Purple (1985) - Spielberg
-      242,    // The Godfather Part III (1990) - Coppola
-      6114,   // Bram Stoker's Dracula (1992) - Coppola
-      180,    // Minority Report (2002) - Spielberg
-      74,     // War of the Worlds (2005) - Spielberg
-      11324,  // Shutter Island (2010) - Scorsese
+      873, // The Color Purple (1985) - Spielberg
+      242, // The Godfather Part III (1990) - Coppola
+      6114, // Bram Stoker's Dracula (1992) - Coppola
+      180, // Minority Report (2002) - Spielberg
+      74, // War of the Worlds (2005) - Spielberg
+      11324, // Shutter Island (2010) - Scorsese
       106646, // The Wolf of Wall Street (2013) - Scorsese
 
       // MEDIUM-HARD - Less mainstream appeal
-      227,    // The Outsiders (1983) - Coppola
-      1598,   // Cape Fear (1991) - Scorsese
-      594,    // The Terminal (2004) - Spielberg
-      217,    // Indiana Jones and the Kingdom of the Crystal Skull (2008) - Spielberg
-      57212,  // War Horse (2011) - Spielberg
+      227, // The Outsiders (1983) - Coppola
+      1598, // Cape Fear (1991) - Scorsese
+      594, // The Terminal (2004) - Spielberg
+      217, // Indiana Jones and the Kingdom of the Crystal Skull (2008) - Spielberg
+      57212, // War Horse (2011) - Spielberg
       333339, // Ready Player One (2018) - Spielberg
 
       // HARDEST - Obscure or poorly received
-      839,    // Duel (1971) - Spielberg TV movie
-      232,    // Rumble Fish (1983) - Coppola
-      11352,  // Always (1989) - Spielberg
-      7095    // Jack (1996) - Coppola
-    ]
-  }
+      839, // Duel (1971) - Spielberg TV movie
+      232, // Rumble Fish (1983) - Coppola
+      11352, // Always (1989) - Spielberg
+      7095, // Jack (1996) - Coppola
+    ],
+  },
+  {
+    id: 2,
+    startDate: "2026-01-09", // Second daily puzzle
+    theme: "Disney Animation Classics",
+    description: "Beloved animated films from Disney and Pixar",
+    movieIds: [
+      // EASIEST - Iconic, culturally dominant films
+      8587, // The Lion King (1994)
+      109445, // Frozen (2013)
+      12, // Finding Nemo (2003)
+      862, // Toy Story (1995)
+      10020, // Beauty and the Beast (1991)
+      812, // Aladdin (1992)
+
+      // EASY - Very well-known films
+      10144, // The Little Mermaid (1989)
+      585, // Monsters, Inc. (2001)
+      14160, // Up (2009)
+      10681, // WALL·E (2008)
+      38757, // Tangled (2010)
+      354912, // Coco (2017)
+
+      // MEDIUM-EASY - Famous but slightly less dominant
+      10674, // Mulan (1998)
+      11970, // Hercules (1997)
+      2062, // Ratatouille (2007)
+      150540, // Inside Out (2015)
+      269149, // Zootopia (2016)
+      568124, // Encanto (2021)
+
+      // MEDIUM - Well-known but harder to date precisely
+      37135, // Tarzan (1999)
+      10530, // Pocahontas (1995)
+      177572, // Big Hero 6 (2014)
+      82690, // Wreck-It Ralph (2012)
+
+      // MEDIUM-HARD - Cult favorites, less mainstream
+      11544, // Lilo & Stitch (2002)
+      11688, // The Emperor's New Groove (2000)
+
+      // HARDEST - Older classics, less commonly known release dates
+      10112, // The Aristocats (1970)
+      11886, // Robin Hood (1973)
+    ],
+  },
   // Future puzzles will be added here
 ];
 
@@ -75,7 +120,9 @@ function getPuzzleForDate(date) {
   }
 
   // Calculate which puzzle to show (cycles through available puzzles)
-  const daysSinceFirst = Math.floor((targetDate - firstDate) / (1000 * 60 * 60 * 24));
+  const daysSinceFirst = Math.floor(
+    (targetDate - firstDate) / (1000 * 60 * 60 * 24)
+  );
   const puzzleIndex = daysSinceFirst % DAILY_PUZZLES.length;
 
   return DAILY_PUZZLES[puzzleIndex];
@@ -98,6 +145,8 @@ function getPuzzleNumber(date) {
     return null;
   }
 
-  const daysSinceFirst = Math.floor((targetDate - firstDate) / (1000 * 60 * 60 * 24));
+  const daysSinceFirst = Math.floor(
+    (targetDate - firstDate) / (1000 * 60 * 60 * 24)
+  );
   return daysSinceFirst + 1;
 }
