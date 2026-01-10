@@ -129,16 +129,18 @@ main {
 .draw-pile .movie-card {
   width: auto;
   height: auto;
-  max-height: calc(100vh - 250px);
-  max-height: calc(100dvh - 250px); /* Dynamic viewport height for mobile Safari */
+  max-height: calc(100vh - 320px);
+  max-height: calc(
+    100dvh - 320px
+  ); /* Dynamic viewport height for mobile Safari */
   max-width: calc(100vw - 2rem);
 }
 
 .draw-pile .movie-card .poster {
   width: auto;
   height: 100%;
-  max-height: calc(100vh - 250px);
-  max-height: calc(100dvh - 250px);
+  max-height: calc(100vh - 320px);
+  max-height: calc(100dvh - 320px);
   max-width: calc(100vw - 2rem);
   aspect-ratio: 2/3; /* Maintain proper poster aspect ratio */
   object-fit: contain;
@@ -754,7 +756,7 @@ main {
   header {
     flex-direction: column;
     gap: 0.5rem;
-    padding: 0.75rem 1rem;
+    padding: 0.25rem 1rem;
   }
 
   header h1 {
@@ -826,13 +828,15 @@ main {
   }
 
   .draw-pile .movie-card {
-    max-height: calc(100vh - 300px);
-    max-height: calc(100dvh - 300px); /* Dynamic viewport height for mobile Safari */
+    max-height: calc(100vh - 360px);
+    max-height: calc(
+      100dvh - 360px
+    ); /* Dynamic viewport height for mobile Safari */
   }
 
   .draw-pile .movie-card .poster {
-    max-height: calc(100vh - 300px);
-    max-height: calc(100dvh - 300px);
+    max-height: calc(100vh - 360px);
+    max-height: calc(100dvh - 360px);
   }
 
   .timeline-container {
