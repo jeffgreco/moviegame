@@ -692,12 +692,25 @@ class MovieTimelineGame {
       this.render();
       this.updateStats();
 
+      // Check if this is a "wow" placement (within 3 weeks of adjacent movie)
+      const isWow = this.isWowPlacement(index);
+
       // Animate the newly placed card
       setTimeout(() => {
         const cards = document.querySelectorAll(".timeline .movie-card");
         const newCard = cards[index];
         newCard.classList.add("entrance");
         newCard.classList.add("correct");
+
+        // Add wow badge if within 3 weeks of adjacent movie
+        if (isWow) {
+          newCard.classList.add("wow");
+          const wowBadge = document.createElement("span");
+          wowBadge.className = "wow-badge";
+          wowBadge.textContent = "wow!";
+          newCard.appendChild(wowBadge);
+        }
+
         setTimeout(() => {
           newCard.classList.remove("correct");
           newCard.classList.remove("entrance");
@@ -976,6 +989,38 @@ class MovieTimelineGame {
 
   getYear(dateString) {
     return new Date(dateString).getFullYear();
+  }
+
+  // Check if two dates are within a certain number of days
+  isWithinDays(date1, date2, days) {
+    const msPerDay = 24 * 60 * 60 * 1000;
+    const diffMs = Math.abs(date1.getTime() - date2.getTime());
+    return diffMs <= days * msPerDay;
+  }
+
+  // Check if a newly placed movie is within 3 weeks of an adjacent movie
+  isWowPlacement(index) {
+    const threeWeeks = 21; // days
+    const newMovie = this.timeline[index];
+    const newDate = new Date(newMovie.release_date);
+
+    // Check movie before (if exists)
+    if (index > 0) {
+      const beforeDate = new Date(this.timeline[index - 1].release_date);
+      if (this.isWithinDays(newDate, beforeDate, threeWeeks)) {
+        return true;
+      }
+    }
+
+    // Check movie after (if exists)
+    if (index < this.timeline.length - 1) {
+      const afterDate = new Date(this.timeline[index + 1].release_date);
+      if (this.isWithinDays(newDate, afterDate, threeWeeks)) {
+        return true;
+      }
+    }
+
+    return false;
   }
 
   formatDate(dateString) {
