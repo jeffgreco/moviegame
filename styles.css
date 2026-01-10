@@ -90,14 +90,20 @@ main {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
-  gap: 1rem;
+  padding: 0;
+  gap: 0;
   overflow: hidden;
 }
 
 .draw-pile-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   padding: 1rem;
+  min-height: 0;
 }
 
 .draw-pile-area h2 {
@@ -110,14 +116,31 @@ main {
 .draw-pile {
   display: flex;
   justify-content: center;
-  min-height: 200px;
-  transform: scale(1.25);
+  align-items: center;
+  flex: 1;
+  width: 100%;
+  max-height: 100%;
+  padding: 1rem;
+}
+
+.draw-pile .movie-card {
+  width: auto;
+  height: 100%;
+  max-height: min(70vh, 600px);
+  max-width: 90vw;
+}
+
+.draw-pile .movie-card .poster {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
 }
 
 .hint {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   color: rgba(232, 227, 216, 0.6);
   font-size: 0.9rem;
+  flex-shrink: 0;
 }
 
 .hint-plus {
@@ -139,6 +162,7 @@ main {
   color: #e8e3d8;
   cursor: pointer;
   transition: all 0.2s;
+  flex-shrink: 0;
 }
 
 .deselect-btn:hover {
@@ -152,7 +176,7 @@ main {
 }
 
 .timeline-container {
-  flex: 0;
+  flex: 0 0 auto;
   background: #000;
   border-radius: 0;
   padding: 0;
@@ -319,11 +343,12 @@ main {
 .movie-card .title {
   text-align: center;
   margin-top: 0.5rem;
-  font-size: 0.75rem;
+  font-size: 1.2rem;
+  font-weight: 500;
   color: #e8e3d8;
   line-height: 1.3;
-  max-height: 2.6em;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .timeline-scroll .movie-card .title {
@@ -750,6 +775,10 @@ main {
 
   main {
     padding: 0;
+  }
+
+  .draw-pile .movie-card {
+    max-height: min(60vh, 500px);
   }
 
   .timeline-container {
