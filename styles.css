@@ -829,7 +829,7 @@ main {
   }
 
   .game-over-actions {
-    flex-direction: column;
+    flex-direction: row;
     gap: 0.75rem;
   }
 
