@@ -380,7 +380,23 @@ main {
   cursor: pointer;
 }
 
-.drop-zone:hover,
+/* Hover styles only for devices that support hover (not touch) */
+@media (hover: hover) {
+  .drop-zone:hover {
+    border-color: #c9a961;
+    background: rgba(201, 169, 97, 0.2);
+    width: 140px;
+    box-shadow: 0 0 15px rgba(201, 169, 97, 0.5);
+  }
+
+  .drop-zone:hover::after {
+    color: #c9a961;
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px rgba(201, 169, 97, 0.8);
+  }
+}
+
+/* Drag-over styles always apply (for touch and mouse drag) */
 .drop-zone.drag-over {
   border-color: #c9a961;
   background: rgba(201, 169, 97, 0.2);
@@ -397,7 +413,6 @@ main {
   transition: all 0.2s;
 }
 
-.drop-zone:hover::after,
 .drop-zone.drag-over::after {
   color: #c9a961;
   font-size: 2.5rem;
@@ -871,7 +886,6 @@ main {
     height: 150px;
   }
 
-  .drop-zone:hover,
   .drop-zone.drag-over {
     width: 110px;
   }
