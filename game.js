@@ -38,7 +38,7 @@ class MovieTimelineGame {
     // Game tracking
     this.tracker = typeof GameTracker !== 'undefined' ? new GameTracker(TRACKER_API_URL) : null;
     this.scoreChart = typeof ScoreHistoryChart !== 'undefined' ? new ScoreHistoryChart('score-chart') : null;
-    this.leaderboard = typeof RandomLeaderboard !== 'undefined' ? new RandomLeaderboard('random-leaderboard') : null;
+    this.personalStats = typeof PersonalStats !== 'undefined' ? new PersonalStats('personal-stats') : null;
 
     this.init();
   }
@@ -407,34 +407,27 @@ class MovieTimelineGame {
     if (!this.tracker) {
       // Show message when tracking is not enabled
       const chartContainer = document.getElementById('score-chart');
-      const leaderboardContainer = document.getElementById('random-leaderboard');
+      const statsContainer = document.getElementById('personal-stats');
       if (chartContainer) {
         chartContainer.innerHTML = '<div class="chart-empty">Stats tracking not configured</div>';
       }
-      if (leaderboardContainer) {
-        leaderboardContainer.innerHTML = '<div class="leaderboard-empty">Stats tracking not configured</div>';
+      if (statsContainer) {
+        statsContainer.innerHTML = '<div class="personal-stats-empty">Stats tracking not configured</div>';
       }
       return;
     }
 
-    // Load score history and render chart
+    // Load score history and render both chart and personal stats
     try {
       const historyData = await this.tracker.getHistory();
       if (this.scoreChart) {
         this.scoreChart.render(historyData.history);
       }
-    } catch (e) {
-      console.warn('Failed to load score history:', e);
-    }
-
-    // Load leaderboard
-    try {
-      const leaderboardData = await this.tracker.getRandomLeaderboard();
-      if (this.leaderboard) {
-        this.leaderboard.render(leaderboardData, this.tracker.playerId);
+      if (this.personalStats) {
+        this.personalStats.render(historyData.history);
       }
     } catch (e) {
-      console.warn('Failed to load leaderboard:', e);
+      console.warn('Failed to load score history:', e);
     }
   }
 

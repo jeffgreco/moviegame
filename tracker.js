@@ -120,25 +120,6 @@ class GameTracker {
   }
 
   /**
-   * Fetch top random mode scores (hall of fame)
-   */
-  async getRandomLeaderboard(limit = 25, minScore = 10) {
-    if (!this.enabled) return { hallOfFame: [] };
-
-    try {
-      const response = await fetch(
-        `${this.apiBaseUrl}/api/random/top?limit=${limit}&minScore=${minScore}`
-      );
-      if (!response.ok) return { hallOfFame: [] };
-
-      return await response.json();
-    } catch (err) {
-      console.warn('Tracker: Failed to fetch leaderboard', err);
-      return { hallOfFame: [] };
-    }
-  }
-
-  /**
    * Fetch overall statistics
    */
   async getStats() {
@@ -238,51 +219,62 @@ class ScoreHistoryChart {
 }
 
 /**
- * Random Mode Leaderboard Display
+ * Personal Stats Display
+ * Shows summary of player's game history
  */
-class RandomLeaderboard {
+class PersonalStats {
   constructor(containerId) {
     this.container = document.getElementById(containerId);
   }
 
-  /**
-   * Render the leaderboard
-   */
-  render(data, currentPlayerId) {
+  render(history) {
     if (!this.container) return;
 
-    if (!data || !data.hallOfFame || data.hallOfFame.length === 0) {
-      this.container.innerHTML = '<div class="leaderboard-empty">No high scores yet. Be the first!</div>';
+    if (!history || history.length === 0) {
+      this.container.innerHTML = '<div class="personal-stats-empty">No games recorded yet</div>';
       return;
     }
 
-    let html = '<div class="leaderboard-list">';
+    // Calculate stats
+    const dailyGames = history.filter(g => g.game_mode === 'daily' || g.game_mode === 'archive');
+    const randomGames = history.filter(g => g.game_mode === 'random');
 
-    data.hallOfFame.forEach((entry, index) => {
-      const isCurrentPlayer = entry.playerId.startsWith(currentPlayerId?.substring(0, 8));
-      const medal = index < 3 ? ['🥇', '🥈', '🥉'][index] : `#${index + 1}`;
-      const highlight = isCurrentPlayer ? ' leaderboard-highlight' : '';
+    const perfectDailies = dailyGames.filter(g => g.won).length;
+    const avgDailyScore = dailyGames.length > 0
+      ? (dailyGames.reduce((sum, g) => sum + g.score, 0) / dailyGames.length).toFixed(1)
+      : 0;
 
-      html += `
-        <div class="leaderboard-entry${highlight}">
-          <span class="leaderboard-rank">${medal}</span>
-          <span class="leaderboard-score">${entry.score} movies</span>
-          <span class="leaderboard-date">${this.formatDate(entry.completedAt)}</span>
+    const bestRandomStreak = randomGames.length > 0
+      ? Math.max(...randomGames.map(g => g.score))
+      : 0;
+    const avgRandomStreak = randomGames.length > 0
+      ? (randomGames.reduce((sum, g) => sum + g.score, 0) / randomGames.length).toFixed(1)
+      : 0;
+
+    this.container.innerHTML = `
+      <div class="personal-stats-grid">
+        <div class="personal-stat">
+          <div class="personal-stat-value">${dailyGames.length}</div>
+          <div class="personal-stat-label">Puzzles Played</div>
         </div>
-      `;
-    });
-
-    html += '</div>';
-    this.container.innerHTML = html;
-  }
-
-  formatDate(isoString) {
-    const date = new Date(isoString);
-    return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+        <div class="personal-stat">
+          <div class="personal-stat-value">${perfectDailies}</div>
+          <div class="personal-stat-label">Perfect Scores</div>
+        </div>
+        <div class="personal-stat">
+          <div class="personal-stat-value">${avgDailyScore}</div>
+          <div class="personal-stat-label">Avg Puzzle Score</div>
+        </div>
+        <div class="personal-stat">
+          <div class="personal-stat-value">${bestRandomStreak}</div>
+          <div class="personal-stat-label">Best Random Streak</div>
+        </div>
+      </div>
+    `;
   }
 }
 
 // Export for use in game.js
 window.GameTracker = GameTracker;
 window.ScoreHistoryChart = ScoreHistoryChart;
-window.RandomLeaderboard = RandomLeaderboard;
+window.PersonalStats = PersonalStats;

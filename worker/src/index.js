@@ -5,9 +5,33 @@
  * POST /api/complete      - Submit a game completion
  * GET  /api/history       - Get player's score history
  * GET  /api/puzzle/:id    - Get stats for a specific puzzle
- * GET  /api/random/top    - Get top random mode scores
  * GET  /api/stats         - Get overall statistics
  */
+
+// Rate limit: max submissions per player per hour
+const RATE_LIMIT_MAX = 60;
+const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour
+
+// In-memory rate limit store (resets on worker restart, but good enough for basic protection)
+const rateLimitStore = new Map();
+
+function checkRateLimit(playerId) {
+  const now = Date.now();
+  const key = playerId;
+  const record = rateLimitStore.get(key);
+
+  if (!record || now - record.windowStart > RATE_LIMIT_WINDOW_MS) {
+    rateLimitStore.set(key, { windowStart: now, count: 1 });
+    return true;
+  }
+
+  if (record.count >= RATE_LIMIT_MAX) {
+    return false;
+  }
+
+  record.count++;
+  return true;
+}
 
 export default {
   async fetch(request, env, ctx) {
@@ -34,10 +58,6 @@ export default {
       if (path.startsWith('/api/puzzle/') && request.method === 'GET') {
         const puzzleId = path.split('/')[3];
         return await handlePuzzleStats(puzzleId, env, corsHeaders);
-      }
-
-      if (path === '/api/random/top' && request.method === 'GET') {
-        return await handleRandomTop(url, env, corsHeaders);
       }
 
       if (path === '/api/stats' && request.method === 'GET') {
@@ -70,15 +90,42 @@ async function handleComplete(request, env, corsHeaders) {
     return jsonResponse({ error: 'Missing required fields: playerId, gameMode, score' }, corsHeaders, 400);
   }
 
+  // Validate player ID format (should be p_ followed by alphanumeric)
+  if (!/^p_[A-Za-z0-9]{10,20}$/.test(playerId)) {
+    return jsonResponse({ error: 'Invalid player ID format' }, corsHeaders, 400);
+  }
+
+  // Rate limiting
+  if (!checkRateLimit(playerId)) {
+    return jsonResponse({ error: 'Rate limit exceeded. Try again later.' }, corsHeaders, 429);
+  }
+
   // Validate game mode
   const validModes = ['daily', 'random', 'archive', 'challenge'];
   if (!validModes.includes(gameMode)) {
     return jsonResponse({ error: 'Invalid game mode' }, corsHeaders, 400);
   }
 
-  // Validate score
-  if (typeof score !== 'number' || score < 0 || score > 1000) {
+  // Validate score - must be reasonable
+  if (typeof score !== 'number' || score < 0 || !Number.isInteger(score)) {
     return jsonResponse({ error: 'Invalid score' }, corsHeaders, 400);
+  }
+
+  // For daily/archive, score can't exceed total movies
+  if ((gameMode === 'daily' || gameMode === 'archive') && body.totalMovies) {
+    if (score > body.totalMovies) {
+      return jsonResponse({ error: 'Score exceeds puzzle size' }, corsHeaders, 400);
+    }
+  }
+
+  // For random mode, cap at a reasonable maximum (no puzzle has >50 movies)
+  if (gameMode === 'random' && score > 500) {
+    return jsonResponse({ error: 'Invalid score' }, corsHeaders, 400);
+  }
+
+  // Skip recording trivial games (score of 0) for random mode
+  if (gameMode === 'random' && score < 1) {
+    return jsonResponse({ success: true, skipped: true }, corsHeaders);
   }
 
   // For daily/archive modes, check if player already completed this puzzle
@@ -207,41 +254,6 @@ async function handlePuzzleStats(puzzleId, env, corsHeaders) {
       ? Math.round((stats.completions / stats.attempts) * 100)
       : 0,
     scoreDistribution: distribution.results
-  }, corsHeaders);
-}
-
-/**
- * Get top random mode scores (hall of fame)
- */
-async function handleRandomTop(url, env, corsHeaders) {
-  const limit = Math.min(parseInt(url.searchParams.get('limit') || '25'), 100);
-  const minScore = parseInt(url.searchParams.get('minScore') || '10');
-
-  const results = await env.DB.prepare(`
-    SELECT
-      id,
-      player_id,
-      score,
-      movie_ids,
-      completed_at
-    FROM game_completions
-    WHERE game_mode = 'random' AND score >= ?
-    ORDER BY score DESC
-    LIMIT ?
-  `).bind(minScore, limit).all();
-
-  // Parse movie_ids JSON for each result
-  const hallOfFame = results.results.map(row => ({
-    id: row.id,
-    playerId: row.player_id.substring(0, 8) + '...', // Truncate for privacy
-    score: row.score,
-    movieIds: row.movie_ids ? JSON.parse(row.movie_ids) : [],
-    completedAt: row.completed_at
-  }));
-
-  return jsonResponse({
-    hallOfFame,
-    count: hallOfFame.length
   }, corsHeaders);
 }
 
