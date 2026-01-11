@@ -1315,12 +1315,9 @@ main {
 .barbenheimer-text {
   font-size: 1.5rem;
   font-weight: bold;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 105, 180, 0.5);
   animation: barbenheimer-flash 0.8s ease-in-out;
-  background: linear-gradient(90deg, #fff 0%, #ffb6c1 50%, #ffd700 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 @keyframes barbenheimer-explode {
