@@ -75,6 +75,8 @@ const DAILY_PUZZLES = [
       2105, // American Pie (1999)
       37135, // Tarzan (1999)
       872585, // Oppenheimer (2023)
+      2034,
+      9778,
       374720, // Dunkirk (2017)
       27205, // Inception (2010)
       346698, // Barbie (2023),
