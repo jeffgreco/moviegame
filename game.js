@@ -27,6 +27,10 @@ class MovieTimelineGame {
     this.isChallenge = false; // Whether we're playing a challenge
     this.playOrder = []; // Track order movies were drawn (for challenge URLs)
 
+    // Archive mode state
+    this.archivePuzzle = null; // Puzzle data when playing from archive
+    this.archivePuzzleNumber = null; // Puzzle number when playing from archive
+
     this.init();
   }
 
@@ -37,9 +41,24 @@ class MovieTimelineGame {
       return;
     }
 
-    // Check for challenge URL parameter
+    // Check for URL parameters
     const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.has('c')) {
+
+    // Check for puzzle ID parameter
+    if (urlParams.has('puzzle')) {
+      const puzzleId = urlParams.get('puzzle');
+      const puzzle = getPuzzleById(puzzleId);
+      if (puzzle) {
+        this.archivePuzzle = puzzle;
+        this.archivePuzzleNumber = null; // We don't know the puzzle number from ID alone
+        this.gameMode = 'archive';
+      } else {
+        // Invalid puzzle ID, clear URL and play daily
+        window.history.replaceState({}, '', window.location.pathname);
+      }
+    }
+    // Check for challenge URL parameter
+    else if (urlParams.has('c')) {
       const loaded = this.loadFromChallenge(urlParams.get('c'));
       if (!loaded) {
         // Invalid challenge, clear URL and play random
@@ -79,6 +98,22 @@ class MovieTimelineGame {
         this.loadMoviesForMode();
         return;
       }
+    } else if (this.gameMode === 'archive' && this.archivePuzzle) {
+      // Archive mode: load specific puzzle from archive
+      this.dailyPuzzle = this.archivePuzzle;
+      this.puzzleNumber = this.archivePuzzleNumber;
+
+      const movieIdToData = new Map(MOVIES_DATA.map(m => [m.id, m]));
+      this.movies = this.archivePuzzle.movieIds
+        .map(id => movieIdToData.get(id))
+        .filter(movie => {
+          if (!movie) return false;
+          const releaseDate = new Date(movie.release_date);
+          if (releaseDate > now) return false;
+          if (seenIds.has(movie.id)) return false;
+          seenIds.add(movie.id);
+          return true;
+        });
     } else if (this.gameMode === 'daily') {
       // Load daily puzzle
       this.dailyPuzzle = getTodaysPuzzle();
@@ -119,11 +154,11 @@ class MovieTimelineGame {
   }
 
   setupGame() {
-    // Only shuffle for random mode - daily puzzles use pre-defined order
+    // Only shuffle for random mode - daily and archive puzzles use pre-defined order
     if (this.gameMode === 'random') {
       this.shuffleArray(this.movies);
     }
-    // For daily mode, movies are already in the curated order from dailyPuzzles.js
+    // For daily and archive modes, movies are already in the curated order from dailyPuzzles.js
 
     // Take first movie for timeline, rest for draw pile
     this.timeline = [this.movies[0]];
@@ -222,13 +257,25 @@ class MovieTimelineGame {
   }
 
   switchMode(newMode) {
+    const wasChallenge = this.isChallenge;
+    const wasArchive = this.gameMode === 'archive';
+
     // Clear challenge state when switching modes
     if (this.isChallenge) {
       this.isChallenge = false;
       this.challengeMovieIds = null;
       this.challengeScore = null;
       this.challengeBeaten = false;
-      // Clear the URL parameter
+    }
+
+    // Clear archive state when switching modes
+    if (wasArchive) {
+      this.archivePuzzle = null;
+      this.archivePuzzleNumber = null;
+    }
+
+    // Clear URL parameters when switching modes
+    if (wasArchive || wasChallenge) {
       window.history.replaceState({}, '', window.location.pathname);
     }
 
@@ -258,6 +305,18 @@ class MovieTimelineGame {
       randomBtn.classList.add('active');
       dailyBtn.classList.remove('active');
       if (challengeIndicator) challengeIndicator.classList.add('hidden');
+    } else if (this.gameMode === 'archive') {
+      // For archive mode, show neither button as active
+      randomBtn.classList.remove('active');
+      dailyBtn.classList.remove('active');
+      if (challengeIndicator) {
+        challengeIndicator.classList.remove('hidden');
+        if (this.archivePuzzleNumber) {
+          challengeIndicator.textContent = `#${this.archivePuzzleNumber}: ${this.archivePuzzle.theme}`;
+        } else {
+          challengeIndicator.textContent = this.archivePuzzle.theme;
+        }
+      }
     } else {
       dailyBtn.classList.add('active');
       randomBtn.classList.remove('active');
@@ -299,7 +358,151 @@ class MovieTimelineGame {
     }
   }
 
+  openArchive() {
+    document.getElementById('archive-modal').classList.remove('hidden');
+    this.renderArchiveList();
+  }
+
+  closeArchive() {
+    document.getElementById('archive-modal').classList.add('hidden');
+  }
+
+  renderArchiveList() {
+    const archiveList = document.getElementById('archive-list');
+    const archivePuzzles = getArchivePuzzles();
+
+    if (archivePuzzles.length === 0) {
+      archiveList.innerHTML = '<div class="archive-empty">No puzzles available yet. Check back soon!</div>';
+      return;
+    }
+
+    archiveList.innerHTML = archivePuzzles.map(item => {
+      const completionKey = `filmstrip_daily_${item.puzzleNumber}`;
+      let completionData = null;
+      try {
+        const saved = localStorage.getItem(completionKey);
+        if (saved) completionData = JSON.parse(saved);
+      } catch (e) {}
+
+      const dateObj = new Date(item.date + 'T00:00:00');
+      const formattedDate = dateObj.toLocaleDateString('en-US', {
+        weekday: 'short',
+        month: 'short',
+        day: 'numeric'
+      });
+
+      let statusHtml = '';
+      if (item.isToday) {
+        statusHtml = '<span class="archive-item-badge today">Today</span>';
+      }
+      if (completionData) {
+        statusHtml = `
+          <span class="archive-item-score">${completionData.score}/${item.puzzle.movieIds.length}</span>
+          <span class="archive-item-badge completed">Played</span>
+        `;
+      }
+
+      return `
+        <div class="archive-item" data-puzzle-number="${item.puzzleNumber}" data-date="${item.date}">
+          <div class="archive-item-info">
+            <div class="archive-item-number">Puzzle #${item.puzzleNumber}</div>
+            <div class="archive-item-theme">${item.puzzle.theme}</div>
+            <div class="archive-item-date">${formattedDate}</div>
+          </div>
+          <div class="archive-item-status">
+            ${statusHtml}
+            <button class="archive-play-btn">${completionData ? 'Replay' : 'Play'}</button>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    // Add click handlers to archive items
+    archiveList.querySelectorAll('.archive-item').forEach(item => {
+      item.addEventListener('click', (e) => {
+        const puzzleNumber = parseInt(item.dataset.puzzleNumber);
+        const date = item.dataset.date;
+        this.playArchivePuzzle(puzzleNumber, date);
+      });
+    });
+  }
+
+  playArchivePuzzle(puzzleNumber, dateStr) {
+    // Get the puzzle for this date
+    const puzzle = getPuzzleForDate(new Date(dateStr + 'T00:00:00'));
+    if (!puzzle) return;
+
+    // Close archive modal
+    this.closeArchive();
+
+    // Clear any existing challenge state
+    if (this.isChallenge) {
+      this.isChallenge = false;
+      this.challengeMovieIds = null;
+      this.challengeScore = null;
+      this.challengeBeaten = false;
+    }
+
+    // Set the puzzle URL
+    const url = new URL(window.location.href);
+    url.search = '';
+    url.searchParams.set('puzzle', puzzle.id);
+    window.history.replaceState({}, '', url.toString());
+
+    // Set archive mode
+    this.archivePuzzle = puzzle;
+    this.archivePuzzleNumber = puzzleNumber;
+    this.gameMode = 'archive';
+
+    // Hide game over modal if visible
+    document.getElementById("game-over").classList.add("hidden");
+
+    // Update UI and start game
+    this.updateModeButtons();
+    this.loadMoviesForMode();
+    this.setupGame();
+  }
+
   setupEventListeners() {
+    // Logo dropdown menu
+    const logoDropdown = document.querySelector('.logo-dropdown');
+    const logoTrigger = document.querySelector('.logo-trigger');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+
+    logoTrigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      logoDropdown.classList.toggle('open');
+      dropdownMenu.classList.toggle('hidden');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!logoDropdown.contains(e.target)) {
+        logoDropdown.classList.remove('open');
+        dropdownMenu.classList.add('hidden');
+      }
+    });
+
+    // Archive menu item
+    document.getElementById('menu-archive').addEventListener('click', (e) => {
+      e.preventDefault();
+      logoDropdown.classList.remove('open');
+      dropdownMenu.classList.add('hidden');
+      this.openArchive();
+    });
+
+    // Archive modal close button
+    document.getElementById('archive-close').addEventListener('click', () => {
+      this.closeArchive();
+    });
+
+    // Close archive when clicking outside content
+    document.getElementById('archive-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'archive-modal') {
+        this.closeArchive();
+      }
+    });
+
     // Mode selector buttons
     document.getElementById("random-mode-btn").addEventListener("click", () => {
       if (this.gameMode !== 'random') {
@@ -357,7 +560,7 @@ class MovieTimelineGame {
     const score = this.bestStreak;
     let text;
 
-    if (this.gameMode === 'daily' && this.puzzleNumber) {
+    if ((this.gameMode === 'daily' || this.gameMode === 'archive') && this.puzzleNumber) {
       const totalMovies = this.dailyPuzzle.movieIds.length;
       text = `Filmstrip #${this.puzzleNumber} - ${this.dailyPuzzle.theme}\n${score}/${totalMovies} 🎬`;
     } else {
@@ -738,8 +941,8 @@ class MovieTimelineGame {
   }
 
   endGame(won) {
-    // Save daily puzzle completion if in daily mode
-    if (this.gameMode === 'daily') {
+    // Save puzzle completion for daily and archive modes
+    if (this.gameMode === 'daily' || this.gameMode === 'archive') {
       this.saveDailyCompletion(this.bestStreak, won);
     }
 
@@ -907,14 +1110,15 @@ class MovieTimelineGame {
             `https://image.tmdb.org/t/p/w500${movie.poster_path}`
           : "https://via.placeholder.com/300x450?text=No+Poster";
 
-      const year = this.getYear(movie.release_date);
+      const dateInfo = this.formatDate(movie.release_date);
+      const fullDate = `${dateInfo.monthDay}, ${dateInfo.year}`;
 
       const item = document.createElement("div");
       item.className = "poster-grid-item" + (movie.isFailed ? " failed" : "");
-      item.title = `${movie.title} (${year})`;
+      item.title = `${movie.title} (${fullDate})`;
       item.innerHTML = `
                 <img src="${posterUrl}" alt="${movie.title}" loading="lazy">
-                <div class="year-label">${year}</div>
+                <div class="year-label">${fullDate}</div>
                 ${
                   movie.isFailed
                     ? '<div class="failed-overlay"><div class="x-mark">✕</div></div>'

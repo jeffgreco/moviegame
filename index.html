@@ -23,7 +23,12 @@
   <body>
     <div class="game-container">
       <header>
-        <h1>Filmstrip</h1>
+        <div class="logo-dropdown">
+          <h1 class="logo-trigger">Filmstrip <span class="dropdown-arrow">&#9662;</span></h1>
+          <div class="dropdown-menu hidden">
+            <a href="#" id="menu-archive" class="dropdown-item">Archive</a>
+          </div>
+        </div>
         <div class="mode-selector">
           <button id="random-mode-btn" class="mode-btn">Random</button>
           <button id="daily-mode-btn" class="mode-btn active">Daily</button>
@@ -77,6 +82,18 @@
             <button id="share-score" class="share-btn">Share Score</button>
             <button id="copy-challenge" class="challenge-btn hidden">Copy Challenge Link</button>
             <button id="play-again">Play Again</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="archive-modal" class="archive-modal hidden">
+        <div class="archive-content">
+          <div class="archive-header">
+            <h2>Puzzle Archive</h2>
+            <button id="archive-close" class="archive-close">&times;</button>
+          </div>
+          <div id="archive-list" class="archive-list">
+            <!-- Archive puzzles will be populated here -->
           </div>
         </div>
       </div>

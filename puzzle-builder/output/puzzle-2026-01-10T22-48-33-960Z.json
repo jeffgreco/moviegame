@@ -1,0 +1,246 @@
+{
+  "generated": "2026-01-10T22:48:33.960Z",
+  "puzzle": {
+    "id": null,
+    "theme": "Alien Invasion",
+    "description": "",
+    "movieIds": [
+      74,
+      602,
+      329865,
+      2675,
+      75,
+      59678,
+      8337,
+      755898,
+      840,
+      7191,
+      5491,
+      137113,
+      44943,
+      9397,
+      9348,
+      8974
+    ]
+  },
+  "movieDetails": [
+    {
+      "id": 74,
+      "title": "War of the Worlds",
+      "release_date": "2005-06-29",
+      "directors": [
+        "Steven Spielberg"
+      ],
+      "poster_url": "https://image.tmdb.org/t/p/w500/6Biy7R9LfumYshur3YKhpj56MpB.jpg"
+    },
+    {
+      "id": 602,
+      "title": "Independence Day",
+      "release_date": "1996-06-25",
+      "directors": [
+        "Roland Emmerich"
+      ],
+      "poster_url": "https://image.tmdb.org/t/p/w500/p0BPQGSPoSa8Ml0DAf2mB2kCU0R.jpg"
+    },
+    {
+      "id": 329865,
+      "title": "Arrival",
+      "release_date": "2016-11-11",
+      "directors": [
+        "Denis Villeneuve"
+      ],
+      "poster_url": "https://image.tmdb.org/t/p/w500/pEzNVQfdzYDzVK0XqxERIw2x2se.jpg"
+    },
+    {
+      "id": 2675,
+      "title": "Signs",
+      "release_date": "2002-08-02",
+      "directors": [
+        "M. Night Shyamalan"
+      ],
+      "poster_url": "https://image.tmdb.org/t/p/w500/YtrIdrTxpRhvCnlw43dwOjfLqx.jpg"
+    },
+    {
+      "id": 75,
+      "title": "Mars Attacks!",
+      "release_date": "1996-12-13",
+      "directors": [
+        "Tim Burton"
+      ],
+      "poster_url": "https://image.tmdb.org/t/p/w500/vUbGCNSEilGvxRQZi2kfTPRP0pS.jpg"
+    },
+    {
+      "id": 59678,
+      "title": "Attack the Block",
+      "release_date": "2011-07-29",
+      "directors": [
+        "Joe Cornish"
+      ],
+      "poster_url": "https://image.tmdb.org/t/p/w500/wzCMnA6NDruLzgWeqMcLPDrGAdF.jpg"
+    },
+    {
+      "id": 8337,
+      "title": "They Live",
+      "release_date": "1988-11-04",
+      "directors": [
+        "John Carpenter"
+      ],
+      "poster_url": "https://image.tmdb.org/t/p/w500/ngnybFTuopfbfmmEeX9jjBQQmF6.jpg"
+    },
+    {
+      "id": 755898,
+      "title": "War of the Worlds",
+      "release_date": "2025-07-30",
+      "directors": [
+        "Rich Lee"
+      ],
+      "poster_url": "https://image.tmdb.org/t/p/w500/yvirUYrva23IudARHn3mMGVxWqM.jpg"
+    },
+    {
+      "id": 840,
+      "title": "Close Encounters of the Third Kind",
+      "release_date": "1977-12-14",
+      "directors": [
+        "Steven Spielberg"
+      ],
+      "poster_url": "https://image.tmdb.org/t/p/w500/gCWPB8cF82tqzrS9tvzcO6q6nyz.jpg"
+    },
+    {
+      "id": 7191,
+      "title": "Cloverfield",
+      "release_date": "2008-01-18",
+      "directors": [
+        "Matt Reeves"
+      ],
+      "poster_url": "https://image.tmdb.org/t/p/w500/qIegUGJqyMMCRjkKV1s7A9MqdJ8.jpg"
+    },
+    {
+      "id": 5491,
+      "title": "Battlefield Earth",
+      "release_date": "2000-05-12",
+      "directors": [
+        "Roger Christian"
+      ],
+      "poster_url": "https://image.tmdb.org/t/p/w500/wXCRuBHdJ5aTFQdsuGJFXNdo79T.jpg"
+    },
+    {
+      "id": 137113,
+      "title": "Edge of Tomorrow",
+      "release_date": "2014-06-06",
+      "directors": [
+        "Doug Liman"
+      ],
+      "poster_url": "https://image.tmdb.org/t/p/w500/nBM9MMa2WCwvMG4IJ3eiGUdbPe6.jpg"
+    },
+    {
+      "id": 44943,
+      "title": "Battle: Los Angeles",
+      "release_date": "2011-03-08",
+      "directors": [
+        "Jonathan Liebesman"
+      ],
+      "poster_url": "https://image.tmdb.org/t/p/w500/jloyGeVYZSxM9zsLFvVOWuj2ey4.jpg"
+    },
+    {
+      "id": 9397,
+      "title": "Evolution",
+      "release_date": "2001-06-08",
+      "directors": [
+        "Ivan Reitman"
+      ],
+      "poster_url": "https://image.tmdb.org/t/p/w500/dwIrP544LxJtXToLpzkEa08pIMm.jpg"
+    },
+    {
+      "id": 9348,
+      "title": "Species",
+      "release_date": "1995-07-07",
+      "directors": [
+        "Roger Donaldson"
+      ],
+      "poster_url": "https://image.tmdb.org/t/p/w500/cT5wdyo8kT7dycqjrolJ2sHWkFx.jpg"
+    },
+    {
+      "id": 8974,
+      "title": "The War of the Worlds",
+      "release_date": "1953-08-13",
+      "directors": [
+        "Byron Haskin"
+      ],
+      "poster_url": "https://image.tmdb.org/t/p/w500/gzc75Za4ArqfXIIr7STNnIE5rnA.jpg"
+    }
+  ],
+  "newMoviesForDatabase": [
+    {
+      "id": 2675,
+      "title": "Signs",
+      "poster_url": "https://image.tmdb.org/t/p/w500/YtrIdrTxpRhvCnlw43dwOjfLqx.jpg",
+      "release_date": "2002-08-02",
+      "directors": [
+        "M. Night Shyamalan"
+      ]
+    },
+    {
+      "id": 75,
+      "title": "Mars Attacks!",
+      "poster_url": "https://image.tmdb.org/t/p/w500/vUbGCNSEilGvxRQZi2kfTPRP0pS.jpg",
+      "release_date": "1996-12-13",
+      "directors": [
+        "Tim Burton"
+      ]
+    },
+    {
+      "id": 59678,
+      "title": "Attack the Block",
+      "poster_url": "https://image.tmdb.org/t/p/w500/wzCMnA6NDruLzgWeqMcLPDrGAdF.jpg",
+      "release_date": "2011-07-29",
+      "directors": [
+        "Joe Cornish"
+      ]
+    },
+    {
+      "id": 5491,
+      "title": "Battlefield Earth",
+      "poster_url": "https://image.tmdb.org/t/p/w500/wXCRuBHdJ5aTFQdsuGJFXNdo79T.jpg",
+      "release_date": "2000-05-12",
+      "directors": [
+        "Roger Christian"
+      ]
+    },
+    {
+      "id": 44943,
+      "title": "Battle: Los Angeles",
+      "poster_url": "https://image.tmdb.org/t/p/w500/jloyGeVYZSxM9zsLFvVOWuj2ey4.jpg",
+      "release_date": "2011-03-08",
+      "directors": [
+        "Jonathan Liebesman"
+      ]
+    },
+    {
+      "id": 9397,
+      "title": "Evolution",
+      "poster_url": "https://image.tmdb.org/t/p/w500/dwIrP544LxJtXToLpzkEa08pIMm.jpg",
+      "release_date": "2001-06-08",
+      "directors": [
+        "Ivan Reitman"
+      ]
+    },
+    {
+      "id": 9348,
+      "title": "Species",
+      "poster_url": "https://image.tmdb.org/t/p/w500/cT5wdyo8kT7dycqjrolJ2sHWkFx.jpg",
+      "release_date": "1995-07-07",
+      "directors": [
+        "Roger Donaldson"
+      ]
+    },
+    {
+      "id": 8974,
+      "title": "The War of the Worlds",
+      "poster_url": "https://image.tmdb.org/t/p/w500/gzc75Za4ArqfXIIr7STNnIE5rnA.jpg",
+      "release_date": "1953-08-13",
+      "directors": [
+        "Byron Haskin"
+      ]
+    }
+  ]
+}
