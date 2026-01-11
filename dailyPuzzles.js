@@ -67,7 +67,7 @@ const DAILY_PUZZLES = [
       274, 1949, 539, 1359, 504, 807, 320, 10279, 241, 71859, 12149, 768, 9740,
     ],
   },
-    {
+  {
     id: "9nw35",
     theme: "test",
     description: "",
@@ -77,7 +77,8 @@ const DAILY_PUZZLES = [
       872585, // Oppenheimer (2023)
       374720, // Dunkirk (2017)
       27205, // Inception (2010)
-      346698, // Barbie (2023)
+      346698, // Barbie (2023),
+      83533,
     ],
   },
   // Future puzzles will be added here
