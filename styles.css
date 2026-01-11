@@ -295,7 +295,7 @@ main {
 }
 
 .movie-card.in-pile {
-  cursor: pointer;
+  cursor: grab;
 }
 
 .movie-card .poster {
