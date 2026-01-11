@@ -705,6 +705,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/paYKhEwUaxKA05vmOfU7FlleTln.jpg",
     release_date: "1976-12-17",
     directors: ["John Guillermin"],
+    showDirector: true,
   },
   {
     id: 10649,
@@ -865,6 +866,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/d7px1FQxW4tngdACVRsCSaZq0Xl.jpg",
     release_date: "1978-12-15",
     directors: ["Richard Donner"],
+    showDirector: true,
   },
   {
     id: 923,
@@ -1369,6 +1371,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/1mp4ViklKvA0WXXsNvNx0RBuiit.jpg",
     release_date: "1984-06-22",
     directors: ["John G. Avildsen"],
+    showDirector: true,
   },
   {
     id: 12309,
@@ -1465,6 +1468,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/4kJmUCE7mkVJjXa7A0g2rY4IGTm.jpg",
     release_date: "1984-12-14",
     directors: ["David Lynch"],
+    showDirector: true,
   },
   {
     id: 9314,
@@ -2046,6 +2050,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/GTAUOhO4BN0peJVvxGEQydJvUO.jpg",
     release_date: "1987-11-13",
     directors: ["Paul Michael Glaser"],
+    showDirector: true,
   },
   {
     id: 2609,
@@ -2430,6 +2435,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/plcZXvI310FkbwIptvd6rqk63LP.jpg",
     release_date: "1989-11-17",
     directors: ["John Musker", "Ron Clements"],
+    showDirector: true,
   },
   {
     id: 11497,
@@ -2518,6 +2524,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/shfAU6xIIEAEtsloIT3n9Fscz2E.jpg",
     release_date: "1990-03-30",
     directors: ["Steve Barron"],
+    showDirector: true,
   },
   {
     id: 196,
@@ -2846,6 +2853,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/hUJ0UvQ5tgE2Z9WpfuduVSdiCiU.jpg",
     release_date: "1991-11-22",
     directors: ["Gary Trousdale", "Kirk Wise"],
+    showDirector: true,
   },
   {
     id: 2907,
@@ -3014,6 +3022,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/eLFfl7vS8dkeG1hKp5mwbm37V83.jpg",
     release_date: "1992-11-25",
     directors: ["John Musker", "Ron Clements"],
+    showDirector: true,
   },
   {
     id: 619,
@@ -3350,6 +3359,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/sKCr78MXSLixwmZ8DyJLrpMsd15.jpg",
     release_date: "1994-06-24",
     directors: ["Roger Allers", "Rob Minkoff"],
+    showDirector: true,
   },
   {
     id: 12160,
@@ -4158,6 +4168,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/ne7AwCHXG76SGPSvHexG5fDzxht.jpg",
     release_date: "1998-06-19",
     directors: ["Tony Bancroft", "Barry Cook"],
+    showDirector: true,
   },
   {
     id: 3050,
@@ -4206,6 +4217,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/1p5thyQ4pCy876HpdvFARqJ62N9.jpg",
     release_date: "1998-08-14",
     directors: ["Jeremiah S. Chechik"],
+    showDirector: true,
   },
   {
     id: 36647,
@@ -5688,6 +5700,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/6Biy7R9LfumYshur3YKhpj56MpB.jpg",
     release_date: "2005-06-29",
     directors: ["Steven Spielberg"],
+    showDirector: true,
   },
   {
     id: 9738,
@@ -5784,6 +5797,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/6a2HY6UmD7XiDD3NokgaBAXEsD2.jpg",
     release_date: "2005-12-14",
     directors: ["Peter Jackson"],
+    showDirector: true,
   },
   {
     id: 10982,
@@ -6648,6 +6662,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/ygGmAO60t8GyqUo9xYeYxSZAR3b.jpg",
     release_date: "2010-03-26",
     directors: ["Dean DeBlois", "Chris Sanders"],
+    showDirector: true,
   },
   {
     id: 23483,
@@ -6696,6 +6711,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/b1RBy3l297N0c7PHjlz35cClWju.jpg",
     release_date: "2010-06-11",
     directors: ["Harald Zwart"],
+    showDirector: true,
   },
   {
     id: 10193,
@@ -7071,6 +7087,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
     release_date: "2012-05-04",
     directors: ["Joss Whedon"],
+    showDirector: true,
   },
   {
     id: 44833,
@@ -7519,6 +7536,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/azL2ThbJMIkts3ZMt3j1YgBUeDB.jpg",
     release_date: "2014-08-08",
     directors: ["Jonathan Liebesman"],
+    showDirector: true,
   },
   {
     id: 136835,
@@ -8087,6 +8105,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/hKegSKIDep2ewJWPUQD7u0KqFIp.jpg",
     release_date: "2017-03-17",
     directors: ["Bill Condon"],
+    showDirector: true,
   },
   {
     id: 337339,
@@ -8503,6 +8522,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/ykUEbfpkf8d0w49pHh0AD2KrT52.jpg",
     release_date: "2019-05-24",
     directors: ["Guy Ritchie"],
+    showDirector: true,
   },
   {
     id: 373571,
@@ -8559,6 +8579,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/dzBtMocZuJbjLOXvrl4zGYigDzh.jpg",
     release_date: "2019-07-19",
     directors: ["Jon Favreau"],
+    showDirector: true,
   },
   {
     id: 466272,
@@ -8704,6 +8725,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/aKx1ARwG55zZ0GpRvU2WrGrCG9o.jpg",
     release_date: "2020-03-09",
     directors: ["Niki Caro"],
+    showDirector: true,
   },
   {
     id: 514847,
@@ -8984,6 +9006,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg",
     release_date: "2021-10-22",
     directors: ["Denis Villeneuve"],
+    showDirector: true,
   },
   {
     id: 512195,
@@ -9280,6 +9303,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/ym1dxyOk4jFcSl4Q2zmRrA5BEEN.jpg",
     release_date: "2023-05-26",
     directors: ["Rob Marshall"],
+    showDirector: true,
   },
   {
     id: 569094,
@@ -9712,6 +9736,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/q5pXRYTycaeW6dEgsCrd4mYPmxM.jpg",
     release_date: "2025-06-13",
     directors: ["Dean DeBlois"],
+    showDirector: true,
   },
   {
     id: 911430,
@@ -9736,6 +9761,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/ldyfo0BKmz5rWtJJKCvwaNS4cJT.jpg",
     release_date: "2025-07-11",
     directors: ["James Gunn"],
+    showDirector: true,
   },
   {
     id: 617126,
@@ -9752,6 +9778,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/yvirUYrva23IudARHn3mMGVxWqM.jpg",
     release_date: "2025-07-30",
     directors: ["Rich Lee"],
+    showDirector: true,
   },
   {
     id: 803796,
@@ -9832,6 +9859,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/dKL78O9zxczVgjtNcQ9UkbYLzqX.jpg",
     release_date: "2025-11-14",
     directors: ["Edgar Wright"],
+    showDirector: true,
   },
   {
     id: 967941,

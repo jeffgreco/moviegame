@@ -362,7 +362,15 @@ main {
   flex-shrink: 0;
 }
 
-.timeline-scroll .movie-card .title {
+.movie-card .director {
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(232, 227, 216, 0.6);
+  margin-top: 0.2rem;
+}
+
+.timeline-scroll .movie-card .title,
+.timeline-scroll .movie-card .director {
   display: none;
 }
 
@@ -990,7 +998,8 @@ main {
 }
 
 @keyframes pulse-challenge {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 5px rgba(201, 169, 97, 0.5);
   }
   50% {

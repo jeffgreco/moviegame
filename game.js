@@ -700,6 +700,10 @@ class MovieTimelineGame {
     const fallbackUrl = "https://via.placeholder.com/300x450?text=No+Poster";
 
     const dateInfo = this.formatDate(movie.release_date);
+    const directorCredit = inPile && movie.showDirector && movie.directors?.length
+      ? `<div class="director">(dir. ${movie.directors[0]})</div>`
+      : '';
+
     card.innerHTML = `
             <img class="poster" src="${posterUrl}" alt="${
       movie.title
@@ -710,6 +714,7 @@ class MovieTimelineGame {
                 : ""
             }
             <div class="title">${movie.title}</div>
+            ${directorCredit}
         `;
 
     // Only add drag/touch events for cards in the draw pile
