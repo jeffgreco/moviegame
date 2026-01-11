@@ -169,6 +169,7 @@ class MovieTimelineGame {
 
     this.score = 0;
     this.streak = 0;
+    this.bestStreak = 0;
     this.failedCard = null;
     this.failedCardIndex = null;
     this.currentMovieCount = 0;
