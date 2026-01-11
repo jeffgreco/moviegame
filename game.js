@@ -496,6 +496,26 @@ class MovieTimelineGame {
       }
     });
 
+    // Help menu item
+    document.getElementById('menu-help').addEventListener('click', (e) => {
+      e.preventDefault();
+      logoDropdown.classList.remove('open');
+      dropdownMenu.classList.add('hidden');
+      document.getElementById('help-modal').classList.remove('hidden');
+    });
+
+    // Help modal close button
+    document.getElementById('help-close').addEventListener('click', () => {
+      document.getElementById('help-modal').classList.add('hidden');
+    });
+
+    // Close help when clicking outside content
+    document.getElementById('help-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'help-modal') {
+        document.getElementById('help-modal').classList.add('hidden');
+      }
+    });
+
     // Mode selector buttons
     document.getElementById("random-mode-btn").addEventListener("click", () => {
       if (this.gameMode !== 'random') {
