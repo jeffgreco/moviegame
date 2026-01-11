@@ -309,14 +309,7 @@ class MovieTimelineGame {
       // For archive mode, show neither button as active
       randomBtn.classList.remove('active');
       dailyBtn.classList.remove('active');
-      if (challengeIndicator) {
-        challengeIndicator.classList.remove('hidden');
-        if (this.archivePuzzleNumber) {
-          challengeIndicator.textContent = `#${this.archivePuzzleNumber}: ${this.archivePuzzle.theme}`;
-        } else {
-          challengeIndicator.textContent = this.archivePuzzle.theme;
-        }
-      }
+      if (challengeIndicator) challengeIndicator.classList.add('hidden');
     } else {
       dailyBtn.classList.add('active');
       randomBtn.classList.remove('active');
@@ -696,6 +689,7 @@ class MovieTimelineGame {
                 ? `<span class="year"><span class="month-day">${dateInfo.monthDay}</span>,&nbsp;<span class="year-num">${dateInfo.year}</span></span>`
                 : ""
             }
+            <div class="title">${movie.title}</div>
         `;
 
     // Only add drag/touch events for cards in the draw pile
