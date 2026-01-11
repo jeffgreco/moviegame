@@ -953,13 +953,23 @@ class MovieTimelineGame {
             // Check for Barbenheimer (Barbie + Oppenheimer)
             const movie1 = this.timeline[index];
             const movie2 = this.timeline[sameDateResult.neighborIndex];
-            const titles = [movie1.title.toLowerCase(), movie2.title.toLowerCase()];
-            const isBarbenheimer = titles.includes("barbie") && titles.includes("oppenheimer");
+            const titles = [
+              movie1.title.toLowerCase(),
+              movie2.title.toLowerCase(),
+            ];
+            const isBarbenheimer =
+              titles.includes("barbie") && titles.includes("oppenheimer");
 
             if (isBarbenheimer) {
-              this.showBarbenheimerNotification(index, sameDateResult.neighborIndex);
+              this.showBarbenheimerNotification(
+                index,
+                sameDateResult.neighborIndex
+              );
             } else {
-              this.showSameDateNotification(index, sameDateResult.neighborIndex);
+              this.showSameDateNotification(
+                index,
+                sameDateResult.neighborIndex
+              );
             }
           } else if (closeNeighborResult.matched) {
             this.showWowNotification(index, closeNeighborResult.neighborIndex);
@@ -1247,7 +1257,7 @@ class MovieTimelineGame {
     notification.className = "wow-notification";
     notification.innerHTML = `
       <div class="wow-content">
-        <div class="wow-text">Wow!</div>
+        <div class="wow-text">Close one!</div>
       </div>
     `;
     document.body.appendChild(notification);
