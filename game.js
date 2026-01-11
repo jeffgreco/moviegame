@@ -1031,15 +1031,27 @@ class MovieTimelineGame {
 
     // In challenge mode, only show "Congratulations" if they beat the challenge
     const showCongrats = won && (!this.isChallenge || this.challengeBeaten);
+    const isPerfectDaily =
+      won && (this.gameMode === "daily" || this.gameMode === "archive");
 
-    if (showCongrats) {
+    const gameOverContent = document.querySelector(".game-over-content");
+
+    if (isPerfectDaily) {
+      document.querySelector(".game-over-content h2").textContent =
+        "Perfect Score!";
+      gameOverContent.classList.add("perfect-score");
+      if (correctDateStatItem) correctDateStatItem.style.display = "none";
+      if (statDivider) statDivider.style.display = "none";
+    } else if (showCongrats) {
       document.querySelector(".game-over-content h2").textContent =
         "Congratulations!";
+      gameOverContent.classList.remove("perfect-score");
       if (correctDateStatItem) correctDateStatItem.style.display = "none";
       if (statDivider) statDivider.style.display = "none";
     } else {
       document.querySelector(".game-over-content h2").textContent =
         "Game Over!";
+      gameOverContent.classList.remove("perfect-score");
       if (this.currentCard) {
         const dateInfo = this.formatDate(this.currentCard.release_date);
         document.getElementById(
