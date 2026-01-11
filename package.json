@@ -4,8 +4,18 @@
   "description": "A game where you arrange movie posters in chronological order",
   "scripts": {
     "fetch-movies": "node scripts/fetch-movies.js",
-    "serve": "npx serve ."
+    "serve": "npx serve .",
+    "puzzle-builder": "node puzzle-builder/server.js"
   },
-  "keywords": ["game", "movies", "timeline", "tmdb"],
-  "license": "MIT"
+  "keywords": [
+    "game",
+    "movies",
+    "timeline",
+    "tmdb"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1"
+  }
 }
