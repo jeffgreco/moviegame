@@ -9,13 +9,13 @@
  * - Puzzle export functionality
  */
 
-require('dotenv').config();
+require('dotenv').config({ path: require('path').resolve(__dirname, '../.env') });
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
 
 const app = express();
-const PORT = process.env.PUZZLE_BUILDER_PORT || 3000;
+const PORT = process.env.PUZZLE_BUILDER_PORT || 3008;
 
 const API_KEY = process.env.TMDB_API_KEY;
 const TMDB_BASE_URL = 'https://api.themoviedb.org/3';
@@ -618,6 +618,12 @@ app.post('/api/puzzles', async (req, res) => {
     }
 });
 
+function formatDate(dateStr) {
+    if (!dateStr) return '????';
+    const date = new Date(dateStr + 'T00:00:00');
+    return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+}
+
 function generatePuzzleEntry(id, theme, description, movies) {
     const lines = [
         '  {',
@@ -628,8 +634,8 @@ function generatePuzzleEntry(id, theme, description, movies) {
     ];
 
     movies.forEach(m => {
-        const year = m.release_date ? m.release_date.split('-')[0] : '????';
-        lines.push(`      ${m.id}, // ${m.title} (${year})`);
+        const dateDisplay = formatDate(m.release_date);
+        lines.push(`      ${m.id}, // ${m.title} (${dateDisplay})`);
     });
 
     lines.push('    ],');
@@ -774,8 +780,8 @@ function generateJSSnippet(puzzle, movies) {
 
         if (section) lines.push(section);
 
-        const year = movie.release_date ? movie.release_date.split('-')[0] : '????';
-        lines.push(`    ${movie.id}, // ${movie.title} (${year})`);
+        const dateDisplay = formatDate(movie.release_date);
+        lines.push(`    ${movie.id}, // ${movie.title} (${dateDisplay})`);
     });
 
     lines.push('  ],');

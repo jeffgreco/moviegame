@@ -410,12 +410,18 @@ function displayResults(movies, total, customLabel) {
     markMoviesInPuzzle();
 }
 
+function formatDate(dateStr) {
+    if (!dateStr) return '????';
+    const date = new Date(dateStr + 'T00:00:00');
+    return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+}
+
 function createMovieCard(movie) {
     const card = document.createElement('div');
     card.className = 'movie-card';
     card.dataset.movieId = movie.id;
 
-    const year = movie.release_date ? movie.release_date.split('-')[0] : '????';
+    const dateDisplay = formatDate(movie.release_date);
     const inDatabase = state.existingMovies[movie.id];
 
     card.innerHTML = `
@@ -425,7 +431,7 @@ function createMovieCard(movie) {
         }
         <div class="info">
             <div class="title" title="${movie.title}">${movie.title}</div>
-            <div class="year">${year}${inDatabase ? ' (in DB)' : ''}</div>
+            <div class="year">${dateDisplay}${inDatabase ? ' (in DB)' : ''}</div>
         </div>
         <div class="actions">
             <button class="btn btn-add" onclick="addToPuzzle(${movie.id})">+ Add</button>
@@ -530,12 +536,12 @@ function createPuzzleChip(movie) {
     chip.className = 'puzzle-movie';
     chip.dataset.movieId = movie.id;
 
-    const year = movie.release_date ? movie.release_date.split('-')[0] : '????';
+    const dateDisplay = formatDate(movie.release_date);
 
     chip.innerHTML = `
         ${movie.poster_url ? `<img src="${movie.poster_url}" alt="">` : ''}
         <span class="movie-title" title="${movie.title}">${movie.title}</span>
-        <span class="movie-year">(${year})</span>
+        <span class="movie-year">(${dateDisplay})</span>
         <button class="btn-remove" onclick="removeFromPuzzle(${movie.id})">&times;</button>
     `;
 
@@ -593,8 +599,8 @@ function generateJsSnippet() {
     ];
 
     state.movies.forEach(m => {
-        const year = m.release_date ? m.release_date.split('-')[0] : '????';
-        lines.push(`    ${m.id}, // ${m.title} (${year})`);
+        const dateDisplay = formatDate(m.release_date);
+        lines.push(`    ${m.id}, // ${m.title} (${dateDisplay})`);
     });
 
     lines.push('  ],');

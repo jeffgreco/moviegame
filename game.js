@@ -15,7 +15,7 @@ class MovieTimelineGame {
     this.failedCardIndex = null;
     this.currentMovieCount = 0;
     this.resizeTimeout = null;
-    this.gameMode = 'daily'; // 'random', 'daily', or 'challenge'
+    this.gameMode = "daily"; // 'random', 'daily', or 'challenge'
     this.dailyPuzzle = null; // Current daily puzzle data
     this.puzzleNumber = null; // Daily puzzle number
     this.justTouched = false; // Track touch interactions to prevent click events
@@ -45,25 +45,25 @@ class MovieTimelineGame {
     const urlParams = new URLSearchParams(window.location.search);
 
     // Check for puzzle ID parameter
-    if (urlParams.has('puzzle')) {
-      const puzzleId = urlParams.get('puzzle');
+    if (urlParams.has("puzzle")) {
+      const puzzleId = urlParams.get("puzzle");
       const puzzle = getPuzzleById(puzzleId);
       if (puzzle) {
         this.archivePuzzle = puzzle;
         this.archivePuzzleNumber = null; // We don't know the puzzle number from ID alone
-        this.gameMode = 'archive';
+        this.gameMode = "archive";
       } else {
         // Invalid puzzle ID, clear URL and play daily
-        window.history.replaceState({}, '', window.location.pathname);
+        window.history.replaceState({}, "", window.location.pathname);
       }
     }
     // Check for challenge URL parameter
-    else if (urlParams.has('c')) {
-      const loaded = this.loadFromChallenge(urlParams.get('c'));
+    else if (urlParams.has("c")) {
+      const loaded = this.loadFromChallenge(urlParams.get("c"));
       if (!loaded) {
         // Invalid challenge, clear URL and play random
-        window.history.replaceState({}, '', window.location.pathname);
-        this.gameMode = 'random';
+        window.history.replaceState({}, "", window.location.pathname);
+        this.gameMode = "random";
       }
     }
 
@@ -77,14 +77,14 @@ class MovieTimelineGame {
     const now = new Date();
     const seenIds = new Set();
 
-    if (this.gameMode === 'challenge' && this.challengeMovieIds) {
+    if (this.gameMode === "challenge" && this.challengeMovieIds) {
       // Challenge mode: load specific movies in the challenge order
       this.dailyPuzzle = null;
       this.puzzleNumber = null;
-      const movieIdToData = new Map(MOVIES_DATA.map(m => [m.id, m]));
+      const movieIdToData = new Map(MOVIES_DATA.map((m) => [m.id, m]));
       this.movies = this.challengeMovieIds
-        .map(id => movieIdToData.get(id))
-        .filter(movie => {
+        .map((id) => movieIdToData.get(id))
+        .filter((movie) => {
           if (!movie) return false;
           if (seenIds.has(movie.id)) return false;
           seenIds.add(movie.id);
@@ -94,19 +94,19 @@ class MovieTimelineGame {
       // If challenge movies couldn't be loaded, fall back to random
       if (this.movies.length < 2) {
         this.isChallenge = false;
-        this.gameMode = 'random';
+        this.gameMode = "random";
         this.loadMoviesForMode();
         return;
       }
-    } else if (this.gameMode === 'archive' && this.archivePuzzle) {
+    } else if (this.gameMode === "archive" && this.archivePuzzle) {
       // Archive mode: load specific puzzle from archive
       this.dailyPuzzle = this.archivePuzzle;
       this.puzzleNumber = this.archivePuzzleNumber;
 
-      const movieIdToData = new Map(MOVIES_DATA.map(m => [m.id, m]));
+      const movieIdToData = new Map(MOVIES_DATA.map((m) => [m.id, m]));
       this.movies = this.archivePuzzle.movieIds
-        .map(id => movieIdToData.get(id))
-        .filter(movie => {
+        .map((id) => movieIdToData.get(id))
+        .filter((movie) => {
           if (!movie) return false;
           const releaseDate = new Date(movie.release_date);
           if (releaseDate > now) return false;
@@ -114,24 +114,24 @@ class MovieTimelineGame {
           seenIds.add(movie.id);
           return true;
         });
-    } else if (this.gameMode === 'daily') {
+    } else if (this.gameMode === "daily") {
       // Load daily puzzle
       this.dailyPuzzle = getTodaysPuzzle();
       this.puzzleNumber = getPuzzleNumber(new Date());
 
       if (!this.dailyPuzzle) {
         // No daily puzzle available yet, switch to random mode
-        this.gameMode = 'random';
+        this.gameMode = "random";
         this.loadMoviesForMode();
         return;
       }
 
       // Load movies in the exact order specified in dailyPuzzles.js
       // This preserves the curated easy-to-hard difficulty progression
-      const movieIdToData = new Map(MOVIES_DATA.map(m => [m.id, m]));
+      const movieIdToData = new Map(MOVIES_DATA.map((m) => [m.id, m]));
       this.movies = this.dailyPuzzle.movieIds
-        .map(id => movieIdToData.get(id))
-        .filter(movie => {
+        .map((id) => movieIdToData.get(id))
+        .filter((movie) => {
           if (!movie) return false;
           const releaseDate = new Date(movie.release_date);
           if (releaseDate > now) return false;
@@ -155,7 +155,7 @@ class MovieTimelineGame {
 
   setupGame() {
     // Only shuffle for random mode - daily and archive puzzles use pre-defined order
-    if (this.gameMode === 'random') {
+    if (this.gameMode === "random") {
       this.shuffleArray(this.movies);
     }
     // For daily and archive modes, movies are already in the curated order from dailyPuzzles.js
@@ -192,7 +192,7 @@ class MovieTimelineGame {
     // Simple seeded random number generator (mulberry32)
     let state = seed;
     const random = () => {
-      state = (state + 0x6D2B79F5) | 0;
+      state = (state + 0x6d2b79f5) | 0;
       let t = Math.imul(state ^ (state >>> 15), 1 | state);
       t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
       return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
@@ -208,26 +208,26 @@ class MovieTimelineGame {
   // Encode challenge data to URL-safe string
   encodeChallengeData(movieIds, score) {
     // Format: score,id1,id2,id3,...
-    const data = [score, ...movieIds].join(',');
+    const data = [score, ...movieIds].join(",");
     // Use base64 encoding for URL safety
-    return btoa(data).replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
+    return btoa(data).replace(/\+/g, "-").replace(/\//g, "_").replace(/=/g, "");
   }
 
   // Decode challenge data from URL string
   decodeChallengeData(encoded) {
     try {
       // Restore base64 padding and characters
-      let base64 = encoded.replace(/-/g, '+').replace(/_/g, '/');
-      while (base64.length % 4) base64 += '=';
+      let base64 = encoded.replace(/-/g, "+").replace(/_/g, "/");
+      while (base64.length % 4) base64 += "=";
       const data = atob(base64);
-      const parts = data.split(',').map(Number);
+      const parts = data.split(",").map(Number);
       if (parts.length < 2 || parts.some(isNaN)) return null;
       return {
         score: parts[0],
-        movieIds: parts.slice(1)
+        movieIds: parts.slice(1),
       };
     } catch (e) {
-      console.error('Failed to decode challenge:', e);
+      console.error("Failed to decode challenge:", e);
       return null;
     }
   }
@@ -237,8 +237,8 @@ class MovieTimelineGame {
     // Use playOrder which tracks the order movies were drawn (not timeline order)
     const encoded = this.encodeChallengeData(this.playOrder, this.bestStreak);
     const url = new URL(window.location.href);
-    url.search = ''; // Clear existing params
-    url.searchParams.set('c', encoded);
+    url.search = ""; // Clear existing params
+    url.searchParams.set("c", encoded);
     return url.toString();
   }
 
@@ -251,14 +251,14 @@ class MovieTimelineGame {
     this.challengeMovieIds = data.movieIds;
     this.challengeScore = data.score;
     this.challengeBeaten = false;
-    this.gameMode = 'challenge';
+    this.gameMode = "challenge";
 
     return true;
   }
 
   switchMode(newMode) {
     const wasChallenge = this.isChallenge;
-    const wasArchive = this.gameMode === 'archive';
+    const wasArchive = this.gameMode === "archive";
 
     // Clear challenge state when switching modes
     if (this.isChallenge) {
@@ -276,7 +276,7 @@ class MovieTimelineGame {
 
     // Clear URL parameters when switching modes
     if (wasArchive || wasChallenge) {
-      window.history.replaceState({}, '', window.location.pathname);
+      window.history.replaceState({}, "", window.location.pathname);
     }
 
     this.gameMode = newMode;
@@ -293,27 +293,27 @@ class MovieTimelineGame {
     const dailyBtn = document.getElementById("daily-mode-btn");
     const challengeIndicator = document.getElementById("challenge-indicator");
 
-    if (this.gameMode === 'challenge') {
+    if (this.gameMode === "challenge") {
       // For challenge mode, show random as active and display challenge indicator
-      randomBtn.classList.add('active');
-      dailyBtn.classList.remove('active');
+      randomBtn.classList.add("active");
+      dailyBtn.classList.remove("active");
       if (challengeIndicator) {
-        challengeIndicator.classList.remove('hidden');
+        challengeIndicator.classList.remove("hidden");
         challengeIndicator.textContent = `Beat ${this.challengeScore} to win!`;
       }
-    } else if (this.gameMode === 'random') {
-      randomBtn.classList.add('active');
-      dailyBtn.classList.remove('active');
-      if (challengeIndicator) challengeIndicator.classList.add('hidden');
-    } else if (this.gameMode === 'archive') {
+    } else if (this.gameMode === "random") {
+      randomBtn.classList.add("active");
+      dailyBtn.classList.remove("active");
+      if (challengeIndicator) challengeIndicator.classList.add("hidden");
+    } else if (this.gameMode === "archive") {
       // For archive mode, show neither button as active
-      randomBtn.classList.remove('active');
-      dailyBtn.classList.remove('active');
-      if (challengeIndicator) challengeIndicator.classList.add('hidden');
+      randomBtn.classList.remove("active");
+      dailyBtn.classList.remove("active");
+      if (challengeIndicator) challengeIndicator.classList.add("hidden");
     } else {
-      dailyBtn.classList.add('active');
-      randomBtn.classList.remove('active');
-      if (challengeIndicator) challengeIndicator.classList.add('hidden');
+      dailyBtn.classList.add("active");
+      randomBtn.classList.remove("active");
+      if (challengeIndicator) challengeIndicator.classList.add("hidden");
     }
   }
 
@@ -343,60 +343,64 @@ class MovieTimelineGame {
         score: score,
         won: won,
         completedAt: new Date().toISOString(),
-        theme: this.dailyPuzzle.theme
+        theme: this.dailyPuzzle.theme,
       };
       localStorage.setItem(key, JSON.stringify(completionData));
     } catch (e) {
-      console.error('Failed to save daily completion:', e);
+      console.error("Failed to save daily completion:", e);
     }
   }
 
   openArchive() {
-    document.getElementById('archive-modal').classList.remove('hidden');
+    document.getElementById("archive-modal").classList.remove("hidden");
     this.renderArchiveList();
   }
 
   closeArchive() {
-    document.getElementById('archive-modal').classList.add('hidden');
+    document.getElementById("archive-modal").classList.add("hidden");
   }
 
   renderArchiveList() {
-    const archiveList = document.getElementById('archive-list');
+    const archiveList = document.getElementById("archive-list");
     const archivePuzzles = getArchivePuzzles();
 
     if (archivePuzzles.length === 0) {
-      archiveList.innerHTML = '<div class="archive-empty">No puzzles available yet. Check back soon!</div>';
+      archiveList.innerHTML =
+        '<div class="archive-empty">No puzzles available yet. Check back soon!</div>';
       return;
     }
 
-    archiveList.innerHTML = archivePuzzles.map(item => {
-      const completionKey = `filmstrip_daily_${item.puzzleNumber}`;
-      let completionData = null;
-      try {
-        const saved = localStorage.getItem(completionKey);
-        if (saved) completionData = JSON.parse(saved);
-      } catch (e) {}
+    archiveList.innerHTML = archivePuzzles
+      .map((item) => {
+        const completionKey = `filmstrip_daily_${item.puzzleNumber}`;
+        let completionData = null;
+        try {
+          const saved = localStorage.getItem(completionKey);
+          if (saved) completionData = JSON.parse(saved);
+        } catch (e) {}
 
-      const dateObj = new Date(item.date + 'T00:00:00');
-      const formattedDate = dateObj.toLocaleDateString('en-US', {
-        weekday: 'short',
-        month: 'short',
-        day: 'numeric'
-      });
+        const dateObj = new Date(item.date + "T00:00:00");
+        const formattedDate = dateObj.toLocaleDateString("en-US", {
+          weekday: "short",
+          month: "short",
+          day: "numeric",
+        });
 
-      let statusHtml = '';
-      if (item.isToday) {
-        statusHtml = '<span class="archive-item-badge today">Today</span>';
-      }
-      if (completionData) {
-        statusHtml = `
+        let statusHtml = "";
+        if (item.isToday) {
+          statusHtml = '<span class="archive-item-badge today">Today</span>';
+        }
+        if (completionData) {
+          statusHtml = `
           <span class="archive-item-score">${completionData.score}/${item.puzzle.movieIds.length}</span>
           <span class="archive-item-badge completed">Played</span>
         `;
-      }
+        }
 
-      return `
-        <div class="archive-item" data-puzzle-number="${item.puzzleNumber}" data-date="${item.date}">
+        return `
+        <div class="archive-item" data-puzzle-number="${
+          item.puzzleNumber
+        }" data-date="${item.date}">
           <div class="archive-item-info">
             <div class="archive-item-number">Puzzle #${item.puzzleNumber}</div>
             <div class="archive-item-theme">${item.puzzle.theme}</div>
@@ -404,15 +408,18 @@ class MovieTimelineGame {
           </div>
           <div class="archive-item-status">
             ${statusHtml}
-            <button class="archive-play-btn">${completionData ? 'Replay' : 'Play'}</button>
+            <button class="archive-play-btn">${
+              completionData ? "Replay" : "Play"
+            }</button>
           </div>
         </div>
       `;
-    }).join('');
+      })
+      .join("");
 
     // Add click handlers to archive items
-    archiveList.querySelectorAll('.archive-item').forEach(item => {
-      item.addEventListener('click', (e) => {
+    archiveList.querySelectorAll(".archive-item").forEach((item) => {
+      item.addEventListener("click", (e) => {
         const puzzleNumber = parseInt(item.dataset.puzzleNumber);
         const date = item.dataset.date;
         this.playArchivePuzzle(puzzleNumber, date);
@@ -422,7 +429,7 @@ class MovieTimelineGame {
 
   playArchivePuzzle(puzzleNumber, dateStr) {
     // Get the puzzle for this date
-    const puzzle = getPuzzleForDate(new Date(dateStr + 'T00:00:00'));
+    const puzzle = getPuzzleForDate(new Date(dateStr + "T00:00:00"));
     if (!puzzle) return;
 
     // Close archive modal
@@ -438,14 +445,14 @@ class MovieTimelineGame {
 
     // Set the puzzle URL
     const url = new URL(window.location.href);
-    url.search = '';
-    url.searchParams.set('puzzle', puzzle.id);
-    window.history.replaceState({}, '', url.toString());
+    url.search = "";
+    url.searchParams.set("puzzle", puzzle.id);
+    window.history.replaceState({}, "", url.toString());
 
     // Set archive mode
     this.archivePuzzle = puzzle;
     this.archivePuzzleNumber = puzzleNumber;
-    this.gameMode = 'archive';
+    this.gameMode = "archive";
 
     // Hide game over modal if visible
     document.getElementById("game-over").classList.add("hidden");
@@ -458,74 +465,74 @@ class MovieTimelineGame {
 
   setupEventListeners() {
     // Logo dropdown menu
-    const logoDropdown = document.querySelector('.logo-dropdown');
-    const logoTrigger = document.querySelector('.logo-trigger');
-    const dropdownMenu = document.querySelector('.dropdown-menu');
+    const logoDropdown = document.querySelector(".logo-dropdown");
+    const logoTrigger = document.querySelector(".logo-trigger");
+    const dropdownMenu = document.querySelector(".dropdown-menu");
 
-    logoTrigger.addEventListener('click', (e) => {
+    logoTrigger.addEventListener("click", (e) => {
       e.stopPropagation();
-      logoDropdown.classList.toggle('open');
-      dropdownMenu.classList.toggle('hidden');
+      logoDropdown.classList.toggle("open");
+      dropdownMenu.classList.toggle("hidden");
     });
 
     // Close dropdown when clicking outside
-    document.addEventListener('click', (e) => {
+    document.addEventListener("click", (e) => {
       if (!logoDropdown.contains(e.target)) {
-        logoDropdown.classList.remove('open');
-        dropdownMenu.classList.add('hidden');
+        logoDropdown.classList.remove("open");
+        dropdownMenu.classList.add("hidden");
       }
     });
 
     // Archive menu item
-    document.getElementById('menu-archive').addEventListener('click', (e) => {
+    document.getElementById("menu-archive").addEventListener("click", (e) => {
       e.preventDefault();
-      logoDropdown.classList.remove('open');
-      dropdownMenu.classList.add('hidden');
+      logoDropdown.classList.remove("open");
+      dropdownMenu.classList.add("hidden");
       this.openArchive();
     });
 
     // Archive modal close button
-    document.getElementById('archive-close').addEventListener('click', () => {
+    document.getElementById("archive-close").addEventListener("click", () => {
       this.closeArchive();
     });
 
     // Close archive when clicking outside content
-    document.getElementById('archive-modal').addEventListener('click', (e) => {
-      if (e.target.id === 'archive-modal') {
+    document.getElementById("archive-modal").addEventListener("click", (e) => {
+      if (e.target.id === "archive-modal") {
         this.closeArchive();
       }
     });
 
     // Help menu item
-    document.getElementById('menu-help').addEventListener('click', (e) => {
+    document.getElementById("menu-help").addEventListener("click", (e) => {
       e.preventDefault();
-      logoDropdown.classList.remove('open');
-      dropdownMenu.classList.add('hidden');
-      document.getElementById('help-modal').classList.remove('hidden');
+      logoDropdown.classList.remove("open");
+      dropdownMenu.classList.add("hidden");
+      document.getElementById("help-modal").classList.remove("hidden");
     });
 
     // Help modal close button
-    document.getElementById('help-close').addEventListener('click', () => {
-      document.getElementById('help-modal').classList.add('hidden');
+    document.getElementById("help-close").addEventListener("click", () => {
+      document.getElementById("help-modal").classList.add("hidden");
     });
 
     // Close help when clicking outside content
-    document.getElementById('help-modal').addEventListener('click', (e) => {
-      if (e.target.id === 'help-modal') {
-        document.getElementById('help-modal').classList.add('hidden');
+    document.getElementById("help-modal").addEventListener("click", (e) => {
+      if (e.target.id === "help-modal") {
+        document.getElementById("help-modal").classList.add("hidden");
       }
     });
 
     // Mode selector buttons
     document.getElementById("random-mode-btn").addEventListener("click", () => {
-      if (this.gameMode !== 'random') {
-        this.switchMode('random');
+      if (this.gameMode !== "random") {
+        this.switchMode("random");
       }
     });
 
     document.getElementById("daily-mode-btn").addEventListener("click", () => {
-      if (this.gameMode !== 'daily') {
-        this.switchMode('daily');
+      if (this.gameMode !== "daily") {
+        this.switchMode("daily");
       }
     });
 
@@ -573,7 +580,10 @@ class MovieTimelineGame {
     const score = this.bestStreak;
     let text;
 
-    if ((this.gameMode === 'daily' || this.gameMode === 'archive') && this.puzzleNumber) {
+    if (
+      (this.gameMode === "daily" || this.gameMode === "archive") &&
+      this.puzzleNumber
+    ) {
       const totalMovies = this.dailyPuzzle.movieIds.length;
       text = `Filmstrip #${this.puzzleNumber} - ${this.dailyPuzzle.theme}\n${score}/${totalMovies} 🎬`;
     } else {
@@ -700,9 +710,10 @@ class MovieTimelineGame {
     const fallbackUrl = "https://via.placeholder.com/300x450?text=No+Poster";
 
     const dateInfo = this.formatDate(movie.release_date);
-    const directorCredit = inPile && movie.showDirector && movie.directors?.length
-      ? `<div class="director">(dir. ${movie.directors[0]})</div>`
-      : '';
+    const directorCredit =
+      inPile && movie.showDirector && movie.directors?.length
+        ? `<div class="director">(dir. ${movie.directors[0]})</div>`
+        : "";
 
     card.innerHTML = `
             <img class="poster" src="${posterUrl}" alt="${
@@ -904,8 +915,19 @@ class MovieTimelineGame {
         this.bestStreak = this.streak;
       }
 
+      // Check if placement has same date as a neighbor (takes precedence)
+      const sameDateResult = this.checkForSameDateNeighbor(newDate, index);
+      // Check if placement is within a month of a neighbor (only if not same date)
+      const closeNeighborResult = !sameDateResult.matched
+        ? this.checkForCloseNeighbor(newDate, index)
+        : { matched: false };
+
       // Check if challenger just beat the original score
-      if (this.isChallenge && !this.challengeBeaten && this.bestStreak > this.challengeScore) {
+      if (
+        this.isChallenge &&
+        !this.challengeBeaten &&
+        this.bestStreak > this.challengeScore
+      ) {
         this.challengeBeaten = true;
         this.showChallengeBeatNotification();
       }
@@ -923,6 +945,26 @@ class MovieTimelineGame {
           newCard.classList.remove("correct");
           newCard.classList.remove("entrance");
         }, 500);
+
+        // Show notification for special placements (positioned between the two cards)
+        // Use additional delay to ensure layout is complete
+        setTimeout(() => {
+          if (sameDateResult.matched) {
+            // Check for Barbenheimer (Barbie + Oppenheimer)
+            const movie1 = this.timeline[index];
+            const movie2 = this.timeline[sameDateResult.neighborIndex];
+            const titles = [movie1.title.toLowerCase(), movie2.title.toLowerCase()];
+            const isBarbenheimer = titles.includes("barbie") && titles.includes("oppenheimer");
+
+            if (isBarbenheimer) {
+              this.showBarbenheimerNotification(index, sameDateResult.neighborIndex);
+            } else {
+              this.showSameDateNotification(index, sameDateResult.neighborIndex);
+            }
+          } else if (closeNeighborResult.matched) {
+            this.showWowNotification(index, closeNeighborResult.neighborIndex);
+          }
+        }, 100);
       }, 50);
 
       // Draw next card
@@ -960,7 +1002,7 @@ class MovieTimelineGame {
 
   endGame(won) {
     // Save puzzle completion for daily and archive modes
-    if (this.gameMode === 'daily' || this.gameMode === 'archive') {
+    if (this.gameMode === "daily" || this.gameMode === "archive") {
       this.saveDailyCompletion(this.bestStreak, won);
     }
 
@@ -1003,22 +1045,24 @@ class MovieTimelineGame {
     }
 
     // Show challenge button for random mode (not for daily or when already in a challenge)
-    if (this.gameMode === 'random' && !this.isChallenge) {
-      challengeBtn.classList.remove('hidden');
+    if (this.gameMode === "random" && !this.isChallenge) {
+      challengeBtn.classList.remove("hidden");
     } else {
-      challengeBtn.classList.add('hidden');
+      challengeBtn.classList.add("hidden");
     }
 
     // Show challenge results if playing a challenge
     if (this.isChallenge) {
-      challengeResult.classList.remove('hidden');
+      challengeResult.classList.remove("hidden");
       if (this.challengeBeaten) {
         challengeResult.innerHTML = `<span class="challenge-won">You beat the challenge! (${this.challengeScore} → ${this.bestStreak})</span>`;
       } else {
-        challengeResult.innerHTML = `<span class="challenge-lost">Challenge failed. Needed ${this.challengeScore + 1}, got ${this.bestStreak}.</span>`;
+        challengeResult.innerHTML = `<span class="challenge-lost">Challenge failed. Needed ${
+          this.challengeScore + 1
+        }, got ${this.bestStreak}.</span>`;
       }
     } else {
-      challengeResult.classList.add('hidden');
+      challengeResult.classList.add("hidden");
     }
 
     // Populate poster grid with timeline movies
@@ -1039,11 +1083,11 @@ class MovieTimelineGame {
     this.showChallengeVictoryNotification();
 
     // Get IDs of movies already in timeline to exclude them
-    const usedIds = new Set(this.timeline.map(m => m.id));
+    const usedIds = new Set(this.timeline.map((m) => m.id));
 
     // Load random movies excluding ones already used
     const now = new Date();
-    const availableMovies = MOVIES_DATA.filter(movie => {
+    const availableMovies = MOVIES_DATA.filter((movie) => {
       if (usedIds.has(movie.id)) return false;
       const releaseDate = new Date(movie.release_date);
       if (releaseDate > now) return false;
@@ -1056,10 +1100,10 @@ class MovieTimelineGame {
 
     // Clear challenge state but keep playing
     this.isChallenge = false;
-    this.gameMode = 'random';
+    this.gameMode = "random";
 
     // Clear the URL parameter
-    window.history.replaceState({}, '', window.location.pathname);
+    window.history.replaceState({}, "", window.location.pathname);
 
     // Update mode buttons (will hide challenge indicator)
     this.updateModeButtons();
@@ -1073,8 +1117,8 @@ class MovieTimelineGame {
 
   showChallengeVictoryNotification() {
     // Create and show a temporary victory notification
-    const notification = document.createElement('div');
-    notification.className = 'challenge-victory-notification';
+    const notification = document.createElement("div");
+    notification.className = "challenge-victory-notification";
     notification.innerHTML = `
       <div class="victory-content">
         <span class="victory-text">Challenge Complete! You beat ${this.challengeScore}!</span>
@@ -1085,14 +1129,203 @@ class MovieTimelineGame {
 
     // Animate in
     requestAnimationFrame(() => {
-      notification.classList.add('show');
+      notification.classList.add("show");
     });
 
     // Remove after delay
     setTimeout(() => {
-      notification.classList.remove('show');
+      notification.classList.remove("show");
       setTimeout(() => notification.remove(), 300);
     }, 3000);
+  }
+
+  checkForSameDateNeighbor(newDate, index) {
+    // Check if the placed movie has the exact same release date as a neighbor
+    // Returns { matched: true, neighborIndex } or { matched: false }
+    // (now at index - 1 or index + 1 since we already inserted)
+    if (index > 0) {
+      const beforeDate = new Date(this.timeline[index - 1].release_date);
+      if (newDate.getTime() === beforeDate.getTime()) {
+        return { matched: true, neighborIndex: index - 1 };
+      }
+    }
+
+    if (index < this.timeline.length - 1) {
+      const afterDate = new Date(this.timeline[index + 1].release_date);
+      if (newDate.getTime() === afterDate.getTime()) {
+        return { matched: true, neighborIndex: index + 1 };
+      }
+    }
+
+    return { matched: false };
+  }
+
+  checkForCloseNeighbor(newDate, index) {
+    // Check if the placed movie is within 30 days of either neighbor
+    // Returns { matched: true, neighborIndex } or { matched: false }
+    const MS_PER_DAY = 24 * 60 * 60 * 1000;
+    const THRESHOLD_DAYS = 30;
+
+    // Check movie before (now at index - 1 since we already inserted)
+    if (index > 0) {
+      const beforeDate = new Date(this.timeline[index - 1].release_date);
+      const daysDiff = Math.abs((newDate - beforeDate) / MS_PER_DAY);
+      if (daysDiff <= THRESHOLD_DAYS && daysDiff > 0) {
+        return { matched: true, neighborIndex: index - 1 };
+      }
+    }
+
+    // Check movie after (now at index + 1 since we already inserted)
+    if (index < this.timeline.length - 1) {
+      const afterDate = new Date(this.timeline[index + 1].release_date);
+      const daysDiff = Math.abs((newDate - afterDate) / MS_PER_DAY);
+      if (daysDiff <= THRESHOLD_DAYS && daysDiff > 0) {
+        return { matched: true, neighborIndex: index + 1 };
+      }
+    }
+
+    return { matched: false };
+  }
+
+  getPositionBetweenCards(cardIndex, neighborIndex) {
+    const cards = document.querySelectorAll("#timeline .movie-card");
+    const card1 = cards[Math.min(cardIndex, neighborIndex)];
+    const card2 = cards[Math.max(cardIndex, neighborIndex)];
+
+    if (!card1 || !card2) return null;
+
+    const rect1 = card1.getBoundingClientRect();
+    const rect2 = card2.getBoundingClientRect();
+
+    // Calculate center point between the two cards
+    const centerX = (rect1.right + rect2.left) / 2;
+    const centerY = (rect1.top + rect1.bottom) / 2;
+
+    return { x: centerX, y: centerY };
+  }
+
+  createSparkles(x, y, color1, color2) {
+    const sparkleCount = 8;
+    const distance = 50;
+    for (let i = 0; i < sparkleCount; i++) {
+      const sparkle = document.createElement("div");
+      sparkle.className = "notification-sparkle";
+
+      // Calculate angle and end position
+      const angle = ((2 * Math.PI) / sparkleCount) * i;
+      const endX = Math.cos(angle) * distance;
+      const endY = Math.sin(angle) * distance;
+
+      sparkle.style.left = `${x}px`;
+      sparkle.style.top = `${y}px`;
+      sparkle.style.setProperty("--end-x", `${endX}px`);
+      sparkle.style.setProperty("--end-y", `${endY}px`);
+      sparkle.style.background = i % 2 === 0 ? color1 : color2;
+      sparkle.style.boxShadow = `0 0 6px ${i % 2 === 0 ? color1 : color2}`;
+      document.body.appendChild(sparkle);
+
+      setTimeout(() => sparkle.remove(), 600);
+    }
+  }
+
+  showWowNotification(cardIndex, neighborIndex) {
+    const notification = document.createElement("div");
+    notification.className = "wow-notification";
+    notification.innerHTML = `
+      <div class="wow-content">
+        <div class="wow-text">Wow!</div>
+      </div>
+    `;
+    document.body.appendChild(notification);
+
+    // Position between the two cards
+    const pos = this.getPositionBetweenCards(cardIndex, neighborIndex);
+    if (pos) {
+      notification.style.left = `${pos.x}px`;
+      notification.style.top = `${pos.y}px`;
+      this.createSparkles(pos.x, pos.y, "#ff6b35", "#f7931e");
+    }
+
+    // Animate in (use double rAF to ensure styles are applied)
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        notification.classList.add("show");
+      });
+    });
+
+    // Remove after delay
+    setTimeout(() => {
+      notification.classList.add("hide");
+      notification.classList.remove("show");
+      setTimeout(() => notification.remove(), 300);
+    }, 1400);
+  }
+
+  showSameDateNotification(cardIndex, neighborIndex) {
+    const notification = document.createElement("div");
+    notification.className = "same-date-notification";
+    notification.innerHTML = `
+      <div class="same-date-content">
+        <div class="same-date-text">Same day!</div>
+      </div>
+    `;
+    document.body.appendChild(notification);
+
+    // Position between the two cards
+    const pos = this.getPositionBetweenCards(cardIndex, neighborIndex);
+    if (pos) {
+      notification.style.left = `${pos.x}px`;
+      notification.style.top = `${pos.y}px`;
+      this.createSparkles(pos.x, pos.y, "#9b59b6", "#e74c3c");
+    }
+
+    // Animate in (use double rAF to ensure styles are applied)
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        notification.classList.add("show");
+      });
+    });
+
+    // Remove after delay
+    setTimeout(() => {
+      notification.classList.add("hide");
+      notification.classList.remove("show");
+      setTimeout(() => notification.remove(), 300);
+    }, 1400);
+  }
+
+  showBarbenheimerNotification(cardIndex, neighborIndex) {
+    const notification = document.createElement("div");
+    notification.className = "barbenheimer-notification";
+    notification.innerHTML = `
+      <div class="barbenheimer-content">
+        <div class="barbenheimer-text">Barbenheimer!</div>
+      </div>
+    `;
+    document.body.appendChild(notification);
+
+    // Position between the two cards
+    const pos = this.getPositionBetweenCards(cardIndex, neighborIndex);
+    if (pos) {
+      notification.style.left = `${pos.x}px`;
+      notification.style.top = `${pos.y}px`;
+      // Pink and orange/fire colors for Barbie + Oppenheimer
+      this.createSparkles(pos.x, pos.y, "#ff69b4", "#ff4500");
+    }
+
+    // Animate in (use double rAF to ensure styles are applied)
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        notification.classList.add("show");
+      });
+    });
+
+    // Remove after delay
+    setTimeout(() => {
+      notification.classList.add("hide");
+      notification.classList.remove("show");
+      setTimeout(() => notification.remove(), 300);
+    }, 1800);
   }
 
   renderPosterGrid() {
