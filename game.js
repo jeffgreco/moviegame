@@ -1198,8 +1198,22 @@ class MovieTimelineGame {
     const rect2 = card2.getBoundingClientRect();
 
     // Calculate center point between the two cards
-    const centerX = (rect1.right + rect2.left) / 2;
-    const centerY = (rect1.top + rect1.bottom) / 2;
+    let centerX = (rect1.right + rect2.left) / 2;
+    let centerY = (rect1.top + rect1.bottom) / 2;
+
+    // Clamp position to keep notification on screen
+    // Account for notification size (approx 180px wide, 60px tall)
+    const margin = 20;
+    const notifHalfWidth = 90;
+    const notifHalfHeight = 30;
+
+    const minX = margin + notifHalfWidth;
+    const maxX = window.innerWidth - margin - notifHalfWidth;
+    const minY = margin + notifHalfHeight;
+    const maxY = window.innerHeight - margin - notifHalfHeight;
+
+    centerX = Math.max(minX, Math.min(maxX, centerX));
+    centerY = Math.max(minY, Math.min(maxY, centerY));
 
     return { x: centerX, y: centerY };
   }
