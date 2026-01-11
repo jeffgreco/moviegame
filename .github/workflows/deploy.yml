@@ -32,7 +32,7 @@ jobs:
       - name: Prepare deploy directory
         run: |
           mkdir -p _site
-          cp -r index.html styles.css game.js movies.js dailyPuzzles.js images _site/
+          cp index.html styles.css game.js movies.js dailyPuzzles.js share.png _site/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
