@@ -70,6 +70,11 @@ const DAILY_PUZZLES = [
   // Future puzzles will be added here
 ];
 
+// Get date string in Eastern Time (America/New_York)
+function getEasternDateString(date) {
+  return date.toLocaleDateString("en-CA", { timeZone: "America/New_York" });
+}
+
 // Get a puzzle by its ID
 function getPuzzleById(id) {
   return DAILY_PUZZLES.find((p) => p.id === id) || null;
@@ -145,8 +150,9 @@ function getPuzzleNumber(date) {
 
 // Get all past puzzles (including today) for the archive
 function getArchivePuzzles() {
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
+  // Use Eastern Time for determining "today"
+  const todayStr = getEasternDateString(new Date());
+  const today = new Date(todayStr + "T00:00:00");
 
   // Find the earliest date from PUZZLE_SCHEDULE
   const scheduledDates = Object.keys(PUZZLE_SCHEDULE).sort();
@@ -175,7 +181,7 @@ function getArchivePuzzles() {
         puzzleNumber: puzzleNum,
         date: dateStr,
         puzzle: puzzle,
-        isToday: currentDate.getTime() === today.getTime(),
+        isToday: dateStr === todayStr,
       });
     }
 
