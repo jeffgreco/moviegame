@@ -1,0 +1,16 @@
+name = "filmstrip-tracker"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+# D1 Database binding
+[[d1_databases]]
+binding = "DB"
+database_name = "filmstrip-games"
+database_id = "YOUR_DATABASE_ID_HERE"  # Replace after running: wrangler d1 create filmstrip-games
+
+[vars]
+CORS_ORIGIN = "https://jeffgreco.github.io"  # Update to your GitHub Pages URL
+
+# For local development, allow localhost
+# [env.dev.vars]
+# CORS_ORIGIN = "*"

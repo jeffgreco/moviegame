@@ -1,5 +1,9 @@
 // Movie Timeline Game Logic
 
+// Tracker API URL - set this to your Cloudflare Worker URL after deployment
+// Leave empty to disable tracking
+const TRACKER_API_URL = ''; // e.g., 'https://filmstrip-tracker.your-subdomain.workers.dev'
+
 class MovieTimelineGame {
   constructor() {
     this.movies = [];
@@ -30,6 +34,11 @@ class MovieTimelineGame {
     // Archive mode state
     this.archivePuzzle = null; // Puzzle data when playing from archive
     this.archivePuzzleNumber = null; // Puzzle number when playing from archive
+
+    // Game tracking
+    this.tracker = typeof GameTracker !== 'undefined' ? new GameTracker(TRACKER_API_URL) : null;
+    this.scoreChart = typeof ScoreHistoryChart !== 'undefined' ? new ScoreHistoryChart('score-chart') : null;
+    this.leaderboard = typeof RandomLeaderboard !== 'undefined' ? new RandomLeaderboard('random-leaderboard') : null;
 
     this.init();
   }
@@ -351,6 +360,31 @@ class MovieTimelineGame {
     }
   }
 
+  async submitToTracker(won) {
+    if (!this.tracker) return;
+
+    const gameData = {
+      gameMode: this.gameMode,
+      score: this.bestStreak,
+      won: won,
+      movieIds: this.timeline.map(m => m.id)
+    };
+
+    // Add puzzle-specific data for daily/archive modes
+    if (this.gameMode === 'daily' || this.gameMode === 'archive') {
+      gameData.puzzleId = this.dailyPuzzle?.id || null;
+      gameData.puzzleNumber = this.puzzleNumber || this.archivePuzzleNumber || null;
+      gameData.puzzleTheme = this.dailyPuzzle?.theme || null;
+      gameData.totalMovies = this.dailyPuzzle?.movieIds?.length || null;
+    }
+
+    try {
+      await this.tracker.submitCompletion(gameData);
+    } catch (e) {
+      console.warn('Failed to submit to tracker:', e);
+    }
+  }
+
   openArchive() {
     document.getElementById("archive-modal").classList.remove("hidden");
     this.renderArchiveList();
@@ -358,6 +392,50 @@ class MovieTimelineGame {
 
   closeArchive() {
     document.getElementById("archive-modal").classList.add("hidden");
+  }
+
+  async openStats() {
+    document.getElementById("stats-modal").classList.remove("hidden");
+    await this.loadStatsData();
+  }
+
+  closeStats() {
+    document.getElementById("stats-modal").classList.add("hidden");
+  }
+
+  async loadStatsData() {
+    if (!this.tracker) {
+      // Show message when tracking is not enabled
+      const chartContainer = document.getElementById('score-chart');
+      const leaderboardContainer = document.getElementById('random-leaderboard');
+      if (chartContainer) {
+        chartContainer.innerHTML = '<div class="chart-empty">Stats tracking not configured</div>';
+      }
+      if (leaderboardContainer) {
+        leaderboardContainer.innerHTML = '<div class="leaderboard-empty">Stats tracking not configured</div>';
+      }
+      return;
+    }
+
+    // Load score history and render chart
+    try {
+      const historyData = await this.tracker.getHistory();
+      if (this.scoreChart) {
+        this.scoreChart.render(historyData.history);
+      }
+    } catch (e) {
+      console.warn('Failed to load score history:', e);
+    }
+
+    // Load leaderboard
+    try {
+      const leaderboardData = await this.tracker.getRandomLeaderboard();
+      if (this.leaderboard) {
+        this.leaderboard.render(leaderboardData, this.tracker.playerId);
+      }
+    } catch (e) {
+      console.warn('Failed to load leaderboard:', e);
+    }
   }
 
   renderArchiveList() {
@@ -500,6 +578,26 @@ class MovieTimelineGame {
     document.getElementById("archive-modal").addEventListener("click", (e) => {
       if (e.target.id === "archive-modal") {
         this.closeArchive();
+      }
+    });
+
+    // Stats menu item
+    document.getElementById("menu-stats").addEventListener("click", (e) => {
+      e.preventDefault();
+      logoDropdown.classList.remove("open");
+      dropdownMenu.classList.add("hidden");
+      this.openStats();
+    });
+
+    // Stats modal close button
+    document.getElementById("stats-close").addEventListener("click", () => {
+      this.closeStats();
+    });
+
+    // Close stats when clicking outside content
+    document.getElementById("stats-modal").addEventListener("click", (e) => {
+      if (e.target.id === "stats-modal") {
+        this.closeStats();
       }
     });
 
@@ -1015,6 +1113,9 @@ class MovieTimelineGame {
     if (this.gameMode === "daily" || this.gameMode === "archive") {
       this.saveDailyCompletion(this.bestStreak, won);
     }
+
+    // Submit to tracker (async, non-blocking)
+    this.submitToTracker(won);
 
     document.getElementById("game-over").classList.remove("hidden");
     document.getElementById("best-streak").textContent = this.bestStreak;

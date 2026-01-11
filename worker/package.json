@@ -1,0 +1,16 @@
+{
+  "name": "filmstrip-tracker",
+  "version": "1.0.0",
+  "description": "Cloudflare Worker for tracking Filmstrip game completions",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:create": "wrangler d1 create filmstrip-games",
+    "db:init": "wrangler d1 execute filmstrip-games --file=./schema.sql",
+    "db:init:local": "wrangler d1 execute filmstrip-games --local --file=./schema.sql"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}

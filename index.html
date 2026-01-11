@@ -57,6 +57,7 @@
           </h1>
           <div class="dropdown-menu hidden">
             <a href="#" id="menu-archive" class="dropdown-item">Archive</a>
+            <a href="#" id="menu-stats" class="dropdown-item">My Stats</a>
             <a href="#" id="menu-help" class="dropdown-item">How to Play</a>
             <div class="dropdown-divider"></div>
             <div class="dropdown-credit">
@@ -171,10 +172,34 @@
           </div>
         </div>
       </div>
+
+      <div id="stats-modal" class="stats-modal hidden">
+        <div class="stats-content">
+          <div class="stats-header">
+            <h2>My Stats</h2>
+            <button id="stats-close" class="stats-close">&times;</button>
+          </div>
+          <div class="stats-body">
+            <div class="stats-section">
+              <h3>Puzzle Score History</h3>
+              <div id="score-chart" class="score-chart-container">
+                <div class="chart-loading">Loading...</div>
+              </div>
+            </div>
+            <div class="stats-section">
+              <h3>Random Mode Hall of Fame</h3>
+              <div id="random-leaderboard" class="leaderboard-container">
+                <div class="leaderboard-loading">Loading...</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="movies.js"></script>
     <script src="dailyPuzzles.js"></script>
+    <script src="tracker.js"></script>
     <script src="game.js"></script>
   </body>
 </html>
