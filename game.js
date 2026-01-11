@@ -696,7 +696,6 @@ class MovieTimelineGame {
                 ? `<span class="year"><span class="month-day">${dateInfo.monthDay}</span>,&nbsp;<span class="year-num">${dateInfo.year}</span></span>`
                 : ""
             }
-            <div class="title">${movie.title}</div>
         `;
 
     // Only add drag/touch events for cards in the draw pile
