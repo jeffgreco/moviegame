@@ -431,14 +431,14 @@ main {
   z-index: 2;
 }
 
-/* Extended invisible hit area overlapping neighboring cards */
+/* Extended invisible hit area overlapping half of neighboring cards */
 .drop-zone::before {
   content: "";
   position: absolute;
   top: 0;
   bottom: 0;
-  left: -40px;
-  right: -40px;
+  left: -65px;
+  right: -65px;
 }
 
 /* Hover styles only for devices that support hover (not touch) */
@@ -962,6 +962,11 @@ main {
   .drop-zone {
     width: 15px;
     height: 150px;
+  }
+
+  .drop-zone::before {
+    left: -50px;
+    right: -50px;
   }
 
   .drop-zone.drag-over {
