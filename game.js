@@ -1173,39 +1173,16 @@ class MovieTimelineGame {
   }
 
   async loadPuzzleStats(puzzleId) {
-    let stats = null;
+    if (!this.tracker) return;
 
-    if (this.tracker) {
-      try {
-        stats = await this.tracker.getPuzzleStats(puzzleId);
-      } catch (e) {
-        console.warn('Failed to load puzzle stats:', e);
+    try {
+      const stats = await this.tracker.getPuzzleStats(puzzleId);
+      if (stats && stats.scoreDistribution && stats.scoreDistribution.length > 0) {
+        this.renderPuzzleStatsChart(stats, this.bestStreak);
       }
+    } catch (e) {
+      console.warn('Failed to load puzzle stats:', e);
     }
-
-    // Use dummy data if no stats available (for testing/preview)
-    if (!stats || !stats.scoreDistribution || stats.scoreDistribution.length === 0) {
-      const totalMovies = this.dailyPuzzle?.movieIds?.length || 10;
-      stats = {
-        attempts: 847,
-        total_movies: totalMovies,
-        scoreDistribution: [
-          { score: 0, count: 12 },
-          { score: 1, count: 34 },
-          { score: 2, count: 67 },
-          { score: 3, count: 89 },
-          { score: 4, count: 124 },
-          { score: 5, count: 156 },
-          { score: 6, count: 132 },
-          { score: 7, count: 98 },
-          { score: 8, count: 72 },
-          { score: 9, count: 41 },
-          { score: totalMovies, count: 22 }
-        ].filter(d => d.score <= totalMovies)
-      };
-    }
-
-    this.renderPuzzleStatsChart(stats, this.bestStreak);
   }
 
   renderPuzzleStatsChart(stats, playerScore) {
