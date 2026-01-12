@@ -107,35 +107,18 @@
       <div id="game-over" class="game-over hidden">
         <div class="game-over-content">
           <h2>Game Over!</h2>
-          <div class="game-stats">
-            <span class="stat-item"
-              >The correct date was <span id="correct-year"></span
-            ></span>
-            <span class="stat-divider">•</span>
-            <span class="stat-item">Score: <span id="best-streak"></span></span>
+          <div id="puzzle-stats" class="puzzle-stats hidden">
+            <div class="puzzle-stats-header">
+              <span id="puzzle-stats-percentile"></span>
+            </div>
+            <div id="puzzle-stats-chart" class="puzzle-stats-chart"></div>
           </div>
-          <div class="poster-grid-container">
+                    <div class="poster-grid-container">
             <div id="poster-grid" class="poster-grid">
               <!-- Poster grid will be populated here -->
             </div>
           </div>
           <div id="challenge-result" class="challenge-result hidden"></div>
-          <div id="puzzle-stats" class="puzzle-stats hidden">
-            <div class="puzzle-stats-grid">
-              <div class="puzzle-stat">
-                <div class="puzzle-stat-value" id="puzzle-stat-players">-</div>
-                <div class="puzzle-stat-label">Played</div>
-              </div>
-              <div class="puzzle-stat">
-                <div class="puzzle-stat-value" id="puzzle-stat-perfect">-</div>
-                <div class="puzzle-stat-label">Perfect</div>
-              </div>
-              <div class="puzzle-stat">
-                <div class="puzzle-stat-value" id="puzzle-stat-avg">-</div>
-                <div class="puzzle-stat-label">Avg Score</div>
-              </div>
-            </div>
-          </div>
           <div class="game-over-actions">
             <button id="share-score" class="share-btn">Share Score</button>
             <button id="copy-challenge" class="challenge-btn hidden">

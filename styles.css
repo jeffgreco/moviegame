@@ -383,7 +383,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s;
+  transition: all 0.1s;
   flex-shrink: 0;
   cursor: pointer;
 }
@@ -614,29 +614,6 @@ main {
   50% {
     filter: brightness(1.2);
   }
-}
-
-.game-stats {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-  font-size: 0.95rem;
-  color: #e8e3d8;
-}
-
-.game-stats .stat-divider {
-  color: rgba(232, 227, 216, 0.4);
-  font-size: 0.8rem;
-}
-
-.game-stats #correct-year,
-.game-stats #final-score,
-.game-stats #best-streak {
-  color: #c9a961;
-  font-weight: bold;
 }
 
 .game-over-actions {
@@ -961,11 +938,6 @@ main {
 
   .game-over-content.perfect-score h2 {
     font-size: 2rem;
-  }
-
-  .game-stats {
-    font-size: 0.85rem;
-    margin-bottom: 0.75rem;
   }
 
   .poster-grid-container {
@@ -1951,28 +1923,61 @@ main {
   border-radius: 8px;
 }
 
-.puzzle-stats-grid {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-}
-
-.puzzle-stat {
+.puzzle-stats-header {
   text-align: center;
+  margin-bottom: 0.75rem;
+  color: #e8e3d8;
+  font-size: 0.9rem;
 }
 
-.puzzle-stat-value {
-  font-size: 1.25rem;
-  font-weight: 600;
+.puzzle-stats-header .score-value {
+  font-size: 1.4rem;
+  font-weight: 700;
   color: #c9a961;
 }
 
-.puzzle-stat-label {
-  font-size: 0.7rem;
+.puzzle-stats-chart {
+  width: 100%;
+}
+
+.score-distribution {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2px;
+  height: 60px;
+}
+
+.score-bar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  max-width: 24px;
+  height: 100%;
+}
+
+.score-bar {
+  width: 100%;
+  background: #555;
+  border-radius: 2px 2px 0 0;
+  min-height: 2px;
+  margin-top: auto;
+}
+
+.score-bar-container.player-score .score-bar {
+  background: #c9a961;
+}
+
+.score-label {
+  font-size: 0.6rem;
   color: #888;
-  margin-top: 0.2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+
+.score-bar-container.player-score .score-label {
+  color: #c9a961;
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {
