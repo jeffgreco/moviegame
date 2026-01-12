@@ -114,6 +114,14 @@ class MovieTimelineGame {
           seenIds.add(movie.id);
           return true;
         });
+
+      // If archive puzzle movies couldn't be loaded, fall back to random
+      if (this.movies.length < 2) {
+        this.archivePuzzle = null;
+        this.gameMode = "random";
+        this.loadMoviesForMode();
+        return;
+      }
     } else if (this.gameMode === "daily") {
       // Load daily puzzle
       this.dailyPuzzle = getTodaysPuzzle();
@@ -139,6 +147,13 @@ class MovieTimelineGame {
           seenIds.add(movie.id);
           return true;
         });
+
+      // If daily puzzle movies couldn't be loaded, fall back to random
+      if (this.movies.length < 2) {
+        this.gameMode = "random";
+        this.loadMoviesForMode();
+        return;
+      }
     } else {
       // Random mode: use all movies
       this.dailyPuzzle = null;
@@ -585,8 +600,8 @@ class MovieTimelineGame {
       (this.gameMode === "daily" || this.gameMode === "archive") &&
       this.puzzleNumber
     ) {
-      const totalMovies = this.dailyPuzzle.movieIds.length;
-      text = `Filmstrip #${this.puzzleNumber} - ${this.dailyPuzzle.theme}\n${score}/${totalMovies} 🎬`;
+      const maxScore = this.dailyPuzzle.movieIds.length - 1; // First movie doesn't count
+      text = `Filmstrip #${this.puzzleNumber} - ${this.dailyPuzzle.theme}\n${score}/${maxScore} 🎬`;
     } else {
       text = `I scored ${score} on Filmstrip! Can you beat my score?`;
     }
