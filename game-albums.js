@@ -35,7 +35,7 @@ class AlbumTimelineGame {
     // Audio state
     this.audioEnabled = false;
     this.currentAudio = null;
-    this.nextAudio = null;
+    this.fadingOutAudio = null;
     this.fadeInterval = null;
 
     this.init();
@@ -1349,6 +1349,19 @@ class AlbumTimelineGame {
   playPreview(previewUrl) {
     if (!this.audioEnabled || !previewUrl) return;
 
+    // Clean up any audio that was being faded out (prevents orphaned audio)
+    if (this.fadingOutAudio) {
+      this.fadingOutAudio.pause();
+      this.fadingOutAudio.src = "";
+      this.fadingOutAudio = null;
+    }
+
+    // Cancel any in-progress crossfade
+    if (this.fadeInterval) {
+      clearInterval(this.fadeInterval);
+      this.fadeInterval = null;
+    }
+
     // Create new audio element
     const audio = new Audio(previewUrl);
     audio.volume = 0;
@@ -1370,19 +1383,20 @@ class AlbumTimelineGame {
     const stepTime = fadeTime / steps;
     let step = 0;
 
-    newAudio.play().catch(() => {});
+    // Track the old audio and immediately update currentAudio
+    // This prevents race conditions if playPreview is called mid-crossfade
+    this.fadingOutAudio = oldAudio;
+    this.currentAudio = newAudio;
 
-    if (this.fadeInterval) {
-      clearInterval(this.fadeInterval);
-    }
+    newAudio.play().catch(() => {});
 
     this.fadeInterval = setInterval(() => {
       step++;
       const progress = step / steps;
 
       // Fade out old
-      if (oldAudio) {
-        oldAudio.volume = Math.max(0, 0.7 * (1 - progress));
+      if (this.fadingOutAudio) {
+        this.fadingOutAudio.volume = Math.max(0, 0.7 * (1 - progress));
       }
 
       // Fade in new
@@ -1391,11 +1405,11 @@ class AlbumTimelineGame {
       if (step >= steps) {
         clearInterval(this.fadeInterval);
         this.fadeInterval = null;
-        if (oldAudio) {
-          oldAudio.pause();
-          oldAudio.src = "";
+        if (this.fadingOutAudio) {
+          this.fadingOutAudio.pause();
+          this.fadingOutAudio.src = "";
+          this.fadingOutAudio = null;
         }
-        this.currentAudio = newAudio;
       }
     }, stepTime);
   }
@@ -1443,6 +1457,11 @@ class AlbumTimelineGame {
     if (this.fadeInterval) {
       clearInterval(this.fadeInterval);
       this.fadeInterval = null;
+    }
+    if (this.fadingOutAudio) {
+      this.fadingOutAudio.pause();
+      this.fadingOutAudio.src = "";
+      this.fadingOutAudio = null;
     }
     if (this.currentAudio) {
       this.currentAudio.pause();
