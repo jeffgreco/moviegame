@@ -445,6 +445,12 @@ main {
   }
 }
 
+/* Preemptive growth when any drag is active */
+.drop-zone.drag-active {
+  width: 50px;
+  background: rgba(201, 169, 97, 0.05);
+}
+
 /* Drag-over styles always apply (for touch and mouse drag) */
 .drop-zone.drag-over {
   border-color: #c9a961;
