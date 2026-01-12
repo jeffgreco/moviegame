@@ -427,6 +427,18 @@ main {
   transition: all 0.1s;
   flex-shrink: 0;
   cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+/* Extended invisible hit area overlapping neighboring cards */
+.drop-zone::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -40px;
+  right: -40px;
 }
 
 /* Hover styles only for devices that support hover (not touch) */
@@ -468,7 +480,8 @@ main {
   transition: all 0.2s;
 }
 
-.timeline:hover .drop-zone::after {
+.timeline:hover .drop-zone::after,
+.drop-zone.drag-active::after {
   color: #c9a961;
 }
 
