@@ -945,6 +945,12 @@ class MovieTimelineGame {
         this.bestStreak = this.streak;
       }
 
+      // Hide the instruction hint after first successful placement
+      if (this.streak === 1) {
+        const hint = document.querySelector('.draw-pile-area .hint');
+        if (hint) hint.classList.add('hidden');
+      }
+
       // Check if placement has same date as a neighbor (takes precedence)
       const sameDateResult = this.checkForSameDateNeighbor(newDate, index);
       // Check if placement is within a month of a neighbor (only if not same date)
