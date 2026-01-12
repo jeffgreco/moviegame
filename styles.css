@@ -462,6 +462,10 @@ main {
   transition: all 0.2s;
 }
 
+.timeline:hover .drop-zone::after {
+  color: #c9a961;
+}
+
 .drop-zone.drag-over::after {
   color: #c9a961;
   font-size: 2.5rem;
