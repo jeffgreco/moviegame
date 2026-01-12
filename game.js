@@ -2,7 +2,7 @@
 
 // Tracker API URL - set this to your Cloudflare Worker URL after deployment
 // Leave empty to disable tracking
-const TRACKER_API_URL = ''; // e.g., 'https://filmstrip-tracker.your-subdomain.workers.dev'
+const TRACKER_API_URL = 'https://filmstrip-tracker.jeffgreco.workers.dev';
 
 class MovieTimelineGame {
   constructor() {

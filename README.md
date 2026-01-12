@@ -1,5 +1,6 @@
 # Movie Timeline Game
 
+https://filmstrip.jeffgreco.com
 A browser game where you arrange movie posters in chronological order based on their US release dates.
 
 ## How to Play
@@ -42,6 +43,7 @@ Or trigger the "Update Movie Data" GitHub Action manually (requires `TMDB_API_KE
 The game is deployed automatically to GitHub Pages when pushing to main/master.
 
 To enable GitHub Pages:
+
 1. Go to repository Settings → Pages
 2. Under "Build and deployment", select "GitHub Actions"
 
