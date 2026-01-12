@@ -331,6 +331,7 @@ class MovieTimelineGame {
 
     // Reset game with new mode
     document.getElementById("game-over").classList.add("hidden");
+    document.body.classList.remove("modal-open");
     this.loadMoviesForMode();
     this.setupGame();
   }
@@ -425,11 +426,13 @@ class MovieTimelineGame {
 
   openArchive() {
     document.getElementById("archive-modal").classList.remove("hidden");
+    document.body.classList.add("modal-open");
     this.renderArchiveList();
   }
 
   closeArchive() {
     document.getElementById("archive-modal").classList.add("hidden");
+    document.body.classList.remove("modal-open");
   }
 
   renderArchiveList() {
@@ -505,6 +508,7 @@ class MovieTimelineGame {
 
     // Hide game over modal if visible
     document.getElementById("game-over").classList.add("hidden");
+    document.body.classList.remove("modal-open");
 
     // Update UI and start game
     this.updateModeButtons();
@@ -558,17 +562,20 @@ class MovieTimelineGame {
       logoDropdown.classList.remove("open");
       dropdownMenu.classList.add("hidden");
       document.getElementById("help-modal").classList.remove("hidden");
+      document.body.classList.add("modal-open");
     });
 
     // Help modal close button
     document.getElementById("help-close").addEventListener("click", () => {
       document.getElementById("help-modal").classList.add("hidden");
+      document.body.classList.remove("modal-open");
     });
 
     // Close help when clicking outside content
     document.getElementById("help-modal").addEventListener("click", (e) => {
       if (e.target.id === "help-modal") {
         document.getElementById("help-modal").classList.add("hidden");
+        document.body.classList.remove("modal-open");
       }
     });
 
@@ -587,6 +594,7 @@ class MovieTimelineGame {
 
     document.getElementById("play-again").addEventListener("click", () => {
       document.getElementById("game-over").classList.add("hidden");
+      document.body.classList.remove("modal-open");
       this.loadMoviesForMode();
       this.setupGame();
     });
@@ -1076,6 +1084,7 @@ class MovieTimelineGame {
     this.submitToTracker(won);
 
     document.getElementById("game-over").classList.remove("hidden");
+    document.body.classList.add("modal-open");
 
     const isPuzzleMode = this.gameMode === "daily" || this.gameMode === "archive";
     const isPerfectDaily = won && isPuzzleMode;

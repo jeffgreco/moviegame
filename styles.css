@@ -17,6 +17,14 @@ body {
     env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
+/* Prevent body scroll when modal is open */
+body.modal-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
 .game-container {
   max-width: 100%;
   height: 100vh;
@@ -1544,6 +1552,11 @@ main {
   border-radius: 8px;
   width: 100%;
   max-width: 450px;
+  max-height: 90vh;
+  max-height: 90dvh; /* Dynamic viewport height for mobile Safari */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .help-header {
@@ -1581,6 +1594,10 @@ main {
 
 .help-body {
   padding: 1rem 2.5rem 2rem;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  flex: 1;
+  min-height: 0; /* Allow flex item to shrink below content size */
 }
 
 .help-body p {
@@ -1604,6 +1621,25 @@ main {
   border-radius: 4px;
   font-weight: bold;
   font-size: 0.9em;
+}
+
+/* Help modal scrollbar */
+.help-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.help-body::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+.help-body::-webkit-scrollbar-thumb {
+  background: rgba(201, 169, 97, 0.3);
+  border-radius: 3px;
+}
+
+.help-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(201, 169, 97, 0.5);
 }
 
 /* Archive Modal */
@@ -1631,8 +1667,10 @@ main {
   width: 100%;
   max-width: 600px;
   max-height: 80vh;
+  max-height: 80dvh; /* Dynamic viewport height for mobile Safari */
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .archive-header {
@@ -1673,7 +1711,9 @@ main {
 .archive-list {
   flex: 1;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
   padding: 1rem 2rem 1.5rem;
+  min-height: 0; /* Allow flex item to shrink below content size */
 }
 
 .archive-item {
@@ -1796,6 +1836,7 @@ main {
 
   .archive-content {
     max-height: 90vh;
+    max-height: 90dvh; /* Dynamic viewport height for mobile Safari */
   }
 
   .archive-header {
@@ -1950,3 +1991,4 @@ main {
     height: 50px;
   }
 }
+
