@@ -6,7 +6,8 @@
       "Bash(node -e:*)",
       "Bash(npx wrangler:*)",
       "Bash(npx esbuild:*)",
-      "Bash(gzip:*)"
+      "Bash(gzip:*)",
+      "Bash(ls:*)"
     ]
   }
 }
