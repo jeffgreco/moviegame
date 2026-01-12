@@ -199,8 +199,32 @@ class MovieTimelineGame {
     // Track play order: starting card, then first drawn card
     this.playOrder = [this.movies[0].id, this.currentCard.id];
 
+    // Preload poster images for smoother gameplay
+    this.preloadUpcomingPosters();
+
     this.render();
     this.updateStats();
+  }
+
+  getPosterUrl(movie) {
+    return movie.poster_url || movie.poster_path
+      ? movie.poster_url || `https://image.tmdb.org/t/p/w300${movie.poster_path}`
+      : null;
+  }
+
+  preloadUpcomingPosters(count = 5) {
+    const moviesToPreload = [
+      this.currentCard,
+      ...this.drawPile.slice(0, count)
+    ].filter(Boolean);
+
+    for (const movie of moviesToPreload) {
+      const url = this.getPosterUrl(movie);
+      if (url) {
+        const img = new Image();
+        img.src = url;
+      }
+    }
   }
 
   shuffleArray(array) {
@@ -1012,6 +1036,7 @@ class MovieTimelineGame {
       if (this.drawPile.length > 0) {
         this.currentCard = this.drawPile.shift();
         this.playOrder.push(this.currentCard.id);
+        this.preloadUpcomingPosters();
         this.renderDrawPile();
       } else if (this.isChallenge && this.challengeBeaten) {
         // Challenge beaten and out of challenge movies - transition to random mode
@@ -1222,6 +1247,7 @@ class MovieTimelineGame {
     // Draw next card and continue
     if (this.drawPile.length > 0) {
       this.currentCard = this.drawPile.shift();
+      this.preloadUpcomingPosters();
       this.renderDrawPile();
     }
   }
