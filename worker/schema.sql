@@ -24,6 +24,9 @@ CREATE TABLE IF NOT EXISTS game_completions (
     -- For random mode - track the movies in timeline order
     movie_ids TEXT,                   -- JSON array of TMDB movie IDs in timeline order
 
+    -- Replay tracking
+    is_replay INTEGER NOT NULL DEFAULT 0,  -- 1 if this is a repeat play of the same puzzle
+
     -- Timestamps
     completed_at TEXT NOT NULL DEFAULT (datetime('now')),
     created_at TEXT NOT NULL DEFAULT (datetime('now'))

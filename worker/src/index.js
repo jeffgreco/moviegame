@@ -129,6 +129,7 @@ async function handleComplete(request, env, corsHeaders) {
   }
 
   // For daily/archive modes, check if player already completed this puzzle
+  let isReplay = false;
   if ((gameMode === 'daily' || gameMode === 'archive') && body.puzzleId) {
     const existing = await env.DB.prepare(`
       SELECT id FROM game_completions
@@ -136,10 +137,7 @@ async function handleComplete(request, env, corsHeaders) {
     `).bind(playerId, body.puzzleId, gameMode).first();
 
     if (existing) {
-      return jsonResponse({
-        error: 'Already submitted',
-        message: 'You have already submitted a completion for this puzzle'
-      }, corsHeaders, 409);
+      isReplay = true;
     }
   }
 
@@ -147,8 +145,8 @@ async function handleComplete(request, env, corsHeaders) {
   const result = await env.DB.prepare(`
     INSERT INTO game_completions (
       player_id, game_mode, score, total_movies, won,
-      puzzle_id, puzzle_number, puzzle_theme, movie_ids, completed_at
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      puzzle_id, puzzle_number, puzzle_theme, movie_ids, is_replay, completed_at
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `).bind(
     playerId,
     gameMode,
@@ -159,12 +157,14 @@ async function handleComplete(request, env, corsHeaders) {
     body.puzzleNumber || null,
     body.puzzleTheme || null,
     body.movieIds ? JSON.stringify(body.movieIds) : null,
+    isReplay ? 1 : 0,
     body.completedAt || new Date().toISOString()
   ).run();
 
   return jsonResponse({
     success: true,
-    id: result.meta.last_row_id
+    id: result.meta.last_row_id,
+    isReplay
   }, corsHeaders);
 }
 
@@ -218,7 +218,7 @@ async function handlePuzzleStats(puzzleId, env, corsHeaders) {
     return jsonResponse({ error: 'puzzleId is required' }, corsHeaders, 400);
   }
 
-  // Get aggregate stats
+  // Get aggregate stats (excluding replays for accurate first-attempt stats)
   const stats = await env.DB.prepare(`
     SELECT
       puzzle_id,
@@ -231,7 +231,7 @@ async function handlePuzzleStats(puzzleId, env, corsHeaders) {
       MAX(score) as high_score,
       MIN(score) as low_score
     FROM game_completions
-    WHERE puzzle_id = ?
+    WHERE puzzle_id = ? AND is_replay = 0
     GROUP BY puzzle_id
   `).bind(puzzleId).first();
 
@@ -239,11 +239,11 @@ async function handlePuzzleStats(puzzleId, env, corsHeaders) {
     return jsonResponse({ error: 'Puzzle not found' }, corsHeaders, 404);
   }
 
-  // Get score distribution
+  // Get score distribution (excluding replays)
   const distribution = await env.DB.prepare(`
     SELECT score, COUNT(*) as count
     FROM game_completions
-    WHERE puzzle_id = ?
+    WHERE puzzle_id = ? AND is_replay = 0
     GROUP BY score
     ORDER BY score ASC
   `).bind(puzzleId).all();
