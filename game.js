@@ -37,7 +37,6 @@ class MovieTimelineGame {
 
     // Game tracking
     this.tracker = typeof GameTracker !== 'undefined' ? new GameTracker(TRACKER_API_URL) : null;
-    this.scoreChart = typeof ScoreHistoryChart !== 'undefined' ? new ScoreHistoryChart('score-chart') : null;
 
     this.init();
   }
@@ -409,34 +408,6 @@ class MovieTimelineGame {
     document.getElementById("archive-modal").classList.add("hidden");
   }
 
-  async openStats() {
-    document.getElementById("stats-modal").classList.remove("hidden");
-    await this.loadStatsData();
-  }
-
-  closeStats() {
-    document.getElementById("stats-modal").classList.add("hidden");
-  }
-
-  async loadStatsData() {
-    if (!this.tracker) {
-      const chartContainer = document.getElementById('score-chart');
-      if (chartContainer) {
-        chartContainer.innerHTML = '<div class="chart-empty">Stats tracking not configured</div>';
-      }
-      return;
-    }
-
-    try {
-      const historyData = await this.tracker.getHistory();
-      if (this.scoreChart) {
-        this.scoreChart.render(historyData.history);
-      }
-    } catch (e) {
-      console.warn('Failed to load score history:', e);
-    }
-  }
-
   renderArchiveList() {
     const archiveList = document.getElementById("archive-list");
     const archivePuzzles = getArchivePuzzles();
@@ -449,13 +420,6 @@ class MovieTimelineGame {
 
     archiveList.innerHTML = archivePuzzles
       .map((item) => {
-        const completionKey = `filmstrip_daily_${item.puzzleNumber}`;
-        let completionData = null;
-        try {
-          const saved = localStorage.getItem(completionKey);
-          if (saved) completionData = JSON.parse(saved);
-        } catch (e) {}
-
         const dateObj = new Date(item.date + "T00:00:00");
         const formattedDate = dateObj.toLocaleDateString("en-US", {
           weekday: "short",
@@ -463,21 +427,12 @@ class MovieTimelineGame {
           day: "numeric",
         });
 
-        let statusHtml = "";
-        if (item.isToday) {
-          statusHtml = '<span class="archive-item-badge today">Today</span>';
-        }
-        if (completionData) {
-          statusHtml = `
-          <span class="archive-item-score">${completionData.score}/${item.puzzle.movieIds.length}</span>
-          <span class="archive-item-badge completed">Played</span>
-        `;
-        }
+        const statusHtml = item.isToday
+          ? '<span class="archive-item-badge today">Today</span>'
+          : "";
 
         return `
-        <div class="archive-item" data-puzzle-number="${
-          item.puzzleNumber
-        }" data-date="${item.date}">
+        <div class="archive-item" data-puzzle-number="${item.puzzleNumber}" data-date="${item.date}">
           <div class="archive-item-info">
             <div class="archive-item-number">Puzzle #${item.puzzleNumber}</div>
             <div class="archive-item-theme">${item.puzzle.theme}</div>
@@ -485,9 +440,7 @@ class MovieTimelineGame {
           </div>
           <div class="archive-item-status">
             ${statusHtml}
-            <button class="archive-play-btn">${
-              completionData ? "Replay" : "Play"
-            }</button>
+            <button class="archive-play-btn">Play</button>
           </div>
         </div>
       `;
@@ -577,26 +530,6 @@ class MovieTimelineGame {
     document.getElementById("archive-modal").addEventListener("click", (e) => {
       if (e.target.id === "archive-modal") {
         this.closeArchive();
-      }
-    });
-
-    // Stats menu item
-    document.getElementById("menu-stats").addEventListener("click", (e) => {
-      e.preventDefault();
-      logoDropdown.classList.remove("open");
-      dropdownMenu.classList.add("hidden");
-      this.openStats();
-    });
-
-    // Stats modal close button
-    document.getElementById("stats-close").addEventListener("click", () => {
-      this.closeStats();
-    });
-
-    // Close stats when clicking outside content
-    document.getElementById("stats-modal").addEventListener("click", (e) => {
-      if (e.target.id === "stats-modal") {
-        this.closeStats();
       }
     });
 
@@ -1123,6 +1056,7 @@ class MovieTimelineGame {
     const showCongrats = won && (!this.isChallenge || this.challengeBeaten);
 
     const gameOverContent = document.querySelector(".game-over-content");
+    const finalScoreEl = document.getElementById("final-score");
     const puzzleStatsEl = document.getElementById("puzzle-stats");
     const challengeBtn = document.getElementById("copy-challenge");
     const challengeResult = document.getElementById("challenge-result");
@@ -1139,8 +1073,9 @@ class MovieTimelineGame {
       gameOverContent.classList.remove("perfect-score");
     }
 
-    // Show puzzle stats for daily/archive modes
+    // Show puzzle stats for daily/archive modes, or simple score for random mode
     if (isPuzzleMode && this.dailyPuzzle?.id) {
+      finalScoreEl.classList.add("hidden");
       puzzleStatsEl.classList.remove("hidden");
       // Show score immediately while chart loads
       document.getElementById("puzzle-stats-percentile").innerHTML =
@@ -1148,6 +1083,8 @@ class MovieTimelineGame {
       this.loadPuzzleStats(this.dailyPuzzle.id);
     } else {
       puzzleStatsEl.classList.add("hidden");
+      finalScoreEl.classList.remove("hidden");
+      finalScoreEl.innerHTML = `Score: <span class="score-value">${this.bestStreak}</span>`;
     }
 
     // Show challenge button for random mode (not for daily or when already in a challenge)

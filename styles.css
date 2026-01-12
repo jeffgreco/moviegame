@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.hidden {
+  display: none !important;
+}
+
 body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, sans-serif;
@@ -35,10 +39,11 @@ header {
 }
 
 header h1 {
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-family: "Glass Antiqua", cursive;
+  font-size: 1.75rem;
+  font-weight: 400;
   color: #c9a961;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.05em;
 }
 
 .mode-selector {
@@ -73,19 +78,20 @@ header h1 {
 .stats {
   display: flex;
   gap: 2rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
-.stats span {
-  background: rgba(201, 169, 97, 0.15);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
+.stats .score {
+  font-size: 0.9rem;
+  font-weight: 500;
   color: #e8e3d8;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.4rem 0.75rem;
+  border-radius: 4px;
 }
 
-#score,
-#streak {
-  font-weight: bold;
+#score {
+  font-weight: 700;
   color: #c9a961;
 }
 
@@ -553,11 +559,9 @@ main {
 .game-over-content {
   position: relative;
   background: #2b2b2b;
-  padding: 1.5rem;
-  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  border-radius: 8px;
   text-align: center;
-  border: 1px solid #1a1a1a;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   width: 95vw;
   height: calc(100vh - 2rem);
   height: calc(100dvh - 2rem); /* Dynamic viewport height for mobile Safari */
@@ -569,8 +573,19 @@ main {
 }
 
 .game-over-content h2 {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: #c9a961;
+}
+
+.final-score {
+  font-family: "Glass Antiqua", cursive;
+  font-size: 1.4rem;
+  color: #d4c8a8;
   margin-bottom: 0.75rem;
+}
+
+.final-score .score-value {
   color: #c9a961;
 }
 
@@ -586,24 +601,13 @@ main {
 }
 
 .game-over-content.perfect-score {
-  border: 2px solid rgba(255, 215, 0, 0.4);
-  box-shadow: 0 0 40px rgba(255, 215, 0, 0.2), 0 20px 60px rgba(0, 0, 0, 0.5);
+  border-color: #ffd700;
+  box-shadow: inset 0 0 0 4px #2b2b2b, inset 0 0 0 6px #ffd700,
+    0 0 40px rgba(255, 215, 0, 0.3), 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
-.game-over-content.perfect-score::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(
-    ellipse at top,
-    rgba(255, 215, 0, 0.1) 0%,
-    transparent 50%
-  );
-  pointer-events: none;
-  border-radius: 16px;
+.game-over-content.perfect-score .vintage-corner svg {
+  stroke: #ffd700;
 }
 
 @keyframes perfect-glow {
@@ -855,10 +859,10 @@ main {
 
   .stats {
     gap: 1rem;
-    font-size: 0.75rem;
   }
 
-  .stats span {
+  .stats .score {
+    font-size: 0.8rem;
     padding: 0.3rem 0.5rem;
   }
 
@@ -1414,6 +1418,7 @@ main {
   gap: 0.25rem;
   user-select: none;
   transition: opacity 0.2s;
+  font-family: "Glass Antiqua", cursive;
 }
 
 .logo-trigger:hover {
@@ -1421,14 +1426,15 @@ main {
 }
 
 .dropdown-arrow {
-  width: 14px;
-  height: 14px;
+  width: 18px;
+  height: 18px;
   vertical-align: middle;
   transition: transform 0.2s;
+  opacity: 0.7;
 }
 
 .logo-dropdown.open .dropdown-arrow {
-  transform: rotate(180deg);
+  transform: rotate(180deg) translateY(2px);
 }
 
 .dropdown-menu {
@@ -1436,42 +1442,42 @@ main {
   top: 100%;
   left: 0;
   margin-top: 0.5rem;
-  background: #3a3a3a;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  min-width: 150px;
+  background: #2b2b2b;
+  border: 1px solid rgba(212, 200, 168, 0.4);
+  border-radius: 2px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  min-width: 170px;
   z-index: 200;
-  overflow: hidden;
-}
-
-.dropdown-menu.hidden {
-  display: none;
+  padding: 0.25rem 0;
 }
 
 .dropdown-item {
   display: block;
-  padding: 0.75rem 1rem;
+  padding: 0.6rem 1rem;
   color: #e8e3d8;
   text-decoration: none;
-  transition: background 0.2s;
-  font-size: 0.95rem;
+  transition: all 0.15s;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
 }
 
 .dropdown-item:hover {
-  background: rgba(201, 169, 97, 0.2);
+  background: rgba(201, 169, 97, 0.15);
   color: #c9a961;
+  padding-left: 1.15rem;
 }
 
 .dropdown-divider {
   height: 1px;
-  background: rgba(255, 255, 255, 0.1);
-  margin: 0.5rem 0;
+  background: rgba(212, 200, 168, 0.2);
+  margin: 0.4rem 0.75rem;
 }
 
 .dropdown-credit {
-  padding: 0.6rem 1rem;
-  font-size: 0.75rem;
-  color: #888;
+  padding: 0.5rem 1rem;
+  font-size: 0.7rem;
+  color: #666;
+  line-height: 1.4;
 }
 
 .dropdown-credit a {
@@ -1508,23 +1514,27 @@ main {
 
 .help-content {
   background: #2b2b2b;
-  border-radius: 16px;
+  border-radius: 8px;
   width: 100%;
   max-width: 450px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
 .help-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 1.25rem 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.25rem 1.5rem 0;
+  position: relative;
+}
+
+.help-header .help-close {
+  position: absolute;
+  right: 1.5rem;
 }
 
 .help-header h2 {
   color: #c9a961;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   margin: 0;
 }
 
@@ -1543,7 +1553,7 @@ main {
 }
 
 .help-body {
-  padding: 1.5rem;
+  padding: 1rem 2.5rem 2rem;
 }
 
 .help-body p {
@@ -1590,26 +1600,30 @@ main {
 
 .archive-content {
   background: #2b2b2b;
-  border-radius: 16px;
+  border-radius: 8px;
   width: 100%;
   max-width: 600px;
   max-height: 80vh;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
 .archive-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 1.25rem 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.25rem 1.5rem 0;
+  position: relative;
+}
+
+.archive-header .archive-close {
+  position: absolute;
+  right: 1.5rem;
 }
 
 .archive-header h2 {
   color: #c9a961;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   margin: 0;
 }
 
@@ -1632,7 +1646,7 @@ main {
 .archive-list {
   flex: 1;
   overflow-y: auto;
-  padding: 1rem;
+  padding: 1rem 2rem 1.5rem;
 }
 
 .archive-item {
@@ -1684,23 +1698,12 @@ main {
   gap: 0.25rem;
 }
 
-.archive-item-score {
-  font-size: 0.9rem;
-  color: #c9a961;
-  font-weight: 600;
-}
-
 .archive-item-badge {
   font-size: 0.7rem;
   padding: 0.2rem 0.5rem;
   border-radius: 10px;
   text-transform: uppercase;
   font-weight: 600;
-}
-
-.archive-item-badge.completed {
-  background: rgba(76, 175, 80, 0.2);
-  color: #4caf50;
 }
 
 .archive-item-badge.today {
@@ -1773,7 +1776,7 @@ main {
   }
 
   .archive-header h2 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 
   .archive-item {
@@ -1783,136 +1786,6 @@ main {
   .archive-item-theme {
     font-size: 0.95rem;
   }
-}
-
-/* Stats Modal */
-.stats-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.85);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2000;
-  padding: 1rem;
-}
-
-.stats-modal.hidden {
-  display: none;
-}
-
-.stats-content {
-  background: #2b2b2b;
-  border-radius: 16px;
-  width: 100%;
-  max-width: 500px;
-  max-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-}
-
-.stats-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.25rem 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.stats-header h2 {
-  color: #c9a961;
-  font-size: 1.4rem;
-  margin: 0;
-}
-
-.stats-close {
-  background: none;
-  border: none;
-  color: #e8e3d8;
-  font-size: 1.75rem;
-  cursor: pointer;
-  padding: 0;
-  line-height: 1;
-  opacity: 0.7;
-  transition: opacity 0.2s;
-}
-
-.stats-close:hover {
-  opacity: 1;
-}
-
-.stats-body {
-  flex: 1;
-  overflow-y: auto;
-  padding: 1.5rem;
-}
-
-.stats-section {
-  margin-bottom: 1.5rem;
-}
-
-.stats-section:last-child {
-  margin-bottom: 0;
-}
-
-.stats-section h3 {
-  color: #e8e3d8;
-  font-size: 1rem;
-  margin: 0 0 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Score Chart */
-.score-chart-container {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  padding: 1rem;
-  min-height: 150px;
-}
-
-.score-chart {
-  width: 100%;
-  height: auto;
-}
-
-.chart-line {
-  stroke: #c9a961;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.chart-point {
-  cursor: pointer;
-  transition: r 0.2s;
-}
-
-.chart-point:hover {
-  r: 6;
-}
-
-.chart-grid {
-  stroke: rgba(255, 255, 255, 0.1);
-  stroke-width: 1;
-}
-
-.chart-label {
-  fill: #888;
-  font-size: 10px;
-  font-family: inherit;
-}
-
-.chart-empty,
-.chart-loading {
-  color: #888;
-  text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
 }
 
 /* Puzzle Stats (game over screen) */
@@ -1985,20 +1858,68 @@ main {
   font-weight: 600;
 }
 
+/* =============================================
+   Vintage Silent Film Frame Styling
+   ============================================= */
+
+.vintage-frame {
+  position: relative;
+  border: 2px solid #d4c8a8;
+  box-shadow: inset 0 0 0 4px #2b2b2b, inset 0 0 0 6px #d4c8a8,
+    0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Vintage headline font */
+.vintage-frame h2,
+.vintage-frame h3 {
+  font-family: "Glass Antiqua", cursive;
+  letter-spacing: 0.05em;
+}
+
+/* Decorative corner flourishes using SVG */
+.vintage-corner {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  z-index: 11;
+}
+
+.vintage-corner svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: #d4c8a8;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.vintage-corner.top-left {
+  top: 6px;
+  left: 6px;
+}
+
+.vintage-corner.top-right {
+  top: 6px;
+  right: 6px;
+  transform: scaleX(-1);
+}
+
+.vintage-corner.bottom-left {
+  bottom: 6px;
+  left: 6px;
+  transform: scaleY(-1);
+}
+
+.vintage-corner.bottom-right {
+  bottom: 6px;
+  right: 6px;
+  transform: scale(-1, -1);
+}
+
 @media (max-width: 768px) {
-  .stats-content {
-    max-height: 90vh;
-  }
-
-  .stats-header {
-    padding: 1rem;
-  }
-
-  .stats-header h2 {
-    font-size: 1.2rem;
-  }
-
-  .stats-body {
-    padding: 1rem;
+  .vintage-corner {
+    width: 50px;
+    height: 50px;
   }
 }
