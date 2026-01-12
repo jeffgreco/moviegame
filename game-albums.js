@@ -76,6 +76,11 @@ class AlbumTimelineGame {
     this.setupGame();
     this.setupEventListeners();
     this.updateModeButtons();
+
+    // Show welcome modal for first-time visitors
+    if (this.isFirstVisit()) {
+      this.showWelcomeModal();
+    }
   }
 
   loadAlbumsForMode() {
@@ -280,6 +285,33 @@ class AlbumTimelineGame {
     }
   }
 
+  isFirstVisit() {
+    try {
+      return localStorage.getItem("recordcrate_has_visited") === null;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  markAsVisited() {
+    try {
+      localStorage.setItem("recordcrate_has_visited", "true");
+    } catch (e) {
+      // Ignore localStorage errors
+    }
+  }
+
+  showWelcomeModal() {
+    document.getElementById("welcome-modal").classList.remove("hidden");
+    document.body.classList.add("modal-open");
+  }
+
+  closeWelcomeModal() {
+    document.getElementById("welcome-modal").classList.add("hidden");
+    document.body.classList.remove("modal-open");
+    this.markAsVisited();
+  }
+
   getDailyCompletionKey() {
     if (!this.puzzleNumber) return null;
     return `recordcrate_daily_${this.puzzleNumber}`;
@@ -468,6 +500,18 @@ class AlbumTimelineGame {
     document.getElementById("help-modal").addEventListener("click", (e) => {
       if (e.target.id === "help-modal") {
         document.getElementById("help-modal").classList.add("hidden");
+      }
+    });
+
+    // Welcome modal close button
+    document.getElementById("welcome-start").addEventListener("click", () => {
+      this.closeWelcomeModal();
+    });
+
+    // Close welcome when clicking outside content
+    document.getElementById("welcome-modal").addEventListener("click", (e) => {
+      if (e.target.id === "welcome-modal") {
+        this.closeWelcomeModal();
       }
     });
 
