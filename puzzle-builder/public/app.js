@@ -158,6 +158,13 @@ function setupEventListeners() {
         if (e.key === 'Enter') searchDirector();
     });
 
+    // Re-sort filmography when sort changes
+    document.getElementById('person-sort').addEventListener('change', () => {
+        if (state.currentSearch.type === 'person' && state.currentSearch.params.personId) {
+            loadDirectorFilmography(state.currentSearch.params.personId, state.currentSearch.params.personName);
+        }
+    });
+
     // Puzzle selectors
     elements.puzzleSelect.addEventListener('change', loadSelectedPuzzle);
     elements.exportSelect.addEventListener('change', loadSelectedExport);
@@ -313,11 +320,7 @@ async function searchDirector() {
 function displayDirectorResults(people) {
     elements.directorResults.innerHTML = '';
 
-    // Filter to show directors more prominently
-    const directors = people.filter(p => p.known_for_department === 'Directing');
-    const others = people.filter(p => p.known_for_department !== 'Directing');
-
-    [...directors, ...others].slice(0, 10).forEach(person => {
+    people.slice(0, 10).forEach(person => {
         const div = document.createElement('div');
         div.className = 'director-item';
         div.innerHTML = `
@@ -336,17 +339,18 @@ function displayDirectorResults(people) {
 
 async function loadDirectorFilmography(personId, personName) {
     try {
-        const response = await fetch(`/api/person/${personId}/movies`);
+        const sort = document.getElementById('person-sort').value;
+        const response = await fetch(`/api/person/${personId}/movies?sort=${sort}`);
         const data = await response.json();
 
         state.currentSearch = {
-            type: 'director',
+            type: 'person',
             page: 1,
             totalPages: 1,
-            params: { personId, personName }
+            params: { personId, personName, sort }
         };
 
-        displayResults(data.movies, data.total, `Films directed by ${data.person.name}`);
+        displayResults(data.movies, data.total, `Filmography: ${data.person.name}`);
     } catch (e) {
         console.error('Failed to load filmography:', e);
     }
@@ -391,6 +395,10 @@ async function performDiscover() {
 // Display Functions
 function displayResults(movies, total, customLabel) {
     elements.resultsGrid.innerHTML = '';
+
+    // Show/hide sort dropdown based on search type
+    const sortSelect = document.getElementById('person-sort');
+    sortSelect.style.display = state.currentSearch.type === 'person' ? '' : 'none';
 
     if (!movies || movies.length === 0) {
         elements.resultsGrid.innerHTML = '<p>No results found.</p>';
