@@ -228,6 +228,16 @@ main {
   justify-content: center;
 }
 
+/* Sprocket hole animation */
+@keyframes sprocket-scroll {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -30px 0; /* One full repeat cycle (20px hole + 10px black) */
+  }
+}
+
 /* Top sprocket holes - on timeline to scroll with content and fill width */
 .timeline::before {
   content: "";
@@ -246,6 +256,9 @@ main {
   );
   z-index: 0;
   pointer-events: none;
+  will-change: background-position;
+  animation: sprocket-scroll var(--sprocket-duration, 0s) linear infinite;
+  animation-play-state: var(--sprocket-play-state, paused);
 }
 
 /* Bottom sprocket holes - on timeline to scroll with content and fill width */
@@ -266,6 +279,9 @@ main {
   );
   z-index: 0;
   pointer-events: none;
+  will-change: background-position;
+  animation: sprocket-scroll var(--sprocket-duration, 0s) linear infinite;
+  animation-play-state: var(--sprocket-play-state, paused);
 }
 
 .movie-card {

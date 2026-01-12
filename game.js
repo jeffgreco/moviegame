@@ -1619,6 +1619,20 @@ class MovieTimelineGame {
 
   updateStats() {
     document.getElementById("score").textContent = this.streak;
+
+    // Update sprocket hole animation speed based on score
+    const timeline = document.querySelector('.timeline');
+    if (timeline) {
+      if (this.streak === 0) {
+        timeline.style.setProperty('--sprocket-play-state', 'paused');
+      } else {
+        // Start at 2s for score 1, speed up aggressively (minimum 0.1s)
+        // Uses inverse scaling so it gets faster more noticeably
+        const duration = Math.max(0.1, 2 / this.streak);
+        timeline.style.setProperty('--sprocket-duration', `${duration}s`);
+        timeline.style.setProperty('--sprocket-play-state', 'running');
+      }
+    }
   }
 }
 
