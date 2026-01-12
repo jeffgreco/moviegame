@@ -30,9 +30,15 @@ function loadExistingMovies() {
     try {
         const moviesPath = path.join(__dirname, '..', 'movies.js');
         const content = fs.readFileSync(moviesPath, 'utf-8');
-        const match = content.match(/const MOVIES_DATA = (\[[\s\S]*?\]);/);
-        if (match) {
-            return JSON.parse(match[1]);
+
+        // Use vm module to safely evaluate JavaScript (handles unquoted keys)
+        const vm = require('vm');
+        const context = {};
+        vm.createContext(context);
+        vm.runInContext(content, context);
+
+        if (context.MOVIES_DATA && Array.isArray(context.MOVIES_DATA)) {
+            return context.MOVIES_DATA;
         }
     } catch (e) {
         console.warn('Could not load movies.js:', e.message);
@@ -185,14 +191,16 @@ app.get('/api/search/person', async (req, res) => {
             include_adult: false
         });
 
-        // Filter to show directors more prominently
-        const results = data.results.map(person => ({
-            id: person.id,
-            name: person.name,
-            known_for_department: person.known_for_department,
-            profile_path: person.profile_path ? `${POSTER_BASE_URL}${person.profile_path}` : null,
-            known_for: person.known_for?.slice(0, 3).map(m => m.title || m.name)
-        }));
+        // Only show actors and directors
+        const results = data.results
+            .filter(person => person.known_for_department === 'Acting' || person.known_for_department === 'Directing')
+            .map(person => ({
+                id: person.id,
+                name: person.name,
+                known_for_department: person.known_for_department,
+                profile_path: person.profile_path ? `${POSTER_BASE_URL}${person.profile_path}` : null,
+                known_for: person.known_for?.slice(0, 3).map(m => m.title || m.name)
+            }));
 
         res.json({ ...data, results });
     } catch (e) {
@@ -201,30 +209,62 @@ app.get('/api/search/person', async (req, res) => {
     }
 });
 
-// Get movies by person (director filmography)
+// Get movies by person (acting and directing credits)
 app.get('/api/person/:id/movies', async (req, res) => {
     try {
         const { id } = req.params;
+        const { sort = 'date_desc' } = req.query;
         const data = await tmdbFetch(`/person/${id}/movie_credits`);
 
-        // Get movies they directed (from crew)
-        const directedMovies = data.crew?.filter(m => m.job === 'Director') || [];
+        // Combine cast (acting) and crew credits, deduped by movie ID
+        const movieMap = new Map();
 
-        // Sort by release date descending
-        directedMovies.sort((a, b) => {
-            const dateA = a.release_date || '0000';
-            const dateB = b.release_date || '0000';
-            return dateB.localeCompare(dateA);
+        // Add acting credits
+        (data.cast || []).forEach(m => {
+            if (!movieMap.has(m.id)) {
+                movieMap.set(m.id, {
+                    id: m.id,
+                    title: m.title,
+                    poster_url: m.poster_path ? `${POSTER_BASE_URL}${m.poster_path}` : null,
+                    release_date: m.release_date,
+                    popularity: m.popularity,
+                    roles: []
+                });
+            }
+            if (m.character) {
+                movieMap.get(m.id).roles.push(m.character);
+            }
         });
 
-        // Enrich with poster URLs
-        const enrichedMovies = directedMovies.map(m => ({
-            id: m.id,
-            title: m.title,
-            poster_url: m.poster_path ? `${POSTER_BASE_URL}${m.poster_path}` : null,
-            release_date: m.release_date,
-            popularity: m.popularity
-        }));
+        // Add director credits only (not writer, producer, etc.)
+        (data.crew || []).filter(m => m.job === 'Director').forEach(m => {
+            if (!movieMap.has(m.id)) {
+                movieMap.set(m.id, {
+                    id: m.id,
+                    title: m.title,
+                    poster_url: m.poster_path ? `${POSTER_BASE_URL}${m.poster_path}` : null,
+                    release_date: m.release_date,
+                    popularity: m.popularity,
+                    roles: []
+                });
+            }
+            movieMap.get(m.id).roles.push('Director');
+        });
+
+        // Convert to array and sort
+        const movies = Array.from(movieMap.values());
+        switch (sort) {
+            case 'date_asc':
+                movies.sort((a, b) => (a.release_date || '0000').localeCompare(b.release_date || '0000'));
+                break;
+            case 'popularity':
+                movies.sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
+                break;
+            case 'date_desc':
+            default:
+                movies.sort((a, b) => (b.release_date || '0000').localeCompare(a.release_date || '0000'));
+                break;
+        }
 
         // Also get person details for the name
         const personData = await tmdbFetch(`/person/${id}`);
@@ -234,8 +274,8 @@ app.get('/api/person/:id/movies', async (req, res) => {
                 id: personData.id,
                 name: personData.name
             },
-            movies: enrichedMovies,
-            total: enrichedMovies.length
+            movies,
+            total: movies.length
         });
     } catch (e) {
         console.error('Person movies error:', e);
@@ -744,11 +784,12 @@ function mergeMoviesIntoDatabase(existingMovies, newMovies) {
     });
 
     // Generate the new movies.js content
+    // Use var instead of const so vm.runInContext can capture the variable
     const content = `// Movie data from TMDB
 // Last updated: ${new Date().toISOString()}
 // Total movies: ${allMovies.length}
 
-const MOVIES_DATA = ${JSON.stringify(allMovies, null, 2)};
+var MOVIES_DATA = ${JSON.stringify(allMovies, null, 2)};
 `;
 
     fs.writeFileSync(moviesPath, content);

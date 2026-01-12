@@ -6,8 +6,8 @@
 const PUZZLE_SCHEDULE = {
   "2026-01-10": "k7x2m",
   "2026-01-11": "p3n8v",
-  "2026-01-12": "m4k7r",
-  "2026-01-13": "w9j4h",
+  "2026-01-12": "amnfm",
+  "2026-01-13": "m4k7r",
   "2026-01-14": "r5t1q",
 };
 
@@ -81,6 +81,50 @@ const DAILY_PUZZLES = [
       27205, // Inception (2010)
       346698, // Barbie (2023),
       83533,
+    ],
+  },
+  {
+    id: "amnfm",
+    theme: "Funny People Get Serious",
+    description: "",
+    movieIds: [
+      8051, // Punch-Drunk Love (Oct 25, 2002)
+      10322, // Being There (Dec 19, 1979)
+      489, // Good Will Hunting (Jan 9, 1998)
+      38, // Eternal Sunshine of the Spotless Mind (Mar 19, 2004)
+      873, // The Color Purple (Jan 16, 1987)
+      153, // Lost in Translation (Sep 18, 2003)
+      86555, // Take This Waltz (May 25, 2012)
+      22318, // Permanent Midnight (Sep 16, 1998)
+      1125, // Dreamgirls (Dec 25, 2006)
+      87492, // Foxcatcher (Jan 16, 2015)
+      17450, // Pennies from Heaven (Jan 1, 1982)
+      25793, // Precious (Nov 20, 2009)
+      64690, // Drive (Sep 16, 2011)
+      1262, // Stranger Than Fiction (Nov 10, 2006)
+      403, // Driving Miss Daisy (Jan 26, 1990)
+      20829, // Funny People (Jul 31, 2009)
+    ],
+  },
+    {
+    id: "qc9xe",
+    theme: "Ready Player One",
+    description: "",
+    movieIds: [
+      333339, // Ready Player One (Mar 29, 2018)
+      257344, // Pixels (Jul 24, 2015)
+      980489, // Gran Turismo (Aug 25, 2023)
+      97, // Tron (Jul 9, 1982)
+      183, // The Wizard (Dec 15, 1989)
+      22538, // Scott Pilgrim vs. the World (Aug 13, 2010)
+      1946, // eXistenZ (Apr 19, 1999)
+      82690, // Wreck-It Ralph (Nov 2, 2012)
+      550988, // Free Guy (Aug 13, 2021)
+      860, // WarGames (Jun 3, 1983)
+      9900, // Grandma's Boy (Jan 6, 2006)
+      325348, // Hardcore Henry (Apr 8, 2016)
+      11884, // The Last Starfighter (Jul 13, 1984)
+      18501, // Gamer (Sep 4, 2009)
     ],
   },
   // Future puzzles will be added here

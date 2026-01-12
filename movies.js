@@ -1,6 +1,6 @@
 // Movie data from TMDB
-// Last updated: 2026-01-11T01:11:01.315Z
-// Total movies: 1239
+// Last updated: 2026-01-12T01:42:29.380Z
+// Total movies: 1253
 
 const MOVIES_DATA = [
   {
@@ -716,6 +716,14 @@ const MOVIES_DATA = [
     directors: ["James Fargo"],
   },
   {
+    id: 985,
+    title: "Eraserhead",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/mxveW3mGVc0DzLdOmtkZsgd7c3B.jpg",
+    release_date: "1977-03-19",
+    directors: ["David Lynch"],
+  },
+  {
     id: 703,
     title: "Annie Hall",
     poster_url:
@@ -786,14 +794,6 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/hYXkHixmH2W4hXA0qVJpT4ONPt1.jpg",
     release_date: "1977-12-21",
     directors: ["Clint Eastwood"],
-  },
-  {
-    id: 985,
-    title: "Eraserhead",
-    poster_url:
-      "https://image.tmdb.org/t/p/w500/mxveW3mGVc0DzLdOmtkZsgd7c3B.jpg",
-    release_date: "1977-03-19",
-    directors: ["David Lynch"],
   },
   {
     id: 621,
@@ -949,6 +949,13 @@ const MOVIES_DATA = [
     directors: ["Robert Wise"],
   },
   {
+    id: 10322,
+    title: "Being There",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/3RO3jbCKEey2T9bYFkYt9xpwen9.jpg",
+    release_date: "1979-12-19",
+  },
+  {
     id: 9659,
     title: "Mad Max",
     poster_url:
@@ -1093,6 +1100,13 @@ const MOVIES_DATA = [
     directors: ["Sam Raimi"],
   },
   {
+    id: 17450,
+    title: "Pennies from Heaven",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/7dlangnB2vOcviHEwWy1IRGHLtk.jpg",
+    release_date: "1982-01-01",
+  },
+  {
     id: 10246,
     title: "Porky's",
     poster_url:
@@ -1203,6 +1217,13 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/jQYlydvHm3kUix1f8prMucrplhm.jpg",
     release_date: "1983-05-25",
     directors: ["Richard Marquand"],
+  },
+  {
+    id: 860,
+    title: "WarGames",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/zZ1rN4LoPxKNfAp67Xl300WxVeD.jpg",
+    release_date: "1983-06-03",
   },
   {
     id: 1621,
@@ -1882,6 +1903,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/6bvxkcTAXyqxGRwo38mxw92D6Xr.jpg",
     release_date: "1987-01-16",
     directors: ["Steven Spielberg"],
+    showDirector: true,
   },
   {
     id: 30890,
@@ -2470,6 +2492,13 @@ const MOVIES_DATA = [
     directors: ["Jeremiah S. Chechik"],
   },
   {
+    id: 183,
+    title: "The Wizard",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/dtgNNq3TBbpBX6RXHLt5gAMdwPV.jpg",
+    release_date: "1989-12-15",
+  },
+  {
     id: 11352,
     title: "Always",
     poster_url:
@@ -2492,6 +2521,13 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/cA4ggkZ3r1d5r9hOAUWC8x5ul2i.jpg",
     release_date: "1990-01-19",
     directors: ["Ron Underwood"],
+  },
+  {
+    id: 403,
+    title: "Driving Miss Daisy",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/iaCzvcY42HihFxQBTZCTKMpsI0P.jpg",
+    release_date: "1990-01-26",
   },
   {
     id: 9665,
@@ -4106,6 +4142,14 @@ const MOVIES_DATA = [
     directors: ["Roger Spottiswoode"],
   },
   {
+    id: 597,
+    title: "Titanic",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg",
+    release_date: "1997-12-19",
+    directors: ["James Cameron"],
+  },
+  {
     id: 9922,
     title: "The Postman",
     poster_url:
@@ -4244,6 +4288,13 @@ const MOVIES_DATA = [
     directors: ["John Dahl"],
   },
   {
+    id: 22318,
+    title: "Permanent Midnight",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/wkoy7DQ1viN0EOtzw6v8W9y6UAr.jpg",
+    release_date: "1998-09-16",
+  },
+  {
     id: 2109,
     title: "Rush Hour",
     poster_url:
@@ -4354,6 +4405,13 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/ujERk3aKABXU3NDXOAxEQYTHe9A.jpg",
     release_date: "1999-03-31",
     directors: ["Gil Junger"],
+  },
+  {
+    id: 1946,
+    title: "eXistenZ",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/kETKF0JhdTPn1knci8CAdYL0d79.jpg",
+    release_date: "1999-04-19",
   },
   {
     id: 1844,
@@ -5127,6 +5185,13 @@ const MOVIES_DATA = [
     directors: ["Steven Shainberg"],
   },
   {
+    id: 8051,
+    title: "Punch-Drunk Love",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/htYp4yqFu4rzBEIa6j9jP8miDm3.jpg",
+    release_date: "2002-10-25",
+  },
+  {
     id: 12536,
     title: "Home Alone 4",
     poster_url:
@@ -5800,6 +5865,13 @@ const MOVIES_DATA = [
     showDirector: true,
   },
   {
+    id: 9900,
+    title: "Grandma's Boy",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/fSRdHBtisU0zhks4OjKezI3jnt7.jpg",
+    release_date: "2006-01-06",
+  },
+  {
     id: 10982,
     title: "Hoodwinked!",
     poster_url:
@@ -5976,6 +6048,13 @@ const MOVIES_DATA = [
     directors: ["Christopher Nolan"],
   },
   {
+    id: 1262,
+    title: "Stranger Than Fiction",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/nCzcepubwShvZ4vbCsygQNgF2Z1.jpg",
+    release_date: "2006-11-10",
+  },
+  {
     id: 36557,
     title: "Casino Royale",
     poster_url:
@@ -6022,6 +6101,13 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/pDsAAYf6Zn0yiAGJ6lYGs6hoZ4E.jpg",
     release_date: "2006-12-21",
     directors: ["Shawn Levy"],
+  },
+  {
+    id: 1125,
+    title: "Dreamgirls",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/sG5JyOj8Spe13QkNJMH8b5kzQUh.jpg",
+    release_date: "2006-12-25",
   },
   {
     id: 9757,
@@ -6520,6 +6606,13 @@ const MOVIES_DATA = [
     directors: ["Rob Schneider"],
   },
   {
+    id: 20829,
+    title: "Funny People",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/gEYKD5cWCBGg8Za3hhwDBk3gEsP.jpg",
+    release_date: "2009-07-31",
+  },
+  {
     id: 19913,
     title: "(500) Days of Summer",
     poster_url:
@@ -6542,6 +6635,13 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/hbmHBXL7KyqNapDj6m3pqdV1qx3.jpg",
     release_date: "2009-08-25",
     directors: ["Griffin Dunne"],
+  },
+  {
+    id: 18501,
+    title: "Gamer",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/nA8ZVbdBsNkTqsa49ZG9na4lFuY.jpg",
+    release_date: "2009-09-04",
   },
   {
     id: 22164,
@@ -6606,6 +6706,13 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/k2qTooPlHffgNABNWxeJdGMglPK.jpg",
     release_date: "2009-11-20",
     directors: ["Chris Weitz"],
+  },
+  {
+    id: 25793,
+    title: "Precious",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/d4ltLIDbvZskSwbzXqi0Hfv5ma4.jpg",
+    release_date: "2009-11-20",
   },
   {
     id: 10198,
@@ -6768,6 +6875,13 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/j09ZkH6R4JWVylBcDai1laCmGw7.jpg",
     release_date: "2010-08-13",
     directors: ["Sylvester Stallone"],
+  },
+  {
+    id: 22538,
+    title: "Scott Pilgrim vs. the World",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/g5IoYeudx9XBEfwNL0fHvSckLBz.jpg",
+    release_date: "2010-08-13",
   },
   {
     id: 43593,
@@ -7096,6 +7210,13 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/9b0Im7SfedHiajTwzSL9zGyBI7M.jpg",
     release_date: "2012-05-18",
     directors: ["Peter Berg"],
+  },
+  {
+    id: 86555,
+    title: "Take This Waltz",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/tjE6XUPNNaG6VGPyq1SdCghoMos.jpg",
+    release_date: "2012-05-25",
   },
   {
     id: 70981,
@@ -7571,6 +7692,14 @@ const MOVIES_DATA = [
     directors: ["David Fincher"],
   },
   {
+    id: 244786,
+    title: "Whiplash",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/7fn624j5lj3xTme2SgiLCeuedmO.jpg",
+    release_date: "2014-10-10",
+    directors: ["Damien Chazelle"],
+  },
+  {
     id: 228150,
     title: "Fury",
     poster_url:
@@ -7657,6 +7786,13 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/7zu6HPnKPjNA7NuR4DGRdaH0PdX.jpg",
     release_date: "2015-01-16",
     directors: ["Michael Mann"],
+  },
+  {
+    id: 87492,
+    title: "Foxcatcher",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/w6Sl079QtUcQ9dVQ2RP6aN9NBXx.jpg",
+    release_date: "2015-01-16",
   },
   {
     id: 216015,
@@ -7897,6 +8033,13 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/5UsK3grJvtQrtzEgqNlDljJW96w.jpg",
     release_date: "2016-03-25",
     directors: ["Zack Snyder"],
+  },
+  {
+    id: 325348,
+    title: "Hardcore Henry",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/ik1uZyiMSxF9HqrgRKUNfMCfr3z.jpg",
+    release_date: "2016-04-08",
   },
   {
     id: 271110,
@@ -9249,14 +9392,6 @@ const MOVIES_DATA = [
     directors: ["Marc Forster"],
   },
   {
-    id: 597,
-    title: "Titanic",
-    poster_url:
-      "https://image.tmdb.org/t/p/w500/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg",
-    release_date: "1997-12-19",
-    directors: ["James Cameron"],
-  },
-  {
     id: 603692,
     title: "John Wick: Chapter 4",
     poster_url:
@@ -9392,6 +9527,13 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/ta3ReqbdEcLJM3mcHMzbYFZI8v7.jpg",
     release_date: "2023-08-10",
     directors: ["Matthew López"],
+  },
+  {
+    id: 980489,
+    title: "Gran Turismo",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/51tqzRtKMMZEYUpSYkrUE7v9ehm.jpg",
+    release_date: "2023-08-25",
   },
   {
     id: 507089,
@@ -9592,14 +9734,6 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/2uSWRTtCG336nuBiG8jOTEUKSy8.jpg",
     release_date: "2024-08-16",
     directors: ["Fede Álvarez"],
-  },
-  {
-    id: 244786,
-    title: "Whiplash",
-    poster_url:
-      "https://image.tmdb.org/t/p/w500/7fn624j5lj3xTme2SgiLCeuedmO.jpg",
-    release_date: "2014-10-10",
-    directors: ["Damien Chazelle"],
   },
   {
     id: 933260,
