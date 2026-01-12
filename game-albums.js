@@ -282,7 +282,7 @@ class AlbumTimelineGame {
 
   getDailyCompletionKey() {
     if (!this.puzzleNumber) return null;
-    return `vinylstack_daily_${this.puzzleNumber}`;
+    return `recordcrate_daily_${this.puzzleNumber}`;
   }
 
   isDailyPuzzleCompleted() {
@@ -335,7 +335,7 @@ class AlbumTimelineGame {
 
     archiveList.innerHTML = archivePuzzles
       .map((item) => {
-        const completionKey = `vinylstack_daily_${item.puzzleNumber}`;
+        const completionKey = `recordcrate_daily_${item.puzzleNumber}`;
         let completionData = null;
         try {
           const saved = localStorage.getItem(completionKey);
@@ -531,9 +531,9 @@ class AlbumTimelineGame {
       this.puzzleNumber
     ) {
       const totalAlbums = this.dailyPuzzle.albumIds.length;
-      text = `Vinyl Stack #${this.puzzleNumber} - ${this.dailyPuzzle.theme}\n${score}/${totalAlbums}`;
+      text = `Record Crate #${this.puzzleNumber} - ${this.dailyPuzzle.theme}\n${score}/${totalAlbums}`;
     } else {
-      text = `I scored ${score} on Vinyl Stack! Can you beat my score?`;
+      text = `I scored ${score} on Record Crate! Can you beat my score?`;
     }
 
     const url = window.location.href;
@@ -541,7 +541,7 @@ class AlbumTimelineGame {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: "Vinyl Stack - Album Timeline Game",
+          title: "Record Crate - Album Timeline Game",
           text: text,
           url: url,
         });
@@ -565,7 +565,7 @@ class AlbumTimelineGame {
 
   async copyChallenge() {
     const challengeUrl = this.generateChallengeUrl();
-    const text = `I scored ${this.bestStreak} on Vinyl Stack! Think you can beat me?`;
+    const text = `I scored ${this.bestStreak} on Record Crate! Think you can beat me?`;
 
     const copied = await this.copyToClipboard(`${text}\n${challengeUrl}`);
     if (copied) {
