@@ -774,6 +774,20 @@ function setupScheduleListeners() {
     document.getElementById('btn-prev-month')?.addEventListener('click', () => changeMonth(-1));
     document.getElementById('btn-next-month')?.addEventListener('click', () => changeMonth(1));
     document.getElementById('btn-save-schedule')?.addEventListener('click', saveSchedule);
+
+    // Live update asterisks when schedule dropdowns change
+    document.getElementById('schedule-list')?.addEventListener('change', (e) => {
+        if (e.target.tagName === 'SELECT') {
+            const date = e.target.dataset.date;
+            const puzzleId = e.target.value;
+            if (puzzleId) {
+                state.schedule[date] = puzzleId;
+            } else {
+                delete state.schedule[date];
+            }
+            updateScheduleAsterisks();
+        }
+    });
 }
 
 function switchView(view) {
@@ -827,6 +841,9 @@ function renderSchedule() {
 
     container.innerHTML = '';
 
+    // Collect all scheduled puzzle IDs
+    const scheduledIds = new Set(Object.values(state.schedule).map(String));
+
     for (let day = 1; day <= daysInMonth; day++) {
         const date = new Date(year, month, day);
         const dateStr = date.toISOString().split('T')[0]; // YYYY-MM-DD
@@ -845,17 +862,36 @@ function renderSchedule() {
             <span class="date">${date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
             <select data-date="${dateStr}">
                 <option value="">Default rotation</option>
-                ${state.schedulePuzzles.map(p => `
+                ${state.schedulePuzzles.map(p => {
+                    const isScheduled = scheduledIds.has(String(p.id));
+                    const prefix = isScheduled ? '* ' : '';
+                    return `
                     <option value="${p.id}" ${String(selectedId) === String(p.id) ? 'selected' : ''}>
-                        ${p.theme}
+                        ${prefix}${p.theme}
                     </option>
-                `).join('')}
+                `}).join('')}
             </select>
             <span class="puzzle-id">${selectedId || defaultPuzzle?.id || ''}</span>
         `;
 
         container.appendChild(row);
     }
+}
+
+function updateScheduleAsterisks() {
+    const scheduledIds = new Set(Object.values(state.schedule).map(String));
+
+    document.querySelectorAll('#schedule-list select').forEach(select => {
+        Array.from(select.options).forEach(option => {
+            if (!option.value) return; // Skip "Default rotation"
+            const puzzle = state.schedulePuzzles.find(p => String(p.id) === option.value);
+            if (puzzle) {
+                const isScheduled = scheduledIds.has(String(puzzle.id));
+                const prefix = isScheduled ? '* ' : '';
+                option.textContent = prefix + puzzle.theme;
+            }
+        });
+    });
 }
 
 function getRotationPuzzle(date) {

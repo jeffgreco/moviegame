@@ -427,10 +427,6 @@ class MovieTimelineGame {
           day: "numeric",
         });
 
-        const statusHtml = item.isToday
-          ? '<span class="archive-item-badge today">Today</span>'
-          : "";
-
         return `
         <div class="archive-item" data-puzzle-number="${item.puzzleNumber}" data-date="${item.date}">
           <div class="archive-item-info">
@@ -439,7 +435,6 @@ class MovieTimelineGame {
             <div class="archive-item-date">${formattedDate}</div>
           </div>
           <div class="archive-item-status">
-            ${statusHtml}
             <button class="archive-play-btn">Play</button>
           </div>
         </div>

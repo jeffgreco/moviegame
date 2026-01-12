@@ -85,10 +85,10 @@ const DAILY_PUZZLES = [
   },
   {
     id: "amnfm",
-    theme: "Funny People Get Serious",
+    theme: "Funny People",
     description: "",
     movieIds: [
-      8051, // Punch-Drunk Love (Oct 25, 2002)
+      20829, // Funny People (Jul 31, 2009)
       10322, // Being There (Dec 19, 1979)
       489, // Good Will Hunting (Jan 9, 1998)
       38, // Eternal Sunshine of the Spotless Mind (Mar 19, 2004)
@@ -103,10 +103,10 @@ const DAILY_PUZZLES = [
       64690, // Drive (Sep 16, 2011)
       1262, // Stranger Than Fiction (Nov 10, 2006)
       403, // Driving Miss Daisy (Jan 26, 1990)
-      20829, // Funny People (Jul 31, 2009)
+      8051, // Punch-Drunk Love (Oct 25, 2002)
     ],
   },
-    {
+  {
     id: "qc9xe",
     theme: "Ready Player One",
     description: "",
