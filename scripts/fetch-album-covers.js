@@ -30,8 +30,8 @@ while ((match = albumRegex.exec(albumsContent)) !== null) {
 
 console.log(`Found ${albums.length} albums`);
 
-// Function to search iTunes for album artwork
-function searchItunes(album) {
+// Function to search iTunes for album artwork with retry
+function searchItunes(album, retries = 3) {
   return new Promise((resolve, reject) => {
     const query = encodeURIComponent(`${album.title} ${album.artist}`);
     const url = `https://itunes.apple.com/search?term=${query}&media=music&entity=album&limit=1`;
@@ -39,7 +39,24 @@ function searchItunes(album) {
     https.get(url, (res) => {
       let data = '';
       res.on('data', chunk => data += chunk);
-      res.on('end', () => {
+      res.on('end', async () => {
+        // Check for rate limiting
+        if (data.includes('Rate limit') || res.statusCode === 403 || res.statusCode === 429) {
+          if (retries > 0) {
+            console.log(`  Rate limited, waiting 5s and retrying...`);
+            await new Promise(r => setTimeout(r, 5000));
+            try {
+              const result = await searchItunes(album, retries - 1);
+              resolve(result);
+            } catch (e) {
+              reject(e);
+            }
+          } else {
+            resolve(null);
+          }
+          return;
+        }
+
         try {
           const json = JSON.parse(data);
           if (json.results && json.results.length > 0) {
@@ -63,6 +80,14 @@ async function processAlbums() {
 
   for (let i = 0; i < albums.length; i++) {
     const album = albums[i];
+
+    // Skip if already has a valid iTunes cover URL
+    if (album.cover_url && album.cover_url.includes('mzstatic.com')) {
+      console.log(`Skipping ${i + 1}/${albums.length}: ${album.title} (already has cover)`);
+      results.push(album);
+      continue;
+    }
+
     console.log(`Processing ${i + 1}/${albums.length}: ${album.title} by ${album.artist}`);
 
     try {
@@ -81,15 +106,22 @@ async function processAlbums() {
 
     results.push(album);
 
-    // Rate limiting: wait 200ms between requests
-    await new Promise(r => setTimeout(r, 200));
+    // Save progress every 10 albums
+    if (results.length % 10 === 0) {
+      // Merge results with remaining albums for complete save
+      const remaining = albums.slice(results.length);
+      saveAlbums([...results, ...remaining]);
+      console.log(`  [Saved progress: ${results.length}/${albums.length}]`);
+    }
+
+    // Rate limiting: wait 1 second between requests
+    await new Promise(r => setTimeout(r, 1000));
   }
 
   return results;
 }
 
-processAlbums().then(updatedAlbums => {
-  // Generate new albums.js content
+function saveAlbums(albumList) {
   const header = `// Rolling Stone Top 500 Albums Data
 // Based on Rolling Stone's "500 Greatest Albums of All Time" list
 // Last updated: ${new Date().toISOString().split('T')[0]}
@@ -98,7 +130,7 @@ processAlbums().then(updatedAlbums => {
 const ALBUMS_DATA = [
 `;
 
-  const albumEntries = updatedAlbums.map(album => {
+  const albumEntries = albumList.map(album => {
     return `  {
     id: ${album.id},
     title: "${album.title}",
@@ -125,5 +157,9 @@ function getAlbumsByRankRange(start, end) {
 
   const newContent = header + albumEntries + footer;
   fs.writeFileSync('albums.js', newContent);
+}
+
+processAlbums().then(updatedAlbums => {
+  saveAlbums(updatedAlbums);
   console.log('\nUpdated albums.js with new cover URLs');
 });
