@@ -207,9 +207,11 @@ class MovieTimelineGame {
   }
 
   getPosterUrl(movie) {
-    return movie.poster_url || movie.poster_path
-      ? movie.poster_url || `https://image.tmdb.org/t/p/w300${movie.poster_path}`
-      : null;
+    return window.GameUtils ? window.GameUtils.getPosterUrl(movie) : (
+      movie.poster_url || movie.poster_path
+        ? movie.poster_url || `https://image.tmdb.org/t/p/w300${movie.poster_path}`
+        : null
+    );
   }
 
   preloadUpcomingPosters(count = 5) {
@@ -228,32 +230,43 @@ class MovieTimelineGame {
   }
 
   shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
+    if (window.GameUtils) {
+      window.GameUtils.shuffleArray(array);
+    } else {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
     }
   }
 
   // Seeded shuffle for daily puzzles - ensures same order for everyone on the same day
   seededShuffleArray(array, seed) {
-    // Simple seeded random number generator (mulberry32)
-    let state = seed;
-    const random = () => {
-      state = (state + 0x6d2b79f5) | 0;
-      let t = Math.imul(state ^ (state >>> 15), 1 | state);
-      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-    };
+    if (window.GameUtils) {
+      window.GameUtils.seededShuffleArray(array, seed);
+    } else {
+      // Simple seeded random number generator (mulberry32)
+      let state = seed;
+      const random = () => {
+        state = (state + 0x6d2b79f5) | 0;
+        let t = Math.imul(state ^ (state >>> 15), 1 | state);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+      };
 
-    // Fisher-Yates shuffle with seeded random
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
+      // Fisher-Yates shuffle with seeded random
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
     }
   }
 
   // Encode challenge data to URL-safe string
   encodeChallengeData(movieIds, score) {
+    if (window.GameUtils) {
+      return window.GameUtils.encodeChallengeData(movieIds, score);
+    }
     // Format: score,id1,id2,id3,...
     const data = [score, ...movieIds].join(",");
     // Use base64 encoding for URL safety
@@ -262,6 +275,9 @@ class MovieTimelineGame {
 
   // Decode challenge data from URL string
   decodeChallengeData(encoded) {
+    if (window.GameUtils) {
+      return window.GameUtils.decodeChallengeData(encoded);
+    }
     try {
       // Restore base64 padding and characters
       let base64 = encoded.replace(/-/g, "+").replace(/_/g, "/");
@@ -1277,6 +1293,9 @@ class MovieTimelineGame {
   }
 
   checkForSameDateNeighbor(newDate, index) {
+    if (window.GameUtils) {
+      return window.GameUtils.checkForSameDateNeighbor(this.timeline, newDate, index);
+    }
     // Check if the placed movie has the exact same release date as a neighbor
     // Returns { matched: true, neighborIndex } or { matched: false }
     // (now at index - 1 or index + 1 since we already inserted)
@@ -1298,6 +1317,9 @@ class MovieTimelineGame {
   }
 
   checkForCloseNeighbor(newDate, index) {
+    if (window.GameUtils) {
+      return window.GameUtils.checkForCloseNeighbor(this.timeline, newDate, index);
+    }
     // Check if the placed movie is within 30 days of either neighbor
     // Returns { matched: true, neighborIndex } or { matched: false }
     const MS_PER_DAY = 24 * 60 * 60 * 1000;
@@ -1581,10 +1603,13 @@ class MovieTimelineGame {
   }
 
   getYear(dateString) {
-    return new Date(dateString).getFullYear();
+    return window.GameUtils ? window.GameUtils.getYear(dateString) : new Date(dateString).getFullYear();
   }
 
   formatDate(dateString) {
+    if (window.GameUtils) {
+      return window.GameUtils.formatDate(dateString);
+    }
     const date = new Date(dateString);
     const months = [
       "Jan",

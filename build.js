@@ -8,7 +8,7 @@ const outdir = '_site';
 fs.mkdirSync(outdir, { recursive: true });
 
 // Minify JS files
-const jsFiles = ['game.js', 'movies.js', 'dailyPuzzles.js', 'tracker.js'];
+const jsFiles = ['game.js', 'movies.js', 'dailyPuzzles.js', 'tracker.js', 'gameUtils.js'];
 for (const file of jsFiles) {
   esbuild.buildSync({
     entryPoints: [file],
