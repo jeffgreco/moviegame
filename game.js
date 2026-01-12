@@ -600,7 +600,11 @@ class MovieTimelineGame {
     });
 
     // Share score button handler
-    document.getElementById("share-score").addEventListener("click", () => {
+    const shareBtn = document.getElementById("share-score");
+    if (!navigator.share) {
+      shareBtn.textContent = "Copy Score";
+    }
+    shareBtn.addEventListener("click", () => {
       this.shareScore();
     });
 
