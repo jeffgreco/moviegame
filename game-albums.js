@@ -32,6 +32,12 @@ class AlbumTimelineGame {
     this.archivePuzzle = null; // Puzzle data when playing from archive
     this.archivePuzzleNumber = null; // Puzzle number when playing from archive
 
+    // Audio state
+    this.audioEnabled = false;
+    this.currentAudio = null;
+    this.nextAudio = null;
+    this.fadeInterval = null;
+
     this.init();
   }
 
@@ -217,6 +223,9 @@ class AlbumTimelineGame {
   }
 
   switchMode(newMode) {
+    // Stop any playing audio
+    this.stopAudio();
+
     const wasChallenge = this.isChallenge;
     const wasArchive = this.gameMode === "archive";
 
@@ -460,6 +469,11 @@ class AlbumTimelineGame {
       if (e.target.id === "help-modal") {
         document.getElementById("help-modal").classList.add("hidden");
       }
+    });
+
+    // Audio toggle
+    document.getElementById("audio-toggle").addEventListener("click", () => {
+      this.toggleAudio();
     });
 
     document.getElementById("random-mode-btn").addEventListener("click", () => {
@@ -881,6 +895,9 @@ class AlbumTimelineGame {
   }
 
   endGame(won) {
+    // Stop audio when game ends
+    this.stopAudio();
+
     if (this.gameMode === "daily" || this.gameMode === "archive") {
       this.saveDailyCompletion(this.bestStreak, won);
     }
@@ -1294,11 +1311,144 @@ class AlbumTimelineGame {
         card.classList.add("entrance");
         setTimeout(() => card.classList.remove("entrance"), 600);
       });
+
+      // Play audio preview if enabled
+      if (this.audioEnabled && this.currentCard.preview_url) {
+        this.playPreview(this.currentCard.preview_url);
+      }
     }
   }
 
   updateStats() {
     document.getElementById("score").textContent = this.streak;
+  }
+
+  // Audio control methods
+  toggleAudio() {
+    this.audioEnabled = !this.audioEnabled;
+    const toggle = document.getElementById("audio-toggle");
+    const iconOff = document.getElementById("audio-icon-off");
+    const iconOn = document.getElementById("audio-icon-on");
+
+    if (this.audioEnabled) {
+      toggle.classList.add("active");
+      iconOff.classList.add("hidden");
+      iconOn.classList.remove("hidden");
+      // Start playing current album if there is one
+      if (this.currentCard && this.currentCard.preview_url) {
+        this.playPreview(this.currentCard.preview_url);
+      }
+    } else {
+      toggle.classList.remove("active");
+      iconOff.classList.remove("hidden");
+      iconOn.classList.add("hidden");
+      this.stopAudio();
+    }
+  }
+
+  playPreview(previewUrl) {
+    if (!this.audioEnabled || !previewUrl) return;
+
+    // Create new audio element
+    const audio = new Audio(previewUrl);
+    audio.volume = 0;
+
+    // If there's current audio, crossfade
+    if (this.currentAudio) {
+      this.crossfade(this.currentAudio, audio);
+    } else {
+      // Fade in from silence
+      this.currentAudio = audio;
+      audio.play().catch(() => {}); // Ignore autoplay errors
+      this.fadeIn(audio);
+    }
+  }
+
+  crossfade(oldAudio, newAudio) {
+    const fadeTime = 1000; // 1 second crossfade
+    const steps = 20;
+    const stepTime = fadeTime / steps;
+    let step = 0;
+
+    newAudio.play().catch(() => {});
+
+    if (this.fadeInterval) {
+      clearInterval(this.fadeInterval);
+    }
+
+    this.fadeInterval = setInterval(() => {
+      step++;
+      const progress = step / steps;
+
+      // Fade out old
+      if (oldAudio) {
+        oldAudio.volume = Math.max(0, 0.7 * (1 - progress));
+      }
+
+      // Fade in new
+      newAudio.volume = Math.min(0.7, 0.7 * progress);
+
+      if (step >= steps) {
+        clearInterval(this.fadeInterval);
+        this.fadeInterval = null;
+        if (oldAudio) {
+          oldAudio.pause();
+          oldAudio.src = "";
+        }
+        this.currentAudio = newAudio;
+      }
+    }, stepTime);
+  }
+
+  fadeIn(audio) {
+    const fadeTime = 500;
+    const steps = 10;
+    const stepTime = fadeTime / steps;
+    let step = 0;
+
+    const interval = setInterval(() => {
+      step++;
+      audio.volume = Math.min(0.7, 0.7 * (step / steps));
+      if (step >= steps) {
+        clearInterval(interval);
+      }
+    }, stepTime);
+  }
+
+  fadeOut(audio, callback) {
+    if (!audio) {
+      if (callback) callback();
+      return;
+    }
+
+    const fadeTime = 500;
+    const steps = 10;
+    const stepTime = fadeTime / steps;
+    let step = 0;
+    const startVolume = audio.volume;
+
+    const interval = setInterval(() => {
+      step++;
+      audio.volume = Math.max(0, startVolume * (1 - step / steps));
+      if (step >= steps) {
+        clearInterval(interval);
+        audio.pause();
+        audio.src = "";
+        if (callback) callback();
+      }
+    }, stepTime);
+  }
+
+  stopAudio() {
+    if (this.fadeInterval) {
+      clearInterval(this.fadeInterval);
+      this.fadeInterval = null;
+    }
+    if (this.currentAudio) {
+      this.currentAudio.pause();
+      this.currentAudio.src = "";
+      this.currentAudio = null;
+    }
   }
 }
 
