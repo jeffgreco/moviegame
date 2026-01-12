@@ -1,14 +1,14 @@
 // Rolling Stone Top 500 Albums Data
 // Based on Rolling Stone's "500 Greatest Albums of All Time" list
-// Last updated: 2026-01-11
+// Last updated: 2026-01-12
+// Cover art from iTunes
 
 const ALBUMS_DATA = [
-  // Top 10
   {
     id: 1,
     title: "What's Going On",
     artist: "Marvin Gaye",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b273b36949bee43217351961ffbc",
+    cover_url: "",
     release_date: "1971-05-21",
     rank: 1
   },
@@ -16,7 +16,7 @@ const ALBUMS_DATA = [
     id: 2,
     title: "Pet Sounds",
     artist: "The Beach Boys",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b273c8a11e48c91a982d086afc69",
+    cover_url: "",
     release_date: "1966-05-16",
     rank: 2
   },
@@ -24,7 +24,7 @@ const ALBUMS_DATA = [
     id: 3,
     title: "Blue",
     artist: "Joni Mitchell",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2733c7fc6cbfd0f42e2a197d76b",
+    cover_url: "",
     release_date: "1971-06-22",
     rank: 3
   },
@@ -32,7 +32,7 @@ const ALBUMS_DATA = [
     id: 4,
     title: "Songs in the Key of Life",
     artist: "Stevie Wonder",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b273e8c3f6b1c83ffa8b8e8c3f6b",
+    cover_url: "",
     release_date: "1976-09-28",
     rank: 4
   },
@@ -40,7 +40,7 @@ const ALBUMS_DATA = [
     id: 5,
     title: "Abbey Road",
     artist: "The Beatles",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b273dc30583ba717007b00cceb25",
+    cover_url: "",
     release_date: "1969-09-26",
     rank: 5
   },
@@ -48,7 +48,7 @@ const ALBUMS_DATA = [
     id: 6,
     title: "Nevermind",
     artist: "Nirvana",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2739a4e6c0e3a4e6c0e3a4e6c0e",
+    cover_url: "",
     release_date: "1991-09-24",
     rank: 6
   },
@@ -56,7 +56,7 @@ const ALBUMS_DATA = [
     id: 7,
     title: "Rumours",
     artist: "Fleetwood Mac",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b273e52a59a28efa4773163ac0f4",
+    cover_url: "",
     release_date: "1977-02-04",
     rank: 7
   },
@@ -64,7 +64,7 @@ const ALBUMS_DATA = [
     id: 8,
     title: "Purple Rain",
     artist: "Prince and the Revolution",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2737e6c0e3a4e6c0e3a4e6c0e3a",
+    cover_url: "",
     release_date: "1984-06-25",
     rank: 8
   },
@@ -72,7 +72,7 @@ const ALBUMS_DATA = [
     id: 9,
     title: "Blood on the Tracks",
     artist: "Bob Dylan",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2737e6c0e3a4e6c0e3a4e6c0e4b",
+    cover_url: "",
     release_date: "1975-01-20",
     rank: 9
   },
@@ -80,16 +80,15 @@ const ALBUMS_DATA = [
     id: 10,
     title: "The Miseducation of Lauryn Hill",
     artist: "Lauryn Hill",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2732e02117d76426a08ac7c174f",
+    cover_url: "",
     release_date: "1998-08-25",
     rank: 10
   },
-  // 11-50
   {
     id: 11,
     title: "Kind of Blue",
     artist: "Miles Davis",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b273b2b4b5b6b7b8b9babbbcbdbe",
+    cover_url: "",
     release_date: "1959-08-17",
     rank: 11
   },
@@ -97,7 +96,7 @@ const ALBUMS_DATA = [
     id: 12,
     title: "A Love Supreme",
     artist: "John Coltrane",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b273c2c3c4c5c6c7c8c9cacbcccd",
+    cover_url: "",
     release_date: "1965-02-01",
     rank: 12
   },
@@ -105,7 +104,7 @@ const ALBUMS_DATA = [
     id: 13,
     title: "The Velvet Underground & Nico",
     artist: "The Velvet Underground",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b273d2d3d4d5d6d7d8d9dadbdcdd",
+    cover_url: "",
     release_date: "1967-03-12",
     rank: 13
   },
@@ -113,7 +112,7 @@ const ALBUMS_DATA = [
     id: 14,
     title: "Thriller",
     artist: "Michael Jackson",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2734121faee8df82c526cbab2be",
+    cover_url: "",
     release_date: "1982-11-30",
     rank: 14
   },
@@ -121,7 +120,7 @@ const ALBUMS_DATA = [
     id: 15,
     title: "OK Computer",
     artist: "Radiohead",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b273c8b444df094279e70d0ed856",
+    cover_url: "",
     release_date: "1997-06-16",
     rank: 15
   },
@@ -129,7 +128,7 @@ const ALBUMS_DATA = [
     id: 16,
     title: "Sgt. Pepper's Lonely Hearts Club Band",
     artist: "The Beatles",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2735ef4660298ae29ee18799fc2",
+    cover_url: "",
     release_date: "1967-05-26",
     rank: 16
   },
@@ -137,7 +136,7 @@ const ALBUMS_DATA = [
     id: 17,
     title: "London Calling",
     artist: "The Clash",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2738a5f6a7b8b9c0d1e2f3a4b5c",
+    cover_url: "",
     release_date: "1979-12-14",
     rank: 17
   },
@@ -145,7 +144,7 @@ const ALBUMS_DATA = [
     id: 18,
     title: "The Dark Side of the Moon",
     artist: "Pink Floyd",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b273ea7caaff71dea1051d49b2fe",
+    cover_url: "",
     release_date: "1973-03-01",
     rank: 18
   },
@@ -153,7 +152,7 @@ const ALBUMS_DATA = [
     id: 19,
     title: "Innervisions",
     artist: "Stevie Wonder",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2739b9b0b1b2b3b4b5b6b7b8b9b",
+    cover_url: "",
     release_date: "1973-08-03",
     rank: 19
   },
@@ -161,7 +160,7 @@ const ALBUMS_DATA = [
     id: 20,
     title: "Lemonade",
     artist: "Beyoncé",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2730b2b2b3b4b5b6b7b8b9b0b1b",
+    cover_url: "",
     release_date: "2016-04-23",
     rank: 20
   },
@@ -169,7 +168,7 @@ const ALBUMS_DATA = [
     id: 21,
     title: "Highway 61 Revisited",
     artist: "Bob Dylan",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2731b1b2b3b4b5b6b7b8b9b0b1b",
+    cover_url: "",
     release_date: "1965-08-30",
     rank: 21
   },
@@ -177,7 +176,7 @@ const ALBUMS_DATA = [
     id: 22,
     title: "Revolver",
     artist: "The Beatles",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2732b2b3b4b5b6b7b8b9b0b1b2b",
+    cover_url: "",
     release_date: "1966-08-05",
     rank: 22
   },
@@ -185,7 +184,7 @@ const ALBUMS_DATA = [
     id: 23,
     title: "My Beautiful Dark Twisted Fantasy",
     artist: "Kanye West",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2733b3b4b5b6b7b8b9b0b1b2b3b",
+    cover_url: "",
     release_date: "2010-11-22",
     rank: 23
   },
@@ -193,7 +192,7 @@ const ALBUMS_DATA = [
     id: 24,
     title: "The Rise and Fall of Ziggy Stardust",
     artist: "David Bowie",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2734b4b5b6b7b8b9b0b1b2b3b4b",
+    cover_url: "",
     release_date: "1972-06-16",
     rank: 24
   },
@@ -201,7 +200,7 @@ const ALBUMS_DATA = [
     id: 25,
     title: "Ready to Die",
     artist: "The Notorious B.I.G.",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2735b5b6b7b8b9b0b1b2b3b4b5b",
+    cover_url: "",
     release_date: "1994-09-13",
     rank: 25
   },
@@ -209,7 +208,7 @@ const ALBUMS_DATA = [
     id: 26,
     title: "Exile on Main St.",
     artist: "The Rolling Stones",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2736b6b7b8b9b0b1b2b3b4b5b6b",
+    cover_url: "",
     release_date: "1972-05-12",
     rank: 26
   },
@@ -217,7 +216,7 @@ const ALBUMS_DATA = [
     id: 27,
     title: "Horses",
     artist: "Patti Smith",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2737b7b8b9b0b1b2b3b4b5b6b7b",
+    cover_url: "",
     release_date: "1975-12-13",
     rank: 27
   },
@@ -225,7 +224,7 @@ const ALBUMS_DATA = [
     id: 28,
     title: "Blonde on Blonde",
     artist: "Bob Dylan",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2738b8b9b0b1b2b3b4b5b6b7b8b",
+    cover_url: "",
     release_date: "1966-05-16",
     rank: 28
   },
@@ -233,7 +232,7 @@ const ALBUMS_DATA = [
     id: 29,
     title: "Illmatic",
     artist: "Nas",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2739b9b0b1b2b3b4b5b6b7b8b9b",
+    cover_url: "",
     release_date: "1994-04-19",
     rank: 29
   },
@@ -241,7 +240,7 @@ const ALBUMS_DATA = [
     id: 30,
     title: "Are You Experienced",
     artist: "The Jimi Hendrix Experience",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2730b0b1b2b3b4b5b6b7b8b9b0b",
+    cover_url: "",
     release_date: "1967-05-12",
     rank: 30
   },
@@ -249,7 +248,7 @@ const ALBUMS_DATA = [
     id: 31,
     title: "I Never Loved a Man the Way I Love You",
     artist: "Aretha Franklin",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2731b1b2b3b4b5b6b7b8b9b0b1c",
+    cover_url: "",
     release_date: "1967-03-10",
     rank: 31
   },
@@ -257,7 +256,7 @@ const ALBUMS_DATA = [
     id: 32,
     title: "Born to Run",
     artist: "Bruce Springsteen",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2732b2b3b4b5b6b7b8b9b0b1b2c",
+    cover_url: "",
     release_date: "1975-08-25",
     rank: 32
   },
@@ -265,7 +264,7 @@ const ALBUMS_DATA = [
     id: 33,
     title: "Sign o' the Times",
     artist: "Prince",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2733b3b4b5b6b7b8b9b0b1b2b3c",
+    cover_url: "",
     release_date: "1987-03-30",
     rank: 33
   },
@@ -273,7 +272,7 @@ const ALBUMS_DATA = [
     id: 34,
     title: "The White Album",
     artist: "The Beatles",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2734b4b5b6b7b8b9b0b1b2b3b4c",
+    cover_url: "",
     release_date: "1968-11-22",
     rank: 34
   },
@@ -281,7 +280,7 @@ const ALBUMS_DATA = [
     id: 35,
     title: "Aquemini",
     artist: "OutKast",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2735b5b6b7b8b9b0b1b2b3b4b5c",
+    cover_url: "",
     release_date: "1998-09-29",
     rank: 35
   },
@@ -289,7 +288,7 @@ const ALBUMS_DATA = [
     id: 36,
     title: "Led Zeppelin IV",
     artist: "Led Zeppelin",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2736b6b7b8b9b0b1b2b3b4b5b6c",
+    cover_url: "",
     release_date: "1971-11-08",
     rank: 36
   },
@@ -297,7 +296,7 @@ const ALBUMS_DATA = [
     id: 37,
     title: "The Joshua Tree",
     artist: "U2",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2737b7b8b9b0b1b2b3b4b5b6b7c",
+    cover_url: "",
     release_date: "1987-03-09",
     rank: 37
   },
@@ -305,7 +304,7 @@ const ALBUMS_DATA = [
     id: 38,
     title: "Tapestry",
     artist: "Carole King",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2738b8b9b0b1b2b3b4b5b6b7b8c",
+    cover_url: "",
     release_date: "1971-02-10",
     rank: 38
   },
@@ -313,7 +312,7 @@ const ALBUMS_DATA = [
     id: 39,
     title: "Who's Next",
     artist: "The Who",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2739b9b0b1b2b3b4b5b6b7b8b9c",
+    cover_url: "",
     release_date: "1971-08-14",
     rank: 39
   },
@@ -321,7 +320,7 @@ const ALBUMS_DATA = [
     id: 40,
     title: "Remain in Light",
     artist: "Talking Heads",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2730b0b1b2b3b4b5b6b7b8b9b0c",
+    cover_url: "",
     release_date: "1980-10-08",
     rank: 40
   },
@@ -329,7 +328,7 @@ const ALBUMS_DATA = [
     id: 41,
     title: "To Pimp a Butterfly",
     artist: "Kendrick Lamar",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2731b1b2b3b4b5b6b7b8b9b0b1d",
+    cover_url: "",
     release_date: "2015-03-15",
     rank: 41
   },
@@ -337,7 +336,7 @@ const ALBUMS_DATA = [
     id: 42,
     title: "Enter the Wu-Tang (36 Chambers)",
     artist: "Wu-Tang Clan",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2732b2b3b4b5b6b7b8b9b0b1b2d",
+    cover_url: "",
     release_date: "1993-11-09",
     rank: 42
   },
@@ -345,7 +344,7 @@ const ALBUMS_DATA = [
     id: 43,
     title: "Let It Bleed",
     artist: "The Rolling Stones",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2733b3b4b5b6b7b8b9b0b1b2b3d",
+    cover_url: "",
     release_date: "1969-12-05",
     rank: 43
   },
@@ -353,7 +352,7 @@ const ALBUMS_DATA = [
     id: 44,
     title: "Hotel California",
     artist: "Eagles",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2734b4b5b6b7b8b9b0b1b2b3b4d",
+    cover_url: "",
     release_date: "1976-12-08",
     rank: 44
   },
@@ -361,7 +360,7 @@ const ALBUMS_DATA = [
     id: 45,
     title: "The Chronic",
     artist: "Dr. Dre",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2735b5b6b7b8b9b0b1b2b3b4b5d",
+    cover_url: "",
     release_date: "1992-12-15",
     rank: 45
   },
@@ -369,7 +368,7 @@ const ALBUMS_DATA = [
     id: 46,
     title: "Appetite for Destruction",
     artist: "Guns N' Roses",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2736b6b7b8b9b0b1b2b3b4b5b6d",
+    cover_url: "",
     release_date: "1987-07-21",
     rank: 46
   },
@@ -377,7 +376,7 @@ const ALBUMS_DATA = [
     id: 47,
     title: "Low",
     artist: "David Bowie",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2737b7b8b9b0b1b2b3b4b5b6b7d",
+    cover_url: "",
     release_date: "1977-01-14",
     rank: 47
   },
@@ -385,7 +384,7 @@ const ALBUMS_DATA = [
     id: 48,
     title: "Rubber Soul",
     artist: "The Beatles",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2738b8b9b0b1b2b3b4b5b6b7b8d",
+    cover_url: "",
     release_date: "1965-12-03",
     rank: 48
   },
@@ -393,7 +392,7 @@ const ALBUMS_DATA = [
     id: 49,
     title: "Sticky Fingers",
     artist: "The Rolling Stones",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2739b9b0b1b2b3b4b5b6b7b8b9d",
+    cover_url: "",
     release_date: "1971-04-23",
     rank: 49
   },
@@ -401,16 +400,15 @@ const ALBUMS_DATA = [
     id: 50,
     title: "Achtung Baby",
     artist: "U2",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2730b0b1b2b3b4b5b6b7b8b9b0d",
+    cover_url: "",
     release_date: "1991-11-18",
     rank: 50
   },
-  // 51-100
   {
     id: 51,
     title: "Automatic for the People",
     artist: "R.E.M.",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2731a1a2a3a4a5a6a7a8a9a0a1a",
+    cover_url: "",
     release_date: "1992-10-05",
     rank: 51
   },
@@ -418,7 +416,7 @@ const ALBUMS_DATA = [
     id: 52,
     title: "Off the Wall",
     artist: "Michael Jackson",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2732a2a3a4a5a6a7a8a9a0a1a2a",
+    cover_url: "",
     release_date: "1979-08-10",
     rank: 52
   },
@@ -426,7 +424,7 @@ const ALBUMS_DATA = [
     id: 53,
     title: "Goodbye Yellow Brick Road",
     artist: "Elton John",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2733a3a4a5a6a7a8a9a0a1a2a3a",
+    cover_url: "",
     release_date: "1973-10-05",
     rank: 53
   },
@@ -434,7 +432,7 @@ const ALBUMS_DATA = [
     id: 54,
     title: "Control",
     artist: "Janet Jackson",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2734a4a5a6a7a8a9a0a1a2a3a4a",
+    cover_url: "",
     release_date: "1986-02-04",
     rank: 54
   },
@@ -442,7 +440,7 @@ const ALBUMS_DATA = [
     id: 55,
     title: "Live at the Apollo",
     artist: "James Brown",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2735a5a6a7a8a9a0a1a2a3a4a5a",
+    cover_url: "",
     release_date: "1963-01-01",
     rank: 55
   },
@@ -450,7 +448,7 @@ const ALBUMS_DATA = [
     id: 56,
     title: "Catch a Fire",
     artist: "Bob Marley and the Wailers",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2736a6a7a8a9a0a1a2a3a4a5a6a",
+    cover_url: "",
     release_date: "1973-04-13",
     rank: 56
   },
@@ -458,7 +456,7 @@ const ALBUMS_DATA = [
     id: 57,
     title: "Late Registration",
     artist: "Kanye West",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2737a7a8a9a0a1a2a3a4a5a6a7a",
+    cover_url: "",
     release_date: "2005-08-30",
     rank: 57
   },
@@ -466,7 +464,7 @@ const ALBUMS_DATA = [
     id: 58,
     title: "Graceland",
     artist: "Paul Simon",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2738a8a9a0a1a2a3a4a5a6a7a8a",
+    cover_url: "",
     release_date: "1986-08-25",
     rank: 58
   },
@@ -474,7 +472,7 @@ const ALBUMS_DATA = [
     id: 59,
     title: "The Doors",
     artist: "The Doors",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2739a9a0a1a2a3a4a5a6a7a8a9a",
+    cover_url: "",
     release_date: "1967-01-04",
     rank: 59
   },
@@ -482,7 +480,7 @@ const ALBUMS_DATA = [
     id: 60,
     title: "1999",
     artist: "Prince",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2730a0a1a2a3a4a5a6a7a8a9a0b",
+    cover_url: "",
     release_date: "1982-10-27",
     rank: 60
   },
@@ -490,7 +488,7 @@ const ALBUMS_DATA = [
     id: 61,
     title: "The Slim Shady LP",
     artist: "Eminem",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2731a1a2a3a4a5a6a7a8a9a0a1b",
+    cover_url: "",
     release_date: "1999-02-23",
     rank: 61
   },
@@ -498,7 +496,7 @@ const ALBUMS_DATA = [
     id: 62,
     title: "Disintegration",
     artist: "The Cure",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2732a2a3a4a5a6a7a8a9a0a1a2b",
+    cover_url: "",
     release_date: "1989-05-02",
     rank: 62
   },
@@ -506,7 +504,7 @@ const ALBUMS_DATA = [
     id: 63,
     title: "Paid in Full",
     artist: "Eric B. & Rakim",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2733a3a4a5a6a7a8a9a0a1a2a3b",
+    cover_url: "",
     release_date: "1987-07-07",
     rank: 63
   },
@@ -514,7 +512,7 @@ const ALBUMS_DATA = [
     id: 64,
     title: "Electric Ladyland",
     artist: "The Jimi Hendrix Experience",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2734a4a5a6a7a8a9a0a1a2a3a4b",
+    cover_url: "",
     release_date: "1968-10-16",
     rank: 64
   },
@@ -522,7 +520,7 @@ const ALBUMS_DATA = [
     id: 65,
     title: "Bridge Over Troubled Water",
     artist: "Simon & Garfunkel",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2735a5a6a7a8a9a0a1a2a3a4a5b",
+    cover_url: "",
     release_date: "1970-01-26",
     rank: 65
   },
@@ -530,7 +528,7 @@ const ALBUMS_DATA = [
     id: 66,
     title: "Back to Black",
     artist: "Amy Winehouse",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2736a6a7a8a9a0a1a2a3a4a5a6b",
+    cover_url: "",
     release_date: "2006-10-27",
     rank: 66
   },
@@ -538,7 +536,7 @@ const ALBUMS_DATA = [
     id: 67,
     title: "Paranoid",
     artist: "Black Sabbath",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2737a7a8a9a0a1a2a3a4a5a6a7b",
+    cover_url: "",
     release_date: "1970-09-18",
     rank: 67
   },
@@ -546,7 +544,7 @@ const ALBUMS_DATA = [
     id: 68,
     title: "Star Time",
     artist: "James Brown",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2738a8a9a0a1a2a3a4a5a6a7a8b",
+    cover_url: "",
     release_date: "1991-03-05",
     rank: 68
   },
@@ -554,7 +552,7 @@ const ALBUMS_DATA = [
     id: 69,
     title: "Wish You Were Here",
     artist: "Pink Floyd",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2739a9a0a1a2a3a4a5a6a7a8a9b",
+    cover_url: "",
     release_date: "1975-09-12",
     rank: 69
   },
@@ -562,7 +560,7 @@ const ALBUMS_DATA = [
     id: 70,
     title: "Superfly",
     artist: "Curtis Mayfield",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2730a0a1a2a3a4a5a6a7a8a9a0c",
+    cover_url: "",
     release_date: "1972-07-11",
     rank: 70
   },
@@ -570,7 +568,7 @@ const ALBUMS_DATA = [
     id: 71,
     title: "Kid A",
     artist: "Radiohead",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2731a1a2a3a4a5a6a7a8a9a0a1c",
+    cover_url: "",
     release_date: "2000-10-02",
     rank: 71
   },
@@ -578,7 +576,7 @@ const ALBUMS_DATA = [
     id: 72,
     title: "The Wall",
     artist: "Pink Floyd",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2732a2a3a4a5a6a7a8a9a0a1a2c",
+    cover_url: "",
     release_date: "1979-11-30",
     rank: 72
   },
@@ -586,7 +584,7 @@ const ALBUMS_DATA = [
     id: 73,
     title: "Straight Outta Compton",
     artist: "N.W.A",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2733a3a4a5a6a7a8a9a0a1a2a3c",
+    cover_url: "",
     release_date: "1988-08-08",
     rank: 73
   },
@@ -594,7 +592,7 @@ const ALBUMS_DATA = [
     id: 74,
     title: "What's the Story Morning Glory?",
     artist: "Oasis",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2734a4a5a6a7a8a9a0a1a2a3a4c",
+    cover_url: "",
     release_date: "1995-10-02",
     rank: 74
   },
@@ -602,7 +600,7 @@ const ALBUMS_DATA = [
     id: 75,
     title: "Led Zeppelin",
     artist: "Led Zeppelin",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2735a5a6a7a8a9a0a1a2a3a4a5c",
+    cover_url: "",
     release_date: "1969-01-12",
     rank: 75
   },
@@ -610,7 +608,7 @@ const ALBUMS_DATA = [
     id: 76,
     title: "Talking Book",
     artist: "Stevie Wonder",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2736a6a7a8a9a0a1a2a3a4a5a6c",
+    cover_url: "",
     release_date: "1972-10-28",
     rank: 76
   },
@@ -618,7 +616,7 @@ const ALBUMS_DATA = [
     id: 77,
     title: "Dusty in Memphis",
     artist: "Dusty Springfield",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2737a7a8a9a0a1a2a3a4a5a6a7c",
+    cover_url: "",
     release_date: "1969-03-18",
     rank: 77
   },
@@ -626,7 +624,7 @@ const ALBUMS_DATA = [
     id: 78,
     title: "Good Kid, M.A.A.D City",
     artist: "Kendrick Lamar",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2738a8a9a0a1a2a3a4a5a6a7a8c",
+    cover_url: "",
     release_date: "2012-10-22",
     rank: 78
   },
@@ -634,7 +632,7 @@ const ALBUMS_DATA = [
     id: 79,
     title: "Modern Sounds in Country and Western Music",
     artist: "Ray Charles",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2739a9a0a1a2a3a4a5a6a7a8a9c",
+    cover_url: "",
     release_date: "1962-04-01",
     rank: 79
   },
@@ -642,7 +640,7 @@ const ALBUMS_DATA = [
     id: 80,
     title: "Raising Hell",
     artist: "Run-D.M.C.",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2730a0a1a2a3a4a5a6a7a8a9a0e",
+    cover_url: "",
     release_date: "1986-05-15",
     rank: 80
   },
@@ -650,7 +648,7 @@ const ALBUMS_DATA = [
     id: 81,
     title: "Physical Graffiti",
     artist: "Led Zeppelin",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2731a1a2a3a4a5a6a7a8a9a0a1e",
+    cover_url: "",
     release_date: "1975-02-24",
     rank: 81
   },
@@ -658,7 +656,7 @@ const ALBUMS_DATA = [
     id: 82,
     title: "In the Wee Small Hours",
     artist: "Frank Sinatra",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2732a2a3a4a5a6a7a8a9a0a1a2e",
+    cover_url: "",
     release_date: "1955-04-25",
     rank: 82
   },
@@ -666,7 +664,7 @@ const ALBUMS_DATA = [
     id: 83,
     title: "Like a Prayer",
     artist: "Madonna",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2733a3a4a5a6a7a8a9a0a1a2a3e",
+    cover_url: "",
     release_date: "1989-03-21",
     rank: 83
   },
@@ -674,7 +672,7 @@ const ALBUMS_DATA = [
     id: 84,
     title: "It Takes a Nation of Millions to Hold Us Back",
     artist: "Public Enemy",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2734a4a5a6a7a8a9a0a1a2a3a4e",
+    cover_url: "",
     release_date: "1988-04-14",
     rank: 84
   },
@@ -682,7 +680,7 @@ const ALBUMS_DATA = [
     id: 85,
     title: "There's a Riot Goin' On",
     artist: "Sly and the Family Stone",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2735a5a6a7a8a9a0a1a2a3a4a5e",
+    cover_url: "",
     release_date: "1971-11-01",
     rank: 85
   },
@@ -690,7 +688,7 @@ const ALBUMS_DATA = [
     id: 86,
     title: "At Fillmore East",
     artist: "The Allman Brothers Band",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2736a6a7a8a9a0a1a2a3a4a5a6e",
+    cover_url: "",
     release_date: "1971-07-01",
     rank: 86
   },
@@ -698,7 +696,7 @@ const ALBUMS_DATA = [
     id: 87,
     title: "Jagged Little Pill",
     artist: "Alanis Morissette",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2737a7a8a9a0a1a2a3a4a5a6a7e",
+    cover_url: "",
     release_date: "1995-06-13",
     rank: 87
   },
@@ -706,7 +704,7 @@ const ALBUMS_DATA = [
     id: 88,
     title: "Station to Station",
     artist: "David Bowie",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2738a8a9a0a1a2a3a4a5a6a7a8e",
+    cover_url: "",
     release_date: "1976-01-23",
     rank: 88
   },
@@ -714,7 +712,7 @@ const ALBUMS_DATA = [
     id: 89,
     title: "The Low End Theory",
     artist: "A Tribe Called Quest",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2739a9a0a1a2a3a4a5a6a7a8a9e",
+    cover_url: "",
     release_date: "1991-09-24",
     rank: 89
   },
@@ -722,7 +720,7 @@ const ALBUMS_DATA = [
     id: 90,
     title: "Otis Blue: Otis Redding Sings Soul",
     artist: "Otis Redding",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2730a0a1a2a3a4a5a6a7a8a9a0f",
+    cover_url: "",
     release_date: "1965-09-15",
     rank: 90
   },
@@ -730,7 +728,7 @@ const ALBUMS_DATA = [
     id: 91,
     title: "Master of Puppets",
     artist: "Metallica",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2731a1a2a3a4a5a6a7a8a9a0a1f",
+    cover_url: "",
     release_date: "1986-03-03",
     rank: 91
   },
@@ -738,7 +736,7 @@ const ALBUMS_DATA = [
     id: 92,
     title: "Parallel Lines",
     artist: "Blondie",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2732a2a3a4a5a6a7a8a9a0a1a2f",
+    cover_url: "",
     release_date: "1978-09-01",
     rank: 92
   },
@@ -746,7 +744,7 @@ const ALBUMS_DATA = [
     id: 93,
     title: "Legend",
     artist: "Bob Marley and the Wailers",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2733a3a4a5a6a7a8a9a0a1a2a3f",
+    cover_url: "",
     release_date: "1984-05-08",
     rank: 93
   },
@@ -754,7 +752,7 @@ const ALBUMS_DATA = [
     id: 94,
     title: "Beggars Banquet",
     artist: "The Rolling Stones",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2734a4a5a6a7a8a9a0a1a2a3a4f",
+    cover_url: "",
     release_date: "1968-12-06",
     rank: 94
   },
@@ -762,7 +760,7 @@ const ALBUMS_DATA = [
     id: 95,
     title: "The Blueprint",
     artist: "Jay-Z",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2735a5a6a7a8a9a0a1a2a3a4a5f",
+    cover_url: "",
     release_date: "2001-09-11",
     rank: 95
   },
@@ -770,7 +768,7 @@ const ALBUMS_DATA = [
     id: 96,
     title: "Pearl",
     artist: "Janis Joplin",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2736a6a7a8a9a0a1a2a3a4a5a6f",
+    cover_url: "",
     release_date: "1971-01-11",
     rank: 96
   },
@@ -778,7 +776,7 @@ const ALBUMS_DATA = [
     id: 97,
     title: "After the Gold Rush",
     artist: "Neil Young",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2737a7a8a9a0a1a2a3a4a5a6a7f",
+    cover_url: "",
     release_date: "1970-09-19",
     rank: 97
   },
@@ -786,7 +784,7 @@ const ALBUMS_DATA = [
     id: 98,
     title: "Hunky Dory",
     artist: "David Bowie",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2738a8a9a0a1a2a3a4a5a6a7a8f",
+    cover_url: "",
     release_date: "1971-12-17",
     rank: 98
   },
@@ -794,7 +792,7 @@ const ALBUMS_DATA = [
     id: 99,
     title: "The Bends",
     artist: "Radiohead",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2739a9a0a1a2a3a4a5a6a7a8a9f",
+    cover_url: "",
     release_date: "1995-03-13",
     rank: 99
   },
@@ -802,16 +800,15 @@ const ALBUMS_DATA = [
     id: 100,
     title: "Stankonia",
     artist: "OutKast",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2730a0a1a2a3a4a5a6a7a8a9a0g",
+    cover_url: "",
     release_date: "2000-10-31",
     rank: 100
   },
-  // 101-200
   {
     id: 101,
     title: "The Queen Is Dead",
     artist: "The Smiths",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2731a1a2a3a4a5a6a7a8a9a0a1g",
+    cover_url: "",
     release_date: "1986-06-16",
     rank: 101
   },
@@ -819,7 +816,7 @@ const ALBUMS_DATA = [
     id: 102,
     title: "Court and Spark",
     artist: "Joni Mitchell",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2732a2a3a4a5a6a7a8a9a0a1a2g",
+    cover_url: "",
     release_date: "1974-01-17",
     rank: 102
   },
@@ -827,7 +824,7 @@ const ALBUMS_DATA = [
     id: 103,
     title: "Let's Get It On",
     artist: "Marvin Gaye",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2733a3a4a5a6a7a8a9a0a1a2a3g",
+    cover_url: "",
     release_date: "1973-08-28",
     rank: 103
   },
@@ -835,7 +832,7 @@ const ALBUMS_DATA = [
     id: 104,
     title: "The Smiths",
     artist: "The Smiths",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2734a4a5a6a7a8a9a0a1a2a3a4g",
+    cover_url: "",
     release_date: "1984-02-20",
     rank: 104
   },
@@ -843,7 +840,7 @@ const ALBUMS_DATA = [
     id: 105,
     title: "Midnight Marauders",
     artist: "A Tribe Called Quest",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2735a5a6a7a8a9a0a1a2a3a4a5g",
+    cover_url: "",
     release_date: "1993-11-09",
     rank: 105
   },
@@ -851,7 +848,7 @@ const ALBUMS_DATA = [
     id: 106,
     title: "Fun House",
     artist: "The Stooges",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2736a6a7a8a9a0a1a2a3a4a5a6g",
+    cover_url: "",
     release_date: "1970-07-07",
     rank: 106
   },
@@ -859,7 +856,7 @@ const ALBUMS_DATA = [
     id: 107,
     title: "Harvest",
     artist: "Neil Young",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2737a7a8a9a0a1a2a3a4a5a6a7g",
+    cover_url: "",
     release_date: "1972-02-14",
     rank: 107
   },
@@ -867,7 +864,7 @@ const ALBUMS_DATA = [
     id: 108,
     title: "All Eyez on Me",
     artist: "2Pac",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2738a8a9a0a1a2a3a4a5a6a7a8g",
+    cover_url: "",
     release_date: "1996-02-13",
     rank: 108
   },
@@ -875,7 +872,7 @@ const ALBUMS_DATA = [
     id: 109,
     title: "Damn",
     artist: "Kendrick Lamar",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2739a9a0a1a2a3a4a5a6a7a8a9g",
+    cover_url: "",
     release_date: "2017-04-14",
     rank: 109
   },
@@ -883,7 +880,7 @@ const ALBUMS_DATA = [
     id: 110,
     title: "Substance",
     artist: "New Order",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2730a0a1a2a3a4a5a6a7a8a9a0h",
+    cover_url: "",
     release_date: "1987-08-17",
     rank: 110
   },
@@ -891,7 +888,7 @@ const ALBUMS_DATA = [
     id: 111,
     title: "Marquee Moon",
     artist: "Television",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2731a1a2a3a4a5a6a7a8a9a0a1h",
+    cover_url: "",
     release_date: "1977-02-08",
     rank: 111
   },
@@ -899,7 +896,7 @@ const ALBUMS_DATA = [
     id: 112,
     title: "Unknown Pleasures",
     artist: "Joy Division",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2732a2a3a4a5a6a7a8a9a0a1a2h",
+    cover_url: "",
     release_date: "1979-06-15",
     rank: 112
   },
@@ -907,7 +904,7 @@ const ALBUMS_DATA = [
     id: 113,
     title: "Ten",
     artist: "Pearl Jam",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2733a3a4a5a6a7a8a9a0a1a2a3h",
+    cover_url: "",
     release_date: "1991-08-27",
     rank: 113
   },
@@ -915,7 +912,7 @@ const ALBUMS_DATA = [
     id: 114,
     title: "The Marshall Mathers LP",
     artist: "Eminem",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2734a4a5a6a7a8a9a0a1a2a3a4h",
+    cover_url: "",
     release_date: "2000-05-23",
     rank: 114
   },
@@ -923,7 +920,7 @@ const ALBUMS_DATA = [
     id: 115,
     title: "Doolittle",
     artist: "Pixies",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2735a5a6a7a8a9a0a1a2a3a4a5h",
+    cover_url: "",
     release_date: "1989-04-17",
     rank: 115
   },
@@ -931,7 +928,7 @@ const ALBUMS_DATA = [
     id: 116,
     title: "Lady Soul",
     artist: "Aretha Franklin",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2736a6a7a8a9a0a1a2a3a4a5a6h",
+    cover_url: "",
     release_date: "1968-01-22",
     rank: 116
   },
@@ -939,7 +936,7 @@ const ALBUMS_DATA = [
     id: 117,
     title: "Transformer",
     artist: "Lou Reed",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2737a7a8a9a0a1a2a3a4a5a6a7h",
+    cover_url: "",
     release_date: "1972-11-08",
     rank: 117
   },
@@ -947,7 +944,7 @@ const ALBUMS_DATA = [
     id: 118,
     title: "Channel Orange",
     artist: "Frank Ocean",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2738a8a9a0a1a2a3a4a5a6a7a8h",
+    cover_url: "",
     release_date: "2012-07-10",
     rank: 118
   },
@@ -955,7 +952,7 @@ const ALBUMS_DATA = [
     id: 119,
     title: "Axis: Bold as Love",
     artist: "The Jimi Hendrix Experience",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2739a9a0a1a2a3a4a5a6a7a8a9h",
+    cover_url: "",
     release_date: "1967-12-01",
     rank: 119
   },
@@ -963,7 +960,7 @@ const ALBUMS_DATA = [
     id: 120,
     title: "Surfer Rosa",
     artist: "Pixies",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2730a0a1a2a3a4a5a6a7a8a9a0i",
+    cover_url: "",
     release_date: "1988-03-21",
     rank: 120
   },
@@ -971,7 +968,7 @@ const ALBUMS_DATA = [
     id: 121,
     title: "Led Zeppelin II",
     artist: "Led Zeppelin",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2731a1a2a3a4a5a6a7a8a9a0a1i",
+    cover_url: "",
     release_date: "1969-10-22",
     rank: 121
   },
@@ -979,7 +976,7 @@ const ALBUMS_DATA = [
     id: 122,
     title: "Voodoo",
     artist: "D'Angelo",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2732a2a3a4a5a6a7a8a9a0a1a2i",
+    cover_url: "",
     release_date: "2000-01-25",
     rank: 122
   },
@@ -987,7 +984,7 @@ const ALBUMS_DATA = [
     id: 123,
     title: "Blonde",
     artist: "Frank Ocean",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2733a3a4a5a6a7a8a9a0a1a2a3i",
+    cover_url: "",
     release_date: "2016-08-20",
     rank: 123
   },
@@ -995,7 +992,7 @@ const ALBUMS_DATA = [
     id: 124,
     title: "In Utero",
     artist: "Nirvana",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2734a4a5a6a7a8a9a0a1a2a3a4i",
+    cover_url: "",
     release_date: "1993-09-21",
     rank: 124
   },
@@ -1003,7 +1000,7 @@ const ALBUMS_DATA = [
     id: 125,
     title: "3 Feet High and Rising",
     artist: "De La Soul",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2735a5a6a7a8a9a0a1a2a3a4a5i",
+    cover_url: "",
     release_date: "1989-03-03",
     rank: 125
   },
@@ -1011,7 +1008,7 @@ const ALBUMS_DATA = [
     id: 126,
     title: "Moondance",
     artist: "Van Morrison",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2736a6a7a8a9a0a1a2a3a4a5a6i",
+    cover_url: "",
     release_date: "1970-02-01",
     rank: 126
   },
@@ -1019,7 +1016,7 @@ const ALBUMS_DATA = [
     id: 127,
     title: "Loaded",
     artist: "The Velvet Underground",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2737a7a8a9a0a1a2a3a4a5a6a7i",
+    cover_url: "",
     release_date: "1970-11-01",
     rank: 127
   },
@@ -1027,7 +1024,7 @@ const ALBUMS_DATA = [
     id: 128,
     title: "Definitely Maybe",
     artist: "Oasis",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2738a8a9a0a1a2a3a4a5a6a7a8i",
+    cover_url: "",
     release_date: "1994-08-29",
     rank: 128
   },
@@ -1035,7 +1032,7 @@ const ALBUMS_DATA = [
     id: 129,
     title: "Demon Days",
     artist: "Gorillaz",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2739a9a0a1a2a3a4a5a6a7a8a9i",
+    cover_url: "",
     release_date: "2005-05-23",
     rank: 129
   },
@@ -1043,7 +1040,7 @@ const ALBUMS_DATA = [
     id: 130,
     title: "Rage Against the Machine",
     artist: "Rage Against the Machine",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2730a0a1a2a3a4a5a6a7a8a9a0j",
+    cover_url: "",
     release_date: "1992-11-03",
     rank: 130
   },
@@ -1051,7 +1048,7 @@ const ALBUMS_DATA = [
     id: 131,
     title: "Bitches Brew",
     artist: "Miles Davis",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2731a1a2a3a4a5a6a7a8a9a0a1j",
+    cover_url: "",
     release_date: "1970-04-01",
     rank: 131
   },
@@ -1059,7 +1056,7 @@ const ALBUMS_DATA = [
     id: 132,
     title: "Santana",
     artist: "Santana",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2732a2a3a4a5a6a7a8a9a0a1a2j",
+    cover_url: "",
     release_date: "1969-08-30",
     rank: 132
   },
@@ -1067,7 +1064,7 @@ const ALBUMS_DATA = [
     id: 133,
     title: "Siamese Dream",
     artist: "Smashing Pumpkins",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2733a3a4a5a6a7a8a9a0a1a2a3j",
+    cover_url: "",
     release_date: "1993-07-27",
     rank: 133
   },
@@ -1075,7 +1072,7 @@ const ALBUMS_DATA = [
     id: 134,
     title: "Tommy",
     artist: "The Who",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2734a4a5a6a7a8a9a0a1a2a3a4j",
+    cover_url: "",
     release_date: "1969-05-23",
     rank: 134
   },
@@ -1083,7 +1080,7 @@ const ALBUMS_DATA = [
     id: 135,
     title: "Speakerboxxx/The Love Below",
     artist: "OutKast",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2735a5a6a7a8a9a0a1a2a3a4a5j",
+    cover_url: "",
     release_date: "2003-09-23",
     rank: 135
   },
@@ -1091,7 +1088,7 @@ const ALBUMS_DATA = [
     id: 136,
     title: "At Last!",
     artist: "Etta James",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2736a6a7a8a9a0a1a2a3a4a5a6j",
+    cover_url: "",
     release_date: "1960-11-15",
     rank: 136
   },
@@ -1099,7 +1096,7 @@ const ALBUMS_DATA = [
     id: 137,
     title: "Here's Little Richard",
     artist: "Little Richard",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2737a7a8a9a0a1a2a3a4a5a6a7j",
+    cover_url: "",
     release_date: "1957-03-01",
     rank: 137
   },
@@ -1107,7 +1104,7 @@ const ALBUMS_DATA = [
     id: 138,
     title: "Reasonable Doubt",
     artist: "Jay-Z",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2738a8a9a0a1a2a3a4a5a6a7a8j",
+    cover_url: "",
     release_date: "1996-06-25",
     rank: 138
   },
@@ -1115,7 +1112,7 @@ const ALBUMS_DATA = [
     id: 139,
     title: "Music from Big Pink",
     artist: "The Band",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2739a9a0a1a2a3a4a5a6a7a8a9j",
+    cover_url: "",
     release_date: "1968-07-01",
     rank: 139
   },
@@ -1123,7 +1120,7 @@ const ALBUMS_DATA = [
     id: 140,
     title: "Power, Corruption & Lies",
     artist: "New Order",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2730a0a1a2a3a4a5a6a7a8a9a0k",
+    cover_url: "",
     release_date: "1983-05-02",
     rank: 140
   },
@@ -1131,7 +1128,7 @@ const ALBUMS_DATA = [
     id: 141,
     title: "Closer",
     artist: "Joy Division",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2731a1a2a3a4a5a6a7a8a9a0a1k",
+    cover_url: "",
     release_date: "1980-07-18",
     rank: 141
   },
@@ -1139,7 +1136,7 @@ const ALBUMS_DATA = [
     id: 142,
     title: "Dookie",
     artist: "Green Day",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2732a2a3a4a5a6a7a8a9a0a1a2k",
+    cover_url: "",
     release_date: "1994-02-01",
     rank: 142
   },
@@ -1147,7 +1144,7 @@ const ALBUMS_DATA = [
     id: 143,
     title: "Post",
     artist: "Björk",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2733a3a4a5a6a7a8a9a0a1a2a3k",
+    cover_url: "",
     release_date: "1995-06-13",
     rank: 143
   },
@@ -1155,7 +1152,7 @@ const ALBUMS_DATA = [
     id: 144,
     title: "Fear of a Black Planet",
     artist: "Public Enemy",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2734a4a5a6a7a8a9a0a1a2a3a4k",
+    cover_url: "",
     release_date: "1990-04-10",
     rank: 144
   },
@@ -1163,7 +1160,7 @@ const ALBUMS_DATA = [
     id: 145,
     title: "Music",
     artist: "Madonna",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2735a5a6a7a8a9a0a1a2a3a4a5k",
+    cover_url: "",
     release_date: "2000-09-18",
     rank: 145
   },
@@ -1171,7 +1168,7 @@ const ALBUMS_DATA = [
     id: 146,
     title: "Super Fly",
     artist: "Curtis Mayfield",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2736a6a7a8a9a0a1a2a3a4a5a6k",
+    cover_url: "",
     release_date: "1972-07-14",
     rank: 146
   },
@@ -1179,7 +1176,7 @@ const ALBUMS_DATA = [
     id: 147,
     title: "Brothers in Arms",
     artist: "Dire Straits",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2737a7a8a9a0a1a2a3a4a5a6a7k",
+    cover_url: "",
     release_date: "1985-05-13",
     rank: 147
   },
@@ -1187,7 +1184,7 @@ const ALBUMS_DATA = [
     id: 148,
     title: "The Score",
     artist: "Fugees",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2738a8a9a0a1a2a3a4a5a6a7a8k",
+    cover_url: "",
     release_date: "1996-02-13",
     rank: 148
   },
@@ -1195,7 +1192,7 @@ const ALBUMS_DATA = [
     id: 149,
     title: "MTV Unplugged in New York",
     artist: "Nirvana",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2739a9a0a1a2a3a4a5a6a7a8a9k",
+    cover_url: "",
     release_date: "1994-11-01",
     rank: 149
   },
@@ -1203,16 +1200,15 @@ const ALBUMS_DATA = [
     id: 150,
     title: "Bad",
     artist: "Michael Jackson",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2730a0a1a2a3a4a5a6a7a8a9a0l",
+    cover_url: "",
     release_date: "1987-08-31",
     rank: 150
   },
-  // More albums 151-300
   {
     id: 151,
     title: "Weezer (Blue Album)",
     artist: "Weezer",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2731a1a2a3a4a5a6a7a8a9a0a1l",
+    cover_url: "",
     release_date: "1994-05-10",
     rank: 151
   },
@@ -1220,7 +1216,7 @@ const ALBUMS_DATA = [
     id: 152,
     title: "Crosby, Stills & Nash",
     artist: "Crosby, Stills & Nash",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2732a2a3a4a5a6a7a8a9a0a1a2l",
+    cover_url: "",
     release_date: "1969-05-29",
     rank: 152
   },
@@ -1228,7 +1224,7 @@ const ALBUMS_DATA = [
     id: 153,
     title: "Elvis Presley",
     artist: "Elvis Presley",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2733a3a4a5a6a7a8a9a0a1a2a3l",
+    cover_url: "",
     release_date: "1956-03-23",
     rank: 153
   },
@@ -1236,7 +1232,7 @@ const ALBUMS_DATA = [
     id: 154,
     title: "Daydream Nation",
     artist: "Sonic Youth",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2734a4a5a6a7a8a9a0a1a2a3a4l",
+    cover_url: "",
     release_date: "1988-10-18",
     rank: 154
   },
@@ -1244,7 +1240,7 @@ const ALBUMS_DATA = [
     id: 155,
     title: "Meat Is Murder",
     artist: "The Smiths",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2735a5a6a7a8a9a0a1a2a3a4a5l",
+    cover_url: "",
     release_date: "1985-02-11",
     rank: 155
   },
@@ -1252,7 +1248,7 @@ const ALBUMS_DATA = [
     id: 156,
     title: "Born in the U.S.A.",
     artist: "Bruce Springsteen",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2736a6a7a8a9a0a1a2a3a4a5a6l",
+    cover_url: "",
     release_date: "1984-06-04",
     rank: 156
   },
@@ -1260,7 +1256,7 @@ const ALBUMS_DATA = [
     id: 157,
     title: "Astral Weeks",
     artist: "Van Morrison",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2737a7a8a9a0a1a2a3a4a5a6a7l",
+    cover_url: "",
     release_date: "1968-11-01",
     rank: 157
   },
@@ -1268,7 +1264,7 @@ const ALBUMS_DATA = [
     id: 158,
     title: "Murmur",
     artist: "R.E.M.",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2738a8a9a0a1a2a3a4a5a6a7a8l",
+    cover_url: "",
     release_date: "1983-04-12",
     rank: 158
   },
@@ -1276,7 +1272,7 @@ const ALBUMS_DATA = [
     id: 159,
     title: "In the Court of the Crimson King",
     artist: "King Crimson",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2739a9a0a1a2a3a4a5a6a7a8a9l",
+    cover_url: "",
     release_date: "1969-10-10",
     rank: 159
   },
@@ -1284,7 +1280,7 @@ const ALBUMS_DATA = [
     id: 160,
     title: "Homogenic",
     artist: "Björk",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2730a0a1a2a3a4a5a6a7a8a9a0m",
+    cover_url: "",
     release_date: "1997-09-22",
     rank: 160
   },
@@ -1292,7 +1288,7 @@ const ALBUMS_DATA = [
     id: 161,
     title: "Nothing's Shocking",
     artist: "Jane's Addiction",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2731a1a2a3a4a5a6a7a8a9a0a1m",
+    cover_url: "",
     release_date: "1988-08-23",
     rank: 161
   },
@@ -1300,7 +1296,7 @@ const ALBUMS_DATA = [
     id: 162,
     title: "Exodus",
     artist: "Bob Marley and the Wailers",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2732a2a3a4a5a6a7a8a9a0a1a2m",
+    cover_url: "",
     release_date: "1977-06-03",
     rank: 162
   },
@@ -1308,7 +1304,7 @@ const ALBUMS_DATA = [
     id: 163,
     title: "The Freewheelin' Bob Dylan",
     artist: "Bob Dylan",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2733a3a4a5a6a7a8a9a0a1a2a3m",
+    cover_url: "",
     release_date: "1963-05-27",
     rank: 163
   },
@@ -1316,7 +1312,7 @@ const ALBUMS_DATA = [
     id: 164,
     title: "Meat Loaf - Bat Out of Hell",
     artist: "Meat Loaf",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2734a4a5a6a7a8a9a0a1a2a3a4m",
+    cover_url: "",
     release_date: "1977-10-21",
     rank: 164
   },
@@ -1324,7 +1320,7 @@ const ALBUMS_DATA = [
     id: 165,
     title: "Synchronicity",
     artist: "The Police",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2735a5a6a7a8a9a0a1a2a3a4a5m",
+    cover_url: "",
     release_date: "1983-06-17",
     rank: 165
   },
@@ -1332,7 +1328,7 @@ const ALBUMS_DATA = [
     id: 166,
     title: "Licensed to Ill",
     artist: "Beastie Boys",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2736a6a7a8a9a0a1a2a3a4a5a6m",
+    cover_url: "",
     release_date: "1986-11-15",
     rank: 166
   },
@@ -1340,7 +1336,7 @@ const ALBUMS_DATA = [
     id: 167,
     title: "Odelay",
     artist: "Beck",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2737a7a8a9a0a1a2a3a4a5a6a7m",
+    cover_url: "",
     release_date: "1996-06-18",
     rank: 167
   },
@@ -1348,7 +1344,7 @@ const ALBUMS_DATA = [
     id: 168,
     title: "The Soft Bulletin",
     artist: "The Flaming Lips",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2738a8a9a0a1a2a3a4a5a6a7a8m",
+    cover_url: "",
     release_date: "1999-05-17",
     rank: 168
   },
@@ -1356,7 +1352,7 @@ const ALBUMS_DATA = [
     id: 169,
     title: "Ray of Light",
     artist: "Madonna",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2739a9a0a1a2a3a4a5a6a7a8a9m",
+    cover_url: "",
     release_date: "1998-03-03",
     rank: 169
   },
@@ -1364,7 +1360,7 @@ const ALBUMS_DATA = [
     id: 170,
     title: "Dig Me Out",
     artist: "Sleater-Kinney",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2730a0a1a2a3a4a5a6a7a8a9a0n",
+    cover_url: "",
     release_date: "1997-04-08",
     rank: 170
   },
@@ -1372,7 +1368,7 @@ const ALBUMS_DATA = [
     id: 171,
     title: "The Stranger",
     artist: "Billy Joel",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2731a1a2a3a4a5a6a7a8a9a0a1n",
+    cover_url: "",
     release_date: "1977-09-29",
     rank: 171
   },
@@ -1380,7 +1376,7 @@ const ALBUMS_DATA = [
     id: 172,
     title: "Dig Your Own Hole",
     artist: "The Chemical Brothers",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2732a2a3a4a5a6a7a8a9a0a1a2n",
+    cover_url: "",
     release_date: "1997-04-07",
     rank: 172
   },
@@ -1388,7 +1384,7 @@ const ALBUMS_DATA = [
     id: 173,
     title: "Paul's Boutique",
     artist: "Beastie Boys",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2733a3a4a5a6a7a8a9a0a1a2a3n",
+    cover_url: "",
     release_date: "1989-07-25",
     rank: 173
   },
@@ -1396,7 +1392,7 @@ const ALBUMS_DATA = [
     id: 174,
     title: "Bringing It All Back Home",
     artist: "Bob Dylan",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2734a4a5a6a7a8a9a0a1a2a3a4n",
+    cover_url: "",
     release_date: "1965-03-22",
     rank: 174
   },
@@ -1404,7 +1400,7 @@ const ALBUMS_DATA = [
     id: 175,
     title: "American Idiot",
     artist: "Green Day",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2735a5a6a7a8a9a0a1a2a3a4a5n",
+    cover_url: "",
     release_date: "2004-09-21",
     rank: 175
   },
@@ -1412,7 +1408,7 @@ const ALBUMS_DATA = [
     id: 176,
     title: "Black Sabbath",
     artist: "Black Sabbath",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2736a6a7a8a9a0a1a2a3a4a5a6n",
+    cover_url: "",
     release_date: "1970-02-13",
     rank: 176
   },
@@ -1420,7 +1416,7 @@ const ALBUMS_DATA = [
     id: 177,
     title: "Violent Femmes",
     artist: "Violent Femmes",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2737a7a8a9a0a1a2a3a4a5a6a7n",
+    cover_url: "",
     release_date: "1983-04-01",
     rank: 177
   },
@@ -1428,7 +1424,7 @@ const ALBUMS_DATA = [
     id: 178,
     title: "Head Hunters",
     artist: "Herbie Hancock",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2738a8a9a0a1a2a3a4a5a6a7a8n",
+    cover_url: "",
     release_date: "1973-10-26",
     rank: 178
   },
@@ -1436,7 +1432,7 @@ const ALBUMS_DATA = [
     id: 179,
     title: "So",
     artist: "Peter Gabriel",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2739a9a0a1a2a3a4a5a6a7a8a9n",
+    cover_url: "",
     release_date: "1986-05-19",
     rank: 179
   },
@@ -1444,7 +1440,7 @@ const ALBUMS_DATA = [
     id: 180,
     title: "Back in Black",
     artist: "AC/DC",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2730a0a1a2a3a4a5a6a7a8a9a0o",
+    cover_url: "",
     release_date: "1980-07-25",
     rank: 180
   },
@@ -1452,7 +1448,7 @@ const ALBUMS_DATA = [
     id: 181,
     title: "Loveless",
     artist: "My Bloody Valentine",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2731a1a2a3a4a5a6a7a8a9a0a1o",
+    cover_url: "",
     release_date: "1991-11-04",
     rank: 181
   },
@@ -1460,7 +1456,7 @@ const ALBUMS_DATA = [
     id: 182,
     title: "The Slim Shady LP",
     artist: "Eminem",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2732a2a3a4a5a6a7a8a9a0a1a2o",
+    cover_url: "",
     release_date: "1999-02-23",
     rank: 182
   },
@@ -1468,7 +1464,7 @@ const ALBUMS_DATA = [
     id: 183,
     title: "Discovery",
     artist: "Daft Punk",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2733a3a4a5a6a7a8a9a0a1a2a3o",
+    cover_url: "",
     release_date: "2001-03-12",
     rank: 183
   },
@@ -1476,7 +1472,7 @@ const ALBUMS_DATA = [
     id: 184,
     title: "White Light/White Heat",
     artist: "The Velvet Underground",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2734a4a5a6a7a8a9a0a1a2a3a4o",
+    cover_url: "",
     release_date: "1968-01-30",
     rank: 184
   },
@@ -1484,7 +1480,7 @@ const ALBUMS_DATA = [
     id: 185,
     title: "Layla and Other Assorted Love Songs",
     artist: "Derek and the Dominos",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2735a5a6a7a8a9a0a1a2a3a4a5o",
+    cover_url: "",
     release_date: "1970-11-09",
     rank: 185
   },
@@ -1492,7 +1488,7 @@ const ALBUMS_DATA = [
     id: 186,
     title: "Is This It",
     artist: "The Strokes",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2736a6a7a8a9a0a1a2a3a4a5a6o",
+    cover_url: "",
     release_date: "2001-07-30",
     rank: 186
   },
@@ -1500,7 +1496,7 @@ const ALBUMS_DATA = [
     id: 187,
     title: "Tragic Kingdom",
     artist: "No Doubt",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2737a7a8a9a0a1a2a3a4a5a6a7o",
+    cover_url: "",
     release_date: "1995-10-10",
     rank: 187
   },
@@ -1508,7 +1504,7 @@ const ALBUMS_DATA = [
     id: 188,
     title: "Elephant",
     artist: "The White Stripes",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2738a8a9a0a1a2a3a4a5a6a7a8o",
+    cover_url: "",
     release_date: "2003-04-01",
     rank: 188
   },
@@ -1516,7 +1512,7 @@ const ALBUMS_DATA = [
     id: 189,
     title: "Funeral",
     artist: "Arcade Fire",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2739a9a0a1a2a3a4a5a6a7a8a9o",
+    cover_url: "",
     release_date: "2004-09-14",
     rank: 189
   },
@@ -1524,7 +1520,7 @@ const ALBUMS_DATA = [
     id: 190,
     title: "Songs for the Deaf",
     artist: "Queens of the Stone Age",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2730a0a1a2a3a4a5a6a7a8a9a0p",
+    cover_url: "",
     release_date: "2002-08-27",
     rank: 190
   },
@@ -1532,7 +1528,7 @@ const ALBUMS_DATA = [
     id: 191,
     title: "American Beauty",
     artist: "Grateful Dead",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2731a1a2a3a4a5a6a7a8a9a0a1p",
+    cover_url: "",
     release_date: "1970-11-01",
     rank: 191
   },
@@ -1540,7 +1536,7 @@ const ALBUMS_DATA = [
     id: 192,
     title: "Whatever People Say I Am, That's What I'm Not",
     artist: "Arctic Monkeys",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2732a2a3a4a5a6a7a8a9a0a1a2p",
+    cover_url: "",
     release_date: "2006-01-23",
     rank: 192
   },
@@ -1548,7 +1544,7 @@ const ALBUMS_DATA = [
     id: 193,
     title: "Turn on the Bright Lights",
     artist: "Interpol",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2733a3a4a5a6a7a8a9a0a1a2a3p",
+    cover_url: "",
     release_date: "2002-08-20",
     rank: 193
   },
@@ -1556,7 +1552,7 @@ const ALBUMS_DATA = [
     id: 194,
     title: "Rust Never Sleeps",
     artist: "Neil Young & Crazy Horse",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2734a4a5a6a7a8a9a0a1a2a3a4p",
+    cover_url: "",
     release_date: "1979-06-22",
     rank: 194
   },
@@ -1564,7 +1560,7 @@ const ALBUMS_DATA = [
     id: 195,
     title: "Darkness on the Edge of Town",
     artist: "Bruce Springsteen",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2735a5a6a7a8a9a0a1a2a3a4a5p",
+    cover_url: "",
     release_date: "1978-06-02",
     rank: 195
   },
@@ -1572,7 +1568,7 @@ const ALBUMS_DATA = [
     id: 196,
     title: "Random Access Memories",
     artist: "Daft Punk",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2736a6a7a8a9a0a1a2a3a4a5a6p",
+    cover_url: "",
     release_date: "2013-05-17",
     rank: 196
   },
@@ -1580,7 +1576,7 @@ const ALBUMS_DATA = [
     id: 197,
     title: "Fresh Fruit for Rotting Vegetables",
     artist: "Dead Kennedys",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2737a7a8a9a0a1a2a3a4a5a6a7p",
+    cover_url: "",
     release_date: "1980-09-02",
     rank: 197
   },
@@ -1588,7 +1584,7 @@ const ALBUMS_DATA = [
     id: 198,
     title: "In Rainbows",
     artist: "Radiohead",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2738a8a9a0a1a2a3a4a5a6a7a8p",
+    cover_url: "",
     release_date: "2007-10-10",
     rank: 198
   },
@@ -1596,7 +1592,7 @@ const ALBUMS_DATA = [
     id: 199,
     title: "Aladdin Sane",
     artist: "David Bowie",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2739a9a0a1a2a3a4a5a6a7a8a9p",
+    cover_url: "",
     release_date: "1973-04-13",
     rank: 199
   },
@@ -1604,16 +1600,15 @@ const ALBUMS_DATA = [
     id: 200,
     title: "Alive!",
     artist: "Kiss",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2730a0a1a2a3a4a5a6a7a8a9a0q",
+    cover_url: "",
     release_date: "1975-09-10",
     rank: 200
   },
-  // 201-300
   {
     id: 201,
     title: "Young Americans",
     artist: "David Bowie",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2731a1a2a3a4a5a6a7a8a9a0a1q",
+    cover_url: "",
     release_date: "1975-03-07",
     rank: 201
   },
@@ -1621,7 +1616,7 @@ const ALBUMS_DATA = [
     id: 202,
     title: "Houses of the Holy",
     artist: "Led Zeppelin",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2732a2a3a4a5a6a7a8a9a0a1a2q",
+    cover_url: "",
     release_date: "1973-03-28",
     rank: 202
   },
@@ -1629,7 +1624,7 @@ const ALBUMS_DATA = [
     id: 203,
     title: "21",
     artist: "Adele",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2733a3a4a5a6a7a8a9a0a1a2a3q",
+    cover_url: "",
     release_date: "2011-01-19",
     rank: 203
   },
@@ -1637,7 +1632,7 @@ const ALBUMS_DATA = [
     id: 204,
     title: "Thriller (25th Anniversary Edition)",
     artist: "Michael Jackson",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2734a4a5a6a7a8a9a0a1a2a3a4q",
+    cover_url: "",
     release_date: "2008-02-08",
     rank: 204
   },
@@ -1645,7 +1640,7 @@ const ALBUMS_DATA = [
     id: 205,
     title: "Songs of Leonard Cohen",
     artist: "Leonard Cohen",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2735a5a6a7a8a9a0a1a2a3a4a5q",
+    cover_url: "",
     release_date: "1967-12-27",
     rank: 205
   },
@@ -1653,7 +1648,7 @@ const ALBUMS_DATA = [
     id: 206,
     title: "Only Built 4 Cuban Linx...",
     artist: "Raekwon",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2736a6a7a8a9a0a1a2a3a4a5a6q",
+    cover_url: "",
     release_date: "1995-08-01",
     rank: 206
   },
@@ -1661,7 +1656,7 @@ const ALBUMS_DATA = [
     id: 207,
     title: "Mezzanine",
     artist: "Massive Attack",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2737a7a8a9a0a1a2a3a4a5a6a7q",
+    cover_url: "",
     release_date: "1998-04-20",
     rank: 207
   },
@@ -1669,7 +1664,7 @@ const ALBUMS_DATA = [
     id: 208,
     title: "The Slim Shady LP",
     artist: "Eminem",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2738a8a9a0a1a2a3a4a5a6a7a8q",
+    cover_url: "",
     release_date: "1999-02-23",
     rank: 208
   },
@@ -1677,7 +1672,7 @@ const ALBUMS_DATA = [
     id: 209,
     title: "John Lennon/Plastic Ono Band",
     artist: "John Lennon",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2739a9a0a1a2a3a4a5a6a7a8a9q",
+    cover_url: "",
     release_date: "1970-12-11",
     rank: 209
   },
@@ -1685,7 +1680,7 @@ const ALBUMS_DATA = [
     id: 210,
     title: "Mellon Collie and the Infinite Sadness",
     artist: "Smashing Pumpkins",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2730a0a1a2a3a4a5a6a7a8a9a0r",
+    cover_url: "",
     release_date: "1995-10-24",
     rank: 210
   },
@@ -1693,7 +1688,7 @@ const ALBUMS_DATA = [
     id: 211,
     title: "Pretzel Logic",
     artist: "Steely Dan",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2731a1a2a3a4a5a6a7a8a9a0a1r",
+    cover_url: "",
     release_date: "1974-02-20",
     rank: 211
   },
@@ -1701,7 +1696,7 @@ const ALBUMS_DATA = [
     id: 212,
     title: "Kick",
     artist: "INXS",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2732a2a3a4a5a6a7a8a9a0a1a2r",
+    cover_url: "",
     release_date: "1987-10-19",
     rank: 212
   },
@@ -1709,7 +1704,7 @@ const ALBUMS_DATA = [
     id: 213,
     title: "Mama Said Knock You Out",
     artist: "LL Cool J",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2733a3a4a5a6a7a8a9a0a1a2a3r",
+    cover_url: "",
     release_date: "1990-09-04",
     rank: 213
   },
@@ -1717,7 +1712,7 @@ const ALBUMS_DATA = [
     id: 214,
     title: "Aja",
     artist: "Steely Dan",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2734a4a5a6a7a8a9a0a1a2a3a4r",
+    cover_url: "",
     release_date: "1977-09-23",
     rank: 214
   },
@@ -1725,7 +1720,7 @@ const ALBUMS_DATA = [
     id: 215,
     title: "Goo",
     artist: "Sonic Youth",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2735a5a6a7a8a9a0a1a2a3a4a5r",
+    cover_url: "",
     release_date: "1990-06-26",
     rank: 215
   },
@@ -1733,7 +1728,7 @@ const ALBUMS_DATA = [
     id: 216,
     title: "The College Dropout",
     artist: "Kanye West",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2736a6a7a8a9a0a1a2a3a4a5a6r",
+    cover_url: "",
     release_date: "2004-02-10",
     rank: 216
   },
@@ -1741,7 +1736,7 @@ const ALBUMS_DATA = [
     id: 217,
     title: "Pleased to Meet Me",
     artist: "The Replacements",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2737a7a8a9a0a1a2a3a4a5a6a7r",
+    cover_url: "",
     release_date: "1987-04-28",
     rank: 217
   },
@@ -1749,7 +1744,7 @@ const ALBUMS_DATA = [
     id: 218,
     title: "Thirteen",
     artist: "Big Star",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2738a8a9a0a1a2a3a4a5a6a7a8r",
+    cover_url: "",
     release_date: "1972-07-01",
     rank: 218
   },
@@ -1757,7 +1752,7 @@ const ALBUMS_DATA = [
     id: 219,
     title: "Let It Be",
     artist: "The Beatles",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2739a9a0a1a2a3a4a5a6a7a8a9r",
+    cover_url: "",
     release_date: "1970-05-08",
     rank: 219
   },
@@ -1765,7 +1760,7 @@ const ALBUMS_DATA = [
     id: 220,
     title: "Thriller",
     artist: "Michael Jackson",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2730a0a1a2a3a4a5a6a7a8a9a0s",
+    cover_url: "",
     release_date: "1982-11-30",
     rank: 220
   },
@@ -1773,7 +1768,7 @@ const ALBUMS_DATA = [
     id: 221,
     title: "Dirty Mind",
     artist: "Prince",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2731a1a2a3a4a5a6a7a8a9a0a1s",
+    cover_url: "",
     release_date: "1980-10-08",
     rank: 221
   },
@@ -1781,7 +1776,7 @@ const ALBUMS_DATA = [
     id: 222,
     title: "Yankee Hotel Foxtrot",
     artist: "Wilco",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2732a2a3a4a5a6a7a8a9a0a1a2s",
+    cover_url: "",
     release_date: "2002-04-23",
     rank: 222
   },
@@ -1789,7 +1784,7 @@ const ALBUMS_DATA = [
     id: 223,
     title: "Appetite for Destruction",
     artist: "Guns N' Roses",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2733a3a4a5a6a7a8a9a0a1a2a3s",
+    cover_url: "",
     release_date: "1987-07-21",
     rank: 223
   },
@@ -1797,7 +1792,7 @@ const ALBUMS_DATA = [
     id: 224,
     title: "Red Headed Stranger",
     artist: "Willie Nelson",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2734a4a5a6a7a8a9a0a1a2a3a4s",
+    cover_url: "",
     release_date: "1975-05-01",
     rank: 224
   },
@@ -1805,7 +1800,7 @@ const ALBUMS_DATA = [
     id: 225,
     title: "Entertainment!",
     artist: "Gang of Four",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2735a5a6a7a8a9a0a1a2a3a4a5s",
+    cover_url: "",
     release_date: "1979-09-01",
     rank: 225
   },
@@ -1813,7 +1808,7 @@ const ALBUMS_DATA = [
     id: 226,
     title: "Trans-Europe Express",
     artist: "Kraftwerk",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2736a6a7a8a9a0a1a2a3a4a5a6s",
+    cover_url: "",
     release_date: "1977-03-01",
     rank: 226
   },
@@ -1821,7 +1816,7 @@ const ALBUMS_DATA = [
     id: 227,
     title: "Hello Nasty",
     artist: "Beastie Boys",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2737a7a8a9a0a1a2a3a4a5a6a7s",
+    cover_url: "",
     release_date: "1998-07-14",
     rank: 227
   },
@@ -1829,7 +1824,7 @@ const ALBUMS_DATA = [
     id: 228,
     title: "The Suburbs",
     artist: "Arcade Fire",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2738a8a9a0a1a2a3a4a5a6a7a8s",
+    cover_url: "",
     release_date: "2010-08-02",
     rank: 228
   },
@@ -1837,7 +1832,7 @@ const ALBUMS_DATA = [
     id: 229,
     title: "Hot Fuss",
     artist: "The Killers",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2739a9a0a1a2a3a4a5a6a7a8a9s",
+    cover_url: "",
     release_date: "2004-06-15",
     rank: 229
   },
@@ -1845,7 +1840,7 @@ const ALBUMS_DATA = [
     id: 230,
     title: "Room on Fire",
     artist: "The Strokes",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2730a0a1a2a3a4a5a6a7a8a9a0t",
+    cover_url: "",
     release_date: "2003-10-28",
     rank: 230
   },
@@ -1853,7 +1848,7 @@ const ALBUMS_DATA = [
     id: 231,
     title: "Currents",
     artist: "Tame Impala",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2731a1a2a3a4a5a6a7a8a9a0a1t",
+    cover_url: "",
     release_date: "2015-07-17",
     rank: 231
   },
@@ -1861,7 +1856,7 @@ const ALBUMS_DATA = [
     id: 232,
     title: "Dummy",
     artist: "Portishead",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2732a2a3a4a5a6a7a8a9a0a1a2t",
+    cover_url: "",
     release_date: "1994-08-22",
     rank: 232
   },
@@ -1869,7 +1864,7 @@ const ALBUMS_DATA = [
     id: 233,
     title: "Silent Alarm",
     artist: "Bloc Party",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2733a3a4a5a6a7a8a9a0a1a2a3t",
+    cover_url: "",
     release_date: "2005-02-14",
     rank: 233
   },
@@ -1877,7 +1872,7 @@ const ALBUMS_DATA = [
     id: 234,
     title: "The Colour of Spring",
     artist: "Talk Talk",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2734a4a5a6a7a8a9a0a1a2a3a4t",
+    cover_url: "",
     release_date: "1986-02-24",
     rank: 234
   },
@@ -1885,7 +1880,7 @@ const ALBUMS_DATA = [
     id: 235,
     title: "Abraxas",
     artist: "Santana",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2735a5a6a7a8a9a0a1a2a3a4a5t",
+    cover_url: "",
     release_date: "1970-09-23",
     rank: 235
   },
@@ -1893,7 +1888,7 @@ const ALBUMS_DATA = [
     id: 236,
     title: "Rust Never Sleeps",
     artist: "Neil Young",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2736a6a7a8a9a0a1a2a3a4a5a6t",
+    cover_url: "",
     release_date: "1979-07-02",
     rank: 236
   },
@@ -1901,7 +1896,7 @@ const ALBUMS_DATA = [
     id: 237,
     title: "Rated R",
     artist: "Queens of the Stone Age",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2737a7a8a9a0a1a2a3a4a5a6a7t",
+    cover_url: "",
     release_date: "2000-06-06",
     rank: 237
   },
@@ -1909,7 +1904,7 @@ const ALBUMS_DATA = [
     id: 238,
     title: "I Am...",
     artist: "Nas",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2738a8a9a0a1a2a3a4a5a6a7a8t",
+    cover_url: "",
     release_date: "1999-04-06",
     rank: 238
   },
@@ -1917,7 +1912,7 @@ const ALBUMS_DATA = [
     id: 239,
     title: "You're Living All Over Me",
     artist: "Dinosaur Jr.",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2739a9a0a1a2a3a4a5a6a7a8a9t",
+    cover_url: "",
     release_date: "1987-07-01",
     rank: 239
   },
@@ -1925,7 +1920,7 @@ const ALBUMS_DATA = [
     id: 240,
     title: "Sam Cooke at the Copa",
     artist: "Sam Cooke",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2730a0a1a2a3a4a5a6a7a8a9a0u",
+    cover_url: "",
     release_date: "1964-10-01",
     rank: 240
   },
@@ -1933,7 +1928,7 @@ const ALBUMS_DATA = [
     id: 241,
     title: "Technique",
     artist: "New Order",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2731a1a2a3a4a5a6a7a8a9a0a1u",
+    cover_url: "",
     release_date: "1989-01-30",
     rank: 241
   },
@@ -1941,7 +1936,7 @@ const ALBUMS_DATA = [
     id: 242,
     title: "Remain in Light",
     artist: "Talking Heads",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2732a2a3a4a5a6a7a8a9a0a1a2u",
+    cover_url: "",
     release_date: "1980-10-08",
     rank: 242
   },
@@ -1949,7 +1944,7 @@ const ALBUMS_DATA = [
     id: 243,
     title: "Maggot Brain",
     artist: "Funkadelic",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2733a3a4a5a6a7a8a9a0a1a2a3u",
+    cover_url: "",
     release_date: "1971-07-12",
     rank: 243
   },
@@ -1957,7 +1952,7 @@ const ALBUMS_DATA = [
     id: 244,
     title: "Stop Making Sense",
     artist: "Talking Heads",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2734a4a5a6a7a8a9a0a1a2a3a4u",
+    cover_url: "",
     release_date: "1984-10-01",
     rank: 244
   },
@@ -1965,7 +1960,7 @@ const ALBUMS_DATA = [
     id: 245,
     title: "Fever to Tell",
     artist: "Yeah Yeah Yeahs",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2735a5a6a7a8a9a0a1a2a3a4a5u",
+    cover_url: "",
     release_date: "2003-04-28",
     rank: 245
   },
@@ -1973,7 +1968,7 @@ const ALBUMS_DATA = [
     id: 246,
     title: "The Band",
     artist: "The Band",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2736a6a7a8a9a0a1a2a3a4a5a6u",
+    cover_url: "",
     release_date: "1969-09-22",
     rank: 246
   },
@@ -1981,7 +1976,7 @@ const ALBUMS_DATA = [
     id: 247,
     title: "Feels Like Home",
     artist: "Norah Jones",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2737a7a8a9a0a1a2a3a4a5a6a7u",
+    cover_url: "",
     release_date: "2004-02-10",
     rank: 247
   },
@@ -1989,7 +1984,7 @@ const ALBUMS_DATA = [
     id: 248,
     title: "Buena Vista Social Club",
     artist: "Buena Vista Social Club",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2738a8a9a0a1a2a3a4a5a6a7a8u",
+    cover_url: "",
     release_date: "1997-09-16",
     rank: 248
   },
@@ -1997,7 +1992,7 @@ const ALBUMS_DATA = [
     id: 249,
     title: "Spirit of Eden",
     artist: "Talk Talk",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2739a9a0a1a2a3a4a5a6a7a8a9u",
+    cover_url: "",
     release_date: "1988-09-12",
     rank: 249
   },
@@ -2005,13 +2000,18 @@ const ALBUMS_DATA = [
     id: 250,
     title: "Hounds of Love",
     artist: "Kate Bush",
-    cover_url: "https://i.scdn.co/image/ab67616d0000b2730a0a1a2a3a4a5a6a7a8a9a0v",
+    cover_url: "",
     release_date: "1985-09-16",
     rank: 250
   }
 ];
 
-// Export for use in game
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { ALBUMS_DATA };
+// Helper function to get album by ID
+function getAlbumById(id) {
+  return ALBUMS_DATA.find(album => album.id === id);
+}
+
+// Helper function to get albums by rank range
+function getAlbumsByRankRange(start, end) {
+  return ALBUMS_DATA.filter(album => album.rank >= start && album.rank <= end);
 }

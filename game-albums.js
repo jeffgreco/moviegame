@@ -629,14 +629,17 @@ class AlbumTimelineGame {
     card.dataset.releaseDate = album.release_date;
     card.draggable = inPile;
 
-    const coverUrl = album.cover_url || "https://via.placeholder.com/300x300?text=No+Cover";
-    const fallbackUrl = "https://via.placeholder.com/300x300?text=No+Cover";
+    const coverUrl = album.cover_url || "";
 
     const dateInfo = this.formatDate(album.release_date);
     const artistCredit = inPile ? `<div class="artist">${album.artist}</div>` : "";
 
+    // Create a fallback placeholder with album info
+    const fallbackHtml = `<div class="cover-fallback"><span class="fallback-title">${album.title}</span><span class="fallback-artist">${album.artist}</span></div>`;
+
     card.innerHTML = `
-      <img class="cover" src="${coverUrl}" alt="${album.title}" loading="lazy" onerror="this.onerror=null; this.src='${fallbackUrl}';">
+      ${coverUrl ? `<img class="cover" src="${coverUrl}" alt="${album.title}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">` : ''}
+      <div class="cover-fallback" style="display: ${coverUrl ? 'none' : 'flex'}"><span class="fallback-title">${album.title}</span><span class="fallback-artist">${album.artist}</span></div>
       ${
         showYear
           ? `<span class="year"><span class="month-day">${dateInfo.monthDay}</span>,&nbsp;<span class="year-num">${dateInfo.year}</span></span>`
