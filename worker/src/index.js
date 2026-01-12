@@ -312,10 +312,11 @@ async function handleStats(env, corsHeaders) {
 function getCorsHeaders(allowedOrigin, request) {
   const origin = request.headers.get('Origin') || '';
 
-  // Allow the configured origin, or localhost for development
+  // Allow the configured origin, localhost for development, and Cloudflare Pages preview deployments
   const isAllowed = origin === allowedOrigin ||
     origin.startsWith('http://localhost') ||
     origin.startsWith('http://127.0.0.1') ||
+    origin.endsWith('.pages.dev') ||
     allowedOrigin === '*';
 
   return {
