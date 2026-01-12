@@ -30,9 +30,15 @@ function loadExistingMovies() {
     try {
         const moviesPath = path.join(__dirname, '..', 'movies.js');
         const content = fs.readFileSync(moviesPath, 'utf-8');
-        const match = content.match(/const MOVIES_DATA = (\[[\s\S]*?\]);/);
-        if (match) {
-            return JSON.parse(match[1]);
+
+        // Use vm module to safely evaluate JavaScript (handles unquoted keys)
+        const vm = require('vm');
+        const context = {};
+        vm.createContext(context);
+        vm.runInContext(content, context);
+
+        if (context.MOVIES_DATA && Array.isArray(context.MOVIES_DATA)) {
+            return context.MOVIES_DATA;
         }
     } catch (e) {
         console.warn('Could not load movies.js:', e.message);
