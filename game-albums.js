@@ -1349,6 +1349,11 @@ class AlbumTimelineGame {
   playPreview(previewUrl) {
     if (!this.audioEnabled || !previewUrl) return;
 
+    // Don't restart if already playing this URL
+    if (this.currentAudio && this.currentAudioUrl === previewUrl) {
+      return;
+    }
+
     // Clean up any audio that was being faded out (prevents orphaned audio)
     if (this.fadingOutAudio) {
       this.fadingOutAudio.pause();
@@ -1361,6 +1366,9 @@ class AlbumTimelineGame {
       clearInterval(this.fadeInterval);
       this.fadeInterval = null;
     }
+
+    // Track which URL we're playing
+    this.currentAudioUrl = previewUrl;
 
     // Create new audio element
     const audio = new Audio(previewUrl);
@@ -1383,6 +1391,9 @@ class AlbumTimelineGame {
     const stepTime = fadeTime / steps;
     let step = 0;
 
+    // Capture the actual current volume (may be mid-fade)
+    const oldStartVolume = oldAudio ? oldAudio.volume : 0;
+
     // Track the old audio and immediately update currentAudio
     // This prevents race conditions if playPreview is called mid-crossfade
     this.fadingOutAudio = oldAudio;
@@ -1394,9 +1405,9 @@ class AlbumTimelineGame {
       step++;
       const progress = step / steps;
 
-      // Fade out old
+      // Fade out old from its current volume (not assumed 0.7)
       if (this.fadingOutAudio) {
-        this.fadingOutAudio.volume = Math.max(0, 0.7 * (1 - progress));
+        this.fadingOutAudio.volume = Math.max(0, oldStartVolume * (1 - progress));
       }
 
       // Fade in new
@@ -1468,6 +1479,7 @@ class AlbumTimelineGame {
       this.currentAudio.src = "";
       this.currentAudio = null;
     }
+    this.currentAudioUrl = null;
   }
 }
 
