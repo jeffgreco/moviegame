@@ -877,6 +877,11 @@ class MovieTimelineGame {
     card.classList.add("dragging");
     e.dataTransfer.effectAllowed = "move";
     e.dataTransfer.setData("text/plain", card.dataset.id);
+
+    // Grow drop zones preemptively when drag starts
+    document.querySelectorAll(".drop-zone").forEach((zone) => {
+      zone.classList.add("drag-active");
+    });
   }
 
   handleDragEnd(e, card) {
@@ -884,6 +889,7 @@ class MovieTimelineGame {
     this.draggedElement = null;
     document.querySelectorAll(".drop-zone").forEach((zone) => {
       zone.classList.remove("drag-over");
+      zone.classList.remove("drag-active");
     });
   }
 
@@ -915,6 +921,11 @@ class MovieTimelineGame {
     this.touchStartX = touch.clientX;
     this.touchStartY = touch.clientY;
     this.originalPosition = card.getBoundingClientRect();
+
+    // Grow drop zones preemptively when touch drag starts
+    document.querySelectorAll(".drop-zone").forEach((zone) => {
+      zone.classList.add("drag-active");
+    });
   }
 
   handleTouchMove(e, card) {
@@ -973,6 +984,7 @@ class MovieTimelineGame {
         this.placeCard(index);
         dropped = true;
       }
+      zone.classList.remove("drag-active");
     });
 
     this.draggedElement = null;
