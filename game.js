@@ -38,7 +38,6 @@ class MovieTimelineGame {
     // Game tracking
     this.tracker = typeof GameTracker !== 'undefined' ? new GameTracker(TRACKER_API_URL) : null;
     this.scoreChart = typeof ScoreHistoryChart !== 'undefined' ? new ScoreHistoryChart('score-chart') : null;
-    this.personalStats = typeof PersonalStats !== 'undefined' ? new PersonalStats('personal-stats') : null;
 
     this.init();
   }
@@ -421,26 +420,17 @@ class MovieTimelineGame {
 
   async loadStatsData() {
     if (!this.tracker) {
-      // Show message when tracking is not enabled
       const chartContainer = document.getElementById('score-chart');
-      const statsContainer = document.getElementById('personal-stats');
       if (chartContainer) {
         chartContainer.innerHTML = '<div class="chart-empty">Stats tracking not configured</div>';
-      }
-      if (statsContainer) {
-        statsContainer.innerHTML = '<div class="personal-stats-empty">Stats tracking not configured</div>';
       }
       return;
     }
 
-    // Load score history and render both chart and personal stats
     try {
       const historyData = await this.tracker.getHistory();
       if (this.scoreChart) {
         this.scoreChart.render(historyData.history);
-      }
-      if (this.personalStats) {
-        this.personalStats.render(historyData.history);
       }
     } catch (e) {
       console.warn('Failed to load score history:', e);
@@ -1197,8 +1187,32 @@ class MovieTimelineGame {
       challengeResult.classList.add("hidden");
     }
 
+    // Show puzzle stats for daily/archive modes
+    const puzzleStatsEl = document.getElementById("puzzle-stats");
+    if ((this.gameMode === "daily" || this.gameMode === "archive") && this.dailyPuzzle?.id) {
+      this.loadPuzzleStats(this.dailyPuzzle.id);
+      puzzleStatsEl.classList.remove("hidden");
+    } else {
+      puzzleStatsEl.classList.add("hidden");
+    }
+
     // Populate poster grid with timeline movies
     this.renderPosterGrid();
+  }
+
+  async loadPuzzleStats(puzzleId) {
+    if (!this.tracker) return;
+
+    try {
+      const stats = await this.tracker.getPuzzleStats(puzzleId);
+      if (stats) {
+        document.getElementById("puzzle-stat-players").textContent = stats.attempts || 0;
+        document.getElementById("puzzle-stat-perfect").textContent = stats.completions || 0;
+        document.getElementById("puzzle-stat-avg").textContent = stats.avg_score || '-';
+      }
+    } catch (e) {
+      console.warn('Failed to load puzzle stats:', e);
+    }
   }
 
   showChallengeBeatNotification() {

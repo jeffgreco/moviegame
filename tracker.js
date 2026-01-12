@@ -218,63 +218,6 @@ class ScoreHistoryChart {
   }
 }
 
-/**
- * Personal Stats Display
- * Shows summary of player's game history
- */
-class PersonalStats {
-  constructor(containerId) {
-    this.container = document.getElementById(containerId);
-  }
-
-  render(history) {
-    if (!this.container) return;
-
-    if (!history || history.length === 0) {
-      this.container.innerHTML = '<div class="personal-stats-empty">No games recorded yet</div>';
-      return;
-    }
-
-    // Calculate stats
-    const dailyGames = history.filter(g => g.game_mode === 'daily' || g.game_mode === 'archive');
-    const randomGames = history.filter(g => g.game_mode === 'random');
-
-    const perfectDailies = dailyGames.filter(g => g.won).length;
-    const avgDailyScore = dailyGames.length > 0
-      ? (dailyGames.reduce((sum, g) => sum + g.score, 0) / dailyGames.length).toFixed(1)
-      : 0;
-
-    const bestRandomStreak = randomGames.length > 0
-      ? Math.max(...randomGames.map(g => g.score))
-      : 0;
-    const avgRandomStreak = randomGames.length > 0
-      ? (randomGames.reduce((sum, g) => sum + g.score, 0) / randomGames.length).toFixed(1)
-      : 0;
-
-    this.container.innerHTML = `
-      <div class="personal-stats-grid">
-        <div class="personal-stat">
-          <div class="personal-stat-value">${dailyGames.length}</div>
-          <div class="personal-stat-label">Puzzles Played</div>
-        </div>
-        <div class="personal-stat">
-          <div class="personal-stat-value">${perfectDailies}</div>
-          <div class="personal-stat-label">Perfect Scores</div>
-        </div>
-        <div class="personal-stat">
-          <div class="personal-stat-value">${avgDailyScore}</div>
-          <div class="personal-stat-label">Avg Puzzle Score</div>
-        </div>
-        <div class="personal-stat">
-          <div class="personal-stat-value">${bestRandomStreak}</div>
-          <div class="personal-stat-label">Best Random Streak</div>
-        </div>
-      </div>
-    `;
-  }
-}
-
 // Export for use in game.js
 window.GameTracker = GameTracker;
 window.ScoreHistoryChart = ScoreHistoryChart;
-window.PersonalStats = PersonalStats;

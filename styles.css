@@ -1943,45 +1943,36 @@ main {
   font-size: 0.9rem;
 }
 
-/* Personal Stats */
-.personal-stats-container {
+/* Puzzle Stats (game over screen) */
+.puzzle-stats {
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
   background: rgba(0, 0, 0, 0.2);
   border-radius: 8px;
-  padding: 1rem;
-  min-height: 80px;
 }
 
-.personal-stats-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+.puzzle-stats-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
 
-.personal-stat {
+.puzzle-stat {
   text-align: center;
-  padding: 0.5rem;
 }
 
-.personal-stat-value {
-  font-size: 1.5rem;
+.puzzle-stat-value {
+  font-size: 1.25rem;
   font-weight: 600;
   color: #c9a961;
 }
 
-.personal-stat-label {
-  font-size: 0.75rem;
+.puzzle-stat-label {
+  font-size: 0.7rem;
   color: #888;
-  margin-top: 0.25rem;
+  margin-top: 0.2rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-}
-
-.personal-stats-empty,
-.personal-stats-loading {
-  color: #888;
-  text-align: center;
-  padding: 1.5rem 1rem;
-  font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {
