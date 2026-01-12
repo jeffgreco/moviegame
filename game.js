@@ -1142,6 +1142,9 @@ class MovieTimelineGame {
     // Show puzzle stats for daily/archive modes
     if (isPuzzleMode && this.dailyPuzzle?.id) {
       puzzleStatsEl.classList.remove("hidden");
+      // Show score immediately while chart loads
+      document.getElementById("puzzle-stats-percentile").innerHTML =
+        `You scored <span class="score-value">${this.bestStreak}</span>`;
       this.loadPuzzleStats(this.dailyPuzzle.id);
     } else {
       puzzleStatsEl.classList.add("hidden");
