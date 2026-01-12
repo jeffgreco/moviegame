@@ -10,7 +10,7 @@ const PUZZLE_SCHEDULE = {
   "2026-01-13": "m4k7r",
   "2026-01-14": "qc9xe",
   "2026-01-15": "b2f6n",
-  "2026-01-16": "r5t1q"
+  "2026-01-16": "r5t1q",
 };
 
 const DAILY_PUZZLES = [
@@ -25,7 +25,7 @@ const DAILY_PUZZLES = [
   },
   {
     id: "k7x2m",
-    theme: "Michael Mann",
+    theme: "Manhunter",
     description: "Stylish crime dramas from the master of mood",
     movieIds: [
       949, 1538, 9361, 11322, 82, 8489, 9008, 11454, 11524, 365620, 201088,
@@ -54,7 +54,7 @@ const DAILY_PUZZLES = [
   },
   {
     id: "p3n8v",
-    theme: "Alien Invasion",
+    theme: "War of the Worlds",
     description: "",
     movieIds: [
       74, 602, 329865, 2675, 75, 59678, 8337, 755898, 840, 7191, 5491, 137113,
@@ -63,7 +63,7 @@ const DAILY_PUZZLES = [
   },
   {
     id: "m4k7r",
-    theme: "Killers",
+    theme: "Natural Born Killers",
     description: "",
     movieIds: [
       274, 1949, 539, 1359, 504, 807, 320, 10279, 241, 71859, 12149, 768, 9740,
