@@ -9,7 +9,8 @@
       "Bash(gzip:*)",
       "Bash(ls:*)",
       "Bash(npm run build)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(node scripts/fetch-album-covers.js:*)"
     ]
   }
 }

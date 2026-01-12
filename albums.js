@@ -53,7 +53,7 @@ const ALBUMS_DATA = [
     id: 6,
     title: "Nevermind",
     artist: "Nirvana",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/45/b2/24/45b224b7-baa4-c320-9e3b-fd37dcfcdcb1/mzi.nkvwvqxf.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/95/fd/b9/95fdb9b2-6d2b-92a6-97f2-51c1a6d77f1a/00602527874609.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/a6/53/1e/a6531efa-397c-eb73-ecab-9b2790c1471e/mzaf_16440344883389407474.plus.aac.p.m4a",
     release_date: "1991-09-24",
     rank: 6
@@ -116,7 +116,7 @@ const ALBUMS_DATA = [
     id: 13,
     title: "The Velvet Underground & Nico",
     artist: "The Velvet Underground",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/92/93/39/9293397f-a707-237e-ec7e-0ca613a67e3c/06UMGIM04143.rgb.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/33/98/39/3398391b-3586-0903-a094-423c93d8fe53/00602547075031.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ec/14/f8/ec14f8db-824f-6b17-b77d-f08a14ebf776/mzaf_4678052817657554987.plus.aac.p.m4a",
     release_date: "1967-03-12",
     rank: 13
@@ -143,7 +143,7 @@ const ALBUMS_DATA = [
     id: 16,
     title: "Sgt. Pepper's Lonely Hearts Club Band",
     artist: "The Beatles",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/64/85/d2/6485d219-91ac-5481-2668-7eab1320436d/21UMGIM57007.rgb.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/6f/79/8d/6f798d84-7475-8525-fc91-f7b51b2b5a9b/00602567725428.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a6/91/d7/a691d7a7-61cb-c299-efd9-9a7eb0669523/mzaf_747994897546992804.plus.aac.p.m4a",
     release_date: "1967-05-26",
     rank: 16
@@ -161,7 +161,7 @@ const ALBUMS_DATA = [
     id: 18,
     title: "The Dark Side of the Moon",
     artist: "Pink Floyd",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/54/d0/62/54d06230-1196-0bd0-93b3-1bd3eef2b43d/cover_-.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/3e/76/b0/3e76b0e3-762b-2286-a019-8afb19cee541/886445635829.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/58/5b/bb/585bbb32-7f6f-d6fd-2470-e02d7414544e/mzaf_10600413524328381964.plus.aac.p.m4a",
     release_date: "1973-03-01",
     rank: 18
@@ -206,7 +206,7 @@ const ALBUMS_DATA = [
     id: 23,
     title: "My Beautiful Dark Twisted Fantasy",
     artist: "Kanye West",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/37/da/7c/37da7cc5-2b6f-9bb8-30ba-8a8c3be3e16a/00602527584973.rgb.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/d1/74/da/d174dacf-5782-dfe2-19f7-ce037dcd0237/00602527584935.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/10/58/bb/1058bbc8-8771-85d2-19a0-64b225d4ccd6/mzaf_15008276184889852591.plus.aac.p.m4a",
     release_date: "2010-11-22",
     rank: 23
@@ -233,7 +233,7 @@ const ALBUMS_DATA = [
     id: 26,
     title: "Exile on Main St.",
     artist: "The Rolling Stones",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/7f/e0/b4/7fe0b4da-36cd-a1d0-0f19-ef3fec18e3cd/08UMGIM15742.rgb.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/b6/7b/df/b67bdff8-4e30-d46d-e869-fc0f38462f4c/08UMGIM15728.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/2f/18/12/2f18122f-0a63-6287-f80b-d60027e2767f/mzaf_8917422509864767269.plus.aac.p.m4a",
     release_date: "1972-05-12",
     rank: 26
@@ -350,7 +350,7 @@ const ALBUMS_DATA = [
     id: 39,
     title: "Who's Next",
     artist: "The Who",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/a5/e7/70/a5e7703c-4e30-da7a-a319-2d3caef42c0e/23UM1IM04872.rgb.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/4e/d5/19/4ed519ca-3f8b-65ee-eb21-89d5c6a0b44e/00602547140265.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/9d/23/a5/9d23a517-a405-d8be-d119-8b1443cccda3/mzaf_10976006011126409643.plus.aac.p.m4a",
     release_date: "1971-08-14",
     rank: 39
@@ -404,7 +404,7 @@ const ALBUMS_DATA = [
     id: 45,
     title: "The Chronic",
     artist: "Dr. Dre",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/b0/51/4f/b0514fda-a9ca-d08b-1e89-eca02d9e792f/00602547530684.rgb.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/22/55/6c/22556ce7-92fb-3a7a-af98-33b0e4bed0d8/23UMGIM07603.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/fa/98/ad/fa98ad28-5aed-ef5b-6747-f7ef9ccab1e5/mzaf_10668902108723034119.plus.aac.p.m4a",
     release_date: "1992-12-15",
     rank: 45
@@ -413,7 +413,7 @@ const ALBUMS_DATA = [
     id: 46,
     title: "Appetite for Destruction",
     artist: "Guns N' Roses",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a3/20/20/a3202033-3d92-2267-eab4-9a87ec1aa95e/710423.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/a0/4d/c4/a04dc484-03cc-02aa-fa82-5334fcb4bc16/18UMGIM24878.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/cd/ed/17/cded17d5-ee32-1b97-7a11-527ab7b677d7/mzaf_2128362282849775567.plus.aac.p.m4a",
     release_date: "1987-07-21",
     rank: 46
@@ -458,7 +458,7 @@ const ALBUMS_DATA = [
     id: 51,
     title: "Automatic for the People",
     artist: "R.E.M.",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/e8/a9/b3/e8a9b351-578c-12b7-4cc4-791b90fac17b/00602537796731.rgb.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/fb/d9/e2/fbd9e203-818c-06cf-405d-8906f2eae6ec/00888072396258.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/db/00/4b/db004b97-05eb-dc8a-4ab2-9ea1e57cd5e9/mzaf_10085189027933565055.plus.aac.p.m4a",
     release_date: "1992-10-05",
     rank: 51
@@ -494,7 +494,7 @@ const ALBUMS_DATA = [
     id: 55,
     title: "Live at the Apollo",
     artist: "James Brown",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/e7/41/db/e741dbd4-3795-8eef-969c-546ff7c5b1a8/00602537429806.rgb.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/0b/16/f1/0b16f1aa-f6fd-d25f-52ab-934e780459cc/00602577173707.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/a9/a6/b7/a9a6b711-2c3e-bf1b-f5a3-567e278e3fd9/mzaf_3379405240239921789.plus.aac.p.m4a",
     release_date: "1963-01-01",
     rank: 55
@@ -503,7 +503,7 @@ const ALBUMS_DATA = [
     id: 56,
     title: "Catch a Fire",
     artist: "Bob Marley and the Wailers",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/25/b3/cd/25b3cd5f-2e29-8c3f-68ed-677786a7d55a/06UMGIM06492.rgb.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/a2/2a/6f/a22a6f9a-a4cc-9d1f-8e5b-9b7fa41177c3/23UMGIM37450.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/25/c0/d2/25c0d297-4f75-d028-e208-ab61ee3c5540/mzaf_10712254209711878762.plus.aac.p.m4a",
     release_date: "1973-04-13",
     rank: 56
@@ -539,7 +539,7 @@ const ALBUMS_DATA = [
     id: 60,
     title: "1999",
     artist: "Prince",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/ae/2c/7b/ae2c7bdd-477a-cd69-585b-2f3b5773d3de/886448937784.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/68/23/df/6823df45-c3fe-48e9-15c6-2b620febbd4b/886448376293.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/1a/ab/3a/1aab3ab1-ef79-599a-1961-ab711772d2f8/mzaf_8053810746502222611.plus.aac.p.m4a",
     release_date: "1982-10-27",
     rank: 60
@@ -548,7 +548,7 @@ const ALBUMS_DATA = [
     id: 61,
     title: "The Slim Shady LP",
     artist: "Eminem",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/78/07/35/78073533-a113-170d-bfab-acc3cec405d1/00602567238218.rgb.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/82/3b/60/823b6012-8dd5-b74c-55d0-6a104ec91430/06UMGIM04056.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/20/a4/92/20a49265-4541-516a-3e7f-928767123565/mzaf_16810646058963162444.plus.aac.p.m4a",
     release_date: "1999-02-23",
     rank: 61
@@ -557,7 +557,7 @@ const ALBUMS_DATA = [
     id: 62,
     title: "Disintegration",
     artist: "The Cure",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music/93/3c/2c/mzi.ujtdsknz.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/ce/8b/65/ce8b65d5-9a2d-12aa-692c-bd9cba493e24/19UMGIM71891.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/b2/83/a5/b283a5d0-f650-602c-d852-bfe85e14ac26/mzaf_15746174422357183334.plus.aac.p.m4a",
     release_date: "1989-05-02",
     rank: 62
@@ -665,7 +665,7 @@ const ALBUMS_DATA = [
     id: 74,
     title: "What's the Story Morning Glory?",
     artist: "Oasis",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/34/2e/cb/342ecb17-ef19-816a-4ce5-e60b9ceec161/5051961073164.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/04/92/e0/0492e08b-cbcc-9969-9ad6-8f5a0888068c/5051961007107.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/a2/ce/35/a2ce35c2-93ff-993e-53ba-fc22bab8357f/mzaf_16847435411827195474.plus.aac.p.m4a",
     release_date: "1995-10-02",
     rank: 74
@@ -701,7 +701,7 @@ const ALBUMS_DATA = [
     id: 78,
     title: "Good Kid, M.A.A.D City",
     artist: "Kendrick Lamar",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/36/86/ec/3686ec99-dec4-0a01-8b74-2d8a9a0263a7/12UMGIM52988.rgb.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/9a/50/a1/9a50a1d8-01c2-2504-8d99-3f2fc7e5c2ff/12UMGIM52988.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/5c/c4/78/5cc47802-9719-10c0-42d6-07351b44ee34/mzaf_15609471773835932579.plus.aac.p.m4a",
     release_date: "2012-10-22",
     rank: 78
@@ -719,7 +719,7 @@ const ALBUMS_DATA = [
     id: 80,
     title: "Raising Hell",
     artist: "Run-D.M.C.",
-    cover_url: "",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/00/3f/21/003f21c0-6bc3-dbed-7081-04ffaf172016/078221640824.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/9f/1d/26/9f1d26b8-eac9-5791-8d79-55d05663fa43/mzaf_935454447677198606.plus.aac.p.m4a",
     release_date: "1986-05-15",
     rank: 80
@@ -755,7 +755,7 @@ const ALBUMS_DATA = [
     id: 84,
     title: "It Takes a Nation of Millions to Hold Us Back",
     artist: "Public Enemy",
-    cover_url: "",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/9f/49/d0/9f49d09b-6842-081e-8cec-67b19a686397/06UMGIM18700.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/09/ae/2e/09ae2efb-74fb-cf53-f4ef-aa93abe5ae71/mzaf_6160778412565102725.plus.aac.p.m4a",
     release_date: "1988-04-14",
     rank: 84
@@ -773,7 +773,7 @@ const ALBUMS_DATA = [
     id: 86,
     title: "At Fillmore East",
     artist: "The Allman Brothers Band",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/78/7a/92/787a929d-abd8-ca82-f908-c3509aabdc24/06UMGIM10914.rgb.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/da/e0/c9/dae0c9cf-2977-19f8-06fa-8adcf7ca86f0/00602547880314.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/18/08/a0/1808a084-0d2b-4083-457b-966d6657404a/mzaf_1288902131983370981.plus.aac.p.m4a",
     release_date: "1971-07-01",
     rank: 86
@@ -782,7 +782,7 @@ const ALBUMS_DATA = [
     id: 87,
     title: "Jagged Little Pill",
     artist: "Alanis Morissette",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/e0/b7/d1/e0b7d17a-50ea-8ae0-780a-8b0208901147/075679834683.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music4/v4/4d/04/71/4d0471a5-3bd6-2c5b-a438-3568fcd70e1c/603497885510.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/85/17/28/851728b5-4dd9-f5c7-f5de-b5af8e5f1d93/mzaf_5967890705575716076.plus.aac.p.m4a",
     release_date: "1995-06-13",
     rank: 87
@@ -800,7 +800,7 @@ const ALBUMS_DATA = [
     id: 89,
     title: "The Low End Theory",
     artist: "A Tribe Called Quest",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music71/v4/12/b4/0c/12b40cae-c845-1729-a374-cb5f3619d061/886446229980.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/e0/14/c8/e014c80a-425b-e01a-1124-cee985bcb5e6/dj.qafpkddz.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/83/f2/44/83f24487-592e-b4e8-1351-42e2a57cce4e/mzaf_13045707279146561116.plus.aac.p.m4a",
     release_date: "1991-09-24",
     rank: 89
@@ -809,7 +809,7 @@ const ALBUMS_DATA = [
     id: 90,
     title: "Otis Blue: Otis Redding Sings Soul",
     artist: "Otis Redding",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/29/46/1e/29461e3c-8402-b84c-6ba1-d9e892aedabe/603497982158.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/1f/b4/cf/1fb4cf66-d3cf-9a25-bf58-103bb91e615c/603497890279.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/9e/23/9b/9e239bf3-7f0d-427d-320a-a9e4161fc729/mzaf_13927852051387693425.plus.aac.p.m4a",
     release_date: "1965-09-15",
     rank: 90
@@ -818,7 +818,7 @@ const ALBUMS_DATA = [
     id: 91,
     title: "Master of Puppets",
     artist: "Metallica",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/51/ba/0d/51ba0d6f-cf65-36ff-fb8b-6227da20f70f/Untitled_design.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/ed/ee/7f/edee7f18-85b6-ebb4-0620-89cbe56fe205/858978005554.png/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/da/e7/9c/dae79c08-a960-2d21-8eab-42e9d70e29e6/mzaf_7135498142102205621.plus.aac.p.m4a",
     release_date: "1986-03-03",
     rank: 91
@@ -836,7 +836,7 @@ const ALBUMS_DATA = [
     id: 93,
     title: "Legend",
     artist: "Bob Marley and the Wailers",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/cf/64/e5/cf64e5bf-0bb7-288e-b33a-58e1ea80a44a/24UMGIM03301.rgb.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/3c/c2/0d/3cc20dcc-8f4e-f060-36dd-7de52a7ec8fe/12UMGIM14712.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/94/19/4d/94194de5-5358-a97f-a3a5-715b5ba43f9c/mzaf_288671793593887414.plus.aac.p.m4a",
     release_date: "1984-05-08",
     rank: 93
@@ -917,7 +917,7 @@ const ALBUMS_DATA = [
     id: 102,
     title: "Court and Spark",
     artist: "Joni Mitchell",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/41/dc/bc/41dcbcc4-115b-7c60-cc8e-a1c1011d9d2a/603497833450.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/a1/ca/b2/a1cab2b5-9c83-986d-0b88-e0e76b4c3f00/081227986186.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e0/f7/d2/e0f7d25b-a8af-ee10-0aca-4d4964ca69c4/mzaf_16687054824652002932.plus.aac.p.m4a",
     release_date: "1974-01-17",
     rank: 102
@@ -944,7 +944,7 @@ const ALBUMS_DATA = [
     id: 105,
     title: "Midnight Marauders",
     artist: "A Tribe Called Quest",
-    cover_url: "",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/d1/90/11/d1901153-4595-7f2f-12d2-661be9eef883/012414149022.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/0b/5c/16/0b5c169e-b9a7-88aa-5381-58ab99966305/mzaf_14275197497073071026.plus.aac.p.m4a",
     release_date: "1993-11-09",
     rank: 105
@@ -1016,7 +1016,7 @@ const ALBUMS_DATA = [
     id: 113,
     title: "Ten",
     artist: "Pearl Jam",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/16/9d/87/169d87fe-76ee-1c50-d186-14ac71ab237e/886443610538.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music/79/20/11/mzi.njtszwnb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/85/dd/65/85dd659d-d88d-303f-f854-b2cc7dd85d4c/mzaf_1627641021050197115.plus.aac.p.m4a",
     release_date: "1991-08-27",
     rank: 113
@@ -1061,7 +1061,7 @@ const ALBUMS_DATA = [
     id: 118,
     title: "Channel Orange",
     artist: "Frank Ocean",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/42/62/50/426250f9-7e39-f907-687c-442caa436636/dj.nhptxziz.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/04/f8/63/04f863fc-2852-604f-c910-a97ac069506b/12UMGIM40339.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/8a/2c/35/8a2c35f6-ac70-560c-0a1c-516e105c6af8/mzaf_13522699475931524613.plus.aac.p.m4a",
     release_date: "2012-07-10",
     rank: 118
@@ -1079,7 +1079,7 @@ const ALBUMS_DATA = [
     id: 120,
     title: "Surfer Rosa",
     artist: "Pixies",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music3/v4/02/b8/eb/02b8eb75-56b5-8b0f-cd1a-558d7d506871/713746310325.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/68/b7/c0/68b7c018-dc15-f44a-2611-be10237fc9a5/652637080308.png/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/35/d6/20/35d62017-543e-95ec-65c0-93bd25a12272/mzaf_4699521915064733573.plus.aac.p.m4a",
     release_date: "1988-03-21",
     rank: 120
@@ -1106,7 +1106,7 @@ const ALBUMS_DATA = [
     id: 123,
     title: "Blonde",
     artist: "Frank Ocean",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/aa/9f/21/aa9f2126-5745-4e74-b71f-e7a864c24cc8/886447159491.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/bb/45/68/bb4568f3-68cd-619d-fbcb-4e179916545d/BlondCover-Final.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/86/5a/d1/865ad14f-f77e-3b9c-b108-930af566864d/mzaf_286153466120868843.plus.aac.p.m4a",
     release_date: "2016-08-20",
     rank: 123
@@ -1142,7 +1142,7 @@ const ALBUMS_DATA = [
     id: 127,
     title: "Loaded",
     artist: "The Velvet Underground",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/87/7d/5e/877d5e8d-8aff-717f-576c-f237ee8d7a34/603497884575.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music62/v4/3e/64/ec/3e64ec37-bf54-e089-e4f4-8ff82907c934/mzm.bffnbhxs.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/2b/85/3d/2b853d2a-8d1e-bd4b-b211-eaab17ca1cb9/mzaf_2003270620198321174.plus.aac.p.m4a",
     release_date: "1970-11-01",
     rank: 127
@@ -1169,7 +1169,7 @@ const ALBUMS_DATA = [
     id: 130,
     title: "Rage Against the Machine",
     artist: "Rage Against the Machine",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music3/v4/b8/cd/b7/b8cdb739-8ae8-61e4-a68f-023fa2f2e872/TCMzp.png/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/8e/08/bf/8e08bf66-8690-1ba7-affb-fe173c08623d/074645295923.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/d9/66/ee/d966eec0-f38d-1f40-961a-6b1ff6a9794e/mzaf_1438648303792446222.plus.aac.p.m4a",
     release_date: "1992-11-03",
     rank: 130
@@ -1196,7 +1196,7 @@ const ALBUMS_DATA = [
     id: 133,
     title: "Siamese Dream",
     artist: "Smashing Pumpkins",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/ad/6a/ee/ad6aeebf-6c80-fa75-beb3-f52d0bc7768e/19UMGIM59909.rgb.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/3a/dc/08/3adc08b0-e98c-b5dd-943e-a37c7ed06205/13UABIM03615.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/15/64/1a/15641a19-3580-1629-ab64-2fcefd1336ec/mzaf_4153946855135298130.plus.aac.p.m4a",
     release_date: "1993-07-27",
     rank: 133
@@ -1241,7 +1241,7 @@ const ALBUMS_DATA = [
     id: 138,
     title: "Reasonable Doubt",
     artist: "Jay-Z",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d1/a9/bb/d1a9bbc1-2f5f-3dc9-0670-0a0ebe7341dd/24UMGIM95693.rgb.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/f5/5d/8a/f55d8a6b-9294-7f8f-441a-9d337059a364/270.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/74/18/70/7418701c-8719-6a96-48cc-5da2a5a8d547/mzaf_961414554076330188.plus.aac.p.m4a",
     release_date: "1996-06-25",
     rank: 138
@@ -1277,7 +1277,7 @@ const ALBUMS_DATA = [
     id: 142,
     title: "Dookie",
     artist: "Green Day",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/28/ed/a1/28eda132-ebb4-9d9c-676b-04d237e3a1a9/238719.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/88/83/e7/8883e74b-1b7c-0725-09de-21e4e00d54b5/093624915713.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/c2/c9/0f/c2c90fef-f994-111d-2afc-17747de6bc03/mzaf_8917420879191568081.plus.aac.p.m4a",
     release_date: "1994-02-01",
     rank: 142
@@ -1295,7 +1295,7 @@ const ALBUMS_DATA = [
     id: 144,
     title: "Fear of a Black Planet",
     artist: "Public Enemy",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/da/ed/4f/daed4f89-7b14-e0b9-9c25-00f1dd7de9aa/659123518529.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/5f/56/ff/5f56ff7b-71b3-3e5f-208a-3b20d96bb4b0/06UMGIM21173.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b2/22/5c/b2225cd9-6ffe-317f-6093-a4c4cbf20616/mzaf_6029217797213338594.plus.aac.p.m4a",
     release_date: "1990-04-10",
     rank: 144
@@ -1367,7 +1367,7 @@ const ALBUMS_DATA = [
     id: 152,
     title: "Crosby, Stills & Nash",
     artist: "Crosby, Stills & Nash",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/2e/94/48/2e94483a-cfac-1b06-e2bd-0f01a9341d1e/081227653767.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/a0/ad/8a/a0ad8a5f-6805-b41a-c076-ee1f779d2a42/603497928323.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/08/dc/57/08dc5776-2df4-6ce1-7c80-6034ad2b6248/mzaf_10985082673586298208.plus.aac.p.m4a",
     release_date: "1969-05-29",
     rank: 152
@@ -1448,7 +1448,7 @@ const ALBUMS_DATA = [
     id: 161,
     title: "Nothing's Shocking",
     artist: "Jane's Addiction",
-    cover_url: "",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/01/10/3e/01103e60-0892-8fe2-3789-31ba2637237d/603497887576.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/17/21/5f/17215f6b-dd21-291a-6e81-8c030c674ae9/mzaf_16386502144906482582.plus.aac.p.m4a",
     release_date: "1988-08-23",
     rank: 161
@@ -1457,7 +1457,7 @@ const ALBUMS_DATA = [
     id: 162,
     title: "Exodus",
     artist: "Bob Marley and the Wailers",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/23/fa/f8/23faf820-c4fa-2bf1-d672-846971f5cf5c/06UMGIM31355.rgb.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/f6/11/44/f61144b6-806c-3c9d-93d1-2dc611662336/17UMGIM95823.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/58/e8/9e/58e89e36-90d2-354a-2158-30af49279432/mzaf_953921667447123536.plus.aac.p.m4a",
     release_date: "1977-06-03",
     rank: 162
@@ -1556,7 +1556,7 @@ const ALBUMS_DATA = [
     id: 173,
     title: "Paul's Boutique",
     artist: "Beastie Boys",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/e4/d7/81/e4d781e8-bd3f-486a-cd18-e9b3a7d12b34/00731452735126.rgb.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/63/8c/46/638c461c-7bdd-5181-13c5-619b9c178a9f/13UABIM29394.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/5b/34/5f/5b345fe2-f591-4ca9-38d4-c8a7947c4f0d/mzaf_5824682091151241889.plus.aac.p.m4a",
     release_date: "1989-07-25",
     rank: 173
@@ -1574,7 +1574,7 @@ const ALBUMS_DATA = [
     id: 175,
     title: "American Idiot",
     artist: "Green Day",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/6c/e2/d0/6ce2d0d8-39a1-4691-1496-1de687b7f9a1/mzi.gtvcisvd.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/0e/17/f0/0e17f011-aadf-d4d1-1c7e-b61ce39f968b/093624947301.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/46/aa/66/46aa66b9-d664-e6ea-4681-4c6fae5c430d/mzaf_3243628110780033088.plus.aac.p.m4a",
     release_date: "2004-09-21",
     rank: 175
@@ -1592,7 +1592,7 @@ const ALBUMS_DATA = [
     id: 177,
     title: "Violent Femmes",
     artist: "Violent Femmes",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/4e/9e/fd/4e9efd70-0497-a149-61d7-9a74de72ba16/21CRGIM28264.rgb.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/92/ba/7f/92ba7f8c-77f0-23d2-fbcb-6617785f940e/18CRGIM06158.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/92/c1/12/92c11215-9798-8a7d-f93f-4cbb2bfcd0cc/mzaf_6897907934447064928.plus.aac.p.m4a",
     release_date: "1983-04-01",
     rank: 177
@@ -1637,7 +1637,7 @@ const ALBUMS_DATA = [
     id: 182,
     title: "The Slim Shady LP",
     artist: "Eminem",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/78/07/35/78073533-a113-170d-bfab-acc3cec405d1/00602567238218.rgb.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/82/3b/60/823b6012-8dd5-b74c-55d0-6a104ec91430/06UMGIM04056.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/20/a4/92/20a49265-4541-516a-3e7f-928767123565/mzaf_16810646058963162444.plus.aac.p.m4a",
     release_date: "1999-02-23",
     rank: 182
@@ -1673,7 +1673,7 @@ const ALBUMS_DATA = [
     id: 186,
     title: "Is This It",
     artist: "The Strokes",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/8a/90/df/8a90dff0-73c6-c483-ab79-6810308414a2/884977195552.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Features115/v4/ea/04/d4/ea04d45d-6f5d-ede6-fb64-71f3e6a6e62f/dj.ojkzzidd.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/ca/5e/ef/ca5eef9d-ac81-4097-89d4-8e35f0bac2ac/mzaf_4249669243958107881.plus.aac.p.m4a",
     release_date: "2001-07-30",
     rank: 186
@@ -1691,7 +1691,7 @@ const ALBUMS_DATA = [
     id: 188,
     title: "Elephant",
     artist: "The White Stripes",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/48/b5/b9/48b5b90e-ba1e-08ff-1217-9e479afdad5d/196589901750.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/07/25/09/0725098a-09f4-f240-e551-94384a590371/886448799009.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/61/54/97/61549744-a83b-1c4d-58cf-e56b36beb4a7/mzaf_1246579179619940831.plus.aac.p.m4a",
     release_date: "2003-04-01",
     rank: 188
@@ -1727,7 +1727,7 @@ const ALBUMS_DATA = [
     id: 192,
     title: "Whatever People Say I Am, That's What I'm Not",
     artist: "Arctic Monkeys",
-    cover_url: "",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Features125/v4/cf/9b/96/cf9b9637-f619-eceb-5382-e9b4d44e74fb/dj.npwkgmai.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/d5/fa/0b/d5fa0b43-8a9d-71b8-c174-06120380e2f2/mzaf_9555095373337300237.plus.aac.p.m4a",
     release_date: "2006-01-23",
     rank: 192
@@ -1772,7 +1772,7 @@ const ALBUMS_DATA = [
     id: 197,
     title: "Fresh Fruit for Rotting Vegetables",
     artist: "Dead Kennedys",
-    cover_url: "",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/37/b9/b9/37b9b9e1-3340-2864-e4c4-3a677a2466c4/767004290720_Cover.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/73/3a/30/733a3040-452b-266a-cac6-64dc495ccc2c/mzaf_15781433871585553166.plus.aac.p.m4a",
     release_date: "1980-09-02",
     rank: 197
@@ -1835,7 +1835,7 @@ const ALBUMS_DATA = [
     id: 204,
     title: "Thriller (25th Anniversary Edition)",
     artist: "Michael Jackson",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/b5/58/d3/b558d32f-24fd-c889-d544-bc4c96f6113e/dj.oinzmlgt.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/32/4f/fd/324ffda2-9e51-8f6a-0c2d-c6fd2b41ac55/074643811224.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/01/2a/b5/012ab507-1b6e-198c-0f9d-5e44a2c2b919/mzaf_16660153232571583201.plus.aac.p.m4a",
     release_date: "2008-02-08",
     rank: 204
@@ -1862,7 +1862,7 @@ const ALBUMS_DATA = [
     id: 207,
     title: "Mezzanine",
     artist: "Massive Attack",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/8a/c1/04/8ac104fb-d37e-1433-5d2e-805710d7a7c4/00602567930983.rgb.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/0a/98/55/0a98555b-8d9d-3b46-660a-b91261557d17/00724384559953.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/24/fa/74/24fa74f0-7762-ce8f-a82c-daaf2528f880/mzaf_5011728731736259680.plus.aac.p.m4a",
     release_date: "1998-04-20",
     rank: 207
@@ -1871,7 +1871,7 @@ const ALBUMS_DATA = [
     id: 208,
     title: "The Slim Shady LP",
     artist: "Eminem",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/78/07/35/78073533-a113-170d-bfab-acc3cec405d1/00602567238218.rgb.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/82/3b/60/823b6012-8dd5-b74c-55d0-6a104ec91430/06UMGIM04056.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/20/a4/92/20a49265-4541-516a-3e7f-928767123565/mzaf_16810646058963162444.plus.aac.p.m4a",
     release_date: "1999-02-23",
     rank: 208
@@ -1880,7 +1880,7 @@ const ALBUMS_DATA = [
     id: 209,
     title: "John Lennon/Plastic Ono Band",
     artist: "John Lennon",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/48/53/43/485343e3-dd6a-0034-faec-f4b6403f8108/13UMGIM63890.rgb.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/f1/ba/ad/f1baadd5-df47-406e-f4be-603eff9d9e3c/13UABIM11969.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/3a/5f/9d/3a5f9dc6-8d41-542c-889a-8eeaa167f6d7/mzaf_17167420538954691197.plus.aac.p.m4a",
     release_date: "1970-12-11",
     rank: 209
@@ -1889,7 +1889,7 @@ const ALBUMS_DATA = [
     id: 210,
     title: "Mellon Collie and the Infinite Sadness",
     artist: "Smashing Pumpkins",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7e/3b/91/7e3b9146-cce2-0326-40db-854eacac9668/25UM2IM05245.rgb.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/ca/ce/b2/caceb2ed-50f0-c666-e4d0-165a0a1541fc/13UABIM04008.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b2/bf/49/b2bf490c-c5c8-385e-d257-55d46b424644/mzaf_17871092097330216413.plus.aac.p.m4a",
     release_date: "1995-10-24",
     rank: 210
@@ -1916,7 +1916,7 @@ const ALBUMS_DATA = [
     id: 213,
     title: "Mama Said Knock You Out",
     artist: "LL Cool J",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/c7/e2/fe/c7e2feff-9ae5-3090-87c9-77bfb6940d9a/20UMGIM39999.rgb.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/19/7e/e0/197ee0b3-d43d-ee74-9a7f-586f3931e51b/00731452347725.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/fa/1c/1e/fa1c1ee7-699d-e25e-f998-0463ba06e3d4/mzaf_8574581585368250643.plus.aac.p.m4a",
     release_date: "1990-09-04",
     rank: 213
@@ -1952,7 +1952,7 @@ const ALBUMS_DATA = [
     id: 217,
     title: "Pleased to Meet Me",
     artist: "The Replacements",
-    cover_url: "",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music/da/63/5e/mzi.lfwlkpez.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/ae/a5/74/aea574fd-0cfa-880e-3e7a-acbf1de408cb/mzaf_2392088022850715161.plus.aac.p.m4a",
     release_date: "1987-04-28",
     rank: 217
@@ -1970,7 +1970,7 @@ const ALBUMS_DATA = [
     id: 219,
     title: "Let It Be",
     artist: "The Beatles",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/5f/ff/9a/5fff9a6a-bb13-6507-5e68-2793ef798834/21UMGIM61121.rgb.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/ae/98/4c/ae984c7a-cd06-a7cd-e8bf-32cb15ba698d/00602567705475.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/0f/f7/e1/0ff7e145-6be6-4341-4fa1-32999d20707f/mzaf_15493778815944217662.plus.aac.p.m4a",
     release_date: "1970-05-08",
     rank: 219
@@ -1988,7 +1988,7 @@ const ALBUMS_DATA = [
     id: 221,
     title: "Dirty Mind",
     artist: "Prince",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/a9/96/58/a99658ea-7ce5-fd87-d0c7-f755782efdb5/cover.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/c3/a5/8c/c3a58ccb-18d8-a6e4-4fb1-a3c4797806f3/886448892984.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/ea/19/5f/ea195fab-54f4-f693-e02c-c2a63bf16b2f/mzaf_5348788563096302739.plus.aac.p.m4a",
     release_date: "1980-10-08",
     rank: 221
@@ -1997,7 +1997,7 @@ const ALBUMS_DATA = [
     id: 222,
     title: "Yankee Hotel Foxtrot",
     artist: "Wilco",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/b5/81/1c/b5811ceb-55f0-a751-d95e-3891021c7125/artwork.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/79/1d/3c/791d3cfe-d1b0-67a9-acbd-559fd83b3401/075597966961.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/44/86/ea/4486ea54-6e7f-48ab-6d5c-f283fd8bfe50/mzaf_15749072995880483661.plus.aac.p.m4a",
     release_date: "2002-04-23",
     rank: 222
@@ -2006,7 +2006,7 @@ const ALBUMS_DATA = [
     id: 223,
     title: "Appetite for Destruction",
     artist: "Guns N' Roses",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a3/20/20/a3202033-3d92-2267-eab4-9a87ec1aa95e/710423.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/a0/4d/c4/a04dc484-03cc-02aa-fa82-5334fcb4bc16/18UMGIM24878.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/cd/ed/17/cded17d5-ee32-1b97-7a11-527ab7b677d7/mzaf_2128362282849775567.plus.aac.p.m4a",
     release_date: "1987-07-21",
     rank: 223
@@ -2024,7 +2024,7 @@ const ALBUMS_DATA = [
     id: 225,
     title: "Entertainment!",
     artist: "Gang of Four",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/86/8e/e9/868ee973-0caf-a663-9d4f-58ff57c104da/191401174275.png/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/de/5d/41/de5d41cf-eed8-3819-86dc-9f0a136efabe/191401156462.png/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/89/fd/fe/89fdfe1c-8a17-7782-2635-90c3dc438ab4/mzaf_1994294452528411201.plus.aac.p.m4a",
     release_date: "1979-09-01",
     rank: 225
@@ -2042,7 +2042,7 @@ const ALBUMS_DATA = [
     id: 227,
     title: "Hello Nasty",
     artist: "Beastie Boys",
-    cover_url: "",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/31/2c/df/312cdf13-5ec0-5488-0289-419e1b1f79e4/00724383771653.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/56/f6/6e/56f66edd-c323-3e20-abf1-a7b2c2cf2d0c/mzaf_16981923539670451478.plus.aac.p.m4a",
     release_date: "1998-07-14",
     rank: 227
@@ -2069,7 +2069,7 @@ const ALBUMS_DATA = [
     id: 230,
     title: "Room on Fire",
     artist: "The Strokes",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/e5/87/60/e5876016-d748-6454-fdb5-f81dfe8aefa1/193428820173.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/f7/e9/2a/f7e92a48-0e20-8286-bbbf-80bd85fbb1af/mzi.gcledsjj.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/47/a1/4c/47a14cf3-bf73-cc57-933e-a9929903bb85/mzaf_11799304496117316449.plus.aac.p.m4a",
     release_date: "2003-10-28",
     rank: 230
@@ -2096,7 +2096,7 @@ const ALBUMS_DATA = [
     id: 233,
     title: "Silent Alarm",
     artist: "Bloc Party",
-    cover_url: "",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music/y2005/m03/d14/h21/s06.kpabadxl.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/99/da/e7/99dae7e3-c8c4-7bc2-0e30-29674666d09c/mzaf_11848459001791633112.plus.aac.p.m4a",
     release_date: "2005-02-14",
     rank: 233
@@ -2132,7 +2132,7 @@ const ALBUMS_DATA = [
     id: 237,
     title: "Rated R",
     artist: "Queens of the Stone Age",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/85/72/ed/8572ed39-4646-98de-4657-a49526a07590/191401176859.png/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/9e/5f/17/9e5f17fb-6c19-590d-4891-b31e06462bd1/00602517425835.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/e4/77/67/e4776781-8b97-fff3-67b3-7557691e6596/mzaf_18204190184118787622.plus.aac.p.m4a",
     release_date: "2000-06-06",
     rank: 237
@@ -2186,7 +2186,7 @@ const ALBUMS_DATA = [
     id: 243,
     title: "Maggot Brain",
     artist: "Funkadelic",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/0e/1e/49/0e1e494b-c07d-e61a-5d0a-7aa14fa9b15d/0.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/c4/19/49/c4194943-0b41-5987-b2e8-193b74ea70ed/artwork.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/28/3c/e1/283ce111-e199-9ec0-b87a-86eaaa85bdcb/mzaf_13252658475940650056.plus.aac.p.m4a",
     release_date: "1971-07-12",
     rank: 243
@@ -2204,7 +2204,7 @@ const ALBUMS_DATA = [
     id: 245,
     title: "Fever to Tell",
     artist: "Yeah Yeah Yeahs",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/ee/b8/cb/eeb8cb4f-61a5-e7da-a3d1-67e65d5002bb/859773286483_cover.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/1c/9b/9a/1c9b9a3e-099c-b3d6-c3ce-4a270a2d221c/17UM1IM27260.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/5e/66/5c/5e665cdf-0fb1-bfdc-4918-f404973e2f2c/mzaf_5791198614670144572.plus.aac.p.m4a",
     release_date: "2003-04-28",
     rank: 245
@@ -2222,7 +2222,7 @@ const ALBUMS_DATA = [
     id: 247,
     title: "Feels Like Home",
     artist: "Norah Jones",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/32/0a/e6/320ae656-e1d6-a49d-eead-06a84d3987ce/19UMGIM49910.rgb.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/16/bf/bd/16bfbd53-3e83-c840-bdf6-053326af381b/05099946404855.rgb.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/2d/66/d4/2d66d48f-72b6-4b8c-315a-d392b2c6d8f9/mzaf_4032533871395368472.plus.aac.p.m4a",
     release_date: "2004-02-10",
     rank: 247
@@ -2249,7 +2249,7 @@ const ALBUMS_DATA = [
     id: 250,
     title: "Hounds of Love",
     artist: "Kate Bush",
-    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/62/97/32/62973286-5bb3-0de7-c051-8b2de8d95472/cover.jpg/600x600bb.jpg",
+    cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/2c/3e/c9/2c3ec991-0f6e-bec3-7eff-750f50c5b3a6/cover.jpg/600x600bb.jpg",
     preview_url: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/3a/e7/1d/3ae71d3f-56cf-8e72-5312-af60e3b5ac06/mzaf_1919105001560352476.plus.aac.p.m4a",
     release_date: "1985-09-16",
     rank: 250
