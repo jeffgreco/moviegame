@@ -784,11 +784,12 @@ function mergeMoviesIntoDatabase(existingMovies, newMovies) {
     });
 
     // Generate the new movies.js content
+    // Use var instead of const so vm.runInContext can capture the variable
     const content = `// Movie data from TMDB
 // Last updated: ${new Date().toISOString()}
 // Total movies: ${allMovies.length}
 
-const MOVIES_DATA = ${JSON.stringify(allMovies, null, 2)};
+var MOVIES_DATA = ${JSON.stringify(allMovies, null, 2)};
 `;
 
     fs.writeFileSync(moviesPath, content);

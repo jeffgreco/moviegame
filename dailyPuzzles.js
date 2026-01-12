@@ -106,6 +106,27 @@ const DAILY_PUZZLES = [
       20829, // Funny People (Jul 31, 2009)
     ],
   },
+    {
+    id: "qc9xe",
+    theme: "Ready Player One",
+    description: "",
+    movieIds: [
+      333339, // Ready Player One (Mar 29, 2018)
+      257344, // Pixels (Jul 24, 2015)
+      980489, // Gran Turismo (Aug 25, 2023)
+      97, // Tron (Jul 9, 1982)
+      183, // The Wizard (Dec 15, 1989)
+      22538, // Scott Pilgrim vs. the World (Aug 13, 2010)
+      1946, // eXistenZ (Apr 19, 1999)
+      82690, // Wreck-It Ralph (Nov 2, 2012)
+      550988, // Free Guy (Aug 13, 2021)
+      860, // WarGames (Jun 3, 1983)
+      9900, // Grandma's Boy (Jan 6, 2006)
+      325348, // Hardcore Henry (Apr 8, 2016)
+      11884, // The Last Starfighter (Jul 13, 1984)
+      18501, // Gamer (Sep 4, 2009)
+    ],
+  },
   // Future puzzles will be added here
 ];
 

@@ -1,6 +1,6 @@
 // Movie data from TMDB
-// Last updated: 2026-01-12T00:57:03.933Z
-// Total movies: 1245
+// Last updated: 2026-01-12T01:42:29.380Z
+// Total movies: 1253
 
 const MOVIES_DATA = [
   {
@@ -1217,6 +1217,13 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/jQYlydvHm3kUix1f8prMucrplhm.jpg",
     release_date: "1983-05-25",
     directors: ["Richard Marquand"],
+  },
+  {
+    id: 860,
+    title: "WarGames",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/zZ1rN4LoPxKNfAp67Xl300WxVeD.jpg",
+    release_date: "1983-06-03",
   },
   {
     id: 1621,
@@ -2483,6 +2490,13 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/oat42hUw8XzKYUmfy0YLAxYd484.jpg",
     release_date: "1989-12-01",
     directors: ["Jeremiah S. Chechik"],
+  },
+  {
+    id: 183,
+    title: "The Wizard",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/dtgNNq3TBbpBX6RXHLt5gAMdwPV.jpg",
+    release_date: "1989-12-15",
   },
   {
     id: 11352,
@@ -4393,6 +4407,13 @@ const MOVIES_DATA = [
     directors: ["Gil Junger"],
   },
   {
+    id: 1946,
+    title: "eXistenZ",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/kETKF0JhdTPn1knci8CAdYL0d79.jpg",
+    release_date: "1999-04-19",
+  },
+  {
     id: 1844,
     title: "Entrapment",
     poster_url:
@@ -5844,6 +5865,13 @@ const MOVIES_DATA = [
     showDirector: true,
   },
   {
+    id: 9900,
+    title: "Grandma's Boy",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/fSRdHBtisU0zhks4OjKezI3jnt7.jpg",
+    release_date: "2006-01-06",
+  },
+  {
     id: 10982,
     title: "Hoodwinked!",
     poster_url:
@@ -6609,6 +6637,13 @@ const MOVIES_DATA = [
     directors: ["Griffin Dunne"],
   },
   {
+    id: 18501,
+    title: "Gamer",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/nA8ZVbdBsNkTqsa49ZG9na4lFuY.jpg",
+    release_date: "2009-09-04",
+  },
+  {
     id: 22164,
     title: "Blood and Bone",
     poster_url:
@@ -6840,6 +6875,13 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/j09ZkH6R4JWVylBcDai1laCmGw7.jpg",
     release_date: "2010-08-13",
     directors: ["Sylvester Stallone"],
+  },
+  {
+    id: 22538,
+    title: "Scott Pilgrim vs. the World",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/g5IoYeudx9XBEfwNL0fHvSckLBz.jpg",
+    release_date: "2010-08-13",
   },
   {
     id: 43593,
@@ -7991,6 +8033,13 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/5UsK3grJvtQrtzEgqNlDljJW96w.jpg",
     release_date: "2016-03-25",
     directors: ["Zack Snyder"],
+  },
+  {
+    id: 325348,
+    title: "Hardcore Henry",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/ik1uZyiMSxF9HqrgRKUNfMCfr3z.jpg",
+    release_date: "2016-04-08",
   },
   {
     id: 271110,
@@ -9478,6 +9527,13 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/ta3ReqbdEcLJM3mcHMzbYFZI8v7.jpg",
     release_date: "2023-08-10",
     directors: ["Matthew López"],
+  },
+  {
+    id: 980489,
+    title: "Gran Turismo",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/51tqzRtKMMZEYUpSYkrUE7v9ehm.jpg",
+    release_date: "2023-08-25",
   },
   {
     id: 507089,
