@@ -1158,6 +1158,9 @@ class MovieTimelineGame {
     }
     distribution.forEach(d => scoreMap.set(d.score, d.count));
 
+    // Add player's score to the distribution
+    scoreMap.set(playerScore, (scoreMap.get(playerScore) || 0) + 1);
+
     // Find max count for scaling
     const maxCount = Math.max(...scoreMap.values(), 1);
 
