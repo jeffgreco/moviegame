@@ -1936,6 +1936,11 @@ main {
   color: #c9a961;
 }
 
+.puzzle-stats-header .percentile-value {
+  font-weight: 700;
+  color: #c9a961;
+}
+
 .puzzle-stats-chart {
   width: 100%;
 }

@@ -1203,7 +1203,7 @@ class MovieTimelineGame {
     // Update header
     const headerEl = document.getElementById("puzzle-stats-percentile");
     if (totalPlayers > 1) {
-      headerEl.innerHTML = `You scored <span class="score-value">${playerScore}</span> — better than ${percentile}% of players`;
+      headerEl.innerHTML = `You scored <span class="score-value">${playerScore}</span> — better than <span class="percentile-value">${percentile}%</span> of players`;
     } else {
       headerEl.innerHTML = `You scored <span class="score-value">${playerScore}</span>`;
     }
