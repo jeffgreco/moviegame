@@ -1992,3 +1992,77 @@ main {
   }
 }
 
+/* Welcome Modal (First Visit) */
+.welcome-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2001;
+  padding: 1rem;
+}
+
+.welcome-modal.hidden {
+  display: none;
+}
+
+.welcome-content {
+  background: #2b2b2b;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+}
+
+.welcome-body {
+  padding: 2rem 2rem 1.75rem;
+}
+
+.welcome-body h2 {
+  color: #c9a961;
+  font-size: 1.6rem;
+  margin: 0 0 1rem;
+}
+
+.welcome-body p {
+  color: #e8e3d8;
+  line-height: 1.5;
+  margin: 0 0 1.5rem;
+  font-size: 0.95rem;
+}
+
+.welcome-body .hint-plus {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.2em;
+  height: 1.2em;
+  background: #c9a961;
+  color: #1a1a1a;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.welcome-btn {
+  background: linear-gradient(135deg, #c9a961 0%, #b8963f 100%);
+  color: #1a1a1a;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.welcome-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(201, 169, 97, 0.3);
+}
+

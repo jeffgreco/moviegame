@@ -78,6 +78,11 @@ class MovieTimelineGame {
     this.setupGame();
     this.setupEventListeners();
     this.updateModeButtons();
+
+    // Show welcome modal for first-time visitors
+    if (this.isFirstVisit()) {
+      this.showWelcomeModal();
+    }
   }
 
   loadMoviesForMode() {
@@ -365,6 +370,33 @@ class MovieTimelineGame {
     }
   }
 
+  isFirstVisit() {
+    try {
+      return localStorage.getItem("filmstrip_has_visited") === null;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  markAsVisited() {
+    try {
+      localStorage.setItem("filmstrip_has_visited", "true");
+    } catch (e) {
+      // Ignore localStorage errors
+    }
+  }
+
+  showWelcomeModal() {
+    document.getElementById("welcome-modal").classList.remove("hidden");
+    document.body.classList.add("modal-open");
+  }
+
+  closeWelcomeModal() {
+    document.getElementById("welcome-modal").classList.add("hidden");
+    document.body.classList.remove("modal-open");
+    this.markAsVisited();
+  }
+
   getDailyCompletionKey() {
     if (!this.puzzleNumber) return null;
     return `filmstrip_daily_${this.puzzleNumber}`;
@@ -612,6 +644,18 @@ class MovieTimelineGame {
     // Deselect button handler
     document.getElementById("deselect-btn").addEventListener("click", () => {
       this.deselectCard();
+    });
+
+    // Welcome modal close button
+    document.getElementById("welcome-start").addEventListener("click", () => {
+      this.closeWelcomeModal();
+    });
+
+    // Close welcome when clicking outside content
+    document.getElementById("welcome-modal").addEventListener("click", (e) => {
+      if (e.target.id === "welcome-modal") {
+        this.closeWelcomeModal();
+      }
     });
 
     // Window resize handler for poster grid
