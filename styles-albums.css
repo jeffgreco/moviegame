@@ -254,7 +254,7 @@ main {
   justify-content: center;
 }
 
-/* Vinyl grooves pattern instead of filmstrip */
+/* Record grooves pattern instead of filmstrip */
 .timeline::before {
   content: "";
   position: absolute;
