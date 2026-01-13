@@ -625,10 +625,17 @@ class MovieTimelineGame {
     });
 
     document.getElementById("play-again").addEventListener("click", () => {
+      const isPuzzleMode = this.gameMode === "daily" || this.gameMode === "archive";
       document.getElementById("game-over").classList.add("hidden");
       document.body.classList.remove("modal-open");
-      this.loadMoviesForMode();
-      this.setupGame();
+
+      // If in puzzle mode, switch to random mode
+      if (isPuzzleMode) {
+        this.switchMode("random");
+      } else {
+        this.loadMoviesForMode();
+        this.setupGame();
+      }
     });
 
     // Share score button handler
