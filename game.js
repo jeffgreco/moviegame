@@ -1170,6 +1170,9 @@ class MovieTimelineGame {
     } else if (showCongrats) {
       document.querySelector(".game-over-content h2").textContent = "Congratulations!";
       gameOverContent.classList.remove("perfect-score");
+    } else if (this.isChallenge && !this.challengeBeaten) {
+      document.querySelector(".game-over-content h2").textContent = "It was an honor just to be nominated";
+      gameOverContent.classList.remove("perfect-score");
     } else {
       document.querySelector(".game-over-content h2").textContent = "The End!";
       gameOverContent.classList.remove("perfect-score");
