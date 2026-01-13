@@ -1,6 +1,6 @@
 // Movie data from TMDB
 // Last updated: 2026-01-12T01:42:29.380Z
-// Total movies: 1253
+// Total movies: 1254
 
 const MOVIES_DATA = [
   {
@@ -17,6 +17,17 @@ const MOVIES_DATA = [
     poster_url:
       "https://image.tmdb.org/t/p/w500/yz4QVqPx3h1hD1DfqqQkCq3rmxW.jpg",
     release_date: "1960-09-08",
+    directors: ["Alfred Hitchcock"],
+    showDirector: true,
+  },
+  {
+    id: 1359,
+    title: "Psycho",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/dOJromVQQLbaOEf2zMbTBPk2Jfa.jpg",
+    release_date: "1998-12-04",
+    directors: ["Gus Van Sant"],
+    showDirector: true,
   },
   {
     id: 871,
@@ -4253,6 +4264,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/dNqgjqxHIdfsQRQL5XTujNfX9pj.jpg",
     release_date: "1998-07-29",
     directors: ["Nancy Meyers"],
+    showDirector: true,
   },
   {
     id: 9320,
