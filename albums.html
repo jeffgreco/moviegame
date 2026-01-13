@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <title>Record Crate - The Album Timeline Game</title>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <!-- Social sharing meta tags -->
+    <meta property="og:title" content="Record Crate - The Album Timeline Game" />
+    <meta
+      property="og:description"
+      content="Think you know your music history? Put classic albums in chronological order. Based on Rolling Stone's 500 Greatest Albums!"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/share-albums.png" />
+    <meta
+      name="description"
+      content="Think you know your music history? Put classic albums in chronological order. Based on Rolling Stone's 500 Greatest Albums!"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="/share-albums.png" />
+    <meta name="twitter:title" content="Record Crate - The Album Timeline Game" />
+    <meta
+      name="twitter:description"
+      content="Think you know your music history? Put classic albums in chronological order. Based on Rolling Stone's 500 Greatest Albums!"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles-albums.css" />
+  </head>
+  <body>
+    <div class="game-container">
+      <header>
+        <div class="logo-dropdown">
+          <h1 class="logo-trigger">
+            Record Crate
+            <svg
+              class="dropdown-arrow"
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M7 10l5 5 5-5z" />
+            </svg>
+          </h1>
+          <div class="dropdown-menu hidden">
+            <a href="#" id="menu-archive" class="dropdown-item">Archive</a>
+            <a href="#" id="menu-help" class="dropdown-item">How to Play</a>
+            <div class="dropdown-divider"></div>
+            <div class="dropdown-credit">
+              based on Rolling Stone's<br>500 Greatest Albums
+            </div>
+          </div>
+        </div>
+        <div class="mode-selector">
+          <button id="random-mode-btn" class="mode-btn">Random</button>
+          <button id="daily-mode-btn" class="mode-btn active">Daily</button>
+        </div>
+        <div id="challenge-indicator" class="challenge-indicator hidden"></div>
+        <div class="stats">
+          <span class="score">Score: <span id="score">0</span></span>
+          <button id="audio-toggle" class="audio-toggle" title="Toggle music previews">
+            <svg id="audio-icon-off" class="audio-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+            </svg>
+            <svg id="audio-icon-on" class="audio-icon hidden" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <div class="draw-pile-area">
+          <div id="draw-pile" class="draw-pile">
+            <!-- Current card to place will appear here -->
+          </div>
+          <p class="hint">
+            Drag to the timeline or click a
+            <span class="hint-plus">+</span> below
+          </p>
+          <button id="deselect-btn" class="deselect-btn hidden">
+            Cancel Selection
+          </button>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-scroll">
+            <div id="timeline" class="timeline">
+              <!-- Timeline cards will appear here -->
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <div id="game-over" class="game-over hidden">
+        <div class="game-over-content">
+          <h2>Game Over!</h2>
+          <div class="game-stats">
+            <span class="stat-item"
+              >The correct date was <span id="correct-year"></span
+            ></span>
+            <span class="stat-divider">•</span>
+            <span class="stat-item">Score: <span id="best-streak"></span></span>
+          </div>
+          <div class="poster-grid-container">
+            <div id="poster-grid" class="poster-grid">
+              <!-- Album grid will be populated here -->
+            </div>
+          </div>
+          <div id="challenge-result" class="challenge-result hidden"></div>
+          <div class="game-over-actions">
+            <button id="share-score" class="share-btn">Share Score</button>
+            <button id="copy-challenge" class="challenge-btn hidden">
+              Copy Challenge Link
+            </button>
+            <button id="play-again">Play Again</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="help-modal" class="help-modal hidden">
+        <div class="help-content">
+          <div class="help-header">
+            <h2>How to Play</h2>
+            <button id="help-close" class="help-close">&times;</button>
+          </div>
+          <div class="help-body">
+            <p>
+              Think you know your music history? Time to prove it.
+            </p>
+            <p>
+              You'll be shown a series of classic albums from Rolling Stone's
+              500 Greatest Albums list. Place each one on the timeline
+              in the correct order by release date. Drag it into
+              position, or tap a <span class="hint-plus">+</span> to drop it
+              there. One point per correct placement! Albums with the same
+              title will show the artist name.
+            </p>
+            <p>
+              In <strong>Daily</strong> mode, everyone gets the same themed set
+              of albums. Come back tomorrow for a new challenge.
+              <strong>Random</strong> mode draws from 250 classic albums for
+              unlimited play.
+            </p>
+            <p>
+              Based on <em>Rolling Stone's 500 Greatest Albums of All Time</em>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div id="archive-modal" class="archive-modal hidden">
+        <div class="archive-content">
+          <div class="archive-header">
+            <h2>Daily Archive</h2>
+            <button id="archive-close" class="archive-close">&times;</button>
+          </div>
+          <div id="archive-list" class="archive-list">
+            <!-- Archive puzzles will be populated here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="albums.js"></script>
+    <script src="albumPuzzles.js"></script>
+    <script src="game-albums.js"></script>
+  </body>
+</html>

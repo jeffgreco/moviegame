@@ -7,7 +7,10 @@
       "Bash(npx wrangler:*)",
       "Bash(npx esbuild:*)",
       "Bash(gzip:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(npm run build)",
+      "Bash(git add:*)",
+      "Bash(node scripts/fetch-album-covers.js:*)"
     ]
   }
 }
