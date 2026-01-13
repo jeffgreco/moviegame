@@ -1164,7 +1164,7 @@ class MovieTimelineGame {
       document.querySelector(".game-over-content h2").textContent = "Congratulations!";
       gameOverContent.classList.remove("perfect-score");
     } else {
-      document.querySelector(".game-over-content h2").textContent = "Game Over!";
+      document.querySelector(".game-over-content h2").textContent = "The End!";
       gameOverContent.classList.remove("perfect-score");
     }
 
@@ -1181,6 +1181,10 @@ class MovieTimelineGame {
       finalScoreEl.classList.remove("hidden");
       finalScoreEl.innerHTML = `Score: <span class="score-value">${this.bestStreak}</span>`;
     }
+
+    // Update play again button text based on mode
+    const playAgainBtn = document.getElementById("play-again");
+    playAgainBtn.textContent = isPuzzleMode ? "Play Random" : "Play Again";
 
     // Show challenge button for random mode (not for daily or when already in a challenge)
     if (this.gameMode === "random" && !this.isChallenge) {
