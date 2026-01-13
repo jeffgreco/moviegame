@@ -9,7 +9,7 @@ database_name = "filmstrip-games"
 database_id = "f593956d-0045-4d83-b3e8-a1ef3fbe0fcc"
 
 [vars]
-CORS_ORIGIN = "https://filmstrip.jeffgreco.com"
+CORS_ORIGIN = "https://filmstrip.mov,https://filmstrip.jeffgreco.com"
 
 # For local development, allow localhost
 # [env.dev.vars]

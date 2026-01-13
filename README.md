@@ -1,6 +1,6 @@
 # Movie Timeline Game
 
-https://filmstrip.jeffgreco.com
+https://filmstrip.mov
 A browser game where you arrange movie posters in chronological order based on their US release dates.
 
 ## How to Play

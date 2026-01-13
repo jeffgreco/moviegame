@@ -19,7 +19,7 @@ class MovieTimelineGame {
     this.failedCardIndex = null;
     this.currentMovieCount = 0;
     this.resizeTimeout = null;
-    this.gameMode = "daily"; // 'random', 'daily', or 'challenge'
+    this.gameMode = "random"; // 'random', 'daily', or 'challenge'
     this.dailyPuzzle = null; // Current daily puzzle data
     this.puzzleNumber = null; // Daily puzzle number
     this.justTouched = false; // Track touch interactions to prevent click events

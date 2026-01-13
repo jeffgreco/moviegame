@@ -312,8 +312,11 @@ async function handleStats(env, corsHeaders) {
 function getCorsHeaders(allowedOrigin, request) {
   const origin = request.headers.get('Origin') || '';
 
-  // Allow the configured origin, localhost for development, and Cloudflare Pages preview deployments
-  const isAllowed = origin === allowedOrigin ||
+  // Support comma-separated list of allowed origins
+  const allowedOrigins = allowedOrigin.split(',').map(o => o.trim());
+
+  // Allow the configured origins, localhost for development, and Cloudflare Pages preview deployments
+  const isAllowed = allowedOrigins.includes(origin) ||
     origin.startsWith('http://localhost') ||
     origin.startsWith('http://127.0.0.1') ||
     origin.endsWith('.pages.dev') ||
