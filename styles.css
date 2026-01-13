@@ -637,13 +637,18 @@ main {
 }
 
 .final-score {
-  font-family: "Glass Antiqua", cursive;
-  font-size: 1.4rem;
-  color: #d4c8a8;
-  margin-bottom: 0.75rem;
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  text-align: center;
+  color: #e8e3d8;
+  font-size: 0.9rem;
 }
 
 .final-score .score-value {
+  font-size: 1.4rem;
+  font-weight: 700;
   color: #c9a961;
 }
 
