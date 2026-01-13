@@ -94,6 +94,7 @@ async function loadExistingMovies() {
         const response = await fetch('/api/existing-movies');
         const data = await response.json();
         state.existingMovies = data.movies || {};
+        console.log(`Loaded ${Object.keys(state.existingMovies).length} existing movies`);
     } catch (e) {
         console.error('Failed to load existing movies:', e);
     }
@@ -431,6 +432,7 @@ function createMovieCard(movie) {
 
     const dateDisplay = formatDate(movie.release_date);
     const inDatabase = state.existingMovies[movie.id];
+    const hasShowDirector = inDatabase?.showDirector || false;
 
     card.innerHTML = `
         ${movie.poster_url
@@ -439,10 +441,21 @@ function createMovieCard(movie) {
         }
         <div class="info">
             <div class="title" title="${movie.title}">${movie.title}</div>
-            <div class="year">${dateDisplay}${inDatabase ? ' (in DB)' : ''}</div>
+            <div class="year">${dateDisplay}${inDatabase ? ' <span class="in-db-badge">in DB</span>' : ''}</div>
         </div>
         <div class="actions">
-            <button class="btn btn-add" onclick="addToPuzzle(${movie.id})">+ Add</button>
+            <div class="actions-row">
+                <button class="btn btn-add" onclick="addToPuzzle(${movie.id})">Add List</button>
+                ${!inDatabase ? `<button class="btn btn-add-db" onclick="addToDatabase(${movie.id}, this)">Add DB</button>` : ''}
+            </div>
+            <div class="actions-row">
+                <label class="show-director-toggle" title="Show director in game">
+                    <input type="checkbox" class="show-director-cb" data-movie-id="${movie.id}"
+                        ${hasShowDirector ? 'checked' : ''}
+                        ${inDatabase ? `onchange="updateShowDirector(${movie.id}, this.checked)"` : ''}>
+                    <span>Show Director</span>
+                </label>
+            </div>
         </div>
     `;
 
@@ -952,7 +965,84 @@ document.addEventListener('DOMContentLoaded', () => {
     setupScheduleListeners();
 });
 
+// Add movie to database (movies.js)
+async function addToDatabase(movieId, buttonEl) {
+    const originalText = buttonEl.textContent;
+    buttonEl.textContent = '...';
+    buttonEl.disabled = true;
+
+    // Check if showDirector checkbox is checked
+    const card = document.querySelector(`.movie-card[data-movie-id="${movieId}"]`);
+    const showDirectorCb = card?.querySelector('.show-director-cb');
+    const showDirector = showDirectorCb?.checked || false;
+
+    try {
+        const response = await fetch('/api/add-movie', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ movieId, showDirector })
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            // Update local state
+            state.existingMovies[movieId] = result.movie || { id: movieId };
+
+            // Update the card UI
+            if (card) {
+                const yearEl = card.querySelector('.year');
+                if (yearEl && !yearEl.innerHTML.includes('in-db-badge')) {
+                    yearEl.innerHTML += ' <span class="in-db-badge">in DB</span>';
+                }
+                // Remove the "+ DB" button and showDirector toggle
+                buttonEl.remove();
+                card.querySelector('.show-director-toggle')?.remove();
+            }
+        } else {
+            buttonEl.textContent = 'Error';
+            setTimeout(() => {
+                buttonEl.textContent = originalText;
+                buttonEl.disabled = false;
+            }, 2000);
+        }
+    } catch (e) {
+        console.error('Failed to add to database:', e);
+        buttonEl.textContent = 'Error';
+        setTimeout(() => {
+            buttonEl.textContent = originalText;
+            buttonEl.disabled = false;
+        }, 2000);
+    }
+}
+
+// Update showDirector for a movie already in database
+async function updateShowDirector(movieId, showDirector) {
+    try {
+        const response = await fetch('/api/update-movie', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ movieId, showDirector })
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            // Update local state
+            if (state.existingMovies[movieId]) {
+                state.existingMovies[movieId].showDirector = showDirector;
+            }
+        } else {
+            console.error('Failed to update showDirector:', result.error);
+        }
+    } catch (e) {
+        console.error('Failed to update showDirector:', e);
+    }
+}
+
 // Make functions available globally for onclick handlers
 window.addToPuzzle = addToPuzzle;
 window.removeFromPuzzle = removeFromPuzzle;
 window.goToPage = goToPage;
+window.addToDatabase = addToDatabase;
+window.updateShowDirector = updateShowDirector;

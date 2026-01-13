@@ -29,7 +29,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 function loadExistingMovies() {
     try {
         const moviesPath = path.join(__dirname, '..', 'movies.js');
-        const content = fs.readFileSync(moviesPath, 'utf-8');
+        let content = fs.readFileSync(moviesPath, 'utf-8');
+
+        // Replace const/let with var so vm.runInContext captures it
+        content = content.replace(/^const MOVIES_DATA/m, 'var MOVIES_DATA');
+        content = content.replace(/^let MOVIES_DATA/m, 'var MOVIES_DATA');
 
         // Use vm module to safely evaluate JavaScript (handles unquoted keys)
         const vm = require('vm');
@@ -351,10 +355,100 @@ app.get('/api/existing-movies', (req, res) => {
             title: m.title,
             release_date: m.release_date,
             poster_url: m.poster_url,
-            directors: m.directors
+            directors: m.directors,
+            showDirector: m.showDirector || false
         };
     });
     res.json({ movies: movieMap, count: movies.length });
+});
+
+// Add a single movie to movies.js
+app.post('/api/add-movie', async (req, res) => {
+    try {
+        const { movieId, showDirector } = req.body;
+        if (!movieId) {
+            return res.status(400).json({ error: 'movieId is required' });
+        }
+
+        // Check if already in database
+        const existingMovies = loadExistingMovies();
+        if (existingMovies.find(m => m.id === movieId)) {
+            return res.json({ success: true, alreadyExists: true });
+        }
+
+        // Fetch full movie details from TMDB
+        const movie = await tmdbFetch(`/movie/${movieId}`);
+        const enriched = await enrichMovie(movie, true);
+
+        // Build movie object
+        const movieData = {
+            id: enriched.id,
+            title: enriched.title,
+            poster_url: enriched.poster_url,
+            release_date: enriched.release_date,
+            directors: enriched.directors || []
+        };
+        if (showDirector) {
+            movieData.showDirector = true;
+        }
+
+        // Add to database
+        const added = mergeMoviesIntoDatabase(existingMovies, [movieData]);
+
+        res.json({
+            success: true,
+            added: added,
+            movie: {
+                id: enriched.id,
+                title: enriched.title,
+                release_date: enriched.release_date,
+                directors: enriched.directors,
+                showDirector: showDirector || false
+            }
+        });
+    } catch (e) {
+        console.error('Failed to add movie:', e);
+        res.status(500).json({ error: e.message });
+    }
+});
+
+// Update a movie's properties in movies.js
+app.post('/api/update-movie', (req, res) => {
+    try {
+        const { movieId, showDirector } = req.body;
+        if (!movieId) {
+            return res.status(400).json({ error: 'movieId is required' });
+        }
+
+        const existingMovies = loadExistingMovies();
+        const movieIndex = existingMovies.findIndex(m => m.id === movieId);
+
+        if (movieIndex === -1) {
+            return res.status(404).json({ error: 'Movie not found in database' });
+        }
+
+        // Update the movie
+        if (showDirector) {
+            existingMovies[movieIndex].showDirector = true;
+        } else {
+            delete existingMovies[movieIndex].showDirector;
+        }
+
+        // Write back to file
+        const moviesPath = path.join(__dirname, '..', 'movies.js');
+        const content = `// Movie data from TMDB
+// Last updated: ${new Date().toISOString()}
+// Total movies: ${existingMovies.length}
+
+var MOVIES_DATA = ${JSON.stringify(existingMovies, null, 2)};
+`;
+        fs.writeFileSync(moviesPath, content);
+
+        res.json({ success: true });
+    } catch (e) {
+        console.error('Failed to update movie:', e);
+        res.status(500).json({ error: e.message });
+    }
 });
 
 // Load existing puzzles from dailyPuzzles.js

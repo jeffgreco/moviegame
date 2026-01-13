@@ -1,8 +1,8 @@
 // Movie data from TMDB
-// Last updated: 2026-01-12T01:42:29.380Z
-// Total movies: 1254
+// Last updated: 2026-01-13T19:03:41.649Z
+// Total movies: 1398
 
-const MOVIES_DATA = [
+var MOVIES_DATA = [
   {
     id: 8974,
     title: "The War of the Worlds",
@@ -21,21 +21,13 @@ const MOVIES_DATA = [
     showDirector: true,
   },
   {
-    id: 1359,
-    title: "Psycho",
-    poster_url:
-      "https://image.tmdb.org/t/p/w500/dOJromVQQLbaOEf2zMbTBPk2Jfa.jpg",
-    release_date: "1998-12-04",
-    directors: ["Gus Van Sant"],
-    showDirector: true,
-  },
-  {
     id: 871,
     title: "Planet of the Apes",
     poster_url:
       "https://image.tmdb.org/t/p/w500/2r9iKnlSYEk4daQadsXfcjHfIjQ.jpg",
     release_date: "1968-02-07",
     directors: ["Franklin J. Schaffner"],
+    showDirector: true,
   },
   {
     id: 62,
@@ -880,6 +872,14 @@ const MOVIES_DATA = [
     showDirector: true,
   },
   {
+    id: 11474,
+    title: "The Warriors",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/sjN9IZHmRHZmpxvQYYYFNQ22Pch.jpg",
+    release_date: "1979-02-09",
+    directors: ["Walter Hill"],
+  },
+  {
     id: 923,
     title: "Dawn of the Dead",
     poster_url:
@@ -1023,12 +1023,28 @@ const MOVIES_DATA = [
     directors: ["Jerry Zucker", "David Zucker", "Jim Abrahams"],
   },
   {
+    id: 11977,
+    title: "Caddyshack",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/lXnNz7zOXCsftMDVoU3VSo0Eioi.jpg",
+    release_date: "1980-07-25",
+    directors: ["Harold Ramis"],
+  },
+  {
     id: 16619,
     title: "Ordinary People",
     poster_url:
       "https://image.tmdb.org/t/p/w500/tJVETEDAKgD3fEh88SHOvMvOQue.jpg",
     release_date: "1980-09-19",
     directors: ["Robert Redford"],
+  },
+  {
+    id: 1578,
+    title: "Raging Bull",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/1WV7WlTS8LI1L5NkCgjWT9GSW3O.jpg",
+    release_date: "1980-11-14",
+    directors: ["Martin Scorsese"],
   },
   {
     id: 11335,
@@ -1061,6 +1077,22 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/ceG9VzoRAVGwivFU403Wc3AHRys.jpg",
     release_date: "1981-06-12",
     directors: ["Steven Spielberg"],
+  },
+  {
+    id: 10156,
+    title: "History of the World: Part I",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/6iAl78qZHT65erPXr2YW6Y54wlY.jpg",
+    release_date: "1981-06-12",
+    directors: ["Mel Brooks"],
+  },
+  {
+    id: 11286,
+    title: "The Cannonball Run",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/yDO1xRq4LOAv720xqJHHEVz5Sr9.jpg",
+    release_date: "1981-06-19",
+    directors: ["Hal Needham"],
   },
   {
     id: 699,
@@ -1142,12 +1174,28 @@ const MOVIES_DATA = [
     directors: ["George Miller"],
   },
   {
+    id: 15739,
+    title: "Annie",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/xopqD99S1GqQOG8UAeSElsX9MeP.jpg",
+    release_date: "1982-05-21",
+    directors: ["John Huston"],
+  },
+  {
     id: 1371,
     title: "Rocky III",
     poster_url:
       "https://image.tmdb.org/t/p/w500/9jS3wG3cNSEu8sVUFAFQ8exyaaH.jpg",
     release_date: "1982-05-28",
     directors: ["Sylvester Stallone"],
+  },
+  {
+    id: 154,
+    title: "Star Trek II: The Wrath of Khan",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/uPyLsKl8Z0LOoxeaFXsY5MxhR5s.jpg",
+    release_date: "1982-06-04",
+    directors: ["Nicholas Meyer"],
   },
   {
     id: 601,
@@ -1182,6 +1230,14 @@ const MOVIES_DATA = [
     directors: ["Steven Lisberger"],
   },
   {
+    id: 13342,
+    title: "Fast Times at Ridgemont High",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/s1DA8H7qwoOcAEhow2rCzuQtpuO.jpg",
+    release_date: "1982-08-13",
+    directors: ["Amy Heckerling"],
+  },
+  {
     id: 1368,
     title: "First Blood",
     poster_url:
@@ -1198,12 +1254,28 @@ const MOVIES_DATA = [
     directors: ["Tobe Hooper"],
   },
   {
+    id: 150,
+    title: "48 Hrs.",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/rvvjXHzEDBIvIVDBHNOwHS7hVPu.jpg",
+    release_date: "1982-12-07",
+    directors: ["Walter Hill"],
+  },
+  {
     id: 9576,
     title: "Tootsie",
     poster_url:
       "https://image.tmdb.org/t/p/w500/ngyCzZwb9y5sMUCig5JQT4Y33Q.jpg",
     release_date: "1982-12-17",
     directors: ["Sydney Pollack"],
+  },
+  {
+    id: 837,
+    title: "Videodrome",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/qqqkiZSU9EBGZ1KiDmfn07S7qvv.jpg",
+    release_date: "1983-02-04",
+    directors: ["David Cronenberg"],
   },
   {
     id: 783,
@@ -1220,6 +1292,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/l9os0HcXY8BOkvUWAx4rvby3j6L.jpg",
     release_date: "1983-03-25",
     directors: ["Francis Ford Coppola"],
+  },
+  {
+    id: 535,
+    title: "Flashdance",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/ziiy6ORt8BlxWFXskBChBMInvDA.jpg",
+    release_date: "1983-04-14",
+    directors: ["Adrian Lyne"],
   },
   {
     id: 1892,
@@ -1267,6 +1347,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/q3DvoqY06yZnRp9faH6uge7n7VP.jpg",
     release_date: "1983-07-29",
     directors: ["Harold Ramis"],
+  },
+  {
+    id: 9346,
+    title: "Risky Business",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/82KOHShH9raGhkcAN3TztVjqjj3.jpg",
+    release_date: "1983-08-05",
+    directors: ["Paul Brickman"],
   },
   {
     id: 36670,
@@ -1438,6 +1526,14 @@ const MOVIES_DATA = [
     directors: ["Nick Castle"],
   },
   {
+    id: 14052,
+    title: "Revenge of the Nerds",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/v8aETLufi4WIinhQ994oWkehtaC.jpg",
+    release_date: "1984-07-20",
+    directors: ["Jeff Kanew"],
+  },
+  {
     id: 1880,
     title: "Red Dawn",
     poster_url:
@@ -1551,6 +1647,14 @@ const MOVIES_DATA = [
     directors: ["Richard Donner"],
   },
   {
+    id: 10849,
+    title: "The Purple Rose of Cairo",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/ccsint43E44B7NGceEhVimD93Yt.jpg",
+    release_date: "1985-04-19",
+    directors: ["Woody Allen"],
+  },
+  {
     id: 1369,
     title: "Rambo: First Blood Part II",
     poster_url:
@@ -1655,6 +1759,14 @@ const MOVIES_DATA = [
     directors: ["Mark L. Lester"],
   },
   {
+    id: 10843,
+    title: "After Hours",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/eamOBurHBu0MIxohTIVcfxmZ6Z7.jpg",
+    release_date: "1985-10-11",
+    directors: ["Martin Scorsese"],
+  },
+  {
     id: 10014,
     title: "A Nightmare on Elm Street Part 2: Freddy's Revenge",
     poster_url:
@@ -1693,6 +1805,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/aewan59WcFThBimkTVVoNf2o5Vb.jpg",
     release_date: "1985-12-18",
     directors: ["Terry Gilliam"],
+  },
+  {
+    id: 606,
+    title: "Out of Africa",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/6oMKqh08TfxmvnoFR4mm1wZB67P.jpg",
+    release_date: "1985-12-20",
+    directors: ["Sydney Pollack"],
   },
   {
     id: 10068,
@@ -1941,6 +2061,14 @@ const MOVIES_DATA = [
     directors: ["Menahem Golan"],
   },
   {
+    id: 10019,
+    title: "Mannequin",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/oHMA8euTiZdDFXDi5zaIQQXwl0K.jpg",
+    release_date: "1987-02-13",
+    directors: ["Michael Gottlieb"],
+  },
+  {
     id: 941,
     title: "Lethal Weapon",
     poster_url:
@@ -1955,6 +2083,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/4zqCKJVHUolGs6C5AZwAZqLWixW.jpg",
     release_date: "1987-03-13",
     directors: ["Sam Raimi"],
+  },
+  {
+    id: 378,
+    title: "Raising Arizona",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/niKyjOqiB4XVl0BqgKTHIlHOCeF.jpg",
+    release_date: "1987-04-17",
+    directors: ["Joel Coen"],
   },
   {
     id: 96,
@@ -2110,12 +2246,36 @@ const MOVIES_DATA = [
     directors: ["Garry Marshall"],
   },
   {
+    id: 2039,
+    title: "Moonstruck",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/2mnVWpvsHEHHnfvLn1NXYVvBGl5.jpg",
+    release_date: "1988-01-15",
+    directors: ["Norman Jewison"],
+  },
+  {
+    id: 801,
+    title: "Good Morning, Vietnam",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/sreISlFUn5TyR41QNjlfAdX5SEW.jpg",
+    release_date: "1988-01-15",
+    directors: ["Barry Levinson"],
+  },
+  {
     id: 11690,
     title: "Bloodsport",
     poster_url:
       "https://image.tmdb.org/t/p/w500/kndxR9TRK0kJ5hxzDprRSS80F2W.jpg",
     release_date: "1988-02-26",
     directors: ["Newt Arnold"],
+  },
+  {
+    id: 11054,
+    title: "Hairspray",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/n78VVWG1jsEpMCtcye13wy1RiAx.jpg",
+    release_date: "1988-02-26",
+    directors: ["John Waters"],
   },
   {
     id: 4011,
@@ -2198,6 +2358,14 @@ const MOVIES_DATA = [
     directors: ["John Landis"],
   },
   {
+    id: 623,
+    title: "A Fish Called Wanda",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/hkSGFNVfEEUXFCxRZDITFHVhUlu.jpg",
+    release_date: "1988-07-15",
+    directors: ["Charles Crichton"],
+  },
+  {
     id: 562,
     title: "Die Hard",
     poster_url:
@@ -2262,6 +2430,14 @@ const MOVIES_DATA = [
     directors: ["Don Bluth"],
   },
   {
+    id: 9647,
+    title: "Scrooged",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/uO0znfB2ZzTXA1IS7jkrjNbpkYK.jpg",
+    release_date: "1988-11-22",
+    directors: ["Richard Donner"],
+  },
+  {
     id: 37136,
     title: "The Naked Gun: From the Files of Police Squad!",
     poster_url:
@@ -2284,6 +2460,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/stJx9BQZbXrZnTGf9Erc7d2UMVc.jpg",
     release_date: "1988-12-09",
     directors: ["Ivan Reitman"],
+  },
+  {
+    id: 10141,
+    title: "Dirty Rotten Scoundrels",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/3176xH21fSetstKpEtAD1giHbyT.jpg",
+    release_date: "1988-12-14",
+    directors: ["Frank Oz"],
   },
   {
     id: 380,
@@ -2310,6 +2494,14 @@ const MOVIES_DATA = [
     directors: ["Joe Dante"],
   },
   {
+    id: 1648,
+    title: "Bill & Ted's Excellent Adventure",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/tV25lGWGWGEqUe3U0xjQTBgilSx.jpg",
+    release_date: "1989-02-17",
+    directors: ["Stephen Herek"],
+  },
+  {
     id: 859,
     title: "Dangerous Liaisons",
     poster_url:
@@ -2318,12 +2510,28 @@ const MOVIES_DATA = [
     directors: ["Stephen Frears"],
   },
   {
+    id: 14621,
+    title: "Lean On Me",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/7xOyz2NlaoqZ6xIjJh0Goptm0tP.jpg",
+    release_date: "1989-03-03",
+    directors: ["John G. Avildsen"],
+  },
+  {
     id: 2640,
     title: "Heathers",
     poster_url:
       "https://image.tmdb.org/t/p/w500/dGbVfM4WlM7uvIbyRehfPZUIgp2.jpg",
     release_date: "1989-03-31",
     directors: ["Michael Lehmann"],
+  },
+  {
+    id: 9942,
+    title: "Major League",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/ypUedY9zX4nGGf1lQv1UGc8PhPA.jpg",
+    release_date: "1989-04-06",
+    directors: ["David S. Ward"],
   },
   {
     id: 10134,
@@ -2348,6 +2556,22 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/a1gIACZb04bL8EvLqMpofW2Eqeo.jpg",
     release_date: "1989-04-21",
     directors: ["Mary Lambert"],
+  },
+  {
+    id: 2323,
+    title: "Field of Dreams",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/oeM7nAw6FVFICwUaXKCRkDsKjqO.jpg",
+    release_date: "1989-05-05",
+    directors: ["Phil Alden Robinson"],
+  },
+  {
+    id: 10135,
+    title: "Road House",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/r2hGyhvNneAifk7UpwAYxrkeFO4.jpg",
+    release_date: "1989-05-19",
+    directors: ["Rowdy Herrington"],
   },
   {
     id: 89,
@@ -2398,6 +2622,14 @@ const MOVIES_DATA = [
     directors: ["Joe Johnston"],
   },
   {
+    id: 8491,
+    title: "Weekend at Bernie's",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/4RtjBkBSqHG46uieHgTtM7oKlpo.jpg",
+    release_date: "1989-07-05",
+    directors: ["Ted Kotcheff"],
+  },
+  {
     id: 942,
     title: "Lethal Weapon 2",
     poster_url:
@@ -2420,6 +2652,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/rFOiFUhTMtDetqCGClC9PIgnC1P.jpg",
     release_date: "1989-07-21",
     directors: ["Rob Reiner"],
+  },
+  {
+    id: 1412,
+    title: "sex, lies, and videotape",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/pj1uKm07svgXZDHbYE8AzRfNHcu.jpg",
+    release_date: "1989-08-04",
+    directors: ["Steven Soderbergh"],
   },
   {
     id: 2756,
@@ -2526,6 +2766,14 @@ const MOVIES_DATA = [
     directors: ["Andrei Konchalovsky"],
   },
   {
+    id: 11060,
+    title: "Internal Affairs",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/A4pH8DiNFEf2AgXkM4zk3ZpblV.jpg",
+    release_date: "1990-01-12",
+    directors: ["Mike Figgis"],
+  },
+  {
     id: 9362,
     title: "Tremors",
     poster_url:
@@ -2555,6 +2803,22 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/yVl7zidse4KiWtGMqHFtZCx4X3N.jpg",
     release_date: "1990-03-02",
     directors: ["John McTiernan"],
+  },
+  {
+    id: 16094,
+    title: "House Party",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/hmUsEUI7RdgvTznkLCNSOHnjU4O.jpg",
+    release_date: "1990-03-09",
+    directors: ["Reginald Hudlin"],
+  },
+  {
+    id: 9491,
+    title: "Blue Steel",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/mPUrodB3k8NYcvr4WPwtjSe1Mv9.jpg",
+    release_date: "1990-03-16",
+    directors: ["Kathryn Bigelow"],
   },
   {
     id: 114,
@@ -2636,6 +2900,22 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/w9RaPHov8oM5cnzeE27isnFMsvS.jpg",
     release_date: "1990-07-13",
     directors: ["Jerry Zucker"],
+  },
+  {
+    id: 11077,
+    title: "Problem Child",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/me4kJXgZebuz1doS8y4oW8XUAly.jpg",
+    release_date: "1990-07-27",
+    directors: ["Dennis Dugan"],
+  },
+  {
+    id: 483,
+    title: "Wild at Heart",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/uLUFI5sJIfWrBUWB2Y1dEuyvvVy.jpg",
+    release_date: "1990-08-17",
+    directors: ["David Lynch"],
   },
   {
     id: 10166,
@@ -2750,6 +3030,14 @@ const MOVIES_DATA = [
     directors: ["Randal Kleiser"],
   },
   {
+    id: 2107,
+    title: "L.A. Story",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/dVDCImNu9lM3MTYRaS0sWhDrm2m.jpg",
+    release_date: "1991-02-08",
+    directors: ["Mick Jackson"],
+  },
+  {
     id: 274,
     title: "The Silence of the Lambs",
     poster_url:
@@ -2764,6 +3052,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/x1LM3dzGuG6xOz0aT2e71o11vhu.jpg",
     release_date: "1991-03-01",
     directors: ["Oliver Stone"],
+  },
+  {
+    id: 12186,
+    title: "Defending Your Life",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/flXJ4AnKYq8DH1f1TmQ4QrqSwsB.jpg",
+    release_date: "1991-04-05",
+    directors: ["Albert Brooks"],
   },
   {
     id: 11890,
@@ -2943,6 +3239,22 @@ const MOVIES_DATA = [
     directors: ["Oliver Stone"],
   },
   {
+    id: 8872,
+    title: "Wayne's World",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/fHwZnFNWR7PaS9t5EBwTvGPeoYQ.jpg",
+    release_date: "1992-02-14",
+    directors: ["Penelope Spheeris"],
+  },
+  {
+    id: 10377,
+    title: "My Cousin Vinny",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/iwSURa8nS2ujwrU3s1lfxxX7voH.jpg",
+    release_date: "1992-03-13",
+    directors: ["Jonathan Lynn"],
+  },
+  {
     id: 402,
     title: "Basic Instinct",
     poster_url:
@@ -2965,6 +3277,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/xh5wI0UoW7DfS1IyLy3d2CgrCEP.jpg",
     release_date: "1992-05-22",
     directors: ["David Fincher"],
+  },
+  {
+    id: 10406,
+    title: "Encino Man",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/7OSo4K64Y2DQxbQOkOhlkPYdFPM.jpg",
+    release_date: "1992-05-22",
+    directors: ["Les Mayfield"],
   },
   {
     id: 2005,
@@ -2991,6 +3311,14 @@ const MOVIES_DATA = [
     directors: ["Tim Burton"],
   },
   {
+    id: 11287,
+    title: "A League of Their Own",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/7xpFXAOjgzFPE3vyVerFGfrXhFK.jpg",
+    release_date: "1992-07-01",
+    directors: ["Penny Marshall"],
+  },
+  {
     id: 14239,
     title: "Cool World",
     poster_url:
@@ -3013,6 +3341,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/54roTwbX9fltg85zjsmrooXAs12.jpg",
     release_date: "1992-08-07",
     directors: ["Clint Eastwood"],
+  },
+  {
+    id: 1923,
+    title: "Twin Peaks: Fire Walk with Me",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/mxsGXqetGnirf99qapYd5MMY1VL.jpg",
+    release_date: "1992-08-28",
+    directors: ["David Lynch"],
   },
   {
     id: 2322,
@@ -3128,6 +3464,14 @@ const MOVIES_DATA = [
     directors: ["Frank Marshall"],
   },
   {
+    id: 56149,
+    title: "Bottle Rocket",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/3NIxuMUmChKL94BXudMMMsBDe8o.jpg",
+    release_date: "1993-01-21",
+    directors: ["Wes Anderson"],
+  },
+  {
     id: 137,
     title: "Groundhog Day",
     poster_url:
@@ -3152,12 +3496,28 @@ const MOVIES_DATA = [
     directors: ["Sam Raimi"],
   },
   {
+    id: 37094,
+    title: "Falling Down",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/7ujqyF96Zg3rfrsh9M0cEF0Yzqj.jpg",
+    release_date: "1993-02-26",
+    directors: ["Joel Schumacher"],
+  },
+  {
     id: 4478,
     title: "Indecent Proposal",
     poster_url:
       "https://image.tmdb.org/t/p/w500/a39WoiTJEG5kNLIrr3kOMwg3LFg.jpg",
     release_date: "1993-04-07",
     directors: ["Adrian Lyne"],
+  },
+  {
+    id: 11528,
+    title: "The Sandlot",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/7PYqz0viEuW8qTvuGinUMjDWMnj.jpg",
+    release_date: "1993-04-07",
+    directors: ["David Mickey Evans"],
   },
   {
     id: 9702,
@@ -3200,6 +3560,14 @@ const MOVIES_DATA = [
     directors: ["Steven Spielberg"],
   },
   {
+    id: 9593,
+    title: "Last Action Hero",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/vkhEaWAv5j3qgrOGp3BgMeiYPKj.jpg",
+    release_date: "1993-06-18",
+    directors: ["John McTiernan"],
+  },
+  {
     id: 858,
     title: "Sleepless in Seattle",
     poster_url:
@@ -3216,6 +3584,14 @@ const MOVIES_DATA = [
     directors: ["Nick Castle"],
   },
   {
+    id: 37233,
+    title: "The Firm",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/kFexXCzidkm4LwlgZqxsJsDQB5v.jpg",
+    release_date: "1993-06-30",
+    directors: ["Sydney Pollack"],
+  },
+  {
     id: 1634,
     title: "Free Willy",
     poster_url:
@@ -3224,12 +3600,28 @@ const MOVIES_DATA = [
     directors: ["Simon Wincer"],
   },
   {
+    id: 10439,
+    title: "Hocus Pocus",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/by4D4Q9NlUjFSEUA1yrxq6ksXmk.jpg",
+    release_date: "1993-07-16",
+    directors: ["Kenny Ortega"],
+  },
+  {
     id: 9612,
     title: "Coneheads",
     poster_url:
       "https://image.tmdb.org/t/p/w500/vlpQnf0rl0FpMjWLS0TNd8Bog2F.jpg",
     release_date: "1993-07-23",
     directors: ["Steve Barron"],
+  },
+  {
+    id: 8005,
+    title: "Robin Hood: Men in Tights",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/woexOLEkUlYsPLLuZRK6LjZaF38.jpg",
+    release_date: "1993-07-28",
+    directors: ["Mel Brooks"],
   },
   {
     id: 7007,
@@ -3262,6 +3654,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/39lXk6ud6KiJgGbbWI2PUKS7y2.jpg",
     release_date: "1993-09-09",
     directors: ["Tony Scott"],
+  },
+  {
+    id: 9571,
+    title: "Dazed and Confused",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/msG9awbLhVZwv1Eh9Ge7SofMexW.jpg",
+    release_date: "1993-09-24",
+    directors: ["Richard Linklater"],
   },
   {
     id: 1607,
@@ -3328,6 +3728,14 @@ const MOVIES_DATA = [
     directors: ["George P. Cosmatos"],
   },
   {
+    id: 9800,
+    title: "Philadelphia",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/tFe5Yoo5zT495okA49bq1vPPkiV.jpg",
+    release_date: "1994-01-14",
+    directors: ["Jonathan Demme"],
+  },
+  {
     id: 424,
     title: "Schindler's List",
     poster_url:
@@ -3350,6 +3758,22 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/8r9yts6XHbB1xNLaPC6ExNAK1Qu.jpg",
     release_date: "1994-03-04",
     directors: ["Lasse Hallström"],
+  },
+  {
+    id: 10694,
+    title: "The Chase",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/lEmGW4Fc9wMRLIKq6NRojZnTbdp.jpg",
+    release_date: "1994-03-04",
+    directors: ["Adam Rifkin"],
+  },
+  {
+    id: 712,
+    title: "Four Weddings and a Funeral",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/qa72G2VS0bpxms6yo0tI9vsHm2e.jpg",
+    release_date: "1994-03-09",
+    directors: ["Mike Newell"],
   },
   {
     id: 10497,
@@ -3496,6 +3920,14 @@ const MOVIES_DATA = [
     directors: ["Quentin Tarantino"],
   },
   {
+    id: 1024,
+    title: "Heavenly Creatures",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/uvb86wVCIqD3Rlbr0GTNgWDF7Zo.jpg",
+    release_date: "1994-10-15",
+    directors: ["Peter Jackson"],
+  },
+  {
     id: 2292,
     title: "Clerks",
     poster_url:
@@ -3560,6 +3992,30 @@ const MOVIES_DATA = [
     directors: ["Edward Zwick"],
   },
   {
+    id: 76,
+    title: "Before Sunrise",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/kf1Jb1c2JAOqjuzA3H4oDM263uB.jpg",
+    release_date: "1995-01-27",
+    directors: ["Richard Linklater"],
+  },
+  {
+    id: 11017,
+    title: "Billy Madison",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/sOdgtJdFalL9kRKaeJItARLTAEq.jpg",
+    release_date: "1995-02-10",
+    directors: ["Tamra Davis"],
+  },
+  {
+    id: 14819,
+    title: "Heavyweights",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/uN65XQzyPknLZs2R6koZ2Cu6eGC.jpg",
+    release_date: "1995-02-17",
+    directors: ["Steven Brill"],
+  },
+  {
     id: 9067,
     title: "Tank Girl",
     poster_url:
@@ -3574,6 +4030,22 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/x1ygBecKHfXX4M2kRhmFKWfWbJc.jpg",
     release_date: "1995-04-07",
     directors: ["Michael Bay"],
+  },
+  {
+    id: 15789,
+    title: "A Goofy Movie",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/bycmMhO3iIoEDzP768sUjq2RV4T.jpg",
+    release_date: "1995-04-07",
+    directors: ["Kevin Lima"],
+  },
+  {
+    id: 10474,
+    title: "The Basketball Diaries",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/AhvO1GGDPIgN0hOqZEgaFCbswMK.jpg",
+    release_date: "1995-04-21",
+    directors: ["Scott Kalvert"],
   },
   {
     id: 10634,
@@ -3616,12 +4088,28 @@ const MOVIES_DATA = [
     directors: ["Clint Eastwood"],
   },
   {
+    id: 414,
+    title: "Batman Forever",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/i0fJS8M5UKoETjjJ0zwUiKaR8tr.jpg",
+    release_date: "1995-06-16",
+    directors: ["Joel Schumacher"],
+  },
+  {
     id: 10530,
     title: "Pocahontas",
     poster_url:
       "https://image.tmdb.org/t/p/w500/kZ1ft0QZ4e3zDUPMBftEkwI9ftd.jpg",
     release_date: "1995-06-23",
     directors: ["Mike Gabriel", "Eric Goldberg"],
+  },
+  {
+    id: 568,
+    title: "Apollo 13",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/tVeKscCm2fY1xDXZk8PgnZ87h9S.jpg",
+    release_date: "1995-06-30",
+    directors: ["Ron Howard"],
   },
   {
     id: 9348,
@@ -3648,6 +4136,22 @@ const MOVIES_DATA = [
     directors: ["Larry Clark"],
   },
   {
+    id: 9804,
+    title: "Waterworld",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/X4UyUO5jgzs3c5YafnmYKLKKYw.jpg",
+    release_date: "1995-07-28",
+    directors: ["Kevin Reynolds"],
+  },
+  {
+    id: 1642,
+    title: "The Net",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/dtupntUFMD5iXBo8HLfALt2ET4R.jpg",
+    release_date: "1995-07-28",
+    directors: ["Irwin Winkler"],
+  },
+  {
     id: 9598,
     title: "Babe",
     poster_url:
@@ -3662,6 +4166,22 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/yWHWC8fJRp2kLgiFrEa8o3krOH9.jpg",
     release_date: "1995-08-11",
     directors: ["John N. Smith"],
+  },
+  {
+    id: 9312,
+    title: "Mortal Kombat",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/fcK7tzSSXMYiMN8E9KlZJL1BYyp.jpg",
+    release_date: "1995-08-18",
+    directors: ["Paul W. S. Anderson"],
+  },
+  {
+    id: 8068,
+    title: "Desperado",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/e3gwpBeXpvGZsxUya9zNym5QXrw.jpg",
+    release_date: "1995-08-25",
+    directors: ["Robert Rodriguez"],
   },
   {
     id: 10428,
@@ -3704,12 +4224,44 @@ const MOVIES_DATA = [
     directors: ["Paul Verhoeven"],
   },
   {
+    id: 281,
+    title: "Strange Days",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/rY5BrDRcYAKE0BYmmT66YG6Uy5Q.jpg",
+    release_date: "1995-10-13",
+    directors: ["Kathryn Bigelow"],
+  },
+  {
+    id: 8012,
+    title: "Get Shorty",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/r82SdPhg4fnIcLt0ogIjQxqjdcO.jpg",
+    release_date: "1995-10-20",
+    directors: ["Barry Sonnenfeld"],
+  },
+  {
+    id: 2293,
+    title: "Mallrats",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/2ip0sGIMPN0XEN6q3lQIoaNI6tP.jpg",
+    release_date: "1995-10-20",
+    directors: ["Kevin Smith"],
+  },
+  {
     id: 1710,
     title: "Copycat",
     poster_url:
       "https://image.tmdb.org/t/p/w500/oMgwJb016znNZcpDR20eXxZoW8A.jpg",
     release_date: "1995-10-27",
     directors: ["Jon Amiel"],
+  },
+  {
+    id: 451,
+    title: "Leaving Las Vegas",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/wTrFpGe3U65kXTldIUxuM2hmOAK.jpg",
+    release_date: "1995-10-27",
+    directors: ["Mike Figgis"],
   },
   {
     id: 710,
@@ -3758,6 +4310,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/i8PbLJDPU7vCwwscWD625oHbJy.jpg",
     release_date: "1995-12-15",
     directors: ["Sydney Pollack"],
+  },
+  {
+    id: 8844,
+    title: "Jumanji",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/vgpXmVaVyUL7GGiDeiK1mKEKzcX.jpg",
+    release_date: "1995-12-15",
+    directors: ["Joe Johnston"],
   },
   {
     id: 63,
@@ -3991,6 +4551,15 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/33NysOnLpLZY0ewHTcfpalzAsRG.jpg",
     release_date: "1997-04-11",
     directors: ["Luis Llosa"],
+    showDirector: true,
+  },
+  {
+    id: 10357,
+    title: "Volcano",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/5xIjktjXuro7anZ6AR58t5ZYWjQ.jpg",
+    release_date: "1997-04-25",
+    directors: ["Mick Jackson"],
   },
   {
     id: 816,
@@ -4371,6 +4940,15 @@ const MOVIES_DATA = [
     directors: ["John Lasseter"],
   },
   {
+    id: 1359,
+    title: "Psycho",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/dOJromVQQLbaOEf2zMbTBPk2Jfa.jpg",
+    release_date: "1998-12-04",
+    directors: ["Gus Van Sant"],
+    showDirector: true,
+  },
+  {
     id: 9837,
     title: "The Prince of Egypt",
     poster_url:
@@ -4729,6 +5307,14 @@ const MOVIES_DATA = [
     directors: ["Clint Eastwood"],
   },
   {
+    id: 786,
+    title: "Almost Famous",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/3rrkyLYbgLj84AYvjhdcJot4JPx.jpg",
+    release_date: "2000-09-22",
+    directors: ["Cameron Crowe"],
+  },
+  {
     id: 4327,
     title: "Charlie's Angels",
     poster_url:
@@ -4816,6 +5402,14 @@ const MOVIES_DATA = [
     release_date: "2001-02-08",
   },
   {
+    id: 4133,
+    title: "Blow",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/yYZFVfk8aeMP4GxBSU9MTvqs9mJ.jpg",
+    release_date: "2001-04-05",
+    directors: ["Ted Demme"],
+  },
+  {
     id: 1734,
     title: "The Mummy Returns",
     poster_url:
@@ -4864,6 +5458,14 @@ const MOVIES_DATA = [
     directors: ["Ivan Reitman"],
   },
   {
+    id: 644,
+    title: "A.I. Artificial Intelligence",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/8MZSGX5JORoO72EfuAEcejH5yHn.jpg",
+    release_date: "2001-06-29",
+    directors: ["Steven Spielberg"],
+  },
+  {
     id: 4248,
     title: "Scary Movie 2",
     poster_url:
@@ -4878,6 +5480,15 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/9ohlMrJHQqKhfUKh7Zr3JQqHNLZ.jpg",
     release_date: "2001-07-13",
     directors: ["Robert Luketic"],
+  },
+  {
+    id: 869,
+    title: "Planet of the Apes",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/eEsOgbgKXMvI2FEw1WENamVXi41.jpg",
+    release_date: "2001-07-27",
+    directors: ["Tim Burton"],
+    showDirector: true,
   },
   {
     id: 5175,
@@ -4918,6 +5529,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/3dpim9bLdi5uh55idJ6HxA7eZH4.jpg",
     release_date: "2001-08-17",
     directors: ["Jerry Zucker"],
+  },
+  {
+    id: 2294,
+    title: "Jay and Silent Bob Strike Back",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/aEsAdMAhwKYFgnHHxMOknktQYKK.jpg",
+    release_date: "2001-08-24",
+    directors: ["Kevin Smith"],
   },
   {
     id: 9398,
@@ -4991,6 +5610,14 @@ const MOVIES_DATA = [
     directors: ["Chris Columbus"],
   },
   {
+    id: 11469,
+    title: "Black Knight",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/pVxwVH461k9u4tUfRewT29DEZ2e.jpg",
+    release_date: "2001-11-21",
+    directors: ["Gil Junger"],
+  },
+  {
     id: 161,
     title: "Ocean's Eleven",
     poster_url:
@@ -5053,6 +5680,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/gLhHHZUzeseRXShoDyC4VqLgsNv.jpg",
     release_date: "2002-03-15",
     directors: ["Chris Wedge"],
+  },
+  {
+    id: 4547,
+    title: "Panic Room",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/hANYbvfwxmkC9E4yY6YyJxYxlSJ.jpg",
+    release_date: "2002-03-29",
+    directors: ["David Fincher"],
   },
   {
     id: 12149,
@@ -5252,6 +5887,14 @@ const MOVIES_DATA = [
     directors: ["Peter Jackson"],
   },
   {
+    id: 3131,
+    title: "Gangs of New York",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/lemqKtcCuAano5aqrzxYiKC8kkn.jpg",
+    release_date: "2002-12-19",
+    directors: ["Martin Scorsese"],
+  },
+  {
     id: 640,
     title: "Catch Me If You Can",
     poster_url:
@@ -5260,12 +5903,28 @@ const MOVIES_DATA = [
     directors: ["Steven Spielberg"],
   },
   {
+    id: 1429,
+    title: "25th Hour",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/uW7tTRElr2tRhmAVESzvHy4ByXg.jpg",
+    release_date: "2003-01-10",
+    directors: ["Spike Lee"],
+  },
+  {
     id: 9358,
     title: "Final Destination 2",
     poster_url:
       "https://image.tmdb.org/t/p/w500/vnFgxRlLTA9fDNcGXLiHmgwmIEo.jpg",
     release_date: "2003-01-31",
     directors: ["David R. Ellis"],
+  },
+  {
+    id: 9919,
+    title: "How to Lose a Guy in 10 Days",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/2dlftyPz7mTYbrsPvTogyFmYd7d.jpg",
+    release_date: "2003-02-07",
+    directors: ["Donald Petrie"],
   },
   {
     id: 11635,
@@ -5322,6 +5981,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/7lyxwOg7SdGff79yKCQmJ3AKWSf.jpg",
     release_date: "2003-05-30",
     directors: ["Rob Schmidt"],
+  },
+  {
+    id: 9654,
+    title: "The Italian Job",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/eSkjK4kctyrWpFhxl35GPvSs6tI.jpg",
+    release_date: "2003-05-30",
+    directors: ["F. Gary Gray"],
   },
   {
     id: 1927,
@@ -5412,6 +6079,14 @@ const MOVIES_DATA = [
     directors: ["Quentin Tarantino"],
   },
   {
+    id: 322,
+    title: "Mystic River",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/hCHVDbo6XJGj3r2i4hVjKhE0GKF.jpg",
+    release_date: "2003-10-15",
+    directors: ["Clint Eastwood"],
+  },
+  {
     id: 10009,
     title: "Brother Bear",
     poster_url:
@@ -5476,6 +6151,14 @@ const MOVIES_DATA = [
     directors: ["Peter Jackson"],
   },
   {
+    id: 1954,
+    title: "The Butterfly Effect",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/ea5iv7TWMh18fOKoRGgmtcg85Gx.jpg",
+    release_date: "2004-01-23",
+    directors: ["Eric Bress", "J. Mackye Gruber"],
+  },
+  {
     id: 504,
     title: "Monster",
     poster_url:
@@ -5489,6 +6172,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/lzUI2Cg7OMfcUNv3f7MywYNBjs6.jpg",
     release_date: "2004-02-13",
     directors: ["Peter Segal"],
+  },
+  {
+    id: 615,
+    title: "The Passion of the Christ",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/v9f9MMrq2nGQrN7cHnQRmEq9lSE.jpg",
+    release_date: "2004-02-25",
+    directors: ["Mel Gibson"],
   },
   {
     id: 38,
@@ -5627,6 +6318,14 @@ const MOVIES_DATA = [
     directors: ["Paul Greengrass"],
   },
   {
+    id: 80,
+    title: "Before Sunset",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/gycdE1ARByGQcK4fYR2mgpU6OO.jpg",
+    release_date: "2004-07-30",
+    directors: ["Richard Linklater"],
+  },
+  {
     id: 1538,
     title: "Collateral",
     poster_url:
@@ -5691,6 +6390,38 @@ const MOVIES_DATA = [
     directors: ["Stephen Hillenburg"],
   },
   {
+    id: 2059,
+    title: "National Treasure",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/pxL6E4GBOPUG6CdkO9cUQN5VMwI.jpg",
+    release_date: "2004-11-19",
+    directors: ["Jon Turteltaub"],
+  },
+  {
+    id: 2567,
+    title: "The Aviator",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/lx4kWcZc3o9PaNxlQpEJZM17XUI.jpg",
+    release_date: "2004-12-25",
+    directors: ["Martin Scorsese"],
+  },
+  {
+    id: 205,
+    title: "Hotel Rwanda",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/p3pHw85UMZPegfMZBA6dZ06yarm.jpg",
+    release_date: "2005-02-04",
+    directors: ["Terry George"],
+  },
+  {
+    id: 8488,
+    title: "Hitch",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/x3W9H3nhGQbWSlyI8Amp2F6Z6cz.jpg",
+    release_date: "2005-02-11",
+    directors: ["Andy Tennant"],
+  },
+  {
     id: 561,
     title: "Constantine",
     poster_url:
@@ -5753,6 +6484,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/nbKcVBcxF96ARW2oKHqDYAcLdu.jpg",
     release_date: "2005-05-27",
     directors: ["Peter Segal"],
+    showDirector: true,
   },
   {
     id: 787,
@@ -5786,6 +6518,7 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/5qLP3JVg8NE3zdZd48lqhx7iN5Q.jpg",
     release_date: "2005-07-08",
     directors: ["Tim Story"],
+    showDirector: true,
   },
   {
     id: 118,
@@ -5924,6 +6657,14 @@ const MOVIES_DATA = [
     directors: ["James McTeigue"],
   },
   {
+    id: 9655,
+    title: "She's the Man",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/ms9vdHyBLgAj0txnMWI9djGpDGp.jpg",
+    release_date: "2006-03-17",
+    directors: ["Andy Fickman"],
+  },
+  {
     id: 950,
     title: "Ice Age: The Meltdown",
     poster_url:
@@ -5988,6 +6729,14 @@ const MOVIES_DATA = [
     directors: ["Jared Hess"],
   },
   {
+    id: 9339,
+    title: "Click",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/oL0k5JA53PyoHSZqKb3cNkhwBCE.jpg",
+    release_date: "2006-06-23",
+    directors: ["Frank Coraci"],
+  },
+  {
     id: 350,
     title: "The Devil Wears Prada",
     poster_url:
@@ -6042,6 +6791,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/1O9jUvqkHaGBMVRyOJz1AlkmALW.jpg",
     release_date: "2006-09-01",
     directors: ["Neil Burger"],
+  },
+  {
+    id: 9708,
+    title: "The Wicker Man",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/9G6TBckQUKdx3dnn55abUCmonRX.jpg",
+    release_date: "2006-09-01",
+    directors: ["Neil LaBute"],
   },
   {
     id: 1422,
@@ -6122,6 +6879,14 @@ const MOVIES_DATA = [
     release_date: "2006-12-25",
   },
   {
+    id: 9693,
+    title: "Children of Men",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/8Xgvmx7WWc7Z9Ws9RAYk7uya2kh.jpg",
+    release_date: "2007-01-05",
+    directors: ["Alfonso Cuarón"],
+  },
+  {
     id: 9757,
     title: "Norbit",
     poster_url:
@@ -6152,6 +6917,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/2aWGxo1E5polpBjPvtBRkWp7qaS.jpg",
     release_date: "2007-03-22",
     directors: ["Antoine Fuqua"],
+  },
+  {
+    id: 4638,
+    title: "Hot Fuzz",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/zPib4ukTSdXvHP9pxGkFCe34f3y.jpg",
+    release_date: "2007-04-20",
+    directors: ["Edgar Wright"],
   },
   {
     id: 1738,
@@ -6314,6 +7087,14 @@ const MOVIES_DATA = [
     directors: ["Jason Reitman"],
   },
   {
+    id: 4347,
+    title: "Atonement",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/hMRIyBjPzxaSXWM06se3OcNjIQa.jpg",
+    release_date: "2008-01-11",
+    directors: ["Joe Wright"],
+  },
+  {
     id: 6557,
     title: "27 Dresses",
     poster_url:
@@ -6336,6 +7117,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/3mInub5c8o00H7EJ1TrjAqOzIuc.jpg",
     release_date: "2008-01-25",
     directors: ["Sylvester Stallone"],
+  },
+  {
+    id: 7345,
+    title: "There Will Be Blood",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/fa0RDkAlCec0STeMNAhPaF89q6U.jpg",
+    release_date: "2008-01-25",
+    directors: ["Paul Thomas Anderson"],
   },
   {
     id: 13460,
@@ -6434,6 +7223,14 @@ const MOVIES_DATA = [
     directors: ["Christopher Nolan"],
   },
   {
+    id: 11631,
+    title: "Mamma Mia!",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/zdUA4FNHbXPadzVOJiU0Rgn6cHR.jpg",
+    release_date: "2008-07-18",
+    directors: ["Phyllida Lloyd"],
+  },
+  {
     id: 7446,
     title: "Tropic Thunder",
     poster_url:
@@ -6528,6 +7325,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/hpHarddVj34j53T7NsoUGdKj4mP.jpg",
     release_date: "2009-03-26",
     directors: ["Rob Letterman", "Conrad Vernon"],
+  },
+  {
+    id: 13475,
+    title: "Star Trek",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/hN2ZtF3Uw6mhIHZiqL0SKzELtKn.jpg",
+    release_date: "2009-05-07",
+    directors: ["J.J. Abrams"],
   },
   {
     id: 13448,
@@ -6727,6 +7532,22 @@ const MOVIES_DATA = [
     release_date: "2009-11-20",
   },
   {
+    id: 22881,
+    title: "The Blind Side",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/bMgq7VBriuBFknXEe9E9pVBYGZq.jpg",
+    release_date: "2009-11-20",
+    directors: ["John Lee Hancock"],
+  },
+  {
+    id: 10315,
+    title: "Fantastic Mr. Fox",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/euZyZb6iGreujYKrGyZHRddhUYh.jpg",
+    release_date: "2009-11-25",
+    directors: ["Wes Anderson"],
+  },
+  {
     id: 10198,
     title: "The Princess and the Frog",
     poster_url:
@@ -6904,6 +7725,14 @@ const MOVIES_DATA = [
     directors: ["Alexandre Aja"],
   },
   {
+    id: 23168,
+    title: "The Town",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/3NIzyXkfylsjflRKSz8Fts3lXzm.jpg",
+    release_date: "2010-09-17",
+    directors: ["Ben Affleck"],
+  },
+  {
     id: 37799,
     title: "The Social Network",
     poster_url:
@@ -7032,6 +7861,14 @@ const MOVIES_DATA = [
     directors: ["Kenneth Branagh"],
   },
   {
+    id: 55721,
+    title: "Bridesmaids",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/gJtA7hYsBMQ7EM3sPBMUdBfU7a0.jpg",
+    release_date: "2011-05-13",
+    directors: ["Paul Feig"],
+  },
+  {
     id: 1865,
     title: "Pirates of the Caribbean: On Stranger Tides",
     poster_url:
@@ -7054,6 +7891,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/mtqqD00vB4PGRt20gWtGqFhrkd0.jpg",
     release_date: "2011-05-26",
     directors: ["Jennifer Yuh Nelson"],
+  },
+  {
+    id: 59436,
+    title: "Midnight in Paris",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/4wBG5kbfagTQclETblPRRGihk0I.jpg",
+    release_date: "2011-06-10",
+    directors: ["Woody Allen"],
   },
   {
     id: 49013,
@@ -7118,6 +7963,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/rEdGDgRB3gducezNSIyx2lbKQy4.jpg",
     release_date: "2011-08-26",
     directors: ["Olivier Megaton"],
+  },
+  {
+    id: 39538,
+    title: "Contagion",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/qL0IooP0bjXy0KXl9KEyPo22ll0.jpg",
+    release_date: "2011-09-09",
+    directors: ["Steven Soderbergh"],
   },
   {
     id: 64690,
@@ -7311,6 +8164,14 @@ const MOVIES_DATA = [
     directors: ["Genndy Tartakovsky"],
   },
   {
+    id: 114150,
+    title: "Pitch Perfect",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/gsFoJk9g8W3zgaipRrrURk7LbiF.jpg",
+    release_date: "2012-09-28",
+    directors: ["Jason Moore"],
+  },
+  {
     id: 82675,
     title: "Taken 2",
     poster_url:
@@ -7335,12 +8196,28 @@ const MOVIES_DATA = [
     directors: ["Stephen Chbosky"],
   },
   {
+    id: 83542,
+    title: "Cloud Atlas",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/8naVv2Xu3rWI5JKHz0vCujx6GaJ.jpg",
+    release_date: "2012-10-26",
+    directors: ["Lana Wachowski", "Lilly Wachowski", "Tom Tykwer"],
+  },
+  {
     id: 82690,
     title: "Wreck-It Ralph",
     poster_url:
       "https://image.tmdb.org/t/p/w500/zWoIgZ7mgmPkaZjG0102BSKFIqQ.jpg",
     release_date: "2012-11-02",
     directors: ["Rich Moore"],
+  },
+  {
+    id: 87502,
+    title: "Flight",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/tFsHDNclXoCKy2xMxskzXXMaFJS.jpg",
+    release_date: "2012-11-02",
+    directors: ["Robert Zemeckis"],
   },
   {
     id: 37724,
@@ -7397,6 +8274,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/qhPtAc1TKbMPqNvcdXSOn9Bn7hZ.jpg",
     release_date: "2013-05-03",
     directors: ["Shane Black"],
+  },
+  {
+    id: 64682,
+    title: "The Great Gatsby",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/tyxfCBQv6Ap74jcu3xd7aBiaa29.jpg",
+    release_date: "2013-05-10",
+    directors: ["Baz Luhrmann"],
   },
   {
     id: 75656,
@@ -7503,6 +8388,14 @@ const MOVIES_DATA = [
     directors: ["Joseph Gordon-Levitt"],
   },
   {
+    id: 49047,
+    title: "Gravity",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/kZ2nZw8D681aphje8NJi8EfbL1U.jpg",
+    release_date: "2013-10-04",
+    directors: ["Alfonso Cuarón"],
+  },
+  {
     id: 122906,
     title: "About Time",
     poster_url:
@@ -7517,6 +8410,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/wp6OxE4poJ4G7c0U2ZIXasTSMR7.jpg",
     release_date: "2013-11-08",
     directors: ["Alan Taylor"],
+  },
+  {
+    id: 76203,
+    title: "12 Years a Slave",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/xdANQijuNrJaw1HA61rDccME4Tm.jpg",
+    release_date: "2013-11-08",
+    directors: ["Steve McQueen"],
   },
   {
     id: 152532,
@@ -7591,6 +8492,14 @@ const MOVIES_DATA = [
     directors: ["George Clooney"],
   },
   {
+    id: 137106,
+    title: "The Lego Movie",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/lbctonEnewCYZ4FYoTZhs8cidAl.jpg",
+    release_date: "2014-02-07",
+    directors: ["Phil Lord", "Christopher Miller"],
+  },
+  {
     id: 120467,
     title: "The Grand Budapest Hotel",
     poster_url:
@@ -7613,6 +8522,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/dGjoPttcbKR5VWg1jQuNFB247KL.jpg",
     release_date: "2014-05-02",
     directors: ["Marc Webb"],
+  },
+  {
+    id: 124905,
+    title: "Godzilla",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/zokD6uxR2iWfYM3Y84yGJvnNTK7.jpg",
+    release_date: "2014-05-16",
+    directors: ["Gareth Edwards"],
   },
   {
     id: 127585,
@@ -7639,14 +8556,6 @@ const MOVIES_DATA = [
     directors: ["Doug Liman"],
   },
   {
-    id: 82702,
-    title: "How to Train Your Dragon 2",
-    poster_url:
-      "https://image.tmdb.org/t/p/w500/d13Uj86LdbDLrfDoHR5aDOFYyJC.jpg",
-    release_date: "2014-06-13",
-    directors: ["Dean DeBlois"],
-  },
-  {
     id: 91314,
     title: "Transformers: Age of Extinction",
     poster_url:
@@ -7655,12 +8564,28 @@ const MOVIES_DATA = [
     directors: ["Michael Bay"],
   },
   {
+    id: 119450,
+    title: "Dawn of the Planet of the Apes",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/kScdQEwS9jPEdnO23XjGAtaoRcT.jpg",
+    release_date: "2014-07-11",
+    directors: ["Matt Reeves"],
+  },
+  {
     id: 240832,
     title: "Lucy",
     poster_url:
       "https://image.tmdb.org/t/p/w500/kRbpUTRNm6QbLQFPFWUcNC4czEm.jpg",
     release_date: "2014-07-25",
     directors: ["Luc Besson"],
+  },
+  {
+    id: 118340,
+    title: "Guardians of the Galaxy",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/r7vmZjiyZw9rpJMQJdXpjgiCOk9.jpg",
+    release_date: "2014-08-01",
+    directors: ["James Gunn"],
   },
   {
     id: 98566,
@@ -7720,6 +8645,22 @@ const MOVIES_DATA = [
     directors: ["David Ayer"],
   },
   {
+    id: 245891,
+    title: "John Wick",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/fZPSd91yGE9fCcCe6OoQr6E3Bev.jpg",
+    release_date: "2014-10-24",
+    directors: ["Chad Stahelski"],
+  },
+  {
+    id: 114750,
+    title: "Dear White People",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/jH3851P2DjjnBsrjphbR1CWRzm6.jpg",
+    release_date: "2014-10-24",
+    directors: ["Justin Simien"],
+  },
+  {
     id: 242582,
     title: "Nightcrawler",
     poster_url:
@@ -7742,6 +8683,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/2mxS4wUimwlLmI1xp6QW6NSU361.jpg",
     release_date: "2014-11-07",
     directors: ["Don Hall", "Chris Williams"],
+  },
+  {
+    id: 194662,
+    title: "Birdman or (The Unexpected Virtue of Ignorance)",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/rHUg2AuIuLSIYMYFgavVwqt1jtc.jpg",
+    release_date: "2014-11-14",
+    directors: ["Alejandro González Iñárritu"],
   },
   {
     id: 131631,
@@ -7792,6 +8741,14 @@ const MOVIES_DATA = [
     directors: ["Rupert Wyatt"],
   },
   {
+    id: 228967,
+    title: "The Interview",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/tIDC4xT65l7a8qbgg8GvwD5g8c5.jpg",
+    release_date: "2014-12-25",
+    directors: ["Evan Goldberg", "Seth Rogen"],
+  },
+  {
     id: 201088,
     title: "Blackhat",
     poster_url:
@@ -7805,6 +8762,14 @@ const MOVIES_DATA = [
     poster_url:
       "https://image.tmdb.org/t/p/w500/w6Sl079QtUcQ9dVQ2RP6aN9NBXx.jpg",
     release_date: "2015-01-16",
+  },
+  {
+    id: 190859,
+    title: "American Sniper",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/i1U46OwMc6vlm7OoSUKfqUH615e.jpg",
+    release_date: "2015-01-16",
+    directors: ["Clint Eastwood"],
   },
   {
     id: 216015,
@@ -7871,6 +8836,22 @@ const MOVIES_DATA = [
     directors: ["George Miller"],
   },
   {
+    id: 254128,
+    title: "San Andreas",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/2Gfjn962aaFSD6eST6QU3oLDZTo.jpg",
+    release_date: "2015-05-29",
+    directors: ["Brad Peyton"],
+  },
+  {
+    id: 238713,
+    title: "Spy",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/vPBmfMHxQvRRNGYD5S5ko2KnX56.jpg",
+    release_date: "2015-06-05",
+    directors: ["Paul Feig"],
+  },
+  {
     id: 135397,
     title: "Jurassic World",
     poster_url:
@@ -7927,6 +8908,14 @@ const MOVIES_DATA = [
     directors: ["Antoine Fuqua"],
   },
   {
+    id: 296099,
+    title: "Vacation",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/fYDALvoCt3DBlSWN6pSAnGQ9ld7.jpg",
+    release_date: "2015-07-29",
+    directors: ["John Francis Daley", "Jonathan Goldstein"],
+  },
+  {
     id: 294254,
     title: "Maze Runner: The Scorch Trials",
     poster_url:
@@ -7975,12 +8964,28 @@ const MOVIES_DATA = [
     directors: ["Sam Mendes"],
   },
   {
+    id: 312221,
+    title: "Creed",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/1BfTsk5VWuw8FCocAhCyqnRbEzq.jpg",
+    release_date: "2015-11-25",
+    directors: ["Ryan Coogler"],
+  },
+  {
     id: 140607,
     title: "Star Wars: The Force Awakens",
     poster_url:
       "https://image.tmdb.org/t/p/w500/wqnLdwVXoBjKibFRR5U3y0aDUhs.jpg",
     release_date: "2015-12-18",
     directors: ["J.J. Abrams"],
+  },
+  {
+    id: 318846,
+    title: "The Big Short",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/scVEaJEwP8zUix8vgmMoJJ9Nq0w.jpg",
+    release_date: "2015-12-23",
+    directors: ["Adam McKay"],
   },
   {
     id: 274167,
@@ -8029,6 +9034,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/3E53WEZJqP6aM84D8CckXx4pIHw.jpg",
     release_date: "2016-02-12",
     directors: ["Tim Miller"],
+  },
+  {
+    id: 310131,
+    title: "The Witch",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/zap5hpFCWSvdWSuPGAQyjUv2wAC.jpg",
+    release_date: "2016-02-19",
+    directors: ["Robert Eggers"],
   },
   {
     id: 269149,
@@ -8102,6 +9115,14 @@ const MOVIES_DATA = [
     directors: ["James Wan"],
   },
   {
+    id: 43074,
+    title: "Ghostbusters",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/AdN59IFDRGlNDoZVfLENujwd5yf.jpg",
+    release_date: "2016-07-15",
+    directors: ["Paul Feig"],
+  },
+  {
     id: 363676,
     title: "Sully",
     poster_url:
@@ -8110,20 +9131,20 @@ const MOVIES_DATA = [
     directors: ["Clint Eastwood"],
   },
   {
-    id: 348893,
-    title: "Boyka: Undisputed IV",
-    poster_url:
-      "https://image.tmdb.org/t/p/w500/7QGdIJWWTkPhVjpQ0zA6z69khod.jpg",
-    release_date: "2016-09-22",
-    directors: ["Todor Chapkanov"],
-  },
-  {
     id: 283366,
     title: "Miss Peregrine's Home for Peculiar Children",
     poster_url:
       "https://image.tmdb.org/t/p/w500/CIlbMFOfYDj0MP23hsIYhFGrL6.jpg",
     release_date: "2016-09-30",
     directors: ["Tim Burton"],
+  },
+  {
+    id: 302946,
+    title: "The Accountant",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/fceheXB5fC4WrLVuWJ6OZv9FXYr.jpg",
+    release_date: "2016-10-14",
+    directors: ["Gavin O'Connor"],
   },
   {
     id: 343611,
@@ -8214,6 +9235,14 @@ const MOVIES_DATA = [
     directors: ["John Hamburg"],
   },
   {
+    id: 381284,
+    title: "Hidden Figures",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/9lfz2W2uGjyow3am00rsPJ8iOyq.jpg",
+    release_date: "2016-12-25",
+    directors: ["Theodore Melfi"],
+  },
+  {
     id: 381288,
     title: "Split",
     poster_url:
@@ -8252,6 +9281,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/fnbjcRDYn6YviCcePDnGdyAkYsB.jpg",
     release_date: "2017-03-03",
     directors: ["James Mangold"],
+  },
+  {
+    id: 293167,
+    title: "Kong: Skull Island",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/r2517Vz9EhDhj88qwbDVj8DCRZN.jpg",
+    release_date: "2017-03-10",
+    directors: ["Jordan Vogt-Roberts"],
   },
   {
     id: 321612,
@@ -8407,12 +9444,28 @@ const MOVIES_DATA = [
     directors: ["Jake Kasdan"],
   },
   {
+    id: 399055,
+    title: "The Shape of Water",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/9zfwPffUXpBrEP26yp0q1ckXDcj.jpg",
+    release_date: "2017-12-22",
+    directors: ["Guillermo del Toro"],
+  },
+  {
     id: 398818,
     title: "Call Me by Your Name",
     poster_url:
       "https://image.tmdb.org/t/p/w500/mZ4gBdfkhP9tvLH1DO4m4HYtiyi.jpg",
     release_date: "2018-01-19",
     directors: ["Luca Guadagnino"],
+  },
+  {
+    id: 449443,
+    title: "Den of Thieves",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/4cahr8gscRMjxbOJ8PddKGjH5NB.jpg",
+    release_date: "2018-01-19",
+    directors: ["Christian Gudegast"],
   },
   {
     id: 336843,
@@ -8429,6 +9482,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/uxzzxijgPIY7slzFvMotPv8wjKA.jpg",
     release_date: "2018-02-16",
     directors: ["Ryan Coogler"],
+  },
+  {
+    id: 300668,
+    title: "Annihilation",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/4YRplSk6BhH6PRuE9gfyw9byUJ6.jpg",
+    release_date: "2018-02-23",
+    directors: ["Alex Garland"],
   },
   {
     id: 333339,
@@ -8583,6 +9644,14 @@ const MOVIES_DATA = [
     directors: ["Ruben Fleischer"],
   },
   {
+    id: 332562,
+    title: "A Star Is Born",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/wrFpXMNBRj2PBiN4Z5kix51XaIZ.jpg",
+    release_date: "2018-10-05",
+    directors: ["Bradley Cooper"],
+  },
+  {
     id: 424694,
     title: "Bohemian Rhapsody",
     poster_url:
@@ -8597,6 +9666,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/smxA8yvZ0LzDPer9BIRd4pyOpx1.jpg",
     release_date: "2018-11-09",
     directors: ["Yarrow Cheney", "Scott Mosier"],
+  },
+  {
+    id: 401469,
+    title: "Widows",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/d31SGJSaX29ba5ZUbZcesGoDE7I.jpg",
+    release_date: "2018-11-16",
+    directors: ["Steve McQueen"],
   },
   {
     id: 490132,
@@ -8615,20 +9692,20 @@ const MOVIES_DATA = [
     directors: ["Bob Persichetti", "Peter Ramsey", "Rodney Rothman"],
   },
   {
+    id: 297802,
+    title: "Aquaman",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/ufl63EFcc5XpByEV2Ecdw6WJZAI.jpg",
+    release_date: "2018-12-21",
+    directors: ["James Wan"],
+  },
+  {
     id: 399579,
     title: "Alita: Battle Angel",
     poster_url:
       "https://image.tmdb.org/t/p/w500/xRWht48C2V8XNfzvPehyClOvDni.jpg",
     release_date: "2019-02-14",
     directors: ["Robert Rodriguez"],
-  },
-  {
-    id: 166428,
-    title: "How to Train Your Dragon: The Hidden World",
-    poster_url:
-      "https://image.tmdb.org/t/p/w500/xvx4Yhf0DVH8G4LzNISpMfFBDy2.jpg",
-    release_date: "2019-02-22",
-    directors: ["Dean DeBlois"],
   },
   {
     id: 299537,
@@ -8694,6 +9771,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/cCTJPelKGLhALq3r51A9uMonxKj.jpg",
     release_date: "2019-06-07",
     directors: ["Simon Kinberg"],
+  },
+  {
+    id: 479455,
+    title: "Men in Black: International",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/dPrUPFcgLfNbmDL8V69vcrTyEfb.jpg",
+    release_date: "2019-06-14",
+    directors: ["F. Gary Gray"],
   },
   {
     id: 301528,
@@ -8769,6 +9854,14 @@ const MOVIES_DATA = [
     directors: ["Todd Phillips"],
   },
   {
+    id: 398978,
+    title: "The Irishman",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/mbm8k3GFhXS0ROd9AD1gqYbIFbM.jpg",
+    release_date: "2019-11-01",
+    directors: ["Martin Scorsese"],
+  },
+  {
     id: 359724,
     title: "Ford v Ferrari",
     poster_url:
@@ -8807,6 +9900,14 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/db32LaOibwEliAmSL2jjDF6oDdj.jpg",
     release_date: "2019-12-20",
     directors: ["J.J. Abrams"],
+  },
+  {
+    id: 473033,
+    title: "Uncut Gems",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/6XN1vxHc7kUSqNWtaQKN45J5x2v.jpg",
+    release_date: "2019-12-25",
+    directors: ["Benny Safdie", "Josh Safdie"],
   },
   {
     id: 530915,
@@ -9684,6 +10785,14 @@ const MOVIES_DATA = [
     directors: ["Adam Wingard"],
   },
   {
+    id: 653346,
+    title: "Kingdom of the Planet of the Apes",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/gKkl37BQuKTanygYQG1pyYgLVgf.jpg",
+    release_date: "2024-05-10",
+    directors: ["Wes Ball"],
+  },
+  {
     id: 786892,
     title: "Furiosa: A Mad Max Saga",
     poster_url:
@@ -10008,6 +11117,14 @@ const MOVIES_DATA = [
     showDirector: true,
   },
   {
+    id: 628847,
+    title: "Trap House",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/6tpAPeuuqbVnYWWPoOLEDLSBU7a.jpg",
+    release_date: "2025-11-14",
+    directors: ["Michael Dowse"],
+  },
+  {
     id: 967941,
     title: "Wicked: For Good",
     poster_url:
@@ -10046,5 +11163,21 @@ const MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/cf7hE1ifY4UNbS25tGnaTyyDrI2.jpg",
     release_date: "2025-12-19",
     directors: ["James Cameron"],
+  },
+  {
+    id: 1368166,
+    title: "The Housemaid",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/cWsBscZzwu5brg9YjNkGewRUvJX.jpg",
+    release_date: "2025-12-19",
+    directors: ["Paul Feig"],
+  },
+  {
+    id: 1234731,
+    title: "Anaconda",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/5MDnvvkOqthhE5gQebzkcOhD1p5.jpg",
+    release_date: "2025-12-25",
+    directors: ["Tom Gormican"],
   },
 ];
