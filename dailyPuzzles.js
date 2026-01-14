@@ -9,8 +9,8 @@ const PUZZLE_SCHEDULE = {
   "2026-01-12": "amnfm",
   "2026-01-13": "m4k7r",
   "2026-01-14": "qc9xe",
-  "2026-01-15": "b2f6n",
-  "2026-01-16": "r5t1q",
+  "2026-01-15": "jgns2",
+  "2026-01-16": "r5t1q"
 };
 
 const DAILY_PUZZLES = [
@@ -127,6 +127,24 @@ const DAILY_PUZZLES = [
       325348, // Hardcore Henry (Apr 8, 2016)
       11884, // The Last Starfighter (Jul 13, 1984)
       18501, // Gamer (Sep 4, 2009)
+    ],
+  },
+    {
+    id: "jgns2",
+    theme: "Speed",
+    description: "",
+    movieIds: [
+      1637, // Speed (Jun 9, 1994)
+      2119, // Days of Thunder (Jun 27, 1990)
+      7459, // Speed Racer (May 9, 2008)
+      9659, // Mad Max (May 2, 1980)
+      13282, // Death Race 2000 (Apr 30, 1975)
+      11286, // The Cannonball Run (Jun 19, 1981)
+      911430, // F1 (Jun 27, 2025)
+      5920, // Le Mans (Jun 23, 1971)
+      916, // Bullitt (Oct 17, 1968)
+      525, // The Blues Brothers (Jun 16, 1980)
+      64690, // Drive (Sep 16, 2011)
     ],
   },
   // Future puzzles will be added here

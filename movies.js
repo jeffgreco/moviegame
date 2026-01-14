@@ -1,6 +1,6 @@
 // Movie data from TMDB
-// Last updated: 2026-01-14T04:06:44.948Z
-// Total movies: 1399
+// Last updated: 2026-01-14T16:07:34.643Z
+// Total movies: 1404
 
 var MOVIES_DATA = [
   {
@@ -10,7 +10,8 @@ var MOVIES_DATA = [
     "release_date": "1953-08-13",
     "directors": [
       "Byron Haskin"
-    ]
+    ],
+    "showDirector": true
   },
   {
     "id": 539,
@@ -307,6 +308,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 5920,
+    "title": "Le Mans",
+    "poster_url": "https://image.tmdb.org/t/p/w500/45lMKp75PCDuTS4Or8B48FehY1z.jpg",
+    "release_date": "1971-06-23",
+    "directors": [
+      "Lee H. Katzin"
+    ]
+  },
+  {
     "id": 252,
     "title": "Willy Wonka & the Chocolate Factory",
     "poster_url": "https://image.tmdb.org/t/p/w500/vmpsZkrs4Uvkp9r1atL8B3frA63.jpg",
@@ -430,7 +440,8 @@ var MOVIES_DATA = [
     "release_date": "1972-12-13",
     "directors": [
       "Sam Peckinpah"
-    ]
+    ],
+    "showDirector": true
   },
   {
     "id": 551,
@@ -6149,6 +6160,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 9799,
+    "title": "The Fast and the Furious",
+    "poster_url": "https://image.tmdb.org/t/p/w500/gqY0ITBgT7A82poL9jv851qdnIb.jpg",
+    "release_date": "2001-06-22",
+    "directors": [
+      "Rob Cohen"
+    ]
+  },
+  {
     "id": 644,
     "title": "A.I. Artificial Intelligence",
     "poster_url": "https://image.tmdb.org/t/p/w500/8MZSGX5JORoO72EfuAEcejH5yHn.jpg",
@@ -7620,6 +7640,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 9718,
+    "title": "Talladega Nights: The Ballad of Ricky Bobby",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3iCiTqsmJz1mO85AHzTiHNkRmb6.jpg",
+    "release_date": "2006-08-04",
+    "directors": [
+      "Adam McKay"
+    ]
+  },
+  {
     "id": 9788,
     "title": "Accepted",
     "poster_url": "https://image.tmdb.org/t/p/w500/pMh1dCw5vhMATmJs0ve0OpoSVED.jpg",
@@ -8046,6 +8075,16 @@ var MOVIES_DATA = [
     "release_date": "2008-05-02",
     "directors": [
       "Jon Favreau"
+    ]
+  },
+  {
+    "id": 7459,
+    "title": "Speed Racer",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fxRIpx9Op9h71q3tvuabx4GryyP.jpg",
+    "release_date": "2008-05-09",
+    "directors": [
+      "Lana Wachowski",
+      "Lilly Wachowski"
     ]
   },
   {
@@ -9463,6 +9502,15 @@ var MOVIES_DATA = [
     "release_date": "2013-09-27",
     "directors": [
       "Joseph Gordon-Levitt"
+    ]
+  },
+  {
+    "id": 96721,
+    "title": "Rush",
+    "poster_url": "https://image.tmdb.org/t/p/w500/95BDrWmcfJDEa2WCfjmLgi67jhi.jpg",
+    "release_date": "2013-09-27",
+    "directors": [
+      "Ron Howard"
     ]
   },
   {
