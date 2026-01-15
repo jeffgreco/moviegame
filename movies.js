@@ -3479,11 +3479,11 @@ var MOVIES_DATA = [
     directors: ["Frank Marshall"],
   },
   {
-    id: 56149,
+    id: 13685,
     title: "Bottle Rocket",
     poster_url:
-      "https://image.tmdb.org/t/p/w500/3NIxuMUmChKL94BXudMMMsBDe8o.jpg",
-    release_date: "1993-01-21",
+      "https://image.tmdb.org/t/p/w500/neMZNRDqDbUkdlqTxNgQYwO85hM.jpg",
+    release_date: "1996-02-21",
     directors: ["Wes Anderson"],
   },
   {
