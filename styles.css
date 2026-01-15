@@ -1909,6 +1909,7 @@ main {
 
 .puzzle-stats-chart {
   width: 100%;
+  min-height: 80px;
 }
 
 .score-distribution {

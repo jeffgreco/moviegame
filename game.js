@@ -1274,11 +1274,11 @@ class MovieTimelineGame {
     // Find max count for scaling
     const maxCount = Math.max(...scoreMap.values(), 1);
 
-    // Render bar chart
+    // Render bar chart (start at 1 to hide score 0)
     const chartEl = document.getElementById("puzzle-stats-chart");
     let html = '<div class="score-distribution">';
 
-    for (let score = 0; score <= maxScore; score++) {
+    for (let score = 1; score <= maxScore; score++) {
       const count = scoreMap.get(score) || 0;
       const heightPercent = (count / maxCount) * 100;
       const isPlayerScore = score === playerScore;
@@ -1341,11 +1341,11 @@ class MovieTimelineGame {
     // Find max count for scaling
     const maxCount = Math.max(...scoreMap.values(), 1);
 
-    // Render bar chart
+    // Render bar chart (start at 1 to hide score 0)
     const chartEl = document.getElementById("puzzle-stats-chart");
     let html = '<div class="score-distribution">';
 
-    for (let score = 0; score <= maxScore; score++) {
+    for (let score = 1; score <= maxScore; score++) {
       const count = scoreMap.get(score) || 0;
       const heightPercent = (count / maxCount) * 100;
       const isPlayerScore = score === playerScore;
