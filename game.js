@@ -35,6 +35,9 @@ class MovieTimelineGame {
     this.archivePuzzle = null; // Puzzle data when playing from archive
     this.archivePuzzleNumber = null; // Puzzle number when playing from archive
 
+    // Decade mode state
+    this.selectedDecade = null; // Selected decade (e.g., 1970, 1980, etc.)
+
     // Game tracking
     this.tracker = typeof GameTracker !== 'undefined' ? new GameTracker(TRACKER_API_URL) : null;
 
@@ -166,6 +169,29 @@ class MovieTimelineGame {
         this.loadMoviesForMode();
         return;
       }
+    } else if (this.gameMode === "decade" && this.selectedDecade) {
+      // Decade mode: filter movies by decade
+      this.dailyPuzzle = null;
+      this.puzzleNumber = null;
+      const decadeStart = this.selectedDecade;
+      const decadeEnd = this.selectedDecade + 9;
+      this.movies = MOVIES_DATA.filter((movie) => {
+        const releaseDate = new Date(movie.release_date);
+        if (releaseDate > now) return false;
+        const year = releaseDate.getFullYear();
+        if (year < decadeStart || year > decadeEnd) return false;
+        if (seenIds.has(movie.id)) return false;
+        seenIds.add(movie.id);
+        return true;
+      });
+
+      // If not enough movies for this decade, fall back to random
+      if (this.movies.length < 10) {
+        this.selectedDecade = null;
+        this.gameMode = "random";
+        this.loadMoviesForMode();
+        return;
+      }
     } else {
       // Random mode: use all movies
       this.dailyPuzzle = null;
@@ -181,8 +207,8 @@ class MovieTimelineGame {
   }
 
   setupGame() {
-    // Only shuffle for random mode - daily and archive puzzles use pre-defined order
-    if (this.gameMode === "random") {
+    // Shuffle for random and decade modes - daily and archive puzzles use pre-defined order
+    if (this.gameMode === "random" || this.gameMode === "decade") {
       this.shuffleArray(this.movies);
     }
     // For daily and archive modes, movies are already in the curated order from dailyPuzzles.js
@@ -308,9 +334,10 @@ class MovieTimelineGame {
     return true;
   }
 
-  switchMode(newMode) {
+  switchMode(newMode, decade = null) {
     const wasChallenge = this.isChallenge;
     const wasArchive = this.gameMode === "archive";
+    const wasDecade = this.gameMode === "decade";
 
     // Clear challenge state when switching modes
     if (this.isChallenge) {
@@ -324,6 +351,16 @@ class MovieTimelineGame {
     if (wasArchive) {
       this.archivePuzzle = null;
       this.archivePuzzleNumber = null;
+    }
+
+    // Clear decade state when switching to non-decade mode
+    if (wasDecade && newMode !== "decade") {
+      this.selectedDecade = null;
+    }
+
+    // Set decade if switching to decade mode
+    if (newMode === "decade" && decade) {
+      this.selectedDecade = decade;
     }
 
     // Clear URL parameters when switching modes
@@ -354,19 +391,38 @@ class MovieTimelineGame {
         challengeIndicator.classList.remove("hidden");
         challengeIndicator.textContent = `Beat ${this.challengeScore} to win!`;
       }
+    } else if (this.gameMode === "decade") {
+      // For decade mode, show neither button as active and display decade indicator
+      randomBtn.classList.remove("active");
+      dailyBtn.classList.remove("active");
+      if (challengeIndicator) {
+        challengeIndicator.classList.remove("hidden");
+        challengeIndicator.textContent = `${this.selectedDecade}s`;
+        challengeIndicator.classList.add("decade-indicator");
+        challengeIndicator.classList.remove("beaten");
+      }
     } else if (this.gameMode === "random") {
       randomBtn.classList.add("active");
       dailyBtn.classList.remove("active");
-      if (challengeIndicator) challengeIndicator.classList.add("hidden");
+      if (challengeIndicator) {
+        challengeIndicator.classList.add("hidden");
+        challengeIndicator.classList.remove("decade-indicator");
+      }
     } else if (this.gameMode === "archive") {
       // For archive mode, show neither button as active
       randomBtn.classList.remove("active");
       dailyBtn.classList.remove("active");
-      if (challengeIndicator) challengeIndicator.classList.add("hidden");
+      if (challengeIndicator) {
+        challengeIndicator.classList.add("hidden");
+        challengeIndicator.classList.remove("decade-indicator");
+      }
     } else {
       dailyBtn.classList.add("active");
       randomBtn.classList.remove("active");
-      if (challengeIndicator) challengeIndicator.classList.add("hidden");
+      if (challengeIndicator) {
+        challengeIndicator.classList.add("hidden");
+        challengeIndicator.classList.remove("decade-indicator");
+      }
     }
   }
 
@@ -447,6 +503,11 @@ class MovieTimelineGame {
       gameData.puzzleNumber = this.puzzleNumber || this.archivePuzzleNumber || null;
       gameData.puzzleTheme = this.dailyPuzzle?.theme || null;
       gameData.totalMovies = this.dailyPuzzle?.movieIds?.length || null;
+    }
+
+    // Add decade-specific data for decade mode
+    if (this.gameMode === 'decade' && this.selectedDecade) {
+      gameData.decade = this.selectedDecade;
     }
 
     try {
@@ -581,6 +642,34 @@ class MovieTimelineGame {
       this.closeArchive();
     });
 
+    // Decades submenu
+    const decadesSubmenu = document.querySelector(".dropdown-submenu");
+    const decadesTrigger = document.getElementById("menu-decades");
+    const decadesContent = document.querySelector(".dropdown-submenu-content");
+
+    if (decadesTrigger && decadesContent) {
+      decadesTrigger.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        decadesSubmenu.classList.toggle("open");
+        decadesContent.classList.toggle("hidden");
+      });
+
+      // Decade option click handlers
+      document.querySelectorAll(".decade-option").forEach((option) => {
+        option.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const decade = parseInt(option.dataset.decade);
+          logoDropdown.classList.remove("open");
+          dropdownMenu.classList.add("hidden");
+          decadesSubmenu.classList.remove("open");
+          decadesContent.classList.add("hidden");
+          this.switchMode("decade", decade);
+        });
+      });
+    }
+
     // Close archive when clicking outside content
     document.getElementById("archive-modal").addEventListener("click", (e) => {
       if (e.target.id === "archive-modal") {
@@ -698,6 +787,8 @@ class MovieTimelineGame {
     ) {
       const maxScore = this.dailyPuzzle.movieIds.length - 1; // First movie doesn't count
       text = `Filmstrip #${this.puzzleNumber} - ${this.dailyPuzzle.theme}\n${score}/${maxScore} 🎬`;
+    } else if (this.gameMode === "decade" && this.selectedDecade) {
+      text = `I scored ${score} on Filmstrip ${this.selectedDecade}s! Can you beat my score?`;
     } else {
       text = `I scored ${score} on Filmstrip! Can you beat my score?`;
     }
@@ -1178,7 +1269,7 @@ class MovieTimelineGame {
       gameOverContent.classList.remove("perfect-score");
     }
 
-    // Show puzzle stats for daily/archive modes, or random stats for random mode
+    // Show puzzle stats for daily/archive modes, random stats for random mode, or decade stats for decade mode
     if (isPuzzleMode && this.dailyPuzzle?.id) {
       finalScoreEl.classList.add("hidden");
       puzzleStatsEl.classList.remove("hidden");
@@ -1186,6 +1277,13 @@ class MovieTimelineGame {
       document.getElementById("puzzle-stats-percentile").innerHTML =
         `You scored <span class="score-value">${this.bestStreak}</span>`;
       this.loadPuzzleStats(this.dailyPuzzle.id);
+    } else if (this.gameMode === "decade" && this.selectedDecade) {
+      finalScoreEl.classList.add("hidden");
+      puzzleStatsEl.classList.remove("hidden");
+      // Show score immediately while chart loads
+      document.getElementById("puzzle-stats-percentile").innerHTML =
+        `You scored <span class="score-value">${this.bestStreak}</span> in the ${this.selectedDecade}s`;
+      this.loadDecadeStats(this.selectedDecade);
     } else if (this.gameMode === "random") {
       finalScoreEl.classList.add("hidden");
       puzzleStatsEl.classList.remove("hidden");
@@ -1201,7 +1299,8 @@ class MovieTimelineGame {
 
     // Update play again button text based on mode
     const playAgainBtn = document.getElementById("play-again");
-    playAgainBtn.textContent = isPuzzleMode ? "Play Random" : "Play Again";
+    const isDecadeMode = this.gameMode === "decade";
+    playAgainBtn.textContent = isPuzzleMode ? "Play Random" : (isDecadeMode ? `Play ${this.selectedDecade}s Again` : "Play Again");
 
     // Show challenge button for random mode (not for daily or when already in a challenge)
     if (this.gameMode === "random" && !this.isChallenge) {
@@ -1326,6 +1425,73 @@ class MovieTimelineGame {
       headerEl.innerHTML = `You scored <span class="score-value">${playerScore}</span> — better than <span class="percentile-value">${percentile}%</span> of recent games`;
     } else {
       headerEl.innerHTML = `You scored <span class="score-value">${playerScore}</span>`;
+    }
+
+    // Build score map (fill in zeros for missing scores)
+    const scoreMap = new Map();
+    for (let i = 0; i <= maxScore; i++) {
+      scoreMap.set(i, 0);
+    }
+    distribution.forEach(d => scoreMap.set(d.score, d.count));
+
+    // Add player's score to the distribution
+    scoreMap.set(playerScore, (scoreMap.get(playerScore) || 0) + 1);
+
+    // Find max count for scaling
+    const maxCount = Math.max(...scoreMap.values(), 1);
+
+    // Render bar chart (start at 1 to hide score 0)
+    const chartEl = document.getElementById("puzzle-stats-chart");
+    let html = '<div class="score-distribution">';
+
+    for (let score = 1; score <= maxScore; score++) {
+      const count = scoreMap.get(score) || 0;
+      const heightPercent = (count / maxCount) * 100;
+      const isPlayerScore = score === playerScore;
+
+      html += `
+        <div class="score-bar-container${isPlayerScore ? ' player-score' : ''}">
+          <div class="score-bar" style="height: ${heightPercent}%"></div>
+          <div class="score-label">${score}</div>
+        </div>
+      `;
+    }
+
+    html += '</div>';
+    chartEl.innerHTML = html;
+  }
+
+  async loadDecadeStats(decade) {
+    if (!this.tracker) return;
+
+    try {
+      const stats = await this.tracker.getDecadeStats(decade, 50);
+      if (stats && stats.scoreDistribution && stats.scoreDistribution.length > 0) {
+        this.renderDecadeStatsChart(stats, this.bestStreak, decade);
+      }
+    } catch (e) {
+      console.warn('Failed to load decade stats:', e);
+    }
+  }
+
+  renderDecadeStatsChart(stats, playerScore, decade) {
+    const distribution = stats.scoreDistribution || [];
+    const totalGames = stats.totalGames || 0;
+    const maxScore = stats.maxScore || Math.max(...distribution.map(d => d.score), playerScore);
+
+    // Calculate percentile (how many games scored lower)
+    let gamesBelow = 0;
+    distribution.forEach(d => {
+      if (d.score < playerScore) gamesBelow += d.count;
+    });
+    const percentile = totalGames > 0 ? Math.round((gamesBelow / totalGames) * 100) : 0;
+
+    // Update header
+    const headerEl = document.getElementById("puzzle-stats-percentile");
+    if (totalGames > 1) {
+      headerEl.innerHTML = `You scored <span class="score-value">${playerScore}</span> in the ${decade}s — better than <span class="percentile-value">${percentile}%</span> of games`;
+    } else {
+      headerEl.innerHTML = `You scored <span class="score-value">${playerScore}</span> in the ${decade}s`;
     }
 
     // Build score map (fill in zeros for missing scores)
