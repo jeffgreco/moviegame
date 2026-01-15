@@ -135,6 +135,23 @@ class GameTracker {
       return null;
     }
   }
+
+  /**
+   * Fetch stats for recent random games
+   */
+  async getRandomStats(limit = 50) {
+    if (!this.enabled) return null;
+
+    try {
+      const response = await fetch(`${this.apiBaseUrl}/api/random-stats?limit=${limit}`);
+      if (!response.ok) return null;
+
+      return await response.json();
+    } catch (err) {
+      console.warn('Tracker: Failed to fetch random stats', err);
+      return null;
+    }
+  }
 }
 
 /**
