@@ -10,7 +10,7 @@ const PUZZLE_SCHEDULE = {
   "2026-01-13": "m4k7r",
   "2026-01-14": "qc9xe",
   "2026-01-15": "jgns2",
-  "2026-01-16": "r5t1q"
+  "2026-01-16": "dhk7k"
 };
 
 const DAILY_PUZZLES = [
@@ -145,6 +145,25 @@ const DAILY_PUZZLES = [
       916, // Bullitt (Oct 17, 1968)
       525, // The Blues Brothers (Jun 16, 1980)
       64690, // Drive (Sep 16, 2011)
+    ],
+  },
+    {
+    id: "dhk7k",
+    theme: "Cats & Dogs",
+    description: "",
+    movieIds: [
+      10992, // Cats & Dogs (Jul 4, 2001)
+      9598, // Babe (Aug 4, 1995)
+      448119, // Dolittle (Jan 17, 2020)
+      9986, // Charlotte's Web (Dec 15, 2006)
+      10137, // Stuart Little (Dec 17, 1999)
+      912908, // Strays (Aug 18, 2023)
+      411, // The Chronicles of Narnia: The Lion, the Witch and the Wardrobe (Dec 9, 2005)
+      454626, // Sonic the Hedgehog (Feb 14, 2020)
+      6878, // Homeward Bound: The Incredible Journey (Feb 12, 1993)
+      20723, // That Darn Cat! (Dec 2, 1965)
+      47951, // The Adventures of Milo and Otis (Aug 25, 1989)
+      165013, // A Talking Cat!?! (Feb 18, 2013)
     ],
   },
   // Future puzzles will be added here
