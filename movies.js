@@ -3492,7 +3492,7 @@ var MOVIES_DATA = [
     id: 13685,
     title: "Bottle Rocket",
     poster_url:
-      "https://image.tmdb.org/t/p/w500/neMZNRDqDbUkdlqTxNgQYwO85hM.jpg",
+      "https://image.tmdb.org/t/p/w500/wOPiNYt9V3Cbr9Izeddwj7nU8RT.jpg",
     release_date: "1996-02-21",
     directors: ["Wes Anderson"],
   },
