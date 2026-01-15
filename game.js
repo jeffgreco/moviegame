@@ -1178,7 +1178,7 @@ class MovieTimelineGame {
       gameOverContent.classList.remove("perfect-score");
     }
 
-    // Show puzzle stats for daily/archive modes, or simple score for random mode
+    // Show puzzle stats for daily/archive modes, or random stats for random mode
     if (isPuzzleMode && this.dailyPuzzle?.id) {
       finalScoreEl.classList.add("hidden");
       puzzleStatsEl.classList.remove("hidden");
@@ -1186,6 +1186,13 @@ class MovieTimelineGame {
       document.getElementById("puzzle-stats-percentile").innerHTML =
         `You scored <span class="score-value">${this.bestStreak}</span>`;
       this.loadPuzzleStats(this.dailyPuzzle.id);
+    } else if (this.gameMode === "random") {
+      finalScoreEl.classList.add("hidden");
+      puzzleStatsEl.classList.remove("hidden");
+      // Show score immediately while chart loads
+      document.getElementById("puzzle-stats-percentile").innerHTML =
+        `You scored <span class="score-value">${this.bestStreak}</span>`;
+      this.loadRandomStats();
     } else {
       puzzleStatsEl.classList.add("hidden");
       finalScoreEl.classList.remove("hidden");
@@ -1250,6 +1257,73 @@ class MovieTimelineGame {
     const headerEl = document.getElementById("puzzle-stats-percentile");
     if (totalPlayers > 1) {
       headerEl.innerHTML = `You scored <span class="score-value">${playerScore}</span> — better than <span class="percentile-value">${percentile}%</span> of players`;
+    } else {
+      headerEl.innerHTML = `You scored <span class="score-value">${playerScore}</span>`;
+    }
+
+    // Build score map (fill in zeros for missing scores)
+    const scoreMap = new Map();
+    for (let i = 0; i <= maxScore; i++) {
+      scoreMap.set(i, 0);
+    }
+    distribution.forEach(d => scoreMap.set(d.score, d.count));
+
+    // Add player's score to the distribution
+    scoreMap.set(playerScore, (scoreMap.get(playerScore) || 0) + 1);
+
+    // Find max count for scaling
+    const maxCount = Math.max(...scoreMap.values(), 1);
+
+    // Render bar chart
+    const chartEl = document.getElementById("puzzle-stats-chart");
+    let html = '<div class="score-distribution">';
+
+    for (let score = 0; score <= maxScore; score++) {
+      const count = scoreMap.get(score) || 0;
+      const heightPercent = (count / maxCount) * 100;
+      const isPlayerScore = score === playerScore;
+
+      html += `
+        <div class="score-bar-container${isPlayerScore ? ' player-score' : ''}">
+          <div class="score-bar" style="height: ${heightPercent}%"></div>
+          <div class="score-label">${score}</div>
+        </div>
+      `;
+    }
+
+    html += '</div>';
+    chartEl.innerHTML = html;
+  }
+
+  async loadRandomStats() {
+    if (!this.tracker) return;
+
+    try {
+      const stats = await this.tracker.getRandomStats(50);
+      if (stats && stats.scoreDistribution && stats.scoreDistribution.length > 0) {
+        this.renderRandomStatsChart(stats, this.bestStreak);
+      }
+    } catch (e) {
+      console.warn('Failed to load random stats:', e);
+    }
+  }
+
+  renderRandomStatsChart(stats, playerScore) {
+    const distribution = stats.scoreDistribution || [];
+    const totalGames = stats.totalGames || 0;
+    const maxScore = stats.maxScore || Math.max(...distribution.map(d => d.score), playerScore);
+
+    // Calculate percentile (how many games scored lower)
+    let gamesBelow = 0;
+    distribution.forEach(d => {
+      if (d.score < playerScore) gamesBelow += d.count;
+    });
+    const percentile = totalGames > 0 ? Math.round((gamesBelow / totalGames) * 100) : 0;
+
+    // Update header
+    const headerEl = document.getElementById("puzzle-stats-percentile");
+    if (totalGames > 1) {
+      headerEl.innerHTML = `You scored <span class="score-value">${playerScore}</span> — better than <span class="percentile-value">${percentile}%</span> of recent games`;
     } else {
       headerEl.innerHTML = `You scored <span class="score-value">${playerScore}</span>`;
     }
