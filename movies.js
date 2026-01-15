@@ -1,6 +1,6 @@
 // Movie data from TMDB
-// Last updated: 2026-01-14T16:07:34.643Z
-// Total movies: 1404
+// Last updated: 2026-01-15T03:24:13.664Z
+// Total movies: 1405
 
 var MOVIES_DATA = [
   {
@@ -53,6 +53,7 @@ var MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/vaBQKLbSWkXGTOlsz9ARdJP4lvg.jpg",
     release_date: "1968-09-25",
     directors: ["Franco Zeffirelli"],
+    showDirector: true,
   },
   {
     id: 10331,
@@ -520,6 +521,14 @@ var MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/rNksI6UiuTgLtBy69WvKT1PrG0R.jpg",
     release_date: "1974-07-24",
     directors: ["Michael Winner"],
+  },
+  {
+    id: 4985,
+    title: "The Longest Yard",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/fejSpoFU4sq2g6n1JA2NY3KjRxW.jpg",
+    release_date: "1974-08-21",
+    directors: ["Robert Aldrich"],
   },
   {
     id: 30497,
@@ -1555,6 +1564,7 @@ var MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/a2GkHcioc2QEFJbQk1NTB85u3vD.jpg",
     release_date: "1984-08-10",
     directors: ["John Milius"],
+    showDirector: true,
   },
   {
     id: 279,
@@ -4510,6 +4520,7 @@ var MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/eLf4jclPijOqfEp6bDAmezRFxk5.jpg",
     release_date: "1996-11-01",
     directors: ["Baz Luhrmann"],
+    showDirector: true,
   },
   {
     id: 9279,
@@ -8322,6 +8333,7 @@ var MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/tyxfCBQv6Ap74jcu3xd7aBiaa29.jpg",
     release_date: "2013-05-10",
     directors: ["Baz Luhrmann"],
+    showDirector: true,
   },
   {
     id: 75656,
@@ -10481,6 +10493,14 @@ var MOVIES_DATA = [
       "https://image.tmdb.org/t/p/w500/p9ZUzCyy9wRTDuuQexkQ78R2BgF.jpg",
     release_date: "2022-06-24",
     directors: ["Scott Derrickson"],
+  },
+  {
+    id: 614934,
+    title: "Elvis",
+    poster_url:
+      "https://image.tmdb.org/t/p/w500/rva3UhKaMeiB0Vej5A2pm1leX7K.jpg",
+    release_date: "2022-06-24",
+    directors: ["Baz Luhrmann"],
   },
   {
     id: 616037,
