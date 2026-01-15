@@ -6,6 +6,7 @@
  * GET  /api/history       - Get player's score history
  * GET  /api/puzzle/:id    - Get stats for a specific puzzle
  * GET  /api/stats         - Get overall statistics
+ * GET  /api/random-stats  - Get score distribution for recent random games
  */
 
 // Rate limit: max submissions per player per hour
@@ -62,6 +63,10 @@ export default {
 
       if (path === '/api/stats' && request.method === 'GET') {
         return await handleStats(env, corsHeaders);
+      }
+
+      if (path === '/api/random-stats' && request.method === 'GET') {
+        return await handleRandomStats(url, env, corsHeaders);
       }
 
       // Health check
@@ -303,6 +308,54 @@ async function handleStats(env, corsHeaders) {
       averageStreak: randomStats?.avg_streak || 0
     },
     gamesToday: recentActivity?.games_today || 0
+  }, corsHeaders);
+}
+
+/**
+ * Get stats for recent random games (score distribution)
+ */
+async function handleRandomStats(url, env, corsHeaders) {
+  const limit = Math.min(parseInt(url.searchParams.get('limit') || '50'), 100);
+
+  // Get the most recent random games
+  const recentGames = await env.DB.prepare(`
+    SELECT score
+    FROM game_completions
+    WHERE game_mode = 'random'
+    ORDER BY completed_at DESC
+    LIMIT ?
+  `).bind(limit).all();
+
+  if (!recentGames.results || recentGames.results.length === 0) {
+    return jsonResponse({
+      scoreDistribution: [],
+      totalGames: 0,
+      maxScore: 0
+    }, corsHeaders);
+  }
+
+  // Calculate score distribution from recent games
+  const scores = recentGames.results.map(r => r.score);
+  const maxScore = Math.max(...scores);
+  const totalGames = scores.length;
+
+  // Count occurrences of each score
+  const scoreCounts = new Map();
+  scores.forEach(score => {
+    scoreCounts.set(score, (scoreCounts.get(score) || 0) + 1);
+  });
+
+  // Convert to array format
+  const scoreDistribution = [];
+  for (const [score, count] of scoreCounts.entries()) {
+    scoreDistribution.push({ score, count });
+  }
+  scoreDistribution.sort((a, b) => a.score - b.score);
+
+  return jsonResponse({
+    scoreDistribution,
+    totalGames,
+    maxScore
   }, corsHeaders);
 }
 
