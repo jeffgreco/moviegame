@@ -3,3 +3,8 @@ node_modules/
 .DS_Store
 *.log
 _site/
+
+# Test artifacts
+playwright-report/
+test-results/
+coverage/
