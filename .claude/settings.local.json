@@ -7,7 +7,11 @@
       "Bash(npx wrangler:*)",
       "Bash(npx esbuild:*)",
       "Bash(gzip:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(npm run test:unit:*)",
+      "Bash(npm run test:e2e:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ]
   }
 }
