@@ -1067,7 +1067,6 @@ main {
   font-size: 0.85rem;
   font-weight: bold;
   text-align: center;
-  animation: pulse-challenge 2s infinite;
 }
 
 .challenge-indicator.hidden {
@@ -1077,18 +1076,8 @@ main {
 .challenge-indicator.beaten {
   background: linear-gradient(135deg, #4caf50, #2e7d32);
   color: white;
-  animation: none;
 }
 
-@keyframes pulse-challenge {
-  0%,
-  100% {
-    box-shadow: 0 0 5px rgba(201, 169, 97, 0.5);
-  }
-  50% {
-    box-shadow: 0 0 15px rgba(201, 169, 97, 0.8);
-  }
-}
 
 .challenge-btn {
   padding: 0.75rem 2rem;
@@ -1465,6 +1454,12 @@ main {
 /* Logo Dropdown Menu */
 .logo-dropdown {
   position: relative;
+}
+
+.logo-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .logo-trigger {

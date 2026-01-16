@@ -46,16 +46,19 @@
     <div class="game-container">
       <header>
         <div class="logo-dropdown">
-          <h1 class="logo-trigger">
-            Filmstrip
-            <svg
-              class="dropdown-arrow"
-              viewBox="5 8 14 10"
-              fill="currentColor"
-            >
-              <path d="M7 10l5 5 5-5z" />
-            </svg>
-          </h1>
+          <div class="logo-row">
+            <h1 class="logo-trigger">
+              Filmstrip
+              <svg
+                class="dropdown-arrow"
+                viewBox="5 8 14 10"
+                fill="currentColor"
+              >
+                <path d="M7 10l5 5 5-5z" />
+              </svg>
+            </h1>
+            <div id="challenge-indicator" class="challenge-indicator hidden"></div>
+          </div>
           <div class="dropdown-menu hidden">
             <a href="#" id="menu-help" class="dropdown-item">How to Play</a>
             <a href="#" id="menu-archive" class="dropdown-item">Archive</a>
@@ -88,7 +91,6 @@
           <button id="daily-mode-btn" class="mode-btn">Daily</button>
           <button id="random-mode-btn" class="mode-btn active">Random</button>
         </div>
-        <div id="challenge-indicator" class="challenge-indicator hidden"></div>
         <div class="stats">
           <span class="score">Score: <span id="score">0</span></span>
         </div>
