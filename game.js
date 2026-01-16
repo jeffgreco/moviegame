@@ -80,6 +80,7 @@ class MovieTimelineGame {
     this.loadMoviesForMode();
     this.setupGame();
     this.setupEventListeners();
+    this.setupPosterZoom();
     this.updateModeButtons();
 
     // Show welcome modal for first-time visitors
@@ -943,6 +944,20 @@ class MovieTimelineGame {
       );
       card.addEventListener("touchmove", (e) => this.handleTouchMove(e, card));
       card.addEventListener("touchend", (e) => this.handleTouchEnd(e, card));
+    }
+
+    // Add poster zoom click handler
+    const posterImg = card.querySelector('.poster');
+    if (posterImg) {
+      posterImg.addEventListener('click', (e) => {
+        // Don't zoom if card is being dragged or selected for placement
+        if (this.draggedElement || (inPile && this.isCardSelected)) {
+          return;
+        }
+        // Prevent the click from bubbling to card selection
+        e.stopPropagation();
+        this.openPosterZoom(posterImg.src);
+      });
     }
 
     return card;
@@ -1851,6 +1866,11 @@ class MovieTimelineGame {
                 }
             `;
 
+      // Add click handler for poster zoom
+      item.addEventListener('click', () => {
+        this.openPosterZoom(posterUrl);
+      });
+
       posterGrid.appendChild(item);
     });
 
@@ -1982,6 +2002,57 @@ class MovieTimelineGame {
         timeline.style.setProperty('--sprocket-play-state', 'running');
       }
     }
+  }
+
+  // Poster zoom functionality
+  openPosterZoom(imageUrl) {
+    const modal = document.getElementById('poster-zoom-modal');
+    const img = modal.querySelector('.poster-zoom-image');
+
+    // Use higher resolution image for zoom (w780 instead of w300/w500)
+    const highResUrl = imageUrl.replace('/w300/', '/w780/').replace('/w500/', '/w780/');
+    img.src = highResUrl;
+
+    modal.classList.remove('hidden');
+  }
+
+  closePosterZoom() {
+    const modal = document.getElementById('poster-zoom-modal');
+    const img = modal.querySelector('.poster-zoom-image');
+    modal.classList.add('hidden');
+    // Clear image after modal is hidden to avoid flash on next open
+    img.src = '';
+  }
+
+  setupPosterZoom() {
+    const modal = document.getElementById('poster-zoom-modal');
+    const closeBtn = modal.querySelector('.poster-zoom-close');
+    const img = modal.querySelector('.poster-zoom-image');
+
+    // Close on X button click
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      this.closePosterZoom();
+    });
+
+    // Close on backdrop click (but not image click)
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        this.closePosterZoom();
+      }
+    });
+
+    // Prevent image click from closing
+    img.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        this.closePosterZoom();
+      }
+    });
   }
 }
 
