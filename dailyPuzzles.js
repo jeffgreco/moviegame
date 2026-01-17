@@ -10,7 +10,9 @@ const PUZZLE_SCHEDULE = {
   "2026-01-13": "m4k7r",
   "2026-01-14": "qc9xe",
   "2026-01-15": "jgns2",
-  "2026-01-16": "dhk7k"
+  "2026-01-16": "dhk7k",
+  "2026-01-17": "g2h5y",
+  "2026-01-18": "r5t1q"
 };
 
 const DAILY_PUZZLES = [
@@ -164,6 +166,24 @@ const DAILY_PUZZLES = [
       20723, // That Darn Cat! (Dec 2, 1965)
       47951, // The Adventures of Milo and Otis (Aug 25, 1989)
       165013, // A Talking Cat!?! (Feb 18, 2013)
+    ],
+  },
+    {
+    id: "g2h5y",
+    theme: "Minnesota",
+    description: "",
+    movieIds: [
+      275, // Fargo (Apr 5, 1996)
+      10223, // A Simple Plan (Jan 22, 1999)
+      11520, // Grumpy Old Men (Dec 25, 1993)
+      9279, // Jingle All the Way (Nov 22, 1996)
+      31504, // Little Big League (Jun 29, 1994)
+      10475, // Factotum (Aug 18, 2006)
+      10414, // The Mighty Ducks (Oct 2, 1992)
+      9701, // North Country (Sep 12, 2005)
+      1183392, // Airport (Jan 1, 1981)
+      14536, // New in Town (Jan 30, 2009)
+      19994, // Jennifer's Body (Sep 18, 2009)
     ],
   },
   // Future puzzles will be added here

@@ -1,6 +1,6 @@
 // Movie data from TMDB
-// Last updated: 2026-01-15T20:41:45.568Z
-// Total movies: 1416
+// Last updated: 2026-01-17T04:24:03.501Z
+// Total movies: 1434
 
 var MOVIES_DATA = [
   {
@@ -1242,6 +1242,15 @@ var MOVIES_DATA = [
     "release_date": "1980-12-19",
     "directors": [
       "Colin Higgins"
+    ]
+  },
+  {
+    "id": 1183392,
+    "title": "Airport",
+    "poster_url": "https://image.tmdb.org/t/p/w500/nAdsLAtPUEXqBEHeLnXBLCLleot.jpg",
+    "release_date": "1981-01-01",
+    "directors": [
+      "Bogdan Nowicki"
     ]
   },
   {
@@ -3844,6 +3853,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 10414,
+    "title": "The Mighty Ducks",
+    "poster_url": "https://image.tmdb.org/t/p/w500/zxaCHxKDFNi6frh1Q0dj19L216o.jpg",
+    "release_date": "1992-10-02",
+    "directors": [
+      "Stephen Herek"
+    ]
+  },
+  {
     "id": 8845,
     "title": "Under Siege",
     "poster_url": "https://image.tmdb.org/t/p/w500/lQ1SvjOQYLtSeUwcWrzqL0qdRoH.jpg",
@@ -4251,6 +4269,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 11520,
+    "title": "Grumpy Old Men",
+    "poster_url": "https://image.tmdb.org/t/p/w500/iMY7yFn4gMvGaQYMGWnyX2QgvHZ.jpg",
+    "release_date": "1993-12-25",
+    "directors": [
+      "Donald Petrie"
+    ]
+  },
+  {
     "id": 9800,
     "title": "Philadelphia",
     "poster_url": "https://image.tmdb.org/t/p/w500/tFe5Yoo5zT495okA49bq1vPPkiV.jpg",
@@ -4380,6 +4407,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 31504,
+    "title": "Little Big League",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ps0GapKs4vuV38XX6VUbTZm8QS6.jpg",
+    "release_date": "1994-06-29",
+    "directors": [
+      "Andrew Scheinman"
+    ]
+  },
+  {
     "id": 11212,
     "title": "Baby's Day Out",
     "poster_url": "https://image.tmdb.org/t/p/w500/21U2jwl36hoTHsXB3fDuIQkcchu.jpg",
@@ -4404,6 +4440,15 @@ var MOVIES_DATA = [
     "release_date": "1994-07-15",
     "directors": [
       "James Cameron"
+    ]
+  },
+  {
+    "id": 31586,
+    "title": "North",
+    "poster_url": "https://image.tmdb.org/t/p/w500/e4JEG7dstmurXMUPOW9Jy6UDR9F.jpg",
+    "release_date": "1994-07-22",
+    "directors": [
+      "Rob Reiner"
     ]
   },
   {
@@ -4861,6 +4906,15 @@ var MOVIES_DATA = [
     "release_date": "1995-11-16",
     "directors": [
       "Martin Campbell"
+    ]
+  },
+  {
+    "id": 9087,
+    "title": "The American President",
+    "poster_url": "https://image.tmdb.org/t/p/w500/yObOAYFIHXHkFPQ3jhgkN2ezaD.jpg",
+    "release_date": "1995-11-17",
+    "directors": [
+      "Rob Reiner"
     ]
   },
   {
@@ -5409,6 +5463,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 6116,
+    "title": "Spice World",
+    "poster_url": "https://image.tmdb.org/t/p/w500/vKiAnV1QAGIJP38vatwCZp4dCrH.jpg",
+    "release_date": "1998-01-22",
+    "directors": [
+      "Bob Spiers"
+    ]
+  },
+  {
     "id": 2666,
     "title": "Dark City",
     "poster_url": "https://image.tmdb.org/t/p/w500/tNPEGju4DpTdbhBphNmZoEi9Bd3.jpg",
@@ -5433,6 +5496,15 @@ var MOVIES_DATA = [
     "release_date": "1998-03-20",
     "directors": [
       "John McNaughton"
+    ]
+  },
+  {
+    "id": 9440,
+    "title": "Primary Colors",
+    "poster_url": "https://image.tmdb.org/t/p/w500/1FDR837wg7bi02F1R7JESCoPWBD.jpg",
+    "release_date": "1998-03-20",
+    "directors": [
+      "Mike Nichols"
     ]
   },
   {
@@ -5656,6 +5728,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 10223,
+    "title": "A Simple Plan",
+    "poster_url": "https://image.tmdb.org/t/p/w500/iJYGDwZmVEYRkSPbWQdxzvBLTcK.jpg",
+    "release_date": "1999-01-22",
+    "directors": [
+      "Sam Raimi"
+    ]
+  },
+  {
     "id": 18892,
     "title": "Jawbreaker",
     "poster_url": "https://image.tmdb.org/t/p/w500/gwjJPAraQy5fDd3NJvK677uItU4.jpg",
@@ -5805,6 +5886,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 37718,
+    "title": "The Muse",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hmtvDW52V3EuFmbhTOLjaGMYCDx.jpg",
+    "release_date": "1999-08-27",
+    "directors": [
+      "Albert Brooks"
+    ]
+  },
+  {
     "id": 10398,
     "title": "Double Jeopardy",
     "poster_url": "https://image.tmdb.org/t/p/w500/dPd9QvEeMQpgHO6iLB1LqALTZl.jpg",
@@ -5883,6 +5973,15 @@ var MOVIES_DATA = [
     "release_date": "1999-12-10",
     "directors": [
       "Frank Darabont"
+    ]
+  },
+  {
+    "id": 10402,
+    "title": "Deuce Bigalow: Male Gigolo",
+    "poster_url": "https://image.tmdb.org/t/p/w500/w0UKAcY4fAPuQW2GhAoIMwutIA5.jpg",
+    "release_date": "1999-12-10",
+    "directors": [
+      "Mike Mitchell"
     ]
   },
   {
@@ -6161,6 +6260,15 @@ var MOVIES_DATA = [
     "release_date": "2001-04-05",
     "directors": [
       "Ted Demme"
+    ]
+  },
+  {
+    "id": 10956,
+    "title": "Joe Dirt",
+    "poster_url": "https://image.tmdb.org/t/p/w500/yykDEtHk6DMtZK8EaxW88YyQ054.jpg",
+    "release_date": "2001-04-10",
+    "directors": [
+      "Dennie Gordon"
     ]
   },
   {
@@ -6448,6 +6556,15 @@ var MOVIES_DATA = [
     "release_date": "2001-12-19",
     "directors": [
       "Peter Jackson"
+    ]
+  },
+  {
+    "id": 11086,
+    "title": "The Majestic",
+    "poster_url": "https://image.tmdb.org/t/p/w500/m9WrB91B8ghxIZhyFugkoSleBE7.jpg",
+    "release_date": "2001-12-21",
+    "directors": [
+      "Frank Darabont"
     ]
   },
   {
@@ -7456,6 +7573,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 9701,
+    "title": "North Country",
+    "poster_url": "https://image.tmdb.org/t/p/w500/upxUN4zmX79o49mBW9htKZDeNq7.jpg",
+    "release_date": "2005-09-12",
+    "directors": [
+      "Niki Caro"
+    ]
+  },
+  {
     "id": 10851,
     "title": "Revolver",
     "poster_url": "https://image.tmdb.org/t/p/w500/w9NELY89blLetosxODWpZM9XnBm.jpg",
@@ -7723,6 +7849,15 @@ var MOVIES_DATA = [
     "release_date": "2006-08-18",
     "directors": [
       "Steve Pink"
+    ]
+  },
+  {
+    "id": 10475,
+    "title": "Factotum",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qfuqZHaAFiC4N8natPXojrpXR2y.jpg",
+    "release_date": "2006-08-18",
+    "directors": [
+      "Bent Hamer"
     ]
   },
   {
@@ -8093,6 +8228,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 7350,
+    "title": "The Bucket List",
+    "poster_url": "https://image.tmdb.org/t/p/w500/idbNSe8zsYKQL97dJApfOrDSdya.jpg",
+    "release_date": "2008-01-11",
+    "directors": [
+      "Rob Reiner"
+    ]
+  },
+  {
     "id": 6557,
     "title": "27 Dresses",
     "poster_url": "https://image.tmdb.org/t/p/w500/rEfourJfgEyKiewwH8ZkUYt9AqE.jpg",
@@ -8340,6 +8484,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 14536,
+    "title": "New in Town",
+    "poster_url": "https://image.tmdb.org/t/p/w500/OMCGtMmmBE9NwmawLGZlaErdLk.jpg",
+    "release_date": "2009-01-30",
+    "directors": [
+      "Jonas Elmer"
+    ]
+  },
+  {
     "id": 14836,
     "title": "Coraline",
     "poster_url": "https://image.tmdb.org/t/p/w500/4jeFXQYytChdZYE9JYO7Un87IlW.jpg",
@@ -8531,6 +8684,15 @@ var MOVIES_DATA = [
     "directors": [
       "Phil Lord",
       "Christopher Miller"
+    ]
+  },
+  {
+    "id": 19994,
+    "title": "Jennifer's Body",
+    "poster_url": "https://image.tmdb.org/t/p/w500/wrkjsGcFJxcQqR56kJUYAEKKg2T.jpg",
+    "release_date": "2009-09-18",
+    "directors": [
+      "Karyn Kusama"
     ]
   },
   {
