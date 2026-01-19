@@ -159,6 +159,13 @@ function setupEventListeners() {
         if (e.key === 'Enter') searchDirector();
     });
 
+    // AI search
+    document.getElementById('btn-ai-search').addEventListener('click', searchWithAi);
+    document.getElementById('ai-prompt').addEventListener('keydown', e => {
+        if (e.key === 'Enter' && e.ctrlKey) searchWithAi();
+    });
+    document.getElementById('btn-ai-more').addEventListener('click', requestMoreAi);
+
     // Re-sort filmography when sort changes
     document.getElementById('person-sort').addEventListener('change', () => {
         if (state.currentSearch.type === 'person' && state.currentSearch.params.personId) {
@@ -393,6 +400,129 @@ async function performDiscover() {
     }
 }
 
+async function searchWithAi() {
+    const prompt = document.getElementById('ai-prompt').value.trim();
+    if (!prompt) return;
+
+    const count = document.getElementById('ai-count').value;
+    const btn = document.getElementById('btn-ai-search');
+    const errorEl = document.getElementById('ai-error');
+    const moreBtn = document.getElementById('btn-ai-more');
+
+    // Show loading state
+    btn.disabled = true;
+    btn.querySelector('.btn-text').style.display = 'none';
+    btn.querySelector('.btn-loading').style.display = '';
+    errorEl.textContent = '';
+    moreBtn.style.display = 'none';
+    elements.resultsGrid.innerHTML = '<p class="loading-message">AI is finding movies...</p>';
+
+    try {
+        const response = await fetch('/api/ai-search', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ prompt, count: parseInt(count) })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.error || 'AI search failed');
+        }
+
+        // Update search state - track shown movie titles for "more" requests
+        state.currentSearch = {
+            type: 'ai',
+            page: 1,
+            totalPages: 1,
+            params: { prompt },
+            shownMovies: data.results.map(m => m.title)
+        };
+
+        // Display results
+        displayResults(data.results, data.results.length, 'AI Suggestions');
+
+        // Show "More" button
+        moreBtn.style.display = '';
+
+        // Show any movies that couldn't be found
+        if (data.notFound?.length > 0) {
+            errorEl.innerHTML = `<span class="warning">Could not find: ${data.notFound.join(', ')}</span>`;
+        }
+
+    } catch (e) {
+        console.error('AI search failed:', e);
+        errorEl.textContent = e.message || 'AI search failed. Please try again.';
+        elements.resultsGrid.innerHTML = '';
+    } finally {
+        btn.disabled = false;
+        btn.querySelector('.btn-text').style.display = '';
+        btn.querySelector('.btn-loading').style.display = 'none';
+    }
+}
+
+async function requestMoreAi() {
+    if (state.currentSearch.type !== 'ai') return;
+
+    const { prompt } = state.currentSearch.params;
+    const count = document.getElementById('ai-count').value;
+    const moreBtn = document.getElementById('btn-ai-more');
+    const errorEl = document.getElementById('ai-error');
+
+    // Show loading state
+    moreBtn.disabled = true;
+    moreBtn.textContent = '...';
+    errorEl.textContent = '';
+
+    try {
+        const response = await fetch('/api/ai-search', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                prompt,
+                count: parseInt(count),
+                exclude: state.currentSearch.shownMovies || []
+            })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.error || 'AI search failed');
+        }
+
+        // Add new movies to shown list
+        state.currentSearch.shownMovies = [
+            ...(state.currentSearch.shownMovies || []),
+            ...data.results.map(m => m.title)
+        ];
+
+        // Append results to grid
+        data.results.forEach(movie => {
+            const card = createMovieCard(movie);
+            elements.resultsGrid.appendChild(card);
+        });
+
+        // Update count
+        const totalCount = elements.resultsGrid.querySelectorAll('.movie-card').length;
+        elements.resultsCount.textContent = `${totalCount} AI Suggestions`;
+
+        markMoviesInPuzzle();
+
+        // Show any movies that couldn't be found
+        if (data.notFound?.length > 0) {
+            errorEl.innerHTML = `<span class="warning">Could not find: ${data.notFound.join(', ')}</span>`;
+        }
+
+    } catch (e) {
+        console.error('AI more failed:', e);
+        errorEl.textContent = e.message || 'Failed to get more suggestions.';
+    } finally {
+        moreBtn.disabled = false;
+        moreBtn.textContent = '+ More';
+    }
+}
+
 // Display Functions
 function displayResults(movies, total, customLabel) {
     elements.resultsGrid.innerHTML = '';
@@ -400,6 +530,12 @@ function displayResults(movies, total, customLabel) {
     // Show/hide sort dropdown based on search type
     const sortSelect = document.getElementById('person-sort');
     sortSelect.style.display = state.currentSearch.type === 'person' ? '' : 'none';
+
+    // Show/hide AI "More" button
+    const moreBtn = document.getElementById('btn-ai-more');
+    if (state.currentSearch.type !== 'ai') {
+        moreBtn.style.display = 'none';
+    }
 
     if (!movies || movies.length === 0) {
         elements.resultsGrid.innerHTML = '<p>No results found.</p>';
@@ -446,7 +582,9 @@ function createMovieCard(movie) {
         <div class="actions">
             <div class="actions-row">
                 <button class="btn btn-add" onclick="addToPuzzle(${movie.id})">Add List</button>
-                ${!inDatabase ? `<button class="btn btn-add-db" onclick="addToDatabase(${movie.id}, this)">Add DB</button>` : ''}
+                ${!inDatabase
+                    ? `<button class="btn btn-add-db" onclick="addToDatabase(${movie.id}, this)">Add DB</button>`
+                    : `<button class="btn btn-remove-db" onclick="removeFromDatabase(${movie.id}, this)">Remove DB</button>`}
             </div>
             <div class="actions-row">
                 <label class="show-director-toggle" title="Show director in game">
@@ -1040,9 +1178,72 @@ async function updateShowDirector(movieId, showDirector) {
     }
 }
 
+// Remove movie from database (movies.js)
+async function removeFromDatabase(movieId, buttonEl) {
+    const movie = state.existingMovies[movieId];
+    const movieTitle = movie?.title || `Movie ${movieId}`;
+
+    if (!confirm(`Remove "${movieTitle}" from movies.js?\n\nThis will delete it from the database.`)) {
+        return;
+    }
+
+    const originalText = buttonEl.textContent;
+    buttonEl.textContent = '...';
+    buttonEl.disabled = true;
+
+    try {
+        const response = await fetch('/api/remove-movie', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ movieId })
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            // Update local state
+            delete state.existingMovies[movieId];
+
+            // Update the card UI
+            const card = document.querySelector(`.movie-card[data-movie-id="${movieId}"]`);
+            if (card) {
+                // Remove "in DB" badge
+                const badge = card.querySelector('.in-db-badge');
+                if (badge) badge.remove();
+
+                // Replace "Remove DB" with "Add DB"
+                const actionsRow = buttonEl.parentElement;
+                buttonEl.remove();
+                const addBtn = document.createElement('button');
+                addBtn.className = 'btn btn-add-db';
+                addBtn.textContent = 'Add DB';
+                addBtn.onclick = () => addToDatabase(movieId, addBtn);
+                actionsRow.appendChild(addBtn);
+
+                // Update show director toggle
+                const toggle = card.querySelector('.show-director-toggle');
+                if (toggle) {
+                    const cb = toggle.querySelector('input');
+                    if (cb) cb.removeAttribute('onchange');
+                }
+            }
+        } else {
+            alert('Failed to remove: ' + result.error);
+            buttonEl.textContent = originalText;
+            buttonEl.disabled = false;
+        }
+    } catch (e) {
+        console.error('Failed to remove from database:', e);
+        alert('Failed to remove movie');
+        buttonEl.textContent = originalText;
+        buttonEl.disabled = false;
+    }
+}
+
 // Make functions available globally for onclick handlers
 window.addToPuzzle = addToPuzzle;
 window.removeFromPuzzle = removeFromPuzzle;
 window.goToPage = goToPage;
 window.addToDatabase = addToDatabase;
+window.removeFromDatabase = removeFromDatabase;
 window.updateShowDirector = updateShowDirector;

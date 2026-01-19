@@ -13,6 +13,7 @@ require('dotenv').config({ path: require('path').resolve(__dirname, '../.env') }
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const Anthropic = require('@anthropic-ai/sdk');
 
 const app = express();
 const PORT = process.env.PUZZLE_BUILDER_PORT || 3008;
@@ -20,6 +21,28 @@ const PORT = process.env.PUZZLE_BUILDER_PORT || 3008;
 const API_KEY = process.env.TMDB_API_KEY;
 const TMDB_BASE_URL = 'https://api.themoviedb.org/3';
 const POSTER_BASE_URL = 'https://image.tmdb.org/t/p/w500';
+
+// Anthropic client for AI search
+const anthropic = process.env.ANTHROPIC_API_KEY
+    ? new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY })
+    : null;
+
+// Rate limiting for AI requests
+const aiRequestTimes = [];
+const AI_RATE_LIMIT = 10;
+const AI_RATE_WINDOW = 60000;
+
+function checkAiRateLimit() {
+    const now = Date.now();
+    while (aiRequestTimes.length && aiRequestTimes[0] < now - AI_RATE_WINDOW) {
+        aiRequestTimes.shift();
+    }
+    if (aiRequestTimes.length >= AI_RATE_LIMIT) {
+        return false;
+    }
+    aiRequestTimes.push(now);
+    return true;
+}
 
 // Middleware
 app.use(express.json());
@@ -143,8 +166,110 @@ app.get('/api/health', (req, res) => {
     res.json({
         status: 'ok',
         hasApiKey: !!API_KEY,
+        hasAnthropicKey: !!anthropic,
         timestamp: new Date().toISOString()
     });
+});
+
+// AI-powered movie search
+app.post('/api/ai-search', async (req, res) => {
+    try {
+        if (!anthropic) {
+            return res.status(500).json({ error: 'AI API key not configured' });
+        }
+
+        if (!checkAiRateLimit()) {
+            return res.status(429).json({
+                error: 'Too many AI requests. Please wait a minute and try again.'
+            });
+        }
+
+        const { prompt, count = 12, exclude = [] } = req.body;
+        if (!prompt || typeof prompt !== 'string') {
+            return res.status(400).json({ error: 'Prompt is required' });
+        }
+
+        const movieCount = Math.min(Math.max(parseInt(count) || 12, 4), 25);
+
+        // Build exclusion note if we have movies to exclude
+        const excludeNote = exclude.length > 0
+            ? `\n\nDo NOT suggest these movies (already shown): ${exclude.join(', ')}`
+            : '';
+
+        // Call Claude API
+        const message = await anthropic.messages.create({
+            model: 'claude-sonnet-4-20250514',
+            max_tokens: 1024,
+            messages: [{
+                role: 'user',
+                content: `Based on this request, suggest exactly ${movieCount} real movies. Return ONLY a JSON array with no other text. Each object must have "title" (official movie title) and "year" (4-digit release year).
+
+Request: ${prompt}${excludeNote}
+
+Example format: [{"title": "The Matrix", "year": 1999}]`
+            }]
+        });
+
+        // Parse Claude's response
+        let suggestions;
+        try {
+            const responseText = message.content[0].text.trim();
+            const jsonMatch = responseText.match(/\[[\s\S]*\]/);
+            if (!jsonMatch) {
+                throw new Error('No JSON array found in response');
+            }
+            suggestions = JSON.parse(jsonMatch[0]);
+        } catch (parseError) {
+            console.error('Failed to parse AI response:', parseError);
+            return res.status(500).json({ error: 'Failed to parse AI suggestions' });
+        }
+
+        // Match each suggestion to TMDB
+        const results = [];
+        const notFound = [];
+
+        for (const suggestion of suggestions) {
+            const { title, year } = suggestion;
+
+            let tmdbResult = null;
+            try {
+                // Search TMDB with year first
+                const searchWithYear = await tmdbFetch('/search/movie', {
+                    query: title,
+                    year: year,
+                    language: 'en-US'
+                });
+
+                if (searchWithYear.results?.length > 0) {
+                    tmdbResult = searchWithYear.results[0];
+                } else {
+                    // Try without year
+                    const searchWithoutYear = await tmdbFetch('/search/movie', {
+                        query: title,
+                        language: 'en-US'
+                    });
+                    if (searchWithoutYear.results?.length > 0) {
+                        tmdbResult = searchWithoutYear.results[0];
+                    }
+                }
+            } catch (e) {
+                console.warn(`TMDB search failed for "${title}":`, e.message);
+            }
+
+            if (tmdbResult) {
+                const enriched = await enrichMovie(tmdbResult, true);
+                results.push(enriched);
+            } else {
+                notFound.push(`${title} (${year})`);
+            }
+        }
+
+        res.json({ results, notFound });
+
+    } catch (e) {
+        console.error('AI search error:', e);
+        res.status(500).json({ error: e.message || 'AI search failed' });
+    }
 });
 
 // Search movies by title
@@ -408,6 +533,41 @@ app.post('/api/add-movie', async (req, res) => {
         });
     } catch (e) {
         console.error('Failed to add movie:', e);
+        res.status(500).json({ error: e.message });
+    }
+});
+
+// Remove a movie from movies.js
+app.post('/api/remove-movie', (req, res) => {
+    try {
+        const { movieId } = req.body;
+        if (!movieId) {
+            return res.status(400).json({ error: 'movieId is required' });
+        }
+
+        const existingMovies = loadExistingMovies();
+        const movieIndex = existingMovies.findIndex(m => m.id === movieId);
+
+        if (movieIndex === -1) {
+            return res.status(404).json({ error: 'Movie not found in database' });
+        }
+
+        const removedMovie = existingMovies[movieIndex];
+        existingMovies.splice(movieIndex, 1);
+
+        // Write back to file
+        const moviesPath = path.join(__dirname, '..', 'movies.js');
+        const content = `// Movie data from TMDB
+// Last updated: ${new Date().toISOString()}
+// Total movies: ${existingMovies.length}
+
+var MOVIES_DATA = ${JSON.stringify(existingMovies, null, 2)};
+`;
+        fs.writeFileSync(moviesPath, content);
+
+        res.json({ success: true, removed: removedMovie.title });
+    } catch (e) {
+        console.error('Failed to remove movie:', e);
         res.status(500).json({ error: e.message });
     }
 });

@@ -1,8 +1,17 @@
 // Movie data from TMDB
-// Last updated: 2026-01-19T01:11:55.492Z
-// Total movies: 1444
+// Last updated: 2026-01-19T03:43:22.254Z
+// Total movies: 1395
 
 var MOVIES_DATA = [
+  {
+    "id": 22692,
+    "title": "A Star Is Born",
+    "poster_url": "https://image.tmdb.org/t/p/w500/90EfCmXXWOs5dy7rHTNvGT9T8Kz.jpg",
+    "release_date": "1937-04-27",
+    "directors": [
+      "William A. Wellman"
+    ]
+  },
   {
     "id": 8974,
     "title": "The War of the Worlds",
@@ -24,12 +33,30 @@ var MOVIES_DATA = [
     "showDirector": true
   },
   {
+    "id": 5925,
+    "title": "The Great Escape",
+    "poster_url": "https://image.tmdb.org/t/p/w500/gBH4H8UMFxl139HaLz6lRuvsel8.jpg",
+    "release_date": "1963-07-04",
+    "directors": [
+      "John Sturges"
+    ]
+  },
+  {
     "id": 20723,
     "title": "That Darn Cat!",
     "poster_url": "https://image.tmdb.org/t/p/w500/by92HEWg2d4WrkgbUIPEA0ufsHI.jpg",
     "release_date": "1965-12-02",
     "directors": [
       "Robert Stevenson"
+    ]
+  },
+  {
+    "id": 37247,
+    "title": "The Graduate",
+    "poster_url": "https://image.tmdb.org/t/p/w500/z1Z1tZMR66RxcNeHbwoEhYeqOlP.jpg",
+    "release_date": "1967-12-21",
+    "directors": [
+      "Mike Nichols"
     ]
   },
   {
@@ -223,6 +250,15 @@ var MOVIES_DATA = [
     "release_date": "1970-05-26",
     "directors": [
       "Ted Post"
+    ]
+  },
+  {
+    "id": 10671,
+    "title": "Airport",
+    "poster_url": "https://image.tmdb.org/t/p/w500/6iOKluJfyiU1SLZbGYrY7Z0i6k0.jpg",
+    "release_date": "1970-05-29",
+    "directors": [
+      "George Seaton"
     ]
   },
   {
@@ -856,6 +892,15 @@ var MOVIES_DATA = [
     "showDirector": true
   },
   {
+    "id": 19610,
+    "title": "A Star Is Born",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3Hr63lBDhvYGpSd8HxDpWvowZpY.jpg",
+    "release_date": "1976-12-19",
+    "directors": [
+      "Frank Pierson"
+    ]
+  },
+  {
     "id": 10649,
     "title": "The Enforcer",
     "poster_url": "https://image.tmdb.org/t/p/w500/l0W85fpnsfnpLSSF3D6bKKlH1dD.jpg",
@@ -966,15 +1011,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 579,
-    "title": "Jaws 2",
-    "poster_url": "https://image.tmdb.org/t/p/w500/cN3ijEwsn4kBaRuHfcJpAQJbeWe.jpg",
-    "release_date": "1978-06-16",
-    "directors": [
-      "Jeannot Szwarc"
-    ]
-  },
-  {
     "id": 8469,
     "title": "Animal House",
     "poster_url": "https://image.tmdb.org/t/p/w500/fWooBbipMRIKeSRhEzmeaDV0T8H.jpg",
@@ -1064,15 +1100,6 @@ var MOVIES_DATA = [
     "release_date": "1979-05-25",
     "directors": [
       "David Cronenberg"
-    ]
-  },
-  {
-    "id": 1367,
-    "title": "Rocky II",
-    "poster_url": "https://image.tmdb.org/t/p/w500/nMaiiu0CzT77U4JZkUYV7KqdAjK.jpg",
-    "release_date": "1979-06-15",
-    "directors": [
-      "Sylvester Stallone"
     ]
   },
   {
@@ -1362,6 +1389,15 @@ var MOVIES_DATA = [
     "release_date": "1982-01-01"
   },
   {
+    "id": 387,
+    "title": "Das Boot",
+    "poster_url": "https://image.tmdb.org/t/p/w500/u8FhQPncOAkwcei2OI9orPWhV6K.jpg",
+    "release_date": "1982-02-10",
+    "directors": [
+      "Wolfgang Petersen"
+    ]
+  },
+  {
     "id": 10246,
     "title": "Porky's",
     "poster_url": "https://image.tmdb.org/t/p/w500/AqCOt1cWfKqCepxK7LIdT812idH.jpg",
@@ -1395,24 +1431,6 @@ var MOVIES_DATA = [
     "release_date": "1982-05-21",
     "directors": [
       "John Huston"
-    ]
-  },
-  {
-    "id": 1371,
-    "title": "Rocky III",
-    "poster_url": "https://image.tmdb.org/t/p/w500/9jS3wG3cNSEu8sVUFAFQ8exyaaH.jpg",
-    "release_date": "1982-05-28",
-    "directors": [
-      "Sylvester Stallone"
-    ]
-  },
-  {
-    "id": 154,
-    "title": "Star Trek II: The Wrath of Khan",
-    "poster_url": "https://image.tmdb.org/t/p/w500/uPyLsKl8Z0LOoxeaFXsY5MxhR5s.jpg",
-    "release_date": "1982-06-04",
-    "directors": [
-      "Nicholas Meyer"
     ]
   },
   {
@@ -1611,6 +1629,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 18172,
+    "title": "All the Right Moves",
+    "poster_url": "https://image.tmdb.org/t/p/w500/y8OSutSNEi84ROcqyV7Tu7p8xYg.jpg",
+    "release_date": "1983-10-21",
+    "directors": [
+      "Michael Chapman"
+    ]
+  },
+  {
     "id": 111,
     "title": "Scarface",
     "poster_url": "https://image.tmdb.org/t/p/w500/iQ5ztdjvteGeboxtmRdXEChJOHh.jpg",
@@ -1701,15 +1728,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 87,
-    "title": "Indiana Jones and the Temple of Doom",
-    "poster_url": "https://image.tmdb.org/t/p/w500/gpdVNUaa4LhRMLfJOPj1AZdhAZ3.jpg",
-    "release_date": "1984-05-23",
-    "directors": [
-      "Steven Spielberg"
-    ]
-  },
-  {
     "id": 311,
     "title": "Once Upon a Time in America",
     "poster_url": "https://image.tmdb.org/t/p/w500/i0enkzsL5dPeneWnjl1fCWm6L7k.jpg",
@@ -1790,6 +1808,15 @@ var MOVIES_DATA = [
     "release_date": "1984-07-20",
     "directors": [
       "Jeff Kanew"
+    ]
+  },
+  {
+    "id": 13763,
+    "title": "Purple Rain",
+    "poster_url": "https://image.tmdb.org/t/p/w500/vkQmzaSuDj8QyXmwNhCceCAmwUe.jpg",
+    "release_date": "1984-07-27",
+    "directors": [
+      "Albert Magnoli"
     ]
   },
   {
@@ -2058,24 +2085,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 10014,
-    "title": "A Nightmare on Elm Street Part 2: Freddy's Revenge",
-    "poster_url": "https://image.tmdb.org/t/p/w500/rvAmOv0sZcoQCyJjHPQN4wU8ut4.jpg",
-    "release_date": "1985-11-01",
-    "directors": [
-      "Jack Sholder"
-    ]
-  },
-  {
-    "id": 1374,
-    "title": "Rocky IV",
-    "poster_url": "https://image.tmdb.org/t/p/w500/2MHUit4H6OK5adcOjnCN6suCKOl.jpg",
-    "release_date": "1985-11-21",
-    "directors": [
-      "Sylvester Stallone"
-    ]
-  },
-  {
     "id": 9080,
     "title": "Spies Like Us",
     "poster_url": "https://image.tmdb.org/t/p/w500/s0Sx8nd9Irq0aCPbsN78s0DYVlG.jpg",
@@ -2193,12 +2202,12 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 8856,
-    "title": "The Karate Kid Part II",
-    "poster_url": "https://image.tmdb.org/t/p/w500/7Lut6dOvB8wPRuHhHpJ3S3zXder.jpg",
-    "release_date": "1986-06-18",
+    "id": 15596,
+    "title": "Back to School",
+    "poster_url": "https://image.tmdb.org/t/p/w500/bIQH3dptGaMBtwos7j9lEHt65BV.jpg",
+    "release_date": "1986-06-13",
     "directors": [
-      "John G. Avildsen"
+      "Alan Metter"
     ]
   },
   {
@@ -2313,21 +2322,21 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 11873,
+    "title": "The Color of Money",
+    "poster_url": "https://image.tmdb.org/t/p/w500/dVdnHmdQu3JtLAAksjTmTEF76gD.jpg",
+    "release_date": "1986-10-17",
+    "directors": [
+      "Martin Scorsese"
+    ]
+  },
+  {
     "id": 5693,
     "title": "Hoosiers",
     "poster_url": "https://image.tmdb.org/t/p/w500/dHpjZQXEdoi1xNLubM1rPmTHJYz.jpg",
     "release_date": "1986-11-14",
     "directors": [
       "David Anspaugh"
-    ]
-  },
-  {
-    "id": 168,
-    "title": "Star Trek IV: The Voyage Home",
-    "poster_url": "https://image.tmdb.org/t/p/w500/xY5TzGXJOB3L9rhZ1MbbPyVlW5J.jpg",
-    "release_date": "1986-11-26",
-    "directors": [
-      "Leonard Nimoy"
     ]
   },
   {
@@ -2419,15 +2428,6 @@ var MOVIES_DATA = [
     "release_date": "1987-04-17",
     "directors": [
       "Joel Coen"
-    ]
-  },
-  {
-    "id": 96,
-    "title": "Beverly Hills Cop II",
-    "poster_url": "https://image.tmdb.org/t/p/w500/egDakU8O5yUwpUJP9IMAUVtIDll.jpg",
-    "release_date": "1987-05-18",
-    "directors": [
-      "Tony Scott"
     ]
   },
   {
@@ -2612,6 +2612,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 36739,
+    "title": "School Daze",
+    "poster_url": "https://image.tmdb.org/t/p/w500/vnfjKHcmah7ReMxLNF18JMXFgSZ.jpg",
+    "release_date": "1988-02-12",
+    "directors": [
+      "Spike Lee"
+    ]
+  },
+  {
     "id": 11690,
     "title": "Bloodsport",
     "poster_url": "https://image.tmdb.org/t/p/w500/kndxR9TRK0kJ5hxzDprRSS80F2W.jpg",
@@ -2663,15 +2672,6 @@ var MOVIES_DATA = [
     "release_date": "1988-05-20",
     "directors": [
       "Ron Howard"
-    ]
-  },
-  {
-    "id": 1370,
-    "title": "Rambo III",
-    "poster_url": "https://image.tmdb.org/t/p/w500/uycbt9iVlAnKkQIisqUWuO8hVcm.jpg",
-    "release_date": "1988-05-24",
-    "directors": [
-      "Peter MacDonald"
     ]
   },
   {
@@ -2963,30 +2963,12 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 89,
-    "title": "Indiana Jones and the Last Crusade",
-    "poster_url": "https://image.tmdb.org/t/p/w500/sizg1AU8f8JDZX4QIgE4pjUMBvx.jpg",
-    "release_date": "1989-05-24",
-    "directors": [
-      "Steven Spielberg"
-    ]
-  },
-  {
     "id": 207,
     "title": "Dead Poets Society",
     "poster_url": "https://image.tmdb.org/t/p/w500/l5NbiHKUmahlAT3Q1ig8Tyl9xrc.jpg",
     "release_date": "1989-06-09",
     "directors": [
       "Peter Weir"
-    ]
-  },
-  {
-    "id": 2978,
-    "title": "Ghostbusters II",
-    "poster_url": "https://image.tmdb.org/t/p/w500/yObYPMA58DnTMvJooFW7GG6jWAt.jpg",
-    "release_date": "1989-06-16",
-    "directors": [
-      "Ivan Reitman"
     ]
   },
   {
@@ -3026,15 +3008,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 942,
-    "title": "Lethal Weapon 2",
-    "poster_url": "https://image.tmdb.org/t/p/w500/ZsUGxTnZ4TzTrHSAfUPJcliL1K.jpg",
-    "release_date": "1989-07-07",
-    "directors": [
-      "Richard Donner"
-    ]
-  },
-  {
     "id": 709,
     "title": "Licence to Kill",
     "poster_url": "https://image.tmdb.org/t/p/w500/8nzJve63EXA79HGAyidZwivZrQ2.jpg",
@@ -3050,6 +3023,15 @@ var MOVIES_DATA = [
     "release_date": "1989-07-21",
     "directors": [
       "Rob Reiner"
+    ]
+  },
+  {
+    "id": 6951,
+    "title": "Turner & Hooch",
+    "poster_url": "https://image.tmdb.org/t/p/w500/nllMNbjgvUpw378czm5vBYzZqg1.jpg",
+    "release_date": "1989-07-28",
+    "directors": [
+      "Roger Spottiswoode"
     ]
   },
   {
@@ -3134,15 +3116,6 @@ var MOVIES_DATA = [
     "release_date": "1989-11-17",
     "directors": [
       "Don Bluth"
-    ]
-  },
-  {
-    "id": 165,
-    "title": "Back to the Future Part II",
-    "poster_url": "https://image.tmdb.org/t/p/w500/YBawEsTkUZBDajKbd5LiHkmMGf.jpg",
-    "release_date": "1989-11-22",
-    "directors": [
-      "Robert Zemeckis"
     ]
   },
   {
@@ -3303,30 +3276,12 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 5549,
-    "title": "RoboCop 2",
-    "poster_url": "https://image.tmdb.org/t/p/w500/uL3Ab6SOcN35ZTF2XrE1NzFwXdl.jpg",
-    "release_date": "1990-06-22",
-    "directors": [
-      "Irvin Kershner"
-    ]
-  },
-  {
     "id": 2119,
     "title": "Days of Thunder",
     "poster_url": "https://image.tmdb.org/t/p/w500/8UvcoeMJag8UWGF8sg7eYspzq0Q.jpg",
     "release_date": "1990-06-27",
     "directors": [
       "Tony Scott"
-    ]
-  },
-  {
-    "id": 1573,
-    "title": "Die Hard 2",
-    "poster_url": "https://image.tmdb.org/t/p/w500/ybki0UWO3OPhaM6MSniuKC7sy1R.jpg",
-    "release_date": "1990-07-03",
-    "directors": [
-      "Renny Harlin"
     ]
   },
   {
@@ -3345,6 +3300,15 @@ var MOVIES_DATA = [
     "release_date": "1990-07-27",
     "directors": [
       "Dennis Dugan"
+    ]
+  },
+  {
+    "id": 11856,
+    "title": "Air America",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2cVANiDU7AdSLGgs4T7dpgyU2SK.jpg",
+    "release_date": "1990-08-10",
+    "directors": [
+      "Roger Spottiswoode"
     ]
   },
   {
@@ -3381,33 +3345,6 @@ var MOVIES_DATA = [
     "release_date": "1990-09-28",
     "directors": [
       "Abel Ferrara"
-    ]
-  },
-  {
-    "id": 11186,
-    "title": "Child's Play 2",
-    "poster_url": "https://image.tmdb.org/t/p/w500/2tPQbPQeHEYAGoXFSW61IWNmoce.jpg",
-    "release_date": "1990-11-09",
-    "directors": [
-      "John Lafia"
-    ]
-  },
-  {
-    "id": 1375,
-    "title": "Rocky V",
-    "poster_url": "https://image.tmdb.org/t/p/w500/qCARerjCFZOEeLiVdomhwRYlDSn.jpg",
-    "release_date": "1990-11-16",
-    "directors": [
-      "John G. Avildsen"
-    ]
-  },
-  {
-    "id": 169,
-    "title": "Predator 2",
-    "poster_url": "https://image.tmdb.org/t/p/w500/83X4VwY9sdSJykskmsplIVG0a4h.jpg",
-    "release_date": "1990-11-21",
-    "directors": [
-      "Stephen Hopkins"
     ]
   },
   {
@@ -3564,15 +3501,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 37137,
-    "title": "The Naked Gun 2½: The Smell of Fear",
-    "poster_url": "https://image.tmdb.org/t/p/w500/v9niLQWVzVPB1cP1ThNdEaLZG1Q.jpg",
-    "release_date": "1991-06-28",
-    "directors": [
-      "David Zucker"
-    ]
-  },
-  {
     "id": 280,
     "title": "Terminator 2: Judgment Day",
     "poster_url": "https://image.tmdb.org/t/p/w500/jFTVD4XoWQTcg7wdyJKa8PEds5q.jpg",
@@ -3633,6 +3561,15 @@ var MOVIES_DATA = [
     "release_date": "1991-08-10",
     "directors": [
       "Sheldon Lettich"
+    ]
+  },
+  {
+    "id": 11663,
+    "title": "The Commitments",
+    "poster_url": "https://image.tmdb.org/t/p/w500/iccBDq9aS1gwi6b8aJjBgPU4t2D.jpg",
+    "release_date": "1991-08-14",
+    "directors": [
+      "Alan Parker"
     ]
   },
   {
@@ -3890,21 +3827,21 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 10538,
+    "title": "Passenger 57",
+    "poster_url": "https://image.tmdb.org/t/p/w500/4VBN8pQxGHjeZWcNv1V1xSw0OKC.jpg",
+    "release_date": "1992-11-06",
+    "directors": [
+      "Kevin Hooks"
+    ]
+  },
+  {
     "id": 6114,
     "title": "Bram Stoker's Dracula",
     "poster_url": "https://image.tmdb.org/t/p/w500/n39glC4GkBeCbwdenES8ZBodim8.jpg",
     "release_date": "1992-11-13",
     "directors": [
       "Francis Ford Coppola"
-    ]
-  },
-  {
-    "id": 772,
-    "title": "Home Alone 2: Lost in New York",
-    "poster_url": "https://image.tmdb.org/t/p/w500/9CAkQ9nfrDaIAyncWndwg0tfC8g.jpg",
-    "release_date": "1992-11-19",
-    "directors": [
-      "Chris Columbus"
     ]
   },
   {
@@ -4360,15 +4297,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 36593,
-    "title": "Naked Gun 33⅓: The Final Insult",
-    "poster_url": "https://image.tmdb.org/t/p/w500/p0AYsdgkudR9P5fNV5AjzbwQt8W.jpg",
-    "release_date": "1994-03-18",
-    "directors": [
-      "Peter Segal"
-    ]
-  },
-  {
     "id": 28032,
     "title": "Thumbelina",
     "poster_url": "https://image.tmdb.org/t/p/w500/eBvSSfwAKgcjF4eyaeNSzTCpfaF.jpg",
@@ -4376,6 +4304,24 @@ var MOVIES_DATA = [
     "directors": [
       "Don Bluth",
       "Gary Goldman"
+    ]
+  },
+  {
+    "id": 14425,
+    "title": "PCU",
+    "poster_url": "https://image.tmdb.org/t/p/w500/xTToUzy9Im9nu2W8fz7TPWoDWN5.jpg",
+    "release_date": "1994-04-29",
+    "directors": [
+      "Hart Bochner"
+    ]
+  },
+  {
+    "id": 16297,
+    "title": "With Honors",
+    "poster_url": "https://image.tmdb.org/t/p/w500/eWJ2Y7CRvlv1KVfAJGRcH95i1pY.jpg",
+    "release_date": "1994-04-29",
+    "directors": [
+      "Alek Keshishian"
     ]
   },
   {
@@ -4690,15 +4636,6 @@ var MOVIES_DATA = [
     "release_date": "1995-04-26",
     "directors": [
       "F. Gary Gray"
-    ]
-  },
-  {
-    "id": 1572,
-    "title": "Die Hard: With a Vengeance",
-    "poster_url": "https://image.tmdb.org/t/p/w500/buqmCdFQEWwEpL3agGgg2GVjN2d.jpg",
-    "release_date": "1995-05-19",
-    "directors": [
-      "John McTiernan"
     ]
   },
   {
@@ -5190,6 +5127,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 9591,
+    "title": "That Thing You Do!",
+    "poster_url": "https://image.tmdb.org/t/p/w500/9RmZu33qHdyZFGLfhEOmkTjdNEu.jpg",
+    "release_date": "1996-10-04",
+    "directors": [
+      "Tom Hanks"
+    ]
+  },
+  {
     "id": 819,
     "title": "Sleepers",
     "poster_url": "https://image.tmdb.org/t/p/w500/yUpiEk2EojS9ZEXb3nIQonQCYYF.jpg",
@@ -5260,6 +5206,15 @@ var MOVIES_DATA = [
     "release_date": "1997-03-21",
     "directors": [
       "Tom Shadyac"
+    ]
+  },
+  {
+    "id": 16052,
+    "title": "Selena",
+    "poster_url": "https://image.tmdb.org/t/p/w500/j8xX3yBAFOayfSaImgLZPnAcdWz.jpg",
+    "release_date": "1997-03-21",
+    "directors": [
+      "Gregory Nava"
     ]
   },
   {
@@ -5343,6 +5298,15 @@ var MOVIES_DATA = [
     "release_date": "1997-07-11",
     "directors": [
       "Robert Zemeckis"
+    ]
+  },
+  {
+    "id": 9772,
+    "title": "Air Force One",
+    "poster_url": "https://image.tmdb.org/t/p/w500/evO1iENjLpUnbwjnt5XK85jRYob.jpg",
+    "release_date": "1997-07-25",
+    "directors": [
+      "Wolfgang Petersen"
     ]
   },
   {
@@ -5736,6 +5700,16 @@ var MOVIES_DATA = [
     "showDirector": true
   },
   {
+    "id": 11252,
+    "title": "Psycho",
+    "poster_url": "https://image.tmdb.org/t/p/w500/6pQpZu6JjPsbHzjhG545OsjU2TG.jpg",
+    "release_date": "1998-12-04",
+    "directors": [
+      "Gus Van Sant"
+    ],
+    "showDirector": true
+  },
+  {
     "id": 9837,
     "title": "The Prince of Egypt",
     "poster_url": "https://image.tmdb.org/t/p/w500/2xUjYwL6Ol7TLJPPKs7sYW5PWLX.jpg",
@@ -5744,6 +5718,15 @@ var MOVIES_DATA = [
       "Steve Hickner",
       "Brenda Chapman",
       "Simon Wells"
+    ]
+  },
+  {
+    "id": 9489,
+    "title": "You've Got Mail",
+    "poster_url": "https://image.tmdb.org/t/p/w500/e2uVtH6TpMfUl7WeOM70ezkcjsU.jpg",
+    "release_date": "1998-12-18",
+    "directors": [
+      "Nora Ephron"
     ]
   },
   {
@@ -5762,6 +5745,15 @@ var MOVIES_DATA = [
     "release_date": "1999-01-15",
     "directors": [
       "Brian Robbins"
+    ]
+  },
+  {
+    "id": 8741,
+    "title": "The Thin Red Line",
+    "poster_url": "https://image.tmdb.org/t/p/w500/seMydAaoxQP6F0xbE1jOcTmn5Jr.jpg",
+    "release_date": "1999-01-15",
+    "directors": [
+      "Terrence Malick"
     ]
   },
   {
@@ -5995,15 +5987,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 863,
-    "title": "Toy Story 2",
-    "poster_url": "https://image.tmdb.org/t/p/w500/4rbcp3ng8n1MKHjpeqW0L7Fnpzz.jpg",
-    "release_date": "1999-11-24",
-    "directors": [
-      "John Lasseter"
-    ]
-  },
-  {
     "id": 497,
     "title": "The Green Mile",
     "poster_url": "https://image.tmdb.org/t/p/w500/8VG8fDNiy50H4FedGwdSVUPoaJe.jpg",
@@ -6073,6 +6056,15 @@ var MOVIES_DATA = [
     "release_date": "2000-03-17",
     "directors": [
       "Steven Soderbergh"
+    ]
+  },
+  {
+    "id": 243,
+    "title": "High Fidelity",
+    "poster_url": "https://image.tmdb.org/t/p/w500/e2LZGB62GMhv3Fo8tDZjY87I81a.jpg",
+    "release_date": "2000-03-17",
+    "directors": [
+      "Stephen Frears"
     ]
   },
   {
@@ -6318,6 +6310,15 @@ var MOVIES_DATA = [
     "release_date": "2001-02-08"
   },
   {
+    "id": 853,
+    "title": "Enemy at the Gates",
+    "poster_url": "https://image.tmdb.org/t/p/w500/cHRAbVdsCWFaQrswRsBP7Bn255W.jpg",
+    "release_date": "2001-03-16",
+    "directors": [
+      "Jean-Jacques Annaud"
+    ]
+  },
+  {
     "id": 4133,
     "title": "Blow",
     "poster_url": "https://image.tmdb.org/t/p/w500/yYZFVfk8aeMP4GxBSU9MTvqs9mJ.jpg",
@@ -6333,15 +6334,6 @@ var MOVIES_DATA = [
     "release_date": "2001-04-10",
     "directors": [
       "Dennie Gordon"
-    ]
-  },
-  {
-    "id": 1734,
-    "title": "The Mummy Returns",
-    "poster_url": "https://image.tmdb.org/t/p/w500/kdJsW7hcy1lrj7tdMPycTAQPAiR.jpg",
-    "release_date": "2001-05-04",
-    "directors": [
-      "Stephen Sommers"
     ]
   },
   {
@@ -6409,15 +6401,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 4248,
-    "title": "Scary Movie 2",
-    "poster_url": "https://image.tmdb.org/t/p/w500/7Eb1JWK0Cb0rbfsYjwfc9g0PbQH.jpg",
-    "release_date": "2001-07-04",
-    "directors": [
-      "Keenen Ivory Wayans"
-    ]
-  },
-  {
     "id": 10992,
     "title": "Cats & Dogs",
     "poster_url": "https://image.tmdb.org/t/p/w500/wUWoat7L4vvQburQ8pVEJhRG9L5.jpg",
@@ -6446,15 +6429,6 @@ var MOVIES_DATA = [
     "showDirector": true
   },
   {
-    "id": 5175,
-    "title": "Rush Hour 2",
-    "poster_url": "https://image.tmdb.org/t/p/w500/nmllsevWzx7XtrlARs3hHJn5Pf.jpg",
-    "release_date": "2001-08-03",
-    "directors": [
-      "Brett Ratner"
-    ]
-  },
-  {
     "id": 9880,
     "title": "The Princess Diaries",
     "poster_url": "https://image.tmdb.org/t/p/w500/qSw4lzhDGeM5MjQc86BLzJALhBs.jpg",
@@ -6473,15 +6447,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 2770,
-    "title": "American Pie 2",
-    "poster_url": "https://image.tmdb.org/t/p/w500/854ZZxXdeabAs90mrV72NqShJqR.jpg",
-    "release_date": "2001-08-10",
-    "directors": [
-      "J.B. Rogers"
-    ]
-  },
-  {
     "id": 9896,
     "title": "Rat Race",
     "poster_url": "https://image.tmdb.org/t/p/w500/3dpim9bLdi5uh55idJ6HxA7eZH4.jpg",
@@ -6497,6 +6462,15 @@ var MOVIES_DATA = [
     "release_date": "2001-08-24",
     "directors": [
       "Kevin Smith"
+    ]
+  },
+  {
+    "id": 12508,
+    "title": "Rock Star",
+    "poster_url": "https://image.tmdb.org/t/p/w500/8pRMweo9WA1MvYOLsD2hWyFpZ1V.jpg",
+    "release_date": "2001-09-07",
+    "directors": [
+      "Stephen Herek"
     ]
   },
   {
@@ -6614,6 +6588,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 1903,
+    "title": "Vanilla Sky",
+    "poster_url": "https://image.tmdb.org/t/p/w500/cAh2pCiNPftsY3aSqJuIOde7uWr.jpg",
+    "release_date": "2001-12-14",
+    "directors": [
+      "Cameron Crowe"
+    ]
+  },
+  {
     "id": 120,
     "title": "The Lord of the Rings: The Fellowship of the Ring",
     "poster_url": "https://image.tmdb.org/t/p/w500/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg",
@@ -6629,6 +6612,15 @@ var MOVIES_DATA = [
     "release_date": "2001-12-21",
     "directors": [
       "Frank Darabont"
+    ]
+  },
+  {
+    "id": 8386,
+    "title": "How High",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qWF784YqUZE8KhbBfuqhMSzmUPs.jpg",
+    "release_date": "2001-12-21",
+    "directors": [
+      "Jesse Dylan"
     ]
   },
   {
@@ -6674,6 +6666,15 @@ var MOVIES_DATA = [
     "release_date": "2002-03-29",
     "directors": [
       "David Fincher"
+    ]
+  },
+  {
+    "id": 11452,
+    "title": "National Lampoon's Van Wilder",
+    "poster_url": "https://image.tmdb.org/t/p/w500/4IvM4qnzlo62oLmS54FtyRt54ze.jpg",
+    "release_date": "2002-03-29",
+    "directors": [
+      "Walt Becker"
     ]
   },
   {
@@ -6772,21 +6773,12 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 608,
-    "title": "Men in Black II",
-    "poster_url": "https://image.tmdb.org/t/p/w500/enA22EPyzc2WQ1VVyY7zxresQQr.jpg",
-    "release_date": "2002-07-03",
+    "id": 4147,
+    "title": "Road to Perdition",
+    "poster_url": "https://image.tmdb.org/t/p/w500/loSpBeirRfTPJ3cMIqpQArstGhh.jpg",
+    "release_date": "2002-07-12",
     "directors": [
-      "Barry Sonnenfeld"
-    ]
-  },
-  {
-    "id": 818,
-    "title": "Austin Powers in Goldmember",
-    "poster_url": "https://image.tmdb.org/t/p/w500/n8V61f1v7idya4WJzGEJNoIp9iL.jpg",
-    "release_date": "2002-07-26",
-    "directors": [
-      "Jay Roach"
+      "Sam Mendes"
     ]
   },
   {
@@ -6860,15 +6852,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 672,
-    "title": "Harry Potter and the Chamber of Secrets",
-    "poster_url": "https://image.tmdb.org/t/p/w500/sdEOH0992YZ0QSxgXNIGLq1ToUi.jpg",
-    "release_date": "2002-11-15",
-    "directors": [
-      "Chris Columbus"
-    ]
-  },
-  {
     "id": 9016,
     "title": "Treasure Planet",
     "poster_url": "https://image.tmdb.org/t/p/w500/zMKatZ0c0NCoKzfizaCzVUcbKMf.jpg",
@@ -6924,15 +6907,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 9358,
-    "title": "Final Destination 2",
-    "poster_url": "https://image.tmdb.org/t/p/w500/vnFgxRlLTA9fDNcGXLiHmgwmIEo.jpg",
-    "release_date": "2003-01-31",
-    "directors": [
-      "David R. Ellis"
-    ]
-  },
-  {
     "id": 9919,
     "title": "How to Lose a Guy in 10 Days",
     "poster_url": "https://image.tmdb.org/t/p/w500/2dlftyPz7mTYbrsPvTogyFmYd7d.jpg",
@@ -6966,16 +6940,6 @@ var MOVIES_DATA = [
     "release_date": "2003-04-25",
     "directors": [
       "James Mangold"
-    ]
-  },
-  {
-    "id": 604,
-    "title": "The Matrix Reloaded",
-    "poster_url": "https://image.tmdb.org/t/p/w500/aA5qHS0FbSXO8PxcxUIHbDrJyuh.jpg",
-    "release_date": "2003-05-15",
-    "directors": [
-      "Lilly Wachowski",
-      "Lana Wachowski"
     ]
   },
   {
@@ -7061,24 +7025,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 8961,
-    "title": "Bad Boys II",
-    "poster_url": "https://image.tmdb.org/t/p/w500/yCvB5fG5aEPqa1St7ihY6KEAsHD.jpg",
-    "release_date": "2003-07-18",
-    "directors": [
-      "Michael Bay"
-    ]
-  },
-  {
-    "id": 8273,
-    "title": "American Wedding",
-    "poster_url": "https://image.tmdb.org/t/p/w500/pCO3lJv2PzPkJty29APxCVSjyoE.jpg",
-    "release_date": "2003-08-01",
-    "directors": [
-      "Jesse Dylan"
-    ]
-  },
-  {
     "id": 153,
     "title": "Lost in Translation",
     "poster_url": "https://image.tmdb.org/t/p/w500/3jCLmYDIIiSMPujbwygNpqdpM8N.jpg",
@@ -7131,16 +7077,6 @@ var MOVIES_DATA = [
     "directors": [
       "Aaron Blaise",
       "Robert Walker"
-    ]
-  },
-  {
-    "id": 605,
-    "title": "The Matrix Revolutions",
-    "poster_url": "https://image.tmdb.org/t/p/w500/bkkS61w94ZVMNVd8KEyyJl2tnY5.jpg",
-    "release_date": "2003-11-05",
-    "directors": [
-      "Lilly Wachowski",
-      "Lana Wachowski"
     ]
   },
   {
@@ -7304,32 +7240,12 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 809,
-    "title": "Shrek 2",
-    "poster_url": "https://image.tmdb.org/t/p/w500/2yYP0PQjG8zVqturh1BAqu2Tixl.jpg",
-    "release_date": "2004-05-19",
-    "directors": [
-      "Conrad Vernon",
-      "Kelly Asbury",
-      "Andrew Adamson"
-    ]
-  },
-  {
     "id": 435,
     "title": "The Day After Tomorrow",
     "poster_url": "https://image.tmdb.org/t/p/w500/Wr4HeYQRvwVCxzOV5TmGE7UkXq.jpg",
     "release_date": "2004-05-28",
     "directors": [
       "Roland Emmerich"
-    ]
-  },
-  {
-    "id": 673,
-    "title": "Harry Potter and the Prisoner of Azkaban",
-    "poster_url": "https://image.tmdb.org/t/p/w500/aWxwnYoe8p2d2fcxOqtvAtJ72Rw.jpg",
-    "release_date": "2004-06-04",
-    "directors": [
-      "Alfonso Cuarón"
     ]
   },
   {
@@ -7375,15 +7291,6 @@ var MOVIES_DATA = [
     "release_date": "2004-07-16",
     "directors": [
       "Alex Proyas"
-    ]
-  },
-  {
-    "id": 2502,
-    "title": "The Bourne Supremacy",
-    "poster_url": "https://image.tmdb.org/t/p/w500/7IYGiDrquvX3q7e9PV6Pejs6b2g.jpg",
-    "release_date": "2004-07-23",
-    "directors": [
-      "Paul Greengrass"
     ]
   },
   {
@@ -7449,6 +7356,15 @@ var MOVIES_DATA = [
     "release_date": "2004-10-29",
     "directors": [
       "James Wan"
+    ]
+  },
+  {
+    "id": 1677,
+    "title": "Ray",
+    "poster_url": "https://image.tmdb.org/t/p/w500/tSPC7sO2XYNL9QcMmK88tuUALL5.jpg",
+    "release_date": "2004-10-29",
+    "directors": [
+      "Taylor Hackford"
     ]
   },
   {
@@ -7637,12 +7553,39 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 10476,
+    "title": "Hustle & Flow",
+    "poster_url": "https://image.tmdb.org/t/p/w500/yO5QTMZ2Oex6mwsgJuwRuINGuOQ.jpg",
+    "release_date": "2005-07-22",
+    "directors": [
+      "Craig Brewer"
+    ]
+  },
+  {
+    "id": 10048,
+    "title": "Stealth",
+    "poster_url": "https://image.tmdb.org/t/p/w500/cVtQHyTwaDhYFVRFXSuDthC2bXH.jpg",
+    "release_date": "2005-07-29",
+    "directors": [
+      "Rob Cohen"
+    ]
+  },
+  {
     "id": 6957,
     "title": "The 40 Year Old Virgin",
     "poster_url": "https://image.tmdb.org/t/p/w500/mVeoqL37gzhMXQVpONi9DGOQ3tZ.jpg",
     "release_date": "2005-08-11",
     "directors": [
       "Judd Apatow"
+    ]
+  },
+  {
+    "id": 11460,
+    "title": "Red Eye",
+    "poster_url": "https://image.tmdb.org/t/p/w500/j33szyBdJjrmnItyUgPBsqaBECE.jpg",
+    "release_date": "2005-08-19",
+    "directors": [
+      "Wes Craven"
     ]
   },
   {
@@ -7671,6 +7614,15 @@ var MOVIES_DATA = [
     "directors": [
       "Mike Johnson",
       "Tim Burton"
+    ]
+  },
+  {
+    "id": 9315,
+    "title": "Flightplan",
+    "poster_url": "https://image.tmdb.org/t/p/w500/oNjZFzbe7PfF3TxztNHDkinOPyB.jpg",
+    "release_date": "2005-09-23",
+    "directors": [
+      "Robert Schwentke"
     ]
   },
   {
@@ -7707,6 +7659,15 @@ var MOVIES_DATA = [
     "release_date": "2005-11-18",
     "directors": [
       "Mike Newell"
+    ]
+  },
+  {
+    "id": 69,
+    "title": "Walk the Line",
+    "poster_url": "https://image.tmdb.org/t/p/w500/p8lPTjvjOjTfvC1E9pmMwcF9vkn.jpg",
+    "release_date": "2005-11-18",
+    "directors": [
+      "James Mangold"
     ]
   },
   {
@@ -7798,15 +7759,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 950,
-    "title": "Ice Age: The Meltdown",
-    "poster_url": "https://image.tmdb.org/t/p/w500/zDduhCHasKQ9YOTvlOreHem7Wbi.jpg",
-    "release_date": "2006-03-31",
-    "directors": [
-      "Carlos Saldanha"
-    ]
-  },
-  {
     "id": 588,
     "title": "Silent Hill",
     "poster_url": "https://image.tmdb.org/t/p/w500/dVW2L5eu6Hv0nfEEp0nY2lYmcbc.jpg",
@@ -7822,15 +7774,6 @@ var MOVIES_DATA = [
     "release_date": "2006-04-28",
     "directors": [
       "Barry Sonnenfeld"
-    ]
-  },
-  {
-    "id": 956,
-    "title": "Mission: Impossible III",
-    "poster_url": "https://image.tmdb.org/t/p/w500/vKGYCpmQyV9uHybWDzXuII8Los5.jpg",
-    "release_date": "2006-05-05",
-    "directors": [
-      "J.J. Abrams"
     ]
   },
   {
@@ -7889,15 +7832,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 58,
-    "title": "Pirates of the Caribbean: Dead Man's Chest",
-    "poster_url": "https://image.tmdb.org/t/p/w500/uXEqmloGyP7UXAiphJUu2v2pcuE.jpg",
-    "release_date": "2006-07-07",
-    "directors": [
-      "Gore Verbinski"
-    ]
-  },
-  {
     "id": 82,
     "title": "Miami Vice",
     "poster_url": "https://image.tmdb.org/t/p/w500/1KGD2g0wOc7WBfHc5G19reLHQxk.jpg",
@@ -7931,6 +7865,15 @@ var MOVIES_DATA = [
     "release_date": "2006-08-18",
     "directors": [
       "Bent Hamer"
+    ]
+  },
+  {
+    "id": 326,
+    "title": "Snakes on a Plane",
+    "poster_url": "https://image.tmdb.org/t/p/w500/i0ynvZ89tV1t8MAL9FmeQELfXH0.jpg",
+    "release_date": "2006-08-18",
+    "directors": [
+      "David R. Ellis"
     ]
   },
   {
@@ -7976,6 +7919,15 @@ var MOVIES_DATA = [
     "release_date": "2006-10-05",
     "directors": [
       "Martin Scorsese"
+    ]
+  },
+  {
+    "id": 3683,
+    "title": "Flags of Our Fathers",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2nkPrhf4YIyMFelfe4zdOnGRYz5.jpg",
+    "release_date": "2006-10-19",
+    "directors": [
+      "Clint Eastwood"
     ]
   },
   {
@@ -8082,6 +8034,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 1251,
+    "title": "Letters from Iwo Jima",
+    "poster_url": "https://image.tmdb.org/t/p/w500/kZokxQtzMPURvijWYFuvh1fAvnv.jpg",
+    "release_date": "2007-02-02",
+    "directors": [
+      "Clint Eastwood"
+    ]
+  },
+  {
     "id": 9757,
     "title": "Norbit",
     "poster_url": "https://image.tmdb.org/t/p/w500/XcZ5NzygPp54csxCnzvQKuxFL2.jpg",
@@ -8136,15 +8097,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 559,
-    "title": "Spider-Man 3",
-    "poster_url": "https://image.tmdb.org/t/p/w500/qFmwhVUoUSXjkKRmca5yGDEXBIj.jpg",
-    "release_date": "2007-05-03",
-    "directors": [
-      "Sam Raimi"
-    ]
-  },
-  {
     "id": 1562,
     "title": "28 Weeks Later",
     "poster_url": "https://image.tmdb.org/t/p/w500/oix0aNv1lvW3nUGspUyvSIBlpbs.jpg",
@@ -8154,30 +8106,12 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 810,
-    "title": "Shrek the Third",
-    "poster_url": "https://image.tmdb.org/t/p/w500/n4SexGGQzI26E269tfpa80MZaGV.jpg",
-    "release_date": "2007-05-18",
+    "id": 5723,
+    "title": "Once",
+    "poster_url": "https://image.tmdb.org/t/p/w500/7nW363kSYRCkr4VGOMvuSGwtzKs.jpg",
+    "release_date": "2007-06-15",
     "directors": [
-      "Chris Miller"
-    ]
-  },
-  {
-    "id": 285,
-    "title": "Pirates of the Caribbean: At World's End",
-    "poster_url": "https://image.tmdb.org/t/p/w500/jGWpG4YhpQwVmjyHEGkxEkeRf0S.jpg",
-    "release_date": "2007-05-25",
-    "directors": [
-      "Gore Verbinski"
-    ]
-  },
-  {
-    "id": 1571,
-    "title": "Live Free or Die Hard",
-    "poster_url": "https://image.tmdb.org/t/p/w500/31TT47YjBl7a7uvJ3ff1nrirXhP.jpg",
-    "release_date": "2007-06-27",
-    "directors": [
-      "Len Wiseman"
+      "John Carney"
     ]
   },
   {
@@ -8282,13 +8216,12 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 440,
-    "title": "Aliens vs Predator: Requiem",
-    "poster_url": "https://image.tmdb.org/t/p/w500/5iTwPDNtvK6ZZF607BHBbU3HO0B.jpg",
-    "release_date": "2007-12-25",
+    "id": 6538,
+    "title": "Charlie Wilson's War",
+    "poster_url": "https://image.tmdb.org/t/p/w500/45FghqcdSYRWK7PsHUInaFPNd8l.jpg",
+    "release_date": "2007-12-21",
     "directors": [
-      "Colin Strause",
-      "Greg Strause"
+      "Mike Nichols"
     ]
   },
   {
@@ -8337,15 +8270,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 7555,
-    "title": "Rambo",
-    "poster_url": "https://image.tmdb.org/t/p/w500/3mInub5c8o00H7EJ1TrjAqOzIuc.jpg",
-    "release_date": "2008-01-25",
-    "directors": [
-      "Sylvester Stallone"
-    ]
-  },
-  {
     "id": 7345,
     "title": "There Will Be Blood",
     "poster_url": "https://image.tmdb.org/t/p/w500/fa0RDkAlCec0STeMNAhPaF89q6U.jpg",
@@ -8389,24 +8313,6 @@ var MOVIES_DATA = [
     "directors": [
       "Lana Wachowski",
       "Lilly Wachowski"
-    ]
-  },
-  {
-    "id": 2454,
-    "title": "The Chronicles of Narnia: Prince Caspian",
-    "poster_url": "https://image.tmdb.org/t/p/w500/qxz3WIyjZiSKUhaTIEJ3c1GcC9z.jpg",
-    "release_date": "2008-05-16",
-    "directors": [
-      "Andrew Adamson"
-    ]
-  },
-  {
-    "id": 217,
-    "title": "Indiana Jones and the Kingdom of the Crystal Skull",
-    "poster_url": "https://image.tmdb.org/t/p/w500/56As6XEM1flWvprX4LgkPl8ii4K.jpg",
-    "release_date": "2008-05-22",
-    "directors": [
-      "Steven Spielberg"
     ]
   },
   {
@@ -8510,6 +8416,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 12620,
+    "title": "The House Bunny",
+    "poster_url": "https://image.tmdb.org/t/p/w500/4oGGJ824vqIqDtyMvMuK44pDEmx.jpg",
+    "release_date": "2008-08-22",
+    "directors": [
+      "Fred Wolf"
+    ]
+  },
+  {
     "id": 10527,
     "title": "Madagascar: Escape 2 Africa",
     "poster_url": "https://image.tmdb.org/t/p/w500/agRbLOHgN46TQO4YdKR462iR7To.jpg",
@@ -8566,6 +8481,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 14410,
+    "title": "Notorious",
+    "poster_url": "https://image.tmdb.org/t/p/w500/62NsZPgueSiE8y7dqtU3FSLFwYw.jpg",
+    "release_date": "2009-01-16",
+    "directors": [
+      "George Tillman Jr."
+    ]
+  },
+  {
     "id": 8681,
     "title": "Taken",
     "poster_url": "https://image.tmdb.org/t/p/w500/ognkaUSNgJe1a2pjB4UNdzEo5jT.jpg",
@@ -8612,6 +8536,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 17332,
+    "title": "The Soloist",
+    "poster_url": "https://image.tmdb.org/t/p/w500/6GnFN9OTkaoeKNzd2Fbp3ZyJjKi.jpg",
+    "release_date": "2009-04-24",
+    "directors": [
+      "Joe Wright"
+    ]
+  },
+  {
     "id": 13475,
     "title": "Star Trek",
     "poster_url": "https://image.tmdb.org/t/p/w500/hN2ZtF3Uw6mhIHZiqL0SKzELtKn.jpg",
@@ -8636,15 +8569,6 @@ var MOVIES_DATA = [
     "release_date": "2009-05-20",
     "directors": [
       "McG"
-    ]
-  },
-  {
-    "id": 18360,
-    "title": "Night at the Museum: Battle of the Smithsonian",
-    "poster_url": "https://image.tmdb.org/t/p/w500/l9yAQn6TyrA3gv5xZZkiMMoZsiw.jpg",
-    "release_date": "2009-05-21",
-    "directors": [
-      "Shawn Levy"
     ]
   },
   {
@@ -8681,15 +8605,6 @@ var MOVIES_DATA = [
     "release_date": "2009-06-19",
     "directors": [
       "Anne Fletcher"
-    ]
-  },
-  {
-    "id": 8355,
-    "title": "Ice Age: Dawn of the Dinosaurs",
-    "poster_url": "https://image.tmdb.org/t/p/w500/cXOLaxcNjNAYmEx1trZxOTKhK3Q.jpg",
-    "release_date": "2009-07-01",
-    "directors": [
-      "Carlos Saldanha"
     ]
   },
   {
@@ -8893,6 +8808,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 25196,
+    "title": "Crazy Heart",
+    "poster_url": "https://image.tmdb.org/t/p/w500/zwao2YMsqf27IzNEtDNWSe0W9jH.jpg",
+    "release_date": "2010-02-05",
+    "directors": [
+      "Scott Cooper"
+    ]
+  },
+  {
     "id": 32657,
     "title": "Percy Jackson & the Olympians: The Lightning Thief",
     "poster_url": "https://image.tmdb.org/t/p/w500/brzpTyZ5bnM7s53C1KSk1TmrMO6.jpg",
@@ -8949,15 +8873,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 10138,
-    "title": "Iron Man 2",
-    "poster_url": "https://image.tmdb.org/t/p/w500/6WBeq4fCfn7AN0o21W9qNcRF2l9.jpg",
-    "release_date": "2010-05-07",
-    "directors": [
-      "Jon Favreau"
-    ]
-  },
-  {
     "id": 10192,
     "title": "Shrek Forever After",
     "poster_url": "https://image.tmdb.org/t/p/w500/6HrfPZtKcGmX2tUWW3cnciZTaSD.jpg",
@@ -8984,15 +8899,6 @@ var MOVIES_DATA = [
       "Harald Zwart"
     ],
     "showDirector": true
-  },
-  {
-    "id": 10193,
-    "title": "Toy Story 3",
-    "poster_url": "https://image.tmdb.org/t/p/w500/AbbXspMOwdvwWZgVN0nabZq03Ec.jpg",
-    "release_date": "2010-06-18",
-    "directors": [
-      "Lee Unkrich"
-    ]
   },
   {
     "id": 24021,
@@ -9238,33 +9144,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 1865,
-    "title": "Pirates of the Caribbean: On Stranger Tides",
-    "poster_url": "https://image.tmdb.org/t/p/w500/keGfSvCmYj7CvdRx36OdVrAEibE.jpg",
-    "release_date": "2011-05-20",
-    "directors": [
-      "Rob Marshall"
-    ]
-  },
-  {
-    "id": 45243,
-    "title": "The Hangover Part II",
-    "poster_url": "https://image.tmdb.org/t/p/w500/cKZu0Fdkj7dmwbfMpgDqVVCkLJQ.jpg",
-    "release_date": "2011-05-26",
-    "directors": [
-      "Todd Phillips"
-    ]
-  },
-  {
-    "id": 49444,
-    "title": "Kung Fu Panda 2",
-    "poster_url": "https://image.tmdb.org/t/p/w500/mtqqD00vB4PGRt20gWtGqFhrkd0.jpg",
-    "release_date": "2011-05-26",
-    "directors": [
-      "Jennifer Yuh Nelson"
-    ]
-  },
-  {
     "id": 59436,
     "title": "Midnight in Paris",
     "poster_url": "https://image.tmdb.org/t/p/w500/4wBG5kbfagTQclETblPRRGihk0I.jpg",
@@ -9274,12 +9153,12 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 49013,
-    "title": "Cars 2",
-    "poster_url": "https://image.tmdb.org/t/p/w500/okIz1HyxeVOMzYwwHUjH2pHi74I.jpg",
-    "release_date": "2011-06-24",
+    "id": 59861,
+    "title": "Larry Crowne",
+    "poster_url": "https://image.tmdb.org/t/p/w500/8GDM7RqM6J1vNUdlU94rmtlNa3e.jpg",
+    "release_date": "2011-06-30",
     "directors": [
-      "John Lasseter"
+      "Tom Hanks"
     ]
   },
   {
@@ -9416,15 +9295,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 56292,
-    "title": "Mission: Impossible - Ghost Protocol",
-    "poster_url": "https://image.tmdb.org/t/p/w500/eRZTGx7GsiKqPch96k27LK005ZL.jpg",
-    "release_date": "2011-12-21",
-    "directors": [
-      "Brad Bird"
-    ]
-  },
-  {
     "id": 57212,
     "title": "War Horse",
     "poster_url": "https://image.tmdb.org/t/p/w500/3aRHhvvngFPJFy5uAjo7GVr3PhL.jpg",
@@ -9532,25 +9402,6 @@ var MOVIES_DATA = [
     "release_date": "2012-07-03",
     "directors": [
       "Marc Webb"
-    ]
-  },
-  {
-    "id": 57800,
-    "title": "Ice Age: Continental Drift",
-    "poster_url": "https://image.tmdb.org/t/p/w500/dfp1BZF7FxbBUyzHvMOI9t8NWDD.jpg",
-    "release_date": "2012-07-13",
-    "directors": [
-      "Mike Thurmeier",
-      "Steve Martino"
-    ]
-  },
-  {
-    "id": 49026,
-    "title": "The Dark Knight Rises",
-    "poster_url": "https://image.tmdb.org/t/p/w500/hr0L2aueqlP2BYUblTTjmtn0hw4.jpg",
-    "release_date": "2012-07-20",
-    "directors": [
-      "Christopher Nolan"
     ]
   },
   {
@@ -9709,15 +9560,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 68721,
-    "title": "Iron Man 3",
-    "poster_url": "https://image.tmdb.org/t/p/w500/qhPtAc1TKbMPqNvcdXSOn9Bn7hZ.jpg",
-    "release_date": "2013-05-03",
-    "directors": [
-      "Shane Black"
-    ]
-  },
-  {
     "id": 64682,
     "title": "The Great Gatsby",
     "poster_url": "https://image.tmdb.org/t/p/w500/tyxfCBQv6Ap74jcu3xd7aBiaa29.jpg",
@@ -9761,16 +9603,6 @@ var MOVIES_DATA = [
     "release_date": "2013-06-21",
     "directors": [
       "Dan Scanlon"
-    ]
-  },
-  {
-    "id": 93456,
-    "title": "Despicable Me 2",
-    "poster_url": "https://image.tmdb.org/t/p/w500/5Fh4NdoEnCjCK9wLjdJ9DJNFl2b.jpg",
-    "release_date": "2013-07-03",
-    "directors": [
-      "Pierre Coffin",
-      "Chris Renaud"
     ]
   },
   {
@@ -9873,15 +9705,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 76338,
-    "title": "Thor: The Dark World",
-    "poster_url": "https://image.tmdb.org/t/p/w500/wp6OxE4poJ4G7c0U2ZIXasTSMR7.jpg",
-    "release_date": "2013-11-08",
-    "directors": [
-      "Alan Taylor"
-    ]
-  },
-  {
     "id": 76203,
     "title": "12 Years a Slave",
     "poster_url": "https://image.tmdb.org/t/p/w500/xdANQijuNrJaw1HA61rDccME4Tm.jpg",
@@ -9928,12 +9751,22 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 57158,
-    "title": "The Hobbit: The Desolation of Smaug",
-    "poster_url": "https://image.tmdb.org/t/p/w500/xQYiXsheRCDBA39DOrmaw1aSpbk.jpg",
-    "release_date": "2013-12-13",
+    "id": 86829,
+    "title": "Inside Llewyn Davis",
+    "poster_url": "https://image.tmdb.org/t/p/w500/nNxK3pC3DMpPpWKMvo2p3liREVT.jpg",
+    "release_date": "2013-12-10",
     "directors": [
-      "Peter Jackson"
+      "Joel Coen",
+      "Ethan Coen"
+    ]
+  },
+  {
+    "id": 140823,
+    "title": "Saving Mr. Banks",
+    "poster_url": "https://image.tmdb.org/t/p/w500/4RkcUe5PKnYvrCwMjk8giUAoID7.jpg",
+    "release_date": "2013-12-20",
+    "directors": [
+      "John Lee Hancock"
     ]
   },
   {
@@ -9983,6 +9816,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 225574,
+    "title": "Non-Stop",
+    "poster_url": "https://image.tmdb.org/t/p/w500/Nkgaj3X0W2jHQ1TzHEgWFpN3kJ.jpg",
+    "release_date": "2014-02-28",
+    "directors": [
+      "Jaume Collet-Serra"
+    ]
+  },
+  {
     "id": 120467,
     "title": "The Grand Budapest Hotel",
     "poster_url": "https://image.tmdb.org/t/p/w500/eWdyYQreja6JGCzqHWXpWHDrrPo.jpg",
@@ -9998,15 +9840,6 @@ var MOVIES_DATA = [
     "release_date": "2014-03-20",
     "directors": [
       "Lars von Trier"
-    ]
-  },
-  {
-    "id": 102382,
-    "title": "The Amazing Spider-Man 2",
-    "poster_url": "https://image.tmdb.org/t/p/w500/dGjoPttcbKR5VWg1jQuNFB247KL.jpg",
-    "release_date": "2014-05-02",
-    "directors": [
-      "Marc Webb"
     ]
   },
   {
@@ -10043,15 +9876,6 @@ var MOVIES_DATA = [
     "release_date": "2014-06-06",
     "directors": [
       "Doug Liman"
-    ]
-  },
-  {
-    "id": 91314,
-    "title": "Transformers: Age of Extinction",
-    "poster_url": "https://image.tmdb.org/t/p/w500/jyzrfx2WaeY60kYZpPYepSjGz4S.jpg",
-    "release_date": "2014-06-27",
-    "directors": [
-      "Michael Bay"
     ]
   },
   {
@@ -10220,15 +10044,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 122917,
-    "title": "The Hobbit: The Battle of the Five Armies",
-    "poster_url": "https://image.tmdb.org/t/p/w500/xT98tLqatZPQApyRmlPL12LtiWp.jpg",
-    "release_date": "2014-12-17",
-    "directors": [
-      "Peter Jackson"
-    ]
-  },
-  {
     "id": 205596,
     "title": "The Imitation Game",
     "poster_url": "https://image.tmdb.org/t/p/w500/zSqJ1qFq8NXFfi7JeIYMlzyR0dx.jpg",
@@ -10335,15 +10150,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 168259,
-    "title": "Furious 7",
-    "poster_url": "https://image.tmdb.org/t/p/w500/ktofZ9Htrjiy0P6LEowsDaxd3Ri.jpg",
-    "release_date": "2015-04-03",
-    "directors": [
-      "James Wan"
-    ]
-  },
-  {
     "id": 264660,
     "title": "Ex Machina",
     "poster_url": "https://image.tmdb.org/t/p/w500/dmJW8IAKHKxFNiUnoDR7JfsK7Rp.jpg",
@@ -10425,15 +10231,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 102899,
-    "title": "Ant-Man",
-    "poster_url": "https://image.tmdb.org/t/p/w500/rQRnQfUl3kfp78nCWq8Ks04vnq1.jpg",
-    "release_date": "2015-07-17",
-    "directors": [
-      "Peyton Reed"
-    ]
-  },
-  {
     "id": 257344,
     "title": "Pixels",
     "poster_url": "https://image.tmdb.org/t/p/w500/d26S5EfVXLNxRXqyFy1yyl3qRq3.jpg",
@@ -10498,6 +10295,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 296098,
+    "title": "Bridge of Spies",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fmOOjHAQzxr0c1sfcY4qkiSRBH6.jpg",
+    "release_date": "2015-10-16",
+    "directors": [
+      "Steven Spielberg"
+    ]
+  },
+  {
     "id": 273477,
     "title": "Scouts Guide to the Zombie Apocalypse",
     "poster_url": "https://image.tmdb.org/t/p/w500/lUKvvSnjFlazrdh6wyHxHrdMknD.jpg",
@@ -10522,15 +10328,6 @@ var MOVIES_DATA = [
     "release_date": "2015-11-25",
     "directors": [
       "Ryan Coogler"
-    ]
-  },
-  {
-    "id": 140607,
-    "title": "Star Wars: The Force Awakens",
-    "poster_url": "https://image.tmdb.org/t/p/w500/wqnLdwVXoBjKibFRR5U3y0aDUhs.jpg",
-    "release_date": "2015-12-18",
-    "directors": [
-      "J.J. Abrams"
     ]
   },
   {
@@ -10579,16 +10376,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 140300,
-    "title": "Kung Fu Panda 3",
-    "poster_url": "https://image.tmdb.org/t/p/w500/oajNi4Su39WAByHI6EONu8G8HYn.jpg",
-    "release_date": "2016-01-29",
-    "directors": [
-      "Jennifer Yuh Nelson",
-      "Alessandro Carloni"
-    ]
-  },
-  {
     "id": 293660,
     "title": "Deadpool",
     "poster_url": "https://image.tmdb.org/t/p/w500/3E53WEZJqP6aM84D8CckXx4pIHw.jpg",
@@ -10632,25 +10419,6 @@ var MOVIES_DATA = [
     "release_date": "2016-04-08"
   },
   {
-    "id": 271110,
-    "title": "Captain America: Civil War",
-    "poster_url": "https://image.tmdb.org/t/p/w500/rAGiXaUfPzY7CDEyNKUofk3Kw2e.jpg",
-    "release_date": "2016-05-06",
-    "directors": [
-      "Joe Russo",
-      "Anthony Russo"
-    ]
-  },
-  {
-    "id": 246655,
-    "title": "X-Men: Apocalypse",
-    "poster_url": "https://image.tmdb.org/t/p/w500/ikA8UhYdTGpqbatFa93nIf6noSr.jpg",
-    "release_date": "2016-05-27",
-    "directors": [
-      "Bryan Singer"
-    ]
-  },
-  {
     "id": 241259,
     "title": "Alice Through the Looking Glass",
     "poster_url": "https://image.tmdb.org/t/p/w500/kbGamUkYfgKIYIrU8kW5oc0NatZ.jpg",
@@ -10666,15 +10434,6 @@ var MOVIES_DATA = [
     "release_date": "2016-06-03",
     "directors": [
       "Thea Sharrock"
-    ]
-  },
-  {
-    "id": 291805,
-    "title": "Now You See Me 2",
-    "poster_url": "https://image.tmdb.org/t/p/w500/A81kDB6a1K86YLlcOtZB27jriJh.jpg",
-    "release_date": "2016-06-10",
-    "directors": [
-      "Jon M. Chu"
     ]
   },
   {
@@ -10769,15 +10528,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 259316,
-    "title": "Fantastic Beasts and Where to Find Them",
-    "poster_url": "https://image.tmdb.org/t/p/w500/fLsaFKExQt05yqjoAvKsmOMYvJR.jpg",
-    "release_date": "2016-11-18",
-    "directors": [
-      "David Yates"
-    ]
-  },
-  {
     "id": 313369,
     "title": "La La Land",
     "poster_url": "https://image.tmdb.org/t/p/w500/uDO8zWDhfWwoFdKS4fzkUJt0Rf0.jpg",
@@ -10850,30 +10600,12 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 324552,
-    "title": "John Wick: Chapter 2",
-    "poster_url": "https://image.tmdb.org/t/p/w500/hXWBc0ioZP3cN4zCu6SN3YHXZVO.jpg",
-    "release_date": "2017-02-10",
-    "directors": [
-      "Chad Stahelski"
-    ]
-  },
-  {
     "id": 419430,
     "title": "Get Out",
     "poster_url": "https://image.tmdb.org/t/p/w500/tFXcEccSQMf3lfhfXKSU9iRBpa3.jpg",
     "release_date": "2017-02-24",
     "directors": [
       "Jordan Peele"
-    ]
-  },
-  {
-    "id": 263115,
-    "title": "Logan",
-    "poster_url": "https://image.tmdb.org/t/p/w500/fnbjcRDYn6YviCcePDnGdyAkYsB.jpg",
-    "release_date": "2017-03-03",
-    "directors": [
-      "James Mangold"
     ]
   },
   {
@@ -10896,24 +10628,6 @@ var MOVIES_DATA = [
     "showDirector": true
   },
   {
-    "id": 337339,
-    "title": "The Fate of the Furious",
-    "poster_url": "https://image.tmdb.org/t/p/w500/dImWM7GJqryWJO9LHa3XQ8DD5NH.jpg",
-    "release_date": "2017-04-14",
-    "directors": [
-      "F. Gary Gray"
-    ]
-  },
-  {
-    "id": 283995,
-    "title": "Guardians of the Galaxy Vol. 2",
-    "poster_url": "https://image.tmdb.org/t/p/w500/y4MBh0EjBlMuOzv9axM4qJlmhzz.jpg",
-    "release_date": "2017-05-05",
-    "directors": [
-      "James Gunn"
-    ]
-  },
-  {
     "id": 166426,
     "title": "Pirates of the Caribbean: Dead Men Tell No Tales",
     "poster_url": "https://image.tmdb.org/t/p/w500/6lAPOAFYFWIO3SQRemEY2wInQMC.jpg",
@@ -10933,6 +10647,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 282035,
+    "title": "The Mummy",
+    "poster_url": "https://image.tmdb.org/t/p/w500/zxkY8byBnCsXodEYpK8tmwEGXBI.jpg",
+    "release_date": "2017-06-09",
+    "directors": [
+      "Alex Kurtzman"
+    ]
+  },
+  {
     "id": 260514,
     "title": "Cars 3",
     "poster_url": "https://image.tmdb.org/t/p/w500/fyy1nDC8wm553FCiBDojkJmKLCs.jpg",
@@ -10942,30 +10665,12 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 335988,
-    "title": "Transformers: The Last Knight",
-    "poster_url": "https://image.tmdb.org/t/p/w500/s5HQf2Gb3lIO2cRcFwNL9sn1o1o.jpg",
-    "release_date": "2017-06-21",
-    "directors": [
-      "Michael Bay"
-    ]
-  },
-  {
     "id": 339403,
     "title": "Baby Driver",
     "poster_url": "https://image.tmdb.org/t/p/w500/tYzFuYXmT8LOYASlFCkaPiAFAl0.jpg",
     "release_date": "2017-06-28",
     "directors": [
       "Edgar Wright"
-    ]
-  },
-  {
-    "id": 315635,
-    "title": "Spider-Man: Homecoming",
-    "poster_url": "https://image.tmdb.org/t/p/w500/c24sv2weTHPsmDa7jEMN0m2P3RT.jpg",
-    "release_date": "2017-07-07",
-    "directors": [
-      "Jon Watts"
     ]
   },
   {
@@ -10996,21 +10701,21 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 337170,
+    "title": "American Made",
+    "poster_url": "https://image.tmdb.org/t/p/w500/23ILgoPSO5ShKcTZOuiTVfqFAUB.jpg",
+    "release_date": "2017-09-29",
+    "directors": [
+      "Doug Liman"
+    ]
+  },
+  {
     "id": 335984,
     "title": "Blade Runner 2049",
     "poster_url": "https://image.tmdb.org/t/p/w500/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg",
     "release_date": "2017-10-06",
     "directors": [
       "Denis Villeneuve"
-    ]
-  },
-  {
-    "id": 284053,
-    "title": "Thor: Ragnarok",
-    "poster_url": "https://image.tmdb.org/t/p/w500/rzRwTcFvttcN1ZpX2xv4j3tSdJu.jpg",
-    "release_date": "2017-11-03",
-    "directors": [
-      "Taika Waititi"
     ]
   },
   {
@@ -11038,15 +10743,6 @@ var MOVIES_DATA = [
     "release_date": "2017-11-22",
     "directors": [
       "Lee Unkrich"
-    ]
-  },
-  {
-    "id": 181808,
-    "title": "Star Wars: The Last Jedi",
-    "poster_url": "https://image.tmdb.org/t/p/w500/ySaaKHOLAQU5HoZqWmzDIj1VvZ1.jpg",
-    "release_date": "2017-12-15",
-    "directors": [
-      "Rian Johnson"
     ]
   },
   {
@@ -11149,25 +10845,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 299536,
-    "title": "Avengers: Infinity War",
-    "poster_url": "https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
-    "release_date": "2018-04-27",
-    "directors": [
-      "Anthony Russo",
-      "Joe Russo"
-    ]
-  },
-  {
-    "id": 383498,
-    "title": "Deadpool 2",
-    "poster_url": "https://image.tmdb.org/t/p/w500/to0spRl1CMDvyUbOnbb4fTk3VAd.jpg",
-    "release_date": "2018-05-18",
-    "directors": [
-      "David Leitch"
-    ]
-  },
-  {
     "id": 348350,
     "title": "Solo: A Star Wars Story",
     "poster_url": "https://image.tmdb.org/t/p/w500/4oD6VEccFkorEBTEDXtpLAaz0Rl.jpg",
@@ -11195,39 +10872,12 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 260513,
-    "title": "Incredibles 2",
-    "poster_url": "https://image.tmdb.org/t/p/w500/9lFKBtaVIhP7E2Pk0IY1CwTKTMZ.jpg",
-    "release_date": "2018-06-15",
-    "directors": [
-      "Brad Bird"
-    ]
-  },
-  {
-    "id": 351286,
-    "title": "Jurassic World: Fallen Kingdom",
-    "poster_url": "https://image.tmdb.org/t/p/w500/x2Us3jR6ToMJjbcPbLimYoxf6xr.jpg",
-    "release_date": "2018-06-22",
-    "directors": [
-      "J.A. Bayona"
-    ]
-  },
-  {
     "id": 400535,
     "title": "Sicario: Day of the Soldado",
     "poster_url": "https://image.tmdb.org/t/p/w500/qcLYofEhNh51Sk1jUWjmKHLzkqw.jpg",
     "release_date": "2018-06-29",
     "directors": [
       "Stefano Sollima"
-    ]
-  },
-  {
-    "id": 363088,
-    "title": "Ant-Man and the Wasp",
-    "poster_url": "https://image.tmdb.org/t/p/w500/cFQEO687n1K6umXbInzocxcnAQz.jpg",
-    "release_date": "2018-07-06",
-    "directors": [
-      "Peyton Reed"
     ]
   },
   {
@@ -11300,7 +10950,8 @@ var MOVIES_DATA = [
     "release_date": "2018-10-05",
     "directors": [
       "Bradley Cooper"
-    ]
+    ],
+    "showDirector": true
   },
   {
     "id": 424694,
@@ -11369,16 +11020,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 299537,
-    "title": "Captain Marvel",
-    "poster_url": "https://image.tmdb.org/t/p/w500/AtsgWhDnHTq68L0lLsUrCnM7TjG.jpg",
-    "release_date": "2019-03-08",
-    "directors": [
-      "Ryan Fleck",
-      "Anna Boden"
-    ]
-  },
-  {
     "id": 458723,
     "title": "Us",
     "poster_url": "https://image.tmdb.org/t/p/w500/ux2dU1jQ2ACIMShzB3yP93Udpzc.jpg",
@@ -11394,25 +11035,6 @@ var MOVIES_DATA = [
     "release_date": "2019-04-05",
     "directors": [
       "David F. Sandberg"
-    ]
-  },
-  {
-    "id": 299534,
-    "title": "Avengers: Endgame",
-    "poster_url": "https://image.tmdb.org/t/p/w500/bR8ISy1O9XQxqiy0fQFw2BX72RQ.jpg",
-    "release_date": "2019-04-26",
-    "directors": [
-      "Joe Russo",
-      "Anthony Russo"
-    ]
-  },
-  {
-    "id": 458156,
-    "title": "John Wick: Chapter 3 - Parabellum",
-    "poster_url": "https://image.tmdb.org/t/p/w500/ziEuG1essDuWuC5lpWUaw1uXY2O.jpg",
-    "release_date": "2019-05-17",
-    "directors": [
-      "Chad Stahelski"
     ]
   },
   {
@@ -11432,6 +11054,15 @@ var MOVIES_DATA = [
     "release_date": "2019-05-31",
     "directors": [
       "Michael Dougherty"
+    ]
+  },
+  {
+    "id": 504608,
+    "title": "Rocketman",
+    "poster_url": "https://image.tmdb.org/t/p/w500/f4FF18ia7yTvHf2izNrHqBmgH8U.jpg",
+    "release_date": "2019-05-31",
+    "directors": [
+      "Dexter Fletcher"
     ]
   },
   {
@@ -11471,15 +11102,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 429617,
-    "title": "Spider-Man: Far From Home",
-    "poster_url": "https://image.tmdb.org/t/p/w500/4q2NNj4S5dG2RLF9CpXsej7yXl.jpg",
-    "release_date": "2019-07-02",
-    "directors": [
-      "Jon Watts"
-    ]
-  },
-  {
     "id": 530385,
     "title": "Midsommar",
     "poster_url": "https://image.tmdb.org/t/p/w500/7LEI8ulZzO5gy9Ww2NVCrKmHeDZ.jpg",
@@ -11505,15 +11127,6 @@ var MOVIES_DATA = [
     "release_date": "2019-07-26",
     "directors": [
       "Quentin Tarantino"
-    ]
-  },
-  {
-    "id": 384018,
-    "title": "Fast & Furious Presents: Hobbs & Shaw",
-    "poster_url": "https://image.tmdb.org/t/p/w500/qRyy2UmjC5ur9bDi3kpNNRCc5nc.jpg",
-    "release_date": "2019-08-02",
-    "directors": [
-      "David Leitch"
     ]
   },
   {
@@ -11782,6 +11395,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 502033,
+    "title": "Sound of Metal",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3178oOJKKPDeQ2legWQvMPpllv.jpg",
+    "release_date": "2020-11-20",
+    "directors": [
+      "Darius Marder"
+    ]
+  },
+  {
     "id": 529203,
     "title": "The Croods: A New Age",
     "poster_url": "https://image.tmdb.org/t/p/w500/tbVZ3Sq88dZaCANlUcewQuHQOaE.jpg",
@@ -11797,15 +11419,6 @@ var MOVIES_DATA = [
     "release_date": "2020-12-18",
     "directors": [
       "Ric Roman Waugh"
-    ]
-  },
-  {
-    "id": 464052,
-    "title": "Wonder Woman 1984",
-    "poster_url": "https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",
-    "release_date": "2020-12-25",
-    "directors": [
-      "Patty Jenkins"
     ]
   },
   {
@@ -11882,15 +11495,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 385128,
-    "title": "F9",
-    "poster_url": "https://image.tmdb.org/t/p/w500/deEmLILTPejEb6OGsXRJ5MCvyDW.jpg",
-    "release_date": "2021-06-25",
-    "directors": [
-      "Justin Lin"
-    ]
-  },
-  {
     "id": 588228,
     "title": "The Tomorrow War",
     "poster_url": "https://image.tmdb.org/t/p/w500/34nDCQZwaEvsy4CFO5hkGRFDCVU.jpg",
@@ -11963,15 +11567,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 580489,
-    "title": "Venom: Let There Be Carnage",
-    "poster_url": "https://image.tmdb.org/t/p/w500/pzKsRuKLFmYrW5Q0q8E8G78Tcgo.jpg",
-    "release_date": "2021-10-01",
-    "directors": [
-      "Andy Serkis"
-    ]
-  },
-  {
     "id": 370172,
     "title": "No Time to Die",
     "poster_url": "https://image.tmdb.org/t/p/w500/iUgygt3fscRoKWCV1d0C7FbM9TP.jpg",
@@ -12027,15 +11622,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 425909,
-    "title": "Ghostbusters: Afterlife",
-    "poster_url": "https://image.tmdb.org/t/p/w500/sg4xJaufDiQl7caFEskBtQXfD4x.jpg",
-    "release_date": "2021-11-19",
-    "directors": [
-      "Jason Reitman"
-    ]
-  },
-  {
     "id": 568124,
     "title": "Encanto",
     "poster_url": "https://image.tmdb.org/t/p/w500/4j0PNHkMr5ax3IA8tjtxcmPU3QT.jpg",
@@ -12043,15 +11629,6 @@ var MOVIES_DATA = [
     "directors": [
       "Byron Howard",
       "Jared Bush"
-    ]
-  },
-  {
-    "id": 634649,
-    "title": "Spider-Man: No Way Home",
-    "poster_url": "https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg",
-    "release_date": "2021-12-17",
-    "directors": [
-      "Jon Watts"
     ]
   },
   {
@@ -12148,15 +11725,6 @@ var MOVIES_DATA = [
     ]
   },
   {
-    "id": 453395,
-    "title": "Doctor Strange in the Multiverse of Madness",
-    "poster_url": "https://image.tmdb.org/t/p/w500/ddJcSKbcp4rKZTmuyWaMhuwcfMz.jpg",
-    "release_date": "2022-05-06",
-    "directors": [
-      "Sam Raimi"
-    ]
-  },
-  {
     "id": 361743,
     "title": "Top Gun: Maverick",
     "poster_url": "https://image.tmdb.org/t/p/w500/62HCnUTziyWcpDaBO2i1DX17ljH.jpg",
@@ -12190,15 +11758,6 @@ var MOVIES_DATA = [
     "release_date": "2022-06-24",
     "directors": [
       "Baz Luhrmann"
-    ]
-  },
-  {
-    "id": 616037,
-    "title": "Thor: Love and Thunder",
-    "poster_url": "https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg",
-    "release_date": "2022-07-07",
-    "directors": [
-      "Taika Waititi"
     ]
   },
   {
@@ -12244,15 +11803,6 @@ var MOVIES_DATA = [
     "release_date": "2022-10-21",
     "directors": [
       "Jaume Collet-Serra"
-    ]
-  },
-  {
-    "id": 505642,
-    "title": "Black Panther: Wakanda Forever",
-    "poster_url": "https://image.tmdb.org/t/p/w500/sv1xJUazXeYqALzczSZ3O6nkH75.jpg",
-    "release_date": "2022-11-11",
-    "directors": [
-      "Ryan Coogler"
     ]
   },
   {
@@ -12524,15 +12074,6 @@ var MOVIES_DATA = [
     "release_date": "2023-12-22",
     "directors": [
       "Benjamin Renner"
-    ]
-  },
-  {
-    "id": 572802,
-    "title": "Aquaman and the Lost Kingdom",
-    "poster_url": "https://image.tmdb.org/t/p/w500/7lTnXOy0iNtBAdRP3TZvaKJ77F6.jpg",
-    "release_date": "2023-12-22",
-    "directors": [
-      "James Wan"
     ]
   },
   {
@@ -12852,6 +12393,15 @@ var MOVIES_DATA = [
     "release_date": "2025-06-06",
     "directors": [
       "Len Wiseman"
+    ]
+  },
+  {
+    "id": 1137350,
+    "title": "The Phoenician Scheme",
+    "poster_url": "https://image.tmdb.org/t/p/w500/u2jxeYLXTYfu0bqJmnLGIgZswib.jpg",
+    "release_date": "2025-06-06",
+    "directors": [
+      "Wes Anderson"
     ]
   },
   {

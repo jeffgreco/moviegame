@@ -25,6 +25,7 @@
                 <button class="tab-btn active" data-tab="title">Title</button>
                 <button class="tab-btn" data-tab="director">Person</button>
                 <button class="tab-btn" data-tab="discover">Browse</button>
+                <button class="tab-btn" data-tab="ai">AI</button>
             </div>
 
             <!-- Title Search -->
@@ -71,12 +72,35 @@
                 </div>
                 <button class="btn primary" id="btn-discover">Browse</button>
             </div>
+
+            <!-- AI Search -->
+            <div class="tab-content" id="tab-ai">
+                <div class="form-group">
+                    <label for="ai-prompt">Describe the movies you want</label>
+                    <textarea id="ai-prompt" rows="4" placeholder="e.g. 90s action movies with car chases, or movies about musicians who become famous"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="ai-count">Number of suggestions</label>
+                    <select id="ai-count">
+                        <option value="8">8 movies</option>
+                        <option value="12" selected>12 movies</option>
+                        <option value="16">16 movies</option>
+                        <option value="20">20 movies</option>
+                    </select>
+                </div>
+                <button class="btn primary" id="btn-ai-search">
+                    <span class="btn-text">Search with AI</span>
+                    <span class="btn-loading" style="display:none;">Thinking...</span>
+                </button>
+                <div id="ai-error" class="ai-error"></div>
+            </div>
         </aside>
 
         <section class="results-panel">
             <div class="results-header">
                 <h2>Search Results</h2>
                 <span id="results-count"></span>
+                <button class="btn" id="btn-ai-more" style="display: none;">+ More</button>
                 <select id="person-sort" style="display: none;">
                     <option value="date_desc">Newest First</option>
                     <option value="date_asc">Oldest First</option>
