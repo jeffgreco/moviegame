@@ -1,6 +1,6 @@
 // Movie data from TMDB
-// Last updated: 2026-01-17T04:24:03.501Z
-// Total movies: 1434
+// Last updated: 2026-01-19T01:11:55.492Z
+// Total movies: 1444
 
 var MOVIES_DATA = [
   {
@@ -354,6 +354,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 18047,
+    "title": "Brian's Song",
+    "poster_url": "https://image.tmdb.org/t/p/w500/yjmT2unPtvahuuqowdg9YNQnok5.jpg",
+    "release_date": "1971-11-30",
+    "directors": [
+      "Buzz Kulik"
+    ]
+  },
+  {
     "id": 681,
     "title": "Diamonds Are Forever",
     "poster_url": "https://image.tmdb.org/t/p/w500/uajiHcFX5sOhYB2tBuWkmizbtuU.jpg",
@@ -615,7 +624,8 @@ var MOVIES_DATA = [
     "release_date": "1974-08-21",
     "directors": [
       "Robert Aldrich"
-    ]
+    ],
+    "showDirector": true
   },
   {
     "id": 30497,
@@ -4224,6 +4234,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 14534,
+    "title": "Rudy",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fAbfTCRpjHe2rprXBly55KL1dL9.jpg",
+    "release_date": "1993-10-13",
+    "directors": [
+      "David Anspaugh"
+    ]
+  },
+  {
     "id": 9479,
     "title": "The Nightmare Before Christmas",
     "poster_url": "https://image.tmdb.org/t/p/w500/oQffRNjK8e19rF7xVYEN8ew0j7b.jpg",
@@ -4509,6 +4528,15 @@ var MOVIES_DATA = [
     "release_date": "1994-10-14",
     "directors": [
       "Quentin Tarantino"
+    ]
+  },
+  {
+    "id": 20726,
+    "title": "Little Giants",
+    "poster_url": "https://image.tmdb.org/t/p/w500/AkfXNOeKgJSOD08StGd0599auiZ.jpg",
+    "release_date": "1994-10-14",
+    "directors": [
+      "Duwayne Dunham"
     ]
   },
   {
@@ -5728,6 +5756,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 14709,
+    "title": "Varsity Blues",
+    "poster_url": "https://image.tmdb.org/t/p/w500/g2jX2Xmx7drbc6J9MLJEBghR7Mg.jpg",
+    "release_date": "1999-01-15",
+    "directors": [
+      "Brian Robbins"
+    ]
+  },
+  {
     "id": 10223,
     "title": "A Simple Plan",
     "poster_url": "https://image.tmdb.org/t/p/w500/iJYGDwZmVEYRkSPbWQdxzvBLTcK.jpg",
@@ -5994,6 +6031,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 9563,
+    "title": "Any Given Sunday",
+    "poster_url": "https://image.tmdb.org/t/p/w500/bysZeUvSPZPJnku4qkHF34CdgMG.jpg",
+    "release_date": "1999-12-22",
+    "directors": [
+      "Oliver Stone"
+    ]
+  },
+  {
     "id": 334,
     "title": "Magnolia",
     "poster_url": "https://image.tmdb.org/t/p/w500/tpfC325Jk6S38VTe5dDWjWtoyxr.jpg",
@@ -6149,12 +6195,30 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 10393,
+    "title": "The Replacements",
+    "poster_url": "https://image.tmdb.org/t/p/w500/6qerI41HqkdRlio1sG0d5HLZcFN.jpg",
+    "release_date": "2000-08-11",
+    "directors": [
+      "Howard Deutch"
+    ]
+  },
+  {
     "id": 786,
     "title": "Almost Famous",
     "poster_url": "https://image.tmdb.org/t/p/w500/3rrkyLYbgLj84AYvjhdcJot4JPx.jpg",
     "release_date": "2000-09-22",
     "directors": [
       "Cameron Crowe"
+    ]
+  },
+  {
+    "id": 10637,
+    "title": "Remember the Titans",
+    "poster_url": "https://image.tmdb.org/t/p/w500/825ohvC4wZ3gCuncCaqkWeQnK8h.jpg",
+    "release_date": "2000-09-29",
+    "directors": [
+      "Boaz Yakin"
     ]
   },
   {
@@ -7370,6 +7434,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 13416,
+    "title": "Friday Night Lights",
+    "poster_url": "https://image.tmdb.org/t/p/w500/8HIqpOgqShRc3TAleabnYispDl1.jpg",
+    "release_date": "2004-10-08",
+    "directors": [
+      "Peter Berg"
+    ]
+  },
+  {
     "id": 176,
     "title": "Saw",
     "poster_url": "https://image.tmdb.org/t/p/w500/rLNSOudrayDBo1uqXjrhxcjODIC.jpg",
@@ -7957,6 +8030,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 11170,
+    "title": "We Are Marshall",
+    "poster_url": "https://image.tmdb.org/t/p/w500/5PSiExbg6Fm8MiPJOikBCOcZFnd.jpg",
+    "release_date": "2006-12-12",
+    "directors": [
+      "McG"
+    ]
+  },
+  {
     "id": 1402,
     "title": "The Pursuit of Happyness",
     "poster_url": "https://image.tmdb.org/t/p/w500/lBYOKAMcxIvuk9s9hMuecB9dPBV.jpg",
@@ -8279,6 +8361,15 @@ var MOVIES_DATA = [
     "release_date": "2008-03-14",
     "directors": [
       "Neil Marshall"
+    ]
+  },
+  {
+    "id": 4942,
+    "title": "Leatherheads",
+    "poster_url": "https://image.tmdb.org/t/p/w500/dl2yu8iuwG3dqbpjalm2odadRaH.jpg",
+    "release_date": "2008-03-24",
+    "directors": [
+      "George Clooney"
     ]
   },
   {

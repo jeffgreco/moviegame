@@ -12,7 +12,8 @@ const PUZZLE_SCHEDULE = {
   "2026-01-15": "jgns2",
   "2026-01-16": "dhk7k",
   "2026-01-17": "g2h5y",
-  "2026-01-18": "r5t1q"
+  "2026-01-18": "r5t1q",
+  "2026-01-19": "ah7yk"
 };
 
 const DAILY_PUZZLES = [
@@ -184,6 +185,26 @@ const DAILY_PUZZLES = [
       1183392, // Airport (Jan 1, 1981)
       14536, // New in Town (Jan 30, 2009)
       19994, // Jennifer's Body (Sep 18, 2009)
+    ],
+  },
+    {
+    id: "ah7yk",
+    theme: "Any Given Sunday",
+    description: "",
+    movieIds: [
+      9563, // Any Given Sunday (Dec 22, 1999)
+      13416, // Friday Night Lights (Oct 8, 2004)
+      18047, // Brian's Song (Nov 30, 1971)
+      10637, // Remember the Titans (Sep 29, 2000)
+      22881, // The Blind Side (Nov 20, 2009)
+      14534, // Rudy (Oct 13, 1993)
+      4985, // The Longest Yard (Aug 21, 1974)
+      11170, // We Are Marshall (Dec 12, 2006)
+      10393, // The Replacements (Aug 11, 2000)
+      14709, // Varsity Blues (Jan 15, 1999)
+      4942, // Leatherheads (Mar 24, 2008)
+      10663, // The Waterboy (Nov 6, 1998)
+      20726, // Little Giants (Oct 14, 1994)
     ],
   },
   // Future puzzles will be added here
