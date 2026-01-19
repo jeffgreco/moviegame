@@ -53,7 +53,7 @@ To enable GitHub Pages:
 - [TMDB API](https://www.themoviedb.org/) for movie data and posters
 - GitHub Pages for hosting
 
-## Credits
+## Credits 
 
 Movie data and images provided by [The Movie Database (TMDB)](https://www.themoviedb.org/).
 

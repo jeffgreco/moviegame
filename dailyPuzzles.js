@@ -214,10 +214,10 @@ const DAILY_PUZZLES = [
    
     {
     id: "r829v",
-    theme: "WWII",
+    theme: "Letters from Iwo Jima",
     description: "",
     movieIds: [
-      3683, // Flags of Our Fathers (Oct 19, 2006)
+      1251, // Letters from Iwo Jima (Feb 2, 2007)
       857, // Saving Private Ryan (Jul 24, 1998)
       5925, // The Great Escape (Jul 4, 1963)
       374720, // Dunkirk (Jul 21, 2017)
@@ -226,9 +226,9 @@ const DAILY_PUZZLES = [
       676, // Pearl Harbor (May 25, 2001)
       853, // Enemy at the Gates (Mar 16, 2001)
       228150, // Fury (Oct 17, 2014)
-      1251, // Letters from Iwo Jima (Feb 2, 2007)
       387, // Das Boot (Feb 10, 1982)
       8741, // The Thin Red Line (Jan 15, 1999)
+      3683, // Flags of Our Fathers (Oct 19, 2006)
     ],
   },
     {
