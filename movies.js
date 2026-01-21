@@ -1,6 +1,6 @@
 // Movie data from TMDB
-// Last updated: 2026-01-19T04:13:10.291Z
-// Total movies: 1573
+// Last updated: 2026-01-21T04:28:07.151Z
+// Total movies: 1618
 
 var MOVIES_DATA = [
   {
@@ -29,6 +29,16 @@ var MOVIES_DATA = [
     "release_date": "1960-09-08",
     "directors": [
       "Alfred Hitchcock"
+    ],
+    "showDirector": true
+  },
+  {
+    "id": 982,
+    "title": "The Manchurian Candidate",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2xQ856kd9hw6bB3OnusGyTvvkwB.jpg",
+    "release_date": "1962-10-24",
+    "directors": [
+      "John Frankenheimer"
     ],
     "showDirector": true
   },
@@ -471,6 +481,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 21711,
+    "title": "The Candidate",
+    "poster_url": "https://image.tmdb.org/t/p/w500/6zcDSOe1akUXsc2Q1APfchKcVaI.jpg",
+    "release_date": "1972-06-29",
+    "directors": [
+      "Michael Ritchie"
+    ]
+  },
+  {
     "id": 10669,
     "title": "Deliverance",
     "poster_url": "https://image.tmdb.org/t/p/w500/2TrAzNJlHyNYYSkQf6asg3rs2Xr.jpg",
@@ -670,6 +689,15 @@ var MOVIES_DATA = [
     "release_date": "1974-10-11",
     "directors": [
       "Tobe Hooper"
+    ]
+  },
+  {
+    "id": 11123,
+    "title": "Earthquake",
+    "poster_url": "https://image.tmdb.org/t/p/w500/6hJorsInxNpj1dIekh6dK6Kh9S6.jpg",
+    "release_date": "1974-11-15",
+    "directors": [
+      "Mark Robson"
     ]
   },
   {
@@ -1037,6 +1065,15 @@ var MOVIES_DATA = [
       "John Guillermin"
     ],
     "showDirector": true
+  },
+  {
+    "id": 166680,
+    "title": "Avalanche",
+    "poster_url": "https://image.tmdb.org/t/p/w500/zMORD6VDGIWo5thfMuA4Edb1mbj.jpg",
+    "release_date": "1978-09-29",
+    "directors": [
+      "Corey Allen"
+    ]
   },
   {
     "id": 948,
@@ -1734,6 +1771,15 @@ var MOVIES_DATA = [
     "release_date": "1983-10-21",
     "directors": [
       "Michael Chapman"
+    ]
+  },
+  {
+    "id": 11336,
+    "title": "The Dead Zone",
+    "poster_url": "https://image.tmdb.org/t/p/w500/9yTVaeS8eIkOpbwIycVFm7EQrgF.jpg",
+    "release_date": "1983-10-21",
+    "directors": [
+      "David Cronenberg"
     ]
   },
   {
@@ -4124,6 +4170,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 10608,
+    "title": "Bob Roberts",
+    "poster_url": "https://image.tmdb.org/t/p/w500/j4PokuSIrmbN5oCR54D8kiI0U6a.jpg",
+    "release_date": "1992-09-04",
+    "directors": [
+      "Tim Robbins"
+    ]
+  },
+  {
     "id": 2322,
     "title": "Sneakers",
     "poster_url": "https://image.tmdb.org/t/p/w500/l2pIGwCvpZEpBuMb55YBl6A04Jv.jpg",
@@ -4348,6 +4403,15 @@ var MOVIES_DATA = [
     "release_date": "1993-05-07",
     "directors": [
       "Rob Cohen"
+    ]
+  },
+  {
+    "id": 11566,
+    "title": "Dave",
+    "poster_url": "https://image.tmdb.org/t/p/w500/wIUuf1NFchdCJe833JBTiSMzqfv.jpg",
+    "release_date": "1993-05-07",
+    "directors": [
+      "Ivan Reitman"
     ]
   },
   {
@@ -4582,6 +4646,15 @@ var MOVIES_DATA = [
     "release_date": "1993-12-10",
     "directors": [
       "Stephen Surjik"
+    ]
+  },
+  {
+    "id": 9944,
+    "title": "The Pelican Brief",
+    "poster_url": "https://image.tmdb.org/t/p/w500/7B1HS0SqfJR1jbeHS6V0ZWdzLXP.jpg",
+    "release_date": "1993-12-16",
+    "directors": [
+      "Alan J. Pakula"
     ]
   },
   {
@@ -5342,6 +5415,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 10858,
+    "title": "Nixon",
+    "poster_url": "https://image.tmdb.org/t/p/w500/cz2MTGr2wpDZLirgV2rGHBdA2t3.jpg",
+    "release_date": "1995-12-22",
+    "directors": [
+      "Oliver Stone"
+    ]
+  },
+  {
     "id": 63,
     "title": "Twelve Monkeys",
     "poster_url": "https://image.tmdb.org/t/p/w500/gt3iyguaCIw8DpQZI1LIN5TohM2.jpg",
@@ -5605,6 +5687,24 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 17795,
+    "title": "My Fellow Americans",
+    "poster_url": "https://image.tmdb.org/t/p/w500/5odQxB2kTRyPOJiMjYY1SYHLVHs.jpg",
+    "release_date": "1996-12-20",
+    "directors": [
+      "Peter Segal"
+    ]
+  },
+  {
+    "id": 9619,
+    "title": "Dante's Peak",
+    "poster_url": "https://image.tmdb.org/t/p/w500/8PRVIfZzDgw8EV3sDWJ6NA1ZMAn.jpg",
+    "release_date": "1997-02-07",
+    "directors": [
+      "Roger Donaldson"
+    ]
+  },
+  {
     "id": 1624,
     "title": "Liar Liar",
     "poster_url": "https://image.tmdb.org/t/p/w500/p1habYSdC7oD3WygQ5lynU5G5rV.jpg",
@@ -5631,6 +5731,15 @@ var MOVIES_DATA = [
       "Luis Llosa"
     ],
     "showDirector": true
+  },
+  {
+    "id": 9415,
+    "title": "Murder at 1600",
+    "poster_url": "https://image.tmdb.org/t/p/w500/4WPR0m8zuzFAcRJAHcGs1AxkkpB.jpg",
+    "release_date": "1997-04-18",
+    "directors": [
+      "Dwight H. Little"
+    ]
   },
   {
     "id": 10357,
@@ -5875,6 +5984,15 @@ var MOVIES_DATA = [
     "release_date": "1997-12-25",
     "directors": [
       "Kevin Costner"
+    ]
+  },
+  {
+    "id": 586,
+    "title": "Wag the Dog",
+    "poster_url": "https://image.tmdb.org/t/p/w500/pKl49ecMnCMX5XK5LUdxulxHLNi.jpg",
+    "release_date": "1997-12-25",
+    "directors": [
+      "Barry Levinson"
     ]
   },
   {
@@ -6347,6 +6465,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 16406,
+    "title": "Dick",
+    "poster_url": "https://image.tmdb.org/t/p/w500/aBG4XoK5xkujl4crloPs6bStl4m.jpg",
+    "release_date": "1999-08-04",
+    "directors": [
+      "Andrew Fleming"
+    ]
+  },
+  {
     "id": 745,
     "title": "The Sixth Sense",
     "poster_url": "https://image.tmdb.org/t/p/w500/vOyfUXNFSnaTk7Vk5AjpsKTUWsu.jpg",
@@ -6628,6 +6755,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 2133,
+    "title": "The Perfect Storm",
+    "poster_url": "https://image.tmdb.org/t/p/w500/vJPoxqgpfFNbGi0HyoNsjFeLCio.jpg",
+    "release_date": "2000-06-30",
+    "directors": [
+      "Wolfgang Petersen"
+    ]
+  },
+  {
     "id": 4247,
     "title": "Scary Movie",
     "poster_url": "https://image.tmdb.org/t/p/w500/fVQFPRuw3yWXojYDJvA5EoFjUOY.jpg",
@@ -6751,6 +6887,15 @@ var MOVIES_DATA = [
     "release_date": "2000-12-22",
     "directors": [
       "Robert Zemeckis"
+    ]
+  },
+  {
+    "id": 11973,
+    "title": "Thirteen Days",
+    "poster_url": "https://image.tmdb.org/t/p/w500/aLx9UXH9fK2v6NDMvMyW4X88K3u.jpg",
+    "release_date": "2000-12-25",
+    "directors": [
+      "Roger Donaldson"
     ]
   },
   {
@@ -7240,6 +7385,15 @@ var MOVIES_DATA = [
     "release_date": "2002-05-24"
   },
   {
+    "id": 4614,
+    "title": "The Sum of All Fears",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3E4LW4bjRhEMDeeXeIsmkJ94v8K.jpg",
+    "release_date": "2002-05-31",
+    "directors": [
+      "Phil Alden Robinson"
+    ]
+  },
+  {
     "id": 2501,
     "title": "The Bourne Identity",
     "poster_url": "https://image.tmdb.org/t/p/w500/aP8swke3gmowbkfZ6lmNidu0y9p.jpg",
@@ -7480,6 +7634,24 @@ var MOVIES_DATA = [
     "release_date": "2003-03-28",
     "directors": [
       "Roman Polanski"
+    ]
+  },
+  {
+    "id": 9341,
+    "title": "The Core",
+    "poster_url": "https://image.tmdb.org/t/p/w500/iMPR3OFhKNVvJw4eZoRhf9RzfHJ.jpg",
+    "release_date": "2003-03-28",
+    "directors": [
+      "Jon Amiel"
+    ]
+  },
+  {
+    "id": 9776,
+    "title": "Head of State",
+    "poster_url": "https://image.tmdb.org/t/p/w500/5itBve85q2oXmiQ3SkgCJa5Asxq.jpg",
+    "release_date": "2003-03-28",
+    "directors": [
+      "Chris Rock"
     ]
   },
   {
@@ -7764,6 +7936,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 16784,
+    "title": "Welcome to Mooseport",
+    "poster_url": "https://image.tmdb.org/t/p/w500/lpaaUiaSZiW8YUoKA17RkV84mAW.jpg",
+    "release_date": "2004-02-24",
+    "directors": [
+      "Donald Petrie"
+    ]
+  },
+  {
     "id": 615,
     "title": "The Passion of the Christ",
     "poster_url": "https://image.tmdb.org/t/p/w500/v9f9MMrq2nGQrN7cHnQRmEq9lSE.jpg",
@@ -7944,6 +8125,16 @@ var MOVIES_DATA = [
     "directors": [
       "Richard Linklater"
     ]
+  },
+  {
+    "id": 14462,
+    "title": "The Manchurian Candidate",
+    "poster_url": "https://image.tmdb.org/t/p/w500/4xEWtEbKK2EXMZ8UPff8hDCSiVW.jpg",
+    "release_date": "2004-07-30",
+    "directors": [
+      "Jonathan Demme"
+    ],
+    "showDirector": true
   },
   {
     "id": 1538,
@@ -8492,6 +8683,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 503,
+    "title": "Poseidon",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fDPdjGc8SUEDWfTwMaZlCE6NSi3.jpg",
+    "release_date": "2006-05-12",
+    "directors": [
+      "Wolfgang Petersen"
+    ]
+  },
+  {
     "id": 591,
     "title": "The Da Vinci Code",
     "poster_url": "https://image.tmdb.org/t/p/w500/9ejKfNk0LBhSI9AahH4f9NJNZNM.jpg",
@@ -8643,6 +8843,15 @@ var MOVIES_DATA = [
     "release_date": "2006-09-01",
     "directors": [
       "Neil LaBute"
+    ]
+  },
+  {
+    "id": 10741,
+    "title": "Bobby",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ea6aSTUFQopOW7kWFZB9AvMYnbs.jpg",
+    "release_date": "2006-09-05",
+    "directors": [
+      "Emilio Estevez"
     ]
   },
   {
@@ -8965,6 +9174,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 4688,
+    "title": "Across the Universe",
+    "poster_url": "https://image.tmdb.org/t/p/w500/447c8Te3DXC46rQvDEixKGO4dS6.jpg",
+    "release_date": "2007-09-14",
+    "directors": [
+      "Julie Taymor"
+    ]
+  },
+  {
     "id": 13186,
     "title": "Wrong Turn 2: Dead End",
     "poster_url": "https://image.tmdb.org/t/p/w500/ow3IMhTVLryZuCEoQznVTTmFYuu.jpg",
@@ -9240,6 +9458,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 10187,
+    "title": "Swing Vote",
+    "poster_url": "https://image.tmdb.org/t/p/w500/aa5pWY2IVObKS7JZpfEw7Fe4FJk.jpg",
+    "release_date": "2008-08-01",
+    "directors": [
+      "Joshua Michael Stern"
+    ]
+  },
+  {
     "id": 7446,
     "title": "Tropic Thunder",
     "poster_url": "https://image.tmdb.org/t/p/w500/zAurB9mNxfYRoVrVjAJJwGV3sPg.jpg",
@@ -9264,6 +9491,15 @@ var MOVIES_DATA = [
     "release_date": "2008-08-22",
     "directors": [
       "Fred Wolf"
+    ]
+  },
+  {
+    "id": 10523,
+    "title": "W.",
+    "poster_url": "https://image.tmdb.org/t/p/w500/nJm8UF4zbUYEoku9seEtz1PTJGS.jpg",
+    "release_date": "2008-10-17",
+    "directors": [
+      "Oliver Stone"
     ]
   },
   {
@@ -9311,6 +9547,15 @@ var MOVIES_DATA = [
     "release_date": "2008-11-26",
     "directors": [
       "Mark Herman"
+    ]
+  },
+  {
+    "id": 11499,
+    "title": "Frost/Nixon",
+    "poster_url": "https://image.tmdb.org/t/p/w500/z4cQ2mJxwPZUwVh97yX9oNsLLZQ.jpg",
+    "release_date": "2008-12-05",
+    "directors": [
+      "Ron Howard"
     ]
   },
   {
@@ -9903,6 +10148,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 44048,
+    "title": "Unstoppable",
+    "poster_url": "https://image.tmdb.org/t/p/w500/zKvHwL0GqLOear8rTnUPSTRYY0r.jpg",
+    "release_date": "2010-11-12",
+    "directors": [
+      "Tony Scott"
+    ]
+  },
+  {
     "id": 12444,
     "title": "Harry Potter and the Deathly Hallows: Part 1",
     "poster_url": "https://image.tmdb.org/t/p/w500/iGoXIpQb7Pot00EEdwpwPajheZ5.jpg",
@@ -10230,6 +10484,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 10316,
+    "title": "The Ides of March",
+    "poster_url": "https://image.tmdb.org/t/p/w500/w8t4UnJnC24S9ygoaFgmMzRbErd.jpg",
+    "release_date": "2011-10-07",
+    "directors": [
+      "George Clooney"
+    ]
+  },
+  {
     "id": 49530,
     "title": "In Time",
     "poster_url": "https://image.tmdb.org/t/p/w500/3Mwj2sIONQckOZP3YwsUXF7U5I4.jpg",
@@ -10402,6 +10665,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 72331,
+    "title": "Abraham Lincoln: Vampire Hunter",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qv8deK0ZmutAuEpejruQKApIy6r.jpg",
+    "release_date": "2012-06-22",
+    "directors": [
+      "Timur Bekmambetov"
+    ]
+  },
+  {
     "id": 72105,
     "title": "Ted",
     "poster_url": "https://image.tmdb.org/t/p/w500/tZPTcdGTpxq4yJx1YxqBl0gthNz.jpg",
@@ -10558,12 +10830,30 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 72976,
+    "title": "Lincoln",
+    "poster_url": "https://image.tmdb.org/t/p/w500/5KeUqW6DpVtf8G9VMuI2l0XIPCo.jpg",
+    "release_date": "2012-11-16",
+    "directors": [
+      "Steven Spielberg"
+    ]
+  },
+  {
     "id": 81188,
     "title": "Rise of the Guardians",
     "poster_url": "https://image.tmdb.org/t/p/w500/sW4qOa9yF0Ikg7lppncQ0n5UhKX.jpg",
     "release_date": "2012-11-21",
     "directors": [
       "Peter Ramsey"
+    ]
+  },
+  {
+    "id": 87504,
+    "title": "Hyde Park on Hudson",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fPqQ4lM1f4bkbpJ9J5Gt8QJRY5D.jpg",
+    "release_date": "2012-12-07",
+    "directors": [
+      "Roger Michell"
     ]
   },
   {
@@ -10694,6 +10984,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 117251,
+    "title": "White House Down",
+    "poster_url": "https://image.tmdb.org/t/p/w500/6TeIVKPw7nXXWy2zKmDmlnSwzb7.jpg",
+    "release_date": "2013-06-28",
+    "directors": [
+      "Roland Emmerich"
+    ]
+  },
+  {
     "id": 93456,
     "title": "Despicable Me 2",
     "poster_url": "https://image.tmdb.org/t/p/w500/5Fh4NdoEnCjCK9wLjdJ9DJNFl2b.jpg",
@@ -10701,6 +11000,15 @@ var MOVIES_DATA = [
     "directors": [
       "Chris Renaud",
       "Pierre Coffin"
+    ]
+  },
+  {
+    "id": 205321,
+    "title": "Sharknado",
+    "poster_url": "https://image.tmdb.org/t/p/w500/atEmHkVFTSGRYt2PeCiziQqbZnI.jpg",
+    "release_date": "2013-07-11",
+    "directors": [
+      "Anthony C. Ferrante"
     ]
   },
   {
@@ -10755,6 +11063,15 @@ var MOVIES_DATA = [
     "release_date": "2013-08-07",
     "directors": [
       "Rawson Marshall Thurber"
+    ]
+  },
+  {
+    "id": 132363,
+    "title": "The Butler",
+    "poster_url": "https://image.tmdb.org/t/p/w500/pAi8Bl3ZKX6pANPVhNwbhbQANop.jpg",
+    "release_date": "2013-08-16",
+    "directors": [
+      "Lee Daniels"
     ]
   },
   {
@@ -10959,6 +11276,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 76649,
+    "title": "Pompeii",
+    "poster_url": "https://image.tmdb.org/t/p/w500/dxxM3lLDjGRC50i5rhvfQziskAN.jpg",
+    "release_date": "2014-02-21",
+    "directors": [
+      "Paul W. S. Anderson"
+    ]
+  },
+  {
     "id": 225574,
     "title": "Non-Stop",
     "poster_url": "https://image.tmdb.org/t/p/w500/Nkgaj3X0W2jHQ1TzHEgWFpN3kJ.jpg",
@@ -10992,6 +11318,15 @@ var MOVIES_DATA = [
     "release_date": "2014-03-20",
     "directors": [
       "Lars von Trier"
+    ]
+  },
+  {
+    "id": 86834,
+    "title": "Noah",
+    "poster_url": "https://image.tmdb.org/t/p/w500/vVLkHabnF5lVpCpqyhZBI5iCYMA.jpg",
+    "release_date": "2014-03-28",
+    "directors": [
+      "Darren Aronofsky"
     ]
   },
   {
@@ -11720,6 +12055,15 @@ var MOVIES_DATA = [
     "release_date": "2016-04-08"
   },
   {
+    "id": 301348,
+    "title": "Elvis & Nixon",
+    "poster_url": "https://image.tmdb.org/t/p/w500/pwUXhwUAOq3J7ixxwOIWpMAFbje.jpg",
+    "release_date": "2016-04-22",
+    "directors": [
+      "Liza Johnson"
+    ]
+  },
+  {
     "id": 271110,
     "title": "Captain America: Civil War",
     "poster_url": "https://image.tmdb.org/t/p/w500/rAGiXaUfPzY7CDEyNKUofk3Kw2e.jpg",
@@ -11908,6 +12252,15 @@ var MOVIES_DATA = [
     "release_date": "2016-11-18",
     "directors": [
       "David Yates"
+    ]
+  },
+  {
+    "id": 376866,
+    "title": "Jackie",
+    "poster_url": "https://image.tmdb.org/t/p/w500/nF9N33PfhizMEzbfxHoxXBo2vx9.jpg",
+    "release_date": "2016-12-02",
+    "directors": [
+      "Pablo Larraín"
     ]
   },
   {
@@ -12156,12 +12509,30 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 395991,
+    "title": "Only the Brave",
+    "poster_url": "https://image.tmdb.org/t/p/w500/lC7WdUNLOJI3sllaDGNdFy2GT8g.jpg",
+    "release_date": "2017-10-20",
+    "directors": [
+      "Joseph Kosinski"
+    ]
+  },
+  {
     "id": 284053,
     "title": "Thor: Ragnarok",
     "poster_url": "https://image.tmdb.org/t/p/w500/rzRwTcFvttcN1ZpX2xv4j3tSdJu.jpg",
     "release_date": "2017-11-03",
     "directors": [
       "Taika Waititi"
+    ]
+  },
+  {
+    "id": 353575,
+    "title": "LBJ",
+    "poster_url": "https://image.tmdb.org/t/p/w500/780oVVWLDHMx2DCn0xUHeOEw0na.jpg",
+    "release_date": "2017-11-03",
+    "directors": [
+      "Rob Reiner"
     ]
   },
   {
@@ -12273,6 +12644,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 402897,
+    "title": "The Death of Stalin",
+    "poster_url": "https://image.tmdb.org/t/p/w500/AqH7q89NxGRDAyRWKqsL3OBtYfV.jpg",
+    "release_date": "2018-03-09",
+    "directors": [
+      "Armando Iannucci"
+    ]
+  },
+  {
     "id": 268896,
     "title": "Pacific Rim: Uprising",
     "poster_url": "https://image.tmdb.org/t/p/w500/nFWhttU8PM50t25NPdy7PE7rv3G.jpg",
@@ -12297,6 +12677,15 @@ var MOVIES_DATA = [
     "release_date": "2018-04-06",
     "directors": [
       "John Krasinski"
+    ]
+  },
+  {
+    "id": 432301,
+    "title": "Chappaquiddick",
+    "poster_url": "https://image.tmdb.org/t/p/w500/kkTD7ufZd7AqAnZP5IMnrQXKRpM.jpg",
+    "release_date": "2018-04-06",
+    "directors": [
+      "John Curran"
     ]
   },
   {
@@ -12517,6 +12906,15 @@ var MOVIES_DATA = [
     "release_date": "2018-12-21",
     "directors": [
       "James Wan"
+    ]
+  },
+  {
+    "id": 429197,
+    "title": "Vice",
+    "poster_url": "https://image.tmdb.org/t/p/w500/1gCab6rNv1r6V64cwsU4oEr649Y.jpg",
+    "release_date": "2018-12-25",
+    "directors": [
+      "Adam McKay"
     ]
   },
   {
@@ -13247,6 +13645,15 @@ var MOVIES_DATA = [
     "release_date": "2022-01-21",
     "directors": [
       "D.J. Caruso"
+    ]
+  },
+  {
+    "id": 406759,
+    "title": "Moonfall",
+    "poster_url": "https://image.tmdb.org/t/p/w500/bjTU4fmmGjAOOiOlE6WYDagoSsP.jpg",
+    "release_date": "2022-02-04",
+    "directors": [
+      "Roland Emmerich"
     ]
   },
   {

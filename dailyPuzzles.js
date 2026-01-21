@@ -17,6 +17,7 @@ const PUZZLE_SCHEDULE = {
   "2026-01-20": "k2jq9",
   "2026-01-21": "62wgc",
   "2026-01-22": "r829v",
+  "2026-01-23": "qje3j",
   "2026-01-25": "ah7yk"
 };
 
@@ -298,6 +299,60 @@ const DAILY_PUZZLES = [
       14425, // PCU (Apr 29, 1994)
       16297, // With Honors (Apr 29, 1994)
       37247, // The Graduate (Dec 21, 1967)
+    ],
+  },
+    {
+    id: "qje3j",
+    theme: "The Perfect Storm",
+    description: "",
+    movieIds: [
+      2133, // The Perfect Storm (Jun 30, 2000)
+      664, // Twister (May 10, 1996)
+      435, // The Day After Tomorrow (May 28, 2004)
+      254128, // San Andreas (May 29, 2015)
+      9619, // Dante's Peak (Feb 7, 1997)
+      10357, // Volcano (Apr 25, 1997)
+      503, // Poseidon (May 12, 2006)
+      14161, // 2012 (Nov 13, 2009)
+      80278, // The Impossible (Jan 4, 2013)
+      11123, // Earthquake (Nov 15, 1974)
+      551, // The Poseidon Adventure (Dec 13, 1972)
+      524047, // Greenland (Dec 18, 2020)
+      95, // Armageddon (Jul 1, 1998)
+      8656, // Deep Impact (May 8, 1998)
+      76649, // Pompeii (Feb 21, 2014)
+      406759, // Moonfall (Feb 4, 2022)
+      9341, // The Core (Mar 28, 2003)
+      166680, // Avalanche (Sep 29, 1978)
+      395991, // Only the Brave (Oct 20, 2017)
+      86834, // Noah (Mar 28, 2014)
+      205321, // Sharknado (Jul 11, 2013)
+    ],
+  },
+    {
+    id: "vrrqg",
+    theme: "The American President",
+    description: "",
+    movieIds: [
+      9087, // The American President (Nov 17, 1995)
+      72976, // Lincoln (Nov 16, 2012)
+      87504, // Hyde Park on Hudson (Dec 7, 2012)
+      820, // JFK (Dec 20, 1991)
+      353575, // LBJ (Nov 3, 2017)
+      10858, // Nixon (Dec 22, 1995)
+      10523, // W. (Oct 17, 2008)
+      11566, // Dave (May 7, 1993)
+      9772, // Air Force One (Jul 25, 1997)
+      17795, // My Fellow Americans (Dec 20, 1996)
+      11499, // Frost/Nixon (Dec 5, 2008)
+      16406, // Dick (Aug 4, 1999)
+      301348, // Elvis & Nixon (Apr 22, 2016)
+      9776, // Head of State (Mar 28, 2003)
+      11973, // Thirteen Days (Dec 25, 2000)
+      117251, // White House Down (Jun 28, 2013)
+      117263, // Olympus Has Fallen (Mar 22, 2013)
+      9440, // Primary Colors (Mar 20, 1998)
+      72331, // Abraham Lincoln: Vampire Hunter (Jun 22, 2012)
     ],
   },
   // Future puzzles will be added here
