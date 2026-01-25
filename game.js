@@ -2,7 +2,7 @@
 
 // Tracker API URL - set this to your Cloudflare Worker URL after deployment
 // Leave empty to disable tracking
-const TRACKER_API_URL = 'https://filmstrip-tracker.jeffgreco.workers.dev';
+const TRACKER_API_URL = "https://filmstrip-tracker.jeffgreco.workers.dev";
 
 class MovieTimelineGame {
   constructor() {
@@ -39,7 +39,10 @@ class MovieTimelineGame {
     this.selectedDecade = null; // Selected decade (e.g., 1970, 1980, etc.)
 
     // Game tracking
-    this.tracker = typeof GameTracker !== 'undefined' ? new GameTracker(TRACKER_API_URL) : null;
+    this.tracker =
+      typeof GameTracker !== "undefined"
+        ? new GameTracker(TRACKER_API_URL)
+        : null;
 
     this.init();
   }
@@ -240,14 +243,15 @@ class MovieTimelineGame {
 
   getPosterUrl(movie) {
     return movie.poster_url || movie.poster_path
-      ? movie.poster_url || `https://image.tmdb.org/t/p/w300${movie.poster_path}`
+      ? movie.poster_url ||
+          `https://image.tmdb.org/t/p/w300${movie.poster_path}`
       : null;
   }
 
   preloadUpcomingPosters(count = 5) {
     const moviesToPreload = [
       this.currentCard,
-      ...this.drawPile.slice(0, count)
+      ...this.drawPile.slice(0, count),
     ].filter(Boolean);
 
     for (const movie of moviesToPreload) {
@@ -495,26 +499,27 @@ class MovieTimelineGame {
       gameMode: this.gameMode,
       score: this.bestStreak,
       won: won,
-      movieIds: this.timeline.map(m => m.id)
+      movieIds: this.timeline.map((m) => m.id),
     };
 
     // Add puzzle-specific data for daily/archive modes
-    if (this.gameMode === 'daily' || this.gameMode === 'archive') {
+    if (this.gameMode === "daily" || this.gameMode === "archive") {
       gameData.puzzleId = this.dailyPuzzle?.id || null;
-      gameData.puzzleNumber = this.puzzleNumber || this.archivePuzzleNumber || null;
+      gameData.puzzleNumber =
+        this.puzzleNumber || this.archivePuzzleNumber || null;
       gameData.puzzleTheme = this.dailyPuzzle?.theme || null;
       gameData.totalMovies = this.dailyPuzzle?.movieIds?.length || null;
     }
 
     // Add decade-specific data for decade mode
-    if (this.gameMode === 'decade' && this.selectedDecade) {
+    if (this.gameMode === "decade" && this.selectedDecade) {
       gameData.decade = this.selectedDecade;
     }
 
     try {
       await this.tracker.submitCompletion(gameData);
     } catch (e) {
-      console.warn('Failed to submit to tracker:', e);
+      console.warn("Failed to submit to tracker:", e);
     }
   }
 
@@ -715,7 +720,8 @@ class MovieTimelineGame {
     });
 
     document.getElementById("play-again").addEventListener("click", () => {
-      const isPuzzleMode = this.gameMode === "daily" || this.gameMode === "archive";
+      const isPuzzleMode =
+        this.gameMode === "daily" || this.gameMode === "archive";
       document.getElementById("game-over").classList.add("hidden");
       document.body.classList.remove("modal-open");
 
@@ -925,8 +931,8 @@ class MovieTimelineGame {
 
     card.innerHTML = `
             <img class="poster" src="${posterUrl}" alt="${
-      movie.title
-    }" loading="lazy" onerror="this.onerror=null; this.src='${fallbackUrl}';">
+              movie.title
+            }" loading="lazy" onerror="this.onerror=null; this.src='${fallbackUrl}';">
             ${
               showYear
                 ? `<span class="year"><span class="month-day">${dateInfo.monthDay}</span>,&nbsp;<span class="year-num">${dateInfo.year}</span></span>`
@@ -944,16 +950,16 @@ class MovieTimelineGame {
 
       // Touch events for mobile
       card.addEventListener("touchstart", (e) =>
-        this.handleTouchStart(e, card)
+        this.handleTouchStart(e, card),
       );
       card.addEventListener("touchmove", (e) => this.handleTouchMove(e, card));
       card.addEventListener("touchend", (e) => this.handleTouchEnd(e, card));
     }
 
     // Add poster zoom click handler
-    const posterImg = card.querySelector('.poster');
+    const posterImg = card.querySelector(".poster");
     if (posterImg) {
-      posterImg.addEventListener('click', (e) => {
+      posterImg.addEventListener("click", (e) => {
         // Don't zoom if card is being dragged or selected for placement
         if (this.draggedElement || (inPile && this.isCardSelected)) {
           return;
@@ -1151,8 +1157,8 @@ class MovieTimelineGame {
 
       // Hide the instruction hint after first successful placement
       if (this.streak === 1) {
-        const hint = document.querySelector('.draw-pile-area .hint');
-        if (hint) hint.classList.add('hidden');
+        const hint = document.querySelector(".draw-pile-area .hint");
+        if (hint) hint.classList.add("hidden");
       }
 
       // Check if placement has same date as a neighbor (takes precedence)
@@ -1203,12 +1209,12 @@ class MovieTimelineGame {
             if (isBarbenheimer) {
               this.showBarbenheimerNotification(
                 index,
-                sameDateResult.neighborIndex
+                sameDateResult.neighborIndex,
               );
             } else {
               this.showSameDateNotification(
                 index,
-                sameDateResult.neighborIndex
+                sameDateResult.neighborIndex,
               );
             }
           } else if (closeNeighborResult.matched) {
@@ -1263,7 +1269,8 @@ class MovieTimelineGame {
     document.getElementById("game-over").classList.remove("hidden");
     document.body.classList.add("modal-open");
 
-    const isPuzzleMode = this.gameMode === "daily" || this.gameMode === "archive";
+    const isPuzzleMode =
+      this.gameMode === "daily" || this.gameMode === "archive";
     const isPerfectDaily = won && isPuzzleMode;
     const showCongrats = won && (!this.isChallenge || this.challengeBeaten);
 
@@ -1275,13 +1282,16 @@ class MovieTimelineGame {
 
     // Set title
     if (isPerfectDaily) {
-      document.querySelector(".game-over-content h2").textContent = "Perfect Score!";
+      document.querySelector(".game-over-content h2").textContent =
+        "Perfect Score!";
       gameOverContent.classList.add("perfect-score");
     } else if (showCongrats) {
-      document.querySelector(".game-over-content h2").textContent = "Congratulations!";
+      document.querySelector(".game-over-content h2").textContent =
+        "Congratulations!";
       gameOverContent.classList.remove("perfect-score");
     } else if (this.isChallenge && !this.challengeBeaten) {
-      document.querySelector(".game-over-content h2").textContent = "It was an honor just to be nominated";
+      document.querySelector(".game-over-content h2").textContent =
+        "It was an honor just to be nominated";
       gameOverContent.classList.remove("perfect-score");
     } else {
       document.querySelector(".game-over-content h2").textContent = "The End!";
@@ -1319,7 +1329,11 @@ class MovieTimelineGame {
     // Update play again button text based on mode
     const playAgainBtn = document.getElementById("play-again");
     const isDecadeMode = this.gameMode === "decade";
-    playAgainBtn.textContent = isPuzzleMode ? "Play Random" : (isDecadeMode ? `Play ${this.selectedDecade}s Again` : "Play Again");
+    playAgainBtn.textContent = isPuzzleMode
+      ? "Play Random"
+      : isDecadeMode
+        ? `Play ${this.selectedDecade}s Again`
+        : "Play Again";
 
     // Show challenge button for random mode (not for daily or when already in a challenge)
     if (this.gameMode === "random" && !this.isChallenge) {
@@ -1351,25 +1365,32 @@ class MovieTimelineGame {
 
     try {
       const stats = await this.tracker.getPuzzleStats(puzzleId);
-      if (stats && stats.scoreDistribution && stats.scoreDistribution.length > 0) {
+      if (
+        stats &&
+        stats.scoreDistribution &&
+        stats.scoreDistribution.length > 0
+      ) {
         this.renderPuzzleStatsChart(stats, this.bestStreak);
       }
     } catch (e) {
-      console.warn('Failed to load puzzle stats:', e);
+      console.warn("Failed to load puzzle stats:", e);
     }
   }
 
   renderPuzzleStatsChart(stats, playerScore) {
     const distribution = stats.scoreDistribution || [];
     const totalPlayers = stats.attempts || 0;
-    const maxScore = stats.total_movies || Math.max(...distribution.map(d => d.score), playerScore);
+    const maxScore =
+      stats.total_movies ||
+      Math.max(...distribution.map((d) => d.score), playerScore);
 
     // Calculate percentile
     let playersBelow = 0;
-    distribution.forEach(d => {
+    distribution.forEach((d) => {
       if (d.score < playerScore) playersBelow += d.count;
     });
-    const percentile = totalPlayers > 0 ? Math.round((playersBelow / totalPlayers) * 100) : 0;
+    const percentile =
+      totalPlayers > 0 ? Math.round((playersBelow / totalPlayers) * 100) : 0;
 
     // Update header
     const headerEl = document.getElementById("puzzle-stats-percentile");
@@ -1384,7 +1405,7 @@ class MovieTimelineGame {
     for (let i = 0; i <= maxScore; i++) {
       scoreMap.set(i, 0);
     }
-    distribution.forEach(d => scoreMap.set(d.score, d.count));
+    distribution.forEach((d) => scoreMap.set(d.score, d.count));
 
     // Add player's score to the distribution
     scoreMap.set(playerScore, (scoreMap.get(playerScore) || 0) + 1);
@@ -1402,14 +1423,14 @@ class MovieTimelineGame {
       const isPlayerScore = score === playerScore;
 
       html += `
-        <div class="score-bar-container${isPlayerScore ? ' player-score' : ''}">
+        <div class="score-bar-container${isPlayerScore ? " player-score" : ""}">
           <div class="score-bar" style="height: ${heightPercent}%"></div>
           <div class="score-label">${score}</div>
         </div>
       `;
     }
 
-    html += '</div>';
+    html += "</div>";
     chartEl.innerHTML = html;
   }
 
@@ -1417,26 +1438,33 @@ class MovieTimelineGame {
     if (!this.tracker) return;
 
     try {
-      const stats = await this.tracker.getRandomStats(50);
-      if (stats && stats.scoreDistribution && stats.scoreDistribution.length > 0) {
+      const stats = await this.tracker.getRandomStats(100);
+      if (
+        stats &&
+        stats.scoreDistribution &&
+        stats.scoreDistribution.length > 0
+      ) {
         this.renderRandomStatsChart(stats, this.bestStreak);
       }
     } catch (e) {
-      console.warn('Failed to load random stats:', e);
+      console.warn("Failed to load random stats:", e);
     }
   }
 
   renderRandomStatsChart(stats, playerScore) {
     const distribution = stats.scoreDistribution || [];
     const totalGames = stats.totalGames || 0;
-    const maxScore = stats.maxScore || Math.max(...distribution.map(d => d.score), playerScore);
+    const maxScore =
+      stats.maxScore ||
+      Math.max(...distribution.map((d) => d.score), playerScore);
 
     // Calculate percentile (how many games scored lower)
     let gamesBelow = 0;
-    distribution.forEach(d => {
+    distribution.forEach((d) => {
       if (d.score < playerScore) gamesBelow += d.count;
     });
-    const percentile = totalGames > 0 ? Math.round((gamesBelow / totalGames) * 100) : 0;
+    const percentile =
+      totalGames > 0 ? Math.round((gamesBelow / totalGames) * 100) : 0;
 
     // Update header
     const headerEl = document.getElementById("puzzle-stats-percentile");
@@ -1451,7 +1479,7 @@ class MovieTimelineGame {
     for (let i = 0; i <= maxScore; i++) {
       scoreMap.set(i, 0);
     }
-    distribution.forEach(d => scoreMap.set(d.score, d.count));
+    distribution.forEach((d) => scoreMap.set(d.score, d.count));
 
     // Add player's score to the distribution
     scoreMap.set(playerScore, (scoreMap.get(playerScore) || 0) + 1);
@@ -1469,14 +1497,14 @@ class MovieTimelineGame {
       const isPlayerScore = score === playerScore;
 
       html += `
-        <div class="score-bar-container${isPlayerScore ? ' player-score' : ''}">
+        <div class="score-bar-container${isPlayerScore ? " player-score" : ""}">
           <div class="score-bar" style="height: ${heightPercent}%"></div>
           <div class="score-label">${score}</div>
         </div>
       `;
     }
 
-    html += '</div>';
+    html += "</div>";
     chartEl.innerHTML = html;
   }
 
@@ -1485,25 +1513,32 @@ class MovieTimelineGame {
 
     try {
       const stats = await this.tracker.getDecadeStats(decade, 50);
-      if (stats && stats.scoreDistribution && stats.scoreDistribution.length > 0) {
+      if (
+        stats &&
+        stats.scoreDistribution &&
+        stats.scoreDistribution.length > 0
+      ) {
         this.renderDecadeStatsChart(stats, this.bestStreak, decade);
       }
     } catch (e) {
-      console.warn('Failed to load decade stats:', e);
+      console.warn("Failed to load decade stats:", e);
     }
   }
 
   renderDecadeStatsChart(stats, playerScore, decade) {
     const distribution = stats.scoreDistribution || [];
     const totalGames = stats.totalGames || 0;
-    const maxScore = stats.maxScore || Math.max(...distribution.map(d => d.score), playerScore);
+    const maxScore =
+      stats.maxScore ||
+      Math.max(...distribution.map((d) => d.score), playerScore);
 
     // Calculate percentile (how many games scored lower)
     let gamesBelow = 0;
-    distribution.forEach(d => {
+    distribution.forEach((d) => {
       if (d.score < playerScore) gamesBelow += d.count;
     });
-    const percentile = totalGames > 0 ? Math.round((gamesBelow / totalGames) * 100) : 0;
+    const percentile =
+      totalGames > 0 ? Math.round((gamesBelow / totalGames) * 100) : 0;
 
     // Update header
     const headerEl = document.getElementById("puzzle-stats-percentile");
@@ -1518,7 +1553,7 @@ class MovieTimelineGame {
     for (let i = 0; i <= maxScore; i++) {
       scoreMap.set(i, 0);
     }
-    distribution.forEach(d => scoreMap.set(d.score, d.count));
+    distribution.forEach((d) => scoreMap.set(d.score, d.count));
 
     // Add player's score to the distribution
     scoreMap.set(playerScore, (scoreMap.get(playerScore) || 0) + 1);
@@ -1536,14 +1571,14 @@ class MovieTimelineGame {
       const isPlayerScore = score === playerScore;
 
       html += `
-        <div class="score-bar-container${isPlayerScore ? ' player-score' : ''}">
+        <div class="score-bar-container${isPlayerScore ? " player-score" : ""}">
           <div class="score-bar" style="height: ${heightPercent}%"></div>
           <div class="score-label">${score}</div>
         </div>
       `;
     }
 
-    html += '</div>';
+    html += "</div>";
     chartEl.innerHTML = html;
   }
 
@@ -1832,7 +1867,7 @@ class MovieTimelineGame {
     if (this.failedCard) {
       const failedDate = new Date(this.failedCard.release_date);
       let correctIndex = displayTimeline.findIndex(
-        (movie) => new Date(movie.release_date) > failedDate
+        (movie) => new Date(movie.release_date) > failedDate,
       );
 
       // If no movie is later, add to end
@@ -1871,7 +1906,7 @@ class MovieTimelineGame {
             `;
 
       // Add click handler for poster zoom
-      item.addEventListener('click', () => {
+      item.addEventListener("click", () => {
         this.openPosterZoom(posterUrl);
       });
 
@@ -1994,66 +2029,68 @@ class MovieTimelineGame {
     document.getElementById("score").textContent = this.streak;
 
     // Update sprocket hole animation speed based on score
-    const timeline = document.querySelector('.timeline');
+    const timeline = document.querySelector(".timeline");
     if (timeline) {
       if (this.streak === 0) {
-        timeline.style.setProperty('--sprocket-play-state', 'paused');
+        timeline.style.setProperty("--sprocket-play-state", "paused");
       } else {
         // Start at 4s for score 1, speed up gradually (minimum 0.3s)
         // Uses inverse scaling so it gets faster more noticeably
         const duration = Math.max(0.3, 4 / this.streak);
-        timeline.style.setProperty('--sprocket-duration', `${duration}s`);
-        timeline.style.setProperty('--sprocket-play-state', 'running');
+        timeline.style.setProperty("--sprocket-duration", `${duration}s`);
+        timeline.style.setProperty("--sprocket-play-state", "running");
       }
     }
   }
 
   // Poster zoom functionality
   openPosterZoom(imageUrl) {
-    const modal = document.getElementById('poster-zoom-modal');
-    const img = modal.querySelector('.poster-zoom-image');
+    const modal = document.getElementById("poster-zoom-modal");
+    const img = modal.querySelector(".poster-zoom-image");
 
     // Use higher resolution image for zoom (w780 instead of w300/w500)
-    const highResUrl = imageUrl.replace('/w300/', '/w780/').replace('/w500/', '/w780/');
+    const highResUrl = imageUrl
+      .replace("/w300/", "/w780/")
+      .replace("/w500/", "/w780/");
     img.src = highResUrl;
 
-    modal.classList.remove('hidden');
+    modal.classList.remove("hidden");
   }
 
   closePosterZoom() {
-    const modal = document.getElementById('poster-zoom-modal');
-    const img = modal.querySelector('.poster-zoom-image');
-    modal.classList.add('hidden');
+    const modal = document.getElementById("poster-zoom-modal");
+    const img = modal.querySelector(".poster-zoom-image");
+    modal.classList.add("hidden");
     // Clear image after modal is hidden to avoid flash on next open
-    img.src = '';
+    img.src = "";
   }
 
   setupPosterZoom() {
-    const modal = document.getElementById('poster-zoom-modal');
-    const closeBtn = modal.querySelector('.poster-zoom-close');
-    const img = modal.querySelector('.poster-zoom-image');
+    const modal = document.getElementById("poster-zoom-modal");
+    const closeBtn = modal.querySelector(".poster-zoom-close");
+    const img = modal.querySelector(".poster-zoom-image");
 
     // Close on X button click
-    closeBtn.addEventListener('click', (e) => {
+    closeBtn.addEventListener("click", (e) => {
       e.stopPropagation();
       this.closePosterZoom();
     });
 
     // Close on backdrop click (but not image click)
-    modal.addEventListener('click', (e) => {
+    modal.addEventListener("click", (e) => {
       if (e.target === modal) {
         this.closePosterZoom();
       }
     });
 
     // Prevent image click from closing
-    img.addEventListener('click', (e) => {
+    img.addEventListener("click", (e) => {
       e.stopPropagation();
     });
 
     // Close on Escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !modal.classList.contains("hidden")) {
         this.closePosterZoom();
       }
     });
