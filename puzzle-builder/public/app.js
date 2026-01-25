@@ -1074,16 +1074,59 @@ function updateScheduleAsterisks() {
 }
 
 function getRotationPuzzle(date) {
-    // Match the logic from dailyPuzzles.js
-    const firstPuzzleDate = new Date('2026-01-08'); // From dailyPuzzles.js
-    const daysSinceFirst = Math.floor((date - firstPuzzleDate) / (1000 * 60 * 60 * 24));
-
-    if (daysSinceFirst < 0 || state.schedulePuzzles.length === 0) {
+    // Match the logic from dailyPuzzles.js - no future puzzles, no repeats
+    const scheduledDates = Object.keys(state.schedule).sort();
+    if (scheduledDates.length === 0 || state.schedulePuzzles.length === 0) {
         return state.schedulePuzzles[0];
     }
 
-    const puzzleIndex = daysSinceFirst % state.schedulePuzzles.length;
-    return state.schedulePuzzles[puzzleIndex];
+    const firstPuzzleDate = new Date(scheduledDates[0] + 'T00:00:00');
+    if (date < firstPuzzleDate) {
+        return null;
+    }
+
+    // Build set of puzzles already used (scheduled for dates <= target date)
+    const usedPuzzleIds = new Set();
+    for (const [schedDate, puzzleId] of Object.entries(state.schedule)) {
+        if (new Date(schedDate + 'T00:00:00') <= date) {
+            usedPuzzleIds.add(puzzleId);
+        }
+    }
+
+    // Get puzzles scheduled for future dates (can't use these yet)
+    const futureScheduledIds = new Set(
+        Object.entries(state.schedule)
+            .filter(([schedDate]) => new Date(schedDate + 'T00:00:00') > date)
+            .map(([, puzzleId]) => puzzleId)
+    );
+
+    // Walk through each day from first date to target date to track what gets used on empty days
+    const currentDate = new Date(firstPuzzleDate);
+    const targetDate = new Date(date.toISOString().split('T')[0] + 'T00:00:00');
+    while (currentDate < targetDate) {
+        const currentDateStr = currentDate.toISOString().split('T')[0];
+        if (!state.schedule[currentDateStr]) {
+            // This was an empty day - find what puzzle it would use
+            const availableForThatDay = state.schedulePuzzles.filter(
+                p => !usedPuzzleIds.has(p.id) && !futureScheduledIds.has(p.id)
+            );
+            if (availableForThatDay.length > 0) {
+                usedPuzzleIds.add(availableForThatDay[0].id);
+            }
+        }
+        currentDate.setDate(currentDate.getDate() + 1);
+    }
+
+    // Now find an unused puzzle for this date (excluding future-scheduled puzzles)
+    const availablePuzzles = state.schedulePuzzles.filter(
+        p => !usedPuzzleIds.has(p.id) && !futureScheduledIds.has(p.id)
+    );
+
+    if (availablePuzzles.length === 0) {
+        return null; // No more unique puzzles available
+    }
+
+    return availablePuzzles[0];
 }
 
 async function saveSchedule() {

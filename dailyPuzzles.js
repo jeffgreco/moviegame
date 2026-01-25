@@ -361,7 +361,7 @@ function getPuzzleForDate(date) {
     if (scheduled) return scheduled;
   }
 
-  // Fall back to rotation based on first scheduled date
+  // Fall back to filling empty days with unused puzzles
   const scheduledDates = Object.keys(PUZZLE_SCHEDULE).sort();
   if (scheduledDates.length === 0) {
     return DAILY_PUZZLES[0] || null;
@@ -375,13 +375,47 @@ function getPuzzleForDate(date) {
     return null;
   }
 
-  // Calculate which puzzle to show (cycles through available puzzles)
-  const daysSinceFirst = Math.floor(
-    (targetDate - firstDate) / (1000 * 60 * 60 * 24)
-  );
-  const puzzleIndex = daysSinceFirst % DAILY_PUZZLES.length;
+  // Build set of puzzles already used (scheduled for dates <= target date)
+  const usedPuzzleIds = new Set();
+  for (const [schedDate, puzzleId] of Object.entries(PUZZLE_SCHEDULE)) {
+    if (new Date(schedDate + "T00:00:00") <= targetDate) {
+      usedPuzzleIds.add(puzzleId);
+    }
+  }
 
-  return DAILY_PUZZLES[puzzleIndex];
+  // Get puzzles scheduled for future dates (can't use these yet)
+  const futureScheduledIds = new Set(
+    Object.entries(PUZZLE_SCHEDULE)
+      .filter(([schedDate]) => new Date(schedDate + "T00:00:00") > targetDate)
+      .map(([, puzzleId]) => puzzleId)
+  );
+
+  // Walk through each day from first date to target date to track what gets used on empty days
+  const currentDate = new Date(firstDate);
+  while (currentDate < targetDate) {
+    const currentDateStr = currentDate.toISOString().split("T")[0];
+    if (!PUZZLE_SCHEDULE[currentDateStr]) {
+      // This was an empty day - find what puzzle it would use
+      const availableForThatDay = DAILY_PUZZLES.filter(
+        p => !usedPuzzleIds.has(p.id) && !futureScheduledIds.has(p.id)
+      );
+      if (availableForThatDay.length > 0) {
+        usedPuzzleIds.add(availableForThatDay[0].id);
+      }
+    }
+    currentDate.setDate(currentDate.getDate() + 1);
+  }
+
+  // Now find an unused puzzle for this date (excluding future-scheduled puzzles)
+  const availablePuzzles = DAILY_PUZZLES.filter(
+    p => !usedPuzzleIds.has(p.id) && !futureScheduledIds.has(p.id)
+  );
+
+  if (availablePuzzles.length === 0) {
+    return null; // No more unique puzzles available
+  }
+
+  return availablePuzzles[0];
 }
 
 // Get today's puzzle (based on Eastern Time)
