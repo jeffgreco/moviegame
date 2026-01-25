@@ -1468,7 +1468,7 @@ class MovieTimelineGame {
 
     // Update header
     const headerEl = document.getElementById("puzzle-stats-percentile");
-    if (totalGames > 1) {
+    if (totalGames > 1 && playerScore > 1) {
       headerEl.innerHTML = `You scored <span class="score-value">${playerScore}</span> — better than <span class="percentile-value">${percentile}%</span> of recent games`;
     } else {
       headerEl.innerHTML = `You scored <span class="score-value">${playerScore}</span>`;
@@ -1542,7 +1542,7 @@ class MovieTimelineGame {
 
     // Update header
     const headerEl = document.getElementById("puzzle-stats-percentile");
-    if (totalGames > 1) {
+    if (totalGames > 1 && playerScore > 1) {
       headerEl.innerHTML = `You scored <span class="score-value">${playerScore}</span> in the ${decade}s — better than <span class="percentile-value">${percentile}%</span> of games`;
     } else {
       headerEl.innerHTML = `You scored <span class="score-value">${playerScore}</span> in the ${decade}s`;
