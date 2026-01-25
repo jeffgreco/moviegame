@@ -1,6 +1,6 @@
 // Movie data from TMDB
-// Last updated: 2026-01-21T04:28:07.151Z
-// Total movies: 1618
+// Last updated: 2026-01-24T23:50:14.837Z
+// Total movies: 1665
 
 var MOVIES_DATA = [
   {
@@ -13,6 +13,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 223,
+    "title": "Rebecca",
+    "poster_url": "https://image.tmdb.org/t/p/w500/1qz3qUOHnVy7dL7M7G8jSErxE4b.jpg",
+    "release_date": "1940-04-12",
+    "directors": [
+      "Alfred Hitchcock"
+    ]
+  },
+  {
     "id": 8974,
     "title": "The War of the Worlds",
     "poster_url": "https://image.tmdb.org/t/p/w500/gzc75Za4ArqfXIIr7STNnIE5rnA.jpg",
@@ -21,6 +30,24 @@ var MOVIES_DATA = [
       "Byron Haskin"
     ],
     "showDirector": true
+  },
+  {
+    "id": 6620,
+    "title": "Sabrina",
+    "poster_url": "https://image.tmdb.org/t/p/w500/e1Po9NDrH7IJZhv89467gJH5FS0.jpg",
+    "release_date": "1954-10-15",
+    "directors": [
+      "Billy Wilder"
+    ]
+  },
+  {
+    "id": 15919,
+    "title": "Marty",
+    "poster_url": "https://image.tmdb.org/t/p/w500/8tnGO5VoAQII4DbE3hozWKhV4BY.jpg",
+    "release_date": "1955-04-11",
+    "directors": [
+      "Delbert Mann"
+    ]
   },
   {
     "id": 539,
@@ -58,6 +85,15 @@ var MOVIES_DATA = [
     "release_date": "1965-12-02",
     "directors": [
       "Robert Stevenson"
+    ]
+  },
+  {
+    "id": 15598,
+    "title": "Alfie",
+    "poster_url": "https://image.tmdb.org/t/p/w500/tPUqgfGMkZazRZ1UO41j2Fiib5C.jpg",
+    "release_date": "1966-08-24",
+    "directors": [
+      "Lewis Gilbert"
     ]
   },
   {
@@ -1438,6 +1474,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 13665,
+    "title": "Arthur",
+    "poster_url": "https://image.tmdb.org/t/p/w500/m8yOFRDVZPxtsr4D2hVdzls6q6t.jpg",
+    "release_date": "1981-07-17",
+    "directors": [
+      "Steve Gordon"
+    ]
+  },
+  {
     "id": 11646,
     "title": "Gallipoli",
     "poster_url": "https://image.tmdb.org/t/p/w500/un7VCqTmjrq3u75mQ204a8tofD4.jpg",
@@ -1513,7 +1558,8 @@ var MOVIES_DATA = [
     "release_date": "1982-05-21",
     "directors": [
       "John Huston"
-    ]
+    ],
+    "showDirector": true
   },
   {
     "id": 1371,
@@ -1798,7 +1844,8 @@ var MOVIES_DATA = [
     "release_date": "1983-12-09",
     "directors": [
       "John Carpenter"
-    ]
+    ],
+    "showDirector": true
   },
   {
     "id": 26198,
@@ -2548,6 +2595,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 10013,
+    "title": "Peggy Sue Got Married",
+    "poster_url": "https://image.tmdb.org/t/p/w500/tfuQcvQmURiMqB2VPwytU3cPpEm.jpg",
+    "release_date": "1986-10-10",
+    "directors": [
+      "Francis Ford Coppola"
+    ]
+  },
+  {
     "id": 11873,
     "title": "The Color of Money",
     "poster_url": "https://image.tmdb.org/t/p/w500/dVdnHmdQu3JtLAAksjTmTEF76gD.jpg",
@@ -3258,6 +3314,15 @@ var MOVIES_DATA = [
     "release_date": "1989-05-24",
     "directors": [
       "Steven Spielberg"
+    ]
+  },
+  {
+    "id": 39002,
+    "title": "No Holds Barred",
+    "poster_url": "https://image.tmdb.org/t/p/w500/6BmhGmMF53mIsJuUYSwyLfCaTfu.jpg",
+    "release_date": "1989-06-02",
+    "directors": [
+      "Thomas J. Wright"
     ]
   },
   {
@@ -4586,6 +4651,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 19371,
+    "title": "Mr. Nanny",
+    "poster_url": "https://image.tmdb.org/t/p/w500/gSRSvh9kSEgCOsPR7yrH0ueh4lC.jpg",
+    "release_date": "1993-10-08",
+    "directors": [
+      "Michael Gottlieb"
+    ]
+  },
+  {
     "id": 14534,
     "title": "Rudy",
     "poster_url": "https://image.tmdb.org/t/p/w500/fAbfTCRpjHe2rprXBly55KL1dL9.jpg",
@@ -5024,6 +5098,15 @@ var MOVIES_DATA = [
     "release_date": "1994-12-23",
     "directors": [
       "Steven E. de Souza"
+    ]
+  },
+  {
+    "id": 1945,
+    "title": "Nell",
+    "poster_url": "https://image.tmdb.org/t/p/w500/aIDp3x2YfijtdherR28pIH6yenn.jpg",
+    "release_date": "1994-12-23",
+    "directors": [
+      "Michael Apted"
     ]
   },
   {
@@ -5532,6 +5615,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 11107,
+    "title": "Eddie",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qIJ4PU6WifgRs8RpiN3LkNYjzlS.jpg",
+    "release_date": "1996-05-31",
+    "directors": [
+      "Steve Rash"
+    ]
+  },
+  {
     "id": 9802,
     "title": "The Rock",
     "poster_url": "https://image.tmdb.org/t/p/w500/eBcoxveWzzXQrCrwWMGAROcqgpP.jpg",
@@ -5675,6 +5767,15 @@ var MOVIES_DATA = [
     "release_date": "1996-12-13",
     "directors": [
       "Tim Burton"
+    ]
+  },
+  {
+    "id": 8818,
+    "title": "Evita",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hkcSlu3PMw0WyC9vHlvML6nK3Id.jpg",
+    "release_date": "1996-12-14",
+    "directors": [
+      "Alan Parker"
     ]
   },
   {
@@ -6134,6 +6235,15 @@ var MOVIES_DATA = [
     "showDirector": true
   },
   {
+    "id": 8688,
+    "title": "Snake Eyes",
+    "poster_url": "https://image.tmdb.org/t/p/w500/gsh9mQKRrr4M90XC9Rr0wxefc9u.jpg",
+    "release_date": "1998-08-07",
+    "directors": [
+      "Brian De Palma"
+    ]
+  },
+  {
     "id": 9320,
     "title": "The Avengers",
     "poster_url": "https://image.tmdb.org/t/p/w500/1p5thyQ4pCy876HpdvFARqJ62N9.jpg",
@@ -6334,6 +6444,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 8224,
+    "title": "8MM",
+    "poster_url": "https://image.tmdb.org/t/p/w500/mhr9xRpjOBqlBjgDwtiOx6FsLvV.jpg",
+    "release_date": "1999-02-26",
+    "directors": [
+      "Joel Schumacher"
+    ]
+  },
+  {
     "id": 796,
     "title": "Cruel Intentions",
     "poster_url": "https://image.tmdb.org/t/p/w500/76cCsRtQ5MJBAqoigojXsLXLJwh.jpg",
@@ -6528,6 +6647,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 8649,
+    "title": "Bringing Out the Dead",
+    "poster_url": "https://image.tmdb.org/t/p/w500/gE2Q8mL0m0EA6HakRyc92uzSPJn.jpg",
+    "release_date": "1999-10-22",
+    "directors": [
+      "Martin Scorsese"
+    ]
+  },
+  {
     "id": 9008,
     "title": "The Insider",
     "poster_url": "https://image.tmdb.org/t/p/w500/jJCyIBPfvk41uETq6K6u4upyGO8.jpg",
@@ -6606,6 +6734,15 @@ var MOVIES_DATA = [
     "release_date": "1999-12-22",
     "directors": [
       "Oliver Stone"
+    ]
+  },
+  {
+    "id": 1850,
+    "title": "Man on the Moon",
+    "poster_url": "https://image.tmdb.org/t/p/w500/d8rahmdfryjdmvLpSsDOUhGVQXl.jpg",
+    "release_date": "1999-12-22",
+    "directors": [
+      "Miloš Forman"
     ]
   },
   {
@@ -6714,6 +6851,15 @@ var MOVIES_DATA = [
     "release_date": "2000-05-31",
     "directors": [
       "Raja Gosnell"
+    ]
+  },
+  {
+    "id": 9679,
+    "title": "Gone in Sixty Seconds",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fToQDmkBtiXYGh9xfgAh3gpo6GZ.jpg",
+    "release_date": "2000-06-09",
+    "directors": [
+      "Dominic Sena"
     ]
   },
   {
@@ -7246,6 +7392,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 11889,
+    "title": "Iris",
+    "poster_url": "https://image.tmdb.org/t/p/w500/pqtVPrv3xPLTUayC0bPruRjYWDF.jpg",
+    "release_date": "2001-12-14",
+    "directors": [
+      "Richard Eyre"
+    ]
+  },
+  {
     "id": 120,
     "title": "The Lord of the Rings: The Fellowship of the Ring",
     "poster_url": "https://image.tmdb.org/t/p/w500/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg",
@@ -7297,6 +7452,15 @@ var MOVIES_DATA = [
     "release_date": "2002-01-18",
     "directors": [
       "Ridley Scott"
+    ]
+  },
+  {
+    "id": 194,
+    "title": "Amélie",
+    "poster_url": "https://image.tmdb.org/t/p/w500/nSxDa3M9aMvGVLoItzWTepQ5h5d.jpg",
+    "release_date": "2002-02-08",
+    "directors": [
+      "Jean-Pierre Jeunet"
     ]
   },
   {
@@ -7491,6 +7655,15 @@ var MOVIES_DATA = [
     "release_date": "2002-08-23",
     "directors": [
       "Walter Hill"
+    ]
+  },
+  {
+    "id": 1360,
+    "title": "Frida",
+    "poster_url": "https://image.tmdb.org/t/p/w500/a4hgR6aKoohB6MHni171jbi9BkU.jpg",
+    "release_date": "2002-08-29",
+    "directors": [
+      "Julie Taymor"
     ]
   },
   {
@@ -7780,6 +7953,15 @@ var MOVIES_DATA = [
     "release_date": "2003-08-01",
     "directors": [
       "Jesse Dylan"
+    ]
+  },
+  {
+    "id": 7270,
+    "title": "Matchstick Men",
+    "poster_url": "https://image.tmdb.org/t/p/w500/y5hBAMrOWUusHjnWUGLpFWPtPAP.jpg",
+    "release_date": "2003-09-12",
+    "directors": [
+      "Ridley Scott"
     ]
   },
   {
@@ -8256,6 +8438,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 1966,
+    "title": "Alexander",
+    "poster_url": "https://image.tmdb.org/t/p/w500/jrwQu72sGwGqwE8Ijne89PSIvhp.jpg",
+    "release_date": "2004-11-24",
+    "directors": [
+      "Oliver Stone"
+    ]
+  },
+  {
     "id": 163,
     "title": "Ocean's Twelve",
     "poster_url": "https://image.tmdb.org/t/p/w500/pE5anFf7nf6ah7V3VRezQ1KSovi.jpg",
@@ -8477,6 +8668,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 1830,
+    "title": "Lord of War",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3MGQD4yXokufNlW1AyRXdiy7ytP.jpg",
+    "release_date": "2005-09-16",
+    "directors": [
+      "Andrew Niccol"
+    ]
+  },
+  {
     "id": 10851,
     "title": "Revolver",
     "poster_url": "https://image.tmdb.org/t/p/w500/w9NELY89blLetosxODWpZM9XnBm.jpg",
@@ -8511,6 +8711,15 @@ var MOVIES_DATA = [
     "release_date": "2005-09-30",
     "directors": [
       "Joss Whedon"
+    ]
+  },
+  {
+    "id": 6963,
+    "title": "The Weather Man",
+    "poster_url": "https://image.tmdb.org/t/p/w500/oQilVzOxLPxvBn9hAuvGpKTpONM.jpg",
+    "release_date": "2005-10-20",
+    "directors": [
+      "Gore Verbinski"
     ]
   },
   {
@@ -8711,6 +8920,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 10007,
+    "title": "See No Evil",
+    "poster_url": "https://image.tmdb.org/t/p/w500/6a0vqkB4SVIkl2JlHlUOcY9qmS.jpg",
+    "release_date": "2006-05-19",
+    "directors": [
+      "Gregory Dark"
+    ]
+  },
+  {
     "id": 920,
     "title": "Cars",
     "poster_url": "https://image.tmdb.org/t/p/w500/2Touk3m5gzsqr1VsvxypdyHY5ci.jpg",
@@ -8780,6 +8998,15 @@ var MOVIES_DATA = [
     "release_date": "2006-08-04",
     "directors": [
       "Adam McKay"
+    ]
+  },
+  {
+    "id": 1852,
+    "title": "World Trade Center",
+    "poster_url": "https://image.tmdb.org/t/p/w500/bfTiVc8kxq8uRXeblV3Ct35APGu.jpg",
+    "release_date": "2006-08-09",
+    "directors": [
+      "Oliver Stone"
     ]
   },
   {
@@ -9003,6 +9230,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 1250,
+    "title": "Ghost Rider",
+    "poster_url": "https://image.tmdb.org/t/p/w500/1pyU94dAY7npDQCKuxCSyX9KthN.jpg",
+    "release_date": "2007-02-16",
+    "directors": [
+      "Mark Steven Johnson"
+    ]
+  },
+  {
     "id": 1949,
     "title": "Zodiac",
     "poster_url": "https://image.tmdb.org/t/p/w500/6YmeO4pB7XTh8P8F960O1uA14JO.jpg",
@@ -9045,6 +9281,15 @@ var MOVIES_DATA = [
     "release_date": "2007-04-26",
     "directors": [
       "Lee Tamahori"
+    ]
+  },
+  {
+    "id": 14636,
+    "title": "The Condemned",
+    "poster_url": "https://image.tmdb.org/t/p/w500/uC50pDHgQQtoDFNh9bBNDAvpsqu.jpg",
+    "release_date": "2007-04-27",
+    "directors": [
+      "Scott Wiper"
     ]
   },
   {
@@ -9245,6 +9490,15 @@ var MOVIES_DATA = [
     "release_date": "2007-12-21",
     "directors": [
       "Mike Nichols"
+    ]
+  },
+  {
+    "id": 6637,
+    "title": "National Treasure: Book of Secrets",
+    "poster_url": "https://image.tmdb.org/t/p/w500/dc9F1vNOGbgeZrO9ejNkbgHPlfw.jpg",
+    "release_date": "2007-12-21",
+    "directors": [
+      "Jon Turteltaub"
     ]
   },
   {
@@ -9491,6 +9745,15 @@ var MOVIES_DATA = [
     "release_date": "2008-08-22",
     "directors": [
       "Fred Wolf"
+    ]
+  },
+  {
+    "id": 12163,
+    "title": "The Wrestler",
+    "poster_url": "https://image.tmdb.org/t/p/w500/6OTR8dSoNGjWohJNo3UhIGd3Tj.jpg",
+    "release_date": "2008-10-12",
+    "directors": [
+      "Darren Aronofsky"
     ]
   },
   {
@@ -9913,6 +10176,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 11699,
+    "title": "Bad Lieutenant: Port of Call - New Orleans",
+    "poster_url": "https://image.tmdb.org/t/p/w500/73jnKMm8bCcV1w2ltkaeJfLZJzX.jpg",
+    "release_date": "2009-12-11",
+    "directors": [
+      "Werner Herzog"
+    ]
+  },
+  {
     "id": 19995,
     "title": "Avatar",
     "poster_url": "https://image.tmdb.org/t/p/w500/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg",
@@ -10011,6 +10283,15 @@ var MOVIES_DATA = [
     "release_date": "2010-05-21",
     "directors": [
       "Mike Mitchell"
+    ]
+  },
+  {
+    "id": 37931,
+    "title": "MacGruber",
+    "poster_url": "https://image.tmdb.org/t/p/w500/4WrSz0dRfq6XwJUQlYvzuhJq8hR.jpg",
+    "release_date": "2010-05-21",
+    "directors": [
+      "Jorma Taccone"
     ]
   },
   {
@@ -10136,6 +10417,15 @@ var MOVIES_DATA = [
     "release_date": "2010-10-01",
     "directors": [
       "David Fincher"
+    ]
+  },
+  {
+    "id": 44946,
+    "title": "Knucklehead",
+    "poster_url": "https://image.tmdb.org/t/p/w500/lr8ea5YtZHafTkxHWb2OE5ZSEK.jpg",
+    "release_date": "2010-10-22",
+    "directors": [
+      "Michael W. Watkins"
     ]
   },
   {
@@ -10508,6 +10798,15 @@ var MOVIES_DATA = [
     "release_date": "2011-11-17",
     "directors": [
       "Bill Condon"
+    ]
+  },
+  {
+    "id": 44826,
+    "title": "Hugo",
+    "poster_url": "https://image.tmdb.org/t/p/w500/1dxRq3o3l3bVWNRvvSb7rRf68qp.jpg",
+    "release_date": "2011-11-23",
+    "directors": [
+      "Martin Scorsese"
     ]
   },
   {
@@ -11340,6 +11639,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 157847,
+    "title": "Joe",
+    "poster_url": "https://image.tmdb.org/t/p/w500/numu669Pf8wOPcqImONWORYx0Pp.jpg",
+    "release_date": "2014-04-11",
+    "directors": [
+      "David Gordon Green"
+    ]
+  },
+  {
     "id": 102382,
     "title": "The Amazing Spider-Man 2",
     "poster_url": "https://image.tmdb.org/t/p/w500/dGjoPttcbKR5VWg1jQuNFB247KL.jpg",
@@ -11459,6 +11767,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 171372,
+    "title": "Frank",
+    "poster_url": "https://image.tmdb.org/t/p/w500/mGzqs4CHW8LomreoPATnyrTXk7j.jpg",
+    "release_date": "2014-08-15",
+    "directors": [
+      "Lenny Abrahamson"
+    ]
+  },
+  {
     "id": 189,
     "title": "Sin City: A Dame to Kill For",
     "poster_url": "https://image.tmdb.org/t/p/w500/50kALxDX4mmzIRljbNbPY0u4cie.jpg",
@@ -11502,6 +11819,15 @@ var MOVIES_DATA = [
     "release_date": "2014-10-03",
     "directors": [
       "David Fincher"
+    ]
+  },
+  {
+    "id": 250546,
+    "title": "Annabelle",
+    "poster_url": "https://image.tmdb.org/t/p/w500/yLsuU2P2SpDYFwtZQ7dtfVAf6TE.jpg",
+    "release_date": "2014-10-03",
+    "directors": [
+      "John R. Leonetti"
     ]
   },
   {
@@ -11632,6 +11958,16 @@ var MOVIES_DATA = [
     "directors": [
       "Shawn Levy"
     ]
+  },
+  {
+    "id": 196867,
+    "title": "Annie",
+    "poster_url": "https://image.tmdb.org/t/p/w500/aKAM9V0izx4VhsdyAdBvAB26UCZ.jpg",
+    "release_date": "2014-12-19",
+    "directors": [
+      "Will Gluck"
+    ],
+    "showDirector": true
   },
   {
     "id": 284536,
@@ -11966,6 +12302,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 274479,
+    "title": "Joy",
+    "poster_url": "https://image.tmdb.org/t/p/w500/nZAs0HbW82TI1i4Xid83M941Pki.jpg",
+    "release_date": "2015-12-25",
+    "directors": [
+      "David O. Russell"
+    ]
+  },
+  {
     "id": 273248,
     "title": "The Hateful Eight",
     "poster_url": "https://image.tmdb.org/t/p/w500/jIywvdPjia2t3eKYbjVTcwBQlG8.jpg",
@@ -11990,6 +12335,15 @@ var MOVIES_DATA = [
     "release_date": "2016-01-15",
     "directors": [
       "Michael Bay"
+    ]
+  },
+  {
+    "id": 258480,
+    "title": "Carol",
+    "poster_url": "https://image.tmdb.org/t/p/w500/cJeled7EyPdur6TnCA5GYg0UVna.jpg",
+    "release_date": "2016-01-15",
+    "directors": [
+      "Todd Haynes"
     ]
   },
   {
@@ -12061,6 +12415,15 @@ var MOVIES_DATA = [
     "release_date": "2016-04-22",
     "directors": [
       "Liza Johnson"
+    ]
+  },
+  {
+    "id": 360389,
+    "title": "Nina",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2nU3l3NYaVVIaglkAvBtsXjdvmI.jpg",
+    "release_date": "2016-04-22",
+    "directors": [
+      "Cynthia Mort"
     ]
   },
   {
@@ -12201,6 +12564,16 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 339405,
+    "title": "Christine",
+    "poster_url": "https://image.tmdb.org/t/p/w500/enZy6Yx6sjdOXxcnQVC200RjeKM.jpg",
+    "release_date": "2016-10-14",
+    "directors": [
+      "Antonio Campos"
+    ],
+    "showDirector": true
+  },
+  {
     "id": 343611,
     "title": "Jack Reacher: Never Go Back",
     "poster_url": "https://image.tmdb.org/t/p/w500/cOg3UT2NYWHZxp41vpxAnVCOC4M.jpg",
@@ -12252,6 +12625,16 @@ var MOVIES_DATA = [
     "release_date": "2016-11-18",
     "directors": [
       "David Yates"
+    ]
+  },
+  {
+    "id": 277834,
+    "title": "Moana",
+    "poster_url": "https://image.tmdb.org/t/p/w500/9tzN8sPbyod2dsa0lwuvrwBDWra.jpg",
+    "release_date": "2016-11-23",
+    "directors": [
+      "John Musker",
+      "Ron Clements"
     ]
   },
   {
@@ -12797,6 +13180,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 460885,
+    "title": "Mandy",
+    "poster_url": "https://image.tmdb.org/t/p/w500/wUATmL18BBQPtTqA5RCQg6emKnf.jpg",
+    "release_date": "2018-09-13",
+    "directors": [
+      "Panos Cosmatos"
+    ]
+  },
+  {
     "id": 346910,
     "title": "The Predator",
     "poster_url": "https://image.tmdb.org/t/p/w500/a3eWGF6YPF7No5Rbtjc8QpDvz7l.jpg",
@@ -13074,12 +13466,31 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 463257,
+    "title": "The Peanut Butter Falcon",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qyQcRGvdW3VtxHR4fSDgPOePEip.jpg",
+    "release_date": "2019-08-23",
+    "directors": [
+      "Tyler Nilson",
+      "Michael Schwartz"
+    ]
+  },
+  {
     "id": 474350,
     "title": "It Chapter Two",
     "poster_url": "https://image.tmdb.org/t/p/w500/zfE0R94v1E8cuKAerbskfD3VfUt.jpg",
     "release_date": "2019-09-06",
     "directors": [
       "Andy Muschietti"
+    ]
+  },
+  {
+    "id": 491283,
+    "title": "Judy",
+    "poster_url": "https://image.tmdb.org/t/p/w500/iqJhHjD6k6T07waELjMKDpQJUP.jpg",
+    "release_date": "2019-09-27",
+    "directors": [
+      "Rupert Goold"
     ]
   },
   {
@@ -13484,6 +13895,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 635731,
+    "title": "Pig",
+    "poster_url": "https://image.tmdb.org/t/p/w500/1InMm4Mbjx8wCKvIy5gglo5i3HN.jpg",
+    "release_date": "2021-07-16",
+    "directors": [
+      "Michael Sarnoski"
+    ]
+  },
+  {
     "id": 631843,
     "title": "Old",
     "poster_url": "https://image.tmdb.org/t/p/w500/vclShucpUmPhdAOmKgf3B3Z4POD.jpg",
@@ -13729,6 +14149,15 @@ var MOVIES_DATA = [
     "release_date": "2022-04-22",
     "directors": [
       "Pierre Perifel"
+    ]
+  },
+  {
+    "id": 648579,
+    "title": "The Unbearable Weight of Massive Talent",
+    "poster_url": "https://image.tmdb.org/t/p/w500/aqhLeieyTpTUKPOfZ3jzo2La0Mq.jpg",
+    "release_date": "2022-04-22",
+    "directors": [
+      "Tom Gormican"
     ]
   },
   {

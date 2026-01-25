@@ -29,6 +29,7 @@ const elements = {
     exportSelect: document.getElementById('export-select'),
     puzzleTheme: document.getElementById('puzzle-theme'),
     puzzleDescription: document.getElementById('puzzle-description'),
+    puzzleEmoji: document.getElementById('puzzle-emoji'),
     totalCount: document.getElementById('total-count'),
     movieCount: document.getElementById('movie-count'),
     puzzleMovieList: document.getElementById('puzzle-movie-list'),
@@ -110,7 +111,14 @@ async function loadExistingPuzzles() {
         state.existingPuzzles.forEach(puzzle => {
             const option = document.createElement('option');
             option.value = puzzle.id;
-            option.textContent = puzzle.theme;
+            // Show date if scheduled
+            if (puzzle.scheduledDate) {
+                const date = new Date(puzzle.scheduledDate + 'T00:00:00');
+                const dateStr = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+                option.textContent = `${dateStr} - ${puzzle.theme}`;
+            } else {
+                option.textContent = puzzle.theme;
+            }
             elements.puzzleSelect.appendChild(option);
         });
     } catch (e) {
@@ -131,7 +139,7 @@ async function loadExportedFiles() {
             // Format date nicely
             const date = new Date(file.modified);
             const dateStr = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-            option.textContent = `${file.theme} (${dateStr})`;
+            option.textContent = `${dateStr} - ${file.theme}`;
             option.title = file.filename;
             elements.exportSelect.appendChild(option);
         });
@@ -234,6 +242,7 @@ async function loadSelectedPuzzle() {
         // Update UI
         elements.puzzleTheme.value = data.puzzle.theme;
         elements.puzzleDescription.value = data.puzzle.description || '';
+        elements.puzzleEmoji.value = data.puzzle.emoji || '';
 
         renderPuzzleMovies();
         updateCounts();
@@ -262,6 +271,7 @@ async function loadSelectedExport() {
         // Update UI
         elements.puzzleTheme.value = data.puzzle?.theme || '';
         elements.puzzleDescription.value = data.puzzle?.description || '';
+        elements.puzzleEmoji.value = data.puzzle?.emoji || '';
 
         renderPuzzleMovies();
         updateCounts();
@@ -719,6 +729,12 @@ function updateCounts() {
     const total = state.movies.length;
     elements.movieCount.textContent = `(${total})`;
     elements.totalCount.textContent = `${total} movie${total !== 1 ? 's' : ''}`;
+
+    // Update save button text based on whether we're editing
+    const saveBtn = document.getElementById('btn-save-puzzle');
+    if (saveBtn) {
+        saveBtn.textContent = state.puzzleId ? 'Update Puzzle' : 'Save Puzzle';
+    }
 }
 
 function markMoviesInPuzzle() {
@@ -737,6 +753,7 @@ function clearPuzzle() {
     state.movies = [];
     elements.puzzleTheme.value = '';
     elements.puzzleDescription.value = '';
+    elements.puzzleEmoji.value = '';
     elements.puzzleSelect.value = '';
     renderPuzzleMovies();
     updateCounts();
@@ -747,6 +764,7 @@ function clearPuzzle() {
 function generateJsSnippet() {
     const theme = elements.puzzleTheme.value.trim() || 'Untitled Puzzle';
     const description = elements.puzzleDescription.value.trim();
+    const emoji = elements.puzzleEmoji.value.trim();
 
     const lines = [
         '// Add this to dailyPuzzles.js',
@@ -754,8 +772,13 @@ function generateJsSnippet() {
         `  id: ${state.puzzleId ? `"${state.puzzleId}"` : '"/* generate unique ID */"'},`,
         `  theme: "${theme}",`,
         `  description: "${description}",`,
-        '  movieIds: ['
     ];
+
+    if (emoji) {
+        lines.push(`  emoji: "${emoji}",`);
+    }
+
+    lines.push('  movieIds: [');
 
     state.movies.forEach(m => {
         const dateDisplay = formatDate(m.release_date);
@@ -812,6 +835,7 @@ async function exportPuzzle() {
             body: JSON.stringify({
                 theme,
                 description: elements.puzzleDescription.value.trim(),
+                emoji: elements.puzzleEmoji.value.trim() || undefined,
                 movies: state.movies,
                 addToDatabase
             })
@@ -876,8 +900,10 @@ async function savePuzzle() {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
+                puzzleId: state.puzzleId || undefined, // Pass existing ID if editing
                 theme,
                 description: elements.puzzleDescription.value.trim(),
+                emoji: elements.puzzleEmoji.value.trim() || undefined,
                 movies: state.movies,
                 addToDatabase
             })
@@ -886,7 +912,9 @@ async function savePuzzle() {
         const result = await response.json();
 
         if (result.success) {
-            let msg = `Puzzle saved as #${result.puzzleId}!`;
+            let msg = result.updated
+                ? `Puzzle "${theme}" updated!`
+                : `Puzzle saved as #${result.puzzleId}!`;
             if (result.moviesAddedToDatabase > 0) {
                 msg += `\n${result.moviesAddedToDatabase} movie(s) added to movies.js`;
             }

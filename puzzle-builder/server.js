@@ -631,7 +631,24 @@ function loadExistingPuzzles() {
 // Get existing puzzles
 app.get('/api/puzzles', (req, res) => {
     const puzzles = loadExistingPuzzles();
-    res.json({ puzzles });
+    const schedule = loadSchedule();
+
+    // Create a reverse lookup: puzzleId -> scheduled date
+    const puzzleDates = {};
+    Object.entries(schedule).forEach(([date, puzzleId]) => {
+        // Only keep the first (earliest) date for each puzzle
+        if (!puzzleDates[puzzleId]) {
+            puzzleDates[puzzleId] = date;
+        }
+    });
+
+    // Add scheduled date to each puzzle
+    const puzzlesWithDates = puzzles.map(p => ({
+        ...p,
+        scheduledDate: puzzleDates[p.id] || null
+    }));
+
+    res.json({ puzzles: puzzlesWithDates });
 });
 
 // Get a specific puzzle with full movie details
@@ -667,6 +684,7 @@ app.get('/api/puzzles/:id', (req, res) => {
             id: puzzle.id,
             theme: puzzle.theme,
             description: puzzle.description || '',
+            emoji: puzzle.emoji || '',
             startDate: puzzle.startDate
         },
         movies
@@ -853,59 +871,122 @@ function generatePuzzleId() {
 // Save puzzle directly to dailyPuzzles.js
 app.post('/api/puzzles', async (req, res) => {
     try {
-        const { theme, description, movies, addToDatabase } = req.body;
+        const { puzzleId, theme, description, emoji, movies, addToDatabase } = req.body;
 
         if (!theme || !movies || movies.length === 0) {
             return res.status(400).json({ error: 'Theme and movies are required' });
-        }
-
-        // Load existing puzzles and generate a unique ID
-        const existingPuzzles = loadExistingPuzzles();
-        const existingIds = new Set(existingPuzzles.map(p => String(p.id)));
-        let newId = generatePuzzleId();
-        while (existingIds.has(newId)) {
-            newId = generatePuzzleId();
         }
 
         // Handle adding new movies to database
         let moviesAdded = 0;
         if (addToDatabase) {
             const existingMovies = loadExistingMovies();
-            const existingIds = new Set(existingMovies.map(m => m.id));
-            const newMovies = movies.filter(m => !existingIds.has(m.id));
+            const existingMovieIds = new Set(existingMovies.map(m => m.id));
+            const newMovies = movies.filter(m => !existingMovieIds.has(m.id));
             if (newMovies.length > 0) {
                 moviesAdded = mergeMoviesIntoDatabase(existingMovies, newMovies);
             }
         }
 
-        // Create the puzzle entry
-        const movieIds = movies.map(m => m.id);
-        const puzzleEntry = generatePuzzleEntry(newId, theme, description, movies);
-
-        // Read and update dailyPuzzles.js
         const puzzlesPath = path.join(__dirname, '..', 'dailyPuzzles.js');
         let content = fs.readFileSync(puzzlesPath, 'utf-8');
 
-        // Find the end of DAILY_PUZZLES array and insert before the closing bracket
-        // Look for the comment about future puzzles or the closing ];
-        const insertPoint = content.lastIndexOf('// Future puzzles will be added here');
-        if (insertPoint !== -1) {
-            content = content.slice(0, insertPoint) + puzzleEntry + '\n  ' + content.slice(insertPoint);
-        } else {
-            // Fallback: insert before the last ];
-            const lastBracket = content.lastIndexOf('];');
-            if (lastBracket !== -1) {
-                content = content.slice(0, lastBracket) + puzzleEntry + '\n' + content.slice(lastBracket);
+        // Check if we're updating an existing puzzle
+        if (puzzleId) {
+            // Update existing puzzle
+            const updatedEntry = generatePuzzleEntry(puzzleId, theme, description, emoji, movies);
+
+            // Find and replace the existing puzzle entry
+            // Match the entire puzzle object from { to },
+            // Using a more robust approach: find the start, then find the matching closing brace
+            const startPattern = new RegExp(`(\\{\\s*\\n\\s*id:\\s*["']${puzzleId}["'])`);
+            const startMatch = content.match(startPattern);
+
+            let puzzleRegex = null;
+            if (startMatch) {
+                // Find the puzzle block by matching balanced braces
+                const startIdx = content.indexOf(startMatch[0]);
+                let braceCount = 0;
+                let endIdx = startIdx;
+                let inString = false;
+                let stringChar = '';
+
+                for (let i = startIdx; i < content.length; i++) {
+                    const char = content[i];
+                    const prevChar = i > 0 ? content[i-1] : '';
+
+                    if (!inString) {
+                        if (char === '"' || char === "'") {
+                            inString = true;
+                            stringChar = char;
+                        } else if (char === '{') {
+                            braceCount++;
+                        } else if (char === '}') {
+                            braceCount--;
+                            if (braceCount === 0) {
+                                endIdx = i + 1;
+                                // Include trailing comma if present
+                                if (content[i+1] === ',') endIdx++;
+                                break;
+                            }
+                        }
+                    } else {
+                        if (char === stringChar && prevChar !== '\\') {
+                            inString = false;
+                        }
+                    }
+                }
+
+                if (braceCount === 0 && endIdx > startIdx) {
+                    const oldPuzzle = content.slice(startIdx, endIdx);
+                    content = content.slice(0, startIdx) + updatedEntry + content.slice(endIdx);
+                    puzzleRegex = true; // Signal that we found it
+                }
             }
+
+            if (puzzleRegex) {
+                fs.writeFileSync(puzzlesPath, content);
+
+                res.json({
+                    success: true,
+                    updated: true,
+                    puzzleId: puzzleId,
+                    moviesAddedToDatabase: moviesAdded
+                });
+            } else {
+                return res.status(404).json({ error: 'Puzzle not found for update' });
+            }
+        } else {
+            // Create new puzzle
+            const existingPuzzles = loadExistingPuzzles();
+            const existingIds = new Set(existingPuzzles.map(p => String(p.id)));
+            let newId = generatePuzzleId();
+            while (existingIds.has(newId)) {
+                newId = generatePuzzleId();
+            }
+
+            const puzzleEntry = generatePuzzleEntry(newId, theme, description, emoji, movies);
+
+            // Find the end of DAILY_PUZZLES array and insert before the closing bracket
+            const insertPoint = content.lastIndexOf('// Future puzzles will be added here');
+            if (insertPoint !== -1) {
+                content = content.slice(0, insertPoint) + puzzleEntry + '\n  ' + content.slice(insertPoint);
+            } else {
+                // Fallback: insert before the last ];
+                const lastBracket = content.lastIndexOf('];');
+                if (lastBracket !== -1) {
+                    content = content.slice(0, lastBracket) + puzzleEntry + '\n' + content.slice(lastBracket);
+                }
+            }
+
+            fs.writeFileSync(puzzlesPath, content);
+
+            res.json({
+                success: true,
+                puzzleId: newId,
+                moviesAddedToDatabase: moviesAdded
+            });
         }
-
-        fs.writeFileSync(puzzlesPath, content);
-
-        res.json({
-            success: true,
-            puzzleId: newId,
-            moviesAddedToDatabase: moviesAdded
-        });
     } catch (e) {
         console.error('Failed to save puzzle:', e);
         res.status(500).json({ error: e.message });
@@ -918,14 +999,19 @@ function formatDate(dateStr) {
     return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 }
 
-function generatePuzzleEntry(id, theme, description, movies) {
+function generatePuzzleEntry(id, theme, description, emoji, movies) {
     const lines = [
         '  {',
         `    id: "${id}",`,
         `    theme: "${theme}",`,
         `    description: "${description || ''}",`,
-        '    movieIds: ['
     ];
+
+    if (emoji) {
+        lines.push(`    emoji: "${emoji}",`);
+    }
+
+    lines.push('    movieIds: [');
 
     movies.forEach(m => {
         const dateDisplay = formatDate(m.release_date);
@@ -941,7 +1027,7 @@ function generatePuzzleEntry(id, theme, description, movies) {
 // Export puzzle
 app.post('/api/export', async (req, res) => {
     try {
-        const { theme, description, movies, addToDatabase } = req.body;
+        const { theme, description, emoji, movies, addToDatabase } = req.body;
 
         if (!theme || !movies || movies.length === 0) {
             return res.status(400).json({ error: 'Theme and movies are required' });
@@ -966,6 +1052,7 @@ app.post('/api/export', async (req, res) => {
             id: null, // To be assigned manually
             theme,
             description: description || '',
+            emoji: emoji || undefined,
             movieIds
         };
 
@@ -1059,8 +1146,13 @@ function generateJSSnippet(puzzle, movies) {
         `  id: /* assign next available ID */,`,
         `  theme: "${puzzle.theme}",`,
         `  description: "${puzzle.description}",`,
-        `  movieIds: [`
     ];
+
+    if (puzzle.emoji) {
+        lines.push(`  emoji: "${puzzle.emoji}",`);
+    }
+
+    lines.push(`  movieIds: [`);
 
     // Group by difficulty sections based on order
     const totalMovies = movies.length;

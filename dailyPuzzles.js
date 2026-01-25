@@ -18,7 +18,10 @@ const PUZZLE_SCHEDULE = {
   "2026-01-21": "62wgc",
   "2026-01-22": "r829v",
   "2026-01-23": "qje3j",
-  "2026-01-25": "ah7yk"
+  "2026-01-25": "ah7yk",
+  "2026-01-26": "rvtak",
+  "2026-01-27": "vrrqg",
+  "2026-01-28": "pcpxv"
 };
 
 const DAILY_PUZZLES = [
@@ -35,6 +38,7 @@ const DAILY_PUZZLES = [
     id: "k7x2m",
     theme: "Manhunter",
     description: "Stylish crime dramas from the master of mood",
+    emoji: "🔍",
     movieIds: [
       949, 1538, 9361, 11322, 82, 8489, 9008, 11454, 11524, 365620, 201088,
       26198,
@@ -54,6 +58,7 @@ const DAILY_PUZZLES = [
     id: "r5t1q",
     theme: "Disney Animation Classics",
     description: "Beloved animated films from Disney and Pixar",
+    emoji: "🏰",
     movieIds: [
       8587, 109445, 12, 862, 10020, 812, 10144, 585, 14160, 10681, 38757,
       354912, 10674, 11970, 2062, 150540, 269149, 568124, 37135, 10530, 177572,
@@ -192,10 +197,11 @@ const DAILY_PUZZLES = [
       19994, // Jennifer's Body (Sep 18, 2009)
     ],
   },
-    {
+      {
     id: "ah7yk",
     theme: "Any Given Sunday",
     description: "",
+    emoji: "🏈",
     movieIds: [
       9563, // Any Given Sunday (Dec 22, 1999)
       13416, // Friday Night Lights (Oct 8, 2004)
@@ -210,95 +216,6 @@ const DAILY_PUZZLES = [
       4942, // Leatherheads (Mar 24, 2008)
       10663, // The Waterboy (Nov 6, 1998)
       20726, // Little Giants (Oct 14, 1994)
-    ],
-  },
-   
-    {
-    id: "r829v",
-    theme: "Letters from Iwo Jima",
-    description: "",
-    movieIds: [
-      1251, // Letters from Iwo Jima (Feb 2, 2007)
-      857, // Saving Private Ryan (Jul 24, 1998)
-      5925, // The Great Escape (Jul 4, 1963)
-      374720, // Dunkirk (Jul 21, 2017)
-      16869, // Inglourious Basterds (Aug 21, 2009)
-      324786, // Hacksaw Ridge (Nov 4, 2016)
-      676, // Pearl Harbor (May 25, 2001)
-      853, // Enemy at the Gates (Mar 16, 2001)
-      228150, // Fury (Oct 17, 2014)
-      387, // Das Boot (Feb 10, 1982)
-      8741, // The Thin Red Line (Jan 15, 1999)
-      3683, // Flags of Our Fathers (Oct 19, 2006)
-    ],
-  },
-    {
-    id: "e2zzy",
-    theme: "A Star Is Born",
-    description: "",
-    movieIds: [
-      332562, // A Star Is Born (Oct 5, 2018)
-      244786, // Whiplash (Sep 20, 2024)
-      786, // Almost Famous (Sep 22, 2000)
-      1584, // School of Rock (Oct 3, 2003)
-      5723, // Once (Jun 15, 2007)
-      11663, // The Commitments (Aug 14, 1991)
-      9591, // That Thing You Do! (Oct 4, 1996)
-      10476, // Hustle & Flow (Jul 22, 2005)
-      19610, // A Star Is Born (Dec 19, 1976)
-      65, // 8 Mile (Nov 8, 2002)
-      12508, // Rock Star (Sep 7, 2001)
-      525, // The Blues Brothers (Jun 16, 1980)
-      86829, // Inside Llewyn Davis (Dec 10, 2013)
-      13763, // Purple Rain (Jul 27, 1984)
-      354912, // Coco (Nov 22, 2017)
-      114150, // Pitch Perfect (Sep 28, 2012)
-      22692, // A Star Is Born (Apr 27, 1937)
-    ],
-  },
-    {
-    id: "k2jq9",
-    theme: "Airplane!",
-    description: "",
-    movieIds: [
-      813, // Airplane! (Jun 27, 1980)
-      337170, // American Made (Sep 29, 2017)
-      9532, // Final Destination (Mar 17, 2000)
-      326, // Snakes on a Plane (Aug 18, 2006)
-      225574, // Non-Stop (Feb 28, 2014)
-      9772, // Air Force One (Jul 25, 1997)
-      8358, // Cast Away (Dec 22, 2000)
-      11460, // Red Eye (Aug 19, 2005)
-      1701, // Con Air (Jun 6, 1997)
-      10538, // Passenger 57 (Nov 6, 1992)
-      7305, // Alive (Jan 15, 1993)
-      87502, // Flight (Nov 2, 2012)
-      363676, // Sully (Sep 9, 2016)
-      11856, // Air America (Aug 10, 1990)
-      9315, // Flightplan (Sep 23, 2005)
-      10671, // Airport (May 29, 1970)
-    ],
-  },
-    {
-    id: "62wgc",
-    theme: "Back to School",
-    description: "",
-    movieIds: [
-      15596, // Back to School (Jun 13, 1986)
-      8835, // Legally Blonde (Jul 13, 2001)
-      489, // Good Will Hunting (Jan 9, 1998)
-      207, // Dead Poets Society (Jun 9, 1989)
-      8469, // Animal House (Jul 28, 1978)
-      11452, // National Lampoon's Van Wilder (Mar 29, 2002)
-      11635, // Old School (Feb 21, 2003)
-      12620, // The House Bunny (Aug 22, 2008)
-      9788, // Accepted (Aug 18, 2006)
-      36739, // School Daze (Feb 12, 1988)
-      62211, // Monsters University (Jun 21, 2013)
-      14052, // Revenge of the Nerds (Jul 20, 1984)
-      14425, // PCU (Apr 29, 1994)
-      16297, // With Honors (Apr 29, 1994)
-      37247, // The Graduate (Dec 21, 1967)
     ],
   },
     {
@@ -329,10 +246,11 @@ const DAILY_PUZZLES = [
       205321, // Sharknado (Jul 11, 2013)
     ],
   },
-    {
+      {
     id: "vrrqg",
     theme: "The American President",
     description: "",
+    emoji: "🇺🇸",
     movieIds: [
       9087, // The American President (Nov 17, 1995)
       72976, // Lincoln (Nov 16, 2012)
@@ -353,6 +271,66 @@ const DAILY_PUZZLES = [
       117263, // Olympus Has Fallen (Mar 22, 2013)
       9440, // Primary Colors (Mar 20, 1998)
       72331, // Abraham Lincoln: Vampire Hunter (Jun 22, 2012)
+    ],
+  },
+      {
+    id: "rvtak",
+    theme: "The Wrestler",
+    description: "",
+    emoji: "🤼",
+    movieIds: [
+      12163, // The Wrestler (Oct 12, 2008)
+      19371, // Mr. Nanny (Oct 8, 1993)
+      277834, // Moana (Nov 23, 2016)
+      106, // Predator (Jun 12, 1987)
+      8337, // They Live (Nov 4, 1988)
+      2493, // The Princess Bride (Oct 9, 1987)
+      557, // Spider-Man (May 3, 2002)
+      118340, // Guardians of the Galaxy (Aug 1, 2014)
+      463257, // The Peanut Butter Falcon (Aug 23, 2019)
+      1850, // Man on the Moon (Dec 22, 1999)
+      37931, // MacGruber (May 21, 2010)
+      14636, // The Condemned (Apr 27, 2007)
+      10007, // See No Evil (May 19, 2006)
+      44946, // Knucklehead (Oct 22, 2010)
+    ],
+  },
+      {
+    id: "pcpxv",
+    theme: "The Nic Cage Challenge",
+    description: "",
+    emoji: "🎭",
+    movieIds: [
+      2757, // Adaptation. (Dec 6, 2002)
+      9679, // Gone in Sixty Seconds (Jun 9, 2000)
+      11699, // Bad Lieutenant: Port of Call - New Orleans (Dec 11, 2009)
+      451, // Leaving Las Vegas (Oct 27, 1995)
+      2059, // National Treasure (Nov 19, 2004)
+      1830, // Lord of War (Sep 16, 2005)
+      324857, // Spider-Man: Into the Spider-Verse (Dec 14, 2018)
+      1701, // Con Air (Jun 6, 1997)
+      754, // Face/Off (Jun 27, 1997)
+      1250, // Ghost Rider (Feb 16, 2007)
+      9708, // The Wicker Man (Sep 1, 2006)
+      2039, // Moonstruck (Jan 15, 1988)
+      9802, // The Rock (Jun 7, 1996)
+      483, // Wild at Heart (Aug 17, 1990)
+      5994, // The Family Man (Dec 12, 2000)
+      378, // Raising Arizona (Apr 17, 1987)
+      6637, // National Treasure: Book of Secrets (Dec 21, 2007)
+      23483, // Kick-Ass (Apr 16, 2010)
+      635731, // Pig (Jul 16, 2021)
+      460885, // Mandy (Sep 13, 2018)
+      8688, // Snake Eyes (Aug 7, 1998)
+      10013, // Peggy Sue Got Married (Oct 10, 1986)
+      8224, // 8MM (Feb 26, 1999)
+      8649, // Bringing Out the Dead (Oct 22, 1999)
+      7270, // Matchstick Men (Sep 12, 2003)
+      157847, // Joe (Apr 11, 2014)
+      1738, // Next (Apr 26, 2007)
+      1852, // World Trade Center (Aug 9, 2006)
+      6963, // The Weather Man (Oct 20, 2005)
+      648579, // The Unbearable Weight of Massive Talent (Apr 22, 2022)
     ],
   },
   // Future puzzles will be added here

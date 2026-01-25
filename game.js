@@ -787,7 +787,11 @@ class MovieTimelineGame {
       this.puzzleNumber
     ) {
       const maxScore = this.dailyPuzzle.movieIds.length - 1; // First movie doesn't count
-      text = `Filmstrip #${this.puzzleNumber} - ${this.dailyPuzzle.theme}\n${score}/${maxScore} 🎬`;
+      const emoji = this.dailyPuzzle.emoji || "🎞️";
+      const isPerfect = score === maxScore;
+      const scoreLine = `${score}/${maxScore}${isPerfect ? " 🏆" : ""}`;
+      const emojiRow = emoji.repeat(score);
+      text = `Filmstrip #${this.puzzleNumber} - ${this.dailyPuzzle.theme}\n${scoreLine}\n${emojiRow}`;
     } else if (this.gameMode === "decade" && this.selectedDecade) {
       text = `I scored ${score} on Filmstrip ${this.selectedDecade}s! Can you beat my score?`;
     } else {
