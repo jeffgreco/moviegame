@@ -56,8 +56,33 @@ class MovieTimelineGame {
 
     // Check for URL parameters
     const urlParams = new URLSearchParams(window.location.search);
+    let shouldShowHelp = false;
 
-    // Check for puzzle ID parameter
+    // Check for help/about parameter
+    if (urlParams.has("help") || urlParams.has("about")) {
+      shouldShowHelp = true;
+    }
+
+    // Check for mode parameter (daily/random)
+    if (urlParams.has("mode")) {
+      const mode = urlParams.get("mode");
+      if (mode === "daily") {
+        this.gameMode = "daily";
+      } else if (mode === "random") {
+        this.gameMode = "random";
+      }
+    }
+
+    // Check for decade parameter
+    if (urlParams.has("decade")) {
+      const decade = parseInt(urlParams.get("decade"));
+      if ([1970, 1980, 1990, 2000, 2010, 2020].includes(decade)) {
+        this.gameMode = "decade";
+        this.selectedDecade = decade;
+      }
+    }
+
+    // Check for puzzle ID parameter (takes precedence over mode/decade)
     if (urlParams.has("puzzle")) {
       const puzzleId = urlParams.get("puzzle");
       const puzzle = getPuzzleById(puzzleId);
@@ -70,7 +95,7 @@ class MovieTimelineGame {
         window.history.replaceState({}, "", window.location.pathname);
       }
     }
-    // Check for challenge URL parameter
+    // Check for challenge URL parameter (takes precedence over mode/decade)
     else if (urlParams.has("c")) {
       const loaded = this.loadFromChallenge(urlParams.get("c"));
       if (!loaded) {
@@ -86,8 +111,13 @@ class MovieTimelineGame {
     this.setupPosterZoom();
     this.updateModeButtons();
 
+    // Show help modal if requested via URL
+    if (shouldShowHelp) {
+      document.getElementById("help-modal").classList.remove("hidden");
+      document.body.classList.add("modal-open");
+    }
     // Show welcome modal for first-time visitors
-    if (this.isFirstVisit()) {
+    else if (this.isFirstVisit()) {
       this.showWelcomeModal();
     }
   }
@@ -368,10 +398,18 @@ class MovieTimelineGame {
       this.selectedDecade = decade;
     }
 
-    // Clear URL parameters when switching modes
-    if (wasArchive || wasChallenge) {
-      window.history.replaceState({}, "", window.location.pathname);
+    // Update URL to reflect new mode
+    const url = new URL(window.location.href);
+    url.search = ""; // Clear all params
+
+    if (newMode === "daily") {
+      url.searchParams.set("mode", "daily");
+    } else if (newMode === "decade" && decade) {
+      url.searchParams.set("decade", decade.toString());
     }
+    // For random mode and archive, no params (clean URL)
+
+    window.history.replaceState({}, "", url.search ? url.toString() : url.pathname);
 
     this.gameMode = newMode;
     this.updateModeButtons();
