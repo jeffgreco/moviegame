@@ -1,8 +1,27 @@
 // Movie data from TMDB
-// Last updated: 2026-01-28T18:43:08.902Z
-// Total movies: 1729
+// Last updated: 2026-01-28T19:29:29.444Z
+// Total movies: 1749
 
 var MOVIES_DATA = [
+  {
+    "id": 3035,
+    "title": "Frankenstein",
+    "poster_url": "https://image.tmdb.org/t/p/w500/mu6wHwH0IwCCaEYtpqujuPJYat1.jpg",
+    "release_date": "1931-11-21",
+    "directors": [
+      "James Whale"
+    ],
+    "showDirector": true
+  },
+  {
+    "id": 229,
+    "title": "Bride of Frankenstein",
+    "poster_url": "https://image.tmdb.org/t/p/w500/5241zUwe7rC17MNc2QpCBKKdp1N.jpg",
+    "release_date": "1935-04-20",
+    "directors": [
+      "James Whale"
+    ]
+  },
   {
     "id": 22692,
     "title": "A Star Is Born",
@@ -13,12 +32,30 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 3077,
+    "title": "Son of Frankenstein",
+    "poster_url": "https://image.tmdb.org/t/p/w500/oefhX4T3iWo2XFvaOunR7azWAo3.jpg",
+    "release_date": "1939-01-13",
+    "directors": [
+      "Rowland V. Lee"
+    ]
+  },
+  {
     "id": 223,
     "title": "Rebecca",
     "poster_url": "https://image.tmdb.org/t/p/w500/1qz3qUOHnVy7dL7M7G8jSErxE4b.jpg",
     "release_date": "1940-04-12",
     "directors": [
       "Alfred Hitchcock"
+    ]
+  },
+  {
+    "id": 3073,
+    "title": "Bud Abbott and Lou Costello Meet Frankenstein",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ectRcq1y6EAmz2i72SCRHI6qUK2.jpg",
+    "release_date": "1948-06-01",
+    "directors": [
+      "Charles Barton"
     ]
   },
   {
@@ -617,6 +654,15 @@ var MOVIES_DATA = [
     "release_date": "1973-05-09",
     "directors": [
       "Richard Fleischer"
+    ]
+  },
+  {
+    "id": 11293,
+    "title": "Paper Moon",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3GHG0kTcBWHKdXjj3RdK8GjBCd6.jpg",
+    "release_date": "1973-05-09",
+    "directors": [
+      "Peter Bogdanovich"
     ]
   },
   {
@@ -4191,6 +4237,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 11846,
+    "title": "Father of the Bride",
+    "poster_url": "https://image.tmdb.org/t/p/w500/bU7HzJbJpY5OiLdqWhKSqGPtYii.jpg",
+    "release_date": "1991-12-20",
+    "directors": [
+      "Charles Shyer"
+    ]
+  },
+  {
     "id": 2742,
     "title": "Naked Lunch",
     "poster_url": "https://image.tmdb.org/t/p/w500/u01kh5jKUWjhom76mguRqUgdvja.jpg",
@@ -5192,6 +5247,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 3036,
+    "title": "Mary Shelley's Frankenstein",
+    "poster_url": "https://image.tmdb.org/t/p/w500/bOwCAQsZlEKrwhPi1ejY6BS8jpL.jpg",
+    "release_date": "1994-11-04",
+    "directors": [
+      "Kenneth Branagh"
+    ]
+  },
+  {
     "id": 628,
     "title": "Interview with the Vampire",
     "poster_url": "https://image.tmdb.org/t/p/w500/2162lAT2MP36MyJd2sttmj5du5T.jpg",
@@ -5207,6 +5271,15 @@ var MOVIES_DATA = [
     "release_date": "1994-11-18",
     "directors": [
       "Les Mayfield"
+    ]
+  },
+  {
+    "id": 101,
+    "title": "Léon: The Professional",
+    "poster_url": "https://image.tmdb.org/t/p/w500/bxB2q91nKYp8JNzqE7t7TWBVupB.jpg",
+    "release_date": "1994-11-18",
+    "directors": [
+      "Luc Besson"
     ]
   },
   {
@@ -6724,6 +6797,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 104,
+    "title": "Run Lola Run",
+    "poster_url": "https://image.tmdb.org/t/p/w500/v0giIi4bTILVhNhJajet3WWY3FA.jpg",
+    "release_date": "1999-06-18",
+    "directors": [
+      "Tom Tykwer"
+    ]
+  },
+  {
     "id": 10279,
     "title": "Summer of Sam",
     "poster_url": "https://image.tmdb.org/t/p/w500/yvGGA2CbT6xyFVTZUA9f2ok0q5V.jpg",
@@ -7679,6 +7761,15 @@ var MOVIES_DATA = [
     "release_date": "2002-01-18",
     "directors": [
       "Ridley Scott"
+    ]
+  },
+  {
+    "id": 10950,
+    "title": "I Am Sam",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3MUXRSyx9gnA2lLSSTGLN8cQQ42.jpg",
+    "release_date": "2002-01-25",
+    "directors": [
+      "Jessie Nelson"
     ]
   },
   {
@@ -8653,6 +8744,15 @@ var MOVIES_DATA = [
     "release_date": "2004-10-08",
     "directors": [
       "Peter Berg"
+    ]
+  },
+  {
+    "id": 14337,
+    "title": "Primer",
+    "poster_url": "https://image.tmdb.org/t/p/w500/xEoq2WmDzpzxhkHEsmOYOg6BPg6.jpg",
+    "release_date": "2004-10-08",
+    "directors": [
+      "Shane Carruth"
     ]
   },
   {
@@ -10947,6 +11047,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 45612,
+    "title": "Source Code",
+    "poster_url": "https://image.tmdb.org/t/p/w500/nTr0lvAzeQmUjgSgDEHTJpnrxTz.jpg",
+    "release_date": "2011-04-01",
+    "directors": [
+      "Duncan Jones"
+    ]
+  },
+  {
     "id": 46195,
     "title": "Rio",
     "poster_url": "https://image.tmdb.org/t/p/w500/4nJxhUknKV8Gqdhov8pU1YWDYfb.jpg",
@@ -11197,6 +11306,15 @@ var MOVIES_DATA = [
     "release_date": "2011-12-09"
   },
   {
+    "id": 65057,
+    "title": "The Descendants",
+    "poster_url": "https://image.tmdb.org/t/p/w500/8cDq5UlOPYeKm39okALCEOsZPxk.jpg",
+    "release_date": "2011-12-09",
+    "directors": [
+      "Alexander Payne"
+    ]
+  },
+  {
     "id": 55301,
     "title": "Alvin and the Chipmunks: Chipwrecked",
     "poster_url": "https://image.tmdb.org/t/p/w500/npOXWVoZyl8UrF2wtByHtfmsWSX.jpg",
@@ -11443,6 +11561,15 @@ var MOVIES_DATA = [
     "release_date": "2012-09-21",
     "directors": [
       "Pete Travis"
+    ]
+  },
+  {
+    "id": 87825,
+    "title": "Trouble with the Curve",
+    "poster_url": "https://image.tmdb.org/t/p/w500/zLZQVmxOj5kICbS5Pq7rB1cbPvP.jpg",
+    "release_date": "2012-09-21",
+    "directors": [
+      "Robert Lorenz"
     ]
   },
   {
@@ -11971,6 +12098,15 @@ var MOVIES_DATA = [
     "release_date": "2014-01-10",
     "directors": [
       "Spike Jonze"
+    ]
+  },
+  {
+    "id": 100241,
+    "title": "I, Frankenstein",
+    "poster_url": "https://image.tmdb.org/t/p/w500/a53tIl4k20zCZCNyq73kiXkwWkl.jpg",
+    "release_date": "2014-01-24",
+    "directors": [
+      "Stuart Beattie"
     ]
   },
   {
@@ -12747,6 +12883,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 228066,
+    "title": "Victor Frankenstein",
+    "poster_url": "https://image.tmdb.org/t/p/w500/bYUmSLPtWylFKbEBHOXT1kt9l5b.jpg",
+    "release_date": "2015-11-25",
+    "directors": [
+      "Paul McGuigan"
+    ]
+  },
+  {
     "id": 140607,
     "title": "Star Wars: The Force Awakens",
     "poster_url": "https://image.tmdb.org/t/p/w500/wqnLdwVXoBjKibFRR5U3y0aDUhs.jpg",
@@ -13390,6 +13535,15 @@ var MOVIES_DATA = [
     "release_date": "2017-10-06",
     "directors": [
       "Denis Villeneuve"
+    ]
+  },
+  {
+    "id": 440021,
+    "title": "Happy Death Day",
+    "poster_url": "https://image.tmdb.org/t/p/w500/cTaEIUYTt52ooq9quVbAQ7NpGwo.jpg",
+    "release_date": "2017-10-13",
+    "directors": [
+      "Christopher Landon"
     ]
   },
   {
@@ -14251,6 +14405,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 575417,
+    "title": "On the Rocks",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fcijRCmB7yTtloh4Pumy9b1rkwU.jpg",
+    "release_date": "2020-10-02",
+    "directors": [
+      "Sofia Coppola"
+    ]
+  },
+  {
     "id": 546121,
     "title": "Run",
     "poster_url": "https://image.tmdb.org/t/p/w500/ilHG4EayOVoYeKqslspY3pR4wzC.jpg",
@@ -14338,6 +14501,15 @@ var MOVIES_DATA = [
     "release_date": "2020-12-25",
     "directors": [
       "Patty Jenkins"
+    ]
+  },
+  {
+    "id": 672647,
+    "title": "The Map of Tiny Perfect Things",
+    "poster_url": "https://image.tmdb.org/t/p/w500/6y3ev0rJFbHA1hU22UPmmfzBjrG.jpg",
+    "release_date": "2021-02-12",
+    "directors": [
+      "Ian Samuels"
     ]
   },
   {
@@ -14839,6 +15011,15 @@ var MOVIES_DATA = [
     "release_date": "2022-12-21",
     "directors": [
       "Joel Crawford"
+    ]
+  },
+  {
+    "id": 785084,
+    "title": "The Whale",
+    "poster_url": "https://image.tmdb.org/t/p/w500/jQ0gylJMxWSL490sy0RrPj1Lj7e.jpg",
+    "release_date": "2022-12-21",
+    "directors": [
+      "Darren Aronofsky"
     ]
   },
   {
@@ -15523,7 +15704,8 @@ var MOVIES_DATA = [
     "release_date": "2025-10-17",
     "directors": [
       "Guillermo del Toro"
-    ]
+    ],
+    "showDirector": true
   },
   {
     "id": 1197137,

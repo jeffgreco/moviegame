@@ -843,6 +843,78 @@ app.get('/api/schedule', (req, res) => {
     });
 });
 
+// Analytics endpoint
+app.get('/api/analytics', (req, res) => {
+    try {
+        const puzzles = loadExistingPuzzles();
+        const movies = loadExistingMovies();
+        const schedule = loadSchedule();
+
+        // Count scheduled vs unscheduled puzzles
+        const scheduledPuzzleIds = new Set(Object.values(schedule));
+        const scheduledCount = scheduledPuzzleIds.size;
+        const unscheduledCount = puzzles.length - scheduledCount;
+
+        // Calculate puzzle size statistics
+        const puzzleSizes = puzzles.map(p => p.movieIds?.length || 0);
+        const minSize = puzzleSizes.length > 0 ? Math.min(...puzzleSizes) : 0;
+        const maxSize = puzzleSizes.length > 0 ? Math.max(...puzzleSizes) : 0;
+        const avgSize = puzzleSizes.length > 0
+            ? Math.round(puzzleSizes.reduce((a, b) => a + b, 0) / puzzleSizes.length)
+            : 0;
+
+        // Find most used movies across puzzles
+        const movieUsage = {};
+        puzzles.forEach(puzzle => {
+            puzzle.movieIds?.forEach(movieId => {
+                if (!movieUsage[movieId]) {
+                    const movie = movies.find(m => m.id === movieId);
+                    movieUsage[movieId] = {
+                        id: movieId,
+                        title: movie?.title || `Movie ${movieId}`,
+                        count: 0
+                    };
+                }
+                movieUsage[movieId].count++;
+            });
+        });
+
+        // Get top 5 most used movies
+        const topMovies = Object.values(movieUsage)
+            .filter(m => m.count > 1)
+            .sort((a, b) => b.count - a.count)
+            .slice(0, 5);
+
+        // Count movies with director info
+        const moviesWithDirectors = movies.filter(m => m.directors && m.directors.length > 0).length;
+
+        // Get recent puzzles (last 5)
+        const recentPuzzles = puzzles.slice(-5).reverse().map(p => ({
+            id: p.id,
+            theme: p.theme,
+            movieCount: p.movieIds?.length || 0
+        }));
+
+        res.json({
+            totalPuzzles: puzzles.length,
+            totalMovies: movies.length,
+            scheduledPuzzles: scheduledCount,
+            unscheduledPuzzles: unscheduledCount,
+            puzzleSizes: {
+                min: minSize,
+                max: maxSize,
+                avg: avgSize
+            },
+            topMovies,
+            moviesWithDirectors,
+            recentPuzzles
+        });
+    } catch (e) {
+        console.error('Analytics error:', e);
+        res.status(500).json({ error: e.message });
+    }
+});
+
 // Update schedule
 app.post('/api/schedule', (req, res) => {
     try {
@@ -850,7 +922,37 @@ app.post('/api/schedule', (req, res) => {
         if (!schedule || typeof schedule !== 'object') {
             return res.status(400).json({ error: 'Invalid schedule data' });
         }
-        saveSchedule(schedule);
+
+        // Merge with existing schedule instead of replacing
+        // This prevents overwriting other months when saving one month
+        const existingSchedule = loadSchedule();
+        const incomingDates = Object.keys(schedule);
+
+        // Determine which month(s) we're updating based on incoming dates
+        const monthsBeingUpdated = new Set();
+        incomingDates.forEach(date => {
+            const [year, month] = date.split('-');
+            monthsBeingUpdated.add(`${year}-${month}`);
+        });
+
+        // Remove existing entries for the months being updated
+        const mergedSchedule = {};
+        Object.entries(existingSchedule).forEach(([date, puzzleId]) => {
+            const [year, month] = date.split('-');
+            const yearMonth = `${year}-${month}`;
+            if (!monthsBeingUpdated.has(yearMonth)) {
+                mergedSchedule[date] = puzzleId;
+            }
+        });
+
+        // Add the new entries
+        Object.entries(schedule).forEach(([date, puzzleId]) => {
+            if (puzzleId) {
+                mergedSchedule[date] = puzzleId;
+            }
+        });
+
+        saveSchedule(mergedSchedule);
         res.json({ success: true });
     } catch (e) {
         console.error('Failed to save schedule:', e);

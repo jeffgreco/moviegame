@@ -978,10 +978,13 @@ function switchView(view) {
     // Toggle views
     document.getElementById('builder-view').style.display = view === 'builder' ? '' : 'none';
     document.getElementById('schedule-view').style.display = view === 'schedule' ? '' : 'none';
+    document.getElementById('analytics-view').style.display = view === 'analytics' ? '' : 'none';
 
-    // Load schedule data when switching to schedule view
+    // Load data when switching views
     if (view === 'schedule') {
         loadSchedule();
+    } else if (view === 'analytics') {
+        loadAnalytics();
     }
 }
 
@@ -1310,6 +1313,168 @@ async function removeFromDatabase(movieId, buttonEl) {
         buttonEl.disabled = false;
     }
 }
+
+// ============ Analytics ============
+
+const TRACKER_API_URL = 'https://filmstrip-tracker.jeffgreco.workers.dev';
+
+async function loadAnalytics() {
+    const content = document.getElementById('analytics-content');
+    content.innerHTML = '<div class="loading-message">Loading analytics...</div>';
+
+    try {
+        const response = await fetch(`${TRACKER_API_URL}/api/stats`);
+        if (!response.ok) throw new Error('Failed to fetch stats');
+        const data = await response.json();
+        renderAnalytics(data);
+    } catch (e) {
+        console.error('Failed to load analytics:', e);
+        content.innerHTML = '<p class="error-message">Failed to load analytics</p>';
+    }
+}
+
+function renderAnalytics(data) {
+    const content = document.getElementById('analytics-content');
+
+    const html = `
+        <div class="stat-card">
+            <div class="stat-value">${data.totalGames.toLocaleString()}</div>
+            <div class="stat-label">Total Games Played</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-value">${data.uniquePlayers.toLocaleString()}</div>
+            <div class="stat-label">Unique Players</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-value">${data.gamesToday.toLocaleString()}</div>
+            <div class="stat-label">Games Today</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-value">${data.randomMode?.highestStreak || 0}</div>
+            <div class="stat-label">Highest Streak (Random)</div>
+        </div>
+
+        <div class="stat-card wide">
+            <div class="stat-label">Games by Mode</div>
+            <div class="mode-stats">
+                <div class="mode-stat">
+                    <span class="mode-name">Daily</span>
+                    <span class="mode-value">${(data.byMode?.daily || 0).toLocaleString()}</span>
+                </div>
+                <div class="mode-stat">
+                    <span class="mode-name">Random</span>
+                    <span class="mode-value">${(data.byMode?.random || 0).toLocaleString()}</span>
+                </div>
+                <div class="mode-stat">
+                    <span class="mode-name">Archive</span>
+                    <span class="mode-value">${(data.byMode?.archive || 0).toLocaleString()}</span>
+                </div>
+                <div class="mode-stat">
+                    <span class="mode-name">Challenge</span>
+                    <span class="mode-value">${(data.byMode?.challenge || 0).toLocaleString()}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="stat-card wide">
+            <div class="stat-label">Random Mode Stats</div>
+            <div class="distribution">
+                <div class="dist-item">
+                    <span>Highest Streak:</span> <strong>${data.randomMode?.highestStreak || 0}</strong>
+                </div>
+                <div class="dist-item">
+                    <span>Avg Streak:</span> <strong>${data.randomMode?.averageStreak || 0}</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="stat-card wide">
+            <div class="stat-label">Activity Calendar</div>
+            <div id="activity-calendar" class="activity-calendar"></div>
+        </div>
+    `;
+
+    content.innerHTML = html;
+
+    // Load and render calendar after content is in DOM
+    loadActivityCalendar();
+}
+
+async function loadActivityCalendar() {
+    const container = document.getElementById('activity-calendar');
+    if (!container) return;
+
+    try {
+        const response = await fetch(`${TRACKER_API_URL}/api/daily-activity`);
+        if (response.ok) {
+            const data = await response.json();
+            renderActivityCalendar(container, data.activity || {});
+        } else {
+            // Endpoint doesn't exist yet, render empty calendar
+            renderActivityCalendar(container, {});
+        }
+    } catch (e) {
+        renderActivityCalendar(container, {});
+    }
+}
+
+function renderActivityCalendar(container, activityData) {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth();
+
+    const firstDay = new Date(year, month, 1);
+    const lastDay = new Date(year, month + 1, 0);
+    const startDayOfWeek = firstDay.getDay();
+    const daysInMonth = lastDay.getDate();
+
+    const monthName = today.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+
+    let html = `
+        <div class="calendar-header">${monthName}</div>
+        <div class="calendar-grid">
+            <div class="calendar-day-header">Sun</div>
+            <div class="calendar-day-header">Mon</div>
+            <div class="calendar-day-header">Tue</div>
+            <div class="calendar-day-header">Wed</div>
+            <div class="calendar-day-header">Thu</div>
+            <div class="calendar-day-header">Fri</div>
+            <div class="calendar-day-header">Sat</div>
+    `;
+
+    // Empty cells before first day
+    for (let i = 0; i < startDayOfWeek; i++) {
+        html += '<div class="calendar-day empty"></div>';
+    }
+
+    // Days of month
+    for (let day = 1; day <= daysInMonth; day++) {
+        const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+        const count = activityData[dateStr] || 0;
+        const isToday = day === today.getDate();
+        const level = count === 0 ? 0 : count < 10 ? 1 : count < 50 ? 2 : count < 100 ? 3 : 4;
+
+        html += `
+            <div class="calendar-day level-${level}${isToday ? ' today' : ''}" title="${dateStr}: ${count} games">
+                ${day}
+            </div>
+        `;
+    }
+
+    html += '</div>';
+    container.innerHTML = html;
+}
+
+// Setup analytics listeners
+document.addEventListener('DOMContentLoaded', () => {
+    const refreshBtn = document.getElementById('btn-refresh-analytics');
+    if (refreshBtn) {
+        refreshBtn.addEventListener('click', loadAnalytics);
+    }
+});
 
 // Make functions available globally for onclick handlers
 window.addToPuzzle = addToPuzzle;

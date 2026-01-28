@@ -20,7 +20,9 @@ const PUZZLE_SCHEDULE = {
   "2026-01-28": "pcpxv",
   "2026-01-29": "cytxv",
   "2026-01-30": "vc4j4",
-  "2026-01-31": "sv8p5"
+  "2026-01-31": "sv8p5",
+  "2026-02-01": "8bh3t",
+  "2026-02-02": "26btz",
 };
 
 const DAILY_PUZZLES = [
@@ -141,7 +143,7 @@ const DAILY_PUZZLES = [
       18501, // Gamer (Sep 4, 2009)
     ],
   },
-    {
+  {
     id: "jgns2",
     theme: "Speed",
     description: "",
@@ -159,7 +161,7 @@ const DAILY_PUZZLES = [
       64690, // Drive (Sep 16, 2011)
     ],
   },
-    {
+  {
     id: "dhk7k",
     theme: "Cats & Dogs",
     description: "",
@@ -178,7 +180,7 @@ const DAILY_PUZZLES = [
       165013, // A Talking Cat!?! (Feb 18, 2013)
     ],
   },
-    {
+  {
     id: "g2h5y",
     theme: "Minnesota",
     description: "",
@@ -196,7 +198,7 @@ const DAILY_PUZZLES = [
       19994, // Jennifer's Body (Sep 18, 2009)
     ],
   },
-      {
+  {
     id: "ah7yk",
     theme: "Any Given Sunday",
     description: "",
@@ -217,7 +219,7 @@ const DAILY_PUZZLES = [
       20726, // Little Giants (Oct 14, 1994)
     ],
   },
-    {
+  {
     id: "qje3j",
     theme: "The Perfect Storm",
     description: "",
@@ -245,7 +247,7 @@ const DAILY_PUZZLES = [
       205321, // Sharknado (Jul 11, 2013)
     ],
   },
-      {
+  {
     id: "vrrqg",
     theme: "The American President",
     description: "",
@@ -272,7 +274,7 @@ const DAILY_PUZZLES = [
       72331, // Abraham Lincoln: Vampire Hunter (Jun 22, 2012)
     ],
   },
-      {
+  {
     id: "rvtak",
     theme: "The Wrestler",
     description: "",
@@ -294,7 +296,7 @@ const DAILY_PUZZLES = [
       44946, // Knucklehead (Oct 22, 2010)
     ],
   },
-      {
+  {
     id: "pcpxv",
     theme: "The Nic Cage Challenge",
     description: "",
@@ -332,7 +334,7 @@ const DAILY_PUZZLES = [
       648579, // The Unbearable Weight of Massive Talent (Apr 22, 2022)
     ],
   },
-      {
+  {
     id: "cytxv",
     theme: "The Menu",
     description: "",
@@ -357,7 +359,7 @@ const DAILY_PUZZLES = [
       635731, // Pig (Jul 16, 2021)
     ],
   },
-    {
+  {
     id: "vc4j4",
     theme: "Hamnet: Writers and Writing",
     description: "",
@@ -384,7 +386,7 @@ const DAILY_PUZZLES = [
       1934, // Shakespeare in Love (Dec 11, 1998)
     ],
   },
-    {
+  {
     id: "sv8p5",
     theme: "Marty Supreme: International Competition",
     description: "",
@@ -411,6 +413,62 @@ const DAILY_PUZZLES = [
       13, // Forrest Gump (Jul 6, 1994)
     ],
   },
+  {
+    id: "qfzwh",
+    theme: "Frankenstein: Frankenstein",
+    description: "",
+    emoji: "🔩",
+    movieIds: [
+      1062722, // Frankenstein (Oct 17, 2025)
+      3035, // Frankenstein (Nov 21, 1931)
+      229, // Bride of Frankenstein (Apr 20, 1935)
+      3077, // Son of Frankenstein (Jan 13, 1939)
+      3036, // Mary Shelley's Frankenstein (Nov 4, 1994)
+      3034, // Young Frankenstein (Dec 15, 1974)
+      3073, // Bud Abbott and Lou Costello Meet Frankenstein (Jun 1, 1948)
+      228066, // Victor Frankenstein (Nov 25, 2015)
+      100241, // I, Frankenstein (Jan 24, 2014)
+    ],
+  },
+  {
+    id: "8bh3t",
+    theme: "One Battle After Another: Fathers and Daughters",
+    description: "",
+    emoji: "👨‍",
+    movieIds: [
+      1054867, // One Battle After Another (Sep 26, 2025)
+      11846, // Father of the Bride (Dec 20, 1991)
+      8681, // Taken (Jan 30, 2009)
+      12, // Finding Nemo (May 30, 2003)
+      11293, // Paper Moon (May 9, 1973)
+      101, // Léon: The Professional (Nov 18, 1994)
+      10950, // I Am Sam (Jan 25, 2002)
+      157336, // Interstellar (Nov 7, 2014)
+      95, // Armageddon (Jul 1, 1998)
+      65057, // The Descendants (Dec 9, 2011)
+      575417, // On the Rocks (Oct 2, 2020)
+      785084, // The Whale (Dec 21, 2022)
+      87825, // Trouble with the Curve (Sep 21, 2012)
+    ],
+  },
+  {
+    id: "26btz",
+    theme: "Groundhog Day: Repeat and Repeat",
+    description: "",
+    emoji: "🦫",
+    movieIds: [
+      137, // Groundhog Day (Feb 11, 1993)
+      137113, // Edge of Tomorrow (Jun 6, 2014)
+      440021, // Happy Death Day (Oct 13, 2017)
+      587792, // Palm Springs (Jul 10, 2020)
+      45612, // Source Code (Apr 1, 2011)
+      127585, // X-Men: Days of Future Past (May 23, 2014)
+      1954, // The Butterfly Effect (Jan 23, 2004)
+      104, // Run Lola Run (Jun 18, 1999)
+      672647, // The Map of Tiny Perfect Things (Feb 12, 2021)
+      14337, // Primer (Oct 8, 2004)
+    ],
+  },
   // Future puzzles will be added here
 ];
 
@@ -434,7 +492,7 @@ function getPuzzleForDate(date) {
   const dateStr = targetDate.toISOString().split("T")[0];
   if (PUZZLE_SCHEDULE[dateStr]) {
     const scheduled = DAILY_PUZZLES.find(
-      (p) => p.id === PUZZLE_SCHEDULE[dateStr]
+      (p) => p.id === PUZZLE_SCHEDULE[dateStr],
     );
     if (scheduled) return scheduled;
   }
@@ -465,7 +523,7 @@ function getPuzzleForDate(date) {
   const futureScheduledIds = new Set(
     Object.entries(PUZZLE_SCHEDULE)
       .filter(([schedDate]) => new Date(schedDate + "T00:00:00") > targetDate)
-      .map(([, puzzleId]) => puzzleId)
+      .map(([, puzzleId]) => puzzleId),
   );
 
   // Walk through each day from first date to target date to track what gets used on empty days
@@ -475,7 +533,7 @@ function getPuzzleForDate(date) {
     if (!PUZZLE_SCHEDULE[currentDateStr]) {
       // This was an empty day - find what puzzle it would use
       const availableForThatDay = DAILY_PUZZLES.filter(
-        p => !usedPuzzleIds.has(p.id) && !futureScheduledIds.has(p.id)
+        (p) => !usedPuzzleIds.has(p.id) && !futureScheduledIds.has(p.id),
       );
       if (availableForThatDay.length > 0) {
         usedPuzzleIds.add(availableForThatDay[0].id);
@@ -486,7 +544,7 @@ function getPuzzleForDate(date) {
 
   // Now find an unused puzzle for this date (excluding future-scheduled puzzles)
   const availablePuzzles = DAILY_PUZZLES.filter(
-    p => !usedPuzzleIds.has(p.id) && !futureScheduledIds.has(p.id)
+    (p) => !usedPuzzleIds.has(p.id) && !futureScheduledIds.has(p.id),
   );
 
   if (availablePuzzles.length === 0) {
@@ -521,7 +579,7 @@ function getPuzzleNumber(date) {
   }
 
   const daysSinceFirst = Math.floor(
-    (targetDate - firstDate) / (1000 * 60 * 60 * 24)
+    (targetDate - firstDate) / (1000 * 60 * 60 * 24),
   );
   return daysSinceFirst + 1;
 }
