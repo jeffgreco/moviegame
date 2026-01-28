@@ -69,6 +69,10 @@ export default {
         return await handleRandomStats(url, env, corsHeaders);
       }
 
+      if (path === '/api/daily-activity' && request.method === 'GET') {
+        return await handleDailyActivity(url, env, corsHeaders);
+      }
+
       // Health check
       if (path === '/health') {
         return jsonResponse({ status: 'ok', timestamp: new Date().toISOString() }, corsHeaders);
@@ -357,6 +361,32 @@ async function handleRandomStats(url, env, corsHeaders) {
     totalGames,
     maxScore
   }, corsHeaders);
+}
+
+/**
+ * Get daily activity counts for calendar view
+ */
+async function handleDailyActivity(url, env, corsHeaders) {
+  const days = Math.min(parseInt(url.searchParams.get('days') || '60'), 90);
+
+  // Get game counts per day for the last N days
+  const results = await env.DB.prepare(`
+    SELECT
+      DATE(completed_at) as date,
+      COUNT(*) as count
+    FROM game_completions
+    WHERE completed_at >= datetime('now', '-' || ? || ' days')
+    GROUP BY DATE(completed_at)
+    ORDER BY date ASC
+  `).bind(days).all();
+
+  // Convert to object for easy lookup
+  const activity = {};
+  for (const row of results.results) {
+    activity[row.date] = row.count;
+  }
+
+  return jsonResponse({ activity }, corsHeaders);
 }
 
 /**

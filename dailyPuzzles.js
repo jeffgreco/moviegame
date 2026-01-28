@@ -13,15 +13,12 @@ const PUZZLE_SCHEDULE = {
   "2026-01-16": "dhk7k",
   "2026-01-17": "g2h5y",
   "2026-01-18": "r5t1q",
-  "2026-01-19": "e2zzy",
-  "2026-01-20": "k2jq9",
-  "2026-01-21": "62wgc",
-  "2026-01-22": "r829v",
   "2026-01-23": "qje3j",
   "2026-01-25": "ah7yk",
   "2026-01-26": "rvtak",
   "2026-01-27": "vrrqg",
-  "2026-01-28": "pcpxv"
+  "2026-01-28": "pcpxv",
+  "2026-01-29": "cytxv"
 };
 
 const DAILY_PUZZLES = [
@@ -331,6 +328,30 @@ const DAILY_PUZZLES = [
       1852, // World Trade Center (Aug 9, 2006)
       6963, // The Weather Man (Oct 20, 2005)
       648579, // The Unbearable Weight of Massive Talent (Apr 22, 2022)
+    ],
+  },
+    {
+    id: "cytxv",
+    theme: "The Menu",
+    description: "",
+    movieIds: [
+      593643, // The Menu (Nov 18, 2022)
+      7553, // Waiting... (Oct 7, 2005)
+      14817, // Good Burger (Jul 25, 1997)
+      11191, // Mystic Pizza (Oct 13, 1988)
+      24803, // Julie & Julia (Aug 7, 2009)
+      7520, // Cocktail (Jul 29, 1988)
+      10758, // Waitress (May 25, 2007)
+      212778, // Chef (May 30, 2014)
+      18203, // Big Night (Sep 20, 1996)
+      2062, // Ratatouille (Jun 29, 2007)
+      80767, // Jiro Dreams of Sushi (Mar 9, 2012)
+      295964, // Burnt (Oct 30, 2015)
+      807196, // Boiling Point (Nov 19, 2021)
+      11830, // Tampopo (May 22, 1987)
+      3638, // No Reservations (Jul 25, 2007)
+      7452, // The Cook, the Thief, His Wife & Her Lover (Apr 6, 1990)
+      635731, // Pig (Jul 16, 2021)
     ],
   },
   // Future puzzles will be added here

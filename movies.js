@@ -1,6 +1,6 @@
 // Movie data from TMDB
-// Last updated: 2026-01-24T23:50:14.837Z
-// Total movies: 1665
+// Last updated: 2026-01-27T18:57:22.218Z
+// Total movies: 1703
 
 var MOVIES_DATA = [
   {
@@ -19,6 +19,25 @@ var MOVIES_DATA = [
     "release_date": "1940-04-12",
     "directors": [
       "Alfred Hitchcock"
+    ]
+  },
+  {
+    "id": 599,
+    "title": "Sunset Boulevard",
+    "poster_url": "https://image.tmdb.org/t/p/w500/zt8aQ6ksqK6p1AopC5zVTDS9pKT.jpg",
+    "release_date": "1950-08-10",
+    "directors": [
+      "Billy Wilder"
+    ]
+  },
+  {
+    "id": 872,
+    "title": "Singin' in the Rain",
+    "poster_url": "https://image.tmdb.org/t/p/w500/w03EiJVHP8Un77boQeE7hg9DVdU.jpg",
+    "release_date": "1952-04-10",
+    "directors": [
+      "Stanley Donen",
+      "Gene Kelly"
     ]
   },
   {
@@ -186,6 +205,15 @@ var MOVIES_DATA = [
     "release_date": "1968-12-18",
     "directors": [
       "Ken Hughes"
+    ]
+  },
+  {
+    "id": 14136,
+    "title": "The Love Bug",
+    "poster_url": "https://image.tmdb.org/t/p/w500/9Lc1efdYZUZia2zsRWcUkiD1KdN.jpg",
+    "release_date": "1968-12-23",
+    "directors": [
+      "Robert Stevenson"
     ]
   },
   {
@@ -679,6 +707,15 @@ var MOVIES_DATA = [
     "release_date": "1974-02-07",
     "directors": [
       "Mel Brooks"
+    ]
+  },
+  {
+    "id": 10869,
+    "title": "Herbie Rides Again",
+    "poster_url": "https://image.tmdb.org/t/p/w500/1k14PPykkUQfhjn3xXDrc55lfHl.jpg",
+    "release_date": "1974-02-14",
+    "directors": [
+      "Robert Stevenson"
     ]
   },
   {
@@ -1325,6 +1362,15 @@ var MOVIES_DATA = [
       "Jerry Zucker",
       "David Zucker",
       "Jim Abrahams"
+    ]
+  },
+  {
+    "id": 42160,
+    "title": "The Stunt Man",
+    "poster_url": "https://image.tmdb.org/t/p/w500/n7trpLAThW1h67QAlWMQ6IHS47u.jpg",
+    "release_date": "1980-06-27",
+    "directors": [
+      "Richard Rush"
     ]
   },
   {
@@ -2740,6 +2786,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 11830,
+    "title": "Tampopo",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ArYdSuX3zY9fMsE4LqmBl7xJq5R.jpg",
+    "release_date": "1987-05-22",
+    "directors": [
+      "Jūzō Itami"
+    ]
+  },
+  {
     "id": 117,
     "title": "The Untouchables",
     "poster_url": "https://image.tmdb.org/t/p/w500/8BquGK22zCcsmBWiaIakaaPpSZb.jpg",
@@ -3107,6 +3162,15 @@ var MOVIES_DATA = [
     "release_date": "1988-09-23",
     "directors": [
       "David Cronenberg"
+    ]
+  },
+  {
+    "id": 11191,
+    "title": "Mystic Pizza",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2wqMKLJEMjenT7U8UqnuI070cUC.jpg",
+    "release_date": "1988-10-13",
+    "directors": [
+      "Donald Petrie"
     ]
   },
   {
@@ -3630,6 +3694,15 @@ var MOVIES_DATA = [
     "showDirector": true
   },
   {
+    "id": 7452,
+    "title": "The Cook, the Thief, His Wife & Her Lover",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fNkl7o1VQQqy1nEX9x56CDHULmr.jpg",
+    "release_date": "1990-04-06",
+    "directors": [
+      "Peter Greenaway"
+    ]
+  },
+  {
     "id": 196,
     "title": "Back to the Future Part III",
     "poster_url": "https://image.tmdb.org/t/p/w500/crzoVQnMzIrRfHtQw0tLBirNfVg.jpg",
@@ -3990,6 +4063,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 290,
+    "title": "Barton Fink",
+    "poster_url": "https://image.tmdb.org/t/p/w500/oDkp5iClJ9WKJGtKHz8BydodHC3.jpg",
+    "release_date": "1991-08-01",
+    "directors": [
+      "Joel Coen"
+    ]
+  },
+  {
     "id": 11821,
     "title": "Doc Hollywood",
     "poster_url": "https://image.tmdb.org/t/p/w500/36yGVgFWg7PvDdZ10Csg1uHpcZd.jpg",
@@ -4133,6 +4215,15 @@ var MOVIES_DATA = [
     "release_date": "1992-04-10",
     "directors": [
       "Mick Garris"
+    ]
+  },
+  {
+    "id": 10403,
+    "title": "The Player",
+    "poster_url": "https://image.tmdb.org/t/p/w500/tZ3kDut2dhFVGkWNEn9xoCHCNAx.jpg",
+    "release_date": "1992-05-08",
+    "directors": [
+      "Robert Altman"
     ]
   },
   {
@@ -5002,6 +5093,15 @@ var MOVIES_DATA = [
     "release_date": "1994-08-26"
   },
   {
+    "id": 522,
+    "title": "Ed Wood",
+    "poster_url": "https://image.tmdb.org/t/p/w500/jNao464ZTwWUWr3uJJ8swVgaKd9.jpg",
+    "release_date": "1994-09-30",
+    "directors": [
+      "Tim Burton"
+    ]
+  },
+  {
     "id": 278,
     "title": "The Shawshank Redemption",
     "poster_url": "https://image.tmdb.org/t/p/w500/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg",
@@ -5270,6 +5370,15 @@ var MOVIES_DATA = [
     "release_date": "1995-07-19",
     "directors": [
       "Amy Heckerling"
+    ]
+  },
+  {
+    "id": 9071,
+    "title": "Living in Oblivion",
+    "poster_url": "https://image.tmdb.org/t/p/w500/b54xDk98oWtEtAso9sj1wjaZDDH.jpg",
+    "release_date": "1995-07-21",
+    "directors": [
+      "Tom DiCillo"
     ]
   },
   {
@@ -5706,6 +5815,16 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 18203,
+    "title": "Big Night",
+    "poster_url": "https://image.tmdb.org/t/p/w500/8AJGSDyrj3Dz2B57n1ZB4qNPbmJ.jpg",
+    "release_date": "1996-09-20",
+    "directors": [
+      "Stanley Tucci",
+      "Campbell Scott"
+    ]
+  },
+  {
     "id": 9591,
     "title": "That Thing You Do!",
     "poster_url": "https://image.tmdb.org/t/p/w500/9RmZu33qHdyZFGLfhEOmkTjdNEu.jpg",
@@ -5940,6 +6059,15 @@ var MOVIES_DATA = [
     "release_date": "1997-07-25",
     "directors": [
       "Wolfgang Petersen"
+    ]
+  },
+  {
+    "id": 14817,
+    "title": "Good Burger",
+    "poster_url": "https://image.tmdb.org/t/p/w500/imFLUF2TYkm13GpFYTKYF7T27sP.jpg",
+    "release_date": "1997-07-25",
+    "directors": [
+      "Brian Robbins"
     ]
   },
   {
@@ -6611,6 +6739,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 11353,
+    "title": "Bowfinger",
+    "poster_url": "https://image.tmdb.org/t/p/w500/iGuiFYEYwFkaRPl3FgLJYEm6dWq.jpg",
+    "release_date": "1999-08-12",
+    "directors": [
+      "Frank Oz"
+    ]
+  },
+  {
     "id": 37718,
     "title": "The Muse",
     "poster_url": "https://image.tmdb.org/t/p/w500/hmtvDW52V3EuFmbhTOLjaGMYCDx.jpg",
@@ -6662,6 +6799,15 @@ var MOVIES_DATA = [
     "release_date": "1999-11-05",
     "directors": [
       "Michael Mann"
+    ]
+  },
+  {
+    "id": 14242,
+    "title": "American Movie",
+    "poster_url": "https://image.tmdb.org/t/p/w500/y8dJgWr1HeW0RRxwANDWvgIXdsF.jpg",
+    "release_date": "1999-11-05",
+    "directors": [
+      "Chris Smith"
     ]
   },
   {
@@ -7045,6 +7191,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 21991,
+    "title": "State and Main",
+    "poster_url": "https://image.tmdb.org/t/p/w500/348hvpWeSGdAQlCrGvKbpC0FpQN.jpg",
+    "release_date": "2001-01-12",
+    "directors": [
+      "David Mamet"
+    ]
+  },
+  {
     "id": 107,
     "title": "Snatch",
     "poster_url": "https://image.tmdb.org/t/p/w500/kJZoAHq1SLDdWjeNGtlHAnGpmFV.jpg",
@@ -7193,6 +7348,15 @@ var MOVIES_DATA = [
     "release_date": "2001-07-13",
     "directors": [
       "Robert Luketic"
+    ]
+  },
+  {
+    "id": 11467,
+    "title": "America's Sweethearts",
+    "poster_url": "https://image.tmdb.org/t/p/w500/4TQOYs8rCWi44O1tNbIQiRqHQkA.jpg",
+    "release_date": "2001-07-17",
+    "directors": [
+      "Joe Roth"
     ]
   },
   {
@@ -8714,6 +8878,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 7553,
+    "title": "Waiting...",
+    "poster_url": "https://image.tmdb.org/t/p/w500/uyZ11F0ZdUWR29wx8pS9CMCNyse.jpg",
+    "release_date": "2005-10-07",
+    "directors": [
+      "Rob McKittrick"
+    ]
+  },
+  {
     "id": 6963,
     "title": "The Weather Man",
     "poster_url": "https://image.tmdb.org/t/p/w500/oQilVzOxLPxvBn9hAuvGpKTpONM.jpg",
@@ -9329,6 +9502,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 10758,
+    "title": "Waitress",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ux3SPTHHmJytSjWEaV7xlo9nbOZ.jpg",
+    "release_date": "2007-05-25",
+    "directors": [
+      "Adrienne Shelly"
+    ]
+  },
+  {
     "id": 298,
     "title": "Ocean's Thirteen",
     "poster_url": "https://image.tmdb.org/t/p/w500/pBsZs4zYUiUTemqbikTZ76iQRaU.jpg",
@@ -9365,12 +9547,30 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 1858,
+    "title": "Transformers",
+    "poster_url": "https://image.tmdb.org/t/p/w500/4N4sipl8T72tNE4earcctQa2Kw2.jpg",
+    "release_date": "2007-07-03",
+    "directors": [
+      "Michael Bay"
+    ]
+  },
+  {
     "id": 675,
     "title": "Harry Potter and the Order of the Phoenix",
     "poster_url": "https://image.tmdb.org/t/p/w500/5aOyriWkPec0zUDxmHFP9qMmBaj.jpg",
     "release_date": "2007-07-11",
     "directors": [
       "David Yates"
+    ]
+  },
+  {
+    "id": 3638,
+    "title": "No Reservations",
+    "poster_url": "https://image.tmdb.org/t/p/w500/eKqfRSf0DZ0Qey1f9ZHuZfsmXVR.jpg",
+    "release_date": "2007-07-25",
+    "directors": [
+      "Scott Hicks"
     ]
   },
   {
@@ -9572,6 +9772,15 @@ var MOVIES_DATA = [
     "release_date": "2008-01-25",
     "directors": [
       "Sylvester Stallone"
+    ]
+  },
+  {
+    "id": 4953,
+    "title": "Be Kind Rewind",
+    "poster_url": "https://image.tmdb.org/t/p/w500/f0oX20YrQEiVPDH9InCQ1d3Cm66.jpg",
+    "release_date": "2008-02-22",
+    "directors": [
+      "Michel Gondry"
     ]
   },
   {
@@ -10033,6 +10242,15 @@ var MOVIES_DATA = [
     "release_date": "2009-08-07",
     "directors": [
       "Marc Webb"
+    ]
+  },
+  {
+    "id": 24803,
+    "title": "Julie & Julia",
+    "poster_url": "https://image.tmdb.org/t/p/w500/1QZNWOOwfRi86ZApGvr2TtJZPBK.jpg",
+    "release_date": "2009-08-07",
+    "directors": [
+      "Nora Ephron"
     ]
   },
   {
@@ -10862,6 +11080,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 74643,
+    "title": "The Artist",
+    "poster_url": "https://image.tmdb.org/t/p/w500/z68py0ZqPgeacGPG54AGVRbNBS7.jpg",
+    "release_date": "2012-01-20",
+    "directors": [
+      "Michel Hazanavicius"
+    ]
+  },
+  {
     "id": 71676,
     "title": "Ghost Rider: Spirit of Vengeance",
     "poster_url": "https://image.tmdb.org/t/p/w500/fUJOWsjjE8u1r4YOLYe1RLYy7bm.jpg",
@@ -10878,6 +11105,15 @@ var MOVIES_DATA = [
     "release_date": "2012-03-01",
     "directors": [
       "Chris Renaud"
+    ]
+  },
+  {
+    "id": 80767,
+    "title": "Jiro Dreams of Sushi",
+    "poster_url": "https://image.tmdb.org/t/p/w500/iVrkM4jSJw1IsOpW5jTtY5QxVqj.jpg",
+    "release_date": "2012-03-09",
+    "directors": [
+      "David Gelb"
     ]
   },
   {
@@ -11079,6 +11315,15 @@ var MOVIES_DATA = [
     "release_date": "2012-10-12",
     "directors": [
       "Stephen Chbosky"
+    ]
+  },
+  {
+    "id": 68734,
+    "title": "Argo",
+    "poster_url": "https://image.tmdb.org/t/p/w500/m5gPWFZFIp4UJFABgWyLkbXv8GX.jpg",
+    "release_date": "2012-10-12",
+    "directors": [
+      "Ben Affleck"
     ]
   },
   {
@@ -11362,6 +11607,15 @@ var MOVIES_DATA = [
     "release_date": "2013-08-07",
     "directors": [
       "Rawson Marshall Thurber"
+    ]
+  },
+  {
+    "id": 151960,
+    "title": "Planes",
+    "poster_url": "https://image.tmdb.org/t/p/w500/i2xgU0y0p77WTrB0oIkbpdaWq8R.jpg",
+    "release_date": "2013-08-09",
+    "directors": [
+      "Klay Hall"
     ]
   },
   {
@@ -11681,6 +11935,15 @@ var MOVIES_DATA = [
     "release_date": "2014-05-30",
     "directors": [
       "Robert Stromberg"
+    ]
+  },
+  {
+    "id": 212778,
+    "title": "Chef",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hyp8EXDmO4dSC8V6Q5jU7gD1kcg.jpg",
+    "release_date": "2014-05-30",
+    "directors": [
+      "Jon Favreau"
     ]
   },
   {
@@ -12103,6 +12366,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 188222,
+    "title": "Entourage",
+    "poster_url": "https://image.tmdb.org/t/p/w500/28dqsx1jCxhR05DfH35ui13ywNZ.jpg",
+    "release_date": "2015-06-03",
+    "directors": [
+      "Doug Ellin"
+    ]
+  },
+  {
     "id": 238713,
     "title": "Spy",
     "poster_url": "https://image.tmdb.org/t/p/w500/vPBmfMHxQvRRNGYD5S5ko2KnX56.jpg",
@@ -12257,6 +12529,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 295964,
+    "title": "Burnt",
+    "poster_url": "https://image.tmdb.org/t/p/w500/kGJLABjIb6F86vwY5w576JYHQxV.jpg",
+    "release_date": "2015-10-30",
+    "directors": [
+      "John Wells"
+    ]
+  },
+  {
     "id": 206647,
     "title": "Spectre",
     "poster_url": "https://image.tmdb.org/t/p/w500/zj8ongFhtWNsVlfjOGo8pSr7PQg.jpg",
@@ -12354,6 +12635,16 @@ var MOVIES_DATA = [
     "directors": [
       "Jennifer Yuh Nelson",
       "Alessandro Carloni"
+    ]
+  },
+  {
+    "id": 270487,
+    "title": "Hail, Caesar!",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ozY79UvbYvJUWFg2UCM1CDQ7rBl.jpg",
+    "release_date": "2016-02-05",
+    "directors": [
+      "Joel Coen",
+      "Ethan Coen"
     ]
   },
   {
@@ -12946,6 +13237,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 371638,
+    "title": "The Disaster Artist",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2HuLGiyH0TPYxnCvYHAxc8K738o.jpg",
+    "release_date": "2017-12-08",
+    "directors": [
+      "James Franco"
+    ]
+  },
+  {
     "id": 181808,
     "title": "Star Wars: The Last Jedi",
     "poster_url": "https://image.tmdb.org/t/p/w500/ySaaKHOLAQU5HoZqWmzDIj1VvZ1.jpg",
@@ -13298,6 +13598,15 @@ var MOVIES_DATA = [
     "release_date": "2018-12-21",
     "directors": [
       "James Wan"
+    ]
+  },
+  {
+    "id": 424783,
+    "title": "Bumblebee",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fw02ONlDhrYjTSZV8XO6hhU3ds3.jpg",
+    "release_date": "2018-12-21",
+    "directors": [
+      "Travis Knight"
     ]
   },
   {
@@ -13759,6 +14068,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 614560,
+    "title": "Mank",
+    "poster_url": "https://image.tmdb.org/t/p/w500/4yzTcAtvzyZLLto4z04xobUK9el.jpg",
+    "release_date": "2020-11-13",
+    "directors": [
+      "David Fincher"
+    ]
+  },
+  {
     "id": 502033,
     "title": "Sound of Metal",
     "poster_url": "https://image.tmdb.org/t/p/w500/3178oOJKKPDeQ2legWQvMPpllv.jpg",
@@ -14031,6 +14349,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 807196,
+    "title": "Boiling Point",
+    "poster_url": "https://image.tmdb.org/t/p/w500/kdkk7OBnIL1peW2zwcAAp6O54Jo.jpg",
+    "release_date": "2021-11-19",
+    "directors": [
+      "Philip Barantini"
+    ]
+  },
+  {
     "id": 568124,
     "title": "Encanto",
     "poster_url": "https://image.tmdb.org/t/p/w500/4j0PNHkMr5ax3IA8tjtxcmPU3QT.jpg",
@@ -14251,12 +14578,30 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 593643,
+    "title": "The Menu",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fPtUgMcLIboqlTlPrq0bQpKK8eq.jpg",
+    "release_date": "2022-11-18",
+    "directors": [
+      "Mark Mylod"
+    ]
+  },
+  {
     "id": 661374,
     "title": "Glass Onion: A Knives Out Mystery",
     "poster_url": "https://image.tmdb.org/t/p/w500/vDGr1YdrlfbU9wxTOdpf3zChmv9.jpg",
     "release_date": "2022-11-23",
     "directors": [
       "Rian Johnson"
+    ]
+  },
+  {
+    "id": 804095,
+    "title": "The Fabelmans",
+    "poster_url": "https://image.tmdb.org/t/p/w500/h7llKkqkkJtJrTOaDLuVeUYDQ7I.jpg",
+    "release_date": "2022-11-23",
+    "directors": [
+      "Steven Spielberg"
     ]
   },
   {
