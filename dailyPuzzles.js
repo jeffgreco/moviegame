@@ -18,7 +18,9 @@ const PUZZLE_SCHEDULE = {
   "2026-01-26": "rvtak",
   "2026-01-27": "vrrqg",
   "2026-01-28": "pcpxv",
-  "2026-01-29": "cytxv"
+  "2026-01-29": "cytxv",
+  "2026-01-30": "vc4j4",
+  "2026-01-31": "sv8p5"
 };
 
 const DAILY_PUZZLES = [
@@ -330,10 +332,11 @@ const DAILY_PUZZLES = [
       648579, // The Unbearable Weight of Massive Talent (Apr 22, 2022)
     ],
   },
-    {
+      {
     id: "cytxv",
     theme: "The Menu",
     description: "",
+    emoji: "🧑‍",
     movieIds: [
       593643, // The Menu (Nov 18, 2022)
       7553, // Waiting... (Oct 7, 2005)
@@ -352,6 +355,60 @@ const DAILY_PUZZLES = [
       3638, // No Reservations (Jul 25, 2007)
       7452, // The Cook, the Thief, His Wife & Her Lover (Apr 6, 1990)
       635731, // Pig (Jul 16, 2021)
+    ],
+  },
+    {
+    id: "vc4j4",
+    theme: "Hamnet: Writers and Writing",
+    description: "",
+    emoji: "✍️",
+    movieIds: [
+      858024, // Hamnet (Dec 5, 2025)
+      1262, // Stranger Than Fiction (Nov 10, 2006)
+      694, // The Shining (Jun 13, 1980)
+      290, // Barton Fink (Aug 1, 1991)
+      1700, // Misery (Nov 30, 1990)
+      711, // Finding Forrester (Jan 12, 2001)
+      398, // Capote (Feb 3, 2006)
+      590, // The Hours (Dec 27, 2002)
+      103332, // Ruby Sparks (Jul 25, 2012)
+      11439, // The Ghost Writer (Feb 12, 2010)
+      1586, // Secret Window (Mar 12, 2004)
+      249688, // The End of the Tour (Jul 31, 2015)
+      12280, // The Paper (Mar 18, 1994)
+      891, // All the President's Men (Apr 9, 1976)
+      294016, // Trumbo (Nov 25, 2015)
+      2742, // Naked Lunch (Dec 27, 1991)
+      10474, // The Basketball Diaries (Apr 21, 1995)
+      2757, // Adaptation. (Dec 6, 2002)
+      1934, // Shakespeare in Love (Dec 11, 1998)
+    ],
+  },
+    {
+    id: "sv8p5",
+    theme: "Marty Supreme: International Competition",
+    description: "",
+    emoji: "🏓",
+    movieIds: [
+      1317288, // Marty Supreme (Dec 25, 2025)
+      9750, // Balls of Fury (Aug 29, 2007)
+      1885, // The Karate Kid (Jun 22, 1984)
+      10414, // The Mighty Ducks (Oct 2, 1992)
+      9443, // Chariots of Fire (Apr 2, 1982)
+      864, // Cool Runnings (Oct 1, 1993)
+      16562, // The Cutting Edge (Mar 27, 1992)
+      1374, // Rocky IV (Nov 21, 1985)
+      9955, // Blades of Glory (Mar 30, 2007)
+      14292, // Miracle (Feb 6, 2004)
+      116, // Match Point (Nov 2, 2005)
+      369192, // Battle of the Sexes (Sep 29, 2017)
+      455, // Bend It Like Beckham (Aug 1, 2003)
+      22954, // Invictus (Dec 11, 2009)
+      319888, // Eddie the Eagle (Feb 26, 2016)
+      87492, // Foxcatcher (Jan 16, 2015)
+      389015, // I, Tonya (Jan 19, 2018)
+      9472, // DodgeBall: A True Underdog Story (Jun 18, 2004)
+      13, // Forrest Gump (Jul 6, 1994)
     ],
   },
   // Future puzzles will be added here

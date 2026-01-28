@@ -1,6 +1,6 @@
 // Movie data from TMDB
-// Last updated: 2026-01-27T18:57:22.218Z
-// Total movies: 1703
+// Last updated: 2026-01-28T18:43:08.902Z
+// Total movies: 1729
 
 var MOVIES_DATA = [
   {
@@ -1577,6 +1577,15 @@ var MOVIES_DATA = [
     "release_date": "1982-03-19",
     "directors": [
       "Bob Clark"
+    ]
+  },
+  {
+    "id": 9443,
+    "title": "Chariots of Fire",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qnRaum8k0HqGRml2i7OawFqUtEb.jpg",
+    "release_date": "1982-04-02",
+    "directors": [
+      "Hugh Hudson"
     ]
   },
   {
@@ -4182,6 +4191,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 2742,
+    "title": "Naked Lunch",
+    "poster_url": "https://image.tmdb.org/t/p/w500/u01kh5jKUWjhom76mguRqUgdvja.jpg",
+    "release_date": "1991-12-27",
+    "directors": [
+      "David Cronenberg"
+    ]
+  },
+  {
     "id": 8872,
     "title": "Wayne's World",
     "poster_url": "https://image.tmdb.org/t/p/w500/fHwZnFNWR7PaS9t5EBwTvGPeoYQ.jpg",
@@ -4206,6 +4224,15 @@ var MOVIES_DATA = [
     "release_date": "1992-03-20",
     "directors": [
       "Paul Verhoeven"
+    ]
+  },
+  {
+    "id": 16562,
+    "title": "The Cutting Edge",
+    "poster_url": "https://image.tmdb.org/t/p/w500/sx4qf2XoW0xaLITQLpajsYc4mcj.jpg",
+    "release_date": "1992-03-27",
+    "directors": [
+      "Paul Michael Glaser"
     ]
   },
   {
@@ -4910,6 +4937,15 @@ var MOVIES_DATA = [
     "release_date": "1994-03-18",
     "directors": [
       "Peter Segal"
+    ]
+  },
+  {
+    "id": 12280,
+    "title": "The Paper",
+    "poster_url": "https://image.tmdb.org/t/p/w500/pGPrFbucRLwVtCKCeinwAklAl0l.jpg",
+    "release_date": "1994-03-18",
+    "directors": [
+      "Ron Howard"
     ]
   },
   {
@@ -6507,6 +6543,15 @@ var MOVIES_DATA = [
     "showDirector": true
   },
   {
+    "id": 1934,
+    "title": "Shakespeare in Love",
+    "poster_url": "https://image.tmdb.org/t/p/w500/zdW7jdzPi4J9KZR3TyY2jn3Xh5e.jpg",
+    "release_date": "1998-12-11",
+    "directors": [
+      "John Madden"
+    ]
+  },
+  {
     "id": 9837,
     "title": "The Prince of Egypt",
     "poster_url": "https://image.tmdb.org/t/p/w500/2xUjYwL6Ol7TLJPPKs7sYW5PWLX.jpg",
@@ -6533,6 +6578,15 @@ var MOVIES_DATA = [
     "release_date": "1998-12-25",
     "directors": [
       "Chris Columbus"
+    ]
+  },
+  {
+    "id": 10312,
+    "title": "Patch Adams",
+    "poster_url": "https://image.tmdb.org/t/p/w500/xN1aKur5ddWQSXTqvzDPJD2TCxe.jpg",
+    "release_date": "1998-12-25",
+    "directors": [
+      "Tom Shadyac"
     ]
   },
   {
@@ -7197,6 +7251,15 @@ var MOVIES_DATA = [
     "release_date": "2001-01-12",
     "directors": [
       "David Mamet"
+    ]
+  },
+  {
+    "id": 711,
+    "title": "Finding Forrester",
+    "poster_url": "https://image.tmdb.org/t/p/w500/chd9bCGNYtzDoJqGw5wUHlhrkOb.jpg",
+    "release_date": "2001-01-12",
+    "directors": [
+      "Gus Van Sant"
     ]
   },
   {
@@ -7929,6 +7992,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 590,
+    "title": "The Hours",
+    "poster_url": "https://image.tmdb.org/t/p/w500/4myDtowDJQPQnkEDB1IWGtJR1Fo.jpg",
+    "release_date": "2002-12-27",
+    "directors": [
+      "Stephen Daldry"
+    ]
+  },
+  {
     "id": 1429,
     "title": "25th Hour",
     "poster_url": "https://image.tmdb.org/t/p/w500/uW7tTRElr2tRhmAVESzvHy4ByXg.jpg",
@@ -8120,6 +8192,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 455,
+    "title": "Bend It Like Beckham",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2dzSBmFWWqt8NbnubJKIWU21Y86.jpg",
+    "release_date": "2003-08-01",
+    "directors": [
+      "Gurinder Chadha"
+    ]
+  },
+  {
     "id": 7270,
     "title": "Matchstick Men",
     "poster_url": "https://image.tmdb.org/t/p/w500/y5hBAMrOWUusHjnWUGLpFWPtPAP.jpg",
@@ -8273,6 +8354,15 @@ var MOVIES_DATA = [
     "release_date": "2004-01-30"
   },
   {
+    "id": 14292,
+    "title": "Miracle",
+    "poster_url": "https://image.tmdb.org/t/p/w500/mxtej2th8t8x0ufVBTyhsO6Htxj.jpg",
+    "release_date": "2004-02-06",
+    "directors": [
+      "Gavin O'Connor"
+    ]
+  },
+  {
     "id": 1824,
     "title": "50 First Dates",
     "poster_url": "https://image.tmdb.org/t/p/w500/lzUI2Cg7OMfcUNv3f7MywYNBjs6.jpg",
@@ -8297,6 +8387,15 @@ var MOVIES_DATA = [
     "release_date": "2004-02-25",
     "directors": [
       "Mel Gibson"
+    ]
+  },
+  {
+    "id": 1586,
+    "title": "Secret Window",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hvzw4wufKZkDCTPVeG71Z7pGfZh.jpg",
+    "release_date": "2004-03-12",
+    "directors": [
+      "David Koepp"
     ]
   },
   {
@@ -8416,6 +8515,15 @@ var MOVIES_DATA = [
     "release_date": "2004-06-17",
     "directors": [
       "Steven Spielberg"
+    ]
+  },
+  {
+    "id": 9472,
+    "title": "DodgeBall: A True Underdog Story",
+    "poster_url": "https://image.tmdb.org/t/p/w500/r8KbNHkkwFXLjV1suGwm0Qjure5.jpg",
+    "release_date": "2004-06-18",
+    "directors": [
+      "Rawson Marshall Thurber"
     ]
   },
   {
@@ -8914,6 +9022,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 116,
+    "title": "Match Point",
+    "poster_url": "https://image.tmdb.org/t/p/w500/vHjEVTD8ucuwKSFOZJeyAnTZYli.jpg",
+    "release_date": "2005-11-02",
+    "directors": [
+      "Woody Allen"
+    ]
+  },
+  {
     "id": 9982,
     "title": "Chicken Little",
     "poster_url": "https://image.tmdb.org/t/p/w500/87FpA4b90eTaw3U6zmCNikoPLir.jpg",
@@ -8990,6 +9107,15 @@ var MOVIES_DATA = [
     "release_date": "2006-01-13",
     "directors": [
       "Ang Lee"
+    ]
+  },
+  {
+    "id": 398,
+    "title": "Capote",
+    "poster_url": "https://image.tmdb.org/t/p/w500/tzsxkZMnJvozpHQEl1KzO8KwWu.jpg",
+    "release_date": "2006-02-03",
+    "directors": [
+      "Bennett Miller"
     ]
   },
   {
@@ -9439,6 +9565,16 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 9955,
+    "title": "Blades of Glory",
+    "poster_url": "https://image.tmdb.org/t/p/w500/yclY3zyzrL1MS9b6Eygs9ks0ZTY.jpg",
+    "release_date": "2007-03-30",
+    "directors": [
+      "Will Speck",
+      "Josh Gordon"
+    ]
+  },
+  {
     "id": 4638,
     "title": "Hot Fuzz",
     "poster_url": "https://image.tmdb.org/t/p/w500/zPib4ukTSdXvHP9pxGkFCe34f3y.jpg",
@@ -9607,6 +9743,15 @@ var MOVIES_DATA = [
     "release_date": "2007-08-17",
     "directors": [
       "Greg Mottola"
+    ]
+  },
+  {
+    "id": 9750,
+    "title": "Balls of Fury",
+    "poster_url": "https://image.tmdb.org/t/p/w500/1Uc6lFCcNlaKP5uLJdQAhdDfihy.jpg",
+    "release_date": "2007-08-29",
+    "directors": [
+      "Robert Ben Garant"
     ]
   },
   {
@@ -10403,6 +10548,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 22954,
+    "title": "Invictus",
+    "poster_url": "https://image.tmdb.org/t/p/w500/runuhBAAX7PmdjGhqRKCyl4bh7z.jpg",
+    "release_date": "2009-12-11",
+    "directors": [
+      "Clint Eastwood"
+    ]
+  },
+  {
     "id": 19995,
     "title": "Avatar",
     "poster_url": "https://image.tmdb.org/t/p/w500/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg",
@@ -10436,6 +10590,15 @@ var MOVIES_DATA = [
     "release_date": "2010-02-11",
     "directors": [
       "Chris Columbus"
+    ]
+  },
+  {
+    "id": 11439,
+    "title": "The Ghost Writer",
+    "poster_url": "https://image.tmdb.org/t/p/w500/rK7m2Ba0ieXa37NaAmrx4dfRvvM.jpg",
+    "release_date": "2010-02-12",
+    "directors": [
+      "Roman Polanski"
     ]
   },
   {
@@ -11243,6 +11406,16 @@ var MOVIES_DATA = [
     "release_date": "2012-07-20",
     "directors": [
       "Christopher Nolan"
+    ]
+  },
+  {
+    "id": 103332,
+    "title": "Ruby Sparks",
+    "poster_url": "https://image.tmdb.org/t/p/w500/zELurt0GVRkR5X5ymuk7KXUxhC8.jpg",
+    "release_date": "2012-07-25",
+    "directors": [
+      "Valerie Faris",
+      "Jonathan Dayton"
     ]
   },
   {
@@ -12466,6 +12639,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 249688,
+    "title": "The End of the Tour",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3fEuVd8Xorwtk5kFVvyiNlOtcIw.jpg",
+    "release_date": "2015-07-31",
+    "directors": [
+      "James Ponsoldt"
+    ]
+  },
+  {
     "id": 294254,
     "title": "Maze Runner: The Scorch Trials",
     "poster_url": "https://image.tmdb.org/t/p/w500/mYw7ZyejqSCPFlrT2jHZOESZDU3.jpg",
@@ -12553,6 +12735,15 @@ var MOVIES_DATA = [
     "release_date": "2015-11-25",
     "directors": [
       "Ryan Coogler"
+    ]
+  },
+  {
+    "id": 294016,
+    "title": "Trumbo",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2RERIRnZkROSeHZAIf8PSxhzOqs.jpg",
+    "release_date": "2015-11-25",
+    "directors": [
+      "Jay Roach"
     ]
   },
   {
@@ -12672,6 +12863,15 @@ var MOVIES_DATA = [
     "release_date": "2016-02-19",
     "directors": [
       "Robert Eggers"
+    ]
+  },
+  {
+    "id": 319888,
+    "title": "Eddie the Eagle",
+    "poster_url": "https://image.tmdb.org/t/p/w500/r562gvTRVHnDSvG7MrKHEECSn1V.jpg",
+    "release_date": "2016-02-26",
+    "directors": [
+      "Dexter Fletcher"
     ]
   },
   {
@@ -13174,6 +13374,16 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 369192,
+    "title": "Battle of the Sexes",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fWy0A3VojTCb0S2MKtEJjpquubF.jpg",
+    "release_date": "2017-09-29",
+    "directors": [
+      "Valerie Faris",
+      "Jonathan Dayton"
+    ]
+  },
+  {
     "id": 335984,
     "title": "Blade Runner 2049",
     "poster_url": "https://image.tmdb.org/t/p/w500/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg",
@@ -13297,6 +13507,15 @@ var MOVIES_DATA = [
     "release_date": "2018-01-19",
     "directors": [
       "Christian Gudegast"
+    ]
+  },
+  {
+    "id": 389015,
+    "title": "I, Tonya",
+    "poster_url": "https://image.tmdb.org/t/p/w500/6gNXwSHxaksR1PjVZRqNapmkgj3.jpg",
+    "release_date": "2018-01-19",
+    "directors": [
+      "Craig Gillespie"
     ]
   },
   {
@@ -15399,6 +15618,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 858024,
+    "title": "Hamnet",
+    "poster_url": "https://image.tmdb.org/t/p/w500/61xMzN4h8iLk0hq6oUzr9Ts6GE9.jpg",
+    "release_date": "2025-12-05",
+    "directors": [
+      "Chloé Zhao"
+    ]
+  },
+  {
     "id": 83533,
     "title": "Avatar: Fire and Ash",
     "poster_url": "https://image.tmdb.org/t/p/w500/cf7hE1ifY4UNbS25tGnaTyyDrI2.jpg",
@@ -15423,6 +15651,15 @@ var MOVIES_DATA = [
     "release_date": "2025-12-25",
     "directors": [
       "Tom Gormican"
+    ]
+  },
+  {
+    "id": 1317288,
+    "title": "Marty Supreme",
+    "poster_url": "https://image.tmdb.org/t/p/w500/firAhZA0uQvRL2slp7v3AnOj0ZX.jpg",
+    "release_date": "2025-12-25",
+    "directors": [
+      "Josh Safdie"
     ]
   }
 ];
