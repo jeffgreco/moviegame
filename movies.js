@@ -1,8 +1,18 @@
 // Movie data from TMDB
-// Last updated: 2026-01-28T19:29:29.444Z
-// Total movies: 1749
+// Last updated: 2026-01-28T21:45:22.077Z
+// Total movies: 1773
 
 var MOVIES_DATA = [
+  {
+    "id": 961,
+    "title": "The General",
+    "poster_url": "https://image.tmdb.org/t/p/w500/nIp4gIXogCjfB1QABNsWwa9gSca.jpg",
+    "release_date": "1927-01-15",
+    "directors": [
+      "Clyde Bruckman",
+      "Buster Keaton"
+    ]
+  },
   {
     "id": 3035,
     "title": "Frankenstein",
@@ -106,6 +116,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 213,
+    "title": "North by Northwest",
+    "poster_url": "https://image.tmdb.org/t/p/w500/kNOFPQrel9YFCVzI0DF8FnCEpCw.jpg",
+    "release_date": "1959-08-06",
+    "directors": [
+      "Alfred Hitchcock"
+    ]
+  },
+  {
     "id": 539,
     "title": "Psycho",
     "poster_url": "https://image.tmdb.org/t/p/w500/yz4QVqPx3h1hD1DfqqQkCq3rmxW.jpg",
@@ -114,6 +133,15 @@ var MOVIES_DATA = [
       "Alfred Hitchcock"
     ],
     "showDirector": true
+  },
+  {
+    "id": 11209,
+    "title": "The Alamo",
+    "poster_url": "https://image.tmdb.org/t/p/w500/54KNQfJnYZwhI3sPYyjXtptWGfg.jpg",
+    "release_date": "1960-10-24",
+    "directors": [
+      "John Wayne"
+    ]
   },
   {
     "id": 982,
@@ -573,6 +601,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 22784,
+    "title": "Boxcar Bertha",
+    "poster_url": "https://image.tmdb.org/t/p/w500/gF5VslUB2xpWbboc735VVnO7DXh.jpg",
+    "release_date": "1972-06-14",
+    "directors": [
+      "Martin Scorsese"
+    ]
+  },
+  {
     "id": 1688,
     "title": "Conquest of the Planet of the Apes",
     "poster_url": "https://image.tmdb.org/t/p/w500/lZ1pUxJCO14ObrhDuxTBuYm0tjN.jpg",
@@ -802,6 +839,15 @@ var MOVIES_DATA = [
     "showDirector": true
   },
   {
+    "id": 8333,
+    "title": "The Taking of Pelham One Two Three",
+    "poster_url": "https://image.tmdb.org/t/p/w500/vNhywp9w1DVG6BytxKp4kjtaaGC.jpg",
+    "release_date": "1974-10-02",
+    "directors": [
+      "Joseph Sargent"
+    ]
+  },
+  {
     "id": 30497,
     "title": "The Texas Chain Saw Massacre",
     "poster_url": "https://image.tmdb.org/t/p/w500/kI1XaqKxrccSHUCEyxNUzMnVkJZ.jpg",
@@ -1002,6 +1048,16 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 17814,
+    "title": "Assault on Precinct 13",
+    "poster_url": "https://image.tmdb.org/t/p/w500/RtGDEmXbSxE8NThCCY1SXFXLLw.jpg",
+    "release_date": "1976-11-05",
+    "directors": [
+      "John Carpenter"
+    ],
+    "showDirector": true
+  },
+  {
     "id": 7340,
     "title": "Carrie",
     "poster_url": "https://image.tmdb.org/t/p/w500/8tT1rqlsTguyfUBMrbHR9cv1rxM.jpg",
@@ -1026,6 +1082,15 @@ var MOVIES_DATA = [
     "release_date": "1976-11-27",
     "directors": [
       "Sidney Lumet"
+    ]
+  },
+  {
+    "id": 11558,
+    "title": "Silver Streak",
+    "poster_url": "https://image.tmdb.org/t/p/w500/gY1a4k9dalGx83D7TJ2C76xBprS.jpg",
+    "release_date": "1976-12-03",
+    "directors": [
+      "Arthur Hiller"
     ]
   },
   {
@@ -1256,7 +1321,8 @@ var MOVIES_DATA = [
     "release_date": "1979-04-13",
     "directors": [
       "George A. Romero"
-    ]
+    ],
+    "showDirector": true
   },
   {
     "id": 28942,
@@ -1344,6 +1410,15 @@ var MOVIES_DATA = [
     "title": "Being There",
     "poster_url": "https://image.tmdb.org/t/p/w500/3RO3jbCKEey2T9bYFkYt9xpwen9.jpg",
     "release_date": "1979-12-19"
+  },
+  {
+    "id": 790,
+    "title": "The Fog",
+    "poster_url": "https://image.tmdb.org/t/p/w500/12EeSboRofP3CI4SPmMFNNXCbtY.jpg",
+    "release_date": "1980-02-01",
+    "directors": [
+      "John Carpenter"
+    ]
   },
   {
     "id": 9659,
@@ -2447,6 +2522,15 @@ var MOVIES_DATA = [
     "release_date": "1985-12-06",
     "directors": [
       "John Landis"
+    ]
+  },
+  {
+    "id": 11893,
+    "title": "Runaway Train",
+    "poster_url": "https://image.tmdb.org/t/p/w500/A9pf9KjhqCGthu6PKAKE5E1qRNn.jpg",
+    "release_date": "1985-12-06",
+    "directors": [
+      "Andrei Konchalovsky"
     ]
   },
   {
@@ -3890,6 +3974,15 @@ var MOVIES_DATA = [
     "release_date": "1990-11-16",
     "directors": [
       "John G. Avildsen"
+    ]
+  },
+  {
+    "id": 771,
+    "title": "Home Alone",
+    "poster_url": "https://image.tmdb.org/t/p/w500/i5We88HdO9Nsrv8xLyo4toNsLUM.jpg",
+    "release_date": "1990-11-16",
+    "directors": [
+      "Chris Columbus"
     ]
   },
   {
@@ -5473,6 +5566,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 3512,
+    "title": "Under Siege 2: Dark Territory",
+    "poster_url": "https://image.tmdb.org/t/p/w500/gElwFCQTbSK5hdK0PVyia547nst.jpg",
+    "release_date": "1995-07-13",
+    "directors": [
+      "Geoff Murphy"
+    ]
+  },
+  {
     "id": 9603,
     "title": "Clueless",
     "poster_url": "https://image.tmdb.org/t/p/w500/8AwVTcgpTnmeOs4TdTWqcFDXEsA.jpg",
@@ -5659,6 +5761,15 @@ var MOVIES_DATA = [
     "release_date": "1995-11-17",
     "directors": [
       "Rob Reiner"
+    ]
+  },
+  {
+    "id": 11517,
+    "title": "Money Train",
+    "poster_url": "https://image.tmdb.org/t/p/w500/jWBDz6Mf9aQVBiUS76JQsEhvoJl.jpg",
+    "release_date": "1995-11-21",
+    "directors": [
+      "Joseph Ruben"
     ]
   },
   {
@@ -7279,6 +7390,15 @@ var MOVIES_DATA = [
     "release_date": "2000-11-22",
     "directors": [
       "M. Night Shyamalan"
+    ]
+  },
+  {
+    "id": 11849,
+    "title": "Dungeons & Dragons",
+    "poster_url": "https://image.tmdb.org/t/p/w500/tLCsyHLHhTbzKzsL3IcBNyDKlZm.jpg",
+    "release_date": "2000-12-08",
+    "directors": [
+      "Courtney Solomon"
     ]
   },
   {
@@ -9911,6 +10031,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 5876,
+    "title": "The Mist",
+    "poster_url": "https://image.tmdb.org/t/p/w500/1CvJ6diBACKPVGOpcWuY4XPQdqX.jpg",
+    "release_date": "2007-11-21",
+    "directors": [
+      "Frank Darabont"
+    ]
+  },
+  {
     "id": 6479,
     "title": "I Am Legend",
     "poster_url": "https://image.tmdb.org/t/p/w500/iPDkaSdKk2jRLTM65UOEoKtsIZ8.jpg",
@@ -10421,6 +10550,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 18487,
+    "title": "The Taking of Pelham 1 2 3",
+    "poster_url": "https://image.tmdb.org/t/p/w500/rEnyQiBu6goqJfvQXpUZQjpoHVp.jpg",
+    "release_date": "2009-06-11",
+    "directors": [
+      "Tony Scott"
+    ]
+  },
+  {
     "id": 18240,
     "title": "The Proposal",
     "poster_url": "https://image.tmdb.org/t/p/w500/6stnAm1wSek8ZrislwK4xGTyCnt.jpg",
@@ -10496,6 +10634,15 @@ var MOVIES_DATA = [
     "release_date": "2009-08-07",
     "directors": [
       "Nora Ephron"
+    ]
+  },
+  {
+    "id": 14869,
+    "title": "G.I. Joe: The Rise of Cobra",
+    "poster_url": "https://image.tmdb.org/t/p/w500/mc9b25IAprHfsaOz0wTshOwGHcY.jpg",
+    "release_date": "2009-08-07",
+    "directors": [
+      "Stephen Sommers"
     ]
   },
   {
@@ -12174,6 +12321,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 136797,
+    "title": "Need for Speed",
+    "poster_url": "https://image.tmdb.org/t/p/w500/45D153Bk0bNwonV1w5IBBvqssPV.jpg",
+    "release_date": "2014-03-14",
+    "directors": [
+      "Scott Waugh"
+    ]
+  },
+  {
     "id": 249397,
     "title": "Nymphomaniac: Vol. II",
     "poster_url": "https://image.tmdb.org/t/p/w500/iLUNqgNKuWn667kXCKztSxYbT3k.jpg",
@@ -12281,6 +12437,15 @@ var MOVIES_DATA = [
     "release_date": "2014-06-27",
     "directors": [
       "Michael Bay"
+    ]
+  },
+  {
+    "id": 110415,
+    "title": "Snowpiercer",
+    "poster_url": "https://image.tmdb.org/t/p/w500/kw6YQudA0TMcNmGUGy5XIw7zbnV.jpg",
+    "release_date": "2014-06-27",
+    "directors": [
+      "Bong Joon Ho"
     ]
   },
   {
@@ -12436,6 +12601,15 @@ var MOVIES_DATA = [
     "release_date": "2014-10-24",
     "directors": [
       "Justin Simien"
+    ]
+  },
+  {
+    "id": 242512,
+    "title": "Ouija",
+    "poster_url": "https://image.tmdb.org/t/p/w500/gwjHlGjK2xXKpjd65BWyAMwzTWC.jpg",
+    "release_date": "2014-10-24",
+    "directors": [
+      "Stiles White"
     ]
   },
   {
@@ -13063,6 +13237,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 313922,
+    "title": "Green Room",
+    "poster_url": "https://image.tmdb.org/t/p/w500/evZicaR7nXe4LiD9G6QYTorcJGO.jpg",
+    "release_date": "2016-04-29",
+    "directors": [
+      "Jeremy Saulnier"
+    ]
+  },
+  {
     "id": 271110,
     "title": "Captain America: Civil War",
     "poster_url": "https://image.tmdb.org/t/p/w500/rAGiXaUfPzY7CDEyNKUofk3Kw2e.jpg",
@@ -13170,6 +13353,15 @@ var MOVIES_DATA = [
     "release_date": "2016-07-22",
     "directors": [
       "Justin Lin"
+    ]
+  },
+  {
+    "id": 396535,
+    "title": "Train to Busan",
+    "poster_url": "https://image.tmdb.org/t/p/w500/vNVFt6dtcqnI7hqa6LFBUibuFiw.jpg",
+    "release_date": "2016-07-22",
+    "directors": [
+      "Yeon Sang-ho"
     ]
   },
   {
@@ -14026,6 +14218,15 @@ var MOVIES_DATA = [
     "directors": [
       "Anthony Russo",
       "Joe Russo"
+    ]
+  },
+  {
+    "id": 454458,
+    "title": "UglyDolls",
+    "poster_url": "https://image.tmdb.org/t/p/w500/p97LQ1TL95mptVL2AS8Rz1cJCQg.jpg",
+    "release_date": "2019-05-03",
+    "directors": [
+      "Kelly Asbury"
     ]
   },
   {
@@ -15078,6 +15279,15 @@ var MOVIES_DATA = [
     ]
   },
   {
+    "id": 1016084,
+    "title": "BlackBerry",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ePWKQzOnwabMcJsWYWIiy5p1Ofr.jpg",
+    "release_date": "2023-05-12",
+    "directors": [
+      "Matt Johnson"
+    ]
+  },
+  {
     "id": 385687,
     "title": "Fast X",
     "poster_url": "https://image.tmdb.org/t/p/w500/fiVW06jE7z9YnO4trhaMEdclSiC.jpg",
@@ -15732,6 +15942,15 @@ var MOVIES_DATA = [
     "release_date": "2025-11-07",
     "directors": [
       "Dan Trachtenberg"
+    ]
+  },
+  {
+    "id": 1241983,
+    "title": "Train Dreams",
+    "poster_url": "https://image.tmdb.org/t/p/w500/wfzYOVdafdbD1d3SxNqiBtV2Yhx.jpg",
+    "release_date": "2025-11-07",
+    "directors": [
+      "Clint Bentley"
     ]
   },
   {
