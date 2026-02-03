@@ -1156,7 +1156,21 @@ async function saveSchedule() {
 
         const result = await response.json();
         if (result.success) {
-            state.schedule = schedule;
+            // Merge saved schedule into state (don't replace - preserve other months)
+            // First, remove entries for the month(s) we just saved
+            const monthsUpdated = new Set();
+            Object.keys(schedule).forEach(date => {
+                const [year, month] = date.split('-');
+                monthsUpdated.add(`${year}-${month}`);
+            });
+            Object.keys(state.schedule).forEach(date => {
+                const [year, month] = date.split('-');
+                if (monthsUpdated.has(`${year}-${month}`)) {
+                    delete state.schedule[date];
+                }
+            });
+            // Then add the new entries
+            Object.assign(state.schedule, schedule);
             status.textContent = 'Saved!';
             status.className = 'saved';
             renderSchedule(); // Re-render to update rotation indicators

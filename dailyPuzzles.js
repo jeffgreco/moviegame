@@ -25,7 +25,9 @@ const PUZZLE_SCHEDULE = {
   "2026-02-02": "26btz",
   "2026-02-03": "wmh3t",
   "2026-02-04": "kqq89",
-  "2026-02-05": "4edeq"
+  "2026-02-05": "4edeq",
+  "2026-02-06": "wfq5e",
+  "2026-02-07": "f6n6a"
 };
 
 const DAILY_PUZZLES = [
@@ -535,6 +537,56 @@ const DAILY_PUZZLES = [
       575264, // Mission: Impossible - Dead Reckoning Part One (Jul 12, 2023)
       8333, // The Taking of Pelham One Two Three (Oct 2, 1974)
       213, // North by Northwest (Aug 6, 1959)
+    ],
+  },
+    {
+    id: "wfq5e",
+    theme: "Sentimental Value: Skarsgård Family Value",
+    description: "",
+    emoji: "🇸🇪",
+    movieIds: [
+      1124566, // Sentimental Value (Nov 21, 2025)
+      346364, // It (Sep 8, 2017)
+      639933, // The Northman (Apr 22, 2022)
+      489, // Good Will Hunting (Jan 9, 1998)
+      58, // Pirates of the Caribbean: Dead Man's Chest (Jul 7, 2006)
+      65754, // The Girl with the Dragon Tattoo (Dec 21, 2011)
+      62215, // Melancholia (Nov 11, 2011)
+      10195, // Thor (May 6, 2011)
+      249397, // Nymphomaniac: Vol. II (Mar 20, 2014)
+      913290, // Barbarian (Sep 9, 2022)
+      24428, // The Avengers (May 4, 2012)
+      16, // Dancer in the Dark (Oct 6, 2000)
+      333663, // War on Everyone (Mar 12, 2016)
+      553, // Dogville (Apr 23, 2004)
+      44833, // Battleship (May 18, 2012)
+      11631, // Mamma Mia! (Jul 18, 2008)
+      474350, // It Chapter Two (Sep 6, 2019)
+    ],
+  },
+    {
+    id: "f6n6a",
+    theme: "Bugonia: Girl Bosses",
+    description: "",
+    emoji: "🇸🇪",
+    movieIds: [
+      701387, // Bugonia (Oct 31, 2025)
+      4566, // Michael Clayton (Oct 12, 2007)
+      350, // The Devil Wears Prada (Jun 30, 2006)
+      19494, // Nine to Five (Dec 19, 1980)
+      3525, // Working Girl (Dec 20, 1988)
+      51540, // Horrible Bosses (Jul 8, 2011)
+      18240, // The Proposal (Jun 19, 2009)
+      71688, // The Iron Lady (Jan 13, 2012)
+      257211, // The Intern (Sep 25, 2015)
+      446354, // The Post (Jan 12, 2018)
+      274479, // Joy (Dec 25, 2015)
+      314, // Catwoman (Jul 23, 2004)
+      523172, // Late Night (Jun 7, 2019)
+      375262, // The Favourite (Dec 21, 2018)
+      11215, // Baby Boom (Oct 30, 1987)
+      601666, // I Care a Lot (Feb 19, 2021)
+      533533, // TRON: Ares (Oct 10, 2025)
     ],
   },
   // Future puzzles will be added here
