@@ -915,6 +915,69 @@ app.get('/api/analytics', (req, res) => {
     }
 });
 
+// Add missing movies from puzzles to database
+app.post('/api/add-missing-movies', async (req, res) => {
+    try {
+        const puzzles = loadExistingPuzzles();
+        const existingMovies = loadExistingMovies();
+        const existingIds = new Set(existingMovies.map(m => m.id));
+
+        // Collect all movie IDs from all puzzles
+        const allPuzzleMovieIds = new Set();
+        puzzles.forEach(puzzle => {
+            puzzle.movieIds?.forEach(id => allPuzzleMovieIds.add(id));
+        });
+
+        // Find IDs that are in puzzles but not in movies.js
+        const missingIds = [...allPuzzleMovieIds].filter(id => !existingIds.has(id));
+
+        if (missingIds.length === 0) {
+            return res.json({ success: true, added: 0, movies: [] });
+        }
+
+        console.log(`Found ${missingIds.length} missing movie(s): ${missingIds.join(', ')}`);
+
+        // Fetch each missing movie from TMDB
+        const addedMovies = [];
+        for (const movieId of missingIds) {
+            try {
+                console.log(`Fetching movie ${movieId} from TMDB...`);
+                const movie = await tmdbFetch(`/movie/${movieId}`);
+                const enriched = await enrichMovie(movie, true);
+
+                addedMovies.push({
+                    id: movie.id,
+                    title: movie.title,
+                    poster_url: enriched.poster_url,
+                    release_date: enriched.release_date,
+                    directors: enriched.directors || []
+                });
+
+                console.log(`  Added: ${movie.title}`);
+
+                // Small delay to respect TMDB rate limits
+                await new Promise(r => setTimeout(r, 100));
+            } catch (err) {
+                console.error(`  Error fetching movie ${movieId}:`, err.message);
+            }
+        }
+
+        if (addedMovies.length > 0) {
+            // Merge into database
+            mergeMoviesIntoDatabase(existingMovies, addedMovies);
+        }
+
+        res.json({
+            success: true,
+            added: addedMovies.length,
+            movies: addedMovies.map(m => ({ id: m.id, title: m.title }))
+        });
+    } catch (e) {
+        console.error('Add missing movies error:', e);
+        res.status(500).json({ success: false, error: e.message });
+    }
+});
+
 // Update schedule
 app.post('/api/schedule', (req, res) => {
     try {
@@ -980,11 +1043,15 @@ app.post('/api/puzzles', async (req, res) => {
         }
 
         // Handle adding new movies to database
+        // Filter out "Unknown" placeholder movies - they need to be fetched from TMDB first
         let moviesAdded = 0;
         if (addToDatabase) {
             const existingMovies = loadExistingMovies();
             const existingMovieIds = new Set(existingMovies.map(m => m.id));
-            const newMovies = movies.filter(m => !existingMovieIds.has(m.id));
+            const newMovies = movies.filter(m =>
+                !existingMovieIds.has(m.id) &&
+                !m.title?.startsWith('Unknown (')
+            );
             if (newMovies.length > 0) {
                 moviesAdded = mergeMoviesIntoDatabase(existingMovies, newMovies);
             }

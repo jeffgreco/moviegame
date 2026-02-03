@@ -826,8 +826,6 @@ async function exportPuzzle() {
         return;
     }
 
-    const addToDatabase = document.getElementById('add-to-database').checked;
-
     try {
         const response = await fetch('/api/export', {
             method: 'POST',
@@ -837,7 +835,7 @@ async function exportPuzzle() {
                 description: elements.puzzleDescription.value.trim(),
                 emoji: elements.puzzleEmoji.value.trim() || undefined,
                 movies: state.movies,
-                addToDatabase
+                addToDatabase: true
             })
         });
 
@@ -893,8 +891,6 @@ async function savePuzzle() {
         return;
     }
 
-    const addToDatabase = document.getElementById('add-to-database').checked;
-
     try {
         const response = await fetch('/api/puzzles', {
             method: 'POST',
@@ -905,7 +901,7 @@ async function savePuzzle() {
                 description: elements.puzzleDescription.value.trim(),
                 emoji: elements.puzzleEmoji.value.trim() || undefined,
                 movies: state.movies,
-                addToDatabase
+                addToDatabase: true
             })
         });
 
@@ -1482,11 +1478,53 @@ function renderActivityCalendar(container, activityData) {
     container.innerHTML = html;
 }
 
+// Add missing movies from all puzzles to the database
+async function addMissingMovies() {
+    const btn = document.getElementById('btn-add-missing-movies');
+    const originalText = btn.textContent;
+    btn.textContent = 'Finding missing...';
+    btn.disabled = true;
+
+    try {
+        const response = await fetch('/api/add-missing-movies', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' }
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            if (result.added === 0) {
+                alert('No missing movies found. All puzzle movies are in the database.');
+            } else {
+                alert(`Added ${result.added} missing movie(s) to movies.js:\n\n${result.movies.map(m => m.title).join('\n')}`);
+                // Reload existing movies cache
+                loadExistingMovies();
+                // Refresh analytics
+                loadAnalytics();
+            }
+        } else {
+            alert('Error: ' + result.error);
+        }
+    } catch (e) {
+        console.error('Failed to add missing movies:', e);
+        alert('Failed to add missing movies. Please try again.');
+    } finally {
+        btn.textContent = originalText;
+        btn.disabled = false;
+    }
+}
+
 // Setup analytics listeners
 document.addEventListener('DOMContentLoaded', () => {
     const refreshBtn = document.getElementById('btn-refresh-analytics');
     if (refreshBtn) {
         refreshBtn.addEventListener('click', loadAnalytics);
+    }
+
+    const addMissingBtn = document.getElementById('btn-add-missing-movies');
+    if (addMissingBtn) {
+        addMissingBtn.addEventListener('click', addMissingMovies);
     }
 });
 

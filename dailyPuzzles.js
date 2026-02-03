@@ -474,24 +474,25 @@ const DAILY_PUZZLES = [
       14337, // Primer (Oct 8, 2004)
     ],
   },
-    {
+      {
     id: "wmh3t",
     theme: "Sinners: Fight Your Way Out",
     description: "",
     emoji: "🧛🏿",
     movieIds: [
+      1233413, // Sinners (Apr 18, 2025)
       1091, // The Thing (Jun 25, 1982)
-      17814, // Assault on Precinct 13 (Nov 5, 1976)
+      17814, // Assault on Precinct 13 (Oct 8, 1976)
       11209, // The Alamo (Oct 24, 1960)
       9882, // The Siege (Nov 6, 1998)
-      313922, // Green Room (Apr 29, 2016)
+      313922, // Green Room (Sep 25, 2015)
       755, // From Dusk Till Dawn (Jan 19, 1996)
       923, // Dawn of the Dead (Apr 13, 1979)
       790, // The Fog (Feb 1, 1980)
       9362, // Tremors (Jan 19, 1990)
-      59678, // Attack the Block (Jul 29, 2011)
+      59678, // Attack the Block (Mar 12, 2011)
       1103, // Escape from New York (Jul 10, 1981)
-      771, // Home Alone (Nov 16, 1990)
+      771, // Home Alone (Nov 10, 1990)
     ],
   },
     {
