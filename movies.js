@@ -1,6 +1,6 @@
 // Movie data from TMDB
-// Last updated: 2026-02-03T18:03:32.968Z
-// Total movies: 1496
+// Last updated: 2026-02-07T22:22:19.585Z
+// Total movies: 1508
 
 var MOVIES_DATA = [
   {
@@ -1556,6 +1556,15 @@ var MOVIES_DATA = [
     "release_date": "1986-04-18"
   },
   {
+    "id": 2605,
+    "title": "Short Circuit",
+    "poster_url": "https://image.tmdb.org/t/p/w500/e3eimdUK6lLe0iaSlLrYVQF3yeL.jpg",
+    "release_date": "1986-05-09",
+    "directors": [
+      "John Badham"
+    ]
+  },
+  {
     "id": 744,
     "title": "Top Gun",
     "poster_url": "https://image.tmdb.org/t/p/w500/xUuHj3CgmZQ9P2cMaqQs4J0d4Zc.jpg",
@@ -1970,6 +1979,15 @@ var MOVIES_DATA = [
     "release_date": "1988-08-05"
   },
   {
+    "id": 28176,
+    "title": "Tucker: The Man and His Dream",
+    "poster_url": "https://image.tmdb.org/t/p/w500/uph7wz8WASLHwHyC5SYfQgqaoV7.jpg",
+    "release_date": "1988-08-12",
+    "directors": [
+      "Francis Ford Coppola"
+    ]
+  },
+  {
     "id": 9540,
     "title": "Dead Ringers",
     "poster_url": "https://image.tmdb.org/t/p/w500/ofXwDfM8uYAaftD7cBPcIWdCpMn.jpg",
@@ -2082,6 +2100,15 @@ var MOVIES_DATA = [
     "title": "Batman",
     "poster_url": "https://image.tmdb.org/t/p/w500/cij4dd21v2Rk2YtUQbV5kW69WB2.jpg",
     "release_date": "1989-06-23"
+  },
+  {
+    "id": 9354,
+    "title": "Honey, I Shrunk the Kids",
+    "poster_url": "https://image.tmdb.org/t/p/w500/omQOzahi2NIeiYznNxHFDvNbvo6.jpg",
+    "release_date": "1989-06-23",
+    "directors": [
+      "Joe Johnston"
+    ]
   },
   {
     "id": 10495,
@@ -2424,6 +2451,15 @@ var MOVIES_DATA = [
     "title": "Robin Hood: Prince of Thieves",
     "poster_url": "https://image.tmdb.org/t/p/w500/hbRnWUNJkKKVN5mkcuC5ooqjE4e.jpg",
     "release_date": "1991-06-14"
+  },
+  {
+    "id": 10249,
+    "title": "The Rocketeer",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2tDFRESFwKww1LHRE8W1Exj9edH.jpg",
+    "release_date": "1991-06-21",
+    "directors": [
+      "Joe Johnston"
+    ]
   },
   {
     "id": 37137,
@@ -3688,6 +3724,15 @@ var MOVIES_DATA = [
     "release_date": "1997-11-26"
   },
   {
+    "id": 9574,
+    "title": "Flubber",
+    "poster_url": "https://image.tmdb.org/t/p/w500/bnKvk04icAyCO1KjqhsaEXBO9aJ.jpg",
+    "release_date": "1997-11-26",
+    "directors": [
+      "Les Mayfield"
+    ]
+  },
+  {
     "id": 2639,
     "title": "Deconstructing Harry",
     "poster_url": "https://image.tmdb.org/t/p/w500/i7Z5DdznqANJUjqWISEFu9bw6J7.jpg",
@@ -3994,6 +4039,15 @@ var MOVIES_DATA = [
     "release_date": "1999-06-18",
     "directors": [
       "Tom Tykwer"
+    ]
+  },
+  {
+    "id": 3293,
+    "title": "Pirates of Silicon Valley",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ojebuTEgKU332KstOcE1B7nGBzi.jpg",
+    "release_date": "1999-06-20",
+    "directors": [
+      "Martyn Burke"
     ]
   },
   {
@@ -5294,6 +5348,15 @@ var MOVIES_DATA = [
     "release_date": "2004-12-24"
   },
   {
+    "id": 2567,
+    "title": "The Aviator",
+    "poster_url": "https://image.tmdb.org/t/p/w500/lx4kWcZc3o9PaNxlQpEJZM17XUI.jpg",
+    "release_date": "2004-12-25",
+    "directors": [
+      "Martin Scorsese"
+    ]
+  },
+  {
     "id": 5289,
     "title": "Chaos",
     "poster_url": "https://image.tmdb.org/t/p/w500/fsqOoouBsNo69vbh2WG6PtpzGBa.jpg",
@@ -6134,6 +6197,15 @@ var MOVIES_DATA = [
     "title": "Blindness",
     "poster_url": "https://image.tmdb.org/t/p/w500/deBsx5IxyqCC217j3VY24TkkE0Z.jpg",
     "release_date": "2008-10-03"
+  },
+  {
+    "id": 14914,
+    "title": "Flash of Genius",
+    "poster_url": "https://image.tmdb.org/t/p/w500/cGC0389cF8xbk5CYNzUqEVrw1CG.jpg",
+    "release_date": "2008-10-03",
+    "directors": [
+      "Marc Abraham"
+    ]
   },
   {
     "id": 12163,
@@ -7300,6 +7372,15 @@ var MOVIES_DATA = [
     "release_date": "2013-09-20"
   },
   {
+    "id": 49047,
+    "title": "Gravity",
+    "poster_url": "https://image.tmdb.org/t/p/w500/kZ2nZw8D681aphje8NJi8EfbL1U.jpg",
+    "release_date": "2013-10-04",
+    "directors": [
+      "Alfonso Cuarón"
+    ]
+  },
+  {
     "id": 122906,
     "title": "About Time",
     "poster_url": "https://image.tmdb.org/t/p/w500/iR1bVfURbN7r1C46WHFbwCkVve.jpg",
@@ -7685,6 +7766,15 @@ var MOVIES_DATA = [
     "release_date": "2015-04-03"
   },
   {
+    "id": 264660,
+    "title": "Ex Machina",
+    "poster_url": "https://image.tmdb.org/t/p/w500/dmJW8IAKHKxFNiUnoDR7JfsK7Rp.jpg",
+    "release_date": "2015-04-24",
+    "directors": [
+      "Alex Garland"
+    ]
+  },
+  {
     "id": 99861,
     "title": "Avengers: Age of Ultron",
     "poster_url": "https://image.tmdb.org/t/p/w500/4ssDuvEDkSArWEdyBl2X5EHvYKU.jpg",
@@ -7791,6 +7881,15 @@ var MOVIES_DATA = [
     "title": "Sicario",
     "poster_url": "https://image.tmdb.org/t/p/w500/lz8vNyXeidqqOdJW9ZjnDAMb5Vr.jpg",
     "release_date": "2015-10-02"
+  },
+  {
+    "id": 321697,
+    "title": "Steve Jobs",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ljiRO29Y9khEERRqMluptUYunJ9.jpg",
+    "release_date": "2015-10-23",
+    "directors": [
+      "Danny Boyle"
+    ]
   },
   {
     "id": 273477,
@@ -8811,6 +8910,15 @@ var MOVIES_DATA = [
     "title": "Spree",
     "poster_url": "https://image.tmdb.org/t/p/w500/tbYvzpy4QFhUHRBHe4VeUKJst96.jpg",
     "release_date": "2020-08-14"
+  },
+  {
+    "id": 517412,
+    "title": "Tesla",
+    "poster_url": "https://image.tmdb.org/t/p/w500/v0guO0krvyz8IfKGxEje04LVM9d.jpg",
+    "release_date": "2020-08-15",
+    "directors": [
+      "Michael Almereyda"
+    ]
   },
   {
     "id": 724989,

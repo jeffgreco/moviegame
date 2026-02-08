@@ -27,7 +27,8 @@ const PUZZLE_SCHEDULE = {
   "2026-02-04": "kqq89",
   "2026-02-05": "4edeq",
   "2026-02-06": "wfq5e",
-  "2026-02-07": "f6n6a"
+  "2026-02-07": "f6n6a",
+  "2026-02-08": "stpxk"
 };
 
 const DAILY_PUZZLES = [
@@ -588,6 +589,31 @@ const DAILY_PUZZLES = [
       11215, // Baby Boom (Oct 30, 1987)
       601666, // I Care a Lot (Feb 19, 2021)
       533533, // TRON: Ares (Oct 10, 2025)
+    ],
+  },
+    {
+    id: "stpxk",
+    theme: "Flashes of Genius",
+    description: "",
+    emoji: "🧠",
+    movieIds: [
+      14914, // Flash of Genius (Oct 3, 2008)
+      517412, // Tesla (Aug 15, 2020)
+      28176, // Tucker: The Man and His Dream (Aug 12, 1988)
+      205596, // The Imitation Game (Dec 19, 2014)
+      3293, // Pirates of Silicon Valley (Jun 20, 1999)
+      9354, // Honey, I Shrunk the Kids (Jun 23, 1989)
+      2605, // Short Circuit (May 9, 1986)
+      9574, // Flubber (Nov 26, 1997)
+      321697, // Steve Jobs (Oct 23, 2015)
+      1726, // Iron Man (May 2, 2008)
+      264660, // Ex Machina (Apr 24, 2015)
+      274479, // Joy (Dec 25, 2015)
+      105, // Back to the Future (Jul 3, 1985)
+      14337, // Primer (Oct 8, 2004)
+      10249, // The Rocketeer (Jun 21, 1991)
+      37799, // The Social Network (Oct 1, 2010)
+      2567, // The Aviator (Dec 25, 2004)
     ],
   },
   // Future puzzles will be added here
