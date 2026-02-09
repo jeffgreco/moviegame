@@ -426,6 +426,12 @@ class MovieTimelineGame {
     const dailyBtn = document.getElementById("daily-mode-btn");
     const challengeIndicator = document.getElementById("challenge-indicator");
 
+    // Hide daily button entirely if no daily puzzle is available today
+    if (dailyBtn) {
+      const hasDailyPuzzle = getTodaysPuzzle() !== null;
+      dailyBtn.style.display = hasDailyPuzzle ? "" : "none";
+    }
+
     if (this.gameMode === "challenge") {
       // For challenge mode, show random as active and display challenge indicator
       randomBtn.classList.add("active");
