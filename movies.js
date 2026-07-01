@@ -1,7 +1,7 @@
 // Movie data - English-language films only
 // 1968-1983: Top 10 per year | 1984-2026: Top 25 per year
 // Fetched from TMDB (https://www.themoviedb.org/)
-// Generated: 2026-06-01T00:36:41.774Z
+// Generated: 2026-07-01T00:36:11.563Z
 // Total movies: 1233
 
 const MOVIES_DATA = [
@@ -12,12 +12,6 @@ const MOVIES_DATA = [
     "release_date": "1968-02-07"
   },
   {
-    "id": 10794,
-    "title": "The Party",
-    "poster_url": "https://image.tmdb.org/t/p/w500/nWZ9rrbMoHHgsvYNdng2EhbjeLf.jpg",
-    "release_date": "1968-04-04"
-  },
-  {
     "id": 805,
     "title": "Rosemary's Baby",
     "poster_url": "https://image.tmdb.org/t/p/w500/uYgvlHceRFjAFbsNeMInYcLZLUb.jpg",
@@ -26,7 +20,7 @@ const MOVIES_DATA = [
   {
     "id": 4929,
     "title": "Hang 'em High",
-    "poster_url": "https://image.tmdb.org/t/p/w500/2J9QEqdJWjL2etOf6Kf7n33PUK4.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/gFvRKgCAa1MKlcAKZfoDNdR2dgy.jpg",
     "release_date": "1968-07-31"
   },
   {
@@ -54,6 +48,12 @@ const MOVIES_DATA = [
     "release_date": "1968-10-17"
   },
   {
+    "id": 14136,
+    "title": "The Love Bug",
+    "poster_url": "https://image.tmdb.org/t/p/w500/9Lc1efdYZUZia2zsRWcUkiD1KdN.jpg",
+    "release_date": "1968-12-23"
+  },
+  {
     "id": 11046,
     "title": "Where Eagles Dare",
     "poster_url": "https://image.tmdb.org/t/p/w500/dnyiVS4Ad4w4rfS4Bm1YalEdonx.jpg",
@@ -74,7 +74,7 @@ const MOVIES_DATA = [
   {
     "id": 624,
     "title": "Easy Rider",
-    "poster_url": "https://image.tmdb.org/t/p/w500/mmGEB6ly9OG8SYVfvAoa6QqHNvN.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3H3vwPGX6EbBRffIVHp3eHHcjka.jpg",
     "release_date": "1969-07-14"
   },
   {
@@ -128,7 +128,7 @@ const MOVIES_DATA = [
   {
     "id": 11916,
     "title": "Two Mules for Sister Sara",
-    "poster_url": "https://image.tmdb.org/t/p/w500/2G9eM8UAM57TanLBhuPmz3jaNZG.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/RbuNHMlrw7M2w1R3hZMAPwh6dG.jpg",
     "release_date": "1970-06-16"
   },
   {
@@ -164,20 +164,20 @@ const MOVIES_DATA = [
   {
     "id": 10112,
     "title": "The Aristocats",
-    "poster_url": "https://image.tmdb.org/t/p/w500/1BVOSmQUhphMgnTxnXyfQ9tL1Sc.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/aOWs5XMJEABN6SKCTJBCoeD1kCA.jpg",
     "release_date": "1970-12-24"
+  },
+  {
+    "id": 10514,
+    "title": "The Andromeda Strain",
+    "poster_url": "https://image.tmdb.org/t/p/w500/4FBSFz8wLpxd4o6hnvKOJJ8WSIz.jpg",
+    "release_date": "1971-03-12"
   },
   {
     "id": 11951,
     "title": "Vanishing Point",
     "poster_url": "https://image.tmdb.org/t/p/w500/1ThnpFx2G2HPhecvODGFEQxfOpO.jpg",
     "release_date": "1971-03-13"
-  },
-  {
-    "id": 11302,
-    "title": "Bananas",
-    "poster_url": "https://image.tmdb.org/t/p/w500/gK11RUXspxqty0Wq6KoV8J0crKO.jpg",
-    "release_date": "1971-04-28"
   },
   {
     "id": 1687,
@@ -198,16 +198,16 @@ const MOVIES_DATA = [
     "release_date": "1971-10-09"
   },
   {
-    "id": 14811,
-    "title": "Fiddler on the Roof",
-    "poster_url": "https://image.tmdb.org/t/p/w500/v65PHx7Q6Jx0anyNeUOX07SJic9.jpg",
-    "release_date": "1971-11-03"
-  },
-  {
     "id": 681,
     "title": "Diamonds Are Forever",
     "poster_url": "https://image.tmdb.org/t/p/w500/ooDT0eKrWCxJCsn9JehPkD0QYNj.jpg",
     "release_date": "1971-12-17"
+  },
+  {
+    "id": 343,
+    "title": "Harold and Maude",
+    "poster_url": "https://image.tmdb.org/t/p/w500/t7qEuGwDjcYu8ajaKZ68DeDnOxw.jpg",
+    "release_date": "1971-12-20"
   },
   {
     "id": 984,
@@ -226,12 +226,6 @@ const MOVIES_DATA = [
     "title": "Cabaret",
     "poster_url": "https://image.tmdb.org/t/p/w500/fMhOeJ2TvuY46iYGmsowhgRXfnr.jpg",
     "release_date": "1972-02-13"
-  },
-  {
-    "id": 811,
-    "title": "Silent Running",
-    "poster_url": "https://image.tmdb.org/t/p/w500/ahasZ5HILZHtlrl6cbXgpfk0y8H.jpg",
-    "release_date": "1972-03-10"
   },
   {
     "id": 573,
@@ -276,6 +270,12 @@ const MOVIES_DATA = [
     "release_date": "1972-12-13"
   },
   {
+    "id": 11901,
+    "title": "High Plains Drifter",
+    "poster_url": "https://image.tmdb.org/t/p/w500/AjkJCFkqanK1OZqiHxc6Kl2wPQO.jpg",
+    "release_date": "1973-04-19"
+  },
+  {
     "id": 12101,
     "title": "Soylent Green",
     "poster_url": "https://image.tmdb.org/t/p/w500/5nbkShkOEXUoKVhaX0XG41wyBkq.jpg",
@@ -312,15 +312,15 @@ const MOVIES_DATA = [
     "release_date": "1973-11-08"
   },
   {
-    "id": 5924,
-    "title": "Papillon",
-    "poster_url": "https://image.tmdb.org/t/p/w500/356oqQpug682OERsWV0bGZ0YxwQ.jpg",
-    "release_date": "1973-12-16"
-  },
-  {
     "id": 9277,
     "title": "The Sting",
     "poster_url": "https://image.tmdb.org/t/p/w500/ckmYng37zey8INYf6d10cVgIG93.jpg",
+    "release_date": "1973-12-25"
+  },
+  {
+    "id": 10648,
+    "title": "Magnum Force",
+    "poster_url": "https://image.tmdb.org/t/p/w500/1uX1uzn09seCftG3rTGLPyFXxV6.jpg",
     "release_date": "1973-12-25"
   },
   {
@@ -336,10 +336,10 @@ const MOVIES_DATA = [
     "release_date": "1974-02-07"
   },
   {
-    "id": 8348,
-    "title": "Thunderbolt and Lightfoot",
-    "poster_url": "https://image.tmdb.org/t/p/w500/530RZ2HsxAgKVO4joNFjAgucbri.jpg",
-    "release_date": "1974-05-23"
+    "id": 592,
+    "title": "The Conversation",
+    "poster_url": "https://image.tmdb.org/t/p/w500/dHqVBwcv1SGymOpUueRoKzcmdes.jpg",
+    "release_date": "1974-04-07"
   },
   {
     "id": 829,
@@ -352,12 +352,6 @@ const MOVIES_DATA = [
     "title": "Death Wish",
     "poster_url": "https://image.tmdb.org/t/p/w500/rNksI6UiuTgLtBy69WvKT1PrG0R.jpg",
     "release_date": "1974-07-24"
-  },
-  {
-    "id": 16307,
-    "title": "The Wicker Man",
-    "poster_url": "https://image.tmdb.org/t/p/w500/wwtrXRL8SiOWxhwLEvw7iBgYh0g.jpg",
-    "release_date": "1974-08-07"
   },
   {
     "id": 30497,
@@ -422,7 +416,7 @@ const MOVIES_DATA = [
   {
     "id": 762,
     "title": "Monty Python and the Holy Grail",
-    "poster_url": "https://image.tmdb.org/t/p/w500/h3rksLHevpCbHfSoaUXm85nt2CH.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/7nTkHjETdGMYK1phHwDbPsrzbYl.jpg",
     "release_date": "1975-07-18"
   },
   {
@@ -464,8 +458,14 @@ const MOVIES_DATA = [
   {
     "id": 891,
     "title": "All the President's Men",
-    "poster_url": "https://image.tmdb.org/t/p/w500/cPtSHR7D2WGsDBfnC5DxV927hKn.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/pCe6lfLxt1B58zPD4lgQrlnDS2j.jpg",
     "release_date": "1976-04-09"
+  },
+  {
+    "id": 10803,
+    "title": "Logan's Run",
+    "poster_url": "https://image.tmdb.org/t/p/w500/v3ILN8ROPcrNRJ8S7GH24JyihH8.jpg",
+    "release_date": "1976-06-23"
   },
   {
     "id": 794,
@@ -494,7 +494,7 @@ const MOVIES_DATA = [
   {
     "id": 1366,
     "title": "Rocky",
-    "poster_url": "https://image.tmdb.org/t/p/w500/hEjK9A9BkNXejFW4tfacVAEHtkn.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/aYtBYWqCdUqcnoodWJdcTG3pFev.jpg",
     "release_date": "1976-12-03"
   },
   {
@@ -512,7 +512,7 @@ const MOVIES_DATA = [
   {
     "id": 250480,
     "title": "The Many Adventures of Winnie the Pooh",
-    "poster_url": "https://image.tmdb.org/t/p/w500/cT1oDTMwVMVvkaBkbyCKxvtZ8TQ.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/nefc61WQGahSWoNRrndoqinrZQu.jpg",
     "release_date": "1977-03-11"
   },
   {
@@ -520,12 +520,6 @@ const MOVIES_DATA = [
     "title": "Annie Hall",
     "poster_url": "https://image.tmdb.org/t/p/w500/dEtjPywhDbAXYjoFfhBC4U9unU7.jpg",
     "release_date": "1977-04-20"
-  },
-  {
-    "id": 11006,
-    "title": "Smokey and the Bandit",
-    "poster_url": "https://image.tmdb.org/t/p/w500/2dI1Z427FPoicySnXmzwlEUX0RX.jpg",
-    "release_date": "1977-05-27"
   },
   {
     "id": 5902,
@@ -542,7 +536,7 @@ const MOVIES_DATA = [
   {
     "id": 38985,
     "title": "Sorcerer",
-    "poster_url": "https://image.tmdb.org/t/p/w500/xDQWVAxQPflZPrnXznfJZ2cyYxp.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2b7oexm173SF1FSEq0DdgxZZNRH.jpg",
     "release_date": "1977-06-24"
   },
   {
@@ -556,6 +550,12 @@ const MOVIES_DATA = [
     "title": "Close Encounters of the Third Kind",
     "poster_url": "https://image.tmdb.org/t/p/w500/yaPx3cK9zGFX3SbcKwxWM1QIbUh.jpg",
     "release_date": "1977-12-14"
+  },
+  {
+    "id": 11009,
+    "title": "Saturday Night Fever",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ylA7E5Md21aqgzxbwa2dFxX8LKV.jpg",
+    "release_date": "1977-12-16"
   },
   {
     "id": 985,
@@ -594,12 +594,6 @@ const MOVIES_DATA = [
     "release_date": "1978-10-27"
   },
   {
-    "id": 11327,
-    "title": "Midnight Express",
-    "poster_url": "https://image.tmdb.org/t/p/w500/mIzGfVCSWmmYjLIIbA2BX3rlV56.jpg",
-    "release_date": "1978-10-27"
-  },
-  {
     "id": 123,
     "title": "The Lord of the Rings",
     "poster_url": "https://image.tmdb.org/t/p/w500/liW0mjvTyLs7UCumaHhx3PpU4VT.jpg",
@@ -618,16 +612,16 @@ const MOVIES_DATA = [
     "release_date": "1978-12-15"
   },
   {
+    "id": 11850,
+    "title": "Invasion of the Body Snatchers",
+    "poster_url": "https://image.tmdb.org/t/p/w500/skS02wdeH2C0nrbCQP3qKwJdZtZ.jpg",
+    "release_date": "1978-12-22"
+  },
+  {
     "id": 11474,
     "title": "The Warriors",
     "poster_url": "https://image.tmdb.org/t/p/w500/d6YZpBq4BhQr1K985J3CuL1cA8J.jpg",
     "release_date": "1979-02-09"
-  },
-  {
-    "id": 10654,
-    "title": "Hair",
-    "poster_url": "https://image.tmdb.org/t/p/w500/qrZIlVCL9UyEBsgOGbisNzuWjX.jpg",
-    "release_date": "1979-03-15"
   },
   {
     "id": 923,
@@ -672,10 +666,10 @@ const MOVIES_DATA = [
     "release_date": "1979-12-07"
   },
   {
-    "id": 790,
-    "title": "The Fog",
-    "poster_url": "https://image.tmdb.org/t/p/w500/12EeSboRofP3CI4SPmMFNNXCbtY.jpg",
-    "release_date": "1980-02-01"
+    "id": 12102,
+    "title": "Kramer vs. Kramer",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3CUP5V5SWfHSK4qvkZF7lMNyugY.jpg",
+    "release_date": "1979-12-19"
   },
   {
     "id": 9659,
@@ -720,6 +714,12 @@ const MOVIES_DATA = [
     "release_date": "1980-07-05"
   },
   {
+    "id": 1955,
+    "title": "The Elephant Man",
+    "poster_url": "https://image.tmdb.org/t/p/w500/u0wpPYjuSt8DIe1Y3Vapnh8jcKE.jpg",
+    "release_date": "1980-10-10"
+  },
+  {
     "id": 1578,
     "title": "Raging Bull",
     "poster_url": "https://image.tmdb.org/t/p/w500/1WV7WlTS8LI1L5NkCgjWT9GSW3O.jpg",
@@ -732,16 +732,22 @@ const MOVIES_DATA = [
     "release_date": "1981-06-12"
   },
   {
+    "id": 10323,
+    "title": "Clash of the Titans",
+    "poster_url": "https://image.tmdb.org/t/p/w500/5JCLODNLJH6alc3KmyoiC21Nlob.jpg",
+    "release_date": "1981-06-12"
+  },
+  {
     "id": 8536,
     "title": "Superman II",
     "poster_url": "https://image.tmdb.org/t/p/w500/3xk5cno9BHcnwc97XO9k21aI1Zi.jpg",
     "release_date": "1981-06-17"
   },
   {
-    "id": 699,
-    "title": "For Your Eyes Only",
-    "poster_url": "https://image.tmdb.org/t/p/w500/xV4Nnr6DjjERlqNikqDQX8LUgua.jpg",
-    "release_date": "1981-06-26"
+    "id": 11286,
+    "title": "The Cannonball Run",
+    "poster_url": "https://image.tmdb.org/t/p/w500/pvn9SbMq9q8wJXt3KAp9kP7pmpb.jpg",
+    "release_date": "1981-06-19"
   },
   {
     "id": 10948,
@@ -762,22 +768,16 @@ const MOVIES_DATA = [
     "release_date": "1981-08-21"
   },
   {
-    "id": 14412,
-    "title": "Body Heat",
-    "poster_url": "https://image.tmdb.org/t/p/w500/5LipPcaW1J9IjAP7TOTesw8OcMS.jpg",
-    "release_date": "1981-08-28"
-  },
-  {
     "id": 764,
     "title": "The Evil Dead",
     "poster_url": "https://image.tmdb.org/t/p/w500/54C1qdaiSijIU5NeNb4WsPJdNkG.jpg",
     "release_date": "1981-10-15"
   },
   {
-    "id": 10246,
-    "title": "Porky's",
-    "poster_url": "https://image.tmdb.org/t/p/w500/AqCOt1cWfKqCepxK7LIdT812idH.jpg",
-    "release_date": "1982-03-19"
+    "id": 11281,
+    "title": "Halloween II",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3nX5HHGgOKaVMxXwMLT9DHO1Ne6.jpg",
+    "release_date": "1981-10-30"
   },
   {
     "id": 9387,
@@ -794,7 +794,7 @@ const MOVIES_DATA = [
   {
     "id": 1371,
     "title": "Rocky III",
-    "poster_url": "https://image.tmdb.org/t/p/w500/lklrplDDuALhY3k8IDFdRqtpZPk.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/uqw16i2kmwVqkJHzjzbDU4xZ0Pl.jpg",
     "release_date": "1982-05-28"
   },
   {
@@ -804,15 +804,15 @@ const MOVIES_DATA = [
     "release_date": "1982-06-11"
   },
   {
-    "id": 78,
-    "title": "Blade Runner",
-    "poster_url": "https://image.tmdb.org/t/p/w500/63N9uy8nd9j7Eog2axPQ8lbr3Wj.jpg",
-    "release_date": "1982-06-25"
-  },
-  {
     "id": 1091,
     "title": "The Thing",
     "poster_url": "https://image.tmdb.org/t/p/w500/tzGY49kseSE9QAKk47uuDGwnSCu.jpg",
+    "release_date": "1982-06-25"
+  },
+  {
+    "id": 78,
+    "title": "Blade Runner",
+    "poster_url": "https://image.tmdb.org/t/p/w500/63N9uy8nd9j7Eog2axPQ8lbr3Wj.jpg",
     "release_date": "1982-06-25"
   },
   {
@@ -828,16 +828,16 @@ const MOVIES_DATA = [
     "release_date": "1982-08-13"
   },
   {
-    "id": 1368,
-    "title": "First Blood",
-    "poster_url": "https://image.tmdb.org/t/p/w500/dR5fbo0ry5TsC7euEXFUkx2QzVk.jpg",
-    "release_date": "1982-10-22"
+    "id": 12104,
+    "title": "Pink Floyd: The Wall",
+    "poster_url": "https://image.tmdb.org/t/p/w500/aElHyIdF5jmctFGhlhhaPFsbBJC.jpg",
+    "release_date": "1982-09-17"
   },
   {
-    "id": 609,
-    "title": "Poltergeist",
-    "poster_url": "https://image.tmdb.org/t/p/w500/m5AKo8iZAYulI87Uzxkn87vRY07.jpg",
-    "release_date": "1982-10-29"
+    "id": 1368,
+    "title": "First Blood",
+    "poster_url": "https://image.tmdb.org/t/p/w500/a9sa6ERZCpplbPEO7OMWE763CLD.jpg",
+    "release_date": "1982-10-22"
   },
   {
     "id": 150,
@@ -876,10 +876,10 @@ const MOVIES_DATA = [
     "release_date": "1983-06-07"
   },
   {
-    "id": 700,
-    "title": "Octopussy",
-    "poster_url": "https://image.tmdb.org/t/p/w500/yoosZitM9igSk3Sd0sBXIhKlAh1.jpg",
-    "release_date": "1983-06-10"
+    "id": 17692,
+    "title": "Jaws 3-D",
+    "poster_url": "https://image.tmdb.org/t/p/w500/kqDXj53F9paqVGJLGfHtz7giJ3s.jpg",
+    "release_date": "1983-07-22"
   },
   {
     "id": 11153,
@@ -888,10 +888,10 @@ const MOVIES_DATA = [
     "release_date": "1983-07-29"
   },
   {
-    "id": 10489,
-    "title": "Cujo",
-    "poster_url": "https://image.tmdb.org/t/p/w500/uNBt2YxrQdyOjnm2rDQ5QiCmQ0K.jpg",
-    "release_date": "1983-08-12"
+    "id": 849,
+    "title": "Krull",
+    "poster_url": "https://image.tmdb.org/t/p/w500/izDbySIrTmID0Nh6UqcWrUvOMjU.jpg",
+    "release_date": "1983-07-29"
   },
   {
     "id": 92060,
@@ -932,7 +932,7 @@ const MOVIES_DATA = [
   {
     "id": 9326,
     "title": "Romancing the Stone",
-    "poster_url": "https://image.tmdb.org/t/p/w500/qaCLbDs6Ace4I1lAbBNWPQAm75h.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qfIlVOYZH5RiZ0ndFKUpr5Zn2Bx.jpg",
     "release_date": "1984-03-30"
   },
   {
@@ -946,6 +946,12 @@ const MOVIES_DATA = [
     "title": "Sixteen Candles",
     "poster_url": "https://image.tmdb.org/t/p/w500/A3WGCAgJF33kZdlxUdyXHYdbYax.jpg",
     "release_date": "1984-05-04"
+  },
+  {
+    "id": 11393,
+    "title": "The Natural",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fwn1gYeOkS1XHKVFdNorKSIpix8.jpg",
+    "release_date": "1984-05-11"
   },
   {
     "id": 87,
@@ -987,6 +993,12 @@ const MOVIES_DATA = [
     "id": 12309,
     "title": "Bachelor Party",
     "poster_url": "https://image.tmdb.org/t/p/w500/dZf3UpPZDvJYTODSUJQy7wYEop.jpg",
+    "release_date": "1984-06-29"
+  },
+  {
+    "id": 9610,
+    "title": "Conan the Destroyer",
+    "poster_url": "https://image.tmdb.org/t/p/w500/m5i7S46DT1ESy7URkh2l92awGRr.jpg",
     "release_date": "1984-06-29"
   },
   {
@@ -1044,21 +1056,9 @@ const MOVIES_DATA = [
     "release_date": "1984-12-05"
   },
   {
-    "id": 4437,
-    "title": "2010",
-    "poster_url": "https://image.tmdb.org/t/p/w500/mEWKXuCMv7mFMxXVSTI3v8UOQuq.jpg",
-    "release_date": "1984-12-06"
-  },
-  {
     "id": 841,
     "title": "Dune",
     "poster_url": "https://image.tmdb.org/t/p/w500/4kJmUCE7mkVJjXa7A0g2rY4IGTm.jpg",
-    "release_date": "1984-12-14"
-  },
-  {
-    "id": 9663,
-    "title": "Starman",
-    "poster_url": "https://image.tmdb.org/t/p/w500/cgDeFWkYi6e9FT5RiQPCbQ9HlXZ.jpg",
     "release_date": "1984-12-14"
   },
   {
@@ -1070,14 +1070,8 @@ const MOVIES_DATA = [
   {
     "id": 11368,
     "title": "Blood Simple",
-    "poster_url": "https://image.tmdb.org/t/p/w500/svU6pu4lfHn0T5BVZchVxL58HB5.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/1DuCXzYWMAE9oGpxIrFWMn1NS0W.jpg",
     "release_date": "1985-01-18"
-  },
-  {
-    "id": 9281,
-    "title": "Witness",
-    "poster_url": "https://image.tmdb.org/t/p/w500/kOymD1rChAMykmDVEzJpIh4OYS7.jpg",
-    "release_date": "1985-02-08"
   },
   {
     "id": 2108,
@@ -1094,7 +1088,7 @@ const MOVIES_DATA = [
   {
     "id": 1369,
     "title": "Rambo: First Blood Part II",
-    "poster_url": "https://image.tmdb.org/t/p/w500/pzPdwOitmTleVE3YPMfIQgLh84p.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fVwRtWqEPdsCH21BVDGqgkAQcff.jpg",
     "release_date": "1985-05-21"
   },
   {
@@ -1140,15 +1134,21 @@ const MOVIES_DATA = [
     "release_date": "1985-07-08"
   },
   {
-    "id": 11509,
-    "title": "Silverado",
-    "poster_url": "https://image.tmdb.org/t/p/w500/k6zurzegRKsNGMICXZ57VJDUzXO.jpg",
-    "release_date": "1985-07-10"
+    "id": 10957,
+    "title": "The Black Cauldron",
+    "poster_url": "https://image.tmdb.org/t/p/w500/h64i9e6oJs2jrDZ4QzspXMqZhPF.jpg",
+    "release_date": "1985-07-24"
   },
   {
     "id": 11814,
     "title": "Weird Science",
     "poster_url": "https://image.tmdb.org/t/p/w500/jaEauZd2joSAKn42D83gm3S0y3F.jpg",
+    "release_date": "1985-08-02"
+  },
+  {
+    "id": 11797,
+    "title": "Fright Night",
+    "poster_url": "https://image.tmdb.org/t/p/w500/euIh75MwNDrYkTEVSkw7VXWGXoE.jpg",
     "release_date": "1985-08-02"
   },
   {
@@ -1182,6 +1182,12 @@ const MOVIES_DATA = [
     "release_date": "1985-11-21"
   },
   {
+    "id": 10303,
+    "title": "The Jewel of the Nile",
+    "poster_url": "https://image.tmdb.org/t/p/w500/6VjsIhnIcrz2XdQVHdsMj5DdSa1.jpg",
+    "release_date": "1985-12-04"
+  },
+  {
     "id": 15196,
     "title": "Clue",
     "poster_url": "https://image.tmdb.org/t/p/w500/aRxbYOYHS8T73nzR8hsLousoplR.jpg",
@@ -1198,18 +1204,6 @@ const MOVIES_DATA = [
     "title": "Out of Africa",
     "poster_url": "https://image.tmdb.org/t/p/w500/6oMKqh08TfxmvnoFR4mm1wZB67P.jpg",
     "release_date": "1985-12-20"
-  },
-  {
-    "id": 11864,
-    "title": "Enemy Mine",
-    "poster_url": "https://image.tmdb.org/t/p/w500/a3dr9L8VIjhEvivzQ2M12VQDere.jpg",
-    "release_date": "1985-12-20"
-  },
-  {
-    "id": 16113,
-    "title": "The Delta Force",
-    "poster_url": "https://image.tmdb.org/t/p/w500/lW94s7xxkdOzYcueaqGJwcVVvjt.jpg",
-    "release_date": "1986-02-14"
   },
   {
     "id": 10068,
@@ -1236,10 +1230,22 @@ const MOVIES_DATA = [
     "release_date": "1986-03-07"
   },
   {
+    "id": 10466,
+    "title": "The Money Pit",
+    "poster_url": "https://image.tmdb.org/t/p/w500/bohhidIi1WWU5NNYF9l5wLQu3Ii.jpg",
+    "release_date": "1986-03-26"
+  },
+  {
     "id": 11976,
     "title": "Legend",
     "poster_url": "https://image.tmdb.org/t/p/w500/6n3PQSYpZRK5YPk2w8JEwED7AZk.jpg",
     "release_date": "1986-04-18"
+  },
+  {
+    "id": 2605,
+    "title": "Short Circuit",
+    "poster_url": "https://image.tmdb.org/t/p/w500/e3eimdUK6lLe0iaSlLrYVQF3yeL.jpg",
+    "release_date": "1986-05-09"
   },
   {
     "id": 744,
@@ -1268,13 +1274,13 @@ const MOVIES_DATA = [
   {
     "id": 13597,
     "title": "Labyrinth",
-    "poster_url": "https://image.tmdb.org/t/p/w500/hbSdA1DmNA9IlfVoqJkIWYF2oYm.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/pejayhTVBEL4w8YKSfrhOjjWVlH.jpg",
     "release_date": "1986-06-27"
   },
   {
     "id": 6978,
     "title": "Big Trouble in Little China",
-    "poster_url": "https://image.tmdb.org/t/p/w500/gI2Qs1yTTj3NcESJyttCkbmJ4k9.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/rCy3CFJfWVBSyiVcFOQMcMAh5R2.jpg",
     "release_date": "1986-07-02"
   },
   {
@@ -1290,6 +1296,18 @@ const MOVIES_DATA = [
     "release_date": "1986-07-18"
   },
   {
+    "id": 10225,
+    "title": "Jason Lives - Friday the 13th Part VI",
+    "poster_url": "https://image.tmdb.org/t/p/w500/6vdUpHvkspQonXBdWcLWW5ciEPJ.jpg",
+    "release_date": "1986-08-01"
+  },
+  {
+    "id": 1857,
+    "title": "The Transformers: The Movie",
+    "poster_url": "https://image.tmdb.org/t/p/w500/xJ5W0mOAWCVaXmU0pBZh4NjSRv2.jpg",
+    "release_date": "1986-08-08"
+  },
+  {
     "id": 9426,
     "title": "The Fly",
     "poster_url": "https://image.tmdb.org/t/p/w500/8gZWMhJHRvaXdXsNhERtqNHYpH3.jpg",
@@ -1299,12 +1317,6 @@ const MOVIES_DATA = [
     "id": 235,
     "title": "Stand by Me",
     "poster_url": "https://image.tmdb.org/t/p/w500/vz0w9BSehcqjDcJOjRaCk7fgJe7.jpg",
-    "release_date": "1986-08-22"
-  },
-  {
-    "id": 16337,
-    "title": "The Texas Chainsaw Massacre 2",
-    "poster_url": "https://image.tmdb.org/t/p/w500/cO1Dvg7k87lHSPOdumn3ddJEKdX.jpg",
     "release_date": "1986-08-22"
   },
   {
@@ -1326,15 +1338,15 @@ const MOVIES_DATA = [
     "release_date": "1986-09-26"
   },
   {
-    "id": 10017,
-    "title": "The Wraith",
-    "poster_url": "https://image.tmdb.org/t/p/w500/vHrNnqqRYWzkkrJV8MtmUGgC4Kk.jpg",
+    "id": 4978,
+    "title": "An American Tail",
+    "poster_url": "https://image.tmdb.org/t/p/w500/51pLurrIQDhXZab4cv8lHP32UiR.jpg",
     "release_date": "1986-11-21"
   },
   {
-    "id": 4978,
-    "title": "An American Tail",
-    "poster_url": "https://image.tmdb.org/t/p/w500/wjhUy9af89vc9CviKcPgTNTrmIq.jpg",
+    "id": 10017,
+    "title": "The Wraith",
+    "poster_url": "https://image.tmdb.org/t/p/w500/vHrNnqqRYWzkkrJV8MtmUGgC4Kk.jpg",
     "release_date": "1986-11-21"
   },
   {
@@ -1342,18 +1354,6 @@ const MOVIES_DATA = [
     "title": "Star Trek IV: The Voyage Home",
     "poster_url": "https://image.tmdb.org/t/p/w500/xY5TzGXJOB3L9rhZ1MbbPyVlW5J.jpg",
     "release_date": "1986-11-26"
-  },
-  {
-    "id": 10015,
-    "title": "Heartbreak Ridge",
-    "poster_url": "https://image.tmdb.org/t/p/w500/aMr99UigkMCTSPnLTpkzJeLmpyc.jpg",
-    "release_date": "1986-12-05"
-  },
-  {
-    "id": 10776,
-    "title": "Little Shop of Horrors",
-    "poster_url": "https://image.tmdb.org/t/p/w500/mY1ziATo4PNl9VkuaeTT8nMSDQq.jpg",
-    "release_date": "1986-12-19"
   },
   {
     "id": 873,
@@ -1368,12 +1368,6 @@ const MOVIES_DATA = [
     "release_date": "1987-02-06"
   },
   {
-    "id": 10019,
-    "title": "Mannequin",
-    "poster_url": "https://image.tmdb.org/t/p/w500/oHMA8euTiZdDFXDi5zaIQQXwl0K.jpg",
-    "release_date": "1987-02-13"
-  },
-  {
     "id": 1825,
     "title": "Over the Top",
     "poster_url": "https://image.tmdb.org/t/p/w500/a926UPf4EYbHfjdzf012M5YHiQ5.jpg",
@@ -1382,7 +1376,7 @@ const MOVIES_DATA = [
   {
     "id": 941,
     "title": "Lethal Weapon",
-    "poster_url": "https://image.tmdb.org/t/p/w500/6gt44oqb4nE8vflPElffeGwsHVl.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fTq4ThIP3pQTYR9eDepsbDHqdcs.jpg",
     "release_date": "1987-03-06"
   },
   {
@@ -1412,13 +1406,19 @@ const MOVIES_DATA = [
   {
     "id": 106,
     "title": "Predator",
-    "poster_url": "https://image.tmdb.org/t/p/w500/k3mW4qfJo6SKqe6laRyNGnbB9n5.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/aN3cdjIK70KGmD84et8MMblU87Q.jpg",
+    "release_date": "1987-06-12"
+  },
+  {
+    "id": 6069,
+    "title": "The Witches of Eastwick",
+    "poster_url": "https://image.tmdb.org/t/p/w500/p5OivnZuXfy5E3BKKFIeSidmwys.jpg",
     "release_date": "1987-06-12"
   },
   {
     "id": 957,
     "title": "Spaceballs",
-    "poster_url": "https://image.tmdb.org/t/p/w500/kNbaxEsnCyWBTfANVPHayujBsxp.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/aHNeKtkNnyQcietzi2cgiYL8sC9.jpg",
     "release_date": "1987-06-24"
   },
   {
@@ -1428,15 +1428,9 @@ const MOVIES_DATA = [
     "release_date": "1987-06-29"
   },
   {
-    "id": 2614,
-    "title": "Innerspace",
-    "poster_url": "https://image.tmdb.org/t/p/w500/A4azclZQjqeQxXvcok3rdUmuq8a.jpg",
-    "release_date": "1987-07-01"
-  },
-  {
     "id": 600,
     "title": "Full Metal Jacket",
-    "poster_url": "https://image.tmdb.org/t/p/w500/v3XKSMRIXYwETiRQOTwL4MP1BIo.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/kMKyx1k8hWWscYFnPbnxxN4Eqo4.jpg",
     "release_date": "1987-07-10"
   },
   {
@@ -1446,9 +1440,9 @@ const MOVIES_DATA = [
     "release_date": "1987-07-17"
   },
   {
-    "id": 16620,
-    "title": "La Bamba",
-    "poster_url": "https://image.tmdb.org/t/p/w500/6Znulqtc7cdqlUC69HGf26Ef5fi.jpg",
+    "id": 11411,
+    "title": "Superman IV: The Quest for Peace",
+    "poster_url": "https://image.tmdb.org/t/p/w500/nJFBeU1oKIaIoLVyQYUeB36DW55.jpg",
     "release_date": "1987-07-24"
   },
   {
@@ -1464,21 +1458,27 @@ const MOVIES_DATA = [
     "release_date": "1987-08-07"
   },
   {
+    "id": 10083,
+    "title": "No Way Out",
+    "poster_url": "https://image.tmdb.org/t/p/w500/93CzsBvRhg035yvQosRtSsTL19v.jpg",
+    "release_date": "1987-08-14"
+  },
+  {
     "id": 88,
     "title": "Dirty Dancing",
     "poster_url": "https://image.tmdb.org/t/p/w500/9Jw6jys7q9gjzVX5zm1z0gC8gY9.jpg",
     "release_date": "1987-08-21"
   },
   {
-    "id": 9003,
-    "title": "Hellraiser",
-    "poster_url": "https://image.tmdb.org/t/p/w500/3Z0oPHyLnk3Vx6ZMC1MiVwIrKhO.jpg",
-    "release_date": "1987-09-18"
-  },
-  {
     "id": 10998,
     "title": "Fatal Attraction",
     "poster_url": "https://image.tmdb.org/t/p/w500/vjB9XwJKnYqFKKjhWcE6WpAf5Ki.jpg",
+    "release_date": "1987-09-18"
+  },
+  {
+    "id": 9003,
+    "title": "Hellraiser",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3Z0oPHyLnk3Vx6ZMC1MiVwIrKhO.jpg",
     "release_date": "1987-09-18"
   },
   {
@@ -1494,6 +1494,12 @@ const MOVIES_DATA = [
     "release_date": "1987-11-13"
   },
   {
+    "id": 10673,
+    "title": "Wall Street",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2tQYq9ntzn2dEwDIGLBSipYPenv.jpg",
+    "release_date": "1987-12-10"
+  },
+  {
     "id": 10780,
     "title": "Overboard",
     "poster_url": "https://image.tmdb.org/t/p/w500/v9MVFgUTvNRXmm2WWOzST6UXb5x.jpg",
@@ -1504,12 +1510,6 @@ const MOVIES_DATA = [
     "title": "Empire of the Sun",
     "poster_url": "https://image.tmdb.org/t/p/w500/gEaCzjwHoPgyQFcwHql7o5YLHAU.jpg",
     "release_date": "1987-12-25"
-  },
-  {
-    "id": 2039,
-    "title": "Moonstruck",
-    "poster_url": "https://image.tmdb.org/t/p/w500/2mnVWpvsHEHHnfvLn1NXYVvBGl5.jpg",
-    "release_date": "1988-01-15"
   },
   {
     "id": 11690,
@@ -1542,6 +1542,12 @@ const MOVIES_DATA = [
     "release_date": "1988-05-24"
   },
   {
+    "id": 16296,
+    "title": "Killer Klowns from Outer Space",
+    "poster_url": "https://image.tmdb.org/t/p/w500/lHdAk5T42ofyi3NTjmrdyR7xPmY.jpg",
+    "release_date": "1988-05-27"
+  },
+  {
     "id": 2280,
     "title": "Big",
     "poster_url": "https://image.tmdb.org/t/p/w500/eWhCDJiwxvx3YXkAFRiHjimnF0j.jpg",
@@ -1551,12 +1557,6 @@ const MOVIES_DATA = [
     "id": 9604,
     "title": "Red Heat",
     "poster_url": "https://image.tmdb.org/t/p/w500/AoJTHXmO01EZgT0p1YTsGBEQxLj.jpg",
-    "release_date": "1988-06-17"
-  },
-  {
-    "id": 2617,
-    "title": "The Great Outdoors",
-    "poster_url": "https://image.tmdb.org/t/p/w500/zxIoPZiqKOxrWvieumpxA6bOgkt.jpg",
     "release_date": "1988-06-17"
   },
   {
@@ -1572,16 +1572,10 @@ const MOVIES_DATA = [
     "release_date": "1988-06-29"
   },
   {
-    "id": 10651,
-    "title": "The Dead Pool",
-    "poster_url": "https://image.tmdb.org/t/p/w500/krxLLDnFuDtjagN7KrCjuH6QrcW.jpg",
-    "release_date": "1988-07-13"
-  },
-  {
-    "id": 9013,
-    "title": "Midnight Run",
-    "poster_url": "https://image.tmdb.org/t/p/w500/yx0touyDQ9enWDsFgS4MbBwCSNd.jpg",
-    "release_date": "1988-07-20"
+    "id": 623,
+    "title": "A Fish Called Wanda",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hkSGFNVfEEUXFCxRZDITFHVhUlu.jpg",
+    "release_date": "1988-07-15"
   },
   {
     "id": 562,
@@ -1590,16 +1584,16 @@ const MOVIES_DATA = [
     "release_date": "1988-07-22"
   },
   {
-    "id": 7520,
-    "title": "Cocktail",
-    "poster_url": "https://image.tmdb.org/t/p/w500/jFRhEPhtsln9tDwzMdZN3OlhUob.jpg",
-    "release_date": "1988-07-29"
-  },
-  {
     "id": 9599,
     "title": "The Blob",
     "poster_url": "https://image.tmdb.org/t/p/w500/mWVVYNEkDHkcjFne6eQq1pDANdw.jpg",
     "release_date": "1988-08-05"
+  },
+  {
+    "id": 11967,
+    "title": "Young Guns",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3AgCq7xY1rHRAAn0iVcnNr2OWL.jpg",
+    "release_date": "1988-08-12"
   },
   {
     "id": 11357,
@@ -1620,27 +1614,27 @@ const MOVIES_DATA = [
     "release_date": "1988-11-09"
   },
   {
+    "id": 12233,
+    "title": "Oliver & Company",
+    "poster_url": "https://image.tmdb.org/t/p/w500/dgaSqUHjm4CLOdiiJJJstVdreEe.jpg",
+    "release_date": "1988-11-18"
+  },
+  {
     "id": 12144,
     "title": "The Land Before Time",
     "poster_url": "https://image.tmdb.org/t/p/w500/wSC2wxFj3ZgrIHlIaePeuHN4igo.jpg",
     "release_date": "1988-11-18"
   },
   {
-    "id": 12233,
-    "title": "Oliver & Company",
-    "poster_url": "https://image.tmdb.org/t/p/w500/x8XqdiZ0Oxu5iXF9SiFub9Lae8J.jpg",
-    "release_date": "1988-11-18"
+    "id": 37136,
+    "title": "The Naked Gun: From the Files of Police Squad!",
+    "poster_url": "https://image.tmdb.org/t/p/w500/zT0mhZqZQJE1gSY5Eg9qcGP4NYo.jpg",
+    "release_date": "1988-12-02"
   },
   {
     "id": 13192,
     "title": "Moonwalker",
     "poster_url": "https://image.tmdb.org/t/p/w500/3GwTPQkAcgDeAirRpEuJG8HDdRz.jpg",
-    "release_date": "1988-12-02"
-  },
-  {
-    "id": 37136,
-    "title": "The Naked Gun: From the Files of Police Squad!",
-    "poster_url": "https://image.tmdb.org/t/p/w500/zT0mhZqZQJE1gSY5Eg9qcGP4NYo.jpg",
     "release_date": "1988-12-02"
   },
   {
@@ -1650,21 +1644,33 @@ const MOVIES_DATA = [
     "release_date": "1988-12-09"
   },
   {
+    "id": 12120,
+    "title": "My Stepmother Is an Alien",
+    "poster_url": "https://image.tmdb.org/t/p/w500/SIt5FbgvoxlZr8ay3cfi79pV6z.jpg",
+    "release_date": "1988-12-09"
+  },
+  {
     "id": 380,
     "title": "Rain Man",
     "poster_url": "https://image.tmdb.org/t/p/w500/iTNHwO896WKkaoPtpMMS74d8VNi.jpg",
     "release_date": "1988-12-16"
   },
   {
-    "id": 1632,
-    "title": "Mississippi Burning",
-    "poster_url": "https://image.tmdb.org/t/p/w500/wvEx2WbxZXYljQ9vSoq37NgeXcJ.jpg",
-    "release_date": "1989-01-27"
+    "id": 3525,
+    "title": "Working Girl",
+    "poster_url": "https://image.tmdb.org/t/p/w500/q2jfFzZvAzjTaArQR0tjilIZ5aJ.jpg",
+    "release_date": "1988-12-20"
+  },
+  {
+    "id": 11974,
+    "title": "The 'Burbs",
+    "poster_url": "https://image.tmdb.org/t/p/w500/jwYKzJS0C3A711hmg1G4ptI0InF.jpg",
+    "release_date": "1989-02-17"
   },
   {
     "id": 859,
     "title": "Dangerous Liaisons",
-    "poster_url": "https://image.tmdb.org/t/p/w500/eNvJXuTQ7lusuUrIvS7wplORXBX.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hFem30C3uJUd9smNy7rFLGVhKys.jpg",
     "release_date": "1989-02-24"
   },
   {
@@ -1672,12 +1678,6 @@ const MOVIES_DATA = [
     "title": "Heathers",
     "poster_url": "https://image.tmdb.org/t/p/w500/dGbVfM4WlM7uvIbyRehfPZUIgp2.jpg",
     "release_date": "1989-03-31"
-  },
-  {
-    "id": 10134,
-    "title": "Cyborg",
-    "poster_url": "https://image.tmdb.org/t/p/w500/rwzRUC6inDraeIQD8f0FYteSonL.jpg",
-    "release_date": "1989-04-07"
   },
   {
     "id": 2028,
@@ -1690,6 +1690,18 @@ const MOVIES_DATA = [
     "title": "Pet Sematary",
     "poster_url": "https://image.tmdb.org/t/p/w500/a1gIACZb04bL8EvLqMpofW2Eqeo.jpg",
     "release_date": "1989-04-21"
+  },
+  {
+    "id": 2323,
+    "title": "Field of Dreams",
+    "poster_url": "https://image.tmdb.org/t/p/w500/oeM7nAw6FVFICwUaXKCRkDsKjqO.jpg",
+    "release_date": "1989-05-05"
+  },
+  {
+    "id": 10135,
+    "title": "Road House",
+    "poster_url": "https://image.tmdb.org/t/p/w500/60VHW8heV11uLSCnkjk6iGRQatA.jpg",
+    "release_date": "1989-05-19"
   },
   {
     "id": 89,
@@ -1716,9 +1728,15 @@ const MOVIES_DATA = [
     "release_date": "1989-06-23"
   },
   {
+    "id": 9354,
+    "title": "Honey, I Shrunk the Kids",
+    "poster_url": "https://image.tmdb.org/t/p/w500/omQOzahi2NIeiYznNxHFDvNbvo6.jpg",
+    "release_date": "1989-06-23"
+  },
+  {
     "id": 942,
     "title": "Lethal Weapon 2",
-    "poster_url": "https://image.tmdb.org/t/p/w500/ZsUGxTnZ4TzTrHSAfUPJcliL1K.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/v04YGBUiGMoqxWqjPJrQUfRImFp.jpg",
     "release_date": "1989-07-07"
   },
   {
@@ -1740,12 +1758,6 @@ const MOVIES_DATA = [
     "release_date": "1989-08-04"
   },
   {
-    "id": 9972,
-    "title": "Lock Up",
-    "poster_url": "https://image.tmdb.org/t/p/w500/WihoHaU9yvhhdoSqDAhiIlNN8g.jpg",
-    "release_date": "1989-08-04"
-  },
-  {
     "id": 2756,
     "title": "The Abyss",
     "poster_url": "https://image.tmdb.org/t/p/w500/2dCit3XAtv9KWCJvRKdPkJ0FAkH.jpg",
@@ -1760,7 +1772,7 @@ const MOVIES_DATA = [
   {
     "id": 10222,
     "title": "Kickboxer",
-    "poster_url": "https://image.tmdb.org/t/p/w500/q3NCTsIb5mzOuf3XbQr9AfZyAaF.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/tXSD8U5aVdGscQNcyY6C2ANVEuh.jpg",
     "release_date": "1989-09-09"
   },
   {
@@ -1768,12 +1780,6 @@ const MOVIES_DATA = [
     "title": "The Punisher",
     "poster_url": "https://image.tmdb.org/t/p/w500/tA0O0hYyHX7Hl2Fl8VEtGtfBtjI.jpg",
     "release_date": "1989-10-05"
-  },
-  {
-    "id": 11361,
-    "title": "Halloween 5: The Revenge of Michael Myers",
-    "poster_url": "https://image.tmdb.org/t/p/w500/rYvP6yMXCIVHnkVtwGaAXFmpzkB.jpg",
-    "release_date": "1989-10-13"
   },
   {
     "id": 10144,
@@ -1791,12 +1797,6 @@ const MOVIES_DATA = [
     "id": 165,
     "title": "Back to the Future Part II",
     "poster_url": "https://image.tmdb.org/t/p/w500/hQq8xZe5uLjFzSBt4LanNP7SQjl.jpg",
-    "release_date": "1989-11-22"
-  },
-  {
-    "id": 10860,
-    "title": "Steel Magnolias",
-    "poster_url": "https://image.tmdb.org/t/p/w500/7ExUSN9s9gX9bhVM17zDLEizano.jpg",
     "release_date": "1989-11-22"
   },
   {
@@ -1830,6 +1830,12 @@ const MOVIES_DATA = [
     "release_date": "1990-03-02"
   },
   {
+    "id": 10847,
+    "title": "Lord of the Flies",
+    "poster_url": "https://image.tmdb.org/t/p/w500/6XmPITU9lPB9NNcmrKKgsPvsFs6.jpg",
+    "release_date": "1990-03-16"
+  },
+  {
     "id": 114,
     "title": "Pretty Woman",
     "poster_url": "https://image.tmdb.org/t/p/w500/hVHUfT801LQATGd26VPzhorIYza.jpg",
@@ -1842,12 +1848,6 @@ const MOVIES_DATA = [
     "release_date": "1990-03-30"
   },
   {
-    "id": 1727,
-    "title": "Bird on a Wire",
-    "poster_url": "https://image.tmdb.org/t/p/w500/vKHJnMQBL1mmb9MODTgZeDgD6Av.jpg",
-    "release_date": "1990-05-18"
-  },
-  {
     "id": 196,
     "title": "Back to the Future Part III",
     "poster_url": "https://image.tmdb.org/t/p/w500/crzoVQnMzIrRfHtQw0tLBirNfVg.jpg",
@@ -1858,6 +1858,18 @@ const MOVIES_DATA = [
     "title": "Total Recall",
     "poster_url": "https://image.tmdb.org/t/p/w500/wVbeL6fkbTKSmNfalj4VoAUUqJv.jpg",
     "release_date": "1990-06-01"
+  },
+  {
+    "id": 928,
+    "title": "Gremlins 2: The New Batch",
+    "poster_url": "https://image.tmdb.org/t/p/w500/35F5yD7MljvBE2AC0NHAVCoPGEi.jpg",
+    "release_date": "1990-06-15"
+  },
+  {
+    "id": 8592,
+    "title": "Dick Tracy",
+    "poster_url": "https://image.tmdb.org/t/p/w500/sjeP4bpgsUvAGE8oFcICy2GaHxw.jpg",
+    "release_date": "1990-06-15"
   },
   {
     "id": 5549,
@@ -1884,12 +1896,6 @@ const MOVIES_DATA = [
     "release_date": "1990-07-13"
   },
   {
-    "id": 11587,
-    "title": "The Exorcist III",
-    "poster_url": "https://image.tmdb.org/t/p/w500/rhSftgj3vwpIDSP8v67N8KEubmz.jpg",
-    "release_date": "1990-08-17"
-  },
-  {
     "id": 483,
     "title": "Wild at Heart",
     "poster_url": "https://image.tmdb.org/t/p/w500/uLUFI5sJIfWrBUWB2Y1dEuyvvVy.jpg",
@@ -1900,12 +1906,6 @@ const MOVIES_DATA = [
     "title": "GoodFellas",
     "poster_url": "https://image.tmdb.org/t/p/w500/9OkCLM73MIU2CrKZbqiT8Ln1wY2.jpg",
     "release_date": "1990-09-21"
-  },
-  {
-    "id": 9558,
-    "title": "King of New York",
-    "poster_url": "https://image.tmdb.org/t/p/w500/1MyH4MJAJZJbb6wDVeOc2bTECtK.jpg",
-    "release_date": "1990-09-28"
   },
   {
     "id": 2291,
@@ -1986,12 +1986,6 @@ const MOVIES_DATA = [
     "release_date": "1991-03-01"
   },
   {
-    "id": 1497,
-    "title": "Teenage Mutant Ninja Turtles II: The Secret of the Ooze",
-    "poster_url": "https://image.tmdb.org/t/p/w500/Hyvvz9Z3le1is8a0EeFJQm0aSC.jpg",
-    "release_date": "1991-03-22"
-  },
-  {
     "id": 1541,
     "title": "Thelma & Louise",
     "poster_url": "https://image.tmdb.org/t/p/w500/vbRAGLzbC75QfiKD1lKjmnQGuph.jpg",
@@ -2002,6 +1996,12 @@ const MOVIES_DATA = [
     "title": "Backdraft",
     "poster_url": "https://image.tmdb.org/t/p/w500/bymJtYNIdiAiBR1LRetaJXbfryc.jpg",
     "release_date": "1991-05-24"
+  },
+  {
+    "id": 1406,
+    "title": "City Slickers",
+    "poster_url": "https://image.tmdb.org/t/p/w500/9DVZpm9pQNB3M17cRo752zqUYhL.jpg",
+    "release_date": "1991-06-07"
   },
   {
     "id": 8367,
@@ -2118,21 +2118,21 @@ const MOVIES_DATA = [
     "release_date": "1992-01-24"
   },
   {
+    "id": 10377,
+    "title": "My Cousin Vinny",
+    "poster_url": "https://image.tmdb.org/t/p/w500/iwSURa8nS2ujwrU3s1lfxxX7voH.jpg",
+    "release_date": "1992-03-13"
+  },
+  {
     "id": 402,
     "title": "Basic Instinct",
     "poster_url": "https://image.tmdb.org/t/p/w500/76Ts0yoHk8kVQj9MMnoMixhRWoh.jpg",
     "release_date": "1992-03-20"
   },
   {
-    "id": 11806,
-    "title": "Beethoven",
-    "poster_url": "https://image.tmdb.org/t/p/w500/aSZYXOmQ9SW27gLdHU02PJQGBMH.jpg",
-    "release_date": "1992-04-03"
-  },
-  {
     "id": 943,
     "title": "Lethal Weapon 3",
-    "poster_url": "https://image.tmdb.org/t/p/w500/smzJxEnusgqv3bvHIWwf4cuwPcr.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/efOCSdTquRGQFTpTsLYApfBWmJK.jpg",
     "release_date": "1992-05-15"
   },
   {
@@ -2196,6 +2196,12 @@ const MOVIES_DATA = [
     "release_date": "1992-10-09"
   },
   {
+    "id": 9529,
+    "title": "Candyman",
+    "poster_url": "https://image.tmdb.org/t/p/w500/jQtgkgDZE7egMq532sOt83DnT83.jpg",
+    "release_date": "1992-10-16"
+  },
+  {
     "id": 500,
     "title": "Reservoir Dogs",
     "poster_url": "https://image.tmdb.org/t/p/w500/xi8Iu6qyTfyZVDVy60raIOYJJmk.jpg",
@@ -2256,12 +2262,6 @@ const MOVIES_DATA = [
     "release_date": "1993-02-11"
   },
   {
-    "id": 763,
-    "title": "Braindead",
-    "poster_url": "https://image.tmdb.org/t/p/w500/pa39D8TQs6aNw3hiUs4jLjHVUB0.jpg",
-    "release_date": "1993-02-12"
-  },
-  {
     "id": 766,
     "title": "Army of Darkness",
     "poster_url": "https://image.tmdb.org/t/p/w500/xsgTuAtR2zSH8Umg3jWZcZjlDpe.jpg",
@@ -2280,6 +2280,12 @@ const MOVIES_DATA = [
     "release_date": "1993-04-07"
   },
   {
+    "id": 11528,
+    "title": "The Sandlot",
+    "poster_url": "https://image.tmdb.org/t/p/w500/7PYqz0viEuW8qTvuGinUMjDWMnj.jpg",
+    "release_date": "1993-04-07"
+  },
+  {
     "id": 9702,
     "title": "Bound by Honor",
     "poster_url": "https://image.tmdb.org/t/p/w500/gvP6R6juhe2IpCG7QGDgjyUvm0g.jpg",
@@ -2292,15 +2298,15 @@ const MOVIES_DATA = [
     "release_date": "1993-05-21"
   },
   {
-    "id": 9350,
-    "title": "Cliffhanger",
-    "poster_url": "https://image.tmdb.org/t/p/w500/b28DOM54OHb1c7Lsk6Nu7Kwuonj.jpg",
+    "id": 9607,
+    "title": "Super Mario Bros.",
+    "poster_url": "https://image.tmdb.org/t/p/w500/yt5bbMfKpg1nRr4k5edxs7tPK2m.jpg",
     "release_date": "1993-05-28"
   },
   {
     "id": 329,
     "title": "Jurassic Park",
-    "poster_url": "https://image.tmdb.org/t/p/w500/maFjKnJ62hDQ9E66dKqDZgbUy0H.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fjTU1Bgh3KJu4aatZil3sofR2zC.jpg",
     "release_date": "1993-06-11"
   },
   {
@@ -2316,28 +2322,10 @@ const MOVIES_DATA = [
     "release_date": "1993-06-25"
   },
   {
-    "id": 37233,
-    "title": "The Firm",
-    "poster_url": "https://image.tmdb.org/t/p/w500/kFexXCzidkm4LwlgZqxsJsDQB5v.jpg",
-    "release_date": "1993-06-30"
-  },
-  {
     "id": 10439,
     "title": "Hocus Pocus",
     "poster_url": "https://image.tmdb.org/t/p/w500/by4D4Q9NlUjFSEUA1yrxq6ksXmk.jpg",
     "release_date": "1993-07-16"
-  },
-  {
-    "id": 8005,
-    "title": "Robin Hood: Men in Tights",
-    "poster_url": "https://image.tmdb.org/t/p/w500/woexOLEkUlYsPLLuZRK6LjZaF38.jpg",
-    "release_date": "1993-07-28"
-  },
-  {
-    "id": 22582,
-    "title": "Tom and Jerry: The Movie",
-    "poster_url": "https://image.tmdb.org/t/p/w500/k68ZB5trRKcEJSQdPiY6jtxVq14.jpg",
-    "release_date": "1993-07-30"
   },
   {
     "id": 5503,
@@ -2382,10 +2370,16 @@ const MOVIES_DATA = [
     "release_date": "1993-11-10"
   },
   {
-    "id": 10057,
-    "title": "The Three Musketeers",
-    "poster_url": "https://image.tmdb.org/t/p/w500/mk8UH7JRmK8adcqJJpB1ygP7B1C.jpg",
-    "release_date": "1993-11-11"
+    "id": 713,
+    "title": "The Piano",
+    "poster_url": "https://image.tmdb.org/t/p/w500/rx8RKXn8OtuS6lqloYsjyrGOUp4.jpg",
+    "release_date": "1993-11-12"
+  },
+  {
+    "id": 2758,
+    "title": "Addams Family Values",
+    "poster_url": "https://image.tmdb.org/t/p/w500/sdxT2VjVSx9DRicwnuECUdBHeE7.jpg",
+    "release_date": "1993-11-19"
   },
   {
     "id": 788,
@@ -2394,10 +2388,22 @@ const MOVIES_DATA = [
     "release_date": "1993-11-24"
   },
   {
+    "id": 6279,
+    "title": "Sister Act 2: Back in the Habit",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2jmPYqep3r2eumauyTauNIhSmR7.jpg",
+    "release_date": "1993-12-09"
+  },
+  {
     "id": 11969,
     "title": "Tombstone",
     "poster_url": "https://image.tmdb.org/t/p/w500/wGFCvylul8iEQhJOKfwZGGvXMzA.jpg",
     "release_date": "1993-12-25"
+  },
+  {
+    "id": 9800,
+    "title": "Philadelphia",
+    "poster_url": "https://image.tmdb.org/t/p/w500/tFe5Yoo5zT495okA49bq1vPPkiV.jpg",
+    "release_date": "1994-01-14"
   },
   {
     "id": 424,
@@ -2412,10 +2418,10 @@ const MOVIES_DATA = [
     "release_date": "1994-02-04"
   },
   {
-    "id": 1587,
-    "title": "What's Eating Gilbert Grape",
-    "poster_url": "https://image.tmdb.org/t/p/w500/8FxWgsfDNosewo7H65oE4QkOb7g.jpg",
-    "release_date": "1994-03-04"
+    "id": 712,
+    "title": "Four Weddings and a Funeral",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qa72G2VS0bpxms6yo0tI9vsHm2e.jpg",
+    "release_date": "1994-03-09"
   },
   {
     "id": 10497,
@@ -2430,16 +2436,16 @@ const MOVIES_DATA = [
     "release_date": "1994-03-18"
   },
   {
+    "id": 28032,
+    "title": "Thumbelina",
+    "poster_url": "https://image.tmdb.org/t/p/w500/eBvSSfwAKgcjF4eyaeNSzTCpfaF.jpg",
+    "release_date": "1994-03-30"
+  },
+  {
     "id": 9495,
     "title": "The Crow",
     "poster_url": "https://image.tmdb.org/t/p/w500/rMMB3v6jYHjsvXRNJYESacoTD7j.jpg",
     "release_date": "1994-05-11"
-  },
-  {
-    "id": 9359,
-    "title": "Maverick",
-    "poster_url": "https://image.tmdb.org/t/p/w500/mTVbGGi5PIexmxVzeyFd2RYKwfM.jpg",
-    "release_date": "1994-05-20"
   },
   {
     "id": 888,
@@ -2457,12 +2463,6 @@ const MOVIES_DATA = [
     "id": 8587,
     "title": "The Lion King",
     "poster_url": "https://image.tmdb.org/t/p/w500/sKCr78MXSLixwmZ8DyJLrpMsd15.jpg",
-    "release_date": "1994-06-24"
-  },
-  {
-    "id": 12160,
-    "title": "Wyatt Earp",
-    "poster_url": "https://image.tmdb.org/t/p/w500/51LItgyecu2KMAtIchYogEykCIu.jpg",
     "release_date": "1994-06-24"
   },
   {
@@ -2484,34 +2484,22 @@ const MOVIES_DATA = [
     "release_date": "1994-07-15"
   },
   {
+    "id": 10731,
+    "title": "The Client",
+    "poster_url": "https://image.tmdb.org/t/p/w500/oLdkJ4ZjxPtFSUChdjDQvHM9l75.jpg",
+    "release_date": "1994-07-20"
+  },
+  {
     "id": 854,
     "title": "The Mask",
     "poster_url": "https://image.tmdb.org/t/p/w500/jPC2eYub74zwf2tPGVtzSlBW6Oy.jpg",
     "release_date": "1994-07-29"
   },
   {
-    "id": 10660,
-    "title": "It Could Happen to You",
-    "poster_url": "https://image.tmdb.org/t/p/w500/6UOaeLDOdwwTMQtbl5YL6EGjqy0.jpg",
-    "release_date": "1994-07-29"
-  },
-  {
-    "id": 9331,
-    "title": "Clear and Present Danger",
-    "poster_url": "https://image.tmdb.org/t/p/w500/6xTM8FPxrLRYwz6I3fqtwh7xybs.jpg",
-    "release_date": "1994-08-03"
-  },
-  {
     "id": 10897,
     "title": "The Little Rascals",
     "poster_url": "https://image.tmdb.org/t/p/w500/qI7PKX2JSw4yD2iQm3pyHvKir28.jpg",
     "release_date": "1994-08-05"
-  },
-  {
-    "id": 2124,
-    "title": "Color of Night",
-    "poster_url": "https://image.tmdb.org/t/p/w500/w1OBPkf3BxeC7543YzFwiKIwBFJ.jpg",
-    "release_date": "1994-08-19"
   },
   {
     "id": 241,
@@ -2532,6 +2520,12 @@ const MOVIES_DATA = [
     "release_date": "1994-10-14"
   },
   {
+    "id": 11596,
+    "title": "Wes Craven's New Nightmare",
+    "poster_url": "https://image.tmdb.org/t/p/w500/q5BWxfL1x34nyYSvA3Qo5odleGW.jpg",
+    "release_date": "1994-10-14"
+  },
+  {
     "id": 2164,
     "title": "Stargate",
     "poster_url": "https://image.tmdb.org/t/p/w500/4T6Po0XnZlevmhfPh3ZfEs5butR.jpg",
@@ -2544,15 +2538,21 @@ const MOVIES_DATA = [
     "release_date": "1994-11-11"
   },
   {
+    "id": 8984,
+    "title": "Disclosure",
+    "poster_url": "https://image.tmdb.org/t/p/w500/9e8cp3ho2aZrHMFgitysCoJxXwP.jpg",
+    "release_date": "1994-12-09"
+  },
+  {
     "id": 8467,
     "title": "Dumb and Dumber",
     "poster_url": "https://image.tmdb.org/t/p/w500/4LdpBXiCyGKkR8FGHgjKlphrfUc.jpg",
     "release_date": "1994-12-16"
   },
   {
-    "id": 9587,
-    "title": "Little Women",
-    "poster_url": "https://image.tmdb.org/t/p/w500/1ZzH1XMcKAe5NdrKL5MfcqZHHsZ.jpg",
+    "id": 11011,
+    "title": "Ri¢hie Ri¢h",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qgGh5d0IHAZRlHIdFS3XWVygumR.jpg",
     "release_date": "1994-12-21"
   },
   {
@@ -2574,22 +2574,10 @@ const MOVIES_DATA = [
     "release_date": "1995-01-27"
   },
   {
-    "id": 6950,
-    "title": "Outbreak",
-    "poster_url": "https://image.tmdb.org/t/p/w500/4KymNvlWR0XF0sqX2BWRd9Z3yXR.jpg",
-    "release_date": "1995-03-10"
-  },
-  {
     "id": 9737,
     "title": "Bad Boys",
     "poster_url": "https://image.tmdb.org/t/p/w500/x1ygBecKHfXX4M2kRhmFKWfWbJc.jpg",
     "release_date": "1995-04-07"
-  },
-  {
-    "id": 10474,
-    "title": "The Basketball Diaries",
-    "poster_url": "https://image.tmdb.org/t/p/w500/AhvO1GGDPIgN0hOqZEgaFCbswMK.jpg",
-    "release_date": "1995-04-21"
   },
   {
     "id": 10634,
@@ -2660,7 +2648,7 @@ const MOVIES_DATA = [
   {
     "id": 9312,
     "title": "Mortal Kombat",
-    "poster_url": "https://image.tmdb.org/t/p/w500/fcK7tzSSXMYiMN8E9KlZJL1BYyp.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/9YhpvhhvLrtL1wlwEfpVL16GI9d.jpg",
     "release_date": "1995-08-18"
   },
   {
@@ -2668,6 +2656,12 @@ const MOVIES_DATA = [
     "title": "Desperado",
     "poster_url": "https://image.tmdb.org/t/p/w500/e3gwpBeXpvGZsxUya9zNym5QXrw.jpg",
     "release_date": "1995-08-25"
+  },
+  {
+    "id": 10428,
+    "title": "Hackers",
+    "poster_url": "https://image.tmdb.org/t/p/w500/w8H2KpRtpzwlxz5KrvINCVihok1.jpg",
+    "release_date": "1995-09-14"
   },
   {
     "id": 629,
@@ -2706,6 +2700,12 @@ const MOVIES_DATA = [
     "release_date": "1995-11-22"
   },
   {
+    "id": 4584,
+    "title": "Sense and Sensibility",
+    "poster_url": "https://image.tmdb.org/t/p/w500/cBK2yL3HqhFvIVd7lLtazWlRZPR.jpg",
+    "release_date": "1995-12-13"
+  },
+  {
     "id": 949,
     "title": "Heat",
     "poster_url": "https://image.tmdb.org/t/p/w500/e09dLw1Ljtccd2P4NsuUvVtS5du.jpg",
@@ -2730,6 +2730,12 @@ const MOVIES_DATA = [
     "release_date": "1996-01-19"
   },
   {
+    "id": 9614,
+    "title": "Happy Gilmore",
+    "poster_url": "https://image.tmdb.org/t/p/w500/4RnCeRzvI1xk5tuNWjpDKzSnJDk.jpg",
+    "release_date": "1996-02-16"
+  },
+  {
     "id": 1592,
     "title": "Primal Fear",
     "poster_url": "https://image.tmdb.org/t/p/w500/qJf2TzE8nRTFbFMPJNW6c8mI0KU.jpg",
@@ -2746,18 +2752,6 @@ const MOVIES_DATA = [
     "title": "Fear",
     "poster_url": "https://image.tmdb.org/t/p/w500/ut8snuINzOibbKnvpTnsGWQr4Nl.jpg",
     "release_date": "1996-04-12"
-  },
-  {
-    "id": 20762,
-    "title": "The Substitute",
-    "poster_url": "https://image.tmdb.org/t/p/w500/7vfzvhPMNauUXrVxVOPEfpOsful.jpg",
-    "release_date": "1996-04-19"
-  },
-  {
-    "id": 9100,
-    "title": "The Craft",
-    "poster_url": "https://image.tmdb.org/t/p/w500/8bW2RdRkloYtEPhbQZN4wcdmJP4.jpg",
-    "release_date": "1996-05-03"
   },
   {
     "id": 664,
@@ -2780,20 +2774,26 @@ const MOVIES_DATA = [
   {
     "id": 10545,
     "title": "The Hunchback of Notre Dame",
-    "poster_url": "https://image.tmdb.org/t/p/w500/hImMgT9B27evYSRmfztqdDtX6qi.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/dmMBtXuFzZzLYgeQXkOkg98w2Ak.jpg",
     "release_date": "1996-06-21"
   },
   {
-    "id": 602,
-    "title": "Independence Day",
-    "poster_url": "https://image.tmdb.org/t/p/w500/p0BPQGSPoSa8Ml0DAf2mB2kCU0R.jpg",
-    "release_date": "1996-06-25"
+    "id": 9268,
+    "title": "Eraser",
+    "poster_url": "https://image.tmdb.org/t/p/w500/uu2gBpFElDfxTI6BI9bT4pZ4kvw.jpg",
+    "release_date": "1996-06-21"
   },
   {
     "id": 9879,
     "title": "Striptease",
     "poster_url": "https://image.tmdb.org/t/p/w500/4zMy6R7acotCmGoDk4sjzRtDwKn.jpg",
     "release_date": "1996-06-28"
+  },
+  {
+    "id": 602,
+    "title": "Independence Day",
+    "poster_url": "https://image.tmdb.org/t/p/w500/p0BPQGSPoSa8Ml0DAf2mB2kCU0R.jpg",
+    "release_date": "1996-07-02"
   },
   {
     "id": 1645,
@@ -2810,7 +2810,7 @@ const MOVIES_DATA = [
   {
     "id": 627,
     "title": "Trainspotting",
-    "poster_url": "https://image.tmdb.org/t/p/w500/y0HmDV0bZDTtXWHqqYYbT9XoshB.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/1jUC02qsqS2NxBMFarbIhcQtazV.jpg",
     "release_date": "1996-08-09"
   },
   {
@@ -2892,12 +2892,6 @@ const MOVIES_DATA = [
     "release_date": "1997-04-11"
   },
   {
-    "id": 816,
-    "title": "Austin Powers: International Man of Mystery",
-    "poster_url": "https://image.tmdb.org/t/p/w500/5uD4dxNX8JKFjWKYMHyOsqhi5pN.jpg",
-    "release_date": "1997-05-02"
-  },
-  {
     "id": 1701,
     "title": "Con Air",
     "poster_url": "https://image.tmdb.org/t/p/w500/kOKjgrEzGOP92rVQ6srA9jtp60l.jpg",
@@ -2932,6 +2926,12 @@ const MOVIES_DATA = [
     "title": "Contact",
     "poster_url": "https://image.tmdb.org/t/p/w500/bCpMIywuNZeWt3i5UMLEIc0VSwM.jpg",
     "release_date": "1997-07-11"
+  },
+  {
+    "id": 10603,
+    "title": "George of the Jungle",
+    "poster_url": "https://image.tmdb.org/t/p/w500/lWp8hUqE4oLPxsYgilXoYoVThfU.jpg",
+    "release_date": "1997-07-15"
   },
   {
     "id": 8413,
@@ -2970,21 +2970,21 @@ const MOVIES_DATA = [
     "release_date": "1997-10-31"
   },
   {
-    "id": 1281,
-    "title": "Bean",
-    "poster_url": "https://image.tmdb.org/t/p/w500/IwrDPrB4d2DMcpnGkvan46yINL.jpg",
-    "release_date": "1997-11-06"
-  },
-  {
     "id": 563,
     "title": "Starship Troopers",
     "poster_url": "https://image.tmdb.org/t/p/w500/cxCmv23O7p3hyHwqoktHYkZcGsY.jpg",
     "release_date": "1997-11-07"
   },
   {
-    "id": 9823,
-    "title": "Mortal Kombat: Annihilation",
-    "poster_url": "https://image.tmdb.org/t/p/w500/ttryglcY2osWZE3sRYBf3ewTZsW.jpg",
+    "id": 4824,
+    "title": "The Jackal",
+    "poster_url": "https://image.tmdb.org/t/p/w500/oXF26QmDEaRaH9Fbhs3NXtcnryx.jpg",
+    "release_date": "1997-11-14"
+  },
+  {
+    "id": 9444,
+    "title": "Anastasia",
+    "poster_url": "https://image.tmdb.org/t/p/w500/bppGWGA8zq1sRvTdDJnUzVW9GcH.jpg",
     "release_date": "1997-11-21"
   },
   {
@@ -3000,9 +3000,9 @@ const MOVIES_DATA = [
     "release_date": "1997-12-12"
   },
   {
-    "id": 9714,
-    "title": "Home Alone 3",
-    "poster_url": "https://image.tmdb.org/t/p/w500/6uOadrCfle0n2LOOxHbgWEdnrm2.jpg",
+    "id": 714,
+    "title": "Tomorrow Never Dies",
+    "poster_url": "https://image.tmdb.org/t/p/w500/gZm002w7q9yLOkltxT76TWGfdZX.jpg",
     "release_date": "1997-12-12"
   },
   {
@@ -3018,6 +3018,12 @@ const MOVIES_DATA = [
     "release_date": "1998-01-09"
   },
   {
+    "id": 9457,
+    "title": "Deep Rising",
+    "poster_url": "https://image.tmdb.org/t/p/w500/A1nOnrAlG3EbOvzgZt2ya11OmjQ.jpg",
+    "release_date": "1998-01-30"
+  },
+  {
     "id": 2666,
     "title": "Dark City",
     "poster_url": "https://image.tmdb.org/t/p/w500/tNPEGju4DpTdbhBphNmZoEi9Bd3.jpg",
@@ -3030,16 +3036,16 @@ const MOVIES_DATA = [
     "release_date": "1998-03-06"
   },
   {
+    "id": 617,
+    "title": "Wild Things",
+    "poster_url": "https://image.tmdb.org/t/p/w500/wrcTDD9T7Ga5c9MW7kaOo2qwIvW.jpg",
+    "release_date": "1998-03-20"
+  },
+  {
     "id": 8656,
     "title": "Deep Impact",
     "poster_url": "https://image.tmdb.org/t/p/w500/a3vQS7JKqlOb3MdVJHuTCP9s7Mg.jpg",
     "release_date": "1998-05-08"
-  },
-  {
-    "id": 929,
-    "title": "Godzilla",
-    "poster_url": "https://image.tmdb.org/t/p/w500/xJVl1I95StraYAwaNbBkVoWE2qA.jpg",
-    "release_date": "1998-05-20"
   },
   {
     "id": 37165,
@@ -3054,16 +3060,28 @@ const MOVIES_DATA = [
     "release_date": "1998-06-19"
   },
   {
+    "id": 3050,
+    "title": "Doctor Dolittle",
+    "poster_url": "https://image.tmdb.org/t/p/w500/tLrchGMIkdo1KamQJA6fwvDQEy0.jpg",
+    "release_date": "1998-06-26"
+  },
+  {
     "id": 95,
     "title": "Armageddon",
     "poster_url": "https://image.tmdb.org/t/p/w500/eTM3qtGhDU8cvjpoa6KEt5E2auU.jpg",
     "release_date": "1998-07-01"
   },
   {
-    "id": 544,
-    "title": "There's Something About Mary",
-    "poster_url": "https://image.tmdb.org/t/p/w500/slJD1Dvnsf15LoeqhERsyzisAdn.jpg",
-    "release_date": "1998-07-15"
+    "id": 11551,
+    "title": "Small Soldiers",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2nuUjSzHsoYlRvTPmLo7m7gCQry.jpg",
+    "release_date": "1998-07-10"
+  },
+  {
+    "id": 944,
+    "title": "Lethal Weapon 4",
+    "poster_url": "https://image.tmdb.org/t/p/w500/1EYNRhKXcMPF2zOPS1nWXoC844w.jpg",
+    "release_date": "1998-07-10"
   },
   {
     "id": 857,
@@ -3075,12 +3093,6 @@ const MOVIES_DATA = [
     "id": 9820,
     "title": "The Parent Trap",
     "poster_url": "https://image.tmdb.org/t/p/w500/p4dGmi8u9W0HHyVXcgWPoiFfKTF.jpg",
-    "release_date": "1998-07-29"
-  },
-  {
-    "id": 9631,
-    "title": "The Negotiator",
-    "poster_url": "https://image.tmdb.org/t/p/w500/dUMHEymATOGbs2K3E4dmNSVBgFQ.jpg",
     "release_date": "1998-07-29"
   },
   {
@@ -3102,16 +3114,10 @@ const MOVIES_DATA = [
     "release_date": "1998-09-25"
   },
   {
-    "id": 8916,
-    "title": "Antz",
-    "poster_url": "https://image.tmdb.org/t/p/w500/lWPjxbUMpAHFkJpZHHNWhQaRsax.jpg",
-    "release_date": "1998-10-02"
-  },
-  {
-    "id": 10683,
-    "title": "Happiness",
-    "poster_url": "https://image.tmdb.org/t/p/w500/rYfUcEV88Z3gENrfYTE6i8yBkDr.jpg",
-    "release_date": "1998-10-16"
+    "id": 8195,
+    "title": "Ronin",
+    "poster_url": "https://image.tmdb.org/t/p/w500/AirrhRJjHwytOV0pdLu7YZ4DEyr.jpg",
+    "release_date": "1998-09-25"
   },
   {
     "id": 6435,
@@ -3124,12 +3130,6 @@ const MOVIES_DATA = [
     "title": "Bride of Chucky",
     "poster_url": "https://image.tmdb.org/t/p/w500/yaIPNOcC7ZRuwH3maNwP9qzIo5G.jpg",
     "release_date": "1998-10-16"
-  },
-  {
-    "id": 9732,
-    "title": "The Lion King II: Simba's Pride",
-    "poster_url": "https://image.tmdb.org/t/p/w500/sWR1x6UCMCGN9xEf8RGhPS934X0.jpg",
-    "release_date": "1998-10-27"
   },
   {
     "id": 297,
@@ -3162,22 +3162,10 @@ const MOVIES_DATA = [
     "release_date": "1998-12-18"
   },
   {
-    "id": 9489,
-    "title": "You've Got Mail",
-    "poster_url": "https://image.tmdb.org/t/p/w500/e2uVtH6TpMfUl7WeOM70ezkcjsU.jpg",
-    "release_date": "1998-12-18"
-  },
-  {
     "id": 9276,
     "title": "The Faculty",
     "poster_url": "https://image.tmdb.org/t/p/w500/5XetJwmAiDC0EtH23NIXaqFn3Wl.jpg",
     "release_date": "1998-12-25"
-  },
-  {
-    "id": 8224,
-    "title": "8MM",
-    "poster_url": "https://image.tmdb.org/t/p/w500/mhr9xRpjOBqlBjgDwtiOx6FsLvV.jpg",
-    "release_date": "1999-02-26"
   },
   {
     "id": 796,
@@ -3188,7 +3176,7 @@ const MOVIES_DATA = [
   {
     "id": 603,
     "title": "The Matrix",
-    "poster_url": "https://image.tmdb.org/t/p/w500/aOIuZAjPaRIE6CMzbazvcHuHXDc.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/dXNAPwY7VrqMAo51EKhhCJfaGb5.jpg",
     "release_date": "1999-03-31"
   },
   {
@@ -3196,6 +3184,12 @@ const MOVIES_DATA = [
     "title": "10 Things I Hate About You",
     "poster_url": "https://image.tmdb.org/t/p/w500/ujERk3aKABXU3NDXOAxEQYTHe9A.jpg",
     "release_date": "1999-03-31"
+  },
+  {
+    "id": 1844,
+    "title": "Entrapment",
+    "poster_url": "https://image.tmdb.org/t/p/w500/psrm7DToacaxQvgViBAcrYiLKzH.jpg",
+    "release_date": "1999-04-30"
   },
   {
     "id": 564,
@@ -3216,16 +3210,16 @@ const MOVIES_DATA = [
     "release_date": "1999-05-28"
   },
   {
+    "id": 817,
+    "title": "Austin Powers: The Spy Who Shagged Me",
+    "poster_url": "https://image.tmdb.org/t/p/w500/jiF7UShERJFn5RtgfBK2lIJrOTc.jpg",
+    "release_date": "1999-06-08"
+  },
+  {
     "id": 37135,
     "title": "Tarzan",
     "poster_url": "https://image.tmdb.org/t/p/w500/bTvHlcqiOjGa3lFtbrTLTM3zasY.jpg",
     "release_date": "1999-06-18"
-  },
-  {
-    "id": 9473,
-    "title": "South Park: Bigger, Longer & Uncut",
-    "poster_url": "https://image.tmdb.org/t/p/w500/tS0PedvA2mFO9VCHYwQpaU1K36U.jpg",
-    "release_date": "1999-06-30"
   },
   {
     "id": 2105,
@@ -3238,6 +3232,12 @@ const MOVIES_DATA = [
     "title": "Eyes Wide Shut",
     "poster_url": "https://image.tmdb.org/t/p/w500/knEIz1eNGl5MQDbrEAVWA7iRqF9.jpg",
     "release_date": "1999-07-16"
+  },
+  {
+    "id": 8914,
+    "title": "Deep Blue Sea",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fyn0zyCI4kIlbDoHH0Hzv09hDC5.jpg",
+    "release_date": "1999-07-28"
   },
   {
     "id": 2667,
@@ -3258,6 +3258,12 @@ const MOVIES_DATA = [
     "release_date": "1999-08-06"
   },
   {
+    "id": 1911,
+    "title": "The 13th Warrior",
+    "poster_url": "https://image.tmdb.org/t/p/w500/pj1IQQ7ajwaOrjjTCxyM1L4mSnX.jpg",
+    "release_date": "1999-08-27"
+  },
+  {
     "id": 14,
     "title": "American Beauty",
     "poster_url": "https://image.tmdb.org/t/p/w500/wby9315QzVKdW9BonAefg8jGTTb.jpg",
@@ -3273,12 +3279,6 @@ const MOVIES_DATA = [
     "id": 2668,
     "title": "Sleepy Hollow",
     "poster_url": "https://image.tmdb.org/t/p/w500/1GuK965FLJxqUw9fd1pmvjbFAlv.jpg",
-    "release_date": "1999-11-19"
-  },
-  {
-    "id": 36643,
-    "title": "The World Is Not Enough",
-    "poster_url": "https://image.tmdb.org/t/p/w500/wCb2msgoZPK01WIqry24M4xsM73.jpg",
     "release_date": "1999-11-19"
   },
   {
@@ -3300,15 +3300,15 @@ const MOVIES_DATA = [
     "release_date": "1999-12-17"
   },
   {
+    "id": 1213,
+    "title": "The Talented Mr. Ripley",
+    "poster_url": "https://image.tmdb.org/t/p/w500/6ojHgqtIR41O2qLKa7LFUVj0cZa.jpg",
+    "release_date": "1999-12-25"
+  },
+  {
     "id": 334,
     "title": "Magnolia",
     "poster_url": "https://image.tmdb.org/t/p/w500/tpfC325Jk6S38VTe5dDWjWtoyxr.jpg",
-    "release_date": "2000-01-07"
-  },
-  {
-    "id": 1715,
-    "title": "The Cider House Rules",
-    "poster_url": "https://image.tmdb.org/t/p/w500/qAECAgqjSFRVZzEEGbFAZqZNiDh.jpg",
     "release_date": "2000-01-07"
   },
   {
@@ -3322,12 +3322,6 @@ const MOVIES_DATA = [
     "title": "Scream 3",
     "poster_url": "https://image.tmdb.org/t/p/w500/qpH8ToZVlFD1bakL04LkEKodyDI.jpg",
     "release_date": "2000-02-04"
-  },
-  {
-    "id": 622,
-    "title": "The Ninth Gate",
-    "poster_url": "https://image.tmdb.org/t/p/w500/cMd8zkd6NdWnQQoG7bQ9xJ8gjQR.jpg",
-    "release_date": "2000-03-10"
   },
   {
     "id": 9532,
@@ -3354,10 +3348,22 @@ const MOVIES_DATA = [
     "release_date": "2000-04-14"
   },
   {
+    "id": 3536,
+    "title": "U-571",
+    "poster_url": "https://image.tmdb.org/t/p/w500/7lc7jXmjQmITnfUBX7nN4kxKKbI.jpg",
+    "release_date": "2000-04-21"
+  },
+  {
     "id": 98,
     "title": "Gladiator",
     "poster_url": "https://image.tmdb.org/t/p/w500/wN2xWp1eIwCKOD0BHTcErTBv1Uq.jpg",
     "release_date": "2000-05-05"
+  },
+  {
+    "id": 10567,
+    "title": "Dinosaur",
+    "poster_url": "https://image.tmdb.org/t/p/w500/rSje3FS7ycJSglowlngjsvDt7vO.jpg",
+    "release_date": "2000-05-19"
   },
   {
     "id": 955,
@@ -3378,6 +3384,12 @@ const MOVIES_DATA = [
     "release_date": "2000-06-23"
   },
   {
+    "id": 2123,
+    "title": "Me, Myself & Irene",
+    "poster_url": "https://image.tmdb.org/t/p/w500/rvRrcbLbpn7UJGRH1JupgHOeJFq.jpg",
+    "release_date": "2000-06-23"
+  },
+  {
     "id": 2024,
     "title": "The Patriot",
     "poster_url": "https://image.tmdb.org/t/p/w500/fWZd815QxUCUcrWQZwUkAp9ljG.jpg",
@@ -3390,40 +3402,22 @@ const MOVIES_DATA = [
     "release_date": "2000-07-07"
   },
   {
-    "id": 6282,
-    "title": "Coyote Ugly",
-    "poster_url": "https://image.tmdb.org/t/p/w500/xYM0laKrEqjiRSQNvqRrXPXN3iL.jpg",
-    "release_date": "2000-07-30"
-  },
-  {
     "id": 9383,
     "title": "Hollow Man",
     "poster_url": "https://image.tmdb.org/t/p/w500/sd3qUIv5uoP2oTbqv66CzXSPjKG.jpg",
     "release_date": "2000-08-04"
   },
   {
-    "id": 10637,
-    "title": "Remember the Titans",
-    "poster_url": "https://image.tmdb.org/t/p/w500/825ohvC4wZ3gCuncCaqkWeQnK8h.jpg",
-    "release_date": "2000-09-29"
-  },
-  {
-    "id": 1597,
-    "title": "Meet the Parents",
-    "poster_url": "https://image.tmdb.org/t/p/w500/5tXJ9ctuyEOMUFLaeqRisbXowWs.jpg",
-    "release_date": "2000-10-06"
+    "id": 786,
+    "title": "Almost Famous",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3rrkyLYbgLj84AYvjhdcJot4JPx.jpg",
+    "release_date": "2000-09-22"
   },
   {
     "id": 4327,
     "title": "Charlie's Angels",
     "poster_url": "https://image.tmdb.org/t/p/w500/iHTmZs0BmkwMCYi8rhvMWC5G4EM.jpg",
     "release_date": "2000-11-02"
-  },
-  {
-    "id": 11978,
-    "title": "Men of Honor",
-    "poster_url": "https://image.tmdb.org/t/p/w500/wNUAnXV1mzOOfvnVBIYsalkk078.jpg",
-    "release_date": "2000-11-09"
   },
   {
     "id": 8871,
@@ -3440,7 +3434,7 @@ const MOVIES_DATA = [
   {
     "id": 11688,
     "title": "The Emperor's New Groove",
-    "poster_url": "https://image.tmdb.org/t/p/w500/wwbgkXQBEKtnyIJapk6gUgWkVw8.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/isA0acj3ONKBLp1pKadUNzxEPFv.jpg",
     "release_date": "2000-12-15"
   },
   {
@@ -3462,22 +3456,28 @@ const MOVIES_DATA = [
     "release_date": "2001-01-19"
   },
   {
-    "id": 392,
-    "title": "Chocolat",
-    "poster_url": "https://image.tmdb.org/t/p/w500/lnwPvyj8UR7MetG2pQ92453IIoR.jpg",
-    "release_date": "2001-01-19"
-  },
-  {
     "id": 11845,
     "title": "Intimacy",
     "poster_url": "https://image.tmdb.org/t/p/w500/aiPhBVo2eNhuPw5Pezx4BHagvUx.jpg",
     "release_date": "2001-01-20"
   },
   {
+    "id": 134,
+    "title": "O Brother, Where Art Thou?",
+    "poster_url": "https://image.tmdb.org/t/p/w500/s9foMAcLg8GEzzQzer04qOGdD1k.jpg",
+    "release_date": "2001-02-02"
+  },
+  {
     "id": 853,
     "title": "Enemy at the Gates",
-    "poster_url": "https://image.tmdb.org/t/p/w500/cHRAbVdsCWFaQrswRsBP7Bn255W.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/9cSoNnB31hGY2mL78VT8mAbz6nR.jpg",
     "release_date": "2001-03-16"
+  },
+  {
+    "id": 10054,
+    "title": "Spy Kids",
+    "poster_url": "https://image.tmdb.org/t/p/w500/j3rUkHIAAoKr6jU30q3Db4fcIF9.jpg",
+    "release_date": "2001-03-18"
   },
   {
     "id": 1734,
@@ -3504,10 +3504,10 @@ const MOVIES_DATA = [
     "release_date": "2001-05-25"
   },
   {
-    "id": 9705,
-    "title": "Swordfish",
-    "poster_url": "https://image.tmdb.org/t/p/w500/mM6h4jMqC4q5IaFgBIGKQDLnRU.jpg",
-    "release_date": "2001-06-08"
+    "id": 1995,
+    "title": "Lara Croft: Tomb Raider",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ye5h6fhfz8TkKV4QeuTucvFzxB9.jpg",
+    "release_date": "2001-06-15"
   },
   {
     "id": 644,
@@ -3530,13 +3530,7 @@ const MOVIES_DATA = [
   {
     "id": 2057,
     "title": "Original Sin",
-    "poster_url": "https://image.tmdb.org/t/p/w500/7wB76uteIjw95oygMdCkmcibJg3.jpg",
-    "release_date": "2001-08-03"
-  },
-  {
-    "id": 5175,
-    "title": "Rush Hour 2",
-    "poster_url": "https://image.tmdb.org/t/p/w500/aBQf2vMiCINeVC9v6BGVYKXurTh.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/xvTtsdvvVr1NYlVJxWZibzhaEt5.jpg",
     "release_date": "2001-08-03"
   },
   {
@@ -3546,10 +3540,10 @@ const MOVIES_DATA = [
     "release_date": "2001-08-03"
   },
   {
-    "id": 1933,
-    "title": "The Others",
-    "poster_url": "https://image.tmdb.org/t/p/w500/p8g1vlTvpM6nr2hMMiZ1fUlKF0D.jpg",
-    "release_date": "2001-08-10"
+    "id": 5175,
+    "title": "Rush Hour 2",
+    "poster_url": "https://image.tmdb.org/t/p/w500/aBQf2vMiCINeVC9v6BGVYKXurTh.jpg",
+    "release_date": "2001-08-03"
   },
   {
     "id": 2770,
@@ -3558,10 +3552,10 @@ const MOVIES_DATA = [
     "release_date": "2001-08-10"
   },
   {
-    "id": 8922,
-    "title": "Jeepers Creepers",
-    "poster_url": "https://image.tmdb.org/t/p/w500/g410Y1U1ELbmJG14Zru3UAimm1G.jpg",
-    "release_date": "2001-08-31"
+    "id": 1933,
+    "title": "The Others",
+    "poster_url": "https://image.tmdb.org/t/p/w500/p8g1vlTvpM6nr2hMMiZ1fUlKF0D.jpg",
+    "release_date": "2001-08-10"
   },
   {
     "id": 2034,
@@ -3578,7 +3572,7 @@ const MOVIES_DATA = [
   {
     "id": 141,
     "title": "Donnie Darko",
-    "poster_url": "https://image.tmdb.org/t/p/w500/sv7D4vlfIH25lNjQYoXzoOFCYaz.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/oo8cVIFIr3aeXoubqooL8Ky76fV.jpg",
     "release_date": "2001-10-26"
   },
   {
@@ -3620,7 +3614,7 @@ const MOVIES_DATA = [
   {
     "id": 855,
     "title": "Black Hawk Down",
-    "poster_url": "https://image.tmdb.org/t/p/w500/1IiKxPpRyfcWYNFRTyWdS8Bc9Jj.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/7fU5dSqKRL4XHeEUz62rCKBfYok.jpg",
     "release_date": "2002-01-18"
   },
   {
@@ -3672,15 +3666,15 @@ const MOVIES_DATA = [
     "release_date": "2002-06-14"
   },
   {
-    "id": 180,
-    "title": "Minority Report",
-    "poster_url": "https://image.tmdb.org/t/p/w500/ccqpHq5tk5W4ymbSbuoy4uYOxFI.jpg",
-    "release_date": "2002-06-21"
-  },
-  {
     "id": 11544,
     "title": "Lilo & Stitch",
     "poster_url": "https://image.tmdb.org/t/p/w500/cFuLvQJPoZpuruAtN3rVnMmLIH8.jpg",
+    "release_date": "2002-06-21"
+  },
+  {
+    "id": 180,
+    "title": "Minority Report",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ccqpHq5tk5W4ymbSbuoy4uYOxFI.jpg",
     "release_date": "2002-06-21"
   },
   {
@@ -3688,6 +3682,12 @@ const MOVIES_DATA = [
     "title": "Men in Black II",
     "poster_url": "https://image.tmdb.org/t/p/w500/enA22EPyzc2WQ1VVyY7zxresQQr.jpg",
     "release_date": "2002-07-03"
+  },
+  {
+    "id": 13683,
+    "title": "Tarzan & Jane",
+    "poster_url": "https://image.tmdb.org/t/p/w500/wsYC01jgqFCVUKPXV9KdAEwkJEQ.jpg",
+    "release_date": "2002-07-23"
   },
   {
     "id": 2675,
@@ -3702,10 +3702,10 @@ const MOVIES_DATA = [
     "release_date": "2002-08-09"
   },
   {
-    "id": 4108,
-    "title": "The Transporter",
-    "poster_url": "https://image.tmdb.org/t/p/w500/dncJ81z1BahrT3ogLvlxOUC5n4u.jpg",
-    "release_date": "2002-10-02"
+    "id": 9357,
+    "title": "One Hour Photo",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fuSIN3Nq6dmaA8LZSkASpQueFO1.jpg",
+    "release_date": "2002-08-21"
   },
   {
     "id": 11013,
@@ -3730,12 +3730,6 @@ const MOVIES_DATA = [
     "title": "Bowling for Columbine",
     "poster_url": "https://image.tmdb.org/t/p/w500/4XsiTsZcNCRSkee1o0fdr5OqYRT.jpg",
     "release_date": "2002-11-15"
-  },
-  {
-    "id": 36669,
-    "title": "Die Another Day",
-    "poster_url": "https://image.tmdb.org/t/p/w500/bZmGqOhMhaLn8AoFMvFDct4tbrL.jpg",
-    "release_date": "2002-11-22"
   },
   {
     "id": 9016,
@@ -3786,6 +3780,12 @@ const MOVIES_DATA = [
     "release_date": "2003-02-21"
   },
   {
+    "id": 9567,
+    "title": "Tears of the Sun",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fUnSSQukwTwBSdCbufEE36petLq.jpg",
+    "release_date": "2003-03-07"
+  },
+  {
     "id": 423,
     "title": "The Pianist",
     "poster_url": "https://image.tmdb.org/t/p/w500/2hFvxCCWrTmCYwfy7yum0GKRi3Y.jpg",
@@ -3822,12 +3822,6 @@ const MOVIES_DATA = [
     "release_date": "2003-05-30"
   },
   {
-    "id": 9654,
-    "title": "The Italian Job",
-    "poster_url": "https://image.tmdb.org/t/p/w500/eSkjK4kctyrWpFhxl35GPvSs6tI.jpg",
-    "release_date": "2003-05-30"
-  },
-  {
     "id": 1927,
     "title": "Hulk",
     "poster_url": "https://image.tmdb.org/t/p/w500/UllIft2jLSBaay3zQyMV4GNdfy.jpg",
@@ -3848,7 +3842,7 @@ const MOVIES_DATA = [
   {
     "id": 22,
     "title": "Pirates of the Caribbean: The Curse of the Black Pearl",
-    "poster_url": "https://image.tmdb.org/t/p/w500/kvDwL2gTf6yxujbsWbsGQB3Z9Wa.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/poHwCZeWzJCShH7tOjg8RIoyjcw.jpg",
     "release_date": "2003-07-09"
   },
   {
@@ -3864,22 +3858,16 @@ const MOVIES_DATA = [
     "release_date": "2003-09-18"
   },
   {
-    "id": 1584,
-    "title": "The School of Rock",
-    "poster_url": "https://image.tmdb.org/t/p/w500/zXLXaepIBvFVLU25DH3wv4IPSbe.jpg",
-    "release_date": "2003-10-03"
+    "id": 10159,
+    "title": "The Rundown",
+    "poster_url": "https://image.tmdb.org/t/p/w500/dJX06UwlLIwbLLt9UQ6DlkHF4jz.jpg",
+    "release_date": "2003-09-26"
   },
   {
     "id": 24,
     "title": "Kill Bill: Vol. 1",
     "poster_url": "https://image.tmdb.org/t/p/w500/v7TaX8kXMXs5yFFGR41guUDNcnB.jpg",
     "release_date": "2003-10-10"
-  },
-  {
-    "id": 9373,
-    "title": "The Texas Chainsaw Massacre",
-    "poster_url": "https://image.tmdb.org/t/p/w500/781px1eOtfVt1RdIsL4Dt1s3x7R.jpg",
-    "release_date": "2003-10-17"
   },
   {
     "id": 4256,
@@ -3912,6 +3900,12 @@ const MOVIES_DATA = [
     "release_date": "2003-12-05"
   },
   {
+    "id": 21542,
+    "title": "Love Don't Co$t a Thing",
+    "poster_url": "https://image.tmdb.org/t/p/w500/88zspc72LIkfiuMnGpHnsWCuqEH.jpg",
+    "release_date": "2003-12-12"
+  },
+  {
     "id": 122,
     "title": "The Lord of the Rings: The Return of the King",
     "poster_url": "https://image.tmdb.org/t/p/w500/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg",
@@ -3922,6 +3916,12 @@ const MOVIES_DATA = [
     "title": "The Butterfly Effect",
     "poster_url": "https://image.tmdb.org/t/p/w500/ea5iv7TWMh18fOKoRGgmtcg85Gx.jpg",
     "release_date": "2004-01-23"
+  },
+  {
+    "id": 1824,
+    "title": "50 First Dates",
+    "poster_url": "https://image.tmdb.org/t/p/w500/lzUI2Cg7OMfcUNv3f7MywYNBjs6.jpg",
+    "release_date": "2004-02-13"
   },
   {
     "id": 1278,
@@ -3942,28 +3942,22 @@ const MOVIES_DATA = [
     "release_date": "2004-03-19"
   },
   {
-    "id": 924,
-    "title": "Dawn of the Dead",
-    "poster_url": "https://image.tmdb.org/t/p/w500/ttquyxStEEctzghtA2f4PUGprDr.jpg",
-    "release_date": "2004-03-19"
-  },
-  {
     "id": 10591,
     "title": "The Girl Next Door",
     "poster_url": "https://image.tmdb.org/t/p/w500/5mVyFHSY2rSsNgD4NfEwV82HigU.jpg",
     "release_date": "2004-04-09"
   },
   {
+    "id": 393,
+    "title": "Kill Bill: Vol. 2",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2yhg0mZQMhDyvUQ4rG1IZ4oIA8L.jpg",
+    "release_date": "2004-04-16"
+  },
+  {
     "id": 7220,
     "title": "The Punisher",
     "poster_url": "https://image.tmdb.org/t/p/w500/7rmA1HwYp2GKM85BL0cVwCaosGr.jpg",
     "release_date": "2004-04-16"
-  },
-  {
-    "id": 9509,
-    "title": "Man on Fire",
-    "poster_url": "https://image.tmdb.org/t/p/w500/grCGLCcTHv9TChibzOwzUpykcjB.jpg",
-    "release_date": "2004-04-23"
   },
   {
     "id": 10625,
@@ -4032,10 +4026,10 @@ const MOVIES_DATA = [
     "release_date": "2004-07-16"
   },
   {
-    "id": 747,
-    "title": "Shaun of the Dead",
-    "poster_url": "https://image.tmdb.org/t/p/w500/dgXPhzNJH8HFTBjXPB177yNx6RI.jpg",
-    "release_date": "2004-09-24"
+    "id": 10555,
+    "title": "Shark Tale",
+    "poster_url": "https://image.tmdb.org/t/p/w500/r08DpyPyhXcJTfNZAICNGMzcQ8l.jpg",
+    "release_date": "2004-10-01"
   },
   {
     "id": 176,
@@ -4058,7 +4052,7 @@ const MOVIES_DATA = [
   {
     "id": 2059,
     "title": "National Treasure",
-    "poster_url": "https://image.tmdb.org/t/p/w500/pxL6E4GBOPUG6CdkO9cUQN5VMwI.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hVnCnOsyTRCe6Y27pCJ855FMcAK.jpg",
     "release_date": "2004-11-19"
   },
   {
@@ -4074,22 +4068,16 @@ const MOVIES_DATA = [
     "release_date": "2005-02-18"
   },
   {
+    "id": 10022,
+    "title": "The Pacifier",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ayVLPibrtazh7U5FliWRLDMmG3d.jpg",
+    "release_date": "2005-03-04"
+  },
+  {
     "id": 9928,
     "title": "Robots",
     "poster_url": "https://image.tmdb.org/t/p/w500/fnKCh67l2DDG9NxxIlk9IpsXQ99.jpg",
     "release_date": "2005-03-11"
-  },
-  {
-    "id": 187,
-    "title": "Sin City",
-    "poster_url": "https://image.tmdb.org/t/p/w500/i66G50wATMmPrvpP95f0XP6ZdVS.jpg",
-    "release_date": "2005-04-01"
-  },
-  {
-    "id": 11679,
-    "title": "xXx: State of the Union",
-    "poster_url": "https://image.tmdb.org/t/p/w500/nL9J0N3HJSdZTKRsd5xcE6IzL5s.jpg",
-    "release_date": "2005-04-29"
   },
   {
     "id": 1495,
@@ -4140,10 +4128,22 @@ const MOVIES_DATA = [
     "release_date": "2005-07-15"
   },
   {
-    "id": 9335,
-    "title": "Transporter 2",
-    "poster_url": "https://image.tmdb.org/t/p/w500/cdm17vK8PxHfTi7ayZf6WKbOgUO.jpg",
-    "release_date": "2005-09-02"
+    "id": 1635,
+    "title": "The Island",
+    "poster_url": "https://image.tmdb.org/t/p/w500/9MaZYEyFmQwNeDTxZGQEN8E0e4p.jpg",
+    "release_date": "2005-07-22"
+  },
+  {
+    "id": 6957,
+    "title": "The 40 Year Old Virgin",
+    "poster_url": "https://image.tmdb.org/t/p/w500/mVeoqL37gzhMXQVpONi9DGOQ3tZ.jpg",
+    "release_date": "2005-08-11"
+  },
+  {
+    "id": 9007,
+    "title": "Just Like Heaven",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2cLbyVNhEEaUJGg7rfbLtX6454I.jpg",
+    "release_date": "2005-09-16"
   },
   {
     "id": 3933,
@@ -4155,12 +4155,6 @@ const MOVIES_DATA = [
     "id": 59,
     "title": "A History of Violence",
     "poster_url": "https://image.tmdb.org/t/p/w500/3qnO72NHmUgs9JZXAmu4aId9QDl.jpg",
-    "release_date": "2005-09-30"
-  },
-  {
-    "id": 16320,
-    "title": "Serenity",
-    "poster_url": "https://image.tmdb.org/t/p/w500/4sqUOaPFoP2W81mq1UYqZqf5WzA.jpg",
     "release_date": "2005-09-30"
   },
   {
@@ -4206,10 +4200,28 @@ const MOVIES_DATA = [
     "release_date": "2006-01-13"
   },
   {
+    "id": 10982,
+    "title": "Hoodwinked!",
+    "poster_url": "https://image.tmdb.org/t/p/w500/kwPl1AKX4BLxrh5PCkrwYWeEV5I.jpg",
+    "release_date": "2006-01-13"
+  },
+  {
+    "id": 9286,
+    "title": "Final Destination 3",
+    "poster_url": "https://image.tmdb.org/t/p/w500/p7ARuNKUGPGvkBiDtIDvAzYzonX.jpg",
+    "release_date": "2006-02-10"
+  },
+  {
     "id": 9792,
     "title": "The Hills Have Eyes",
     "poster_url": "https://image.tmdb.org/t/p/w500/2eJL1Ccr1FN3dm9OSDwyd8uaX1b.jpg",
     "release_date": "2006-03-10"
+  },
+  {
+    "id": 752,
+    "title": "V for Vendetta",
+    "poster_url": "https://image.tmdb.org/t/p/w500/1avD1JeaRiJX5M4ahPdZPypGoGN.jpg",
+    "release_date": "2006-03-17"
   },
   {
     "id": 9655,
@@ -4218,21 +4230,15 @@ const MOVIES_DATA = [
     "release_date": "2006-03-17"
   },
   {
-    "id": 752,
-    "title": "V for Vendetta",
-    "poster_url": "https://image.tmdb.org/t/p/w500/piZOwjyk1g51oPHonc7zaQY3WOv.jpg",
-    "release_date": "2006-03-17"
-  },
-  {
     "id": 950,
     "title": "Ice Age: The Meltdown",
-    "poster_url": "https://image.tmdb.org/t/p/w500/e23bfKyjOiKJ5uOufFgfO7JO5ug.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/8vNkkk4erLGDg3UfbmSHsTdSNcY.jpg",
     "release_date": "2006-03-31"
   },
   {
     "id": 4257,
     "title": "Scary Movie 4",
-    "poster_url": "https://image.tmdb.org/t/p/w500/sEqFdw1wLtY94RKCSPolsHWzn6r.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/dEwlu8S0z1AibuX1weLwUyiRWFl.jpg",
     "release_date": "2006-04-14"
   },
   {
@@ -4242,16 +4248,10 @@ const MOVIES_DATA = [
     "release_date": "2006-04-21"
   },
   {
-    "id": 956,
-    "title": "Mission: Impossible III",
-    "poster_url": "https://image.tmdb.org/t/p/w500/vKGYCpmQyV9uHybWDzXuII8Los5.jpg",
-    "release_date": "2006-05-05"
-  },
-  {
-    "id": 9763,
-    "title": "Goal!",
-    "poster_url": "https://image.tmdb.org/t/p/w500/9YZhJGoIbJtrjDYbENGhR6f6SZE.jpg",
-    "release_date": "2006-05-12"
+    "id": 7518,
+    "title": "Over the Hedge",
+    "poster_url": "https://image.tmdb.org/t/p/w500/jtZnymorbnHY7mOiBXR14ZDJseM.jpg",
+    "release_date": "2006-05-19"
   },
   {
     "id": 591,
@@ -4260,16 +4260,22 @@ const MOVIES_DATA = [
     "release_date": "2006-05-19"
   },
   {
-    "id": 7518,
-    "title": "Over the Hedge",
-    "poster_url": "https://image.tmdb.org/t/p/w500/jtZnymorbnHY7mOiBXR14ZDJseM.jpg",
-    "release_date": "2006-05-19"
-  },
-  {
     "id": 920,
     "title": "Cars",
-    "poster_url": "https://image.tmdb.org/t/p/w500/2Touk3m5gzsqr1VsvxypdyHY5ci.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/oloVyeBbkVGbFFaUjR8I7Boo7wA.jpg",
     "release_date": "2006-06-09"
+  },
+  {
+    "id": 9339,
+    "title": "Click",
+    "poster_url": "https://image.tmdb.org/t/p/w500/oL0k5JA53PyoHSZqKb3cNkhwBCE.jpg",
+    "release_date": "2006-06-23"
+  },
+  {
+    "id": 1452,
+    "title": "Superman Returns",
+    "poster_url": "https://image.tmdb.org/t/p/w500/385XwTQZDpRX2d3kxtnpiLrjBXw.jpg",
+    "release_date": "2006-06-28"
   },
   {
     "id": 350,
@@ -4290,12 +4296,6 @@ const MOVIES_DATA = [
     "release_date": "2006-07-21"
   },
   {
-    "id": 27,
-    "title": "9 Songs",
-    "poster_url": "https://image.tmdb.org/t/p/w500/91O7z0vo7MiNWd5xD2BoivwbQsb.jpg",
-    "release_date": "2006-07-25"
-  },
-  {
     "id": 9392,
     "title": "The Descent",
     "poster_url": "https://image.tmdb.org/t/p/w500/mxFPI4KYBk5ri9cPteIS8jiDFgj.jpg",
@@ -4308,22 +4308,10 @@ const MOVIES_DATA = [
     "release_date": "2006-08-31"
   },
   {
-    "id": 1948,
-    "title": "Crank",
-    "poster_url": "https://image.tmdb.org/t/p/w500/rsKmhnvzJezjwC1Ud2Hh37oNpdQ.jpg",
-    "release_date": "2006-08-31"
-  },
-  {
     "id": 7512,
     "title": "Idiocracy",
-    "poster_url": "https://image.tmdb.org/t/p/w500/k75tEyoPbPlfHSKakJBOR5dx1Dp.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/6cTHBq49ApwsJaRr3ojlY1cmiXk.jpg",
     "release_date": "2006-09-01"
-  },
-  {
-    "id": 1378,
-    "title": "Shortbus",
-    "poster_url": "https://image.tmdb.org/t/p/w500/s8QBrWgpZpYrySSyTQ0xbFLPKrS.jpg",
-    "release_date": "2006-10-04"
   },
   {
     "id": 1422,
@@ -4358,7 +4346,7 @@ const MOVIES_DATA = [
   {
     "id": 1372,
     "title": "Blood Diamond",
-    "poster_url": "https://image.tmdb.org/t/p/w500/bqKNoySmI4eOjsSjJEnLj4j2HAp.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/tnLxPpajkbVdbQl5B9CuD7sSpz9.jpg",
     "release_date": "2006-12-08"
   },
   {
@@ -4380,15 +4368,15 @@ const MOVIES_DATA = [
     "release_date": "2007-02-08"
   },
   {
-    "id": 1265,
-    "title": "Bridge to Terabithia",
-    "poster_url": "https://image.tmdb.org/t/p/w500/3xFxGodKPMFLheS8rujFSmLfcq4.jpg",
+    "id": 1250,
+    "title": "Ghost Rider",
+    "poster_url": "https://image.tmdb.org/t/p/w500/d9Oan9XJJ6gRJa64Ifsgp1sXbC4.jpg",
     "release_date": "2007-02-16"
   },
   {
-    "id": 1250,
-    "title": "Ghost Rider",
-    "poster_url": "https://image.tmdb.org/t/p/w500/1pyU94dAY7npDQCKuxCSyX9KthN.jpg",
+    "id": 1265,
+    "title": "Bridge to Terabithia",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3xFxGodKPMFLheS8rujFSmLfcq4.jpg",
     "release_date": "2007-02-16"
   },
   {
@@ -4404,22 +4392,34 @@ const MOVIES_DATA = [
     "release_date": "2007-03-09"
   },
   {
+    "id": 14001,
+    "title": "Dead Silence",
+    "poster_url": "https://image.tmdb.org/t/p/w500/rvcUVdATIHKZt7BSSttUkKbeBXN.jpg",
+    "release_date": "2007-03-16"
+  },
+  {
     "id": 7485,
     "title": "Shooter",
     "poster_url": "https://image.tmdb.org/t/p/w500/2aWGxo1E5polpBjPvtBRkWp7qaS.jpg",
     "release_date": "2007-03-22"
   },
   {
+    "id": 1267,
+    "title": "Meet the Robinsons",
+    "poster_url": "https://image.tmdb.org/t/p/w500/naya0zF4kT401Sx15AtwB9vpcJr.jpg",
+    "release_date": "2007-03-30"
+  },
+  {
+    "id": 4638,
+    "title": "Hot Fuzz",
+    "poster_url": "https://image.tmdb.org/t/p/w500/zPib4ukTSdXvHP9pxGkFCe34f3y.jpg",
+    "release_date": "2007-04-20"
+  },
+  {
     "id": 559,
     "title": "Spider-Man 3",
     "poster_url": "https://image.tmdb.org/t/p/w500/qFmwhVUoUSXjkKRmca5yGDEXBIj.jpg",
     "release_date": "2007-05-03"
-  },
-  {
-    "id": 1562,
-    "title": "28 Weeks Later",
-    "poster_url": "https://image.tmdb.org/t/p/w500/oix0aNv1lvW3nUGspUyvSIBlpbs.jpg",
-    "release_date": "2007-05-11"
   },
   {
     "id": 810,
@@ -4452,12 +4452,6 @@ const MOVIES_DATA = [
     "release_date": "2007-07-27"
   },
   {
-    "id": 2503,
-    "title": "The Bourne Ultimatum",
-    "poster_url": "https://image.tmdb.org/t/p/w500/15rMz5MRXFp7CP4VxhjYw4y0FUn.jpg",
-    "release_date": "2007-08-03"
-  },
-  {
     "id": 5174,
     "title": "Rush Hour 3",
     "poster_url": "https://image.tmdb.org/t/p/w500/mp9CzKxLa2i7yblMXUrzVfGqsCo.jpg",
@@ -4470,27 +4464,27 @@ const MOVIES_DATA = [
     "release_date": "2007-08-17"
   },
   {
-    "id": 15356,
-    "title": "The Girl Next Door",
-    "poster_url": "https://image.tmdb.org/t/p/w500/dXjLp7k7ILyg22T0s9VvpPKc9jn.jpg",
-    "release_date": "2007-10-03"
-  },
-  {
     "id": 13186,
     "title": "Wrong Turn 2: Dead End",
     "poster_url": "https://image.tmdb.org/t/p/w500/ow3IMhTVLryZuCEoQznVTTmFYuu.jpg",
     "release_date": "2007-10-08"
   },
   {
-    "id": 4982,
-    "title": "American Gangster",
-    "poster_url": "https://image.tmdb.org/t/p/w500/sX9idXDqRUxE5ffww3n3RV5gL55.jpg",
+    "id": 5915,
+    "title": "Into the Wild",
+    "poster_url": "https://image.tmdb.org/t/p/w500/jnLnLYP5pGDfri04gxtAqAvkHMw.jpg",
+    "release_date": "2007-10-19"
+  },
+  {
+    "id": 5559,
+    "title": "Bee Movie",
+    "poster_url": "https://image.tmdb.org/t/p/w500/aWe27GmvfVYAd7p0KEtJZWwLWk5.jpg",
     "release_date": "2007-11-02"
   },
   {
     "id": 6977,
     "title": "No Country for Old Men",
-    "poster_url": "https://image.tmdb.org/t/p/w500/6d5XOczc226jECq0LIX0siKtgHR.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/uB7RDZby43Wvu8SKGHHTwGyTDBX.jpg",
     "release_date": "2007-11-21"
   },
   {
@@ -4500,22 +4494,22 @@ const MOVIES_DATA = [
     "release_date": "2007-11-21"
   },
   {
-    "id": 4523,
-    "title": "Enchanted",
-    "poster_url": "https://image.tmdb.org/t/p/w500/8KCNzCArLlvLdQoHx6npua2VSVc.jpg",
-    "release_date": "2007-11-21"
-  },
-  {
     "id": 6479,
     "title": "I Am Legend",
     "poster_url": "https://image.tmdb.org/t/p/w500/iPDkaSdKk2jRLTM65UOEoKtsIZ8.jpg",
     "release_date": "2007-12-14"
   },
   {
-    "id": 4347,
-    "title": "Atonement",
-    "poster_url": "https://image.tmdb.org/t/p/w500/hMRIyBjPzxaSXWM06se3OcNjIQa.jpg",
-    "release_date": "2008-01-11"
+    "id": 6477,
+    "title": "Alvin and the Chipmunks",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3s3WvpKPXXeKAPketDDqiQTi20S.jpg",
+    "release_date": "2007-12-14"
+  },
+  {
+    "id": 7191,
+    "title": "Cloverfield",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qIegUGJqyMMCRjkKV1s7A9MqdJ8.jpg",
+    "release_date": "2008-01-18"
   },
   {
     "id": 7345,
@@ -4530,10 +4524,16 @@ const MOVIES_DATA = [
     "release_date": "2008-01-25"
   },
   {
-    "id": 1729,
-    "title": "The Forbidden Kingdom",
-    "poster_url": "https://image.tmdb.org/t/p/w500/z8chF1Z7hyuSVqLYTgElkQZh2VB.jpg",
-    "release_date": "2008-04-18"
+    "id": 12222,
+    "title": "Horton Hears a Who!",
+    "poster_url": "https://image.tmdb.org/t/p/w500/6k47Z3A5zI2rxubTMwiLyIqQLLr.jpg",
+    "release_date": "2008-03-03"
+  },
+  {
+    "id": 11918,
+    "title": "Superhero Movie",
+    "poster_url": "https://image.tmdb.org/t/p/w500/nAzo5OOmoE9SXOv4mHTuiu58QXA.jpg",
+    "release_date": "2008-03-28"
   },
   {
     "id": 1726,
@@ -4548,22 +4548,16 @@ const MOVIES_DATA = [
     "release_date": "2008-05-09"
   },
   {
-    "id": 7459,
-    "title": "Speed Racer",
-    "poster_url": "https://image.tmdb.org/t/p/w500/fxRIpx9Op9h71q3tvuabx4GryyP.jpg",
-    "release_date": "2008-05-09"
+    "id": 2454,
+    "title": "The Chronicles of Narnia: Prince Caspian",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qxz3WIyjZiSKUhaTIEJ3c1GcC9z.jpg",
+    "release_date": "2008-05-16"
   },
   {
     "id": 217,
     "title": "Indiana Jones and the Kingdom of the Crystal Skull",
     "poster_url": "https://image.tmdb.org/t/p/w500/56As6XEM1flWvprX4LgkPl8ii4K.jpg",
     "release_date": "2008-05-22"
-  },
-  {
-    "id": 4564,
-    "title": "Sex and the City",
-    "poster_url": "https://image.tmdb.org/t/p/w500/AhNfnsGW95RKHQNLdgFH48UN0Zy.jpg",
-    "release_date": "2008-05-30"
   },
   {
     "id": 9502,
@@ -4588,6 +4582,12 @@ const MOVIES_DATA = [
     "title": "WALL·E",
     "poster_url": "https://image.tmdb.org/t/p/w500/hbhFnRzzg6ZDmm8YAmxBnQpQIPh.jpg",
     "release_date": "2008-06-27"
+  },
+  {
+    "id": 88751,
+    "title": "Journey to the Center of the Earth",
+    "poster_url": "https://image.tmdb.org/t/p/w500/kL55wY0s2H9JdwfjoWIp9plvYnl.jpg",
+    "release_date": "2008-07-11"
   },
   {
     "id": 155,
@@ -4662,27 +4662,21 @@ const MOVIES_DATA = [
     "release_date": "2009-01-30"
   },
   {
-    "id": 8055,
-    "title": "The Reader",
-    "poster_url": "https://image.tmdb.org/t/p/w500/r0WURbmnhgKeBpHcpDULBgRedQM.jpg",
-    "release_date": "2009-01-30"
-  },
-  {
     "id": 14836,
     "title": "Coraline",
     "poster_url": "https://image.tmdb.org/t/p/w500/4jeFXQYytChdZYE9JYO7Un87IlW.jpg",
     "release_date": "2009-02-06"
   },
   {
-    "id": 13183,
-    "title": "Watchmen",
-    "poster_url": "https://image.tmdb.org/t/p/w500/aVURelN3pM56lFM7Dgfs5TixcIf.jpg",
-    "release_date": "2009-03-06"
+    "id": 15512,
+    "title": "Monsters vs Aliens",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hpHarddVj34j53T7NsoUGdKj4mP.jpg",
+    "release_date": "2009-03-26"
   },
   {
     "id": 13475,
     "title": "Star Trek",
-    "poster_url": "https://image.tmdb.org/t/p/w500/hN2ZtF3Uw6mhIHZiqL0SKzELtKn.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/9vaRPXj44Q2meHgt3VVfQufiHOJ.jpg",
     "release_date": "2009-05-07"
   },
   {
@@ -4722,16 +4716,34 @@ const MOVIES_DATA = [
     "release_date": "2009-07-15"
   },
   {
-    "id": 19913,
-    "title": "(500) Days of Summer",
-    "poster_url": "https://image.tmdb.org/t/p/w500/qXAuQ9hF30sQRsXf40OfRVl0MJZ.jpg",
+    "id": 14869,
+    "title": "G.I. Joe: The Rise of Cobra",
+    "poster_url": "https://image.tmdb.org/t/p/w500/mc9b25IAprHfsaOz0wTshOwGHcY.jpg",
     "release_date": "2009-08-07"
+  },
+  {
+    "id": 17654,
+    "title": "District 9",
+    "poster_url": "https://image.tmdb.org/t/p/w500/tuGlQkqLxnodDSk6mp5c2wvxUEd.jpg",
+    "release_date": "2009-08-14"
   },
   {
     "id": 16869,
     "title": "Inglourious Basterds",
-    "poster_url": "https://image.tmdb.org/t/p/w500/7sfbEnaARXDDhKm0CZ7D7uc2sbo.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3Gb6G2amMuKZmmCpRqM4N67s8eE.jpg",
     "release_date": "2009-08-21"
+  },
+  {
+    "id": 12244,
+    "title": "9",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3uqXGOH4BQ2CLJWkDJZ0PzbUzOn.jpg",
+    "release_date": "2009-09-09"
+  },
+  {
+    "id": 22794,
+    "title": "Cloudy with a Chance of Meatballs",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qhOhIKf7QEyQ5dMrRUqs5eTX1Oq.jpg",
+    "release_date": "2009-09-18"
   },
   {
     "id": 19994,
@@ -4746,12 +4758,6 @@ const MOVIES_DATA = [
     "release_date": "2009-09-29"
   },
   {
-    "id": 19908,
-    "title": "Zombieland",
-    "poster_url": "https://image.tmdb.org/t/p/w500/dUkAmAyPVqubSBNRjRqCgHggZcK.jpg",
-    "release_date": "2009-10-08"
-  },
-  {
     "id": 22803,
     "title": "Law Abiding Citizen",
     "poster_url": "https://image.tmdb.org/t/p/w500/fcEXcip7v0O1ndV4VUdFqJSqbOg.jpg",
@@ -4764,22 +4770,10 @@ const MOVIES_DATA = [
     "release_date": "2009-10-20"
   },
   {
-    "id": 13576,
-    "title": "This Is It",
-    "poster_url": "https://image.tmdb.org/t/p/w500/8GvQzHFSqr9KhyVxLEpB5dXPOWG.jpg",
-    "release_date": "2009-10-28"
-  },
-  {
     "id": 14161,
     "title": "2012",
-    "poster_url": "https://image.tmdb.org/t/p/w500/c2PkTPT5D9zB8SIm5wNlDAANEqM.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/zaqam2RNscH5ooYFWInV6hjx6y5.jpg",
     "release_date": "2009-11-13"
-  },
-  {
-    "id": 13971,
-    "title": "Wild Child",
-    "poster_url": "https://image.tmdb.org/t/p/w500/xwbFEPubG4wroLDZdmTWRGNnnWf.jpg",
-    "release_date": "2009-11-17"
   },
   {
     "id": 18239,
@@ -4796,7 +4790,7 @@ const MOVIES_DATA = [
   {
     "id": 10198,
     "title": "The Princess and the Frog",
-    "poster_url": "https://image.tmdb.org/t/p/w500/v6nAUs62OJ4DXmnnmPFeVmMz8H9.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/yprv5PbnEksoVj2v6XEnDBg9joR.jpg",
     "release_date": "2009-12-11"
   },
   {
@@ -4804,12 +4798,6 @@ const MOVIES_DATA = [
     "title": "Avatar",
     "poster_url": "https://image.tmdb.org/t/p/w500/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg",
     "release_date": "2009-12-18"
-  },
-  {
-    "id": 10528,
-    "title": "Sherlock Holmes",
-    "poster_url": "https://image.tmdb.org/t/p/w500/momkKuWburNTqKBF6ez7rvhYVhE.jpg",
-    "release_date": "2009-12-25"
   },
   {
     "id": 26466,
@@ -4820,7 +4808,7 @@ const MOVIES_DATA = [
   {
     "id": 26389,
     "title": "From Paris with Love",
-    "poster_url": "https://image.tmdb.org/t/p/w500/2nD0RAWVOccomLp1iToVJn6KC2a.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/poVoLKLxUqsTLSntA40Po2F78dZ.jpg",
     "release_date": "2010-02-05"
   },
   {
@@ -4846,12 +4834,6 @@ const MOVIES_DATA = [
     "title": "How to Train Your Dragon",
     "poster_url": "https://image.tmdb.org/t/p/w500/ygGmAO60t8GyqUo9xYeYxSZAR3b.jpg",
     "release_date": "2010-03-26"
-  },
-  {
-    "id": 18823,
-    "title": "Clash of the Titans",
-    "poster_url": "https://image.tmdb.org/t/p/w500/6iHYLipwEyZUPNO8MM3l1yHDaFE.jpg",
-    "release_date": "2010-04-02"
   },
   {
     "id": 23483,
@@ -4884,6 +4866,12 @@ const MOVIES_DATA = [
     "release_date": "2010-06-11"
   },
   {
+    "id": 27,
+    "title": "9 Songs",
+    "poster_url": "https://image.tmdb.org/t/p/w500/91O7z0vo7MiNWd5xD2BoivwbQsb.jpg",
+    "release_date": "2010-06-18"
+  },
+  {
     "id": 10193,
     "title": "Toy Story 3",
     "poster_url": "https://image.tmdb.org/t/p/w500/AbbXspMOwdvwWZgVN0nabZq03Ec.jpg",
@@ -4902,9 +4890,21 @@ const MOVIES_DATA = [
     "release_date": "2010-06-24"
   },
   {
+    "id": 10196,
+    "title": "The Last Airbender",
+    "poster_url": "https://image.tmdb.org/t/p/w500/kl9JJ8288bNsY8oqT1SpQh1w2mb.jpg",
+    "release_date": "2010-07-01"
+  },
+  {
     "id": 20352,
     "title": "Despicable Me",
     "poster_url": "https://image.tmdb.org/t/p/w500/b1BT309QWjtFUlJPLmXmrcHOWEL.jpg",
+    "release_date": "2010-07-09"
+  },
+  {
+    "id": 34851,
+    "title": "Predators",
+    "poster_url": "https://image.tmdb.org/t/p/w500/wdniP8NDaJIydi1hMxhpbJMUfr6.jpg",
     "release_date": "2010-07-09"
   },
   {
@@ -4934,7 +4934,7 @@ const MOVIES_DATA = [
   {
     "id": 43947,
     "title": "I Spit on Your Grave",
-    "poster_url": "https://image.tmdb.org/t/p/w500/xDbNbIqsdA1D0W2gve2QRTp4z83.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/sD5mBllYcBR5sQTyR2VGYhpHf6B.jpg",
     "release_date": "2010-10-08"
   },
   {
@@ -4956,28 +4956,16 @@ const MOVIES_DATA = [
     "release_date": "2010-11-24"
   },
   {
-    "id": 43347,
-    "title": "Love & Other Drugs",
-    "poster_url": "https://image.tmdb.org/t/p/w500/wZLM2uKJRYNchLmiCIjosX0rXy8.jpg",
-    "release_date": "2010-11-24"
-  },
-  {
-    "id": 44214,
-    "title": "Black Swan",
-    "poster_url": "https://image.tmdb.org/t/p/w500/viWheBd44bouiLCHgNMvahLThqx.jpg",
-    "release_date": "2010-12-17"
-  },
-  {
     "id": 20526,
     "title": "TRON: Legacy",
     "poster_url": "https://image.tmdb.org/t/p/w500/8Nc6R8k7bG8frSiDJo0oLucF7dN.jpg",
     "release_date": "2010-12-17"
   },
   {
-    "id": 41630,
-    "title": "No Strings Attached",
-    "poster_url": "https://image.tmdb.org/t/p/w500/9C09L1U9S13J4Ut029Qhu0oLcTQ.jpg",
-    "release_date": "2011-01-21"
+    "id": 44214,
+    "title": "Black Swan",
+    "poster_url": "https://image.tmdb.org/t/p/w500/viWheBd44bouiLCHgNMvahLThqx.jpg",
+    "release_date": "2010-12-17"
   },
   {
     "id": 50546,
@@ -4990,12 +4978,6 @@ const MOVIES_DATA = [
     "title": "Rango",
     "poster_url": "https://image.tmdb.org/t/p/w500/A5MP1guV8pbruieG0tnpPIbaJtt.jpg",
     "release_date": "2011-03-03"
-  },
-  {
-    "id": 39513,
-    "title": "Paul",
-    "poster_url": "https://image.tmdb.org/t/p/w500/dKhexH8nS08lVlSmwSs00cHFxbY.jpg",
-    "release_date": "2011-03-17"
   },
   {
     "id": 49018,
@@ -5076,6 +5058,18 @@ const MOVIES_DATA = [
     "release_date": "2011-08-10"
   },
   {
+    "id": 55779,
+    "title": "Final Destination 5",
+    "poster_url": "https://image.tmdb.org/t/p/w500/Akx1Po4ZLetOWfYJhQf75tbhTtK.jpg",
+    "release_date": "2011-08-12"
+  },
+  {
+    "id": 62046,
+    "title": "Flypaper",
+    "poster_url": "https://image.tmdb.org/t/p/w500/uJcxUKIy2GXDODT2pDl0q9XvByq.jpg",
+    "release_date": "2011-08-19"
+  },
+  {
     "id": 64690,
     "title": "Drive",
     "poster_url": "https://image.tmdb.org/t/p/w500/602vevIURmpDfzbnv5Ubi6wIkQm.jpg",
@@ -5094,12 +5088,6 @@ const MOVIES_DATA = [
     "release_date": "2011-10-07"
   },
   {
-    "id": 71672,
-    "title": "Wrong Turn 4: Bloody Beginnings",
-    "poster_url": "https://image.tmdb.org/t/p/w500/l1vD4GY7tlT420KJ3xWTzyQ2Aa9.jpg",
-    "release_date": "2011-10-17"
-  },
-  {
     "id": 49530,
     "title": "In Time",
     "poster_url": "https://image.tmdb.org/t/p/w500/3Mwj2sIONQckOZP3YwsUXF7U5I4.jpg",
@@ -5110,6 +5098,12 @@ const MOVIES_DATA = [
     "title": "The Twilight Saga: Breaking Dawn - Part 1",
     "poster_url": "https://image.tmdb.org/t/p/w500/qs8LsHKYlVRmJbFUiSUhhRAygwj.jpg",
     "release_date": "2011-11-17"
+  },
+  {
+    "id": 76025,
+    "title": "Shame",
+    "poster_url": "https://image.tmdb.org/t/p/w500/cAWLz9kFv4xc6IsEXTj2DrcqD55.jpg",
+    "release_date": "2011-12-02"
   },
   {
     "id": 56292,
@@ -5130,16 +5124,10 @@ const MOVIES_DATA = [
     "release_date": "2012-03-02"
   },
   {
-    "id": 49529,
-    "title": "John Carter",
-    "poster_url": "https://image.tmdb.org/t/p/w500/lCxz1Yus07QCQQCb6I0Dr3Lmqpx.jpg",
-    "release_date": "2012-03-09"
-  },
-  {
-    "id": 70160,
-    "title": "The Hunger Games",
-    "poster_url": "https://image.tmdb.org/t/p/w500/yXCbOiVDCxO71zI7cuwBRXdftq8.jpg",
-    "release_date": "2012-03-23"
+    "id": 9732,
+    "title": "The Lion King II: Simba's Pride",
+    "poster_url": "https://image.tmdb.org/t/p/w500/sWR1x6UCMCGN9xEf8RGhPS934X0.jpg",
+    "release_date": "2012-03-06"
   },
   {
     "id": 24428,
@@ -5160,15 +5148,21 @@ const MOVIES_DATA = [
     "release_date": "2012-05-18"
   },
   {
-    "id": 80321,
-    "title": "Madagascar 3: Europe's Most Wanted",
-    "poster_url": "https://image.tmdb.org/t/p/w500/ekraj4ksvIKeuvQVEevEJkuybZd.jpg",
-    "release_date": "2012-06-08"
+    "id": 41154,
+    "title": "Men in Black 3",
+    "poster_url": "https://image.tmdb.org/t/p/w500/90DdoEStzeObs96fsYf4GG544iN.jpg",
+    "release_date": "2012-05-25"
   },
   {
     "id": 70981,
     "title": "Prometheus",
     "poster_url": "https://image.tmdb.org/t/p/w500/qsYQflQhOuhDpQ0W2aOcwqgDAeI.jpg",
+    "release_date": "2012-06-08"
+  },
+  {
+    "id": 80321,
+    "title": "Madagascar 3: Europe's Most Wanted",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ekraj4ksvIKeuvQVEevEJkuybZd.jpg",
     "release_date": "2012-06-08"
   },
   {
@@ -5208,16 +5202,22 @@ const MOVIES_DATA = [
     "release_date": "2012-07-20"
   },
   {
-    "id": 76163,
-    "title": "The Expendables 2",
-    "poster_url": "https://image.tmdb.org/t/p/w500/74rTIGyGoIu5KSxDVMdr8H3MtMo.jpg",
-    "release_date": "2012-08-17"
-  },
-  {
     "id": 76492,
     "title": "Hotel Transylvania",
     "poster_url": "https://image.tmdb.org/t/p/w500/eJGvzGrsfe2sqTUPv5IwLWXjVuR.jpg",
     "release_date": "2012-09-28"
+  },
+  {
+    "id": 59967,
+    "title": "Looper",
+    "poster_url": "https://image.tmdb.org/t/p/w500/sNjL6SqErDBE8OUZlrDLkexfsCj.jpg",
+    "release_date": "2012-09-28"
+  },
+  {
+    "id": 84892,
+    "title": "The Perks of Being a Wallflower",
+    "poster_url": "https://image.tmdb.org/t/p/w500/aKCvdFFF5n80P2VdS7d8YBwbCjh.jpg",
+    "release_date": "2012-10-12"
   },
   {
     "id": 82507,
@@ -5228,7 +5228,7 @@ const MOVIES_DATA = [
   {
     "id": 82690,
     "title": "Wreck-It Ralph",
-    "poster_url": "https://image.tmdb.org/t/p/w500/fiHyt6UmG4yjcXFt9Cbpw6OedHh.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/4wOcOSsm7EIU7a1KWRBp8HUoTaj.jpg",
     "release_date": "2012-11-02"
   },
   {
@@ -5264,7 +5264,7 @@ const MOVIES_DATA = [
   {
     "id": 68718,
     "title": "Django Unchained",
-    "poster_url": "https://image.tmdb.org/t/p/w500/mhf63wOnaLCnzxeHgngTH98WaVh.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/7oWY8VDWW7thTzWh3OKYRkWUlD5.jpg",
     "release_date": "2012-12-25"
   },
   {
@@ -5274,16 +5274,22 @@ const MOVIES_DATA = [
     "release_date": "2013-03-01"
   },
   {
-    "id": 117263,
-    "title": "Olympus Has Fallen",
-    "poster_url": "https://image.tmdb.org/t/p/w500/u3GTFGwesNBNd0t1hiLaEk1iqZU.jpg",
-    "release_date": "2013-03-22"
-  },
-  {
     "id": 49519,
     "title": "The Croods",
     "poster_url": "https://image.tmdb.org/t/p/w500/27zvjVOtOi5ped1HSlJKNsKXkFH.jpg",
     "release_date": "2013-03-22"
+  },
+  {
+    "id": 72559,
+    "title": "G.I. Joe: Retaliation",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3rWIZMzTKcCtV0eHJ70Z4Ru659f.jpg",
+    "release_date": "2013-03-29"
+  },
+  {
+    "id": 109428,
+    "title": "Evil Dead",
+    "poster_url": "https://image.tmdb.org/t/p/w500/1gDV0Lm9y8ufIKzyf0h0GBgb9Zj.jpg",
+    "release_date": "2013-04-05"
   },
   {
     "id": 4258,
@@ -5306,7 +5312,7 @@ const MOVIES_DATA = [
   {
     "id": 49521,
     "title": "Man of Steel",
-    "poster_url": "https://image.tmdb.org/t/p/w500/cB46TSg3kGjq2eVy5kVUhlpUa1H.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/8GFtkImmK0K1VaUChR0n9O61CFU.jpg",
     "release_date": "2013-06-14"
   },
   {
@@ -5346,10 +5352,10 @@ const MOVIES_DATA = [
     "release_date": "2013-07-19"
   },
   {
-    "id": 138832,
-    "title": "We're the Millers",
-    "poster_url": "https://image.tmdb.org/t/p/w500/qF2LJ0jwWrtXSuT4AFD5OS2IqaT.jpg",
-    "release_date": "2013-08-07"
+    "id": 111190,
+    "title": "Adoration",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hIQqIeG7Ude0QRUFntdLtsAUEBB.jpg",
+    "release_date": "2013-09-06"
   },
   {
     "id": 146233,
@@ -5358,27 +5364,27 @@ const MOVIES_DATA = [
     "release_date": "2013-09-20"
   },
   {
-    "id": 76338,
-    "title": "Thor: The Dark World",
-    "poster_url": "https://image.tmdb.org/t/p/w500/wp6OxE4poJ4G7c0U2ZIXasTSMR7.jpg",
-    "release_date": "2013-11-08"
-  },
-  {
     "id": 122906,
     "title": "About Time",
     "poster_url": "https://image.tmdb.org/t/p/w500/ls6zswrOZVhCXQBh96DlbnLBajM.jpg",
     "release_date": "2013-11-08"
   },
   {
-    "id": 101299,
-    "title": "The Hunger Games: Catching Fire",
-    "poster_url": "https://image.tmdb.org/t/p/w500/vrQHDXjVmbYzadOXQ0UaObunoy2.jpg",
-    "release_date": "2013-11-22"
+    "id": 76338,
+    "title": "Thor: The Dark World",
+    "poster_url": "https://image.tmdb.org/t/p/w500/wp6OxE4poJ4G7c0U2ZIXasTSMR7.jpg",
+    "release_date": "2013-11-08"
   },
   {
     "id": 109445,
     "title": "Frozen",
-    "poster_url": "https://image.tmdb.org/t/p/w500/kgwjIb2JDHRhNk13lmSxiClFjVk.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/itAKcobTYGpYT8Phwjd8c9hleTo.jpg",
+    "release_date": "2013-11-27"
+  },
+  {
+    "id": 204082,
+    "title": "Homefront",
+    "poster_url": "https://image.tmdb.org/t/p/w500/xcFLM44jgl015wLe7lWC1C1bEEM.jpg",
     "release_date": "2013-11-27"
   },
   {
@@ -5406,16 +5412,22 @@ const MOVIES_DATA = [
     "release_date": "2014-01-10"
   },
   {
-    "id": 258216,
-    "title": "Nymphomaniac: Vol. I",
-    "poster_url": "https://image.tmdb.org/t/p/w500/piikL8vRh3s1ysHGTIqaZpdjfNU.jpg",
-    "release_date": "2014-03-06"
+    "id": 137106,
+    "title": "The Lego Movie",
+    "poster_url": "https://image.tmdb.org/t/p/w500/lbctonEnewCYZ4FYoTZhs8cidAl.jpg",
+    "release_date": "2014-02-07"
   },
   {
     "id": 120467,
     "title": "The Grand Budapest Hotel",
-    "poster_url": "https://image.tmdb.org/t/p/w500/eWdyYQreja6JGCzqHWXpWHDrrPo.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/zOVCqKUzjFKqa1eDMcOzvXwthY4.jpg",
     "release_date": "2014-03-07"
+  },
+  {
+    "id": 181886,
+    "title": "Enemy",
+    "poster_url": "https://image.tmdb.org/t/p/w500/vf40tyDRKZsBmaLsYeopzfFLzLx.jpg",
+    "release_date": "2014-03-14"
   },
   {
     "id": 249397,
@@ -5424,22 +5436,16 @@ const MOVIES_DATA = [
     "release_date": "2014-03-20"
   },
   {
-    "id": 157350,
-    "title": "Divergent",
-    "poster_url": "https://image.tmdb.org/t/p/w500/aNh4Q3iuPKDMPi2SL7GgOpiLukX.jpg",
-    "release_date": "2014-03-21"
-  },
-  {
     "id": 102382,
     "title": "The Amazing Spider-Man 2",
     "poster_url": "https://image.tmdb.org/t/p/w500/dGjoPttcbKR5VWg1jQuNFB247KL.jpg",
     "release_date": "2014-05-02"
   },
   {
-    "id": 232672,
-    "title": "Blended",
-    "poster_url": "https://image.tmdb.org/t/p/w500/o2YrH9jS7CAfWjETHFeL0tth79E.jpg",
-    "release_date": "2014-05-23"
+    "id": 124905,
+    "title": "Godzilla",
+    "poster_url": "https://image.tmdb.org/t/p/w500/tphkjmQq8WebuVwNXelmjLUXuPJ.jpg",
+    "release_date": "2014-05-16"
   },
   {
     "id": 127585,
@@ -5472,27 +5478,15 @@ const MOVIES_DATA = [
     "release_date": "2014-06-27"
   },
   {
-    "id": 119450,
-    "title": "Dawn of the Planet of the Apes",
-    "poster_url": "https://image.tmdb.org/t/p/w500/mSmAc9G25fhOHH45SLEeagR0qi7.jpg",
-    "release_date": "2014-07-11"
-  },
-  {
-    "id": 240832,
-    "title": "Lucy",
-    "poster_url": "https://image.tmdb.org/t/p/w500/kRbpUTRNm6QbLQFPFWUcNC4czEm.jpg",
+    "id": 184315,
+    "title": "Hercules",
+    "poster_url": "https://image.tmdb.org/t/p/w500/sKNIwY6UENCJ36FvYvnBW3Vdzt7.jpg",
     "release_date": "2014-07-25"
   },
   {
     "id": 198663,
     "title": "The Maze Runner",
     "poster_url": "https://image.tmdb.org/t/p/w500/ode14q7WtDugFDp78fo9lCsmay9.jpg",
-    "release_date": "2014-09-19"
-  },
-  {
-    "id": 246403,
-    "title": "Tusk",
-    "poster_url": "https://image.tmdb.org/t/p/w500/pA2SgITmH0lzet9Nn5cxeinRKMv.jpg",
     "release_date": "2014-09-19"
   },
   {
@@ -5520,12 +5514,6 @@ const MOVIES_DATA = [
     "release_date": "2014-10-17"
   },
   {
-    "id": 245891,
-    "title": "John Wick",
-    "poster_url": "https://image.tmdb.org/t/p/w500/wXqWR7dHncNRbxoEGybEy7QTe9h.jpg",
-    "release_date": "2014-10-24"
-  },
-  {
     "id": 242582,
     "title": "Nightcrawler",
     "poster_url": "https://image.tmdb.org/t/p/w500/j9HrX8f7GbZQm1BrBiR40uFQZSb.jpg",
@@ -5544,10 +5532,22 @@ const MOVIES_DATA = [
     "release_date": "2014-11-07"
   },
   {
+    "id": 131631,
+    "title": "The Hunger Games: Mockingjay - Part 1",
+    "poster_url": "https://image.tmdb.org/t/p/w500/4FAA18ZIja70d1Tu5hr5cj2q1sB.jpg",
+    "release_date": "2014-11-21"
+  },
+  {
     "id": 270946,
     "title": "Penguins of Madagascar",
     "poster_url": "https://image.tmdb.org/t/p/w500/dXbpNrPDZDMEbujFoOxmMNQVMHa.jpg",
     "release_date": "2014-11-26"
+  },
+  {
+    "id": 256835,
+    "title": "Toy Story That Time Forgot",
+    "poster_url": "https://image.tmdb.org/t/p/w500/kVOaFo8RaYQceHfTqbZGmV9R80q.jpg",
+    "release_date": "2014-12-02"
   },
   {
     "id": 122917,
@@ -5568,12 +5568,6 @@ const MOVIES_DATA = [
     "release_date": "2015-01-09"
   },
   {
-    "id": 318256,
-    "title": "Hot Girls Wanted",
-    "poster_url": "https://image.tmdb.org/t/p/w500/75ot83QOkc02vujyzmIbumQCU6Y.jpg",
-    "release_date": "2015-01-24"
-  },
-  {
     "id": 216015,
     "title": "Fifty Shades of Grey",
     "poster_url": "https://image.tmdb.org/t/p/w500/63kGofUkt1Mx0SIL4XI4Z5AoSgt.jpg",
@@ -5586,16 +5580,28 @@ const MOVIES_DATA = [
     "release_date": "2015-02-13"
   },
   {
-    "id": 198184,
-    "title": "Chappie",
-    "poster_url": "https://image.tmdb.org/t/p/w500/uuDUpzlMFomdSfNWlpEPS9nVZWV.jpg",
-    "release_date": "2015-03-06"
-  },
-  {
     "id": 150689,
     "title": "Cinderella",
     "poster_url": "https://image.tmdb.org/t/p/w500/j91LJmcWo16CArFOoapsz84bwxb.jpg",
     "release_date": "2015-03-13"
+  },
+  {
+    "id": 290764,
+    "title": "Tracers",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2XoazCkD4gRlqkJK7q6TOTUx1ta.jpg",
+    "release_date": "2015-03-20"
+  },
+  {
+    "id": 270303,
+    "title": "It Follows",
+    "poster_url": "https://image.tmdb.org/t/p/w500/iwnQ1JH1wdWrGYkgWySptJ5284A.jpg",
+    "release_date": "2015-03-27"
+  },
+  {
+    "id": 228161,
+    "title": "Home",
+    "poster_url": "https://image.tmdb.org/t/p/w500/usFenYnk6mr8C62dB1MoAfSWMGR.jpg",
+    "release_date": "2015-03-27"
   },
   {
     "id": 168259,
@@ -5614,6 +5620,12 @@ const MOVIES_DATA = [
     "title": "Mad Max: Fury Road",
     "poster_url": "https://image.tmdb.org/t/p/w500/hA2ple9q4qnwxp3hKVNhroipsir.jpg",
     "release_date": "2015-05-15"
+  },
+  {
+    "id": 254128,
+    "title": "San Andreas",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2Gfjn962aaFSD6eST6QU3oLDZTo.jpg",
+    "release_date": "2015-05-29"
   },
   {
     "id": 135397,
@@ -5658,21 +5670,9 @@ const MOVIES_DATA = [
     "release_date": "2015-07-31"
   },
   {
-    "id": 294254,
-    "title": "Maze Runner: The Scorch Trials",
-    "poster_url": "https://image.tmdb.org/t/p/w500/mYw7ZyejqSCPFlrT2jHZOESZDU3.jpg",
-    "release_date": "2015-09-18"
-  },
-  {
-    "id": 257211,
-    "title": "The Intern",
-    "poster_url": "https://image.tmdb.org/t/p/w500/bTQ46fupPbjBfFBHuzfD3hxxL0Q.jpg",
-    "release_date": "2015-09-25"
-  },
-  {
     "id": 286217,
     "title": "The Martian",
-    "poster_url": "https://image.tmdb.org/t/p/w500/3ndAx3weG6KDkJIRMCi5vXX6Dyb.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fASz8A0yFE3QB6LgGoOfwvFSseV.jpg",
     "release_date": "2015-10-02"
   },
   {
@@ -5694,12 +5694,6 @@ const MOVIES_DATA = [
     "release_date": "2015-10-30"
   },
   {
-    "id": 206647,
-    "title": "Spectre",
-    "poster_url": "https://image.tmdb.org/t/p/w500/zj8ongFhtWNsVlfjOGo8pSr7PQg.jpg",
-    "release_date": "2015-11-06"
-  },
-  {
     "id": 105864,
     "title": "The Good Dinosaur",
     "poster_url": "https://image.tmdb.org/t/p/w500/8RSkxOO80btfKjyiC5ZiTaCHIT8.jpg",
@@ -5712,10 +5706,22 @@ const MOVIES_DATA = [
     "release_date": "2015-12-18"
   },
   {
+    "id": 318846,
+    "title": "The Big Short",
+    "poster_url": "https://image.tmdb.org/t/p/w500/scVEaJEwP8zUix8vgmMoJJ9Nq0w.jpg",
+    "release_date": "2015-12-23"
+  },
+  {
     "id": 281957,
     "title": "The Revenant",
     "poster_url": "https://image.tmdb.org/t/p/w500/ji3ecJphATlVgWNY0B0RVXZizdf.jpg",
     "release_date": "2016-01-08"
+  },
+  {
+    "id": 300671,
+    "title": "13 Hours: The Secret Soldiers of Benghazi",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fZlAxZMo6BId1SiqyjLmkd7oUB7.jpg",
+    "release_date": "2016-01-15"
   },
   {
     "id": 140300,
@@ -5728,6 +5734,12 @@ const MOVIES_DATA = [
     "title": "Deadpool",
     "poster_url": "https://image.tmdb.org/t/p/w500/3E53WEZJqP6aM84D8CckXx4pIHw.jpg",
     "release_date": "2016-02-12"
+  },
+  {
+    "id": 310131,
+    "title": "The Witch",
+    "poster_url": "https://image.tmdb.org/t/p/w500/zap5hpFCWSvdWSuPGAQyjUv2wAC.jpg",
+    "release_date": "2016-02-19"
   },
   {
     "id": 269149,
@@ -5760,12 +5772,6 @@ const MOVIES_DATA = [
     "release_date": "2016-05-27"
   },
   {
-    "id": 241259,
-    "title": "Alice Through the Looking Glass",
-    "poster_url": "https://image.tmdb.org/t/p/w500/kbGamUkYfgKIYIrU8kW5oc0NatZ.jpg",
-    "release_date": "2016-05-27"
-  },
-  {
     "id": 296096,
     "title": "Me Before You",
     "poster_url": "https://image.tmdb.org/t/p/w500/Ia3dzj5LnCj1ZBdlVeJrbKJQxG.jpg",
@@ -5784,10 +5790,16 @@ const MOVIES_DATA = [
     "release_date": "2016-06-10"
   },
   {
-    "id": 68735,
-    "title": "Warcraft",
-    "poster_url": "https://image.tmdb.org/t/p/w500/eGi5aoxaZveqNLtE7BZJCuWwR3G.jpg",
-    "release_date": "2016-06-10"
+    "id": 127380,
+    "title": "Finding Dory",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3UVe8NL1E2ZdUZ9EDlKGJY5UzE.jpg",
+    "release_date": "2016-06-17"
+  },
+  {
+    "id": 332567,
+    "title": "The Shallows",
+    "poster_url": "https://image.tmdb.org/t/p/w500/bnBV7hZmLuA0Si5Aop481sPF2RY.jpg",
+    "release_date": "2016-06-24"
   },
   {
     "id": 278154,
@@ -5796,22 +5808,16 @@ const MOVIES_DATA = [
     "release_date": "2016-07-22"
   },
   {
+    "id": 308266,
+    "title": "War Dogs",
+    "poster_url": "https://image.tmdb.org/t/p/w500/mDcPRjZC1bb6LavFU3gwsWdVfCM.jpg",
+    "release_date": "2016-08-19"
+  },
+  {
     "id": 348893,
     "title": "Boyka: Undisputed IV",
     "poster_url": "https://image.tmdb.org/t/p/w500/7QGdIJWWTkPhVjpQ0zA6z69khod.jpg",
     "release_date": "2016-09-22"
-  },
-  {
-    "id": 302946,
-    "title": "The Accountant",
-    "poster_url": "https://image.tmdb.org/t/p/w500/fceheXB5fC4WrLVuWJ6OZv9FXYr.jpg",
-    "release_date": "2016-10-14"
-  },
-  {
-    "id": 343611,
-    "title": "Jack Reacher: Never Go Back",
-    "poster_url": "https://image.tmdb.org/t/p/w500/cOg3UT2NYWHZxp41vpxAnVCOC4M.jpg",
-    "release_date": "2016-10-21"
   },
   {
     "id": 324786,
@@ -5844,15 +5850,15 @@ const MOVIES_DATA = [
     "release_date": "2016-12-16"
   },
   {
-    "id": 330459,
-    "title": "Rogue One: A Star Wars Story",
-    "poster_url": "https://image.tmdb.org/t/p/w500/i0yw1mFbB7sNGHCs7EXZPzFkdA1.jpg",
-    "release_date": "2016-12-16"
-  },
-  {
     "id": 335797,
     "title": "Sing",
     "poster_url": "https://image.tmdb.org/t/p/w500/rwopfpHqPCYBSgBuZwkaXXqHp14.jpg",
+    "release_date": "2016-12-21"
+  },
+  {
+    "id": 397243,
+    "title": "The Autopsy of Jane Doe",
+    "poster_url": "https://image.tmdb.org/t/p/w500/6K0wjP8kPCiPYy9PtXBGuypyt5I.jpg",
     "release_date": "2016-12-21"
   },
   {
@@ -5880,21 +5886,9 @@ const MOVIES_DATA = [
     "release_date": "2017-02-10"
   },
   {
-    "id": 341174,
-    "title": "Fifty Shades Darker",
-    "poster_url": "https://image.tmdb.org/t/p/w500/w3qa274gvca9t8pkUoG8nfQgTU3.jpg",
-    "release_date": "2017-02-10"
-  },
-  {
-    "id": 311324,
-    "title": "The Great Wall",
-    "poster_url": "https://image.tmdb.org/t/p/w500/p70dq1YxabemdZDm5K6Q8G10wSn.jpg",
-    "release_date": "2017-02-17"
-  },
-  {
     "id": 419430,
     "title": "Get Out",
-    "poster_url": "https://image.tmdb.org/t/p/w500/mE24wUCfjK8AoBBjaMjho7Rczr7.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/tFXcEccSQMf3lfhfXKSU9iRBpa3.jpg",
     "release_date": "2017-02-24"
   },
   {
@@ -5952,10 +5946,10 @@ const MOVIES_DATA = [
     "release_date": "2017-06-16"
   },
   {
-    "id": 335988,
-    "title": "Transformers: The Last Knight",
-    "poster_url": "https://image.tmdb.org/t/p/w500/s5HQf2Gb3lIO2cRcFwNL9sn1o1o.jpg",
-    "release_date": "2017-06-21"
+    "id": 324852,
+    "title": "Despicable Me 3",
+    "poster_url": "https://image.tmdb.org/t/p/w500/6t3YWl7hrr88lCEFlGVqW5yV99R.jpg",
+    "release_date": "2017-06-30"
   },
   {
     "id": 315635,
@@ -5964,10 +5958,10 @@ const MOVIES_DATA = [
     "release_date": "2017-07-07"
   },
   {
-    "id": 374720,
-    "title": "Dunkirk",
-    "poster_url": "https://image.tmdb.org/t/p/w500/b4Oe15CGLL61Ped0RAS9JpqdmCt.jpg",
-    "release_date": "2017-07-21"
+    "id": 378236,
+    "title": "The Emoji Movie",
+    "poster_url": "https://image.tmdb.org/t/p/w500/60bTx5z9zL1AqCjZ0gmWoRMJ6Bb.jpg",
+    "release_date": "2017-07-23"
   },
   {
     "id": 346364,
@@ -5986,12 +5980,6 @@ const MOVIES_DATA = [
     "title": "Thor: Ragnarok",
     "poster_url": "https://image.tmdb.org/t/p/w500/rzRwTcFvttcN1ZpX2xv4j3tSdJu.jpg",
     "release_date": "2017-11-03"
-  },
-  {
-    "id": 392044,
-    "title": "Murder on the Orient Express",
-    "poster_url": "https://image.tmdb.org/t/p/w500/7GtdJU6iAg6fjQu3E3zta3bIAQh.jpg",
-    "release_date": "2017-11-10"
   },
   {
     "id": 406997,
@@ -6018,16 +6006,22 @@ const MOVIES_DATA = [
     "release_date": "2017-12-15"
   },
   {
+    "id": 353486,
+    "title": "Jumanji: Welcome to the Jungle",
+    "poster_url": "https://image.tmdb.org/t/p/w500/pSgXKPU5h6U89ipF7HBYajvYt7j.jpg",
+    "release_date": "2017-12-20"
+  },
+  {
+    "id": 398818,
+    "title": "Call Me by Your Name",
+    "poster_url": "https://image.tmdb.org/t/p/w500/mZ4gBdfkhP9tvLH1DO4m4HYtiyi.jpg",
+    "release_date": "2018-01-19"
+  },
+  {
     "id": 420634,
     "title": "Terrifier",
     "poster_url": "https://image.tmdb.org/t/p/w500/fjXqhGmaeQpB73WerhrYU6HlyV5.jpg",
     "release_date": "2018-01-25"
-  },
-  {
-    "id": 336843,
-    "title": "Maze Runner: The Death Cure",
-    "poster_url": "https://image.tmdb.org/t/p/w500/drbERzlA4cuRWhsTXfFOY4mRR4f.jpg",
-    "release_date": "2018-01-26"
   },
   {
     "id": 337167,
@@ -6040,12 +6034,6 @@ const MOVIES_DATA = [
     "title": "Black Panther",
     "poster_url": "https://image.tmdb.org/t/p/w500/uxzzxijgPIY7slzFvMotPv8wjKA.jpg",
     "release_date": "2018-02-16"
-  },
-  {
-    "id": 300668,
-    "title": "Annihilation",
-    "poster_url": "https://image.tmdb.org/t/p/w500/4YRplSk6BhH6PRuE9gfyw9byUJ6.jpg",
-    "release_date": "2018-02-23"
   },
   {
     "id": 333339,
@@ -6084,15 +6072,15 @@ const MOVIES_DATA = [
     "release_date": "2018-05-18"
   },
   {
-    "id": 454983,
-    "title": "The Kissing Booth",
-    "poster_url": "https://image.tmdb.org/t/p/w500/vcQNnnXgKLacoYF4LNWgkNiDXPd.jpg",
-    "release_date": "2018-05-18"
-  },
-  {
     "id": 493922,
     "title": "Hereditary",
-    "poster_url": "https://image.tmdb.org/t/p/w500/hjlZSXM86wJrfCv5VKfR5DI2VeU.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/4GFPuL14eXi66V96xBWY73Y9PfR.jpg",
+    "release_date": "2018-06-08"
+  },
+  {
+    "id": 402900,
+    "title": "Ocean's Eight",
+    "poster_url": "https://image.tmdb.org/t/p/w500/MvYpKlpFukTivnlBhizGbkAe3v.jpg",
     "release_date": "2018-06-08"
   },
   {
@@ -6108,16 +6096,10 @@ const MOVIES_DATA = [
     "release_date": "2018-06-22"
   },
   {
-    "id": 400535,
-    "title": "Sicario: Day of the Soldado",
-    "poster_url": "https://image.tmdb.org/t/p/w500/qcLYofEhNh51Sk1jUWjmKHLzkqw.jpg",
-    "release_date": "2018-06-29"
-  },
-  {
-    "id": 363088,
-    "title": "Ant-Man and the Wasp",
-    "poster_url": "https://image.tmdb.org/t/p/w500/cFQEO687n1K6umXbInzocxcnAQz.jpg",
-    "release_date": "2018-07-06"
+    "id": 400155,
+    "title": "Hotel Transylvania 3: Summer Vacation",
+    "poster_url": "https://image.tmdb.org/t/p/w500/lzE5BwGQea1nek7TPXUuC5AZ6rq.jpg",
+    "release_date": "2018-07-13"
   },
   {
     "id": 345887,
@@ -6156,9 +6138,21 @@ const MOVIES_DATA = [
     "release_date": "2018-11-02"
   },
   {
+    "id": 360920,
+    "title": "The Grinch",
+    "poster_url": "https://image.tmdb.org/t/p/w500/smxA8yvZ0LzDPer9BIRd4pyOpx1.jpg",
+    "release_date": "2018-11-09"
+  },
+  {
     "id": 490132,
     "title": "Green Book",
     "poster_url": "https://image.tmdb.org/t/p/w500/7BsvSuDQuoqhWmU2fL7W2GOcZHU.jpg",
+    "release_date": "2018-11-21"
+  },
+  {
+    "id": 404368,
+    "title": "Ralph Breaks the Internet",
+    "poster_url": "https://image.tmdb.org/t/p/w500/iVCrhBcpDaHGvv7CLYbK6PuXZo1.jpg",
     "release_date": "2018-11-21"
   },
   {
@@ -6168,10 +6162,22 @@ const MOVIES_DATA = [
     "release_date": "2018-12-14"
   },
   {
+    "id": 297802,
+    "title": "Aquaman",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ufl63EFcc5XpByEV2Ecdw6WJZAI.jpg",
+    "release_date": "2018-12-21"
+  },
+  {
     "id": 424783,
     "title": "Bumblebee",
     "poster_url": "https://image.tmdb.org/t/p/w500/fw02ONlDhrYjTSZV8XO6hhU3ds3.jpg",
     "release_date": "2018-12-21"
+  },
+  {
+    "id": 452832,
+    "title": "Serenity",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hgWAcic93phg4DOuQ8NrsgQWiqu.jpg",
+    "release_date": "2019-01-25"
   },
   {
     "id": 399579,
@@ -6188,7 +6194,7 @@ const MOVIES_DATA = [
   {
     "id": 299537,
     "title": "Captain Marvel",
-    "poster_url": "https://image.tmdb.org/t/p/w500/aYDRwraSc8SXgot5jabtspJTWZB.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/AtsgWhDnHTq68L0lLsUrCnM7TjG.jpg",
     "release_date": "2019-03-08"
   },
   {
@@ -6228,12 +6234,6 @@ const MOVIES_DATA = [
     "release_date": "2019-06-21"
   },
   {
-    "id": 484641,
-    "title": "Anna",
-    "poster_url": "https://image.tmdb.org/t/p/w500/2U0oAVAE0lDRhNmJPPYhDW9kQ8t.jpg",
-    "release_date": "2019-06-21"
-  },
-  {
     "id": 429617,
     "title": "Spider-Man: Far From Home",
     "poster_url": "https://image.tmdb.org/t/p/w500/4q2NNj4S5dG2RLF9CpXsej7yXl.jpg",
@@ -6264,6 +6264,12 @@ const MOVIES_DATA = [
     "release_date": "2019-08-02"
   },
   {
+    "id": 454640,
+    "title": "The Angry Birds Movie 2",
+    "poster_url": "https://image.tmdb.org/t/p/w500/dz3AjGWAPV4cK8lRDY0DdaVfGUK.jpg",
+    "release_date": "2019-08-14"
+  },
+  {
     "id": 28,
     "title": "Apocalypse Now",
     "poster_url": "https://image.tmdb.org/t/p/w500/gQB8Y5RCMkv2zwzFHbUJX3kAhvA.jpg",
@@ -6276,16 +6282,16 @@ const MOVIES_DATA = [
     "release_date": "2019-08-21"
   },
   {
+    "id": 474350,
+    "title": "It Chapter Two",
+    "poster_url": "https://image.tmdb.org/t/p/w500/zfE0R94v1E8cuKAerbskfD3VfUt.jpg",
+    "release_date": "2019-09-06"
+  },
+  {
     "id": 475557,
     "title": "Joker",
     "poster_url": "https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg",
     "release_date": "2019-10-04"
-  },
-  {
-    "id": 559969,
-    "title": "El Camino: A Breaking Bad Movie",
-    "poster_url": "https://image.tmdb.org/t/p/w500/ePXuKdXZuJx8hHMNr2yM4jY2L7Z.jpg",
-    "release_date": "2019-10-11"
   },
   {
     "id": 359724,
@@ -6316,12 +6322,6 @@ const MOVIES_DATA = [
     "title": "Star Wars: The Rise of Skywalker",
     "poster_url": "https://image.tmdb.org/t/p/w500/db32LaOibwEliAmSL2jjDF6oDdj.jpg",
     "release_date": "2019-12-20"
-  },
-  {
-    "id": 331482,
-    "title": "Little Women",
-    "poster_url": "https://image.tmdb.org/t/p/w500/yn5ihODtZ7ofn8pDYfxCmxh8AXI.jpg",
-    "release_date": "2019-12-25"
   },
   {
     "id": 530915,
@@ -6358,12 +6358,6 @@ const MOVIES_DATA = [
     "title": "Sonic the Hedgehog",
     "poster_url": "https://image.tmdb.org/t/p/w500/aQvJ5WPzZgYVDrxLX4R6cLJCEaQ.jpg",
     "release_date": "2020-02-14"
-  },
-  {
-    "id": 481848,
-    "title": "The Call of the Wild",
-    "poster_url": "https://image.tmdb.org/t/p/w500/33VdppGbeNxICrFUtW2WpGHvfYc.jpg",
-    "release_date": "2020-02-21"
   },
   {
     "id": 570670,
@@ -6408,10 +6402,10 @@ const MOVIES_DATA = [
     "release_date": "2020-07-09"
   },
   {
-    "id": 527660,
-    "title": "Yes, God, Yes",
-    "poster_url": "https://image.tmdb.org/t/p/w500/69SYznq2mSbgKyQF3QHYwblmqAk.jpg",
-    "release_date": "2020-07-24"
+    "id": 587792,
+    "title": "Palm Springs",
+    "poster_url": "https://image.tmdb.org/t/p/w500/gnAfqiV7yO3Jq9IntTmwkcaICqc.jpg",
+    "release_date": "2020-07-10"
   },
   {
     "id": 577922,
@@ -6426,21 +6420,27 @@ const MOVIES_DATA = [
     "release_date": "2020-09-23"
   },
   {
-    "id": 660982,
-    "title": "American Pie Presents: Girls' Rules",
-    "poster_url": "https://image.tmdb.org/t/p/w500/xqvX5A24dbIWaeYsMTxxKX5qOfz.jpg",
-    "release_date": "2020-10-06"
-  },
-  {
     "id": 531219,
     "title": "Roald Dahl's The Witches",
-    "poster_url": "https://image.tmdb.org/t/p/w500/ht6EfsM5hrsUPSR4ReJQFDVU71F.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/betExZlgK0l7CZ9CsCBVcwO1OjL.jpg",
     "release_date": "2020-10-22"
   },
   {
     "id": 613504,
     "title": "After We Collided",
     "poster_url": "https://image.tmdb.org/t/p/w500/kiX7UYfOpYrMFSAGbI6j1pFkLzQ.jpg",
+    "release_date": "2020-10-23"
+  },
+  {
+    "id": 516632,
+    "title": "The Empty Man",
+    "poster_url": "https://image.tmdb.org/t/p/w500/8apzu9JFTUMtOpYkHk6LNPOs3pY.jpg",
+    "release_date": "2020-10-23"
+  },
+  {
+    "id": 740985,
+    "title": "Borat Subsequent Moviefilm: Delivery of Prodigious Bribe to American Regime for Make Benefit Once Glorious Nation of Kazakhstan",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3L1Ml5RWjFVfVq3rQENvgFymT0U.jpg",
     "release_date": "2020-10-23"
   },
   {
@@ -6466,6 +6466,12 @@ const MOVIES_DATA = [
     "title": "Wonder Woman 1984",
     "poster_url": "https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",
     "release_date": "2020-12-25"
+  },
+  {
+    "id": 630586,
+    "title": "Wrong Turn",
+    "poster_url": "https://image.tmdb.org/t/p/w500/4U1SBHmwHkNA0eHZ2n1CuiC1K1g.jpg",
+    "release_date": "2021-01-26"
   },
   {
     "id": 400160,
@@ -6506,7 +6512,7 @@ const MOVIES_DATA = [
   {
     "id": 460465,
     "title": "Mortal Kombat",
-    "poster_url": "https://image.tmdb.org/t/p/w500/ybrX94xQm8lXYpZAPRmwD9iIbWP.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/nkayOAUBUu4mMvyNf9iHSUiPjF1.jpg",
     "release_date": "2021-04-23"
   },
   {
@@ -6519,12 +6525,6 @@ const MOVIES_DATA = [
     "id": 337404,
     "title": "Cruella",
     "poster_url": "https://image.tmdb.org/t/p/w500/hjS9mH8KvRiGHgjk6VUZH7OT0Ng.jpg",
-    "release_date": "2021-05-28"
-  },
-  {
-    "id": 520763,
-    "title": "A Quiet Place Part II",
-    "poster_url": "https://image.tmdb.org/t/p/w500/4q2hz2m8hubgvijz8Ez0T2Os2Yv.jpg",
     "release_date": "2021-05-28"
   },
   {
@@ -6542,14 +6542,8 @@ const MOVIES_DATA = [
   {
     "id": 497698,
     "title": "Black Widow",
-    "poster_url": "https://image.tmdb.org/t/p/w500/7JPpIjhD2V0sKyFvhB9khUMa30d.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qAZ0pzat24kLdO3o8ejmbLxyOac.jpg",
     "release_date": "2021-07-09"
-  },
-  {
-    "id": 451048,
-    "title": "Jungle Cruise",
-    "poster_url": "https://image.tmdb.org/t/p/w500/yKy9ELL8CON5sqDg4yIvBb5LTZL.jpg",
-    "release_date": "2021-07-30"
   },
   {
     "id": 436969,
@@ -6590,7 +6584,7 @@ const MOVIES_DATA = [
   {
     "id": 21484,
     "title": "Possession",
-    "poster_url": "https://image.tmdb.org/t/p/w500/dSxz8VWHVleJXdIce9D0ujkmJNI.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/A9bnRn05riOKWftvQlLKa2gl51n.jpg",
     "release_date": "2021-10-15"
   },
   {
@@ -6624,21 +6618,33 @@ const MOVIES_DATA = [
     "release_date": "2021-12-22"
   },
   {
+    "id": 476669,
+    "title": "The King's Man",
+    "poster_url": "https://image.tmdb.org/t/p/w500/aq4Pwv5Xeuvj6HZKtxyd23e6bE9.jpg",
+    "release_date": "2021-12-22"
+  },
+  {
     "id": 646385,
     "title": "Scream",
-    "poster_url": "https://image.tmdb.org/t/p/w500/1m3W6cpgwuIyjtg5nSnPx7yFkXW.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/nD4M4Bx457ryLuKYpxFwQ2IBJ5w.jpg",
     "release_date": "2022-01-14"
   },
   {
-    "id": 698508,
-    "title": "Redeeming Love",
-    "poster_url": "https://image.tmdb.org/t/p/w500/2iu0lBF7sfAioLfSnSJtdKxlms6.jpg",
-    "release_date": "2022-01-21"
+    "id": 335787,
+    "title": "Uncharted",
+    "poster_url": "https://image.tmdb.org/t/p/w500/rJHC1RUORuUhtfNb4Npclx0xnOf.jpg",
+    "release_date": "2022-02-18"
   },
   {
     "id": 238,
     "title": "The Godfather",
     "poster_url": "https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg",
+    "release_date": "2022-02-25"
+  },
+  {
+    "id": 585083,
+    "title": "Hotel Transylvania: Transformania",
+    "poster_url": "https://image.tmdb.org/t/p/w500/teCy1egGQa0y8ULJvlrDHQKnxBL.jpg",
     "release_date": "2022-02-25"
   },
   {
@@ -6654,6 +6660,12 @@ const MOVIES_DATA = [
     "release_date": "2022-03-18"
   },
   {
+    "id": 760104,
+    "title": "X",
+    "poster_url": "https://image.tmdb.org/t/p/w500/lopZSVtXzhFY603E9OqF7O1YKsh.jpg",
+    "release_date": "2022-03-18"
+  },
+  {
     "id": 545611,
     "title": "Everything Everywhere All at Once",
     "poster_url": "https://image.tmdb.org/t/p/w500/u68AjlvlutfEIcpmbYpKcdi09ut.jpg",
@@ -6664,6 +6676,18 @@ const MOVIES_DATA = [
     "title": "Sonic the Hedgehog 2",
     "poster_url": "https://image.tmdb.org/t/p/w500/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg",
     "release_date": "2022-04-08"
+  },
+  {
+    "id": 338953,
+    "title": "Fantastic Beasts: The Secrets of Dumbledore",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3c5GNLB4yRSLBby0trHoA1DSQxQ.jpg",
+    "release_date": "2022-04-15"
+  },
+  {
+    "id": 629542,
+    "title": "The Bad Guys",
+    "poster_url": "https://image.tmdb.org/t/p/w500/7qop80YfuO0BwJa1uXk1DXUUEwv.jpg",
+    "release_date": "2022-04-22"
   },
   {
     "id": 453395,
@@ -6684,18 +6708,6 @@ const MOVIES_DATA = [
     "release_date": "2022-06-10"
   },
   {
-    "id": 718789,
-    "title": "Lightyear",
-    "poster_url": "https://image.tmdb.org/t/p/w500/b9t3w1loraDh7hjdWmpc9ZsaYns.jpg",
-    "release_date": "2022-06-17"
-  },
-  {
-    "id": 756999,
-    "title": "The Black Phone",
-    "poster_url": "https://image.tmdb.org/t/p/w500/p9ZUzCyy9wRTDuuQexkQ78R2BgF.jpg",
-    "release_date": "2022-06-24"
-  },
-  {
     "id": 438148,
     "title": "Minions: The Rise of Gru",
     "poster_url": "https://image.tmdb.org/t/p/w500/wKiOkZTN9lUUUNZLmtnwubZYONg.jpg",
@@ -6708,15 +6720,15 @@ const MOVIES_DATA = [
     "release_date": "2022-07-07"
   },
   {
-    "id": 762504,
-    "title": "Nope",
-    "poster_url": "https://image.tmdb.org/t/p/w500/AcKVlWaNVVVFQwro3nLXqPljcYA.jpg",
-    "release_date": "2022-07-22"
+    "id": 585511,
+    "title": "Luck",
+    "poster_url": "https://image.tmdb.org/t/p/w500/1HOYvwGFioUFL58UVvDRG6beEDm.jpg",
+    "release_date": "2022-07-30"
   },
   {
     "id": 766507,
     "title": "Prey",
-    "poster_url": "https://image.tmdb.org/t/p/w500/2FKjLRt7oK1bRRIrxgWmthbBdFh.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ujr5pztc1oitbe7ViMUOilFaJ7s.jpg",
     "release_date": "2022-08-02"
   },
   {
@@ -6732,22 +6744,10 @@ const MOVIES_DATA = [
     "release_date": "2022-08-12"
   },
   {
-    "id": 744276,
-    "title": "After Ever Happy",
-    "poster_url": "https://image.tmdb.org/t/p/w500/moogpu8rNkEjTgFyLXwhPghft5w.jpg",
-    "release_date": "2022-09-07"
-  },
-  {
     "id": 436270,
     "title": "Black Adam",
     "poster_url": "https://image.tmdb.org/t/p/w500/rCtreCr4xiYEWDQTebybolIh6Xe.jpg",
     "release_date": "2022-10-21"
-  },
-  {
-    "id": 1022256,
-    "title": "Selena Gomez: My Mind & Me",
-    "poster_url": "https://image.tmdb.org/t/p/w500/oMpsswJv8x4vnOnIKqs4xJs2Kn3.jpg",
-    "release_date": "2022-11-02"
   },
   {
     "id": 505642,
@@ -6840,10 +6840,10 @@ const MOVIES_DATA = [
     "release_date": "2023-06-09"
   },
   {
-    "id": 697843,
-    "title": "Extraction 2",
-    "poster_url": "https://image.tmdb.org/t/p/w500/7gKI9hpEMcZUQpNgKrkDzJpbnNS.jpg",
-    "release_date": "2023-06-09"
+    "id": 298618,
+    "title": "The Flash",
+    "poster_url": "https://image.tmdb.org/t/p/w500/rktDFPbfHfUbArZ6OOOKsXcv0Bm.jpg",
+    "release_date": "2023-06-16"
   },
   {
     "id": 976573,
@@ -6852,10 +6852,10 @@ const MOVIES_DATA = [
     "release_date": "2023-06-16"
   },
   {
-    "id": 298618,
-    "title": "The Flash",
-    "poster_url": "https://image.tmdb.org/t/p/w500/rktDFPbfHfUbArZ6OOOKsXcv0Bm.jpg",
-    "release_date": "2023-06-16"
+    "id": 666277,
+    "title": "Past Lives",
+    "poster_url": "https://image.tmdb.org/t/p/w500/k3waqVXSnvCZWfJYNtdamTgTtTA.jpg",
+    "release_date": "2023-06-30"
   },
   {
     "id": 575264,
@@ -6876,12 +6876,6 @@ const MOVIES_DATA = [
     "release_date": "2023-07-21"
   },
   {
-    "id": 1008042,
-    "title": "Talk to Me",
-    "poster_url": "https://image.tmdb.org/t/p/w500/kdPMUMJzyYAc4roD52qavX0nLIC.jpg",
-    "release_date": "2023-07-28"
-  },
-  {
     "id": 615656,
     "title": "Meg 2: The Trench",
     "poster_url": "https://image.tmdb.org/t/p/w500/4m1Au3YkjqsxF8iwQy0fPYSxE0h.jpg",
@@ -6894,22 +6888,16 @@ const MOVIES_DATA = [
     "release_date": "2023-09-01"
   },
   {
-    "id": 299054,
-    "title": "Expend4bles",
-    "poster_url": "https://image.tmdb.org/t/p/w500/iwsMu0ehRPbtaSxqiaUDQB9qMWT.jpg",
-    "release_date": "2023-09-22"
+    "id": 670292,
+    "title": "The Creator",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3dSivDtOuyxLDxPH4v2tcNG1fP7.jpg",
+    "release_date": "2023-09-29"
   },
   {
-    "id": 1029575,
-    "title": "The Family Plan",
-    "poster_url": "https://image.tmdb.org/t/p/w500/jLLtx3nTRSLGPAKl4RoIv1FbEBr.jpg",
-    "release_date": "2023-12-14"
-  },
-  {
-    "id": 1072790,
-    "title": "Anyone But You",
-    "poster_url": "https://image.tmdb.org/t/p/w500/5qHoazZiaLe7oFBok7XlUhg96f2.jpg",
-    "release_date": "2023-12-22"
+    "id": 507089,
+    "title": "Five Nights at Freddy's",
+    "poster_url": "https://image.tmdb.org/t/p/w500/7BpNtNfxuocYEVREzVMO75hso1l.jpg",
+    "release_date": "2023-10-27"
   },
   {
     "id": 572802,
@@ -6921,6 +6909,18 @@ const MOVIES_DATA = [
     "id": 940551,
     "title": "Migration",
     "poster_url": "https://image.tmdb.org/t/p/w500/ldfCF9RhR40mppkzmftxapaHeTo.jpg",
+    "release_date": "2023-12-22"
+  },
+  {
+    "id": 792307,
+    "title": "Poor Things",
+    "poster_url": "https://image.tmdb.org/t/p/w500/kCGlIMHnOm8JPXq3rXM6c5wMxcT.jpg",
+    "release_date": "2023-12-22"
+  },
+  {
+    "id": 1072790,
+    "title": "Anyone But You",
+    "poster_url": "https://image.tmdb.org/t/p/w500/5qHoazZiaLe7oFBok7XlUhg96f2.jpg",
     "release_date": "2023-12-22"
   },
   {
@@ -6950,7 +6950,7 @@ const MOVIES_DATA = [
   {
     "id": 693134,
     "title": "Dune: Part Two",
-    "poster_url": "https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/heM4XKC0jA8fTSNe8F7oUkcJV7Z.jpg",
     "release_date": "2024-03-01"
   },
   {
@@ -6984,10 +6984,10 @@ const MOVIES_DATA = [
     "release_date": "2024-05-02"
   },
   {
-    "id": 653346,
-    "title": "Kingdom of the Planet of the Apes",
-    "poster_url": "https://image.tmdb.org/t/p/w500/gKkl37BQuKTanygYQG1pyYgLVgf.jpg",
-    "release_date": "2024-05-10"
+    "id": 746036,
+    "title": "The Fall Guy",
+    "poster_url": "https://image.tmdb.org/t/p/w500/e7olqFmzcIX5c23kX4zSmLPJi8c.jpg",
+    "release_date": "2024-05-03"
   },
   {
     "id": 786892,
@@ -7026,15 +7026,15 @@ const MOVIES_DATA = [
     "release_date": "2024-08-16"
   },
   {
+    "id": 1064028,
+    "title": "Subservience",
+    "poster_url": "https://image.tmdb.org/t/p/w500/gBenxR01Uy0Ev9RTIw6dVBPoyQU.jpg",
+    "release_date": "2024-09-13"
+  },
+  {
     "id": 933260,
     "title": "The Substance",
     "poster_url": "https://image.tmdb.org/t/p/w500/lqoMzCcZYEFK729d6qzt349fB4o.jpg",
-    "release_date": "2024-09-20"
-  },
-  {
-    "id": 877817,
-    "title": "Wolfs",
-    "poster_url": "https://image.tmdb.org/t/p/w500/vOX1Zng472PC2KnS0B9nRfM8aaZ.jpg",
     "release_date": "2024-09-20"
   },
   {
@@ -7042,12 +7042,6 @@ const MOVIES_DATA = [
     "title": "The Wild Robot",
     "poster_url": "https://image.tmdb.org/t/p/w500/eG9lz41mJqsI4J6ubMtVqD26q2J.jpg",
     "release_date": "2024-09-27"
-  },
-  {
-    "id": 1034541,
-    "title": "Terrifier 3",
-    "poster_url": "https://image.tmdb.org/t/p/w500/ju10W5gl3PPK3b7TjEmVOZap51I.jpg",
-    "release_date": "2024-10-11"
   },
   {
     "id": 912649,
@@ -7058,7 +7052,7 @@ const MOVIES_DATA = [
   {
     "id": 1064213,
     "title": "Anora",
-    "poster_url": "https://image.tmdb.org/t/p/w500/oN0o3owobFjePDc5vMdLRAd0jkd.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/cgXk2tNYhJZLXdBDO5DidAVzQ82.jpg",
     "release_date": "2024-11-01"
   },
   {
@@ -7098,6 +7092,18 @@ const MOVIES_DATA = [
     "release_date": "2024-12-20"
   },
   {
+    "id": 426063,
+    "title": "Nosferatu",
+    "poster_url": "https://image.tmdb.org/t/p/w500/5qGIxdEO841C0tdY8vOdLoRVrr0.jpg",
+    "release_date": "2024-12-25"
+  },
+  {
+    "id": 1294203,
+    "title": "My Fault: London",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ttN5D6GKOwKWHmCzDGctAvaNMAi.jpg",
+    "release_date": "2025-02-12"
+  },
+  {
     "id": 950396,
     "title": "The Gorge",
     "poster_url": "https://image.tmdb.org/t/p/w500/7iMBZzVZtG0oBug4TfqDb9ZxAOa.jpg",
@@ -7118,7 +7124,7 @@ const MOVIES_DATA = [
   {
     "id": 1233413,
     "title": "Sinners",
-    "poster_url": "https://image.tmdb.org/t/p/w500/oucvKATkCI77ngtPjxAI9SAZW42.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fWPgbnt2LSqkQ6cdQc0SZN9CpLm.jpg",
     "release_date": "2025-04-18"
   },
   {
@@ -7134,6 +7140,12 @@ const MOVIES_DATA = [
     "release_date": "2025-05-23"
   },
   {
+    "id": 552524,
+    "title": "Lilo & Stitch",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ckQzKpQJO4ZQDCN5evdpKcfm7Ys.jpg",
+    "release_date": "2025-05-23"
+  },
+  {
     "id": 541671,
     "title": "Ballerina",
     "poster_url": "https://image.tmdb.org/t/p/w500/2VUmvqsHb6cEtdfscEA6fqqVzLg.jpg",
@@ -7142,13 +7154,13 @@ const MOVIES_DATA = [
   {
     "id": 1087192,
     "title": "How to Train Your Dragon",
-    "poster_url": "https://image.tmdb.org/t/p/w500/q5pXRYTycaeW6dEgsCrd4mYPmxM.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/53dsJ3oEnBhTBVMigWJ9tkA5bzJ.jpg",
     "release_date": "2025-06-13"
   },
   {
     "id": 911430,
     "title": "F1",
-    "poster_url": "https://image.tmdb.org/t/p/w500/vqBmyAj0Xm9LnS1xe1MSlMAJyHq.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/9PXZIUsSDh4alB80jheWX4fhZmy.jpg",
     "release_date": "2025-06-27"
   },
   {
@@ -7166,7 +7178,7 @@ const MOVIES_DATA = [
   {
     "id": 617126,
     "title": "The Fantastic 4: First Steps",
-    "poster_url": "https://image.tmdb.org/t/p/w500/abqOz6EL3yXyOOafCPZxjL1M5bQ.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/nf5qaSEvyYSNeFH0YhSs5EsBLX9.jpg",
     "release_date": "2025-07-25"
   },
   {
@@ -7182,12 +7194,6 @@ const MOVIES_DATA = [
     "release_date": "2025-08-08"
   },
   {
-    "id": 1078605,
-    "title": "Weapons",
-    "poster_url": "https://image.tmdb.org/t/p/w500/cpf7vsRZ0MYRQcnLWteD5jK9ymT.jpg",
-    "release_date": "2025-08-08"
-  },
-  {
     "id": 803796,
     "title": "KPop Demon Hunters",
     "poster_url": "https://image.tmdb.org/t/p/w500/zT7Lhw3BhJbMkRqm9Zlx2YGMsY0.jpg",
@@ -7200,6 +7206,12 @@ const MOVIES_DATA = [
     "release_date": "2025-09-05"
   },
   {
+    "id": 533533,
+    "title": "TRON: Ares",
+    "poster_url": "https://image.tmdb.org/t/p/w500/chpWmskl3aKm1aTZqUHRCtviwPy.jpg",
+    "release_date": "2025-10-10"
+  },
+  {
     "id": 1242898,
     "title": "Predator: Badlands",
     "poster_url": "https://image.tmdb.org/t/p/w500/pHpq9yNUIo6aDoCXEBzjSolywgz.jpg",
@@ -7209,12 +7221,6 @@ const MOVIES_DATA = [
     "id": 425274,
     "title": "Now You See Me: Now You Don't",
     "poster_url": "https://image.tmdb.org/t/p/w500/oD3Eey4e4Z259XLm3eD3WGcoJAh.jpg",
-    "release_date": "2025-11-14"
-  },
-  {
-    "id": 798645,
-    "title": "The Running Man",
-    "poster_url": "https://image.tmdb.org/t/p/w500/dKL78O9zxczVgjtNcQ9UkbYLzqX.jpg",
     "release_date": "2025-11-14"
   },
   {
@@ -7238,7 +7244,7 @@ const MOVIES_DATA = [
   {
     "id": 83533,
     "title": "Avatar: Fire and Ash",
-    "poster_url": "https://image.tmdb.org/t/p/w500/aabwWZWx6z1aYP4PX2ADvbDKktd.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/bRBeSHfGHwkEpImlhxPmOcUsaeg.jpg",
     "release_date": "2025-12-19"
   },
   {
@@ -7248,40 +7254,10 @@ const MOVIES_DATA = [
     "release_date": "2025-12-19"
   },
   {
-    "id": 1234731,
-    "title": "Anaconda",
-    "poster_url": "https://image.tmdb.org/t/p/w500/hBxN6dwrANN1ic3a4G9x6JZcR3C.jpg",
-    "release_date": "2025-12-25"
-  },
-  {
     "id": 840464,
     "title": "Greenland 2: Migration",
     "poster_url": "https://image.tmdb.org/t/p/w500/z2tqCJLsw6uEJ8nJV8BsQXGa3dr.jpg",
     "release_date": "2026-01-09"
-  },
-  {
-    "id": 1306368,
-    "title": "The Rip",
-    "poster_url": "https://image.tmdb.org/t/p/w500/eZo31Dhl5BQ6GfbMNf3oU0tUvPZ.jpg",
-    "release_date": "2026-01-13"
-  },
-  {
-    "id": 1272837,
-    "title": "28 Years Later: The Bone Temple",
-    "poster_url": "https://image.tmdb.org/t/p/w500/kK1BGkG3KAvWB0WMV1DfOx9yTMZ.jpg",
-    "release_date": "2026-01-16"
-  },
-  {
-    "id": 1236153,
-    "title": "Mercy",
-    "poster_url": "https://image.tmdb.org/t/p/w500/pyok1kZJCfyuFapYXzHcy7BLlQa.jpg",
-    "release_date": "2026-01-23"
-  },
-  {
-    "id": 1168190,
-    "title": "The Wrecking Crew",
-    "poster_url": "https://image.tmdb.org/t/p/w500/gbVwHl4YPSq6BcC92TQpe7qUTh6.jpg",
-    "release_date": "2026-01-28"
   },
   {
     "id": 1290821,
@@ -7308,12 +7284,6 @@ const MOVIES_DATA = [
     "release_date": "2026-02-13"
   },
   {
-    "id": 1316092,
-    "title": "\"Wuthering Heights\"",
-    "poster_url": "https://image.tmdb.org/t/p/w500/3YBce6dTh1D5oCMITXk2S5QhPt.jpg",
-    "release_date": "2026-02-13"
-  },
-  {
     "id": 1159559,
     "title": "Scream 7",
     "poster_url": "https://image.tmdb.org/t/p/w500/jjyuk0edLiW8vOSnlfwWCCLpbh5.jpg",
@@ -7328,13 +7298,7 @@ const MOVIES_DATA = [
   {
     "id": 1265609,
     "title": "War Machine",
-    "poster_url": "https://image.tmdb.org/t/p/w500/ril8yx5SOmj0KjNlftsdfIp00fr.jpg",
-    "release_date": "2026-03-06"
-  },
-  {
-    "id": 875828,
-    "title": "Peaky Blinders: The Immortal Man",
-    "poster_url": "https://image.tmdb.org/t/p/w500/gRMalasZEzsZi4w2VFuYusfSfqf.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/rFhKkXhk7ClU03jQ5rHIApJDwev.jpg",
     "release_date": "2026-03-06"
   },
   {
@@ -7344,15 +7308,9 @@ const MOVIES_DATA = [
     "release_date": "2026-03-20"
   },
   {
-    "id": 1266127,
-    "title": "Ready or Not: Here I Come",
-    "poster_url": "https://image.tmdb.org/t/p/w500/13ZcJzSGEqVgDSqsS9U5EkQwPkV.jpg",
-    "release_date": "2026-03-20"
-  },
-  {
     "id": 1292695,
     "title": "They Will Kill You",
-    "poster_url": "https://image.tmdb.org/t/p/w500/6oI4oQKTWMVUlr8Ivqydp28Ruu6.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/nSXCFSvI2p5WLgMrOHACbVnEJSR.jpg",
     "release_date": "2026-03-27"
   },
   {
@@ -7364,25 +7322,25 @@ const MOVIES_DATA = [
   {
     "id": 1325734,
     "title": "The Drama",
-    "poster_url": "https://image.tmdb.org/t/p/w500/89Dw1ujPlIPRLddhzNuJM4F401D.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qhGCY6DIemLoCi7x1GuEt98m4JF.jpg",
     "release_date": "2026-04-03"
   },
   {
     "id": 1304313,
     "title": "Lee Cronin's The Mummy",
-    "poster_url": "https://image.tmdb.org/t/p/w500/uIb9Tvae5haF0XcQBaPyufmxbb0.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/1q308iixueCU4pFtSYugNOevtNx.jpg",
     "release_date": "2026-04-17"
+  },
+  {
+    "id": 936075,
+    "title": "Michael",
+    "poster_url": "https://image.tmdb.org/t/p/w500/zm0KAbOjlt9eR5y7vDiL2dEOwMl.jpg",
+    "release_date": "2026-04-24"
   },
   {
     "id": 1318447,
     "title": "Apex",
     "poster_url": "https://image.tmdb.org/t/p/w500/eTp7gSPkSF3Aw79mNx1NkBP1PZT.jpg",
-    "release_date": "2026-04-24"
-  },
-  {
-    "id": 936075,
-    "title": "Michael",
-    "poster_url": "https://image.tmdb.org/t/p/w500/3Qud19bBUrrJAzy0Ilm8gRJlJXP.jpg",
     "release_date": "2026-04-24"
   },
   {
@@ -7394,13 +7352,55 @@ const MOVIES_DATA = [
   {
     "id": 1314481,
     "title": "The Devil Wears Prada 2",
-    "poster_url": "https://image.tmdb.org/t/p/w500/xTI42pmsP5EDnvsNJPEDubwWBQO.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/p35IoKfBtJDNiWJMO8ZEtIMZSfW.jpg",
     "release_date": "2026-05-01"
+  },
+  {
+    "id": 1301421,
+    "title": "The Sheep Detectives",
+    "poster_url": "https://image.tmdb.org/t/p/w500/iKy5460GdsoknM8ppmGlJbKxAKa.jpg",
+    "release_date": "2026-05-08"
+  },
+  {
+    "id": 931285,
+    "title": "Mortal Kombat II",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hwRdDFIhaEmpRgoki805YvyyjZf.jpg",
+    "release_date": "2026-05-08"
   },
   {
     "id": 1439930,
     "title": "The Punisher: One Last Kill",
     "poster_url": "https://image.tmdb.org/t/p/w500/qQclTgLMDvGBuUBFGHRipxkEwWR.jpg",
     "release_date": "2026-05-12"
+  },
+  {
+    "id": 1339713,
+    "title": "Obsession",
+    "poster_url": "https://image.tmdb.org/t/p/w500/bRwnj8WEKBCvmfeUNOukJPwB43K.jpg",
+    "release_date": "2026-05-15"
+  },
+  {
+    "id": 1380291,
+    "title": "Tom Clancy's Jack Ryan: Ghost War",
+    "poster_url": "https://image.tmdb.org/t/p/w500/8ehYxUh5MWE41AeE9gkHE8DKzvB.jpg",
+    "release_date": "2026-05-20"
+  },
+  {
+    "id": 1228710,
+    "title": "The Mandalorian and Grogu",
+    "poster_url": "https://image.tmdb.org/t/p/w500/5Vi8dSauVwH1HOsiZceDMbRr1Ca.jpg",
+    "release_date": "2026-05-22"
+  },
+  {
+    "id": 1083381,
+    "title": "Backrooms",
+    "poster_url": "https://image.tmdb.org/t/p/w500/rhGx6E3qRNMgj3i5su2oukNHwIQ.jpg",
+    "release_date": "2026-05-29"
+  },
+  {
+    "id": 1275779,
+    "title": "Disclosure Day",
+    "poster_url": "https://image.tmdb.org/t/p/w500/AnJ8IQJI23hNpYXVNaythu061Ru.jpg",
+    "release_date": "2026-06-12"
   }
 ];
